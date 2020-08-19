@@ -1,5 +1,5 @@
 import React from 'react';
-import {Nav, Navbar} from "react-bootstrap";
+import {Nav, Navbar,NavDropdown} from "react-bootstrap";
 import {Link, withRouter} from "react-router-dom";
 import './Header.scss';
 
@@ -26,7 +26,27 @@ const Header = (props: {location: any }) => {
                                   active={location.pathname.startsWith('/home') || location.pathname === '/'}>
                             Home
                         </Nav.Link>
+
+                        <NavDropdown title="Activities" id="collasible-nav-dropdown" style={{color: "white"}}>
+                            <NavDropdown.Item as={Link} to={{pathname: '/activity/circuit-building'}}
+                                              active={location.pathname.startsWith('/activity/circuit-building')}>
+                                Circuit Building
+                            </NavDropdown.Item>
+                            <NavDropdown.Item as={Link} to={{pathname: '/activity/metal-engraving'}}
+                                              active={location.pathname.startsWith('/activity/metal-engraving')}>
+                                Metal Engraving
+                            </NavDropdown.Item>
+                            <NavDropdown.Item as={Link} to={{pathname: '/activity/telescope-activity'}}
+                                              active={location.pathname.startsWith('/activity/telescope-activity')}>
+                                Telescope Activity
+                            </NavDropdown.Item>
+                            <NavDropdown.Item as={Link} to={{pathname: '/activity/object-page'}}
+                                              active={location.pathname.startsWith('/activity/object-page')}>
+                                Stellar Cycle
+                            </NavDropdown.Item>
+                        </NavDropdown>
                     </Nav>
+
                     <Nav className="ml-auto" activeKey={location.pathname}>
                         <Nav.Link as={Link} to="/resources" active={location.pathname.startsWith('/resources')}>
                             Resources

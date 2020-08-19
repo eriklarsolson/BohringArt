@@ -49,7 +49,7 @@ class CircuitBuilding extends React.Component<any, any> {
             const nextLevel = this.state.currentLevel + 1;
 
             if(nextLevel === 4) {
-                this.props.history.push('/metal-engraving');
+                this.props.history.push('/activity/metal-engraving');
             } else {
                 this.setState({currentLevel: nextLevel})
             }

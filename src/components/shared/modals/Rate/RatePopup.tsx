@@ -7,7 +7,7 @@ import neutral from './neutral.png';
 import sad from './sad.png';
 import smart from './smart.png';
 import './Rate.scss';
-import {toast, ToastContainer} from "react-toastify";
+import {toast} from "react-toastify";
 
 class RatePopup extends React.Component<any, any> {
     constructor(props: any) {

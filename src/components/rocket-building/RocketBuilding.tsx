@@ -3,6 +3,7 @@ import {Container, Row, Col, Modal} from 'react-bootstrap'
 import Sidebar from "./Sidebar";
 import Button from "react-bootstrap/Button";
 import 'font-awesome/css/font-awesome.min.css';
+import Popup from "../shared/modals/Popup";
 
 class RocketBuilding extends React.Component<any, any> {
     constructor(props: any) {
@@ -12,10 +13,18 @@ class RocketBuilding extends React.Component<any, any> {
         };
     }
 
-
     render() {
+        const cyclePopup = () => {
+            this.setState({popupOpened: !this.state.popupOpened})
+        }
+
         return (
             <>
+                <Popup title={"03 To The Stars"}
+                       open={this.state.popupOpened}
+                       description={"description goes here"}
+                       closePopup={cyclePopup} />
+
                 <Container fluid className={"d-flex h-100 flex-column"} style={{margin: "0", padding: "0", backgroundColor: "#F8EDDD"}}>
                     <Row className={"flex-grow-1"}>
                         <Col className={"col-2 vh-100"} style={{color: "white"}}>
@@ -28,7 +37,7 @@ class RocketBuilding extends React.Component<any, any> {
                                     <Col className="col-2" style={{margin: "3%"}}>
                                         <Button className={"green-button"} style={{float: "left", width: 100,
                                             clipPath: "polygon(0 0, 90% 0, 100% 100%, 10% 100%)"}}
-                                                onClick={() => this.props.history.push('/telescope-activity')}>
+                                                onClick={() => this.props.history.push('/activity/telescope-activity')}>
                                             <i className="fa fa-arrow-left" />
                                         </Button>
                                     </Col>
@@ -62,7 +71,7 @@ class RocketBuilding extends React.Component<any, any> {
                                         <Button className={"green-button"} style={{float: "right", width: 200,
                                             clipPath: "polygon(0 0, 90% 0, 100% 100%, 10% 100%)"}}
                                                 onClick={() => this.props.history.push({
-                                                    pathname: '/object-page',
+                                                    pathname: '/activity/object-page',
                                                     state: { title: "Nebula" }
                                                 })}>Next</Button>
                                     </Col>

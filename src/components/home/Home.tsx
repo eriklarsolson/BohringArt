@@ -19,7 +19,7 @@ class Home extends React.Component<any, any> {
                     draggable
                     pauseOnHover />
 
-                {this.props.location.state.popupOpened && <RatePopup />}
+                {this.props.location.state !== undefined && this.props.location.state.popupOpened && <RatePopup />}
                 <Header />
 
                 <LearnSection />

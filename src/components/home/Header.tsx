@@ -23,7 +23,7 @@ class Header extends React.Component {
                     </Row>
                     <Row style={{display: "block"}}>
                         <Button
-                            href="/circuit-building"
+                            href="/activity/circuit-building"
                             variant="primary"
                             type="submit"
                             className="btn"

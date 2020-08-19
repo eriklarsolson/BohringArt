@@ -20,7 +20,7 @@ class StellarCycle extends React.Component<any, any> {
     render() {
         const goToObjectPage = (title: string) => {
             this.props.history.push({
-                pathname: '/object-page',
+                pathname: '/activity/object-page',
                 state: { title: title }
             })
         }
@@ -205,7 +205,7 @@ class StellarCycle extends React.Component<any, any> {
                             <Button className={"green-button"} style={{float: "left", width: 100,
                                 clipPath: "polygon(0 0, 90% 0, 100% 100%, 10% 100%)"}}
                                     onClick={() => this.props.history.push({
-                                        pathname: '/object-page',
+                                        pathname: '/activity/object-page',
                                         state: { title: "Nebula" }
                                     })}>
                                 <i className="fa fa-arrow-left" />

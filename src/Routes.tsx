@@ -17,13 +17,13 @@ class Routes extends Component {
         return (
             <>
                 <Switch>
-                    <Route path="/circuit-building" component={CircuitBuilding} />
-                    <Route path="/metal-engraving" component={MetalEngraving} />
-                    <Route path="/telescope-activity" component={TelescopeActivity} />
-                    <Route path="/rocket-building" component={RocketBuilding} />
-                    <Route path="/stellar-cycle" component={StellarCycle} />
-                    <Route path="/object-page" component={ObjectPage} />
-                    <Route path="/stellar-info-page" component={InfoPage} />
+                    <Route path="/activity/circuit-building" component={CircuitBuilding} />
+                    <Route path="/activity/metal-engraving" component={MetalEngraving} />
+                    <Route path="/activity/telescope-activity" component={TelescopeActivity} />
+                    <Route path="/activity/rocket-building" component={RocketBuilding} />
+                    <Route path="/activity/stellar-cycle" component={StellarCycle} />
+                    <Route path="/activity/object-page" component={ObjectPage} />
+                    <Route path="/activity/info-page" component={InfoPage} />
                     <Route path="/about" component={AboutUs} />
                     <Route path="/resources" component={Resources} />
                     <Route path="/" component={Home} />

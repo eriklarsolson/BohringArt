@@ -114,20 +114,24 @@ class ObjectPage extends React.Component<any, any> {
     }
 
     componentDidMount() {
-        const loadedTitle = this.props.location.state.title;
+        if(this.props.location.state !== undefined) {
+            const loadedTitle = this.props.location.state.title;
 
-        //Check massive objects for same name (check here first since finds nebula
-        let samePlaceComponents = this.state.stellarObjects[1].filter((object: { title: any; }) => object.title === loadedTitle);
-        if(samePlaceComponents.length > 0) {
-            const index = getIndex(samePlaceComponents[0], this.state.stellarObjects[1]);
-            this.setState({index: index, massClass: 1})
-        }
+            //Check massive objects for same name (check here first since finds nebula
+            let samePlaceComponents = this.state.stellarObjects[1].filter((object: { title: any; }) => object.title === loadedTitle);
+            if (samePlaceComponents.length > 0) {
+                const index = getIndex(samePlaceComponents[0], this.state.stellarObjects[1]);
+                this.setState({index: index, massClass: 1})
+            }
 
-        //Check average objects for same name
-        samePlaceComponents = this.state.stellarObjects[0].filter((object: { title: any; }) => object.title === loadedTitle);
-        if(samePlaceComponents.length > 0) {
-            const index = getIndex(samePlaceComponents[0], this.state.stellarObjects[0]);
-            this.setState({index: index, massClass: 0})
+            //Check average objects for same name
+            samePlaceComponents = this.state.stellarObjects[0].filter((object: { title: any; }) => object.title === loadedTitle);
+            if (samePlaceComponents.length > 0) {
+                const index = getIndex(samePlaceComponents[0], this.state.stellarObjects[0]);
+                this.setState({index: index, massClass: 0})
+            }
+        } else {
+            this.setState({index: 0, massClass: 0})
         }
     }
 
@@ -199,7 +203,7 @@ class ObjectPage extends React.Component<any, any> {
 
         return (
             <>
-                <Popup title={"03 Stellar Life Cycle"}
+                <Popup title={"04 Stellar Life Cycle"}
                        open={this.state.popupOpened}
                        description={"In this final activity, use the sliders to see how mass, temperature, and size are related as you move through the stages of the stellar life cycle. You may choose between using a star of average mass (like the sun) or a supermassive star, mass is the main variable used to determine which stages the star will go through and how long its lifespan will be. When viewing a stage, click the MORE INFO button to see an in depth description. You can also click on the ALL STAGES button to go back to the stellar life cycle diagram. Once you are finished exploring, click on the COMPLETE button to close out the activity."}
                        closePopup={cyclePopup} />
@@ -220,7 +224,7 @@ class ObjectPage extends React.Component<any, any> {
                                     <Col className="col-2" style={{margin: "3%"}}>
                                         <Button className={"green-button"} style={{float: "left", width: 100,
                                             clipPath: "polygon(0 0, 90% 0, 100% 100%, 10% 100%)"}}
-                                                onClick={() => this.props.history.push('/rocket-building')}>
+                                                onClick={() => this.props.history.push('/activity/rocket-building')}>
                                             <i className="fa fa-arrow-left" />
                                         </Button>
                                     </Col>
@@ -234,7 +238,7 @@ class ObjectPage extends React.Component<any, any> {
                                             <Button className={"blue-button"} style={{marginBottom: 15, width: 200,
                                                 clipPath: "polygon(10px 0, 100% 0, 100% 100%, 15% 100%)"}}
                                                 onClick={() => this.props.history.push({
-                                                    pathname: '/stellar-info-page',
+                                                    pathname: '/activity/info-page',
                                                     state: { title: this.state.stellarObjects[this.state.massClass][this.state.index].title }
                                                 })}>
                                                 More Info
@@ -286,7 +290,7 @@ class ObjectPage extends React.Component<any, any> {
                                     <Col className={"col-4 justify-content-center align-content-center"}>
                                         <Button className={"green-button"} style={{float: "right", width: 200,
                                             clipPath: "polygon(0 0, 90% 0, 100% 100%, 10% 100%)"}}
-                                                onClick={() => this.props.history.push('/stellar-cycle')}>All Stages</Button>
+                                                onClick={() => this.props.history.push('/activity/stellar-cycle')}>All Stages</Button>
                                     </Col>
                                 </Row>
                             </Container>

@@ -47,7 +47,7 @@ class InfoPage extends React.Component<any, any> {
                                             <Button className={"green-button"} style={{marginBottom: 15, width: 200,
                                                 clipPath: "polygon(10px 0, 100% 0, 100% 100%, 15% 100%)"}}
                                                 onClick={() => this.props.history.push({
-                                                    pathname: '/object-page',
+                                                    pathname: '/activity/object-page',
                                                     state: { title: this.state.title }
                                             })}>
                                                 <i className="fa fa-arrow-right" />

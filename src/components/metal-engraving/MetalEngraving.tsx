@@ -11,6 +11,8 @@ import optics from "./optics_small.png";
 import prism from "./prism_small.png";
 import {Slider, Typography, withStyles} from "@material-ui/core";
 import ViewpointPopup from "../shared/modals/ViewpointPopup";
+import CircuitPopup from "../shared/modals/CircuitPopup";
+import MetalEngravingQuestionPopup from "../shared/modals/MetalEngravingQuestionPopup";
 
 export const TOOL_LASER = 'laser';
 export const TOOL_OPTICS = 'optics';
@@ -25,6 +27,7 @@ class MetalEngraving extends React.Component<any, any> {
         super(props);
         this.state = {
             popupOpened: true,
+            questionPopupOpened: false,
             engravingPopupOpened: false,
             viewpointPopupOpened: false,
             tool: TOOL_LASER,
@@ -58,6 +61,10 @@ class MetalEngraving extends React.Component<any, any> {
 
         const toggleViewpointPopup = () => {
             this.setState({viewpointPopupOpened: !this.state.viewpointPopupOpened})
+        }
+
+        const cycleQuestionPopup = () => {
+            this.setState({questionPopupOpened: !this.state.questionPopupOpened})
         }
 
         const setTool = (tool: string) => {
@@ -136,7 +143,7 @@ class MetalEngraving extends React.Component<any, any> {
 
         return (
             <>
-
+                <MetalEngravingQuestionPopup open={this.state.questionPopupOpened} closePopup={cycleQuestionPopup} />
 
                 <Popup title={"02 Laser and Lenses Objective"}
                        open={this.state.popupOpened}
@@ -165,7 +172,7 @@ class MetalEngraving extends React.Component<any, any> {
                                     <Col className={"col-3"}>
                                         <Button className={"green-button"} style={{float: "left", width: 100,
                                             clipPath: "polygon(0 0, 90% 0, 100% 100%, 10% 100%)"}}
-                                                onClick={() => this.props.history.push('/circuit-building')}>
+                                                onClick={() => this.props.history.push('/activity/circuit-building')}>
                                             <i className="fa fa-arrow-left" />
                                         </Button>
                                     </Col>
@@ -284,7 +291,7 @@ class MetalEngraving extends React.Component<any, any> {
                         <Col className={"col-2 ml-auto"} style={{padding: 0}}>
                             <Row className={"justify-content-end"} style={{margin: 0, marginTop: "10%"}}>
                                     <Button className={"blue-button"} style={{width: 200, marginBottom: 15,
-                                        clipPath: "polygon(10px 0, 100% 0, 100% 100%, 15% 100%)"}}>Question</Button>
+                                        clipPath: "polygon(10px 0, 100% 0, 100% 100%, 15% 100%)"}} onClick={cycleQuestionPopup}>Question</Button>
                             </Row>
                             <Row className={"justify-content-end"} style={{margin: 0}}>
                                     <Button className={"blue-button"} style={{width: 200, marginBottom: 15,
@@ -303,7 +310,7 @@ class MetalEngraving extends React.Component<any, any> {
                                 <Col style={{padding: 0}}>
                                     <Button className={"green-button"} style={{float: "right", width: 200,
                                         clipPath: "polygon(0 0, 90% 0, 100% 100%, 10% 100%)"}}
-                                            onClick={() => this.props.history.push('/telescope-activity')}>Next</Button>
+                                            onClick={() => this.props.history.push('/activity/telescope-activity')}>Next</Button>
                                 </Col>
                             </Row>
                         </Col>
