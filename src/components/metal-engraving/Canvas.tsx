@@ -1,6 +1,6 @@
 import React, { useCallback, useEffect, useState } from 'react';
 import canvasBackground from './metal_background.png'
-import {TOOL_ELLIPSE, TOOL_LINE, TOOL_RECTANGLE, TOOL_ERASER, TOOL_LASER, TOOL_OPTICS,TOOL_PRISM} from "./MetalEngraving";
+import {TOOL_ELLIPSE, TOOL_STAR, TOOL_TRIANGLE, TOOL_RECTANGLE, TOOL_ERASER, TOOL_LASER, TOOL_OPTICS,TOOL_PRISM} from "./MetalEngraving";
 import optics from "./optics.png";
 import prism from "./prism.png";
 
@@ -49,7 +49,7 @@ const Canvas = ({ width, height, canvasRef, tool, color, size, toolActive }: Can
             if (isPainting) {
                 const newMousePosition = getCoordinates(event);
 
-                if(tool === TOOL_LINE || tool === TOOL_ERASER || tool === TOOL_LASER) {
+                if(tool === TOOL_ERASER || tool === TOOL_LASER) {
                     if (mousePosition && newMousePosition) {
                         draw(mousePosition, newMousePosition);
                         setMousePosition(newMousePosition);
@@ -76,7 +76,7 @@ const Canvas = ({ width, height, canvasRef, tool, color, size, toolActive }: Can
     //TODO - Need to check types if its continuous drawing or like rectangle
     const exitPaint = useCallback(() => {
         if (mousePosition && newMousePosition) {
-            if(tool !== TOOL_LINE && tool !== TOOL_ERASER && tool !== TOOL_LASER) {
+            if(tool !== TOOL_ERASER && tool !== TOOL_LASER) {
                 draw(mousePosition, newMousePosition);
             }
         }
@@ -178,7 +178,7 @@ const Canvas = ({ width, height, canvasRef, tool, color, size, toolActive }: Can
             const context = canvas.getContext('2d');
             if (context) {
                 context.globalCompositeOperation = "source-over"
-                if (tool === TOOL_LINE || tool === TOOL_ERASER || tool === TOOL_LASER) {
+                if (tool === TOOL_ERASER || tool === TOOL_LASER) {
 
                     if (tool !== TOOL_ERASER) {
                         context.strokeStyle = getBurnColor(color);
@@ -248,6 +248,21 @@ const Canvas = ({ width, height, canvasRef, tool, color, size, toolActive }: Can
                     context.rect(startX, startY, widthX, widthY);
                     context.stroke();
                     // if (item.fill) context.fill();
+                } else if (tool === TOOL_TRIANGLE) {
+                    //TODO
+                    // const startX = newMousePosition.x < originalMousePosition.x ? newMousePosition.x : originalMousePosition.x;
+                    // const startY = newMousePosition.y < originalMousePosition.y ? newMousePosition.y : originalMousePosition.y;
+                    // const widthX = Math.abs(originalMousePosition.x - newMousePosition.x);
+                    // const widthY = Math.abs(originalMousePosition.y - newMousePosition.y);
+                    // context.beginPath();
+                    // context.moveTo(startX, startY);
+                    // context.lineTo(startX + widthX / 2, startY + widthY);
+                    // context.lineTo(startX - widthX / 2, startY + widthY);
+                    // context.closePath();
+                    // //context.fillStyle = fillStyle;
+                    // //context.fill();
+                } else if (tool === TOOL_STAR) {
+                    //TODO
                 }
             }
         }

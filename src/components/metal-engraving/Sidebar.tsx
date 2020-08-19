@@ -3,15 +3,20 @@ import { Container, Row, Col } from 'react-bootstrap'
 import lasercomponenticon from "./lasercomponenticon.png";
 import optics from "./optics.png";
 import prism from "./prism.png";
+import square from "./square.png";
+import circle from "./circle.png";
+import triangle from "./triangle.png";
+import star from "./star.png";
 import Button from "react-bootstrap/Button";
 import Accordion from "react-bootstrap/Accordion"
 import {Card} from "@material-ui/core";
 export const TOOL_LASER = 'laser';
 export const TOOL_OPTICS = 'optics';
 export const TOOL_PRISM = 'prism';
-export const TOOL_LINE = 'line';
 export const TOOL_RECTANGLE = 'rectangle';
 export const TOOL_ELLIPSE = 'ellipse';
+export const TOOL_TRIANGLE = 'triangle';
+export const TOOL_STAR = 'star';
 export const TOOL_ERASER = 'eraser';
 
 class Sidebar extends React.Component<any, any> {
@@ -53,10 +58,12 @@ class Sidebar extends React.Component<any, any> {
                            <Row className={"justify-content-center"}>
                                <Col className="col-8" style={{backgroundColor: "#F8EDDD", paddingTop: 10, paddingBottom: 10}}>
                                    <button
-                                       style={{width: "100px", height: "100px"}}
+                                       style={{width: 75, height: 75, backgroundColor: "transparent", border: 0}}
                                        className={this.props.tool === TOOL_RECTANGLE  ? 'item-active' : 'item'}
                                        onClick={() => this.props.setTool(TOOL_RECTANGLE)}
-                                   >Rectangle</button>
+                                   >
+                                       <img src={square} />
+                                   </button>
                                </Col>
                            </Row>
                            <Row className={"justify-content-center"}>
@@ -73,19 +80,34 @@ class Sidebar extends React.Component<any, any> {
                                            <Row>
                                                <Col style={{margin: 5}}>
                                                    <button
-                                                       style={{width: "100px", height: "100px"}}
+                                                       style={{width: 75, height: 75, backgroundColor: "transparent", border: 0}}
                                                        className={this.props.tool === TOOL_ELLIPSE  ? 'item-active' : 'item'}
                                                        onClick={() => this.props.setTool(TOOL_ELLIPSE)}
-                                                   >Ellipse</button>
+                                                   >
+                                                       <img src={circle} />
+                                                   </button>
                                                </Col>
                                            </Row>
                                            <Row>
                                                <Col style={{margin: 5}}>
                                                    <button
-                                                       style={{width: "100px", height: "100px"}}
-                                                       className={this.props.tool === TOOL_LINE  ? 'item-active' : 'item'}
-                                                       onClick={() => this.props.setTool(TOOL_LINE)}
-                                                   >Line</button>
+                                                       style={{width: 75, height: 75, backgroundColor: "transparent", border: 0}}
+                                                       className={this.props.tool === TOOL_TRIANGLE  ? 'item-active' : 'item'}
+                                                       onClick={() => this.props.setTool(TOOL_TRIANGLE)}
+                                                   >
+                                                       <img src={triangle} />
+                                                   </button>
+                                               </Col>
+                                           </Row>
+                                           <Row>
+                                               <Col style={{margin: 5}}>
+                                                   <button
+                                                       style={{width: 75, height: 75, backgroundColor: "transparent", border: 0}}
+                                                       className={this.props.tool === TOOL_STAR  ? 'item-active' : 'item'}
+                                                       onClick={() => this.props.setTool(TOOL_STAR)}
+                                                   >
+                                                       <img src={star} />
+                                                   </button>
                                                </Col>
                                            </Row>
                                        </Container>

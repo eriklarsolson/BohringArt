@@ -17,9 +17,10 @@ import MetalEngravingQuestionPopup from "../shared/modals/MetalEngravingQuestion
 export const TOOL_LASER = 'laser';
 export const TOOL_OPTICS = 'optics';
 export const TOOL_PRISM = 'prism';
-export const TOOL_LINE = 'line';
 export const TOOL_RECTANGLE = 'rectangle';
 export const TOOL_ELLIPSE = 'ellipse';
+export const TOOL_TRIANGLE = 'triangle';
+export const TOOL_STAR = 'star';
 export const TOOL_ERASER = 'eraser';
 
 class MetalEngraving extends React.Component<any, any> {

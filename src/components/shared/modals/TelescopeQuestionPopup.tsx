@@ -1,34 +1,30 @@
 import React from "react";
 import {Button, Modal} from "react-bootstrap";
 import { Container, Row, Col } from 'react-bootstrap'
-import lasercomponenticon from "../../metal-engraving/lasercomponenticon.png";
-import optics from "../../metal-engraving/optics.png";
-import prism from "../../metal-engraving/prism.png";
-import {TOOL_LASER, TOOL_OPTICS, TOOL_PRISM} from "../../metal-engraving/Sidebar";
+import concave from "../../telescope-activity/grid/components/images/concave.png";
+import convex from "../../telescope-activity/grid/components/images/convex.png";
+import flatmirror from "../../telescope-activity/grid/components/images/flatmirror.png";
+import viewpoint from "../../telescope-activity/grid/components/images/viewpoint.png";
 
-class MetalEngravingQuestionPopup extends React.Component<any, any> {
+
+class TelescopeQuestionPopup extends React.Component<any, any> {
     constructor(props: any) {
         super(props);
         this.state = {
-            title: "Laser",
-            description: "laser description",
+            title: "Concave",
+            description: "concave description",
         }
     }
     render() {
         const loadModuleDescription = (module: string) => {
-            if (module === "laser") {
-                this.setState({title: "Laser", description: "Laser description"})
-            } else if (module === "optics") {
-                this.setState({title: "Lens", description: "Converging/Convex- A lens that focuses incoming light to a " +
-                        "single point. This is due to the outward curvature of the lens itself; light is refracted " +
-                        "towards a point of con vergence, forming an image. Refraction When light enters one medium " +
-                        "different from the one it is currently traveling through, it will change its speed, resulting " +
-                        "in a change in the direction of movement. An example of a change in medium is going from air to " +
-                        "water. Snell’s Law Law comparing angles of entry of the light and indices of refraction of mediums " +
-                        "Index of refraction A measure of a medium’s ability to bend incoming light away from its angle of" +
-                        "incidence, index of refraction of air is one."})
-            } else if (module === "prism") {
-                this.setState({title: "Prism", description: "Prism description"})
+            if (module === "Concave") {
+                this.setState({title: "Concave", description: "Concave description"})
+            } else if (module === "Convex") {
+                this.setState({title: "Convex", description: "Convex description"})
+            } else if (module === "Flat Mirror") {
+                this.setState({title: "Flat Mirror", description: "Flat Mirror description"})
+            } else if (module === "Viewpoint") {
+                this.setState({title: "Viewpoint", description: "Viewpoint description"})
             }
         }
 
@@ -50,25 +46,33 @@ class MetalEngravingQuestionPopup extends React.Component<any, any> {
                             <Col className={"col-3 align-content-center justify-content-center vh-50"} style={{height: "500px"}}>
                                 <Row className={"justify-content-center"} style={{margin: "5px"}}>
                                     <Col className={"col-12"} style={{backgroundColor: "#F8EDDD"}}>
-                                        <img src={lasercomponenticon}
+                                        <img src={concave}
                                              style={{width: "100px", height: "100px"}}
-                                             onMouseOver={() => loadModuleDescription("laser")} />
+                                             onMouseOver={() => loadModuleDescription("Concave")} />
                                     </Col>
                                 </Row>
 
                                 <Row className={"justify-content-center"} style={{margin: "5px"}}>
                                     <Col className={"col-12"} style={{backgroundColor: "#F8EDDD"}}>
-                                        <img src={optics}
+                                        <img src={convex}
                                              style={{width: "100px", height: "100px"}}
-                                             onMouseOver={() => loadModuleDescription("optics")} />
+                                             onMouseOver={() => loadModuleDescription("Convex")} />
                                     </Col>
                                 </Row>
 
                                 <Row className={"justify-content-center"} style={{margin: "5px"}}>
                                     <Col className={"col-12"} style={{backgroundColor: "#F8EDDD"}}>
-                                        <img src={prism}
+                                        <img src={flatmirror}
                                              style={{width: "100px", height: "100px"}}
-                                             onMouseOver={() => loadModuleDescription("prism")} />
+                                             onMouseOver={() => loadModuleDescription("Flat Mirror")} />
+                                    </Col>
+                                </Row>
+
+                                <Row className={"justify-content-center"} style={{margin: "5px"}}>
+                                    <Col className={"col-12"} style={{backgroundColor: "#F8EDDD"}}>
+                                        <img src={viewpoint}
+                                             style={{width: "100px", height: "100px"}}
+                                             onMouseOver={() => loadModuleDescription("Viewpoint")} />
                                     </Col>
                                 </Row>
                             </Col>
@@ -93,4 +97,4 @@ class MetalEngravingQuestionPopup extends React.Component<any, any> {
         )
     }
 }
-export default MetalEngravingQuestionPopup;
+export default TelescopeQuestionPopup;

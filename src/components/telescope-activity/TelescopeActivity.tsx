@@ -5,19 +5,26 @@ import Button from "react-bootstrap/Button";
 import satellite from './satellite.png'
 import {TelescopeGridContainer} from "./grid/TelescopeGridContainer";
 import 'font-awesome/css/font-awesome.min.css';
+import TelescopeQuestionPopup from "../shared/modals/TelescopeQuestionPopup";
 
 class TelescopeActivity extends React.Component<any, any> {
     constructor(props: any) {
         super(props);
         this.state = {
-            popupOpened: true,
+            questionPopupOpened: false,
         };
     }
 
 
     render() {
+        const cycleQuestionPopup = () => {
+            this.setState({questionPopupOpened: !this.state.questionPopupOpened})
+        }
+
         return (
             <>
+                <TelescopeQuestionPopup open={this.state.questionPopupOpened} closePopup={cycleQuestionPopup} />
+
                 <Container fluid className={"d-flex h-100 flex-column"} style={{margin: "0", padding: "0", backgroundColor: "#F8EDDD"}}>
                     <Row className={"flex-grow-1"}>
                         <Col className={"col-2 vh-100"} style={{color: "white"}}>
@@ -42,7 +49,10 @@ class TelescopeActivity extends React.Component<any, any> {
                                     <Col className={"col-2 ml-auto"} style={{padding: 0, marginTop: "3%"}}>
                                         <Row style={{margin: 0}} className={"justify-content-end"}>
                                             <Button className={"blue-button"} style={{marginBottom: 15, width: 200,
-                                                clipPath: "polygon(10px 0, 100% 0, 100% 100%, 15% 100%)"}}>Help</Button>
+                                                clipPath: "polygon(10px 0, 100% 0, 100% 100%, 15% 100%)"}}
+                                                onClick={cycleQuestionPopup}>
+                                                Help
+                                            </Button>
                                         </Row>
                                     </Col>
                                 </Row>
