@@ -1,35 +1,12 @@
 import React from 'react';
-import banner from "./aboutusbanner.png";
 import './About.scss';
 import { Container, Row, Col } from 'react-bootstrap'
-import RatePopup from "../shared/modals/Rate/RatePopup";
-import {ToastContainer} from "react-toastify";
 import 'react-toastify/dist/ReactToastify.css';
 
 class AboutUs extends React.Component<any, any> {
-    constructor(props: any) {
-        super(props);
-
-        this.state = {
-        }
-    }
-
     render() {
         return (
             <>
-                {this.props.location.state.popupOpened && <RatePopup />}
-
-                <ToastContainer
-                    position="top-center"
-                    autoClose={3000}
-                    hideProgressBar={false}
-                    newestOnTop={false}
-                    closeOnClick
-                    rtl={false}
-                    pauseOnFocusLoss
-                    draggable
-                    pauseOnHover />
-
                     <Container fluid style={{margin: 0}}>
                         <Row className="justify-content-center" style={{height: "auto", paddingBottom: "10%", backgroundColor: "#29405B",
                             clipPath: "polygon(0 0, 100% 0, 100% 85%, 0 100%)"}}>

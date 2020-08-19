@@ -22,7 +22,8 @@ const Header = (props: {location: any }) => {
                 <Navbar.Toggle aria-controls="responsive-navbar-nav" />
                 <Navbar.Collapse id="responsive-navbar-nav">
                     <Nav className="mr-auto" activeKey={location.pathname}>
-                        <Nav.Link as={Link} to="/" active={location.pathname.startsWith('/home') || location.pathname === '/'}>
+                        <Nav.Link as={Link} to={{pathname: '/', state: { popupOpened: false }}}
+                                  active={location.pathname.startsWith('/home') || location.pathname === '/'}>
                             Home
                         </Nav.Link>
                     </Nav>
@@ -30,8 +31,7 @@ const Header = (props: {location: any }) => {
                         <Nav.Link as={Link} to="/resources" active={location.pathname.startsWith('/resources')}>
                             Resources
                         </Nav.Link>
-                        <Nav.Link as={Link} to={{pathname: '/about', state: { popupOpened: false }}}
-                                  active={location.pathname.startsWith('/about')}>
+                        <Nav.Link as={Link} to='/about' active={location.pathname.startsWith('/about')}>
                             About Us
                         </Nav.Link>
                     </Nav>

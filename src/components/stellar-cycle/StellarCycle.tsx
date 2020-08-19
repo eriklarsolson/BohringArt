@@ -216,7 +216,7 @@ class StellarCycle extends React.Component<any, any> {
                             <Button className={"green-button"} style={{float: "right", width: 200,
                                 clipPath: "polygon(0 0, 90% 0, 100% 100%, 10% 100%)"}}
                                     onClick={() => this.props.history.push({
-                                        pathname: '/about',
+                                        pathname: '/',
                                         state: { popupOpened: true }
                                     })}>
                                 Complete

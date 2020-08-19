@@ -1,7 +1,7 @@
-import React from 'react'
+import React, {useState} from 'react'
 import {DragSourceMonitor, useDrag, useDrop} from 'react-dnd'
 import { Square } from './Square'
-import {canMoveComponent, moveComponent, setCurrentComponent} from './Functionality'
+import {canMoveComponent, getCurrentX, getCurrentY, moveComponent, setCurrentComponent} from './Functionality'
 import { ComponentTypes } from '../../shared/models/ComponentTypes'
 import { ColorOverlay } from './ColorOverlay'
 import {DragItem} from "../../shared/models/DragItem";
@@ -26,17 +26,34 @@ export const GridSquare: React.FC<GridSquareProps> = ({x, y, children, showGrid}
         }),
     })
 
+    let gridStyling: React.CSSProperties  = {
+        position: 'relative',
+        width: '100%',
+        height: '100%',
+    };
+
+    const [clicked, setClicked] = useState<boolean>(false)
+
+    const clickGridSquare = () => {
+        setCurrentComponent(x, y)
+
+        setClicked(true)
+    }
+
+    //TODO - Doesn't deselect other squares
+    // if(getCurrentX() === x && getCurrentY() === y) {
+    //     setClicked(true)
+    // } else {
+    //     setClicked(false)
+    // }
+
     return (
         <div
             ref={drop}
-            style={{
-                position: 'relative',
-                width: '100%',
-                height: '100%',
-            }}
-            onMouseDown={() => setCurrentComponent(x, y)}
+            style={gridStyling}
+            onMouseDown={() => clickGridSquare()}
         >
-            <Square showGrid={showGrid}>{children}</Square>
+            <Square clicked={clicked} showGrid={showGrid}>{children}</Square>
             {isOver && !canDrop && <ColorOverlay color="red" />}
             {!isOver && canDrop && <ColorOverlay color="yellow" />}
             {isOver && canDrop && <ColorOverlay color="green" />}

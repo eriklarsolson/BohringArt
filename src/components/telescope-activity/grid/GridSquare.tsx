@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {useState} from 'react'
 import {DragSourceMonitor, useDrag, useDrop} from 'react-dnd'
 import { Square } from './Square'
 import {canMoveComponent, moveComponent, setCurrentComponent} from './Functionality'
@@ -14,6 +14,8 @@ export interface GridSquareProps {
 }
 
 export const GridSquare: React.FC<GridSquareProps> = ({x, y, children}: GridSquareProps) => {
+
+
     const [{ isOver, canDrop }, drop] = useDrop({
         accept: [TelescopeTypes.CONCAVE, TelescopeTypes.CONVEX, TelescopeTypes.VIEWPOINT, TelescopeTypes.FLATMIRROR],
         canDrop: () => canMoveComponent(x, y),
@@ -24,14 +26,17 @@ export const GridSquare: React.FC<GridSquareProps> = ({x, y, children}: GridSqua
         }),
     })
 
+    //TODO Add border around selected piece
+    let gridStyling: React.CSSProperties  = {
+        position: 'relative',
+        width: '100%',
+        height: '100%',
+    };
+
     return (
         <div
             ref={drop}
-            style={{
-                position: 'relative',
-                width: '100%',
-                height: '100%',
-            }}
+            style={{...gridStyling}}
             onMouseDown={() => setCurrentComponent(x, y)}
         >
             <Square>{children}</Square>

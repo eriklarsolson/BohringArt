@@ -1,13 +1,13 @@
 import {ComponentTypes} from "../../shared/models/ComponentTypes";
 
 let observers: PositionObserver[] = []
-export type PositionObserver = ((component: {x: number, y: number, type: string}) => void) | null
+export type PositionObserver = ((component: {x: number, y: number, type: string, voltage: number}) => void) | null
 let currentComponent = 0;
 let currentLevel = 0;
 let passed = false;
 let currentX = -1;
 let currentY = -1;
-let components: { x: number; y: number; type: string}[] =  []
+let components: { x: number; y: number; type: string, voltage: number}[] =  []
 
 export function getComponents(): any {
     return components;
@@ -23,8 +23,23 @@ export function deleteCurrentComponent() {
     emitChange();
 }
 
+export function getCurrentX(): any {
+    return currentX;
+}
+
+export function getCurrentY(): any {
+    return currentY;
+}
+
 export function getPassed() {
     return passed;
+}
+
+export function setCurrentComponentsVoltage(voltage: number) {
+    if (components.length > 0) {
+        components[currentComponent].voltage = voltage;
+        emitChange();
+    }
 }
 
 export function setCurrentLevel(newLevel: number) {
@@ -103,14 +118,14 @@ export function moveComponent(toX: number, toY: number, type: string): void {
     if(samePlaceComponents.length > 0) {
         components.splice(currentComponent, 1);
         const index = getIndex(samePlaceComponents[0], components);
-        components[index] = {x: toX, y: toY, type: type}
+        components[index] = {x: toX, y: toY, type: type, voltage: 1}
     } else {
         //TODO - Need to make this only delete the old object if dragging and dropping from grid, not from comps on side bar
         // components.splice(currentComponent, 1);
         if(currentX !== -1 && currentY !== -1) {
             components.splice(currentComponent, 1);
         }
-        components.push({x: toX, y: toY, type: type});
+        components.push({x: toX, y: toY, type: type, voltage: 1});
     }
 
     currentComponent = components.length - 1;
@@ -126,7 +141,7 @@ export function setComponentsList(newComponents: any): void {
 }
 
 function checkIfPassed(): void {
-    const passingLevel: { x: number; y: number; type: string}[] = getCurrentLevelPass()
+    const passingLevel: { x: number; y: number; type: string, voltage: number}[] = getCurrentLevelPass()
 
     console.log(components)
     console.log(passingLevel)
@@ -139,16 +154,16 @@ function checkIfPassed(): void {
 
 function getCurrentLevelPass(): any {
     if(currentLevel === 0) {
-        let components: { x: number; y: number; type: string}[] =  []
-        components.push({x: 0, y: 0, type: ComponentTypes.BATTERY})
+        let components: { x: number; y: number; type: string, voltage: number}[] =  []
+        components.push({x: 0, y: 0, type: ComponentTypes.BATTERY, voltage: 1})
         return components
     } else if(currentLevel === 1) {
-        let components: { x: number; y: number; type: string}[] =  []
-        components.push({x: 0, y: 0, type: ComponentTypes.BATTERY})
+        let components: { x: number; y: number; type: string, voltage: number}[] =  []
+        components.push({x: 0, y: 0, type: ComponentTypes.BATTERY, voltage: 1})
         return components
     } else if(currentLevel === 2) {
-        let components: { x: number; y: number; type: string}[] =  []
-        components.push({x: 0, y: 0, type: ComponentTypes.BATTERY})
+        let components: { x: number; y: number; type: string, voltage: number}[] =  []
+        components.push({x: 0, y: 0, type: ComponentTypes.BATTERY, voltage: 1})
         return components
     }
 

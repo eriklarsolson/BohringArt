@@ -18,9 +18,9 @@ class RatePopup extends React.Component<any, any> {
     }
 
     render() {
-        const submitRating = () => {
+        const submitRating = (selection: string) => {
             //TODO
-            toast("Rate submitted!");
+            toast(selection + " clicked!");
             closePopup()
         }
 
@@ -45,40 +45,41 @@ class RatePopup extends React.Component<any, any> {
                             </Row>
 
                             <Row style={{textAlign: "center", display: "block"}}>
-                                <p style={{color: "#29405B"}}>You have successfully launched the telescope into space! How did you feel about these activities?</p>
+                                <p style={{color: "#29405B"}}>You have successfully launched the telescope into space!
+                                    How did you feel about these activities? Click an image to submit your vote!</p>
                             </Row>
 
                             <Row className={"justify-content-center align-content-center"} style={{padding: "10px"}}>
                                 <Col className={"col-2"} style={{textAlign: "center", margin: "10px"}}>
-                                    <img src={bored} className={"rate-img"} />
+                                    <img src={bored} className={"rate-img"} onClick={() => submitRating("bored")} />
                                     <p style={{color: "#29405B", fontWeight: "bold", fontSize: "16px"}}>Bored</p>
                                 </Col>
 
                                 <Col className={"col-2"} style={{textAlign: "center", margin: "10px"}}>
-                                    <img src={sad} className={"rate-img"} />
+                                    <img src={sad} className={"rate-img"} onClick={() => submitRating("sad")} />
                                     <p style={{color: "#29405B", fontWeight: "bold", fontSize: "16px"}}>Sad</p>
                                 </Col>
 
                                 <Col className={"col-2"} style={{textAlign: "center", margin: "10px"}}>
-                                    <img src={neutral} className={"rate-img"} />
+                                    <img src={neutral} className={"rate-img"} onClick={() => submitRating("neutral")} />
                                     <p style={{color: "#29405B", fontWeight: "bold", fontSize: "16px"}}>Neutral</p>
                                 </Col>
 
                                 <Col className={"col-2"} style={{textAlign: "center", margin: "10px"}}>
-                                    <img src={happy} className={"rate-img"} />
+                                    <img src={happy} className={"rate-img"} onClick={() => submitRating("happy")} />
                                     <p style={{color: "#29405B", fontWeight: "bold", fontSize: "16px"}}>Happy</p>
                                 </Col>
 
                                 <Col className={"col-2"} style={{textAlign: "center", margin: "10px"}}>
-                                    <img src={smart} className={"rate-img"} />
+                                    <img src={smart} className={"rate-img"} onClick={() => submitRating("smart")} />
                                     <p style={{color: "#29405B", fontWeight: "bold"}}>Smart</p>
                                 </Col>
                             </Row>
 
                             <Row className={"justify-content-center align-content-center"} style={{paddingBottom: "30px", float: "right"}}>
                                 <Button variant="primary" style={{backgroundColor: "#3BD186", width: "150px", marginRight: "50px",
-                                    fontSize: "20px", fontWeight: "bold"}} onClick={submitRating}>
-                                    Submit
+                                    fontSize: "20px", fontWeight: "bold"}} onClick={closePopup}>
+                                    Finish
                                 </Button>
                             </Row>
                         </Container>

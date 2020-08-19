@@ -8,7 +8,13 @@ import objective1wire from './objective1wire.png'
 import objective2wire from './objective2wire.png'
 import objective3wire from './objective3wire.png'
 import CircuitPopup from "../shared/modals/CircuitPopup";
-import {deleteCurrentComponent, setComponentsList, setCurrentLevel} from "./grid/Functionality";
+import {
+    deleteCurrentComponent, getComponents,
+    getCurrentComponent, getCurrentX,
+    setComponentsList,
+    setCurrentComponentsVoltage,
+    setCurrentLevel
+} from "./grid/Functionality";
 import {Slider, Typography, withStyles} from "@material-ui/core";
 import 'font-awesome/css/font-awesome.min.css';
 
@@ -35,7 +41,6 @@ class CircuitBuilding extends React.Component<any, any> {
             currentLevel: 1,
             showGrid: true,
             gridImages: [objective1wire, objective2wire, objective3wire],
-            selectedVoltage: 0
         };
     }
 
@@ -73,14 +78,16 @@ class CircuitBuilding extends React.Component<any, any> {
         }
 
         const handleVoltageChange = (event: any, newValue: number | number[]) => {
-            this.setState({selectedVoltage: newValue});
+            setCurrentComponentsVoltage(newValue as number);
         };
 
         const changeVoltage = (increase: boolean) => {
-            if (increase && (this.state.selectedVoltage+1) <= 10) {
-                this.setState({selectedVoltage: this.state.selectedVoltage + 1});
-            } else if(!increase && (this.state.selectedVoltage-1) >= 0) {
-                this.setState({selectedVoltage: this.state.selectedVoltage - 1});
+            if(getComponents().length > 0) {
+                if (increase && (getCurrentComponent().voltage + 1) <= 10) {
+                    setCurrentComponentsVoltage(getCurrentComponent().voltage + 1);
+                } else if (!increase && (getCurrentComponent().voltage - 1) >= 0) {
+                    setCurrentComponentsVoltage(getCurrentComponent().voltage - 1);
+                }
             }
         }
 
@@ -193,7 +200,7 @@ class CircuitBuilding extends React.Component<any, any> {
                                                     </Col>
                                                     <Col>
                                                         <VoltageSlider aria-labelledby="volt-slider" step={1}
-                                                                       marks min={0} max={10} value={this.state.selectedVoltage}
+                                                                       marks min={0} max={10} value={getCurrentX() !== -1 && getCurrentComponent().voltage}
                                                                        onChange={handleVoltageChange} />
                                                     </Col>
                                                     <Col className={"col-1"}>
@@ -201,7 +208,7 @@ class CircuitBuilding extends React.Component<any, any> {
                                                            onClick={() => changeVoltage(true)} />
                                                     </Col>
                                                     <Col className={"col-1"}>
-                                                        <p style={{color: "#29405B", fontWeight: "bold"}}>{this.state.selectedVoltage}v</p>
+                                                        <p style={{color: "#29405B", fontWeight: "bold"}}>{getCurrentX() !== -1 && getCurrentComponent().voltage}v</p>
                                                     </Col>
                                                 </Row>
                                             </Container>

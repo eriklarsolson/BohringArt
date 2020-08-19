@@ -1,14 +1,28 @@
 import React from "react";
 import LearnSection from "./LearnSection";
 import Header from "./Header";
+import RatePopup from "../shared/modals/Rate/RatePopup";
+import {ToastContainer} from "react-toastify";
 
-class Home extends React.Component {
+class Home extends React.Component<any, any> {
     render() {
         return (
             <>
-                    <Header />
+                <ToastContainer
+                    position="top-center"
+                    autoClose={3000}
+                    hideProgressBar={false}
+                    newestOnTop={false}
+                    closeOnClick
+                    rtl={false}
+                    pauseOnFocusLoss
+                    draggable
+                    pauseOnHover />
 
-                    <LearnSection />
+                {this.props.location.state.popupOpened && <RatePopup />}
+                <Header />
+
+                <LearnSection />
             </>
         )
     }
