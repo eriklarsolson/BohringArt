@@ -3,6 +3,7 @@ import { Container, Row, Col } from 'react-bootstrap'
 import hubble from './hubble.png';
 import './Home.scss';
 import {LearnSectionModel} from "../shared/models/LearnSectionModel";
+import Button from "react-bootstrap/Button";
 
 class LearnSection extends React.Component<any, any> {
     constructor(props: any) {
@@ -52,19 +53,31 @@ class LearnSection extends React.Component<any, any> {
                    <Row>
                        <Col className="col-sm-2" style={{color: "white"}}>
                             <Row style={{margin: "10px"}}>
-                                <div className={"number-block"} style={{width: "100px", height: "100px", backgroundColor: "#29405B"}} onMouseOver={() => this.changeLearnSection(0)}><h1>01</h1></div>
+                                <div className={"number-block"} style={{width: "100px", height: "100px",
+                                    backgroundColor: "#29405B"}} onMouseOver={() => this.changeLearnSection(0)}>
+                                    <h1>01</h1>
+                                </div>
                             </Row>
 
                            <Row style={{margin: "10px"}}>
-                               <div className={"number-block"} style={{width: "100px", height: "100px", backgroundColor: "#29405B"}} onMouseOver={() => this.changeLearnSection(1)}><h1>02</h1></div>
+                               <div className={"number-block"} style={{width: "100px", height: "100px",
+                                   backgroundColor: "#29405B"}} onMouseOver={() => this.changeLearnSection(1)}>
+                                   <h1>02</h1>
+                               </div>
                            </Row>
 
                            <Row style={{margin: "10px"}}>
-                               <div className={"number-block"} style={{width: "100px", height: "100px", backgroundColor: "#29405B"}} onMouseOver={() => this.changeLearnSection(2)}><h1>02</h1></div>
+                               <div className={"number-block"} style={{width: "100px", height: "100px",
+                                   backgroundColor: "#29405B"}} onMouseOver={() => this.changeLearnSection(2)}>
+                                   <h1>02</h1>
+                               </div>
                            </Row>
 
                            <Row style={{margin: "10px"}}>
-                               <div className={"number-block"} style={{width: "100px", height: "100px", backgroundColor: "#29405B"}} onMouseOver={() => this.changeLearnSection(3)}><h1>03</h1></div>
+                               <div className={"number-block"} style={{width: "100px", height: "100px",
+                                   backgroundColor: "#29405B"}} onMouseOver={() => this.changeLearnSection(3)}>
+                                   <h1>03</h1>
+                               </div>
                            </Row>
                        </Col>
 

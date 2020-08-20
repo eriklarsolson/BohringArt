@@ -13,6 +13,7 @@ import {Slider, Typography, withStyles} from "@material-ui/core";
 import ViewpointPopup from "../shared/modals/ViewpointPopup";
 import CircuitPopup from "../shared/modals/CircuitPopup";
 import MetalEngravingQuestionPopup from "../shared/modals/MetalEngravingQuestionPopup";
+import SizeSlider from "./SizeSlider";
 
 export const TOOL_LASER = 'laser';
 export const TOOL_OPTICS = 'optics';
@@ -82,6 +83,10 @@ class MetalEngraving extends React.Component<any, any> {
             }
         }
 
+        const changeSize = (event: any, newValue: any) => {
+            this.setState({size: newValue})
+        }
+
         const clearCanvas = () => {
             const canvas: HTMLCanvasElement = this.state.canvasRef.current;
             const context = canvas.getContext('2d');
@@ -113,34 +118,6 @@ class MetalEngraving extends React.Component<any, any> {
                 }
             }
         }
-
-        //TODO - This current styling breaks the slider (doesn't slide smoothly)
-        const SizeSlider = withStyles({
-            root: {
-                color: '#29405B',
-                height: 6,
-            },
-            thumb: {
-                height: 24,
-                width: 24,
-                backgroundColor: '#29405B',
-                border: '2px solid currentColor',
-                marginTop: -10,
-                marginLeft: -12,
-                '&:focus, &:hover, &$active': {
-                    boxShadow: 'inherit',
-                },
-            },
-            track: {
-                height: 6,
-                borderRadius: 2,
-                backgroundColor: '#29405B',
-            },
-            rail: {
-                height: 6,
-                borderRadius: 2,
-            },
-        })(Slider);
 
         return (
             <>
@@ -269,21 +246,15 @@ class MetalEngraving extends React.Component<any, any> {
                                     <Col className={"col-2"}>
                                         {/*TODO - Shapes of filters*/}
                                         <Typography id="width-slider" gutterBottom style={{fontWeight: "bold", color: "#29405B", fontSize: 18, float: "left"}}>
-                                            Width
+                                            {(this.state.tool === TOOL_LASER || this.state.tool === TOOL_ERASER) ? "Width" : "Size"}
                                         </Typography>
-                                        <SizeSlider aria-labelledby="width-slider" />
+                                        <SizeSlider aria-labelledby="width-slider" value={this.props.size}
+                                                    setSize={changeSize} />
 
-                                        <div className="options" style={{marginBottom:20}}>
-                                            <label htmlFor="">Size: </label>
-                                            <input min="1" max="40" type="range" value={this.props.size} onChange={(e) => this.setState({size: parseInt(e.target.value)})} />
-                                        </div>
-                                    </Col>
-
-                                    <Col className={"col-2"}>
-                                        <Typography id="size-slider" gutterBottom style={{fontWeight: "bold", color: "#29405B", fontSize: 18, float: "left"}}>
-                                            Size
-                                        </Typography>
-                                        <SizeSlider aria-labelledby="size-slider" />
+                                        {/*<div className="options" style={{marginBottom:20}}>*/}
+                                        {/*    <label htmlFor="">Size: </label>*/}
+                                        {/*    <input min="1" max="40" type="range" value={this.props.size} onChange={(e) => this.setState({size: parseInt(e.target.value)})} />*/}
+                                        {/*</div>*/}
                                     </Col>
                                 </Row>
                             </Container>
@@ -307,7 +278,7 @@ class MetalEngraving extends React.Component<any, any> {
                                         clipPath: "polygon(10px 0, 100% 0, 100% 100%, 15% 100%)"}} onClick={toggleViewpointPopup}>Viewpoint</Button>
                             </Row>
 
-                            <Row className={"justify-content-end"} style={{margin: 0, position: "absolute", bottom: "10%"}}>
+                            <Row className={"justify-content-end"} style={{margin: 0, position: "absolute", bottom: "5%"}}>
                                 <Col style={{padding: 0}}>
                                     <Button className={"green-button"} style={{float: "right", width: 200,
                                         clipPath: "polygon(0 0, 90% 0, 100% 100%, 10% 100%)"}}

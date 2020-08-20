@@ -4,6 +4,8 @@ import Sidebar from "./Sidebar";
 import Button from "react-bootstrap/Button";
 import 'font-awesome/css/font-awesome.min.css';
 import Popup from "../shared/modals/Popup";
+import leftarrow from "../stellar-cycle/leftarrow.png";
+import rightarrow from "../stellar-cycle/rightarrow.png";
 
 class RocketBuilding extends React.Component<any, any> {
     constructor(props: any) {
@@ -16,6 +18,38 @@ class RocketBuilding extends React.Component<any, any> {
     render() {
         const cyclePopup = () => {
             this.setState({popupOpened: !this.state.popupOpened})
+        }
+
+        const payloadArrow = (left: boolean) => {
+            if(left) {
+
+            } else {
+
+            }
+        }
+
+        const insterstageArrow = (left: boolean) => {
+            if(left) {
+
+            } else {
+
+            }
+        }
+
+        const sideBoostersArrow = (left: boolean) => {
+            if(left) {
+
+            } else {
+
+            }
+        }
+
+        const engineArrow = (left: boolean) => {
+            if(left) {
+
+            } else {
+
+            }
         }
 
         return (
@@ -54,12 +88,84 @@ class RocketBuilding extends React.Component<any, any> {
                                     </Col>
                                 </Row>
 
-                                <Row>
-                                    <Col className={"justify-content-center align-content-center"}>
-                                        <div style={{width: "500px", height: "500px", backgroundColor: "black", margin: "auto"}}>
+                                <Row style={{margin: 0}}>
+                                    <Container fluid>
+                                        {/*Payload*/}
+                                        <Row className={"justify-content-center"} style={{margin: 10}}>
+                                            <Col style={{display: "flex"}} className={"col-2 align-items-center justify-content-end"}>
+                                                <img className={"arrow"} src={leftarrow} style={{filter: "contrast(0%)"}}
+                                                     height="100px" alt={"left arrow"}
+                                                     onClick={() => payloadArrow(true)} />
+                                            </Col>
 
-                                        </div>
-                                    </Col>
+                                            <Col className={"col-4"}>
+                                                <div style={{width: 200, height: 200, backgroundColor: "black"}}></div>
+                                            </Col>
+
+                                            <Col style={{display: "flex"}} className={"col-2 align-items-center justify-content-start"}>
+                                                <img className={"arrow"} src={rightarrow} style={{filter: "contrast(0%)"}}
+                                                     height="100px" alt={"right arrow"}
+                                                     onClick={() => payloadArrow(false)} />
+                                            </Col>
+                                        </Row>
+
+                                        {/*Interstage*/}
+                                        <Row className={"justify-content-center"} style={{margin: 10}}>
+                                            <Col style={{display: "flex"}} className={"col-2 align-items-center justify-content-end"}>
+                                                <img className={"arrow"} src={leftarrow} style={{filter: "contrast(0%)"}}
+                                                     height="100px" alt={"left arrow"}
+                                                     onClick={() => insterstageArrow(true)} />
+                                            </Col>
+
+                                            <Col className={"col-4"}>
+                                                <div style={{width: 200, height: 200, backgroundColor: "black"}}></div>
+                                            </Col>
+
+                                            <Col style={{display: "flex"}} className={"col-2 align-items-center justify-content-start"}>
+                                                <img className={"arrow"} src={rightarrow} style={{filter: "contrast(0%)"}}
+                                                     height="100px" alt={"right arrow"}
+                                                     onClick={() => insterstageArrow(false)} />
+                                            </Col>
+                                        </Row>
+
+                                        {/*Side Boosters*/}
+                                        <Row className={"justify-content-center"} style={{margin: 10}}>
+                                            <Col style={{display: "flex"}} className={"col-2 align-items-center justify-content-end"}>
+                                                <img className={"arrow"} src={leftarrow} style={{filter: "contrast(0%)"}}
+                                                     height="100px" alt={"left arrow"}
+                                                     onClick={() => sideBoostersArrow(true)} />
+                                            </Col>
+
+                                            <Col className={"col-4"}>
+                                                <div style={{width: 200, height: 200, backgroundColor: "black"}}></div>
+                                            </Col>
+
+                                            <Col style={{display: "flex"}} className={"col-2 align-items-center justify-content-start"}>
+                                                <img className={"arrow"} src={rightarrow} style={{filter: "contrast(0%)"}}
+                                                     height="100px" alt={"right arrow"}
+                                                     onClick={() => sideBoostersArrow(false)} />
+                                            </Col>
+                                        </Row>
+
+                                        {/*Engine*/}
+                                        <Row className={"justify-content-center"} style={{margin: 10}}>
+                                            <Col style={{display: "flex"}} className={"col-2 align-items-center justify-content-end"}>
+                                                <img className={"arrow"} src={leftarrow} style={{filter: "contrast(0%)"}}
+                                                     height="100px" alt={"left arrow"}
+                                                     onClick={() => engineArrow(true)} />
+                                            </Col>
+
+                                            <Col className={"col-4"}>
+                                                <div style={{width: 200, height: 200, backgroundColor: "black"}}></div>
+                                            </Col>
+
+                                            <Col style={{display: "flex"}} className={"col-2 align-items-center justify-content-start"}>
+                                                <img className={"arrow"} src={rightarrow} style={{filter: "contrast(0%)"}}
+                                                     height="100px" alt={"right arrow"}
+                                                     onClick={() => engineArrow(false)} />
+                                            </Col>
+                                        </Row>
+                                    </Container>
                                 </Row>
 
                                 <Row style={{margin: "3%"}}>

@@ -5,25 +5,24 @@ class Sidebar extends React.Component {
     render() {
         return (
             <>
-               <Container style={{backgroundColor: "#29405B", margin: "0", padding: "0", height: "100%"}}>
-                   <h3 style={{paddingTop: "15px"}}>Modules</h3>
+               <Container style={{backgroundColor: "#29405B", margin: 0, height: "100%", textAlign: "left",
+                   clipPath: "polygon(0 0, 80% 0, 100% 100%, 0 100%)", padding: 25}}>
+                   <h3 style={{paddingTop: "15px"}}>STATS</h3>
                    <Row>
                        <Col>
+                           <h5>Total Mass</h5>
                        </Col>
                    </Row>
 
                    <Row>
                        <Col>
+                           <h5>Air Resistance</h5>
                        </Col>
                    </Row>
 
                    <Row>
                        <Col>
-                       </Col>
-                   </Row>
-
-                   <Row>
-                       <Col>
+                           <h5>Fuel Capacity</h5>
                        </Col>
                    </Row>
                </Container>

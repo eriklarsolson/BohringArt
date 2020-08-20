@@ -19,6 +19,7 @@ import './StellarCycle.scss'
 import {getIndex} from "../circuilt-building/grid/Functionality";
 import {Slider, withStyles} from "@material-ui/core";
 import Popup from "../shared/modals/Popup";
+import TimelineSlider from "./TimelineSlider";
 
 class ObjectPage extends React.Component<any, any> {
     constructor(props: any) {
@@ -35,6 +36,7 @@ class ObjectPage extends React.Component<any, any> {
                         temperatureValue: 20,
                         sizeValue: 5,
                         massValue: 10,
+                        timeValue: 20,
                     },
                     {
                         title: "Average Star",
@@ -42,6 +44,7 @@ class ObjectPage extends React.Component<any, any> {
                         temperatureValue: 0,
                         sizeValue: 0,
                         massValue: 0,
+                        timeValue: 40,
                     },
                     {
                         title: "Red Giant",
@@ -49,6 +52,7 @@ class ObjectPage extends React.Component<any, any> {
                         temperatureValue: 0,
                         sizeValue: 0,
                         massValue: 0,
+                        timeValue: 60,
                     },
                     {
                         title: "Planetary Nebula",
@@ -56,6 +60,7 @@ class ObjectPage extends React.Component<any, any> {
                         temperatureValue: 0,
                         sizeValue: 0,
                         massValue: 0,
+                        timeValue: 80,
                     },
                     {
                         title: "White Dwarf",
@@ -63,6 +68,7 @@ class ObjectPage extends React.Component<any, any> {
                         temperatureValue: 0,
                         sizeValue: 0,
                         massValue: 0,
+                        timeValue: 100
                     }
                 ],
                 [
@@ -72,6 +78,7 @@ class ObjectPage extends React.Component<any, any> {
                         temperatureValue: 0,
                         sizeValue: 0,
                         massValue: 0,
+                        timeValue: 20,
                     },
                     {
                         title: "Massive Star",
@@ -79,6 +86,7 @@ class ObjectPage extends React.Component<any, any> {
                         temperatureValue: 0,
                         sizeValue: 0,
                         massValue: 0,
+                        timeValue: 40,
                     },
                     {
                         title: "Red Supergiant",
@@ -86,6 +94,7 @@ class ObjectPage extends React.Component<any, any> {
                         temperatureValue: 0,
                         sizeValue: 0,
                         massValue: 0,
+                        timeValue: 60,
                     },
                     {
                         title: "Supernova",
@@ -93,6 +102,7 @@ class ObjectPage extends React.Component<any, any> {
                         temperatureValue: 0,
                         sizeValue: 0,
                         massValue: 0,
+                        timeValue: 80,
                     },
                     {
                         title: "Neutron Star",
@@ -100,6 +110,7 @@ class ObjectPage extends React.Component<any, any> {
                         temperatureValue: 0,
                         sizeValue: 0,
                         massValue: 0,
+                        timeValue: 100,
                     },
                     {
                         title: "Black Hole",
@@ -107,6 +118,7 @@ class ObjectPage extends React.Component<any, any> {
                         temperatureValue: 0,
                         sizeValue: 0,
                         massValue: 0,
+                        timeValue: 120,
                     }
                 ]
             ]
@@ -142,12 +154,15 @@ class ObjectPage extends React.Component<any, any> {
 
         const handleMassChange = (event: { target: { value: any; }; }) => {
             if(event.target.value === "Average") {
-                this.setState({massClass: 0, index: 0});
+                this.setState({massClass: 0});
             } else {
-                this.setState({massClass: 1, index: 0});
+                this.setState({massClass: 1});
             }
+            this.setState({index: 0});
         };
 
+        //TODO - Currently this lets you change the values of each stellar object (next 3 functions). Instead, it
+        // should find the closest object to what you change them to and display that stellar object (not update their values)
         const changeTemperature = (event: any, newValue: any) => {
             let objects = [...this.state.stellarObjects];
             let object = {...objects[this.state.massClass][this.state.index]};
@@ -172,6 +187,14 @@ class ObjectPage extends React.Component<any, any> {
             this.setState({stellarObjects: objects});
         }
 
+        const changeTime = (event: any, newValue: any) => {
+            const samePlaceComponents = this.state.stellarObjects[this.state.massClass].filter((object: { timeValue: any; }) => object.timeValue === newValue);
+            if (samePlaceComponents.length > 0) {
+                const index = getIndex(samePlaceComponents[0], this.state.stellarObjects[this.state.massClass]);
+                this.setState({index: index})
+            }
+        }
+
         const leftArrow = () => {
             if(this.state.index - 1 === -1) {
                 this.setState({index: this.state.stellarObjects[this.state.massClass].length - 1})
@@ -188,36 +211,74 @@ class ObjectPage extends React.Component<any, any> {
             }
         }
 
-        //TODO - This current styling breaks the slider (doesn't slide smoothly)
-        const TimelineSlider = withStyles({
-            root: {
-                color: 'white',
-                height: 30,
-            },
-            thumb: {
-                height: 30,
-                width: 10,
-                backgroundColor: '#fff',
-                borderRadius: 0,
-                marginTop: 0,
-                '&:focus, &:hover, &$active': {
-                    boxShadow: 'inherit',
+        let marks: any[]
+        if(this.state.massClass === 0) {
+            marks = [
+                {
+                    value: 20,
+                    label: '0 Years',
                 },
-            },
-            track: {
-                height: 30,
-            },
-            rail: {
-                height: 30,
-                border: "7px solid #29405B"
-            },
-        })(Slider);
+                {
+                    value: 40,
+                    label: '150 Years',
+                },
+                {
+                    value: 60,
+                    label: '600 Years',
+                },
+                {
+                    value: 80,
+                    label: '1000 Years',
+                },
+                {
+                    value: 100,
+                    label: '10000 Years',
+                },
+            ];
+        }else {
+            marks = [
+                {
+                    value: 20,
+                    label: '0 Years',
+                },
+                {
+                    value: 40,
+                    label: '150 Years',
+                },
+                {
+                    value: 60,
+                    label: '600 Years',
+                },
+                {
+                    value: 80,
+                    label: '1000 Years',
+                },
+                {
+                    value: 100,
+                    label: '10000 Years',
+                },
+                {
+                    value: 120,
+                    label: '100000 Years',
+                },
+            ];
+        }
+        let max = 100
+        if(marks.length === 6) {
+            max = 120;
+        }
 
         return (
             <>
                 <Popup title={"04 Stellar Life Cycle"}
                        open={this.state.popupOpened}
-                       description={"In this final activity, use the sliders to see how mass, temperature, and size are related as you move through the stages of the stellar life cycle. You may choose between using a star of average mass (like the sun) or a supermassive star, mass is the main variable used to determine which stages the star will go through and how long its lifespan will be. When viewing a stage, click the MORE INFO button to see an in depth description. You can also click on the ALL STAGES button to go back to the stellar life cycle diagram. Once you are finished exploring, click on the COMPLETE button to close out the activity."}
+                       description={"In this final activity, use the sliders to see how mass, temperature, and size are " +
+                       "related as you move through the stages of the stellar life cycle. You may choose between using a " +
+                       "star of average mass (like the sun) or a supermassive star, mass is the main variable used to " +
+                       "determine which stages the star will go through and how long its lifespan will be. When viewing " +
+                       "a stage, click the MORE INFO button to see an in depth description. You can also click on the " +
+                       "ALL STAGES button to go back to the stellar life cycle diagram. Once you are finished exploring, " +
+                       "click on the COMPLETE button to close out the activity."}
                        closePopup={cyclePopup} />
 
                 <Container fluid className={"d-flex h-100 flex-column"} style={{margin: 0, padding: 0, backgroundImage:`url(${stellarBackground})`}}>
@@ -284,19 +345,17 @@ class ObjectPage extends React.Component<any, any> {
 
                                 <Row>
                                     <Col>
-                                        <h3 style={{color: "white", fontWeight: "bold", marginTop: "20px"}}>
+                                        <h2 style={{color: "white", fontWeight: "bold", marginTop: 5}}>
                                             {this.state.stellarObjects[this.state.massClass][this.state.index].title}
-                                        </h3>
+                                        </h2>
                                     </Col>
                                 </Row>
 
                                 <Row style={{margin: "3%"}}>
-                                    <Col className={"col-4"}>
-
-                                    </Col>
-
-                                    <Col className={"col-4 justify-content-center align-content-center"}>
-                                        <TimelineSlider />
+                                    <Col className={"ml-auto col-4 justify-content-center align-content-center"}>
+                                        <TimelineSlider value={this.state.stellarObjects[this.state.massClass]
+                                            [this.state.index].timeValue} marks={marks} changeTime={changeTime}
+                                                        children={null} max={max} />
                                     </Col>
 
                                     <Col className={"col-4 justify-content-center align-content-center"}>
