@@ -6,6 +6,8 @@ import satellite from './satellite.png'
 import {TelescopeGridContainer} from "./grid/TelescopeGridContainer";
 import 'font-awesome/css/font-awesome.min.css';
 import TelescopeQuestionPopup from "../shared/modals/TelescopeQuestionPopup";
+import {Animation} from "./Animation";
+import "./Telescope.scss"
 
 class TelescopeActivity extends React.Component<any, any> {
     constructor(props: any) {
@@ -26,8 +28,8 @@ class TelescopeActivity extends React.Component<any, any> {
                 <TelescopeQuestionPopup open={this.state.questionPopupOpened} closePopup={cycleQuestionPopup} />
 
                 <Container fluid className={"d-flex h-100 flex-column"} style={{margin: "0", padding: "0", backgroundColor: "#F8EDDD"}}>
-                    <Row className={"flex-grow-1"}>
-                        <Col className={"col-2 vh-100"} style={{color: "white"}}>
+                    <Row className={"flex-grow-1"} style={{margin: 0}}>
+                        <Col className={"col-2 vh-100"} style={{padding: 0, color: "white"}}>
                             <Sidebar />
                         </Col>
 
@@ -57,43 +59,51 @@ class TelescopeActivity extends React.Component<any, any> {
                                     </Col>
                                 </Row>
 
-                                <Row>
-                                    <Col className={"justify-content-center align-content-center"}>
+                                <Row style={{margin: 0}}>
+                                    <Col className={"justify-content-center align-content-center"} style={{padding: 0}}>
                                         <div style={{width: "1000px", height: "400px", backgroundImage:`url(${satellite})`, margin: "auto"}}>
                                             <TelescopeGridContainer />
                                         </div>
                                     </Col>
                                 </Row>
 
-                                <Row style={{margin: "20px"}}>
-                                    <Col className={"justify-content-center align-content-center"}>
+                                <Row style={{margin: 0, marginTop: 15, marginBottom: 15}}>
+                                    <Col className={"justify-content-center align-content-center"} style={{padding: 0}}>
                                        Focus Bar
                                     </Col>
                                 </Row>
 
-                                <Row style={{margin: "3%"}}>
-                                    <Col>
+                                <Row className="justify-content-center" style={{margin: "3%"}}>
+                                    <Col className={"col-3"} style={{padding: 0}}>
                                         <Button style={{float: "left", backgroundColor: "transparent", fontSize: "20px",
                                             fontWeight: "bold"}}>
                                             <i className="fa fa-trash-o" style={{color: "black"}} />
                                         </Button>
                                     </Col>
 
-                                    <Col>
+                                    <Col className={"col-3 ml-auto mr-auto"} style={{padding: 0}}>
+                                        <Button className={"green-button"} style={{float: "right", width: 200,
+                                            clipPath: "polygon(0 0, 90% 0, 100% 100%, 10% 100%)"}}>
+                                            Run Simulation
+                                        </Button>
+                                    </Col>
+
+                                    <Col className={"ml-auto col-3"} style={{padding: 0}}>
                                         <Button className={"green-button"} style={{float: "right", width: 200,
                                             clipPath: "polygon(0 0, 90% 0, 100% 100%, 10% 100%)"}}
-                                                onClick={() => this.props.history.push('/activity/rocket-building')}>Next</Button>
+                                                onClick={() => this.props.history.push('/activity/rocket-building')}>
+                                            Next
+                                        </Button>
                                     </Col>
+                                </Row>
+
+                                <Row style={{margin: 0}} className={"justify-content-center animation-container"}>
+                                    <Animation key={1} />
                                 </Row>
                             </Container>
                         </Col>
                     </Row>
                 </Container>
-
-                {/*TODO - animation playground*/}
-                {/*<div>*/}
-
-                {/*</div>*/}
             </>
         )
     }

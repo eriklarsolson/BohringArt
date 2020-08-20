@@ -65,7 +65,7 @@ class Sidebar extends React.Component<any, any> {
                        </Row>
                    }
 
-                    <Row className={"justify-content-center"} style={{margin: 0, position: "absolute", bottom: "10%"}}>
+                    <Row className={"justify-content-center"} style={{margin: 0}}>
                         <Col className={"col-6"}>
                             <Button style={{backgroundColor: "#F8EDDD", width: "150px", color: "black",
                                 fontSize: "18px", clipPath: "polygon(0 0, 90% 0, 100% 100%, 10% 100%)"}}

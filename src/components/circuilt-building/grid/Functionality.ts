@@ -14,6 +14,7 @@ export function getComponents(): any {
 }
 
 export function getCurrentComponent(): any {
+    console.log(components[currentComponent].voltage)
     return components[currentComponent];
 }
 
@@ -37,9 +38,20 @@ export function getPassed() {
 
 export function setCurrentComponentsVoltage(voltage: number) {
     if (components.length > 0) {
+        console.log(voltage)
         components[currentComponent].voltage = voltage;
+        console.log(components[currentComponent].voltage)
         emitChange();
     }
+}
+export function getTotalVoltage(): number {
+    let total = 0;
+
+    for(var i = 0; i < components.length; i++) {
+        total += components[i].voltage
+    }
+
+    return total;
 }
 
 export function setCurrentLevel(newLevel: number) {

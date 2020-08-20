@@ -37,7 +37,9 @@ export const GridSquare: React.FC<GridSquareProps> = ({x, y, children, showGrid}
     const clickGridSquare = () => {
         setCurrentComponent(x, y)
 
-        setClicked(true)
+        if(children.length > 0) {
+            setClicked(true)
+        }
     }
 
     //TODO - Doesn't deselect other squares

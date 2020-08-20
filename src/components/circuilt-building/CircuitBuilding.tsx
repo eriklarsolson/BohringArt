@@ -41,10 +41,15 @@ class CircuitBuilding extends React.Component<any, any> {
             currentLevel: 1,
             showGrid: true,
             gridImages: [objective1wire, objective2wire, objective3wire],
+            currentVoltage: 0
         };
     }
 
     render() {
+        const setCurrentVoltage = (voltage: number) => {
+            this.setState({currentVoltage: voltage});
+        }
+
         const goToNextLevel = () => {
             const nextLevel = this.state.currentLevel + 1;
 
@@ -77,20 +82,6 @@ class CircuitBuilding extends React.Component<any, any> {
             cyclePopup()
         }
 
-        const handleVoltageChange = (event: any, newValue: number | number[]) => {
-            setCurrentComponentsVoltage(newValue as number);
-        };
-
-        const changeVoltage = (increase: boolean) => {
-            if(getComponents().length > 0) {
-                if (increase && (getCurrentComponent().voltage + 1) <= 10) {
-                    setCurrentComponentsVoltage(getCurrentComponent().voltage + 1);
-                } else if (!increase && (getCurrentComponent().voltage - 1) >= 0) {
-                    setCurrentComponentsVoltage(getCurrentComponent().voltage - 1);
-                }
-            }
-        }
-
         const cyclePopup = () => {
             this.setState({popupOpened: !this.state.popupOpened})
         }
@@ -102,34 +93,6 @@ class CircuitBuilding extends React.Component<any, any> {
         const cycleGrid = () => {
             this.setState({showGrid: !this.state.showGrid})
         }
-
-        //TODO - This current styling breaks the slider (doesn't slide smoothly)
-        const VoltageSlider = withStyles({
-            root: {
-                color: '#29405B',
-                height: 6,
-            },
-            thumb: {
-                height: 24,
-                width: 24,
-                backgroundColor: '#29405B',
-                border: '2px solid currentColor',
-                marginTop: -10,
-                marginLeft: -12,
-                '&:focus, &:hover, &$active': {
-                    boxShadow: 'inherit',
-                },
-            },
-            track: {
-                height: 6,
-                borderRadius: 2,
-                backgroundColor: '#29405B',
-            },
-            rail: {
-                height: 6,
-                borderRadius: 2,
-            },
-        })(Slider);
 
         return (
             <>
@@ -177,7 +140,7 @@ class CircuitBuilding extends React.Component<any, any> {
                                     <Row style={{margin: "0"}}>
                                         <Col>
                                             <SixGridContainer objectiveImage={this.state.gridImages[this.state.currentLevel - 1]}
-                                                              showGrid={this.state.showGrid}  />
+                                                              showGrid={this.state.showGrid} />
                                         </Col>
                                     </Row>
 
@@ -188,31 +151,7 @@ class CircuitBuilding extends React.Component<any, any> {
                                         {/*    fa-spin */}
                                         </Col>
 
-                                        <Col className={"col-2 justify-content-center align-content center"}>
-                                            <Typography id="volt-slider" gutterBottom style={{color: "#29405B"}}>
-                                                Volt Selector
-                                            </Typography>
-                                            <Container fluid>
-                                                <Row>
-                                                    <Col className={"col-1"}>
-                                                        <i className="fa fa-minus" style={{cursor: "pointer", color: "#29405B"}}
-                                                           onClick={() => changeVoltage(false)} />
-                                                    </Col>
-                                                    <Col>
-                                                        <VoltageSlider aria-labelledby="volt-slider" step={1}
-                                                                       marks min={0} max={10} value={getCurrentX() !== -1 && getCurrentComponent().voltage}
-                                                                       onChange={handleVoltageChange} />
-                                                    </Col>
-                                                    <Col className={"col-1"}>
-                                                        <i className="fa fa-plus" style={{cursor: "pointer", color: "#29405B"}}
-                                                           onClick={() => changeVoltage(true)} />
-                                                    </Col>
-                                                    <Col className={"col-1"}>
-                                                        <p style={{color: "#29405B", fontWeight: "bold"}}>{getCurrentX() !== -1 && getCurrentComponent().voltage}v</p>
-                                                    </Col>
-                                                </Row>
-                                            </Container>
-                                        </Col>
+
 
                                         <Col className={"ml-auto col-2"}>
                                             <Button className={"green-button"} style={{float: "right", width: 200,

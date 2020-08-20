@@ -15,6 +15,7 @@ import redsupergiant from './images/redsupergiant.png';
 import supernova from './images/supernova.png';
 import whitedwarf from './images/whitedwarf.png';
 import 'font-awesome/css/font-awesome.min.css';
+import {Animation} from "./Animation";
 
 class StellarCycle extends React.Component<any, any> {
     render() {
@@ -35,6 +36,10 @@ class StellarCycle extends React.Component<any, any> {
                     </Row>
 
                     <Row style={{margin: 0}}>
+                        <div style={{position: "absolute", top: "10%", left: "5%", margin: 0, width: "100%", height: "1000px"}}>
+                            <Animation />
+                        </div>
+
                         <Col className={"col-3 justify-content-center align-content-center stellar-circle"} style={{padding: "0"}}>
                             <Container fluid  onClick={() => goToObjectPage("Nebula")}>
                                 <Row>

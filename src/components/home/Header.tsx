@@ -26,8 +26,9 @@ class Header extends React.Component {
                             href="/activity/circuit-building"
                             variant="primary"
                             type="submit"
-                            className="btn"
-                            style={{backgroundColor: "#3BD186", width: "30%"}}>
+                            className={"btn green-button"}
+                            style={{width: "30%",
+                            clipPath: "polygon(0 0, 90% 0, 100% 100%, 10% 100%)"}}>
                             Start
                         </Button>
                     </Row>
