@@ -16,8 +16,78 @@ import supernova from './images/supernova.png';
 import whitedwarf from './images/whitedwarf.png';
 import 'font-awesome/css/font-awesome.min.css';
 import {Animation} from "./Animation";
+import {getIndex} from "../circuilt-building/grid/Functionality";
 
 class StellarCycle extends React.Component<any, any> {
+    constructor(props: any) {
+        super(props);
+
+        this.state = {
+            title: undefined,
+            paths: [
+                {
+                    title: "Nebula",
+                    path: "M143.79,232.78,150.79,250.78,500.79,200.78,1349.79"
+                },
+                {
+                    title: "Average Star",
+                    path: "M143.79,232.78,150.79,250.78,500.79,200.78,1349.79"
+                },
+                {
+                    title: "Red Giant",
+                    path: "M143.79,232.78,150.79,250.78,800.79,200.78,1349.79"
+                },
+                {
+                    title: "Planetary Nebula",
+                    path: "M143.79,232.78,150.79,250.78,1000.79,200.78,1349.79"
+                },
+                {
+                    title: "White Dwarf",
+                    path: "M143.79,232.78,150.79,250.78,1200.79,200.78,1349.79,200.78"
+                },
+                {
+                    title: "Massive Star",
+                    path: "M143.79,232.78,339.79,431.78,500.79,444.78,1349.79"
+                },
+                {
+                    title: "Red Supergiant",
+                    path: "M143.79,232.78,339.79,431.78,800.79,444.78,1349.79"
+                },
+                {
+                    title: "Supernova",
+                    path: "M143.79,232.78,339.79,431.78,1000.79,444.78,1349.79"
+                },
+                {
+                    title: "Neutron Star",
+                    path: "M143.79,232.78,339.79,431.78,1200.79,444.78,1349.79,400.78"
+                },
+                {
+                    title: "Black Hole",
+                    path: "M143.79,232.78,339.79,431.78,1195.79,444.78,1349.79,551.78"
+                }
+            ],
+            pathIndex: 0
+        }
+    }
+
+    componentDidMount() {
+        //TODO - This is not working fully, check below print statement to understand
+        if(this.props.location.state !== undefined) {
+            const loadedTitle = this.props.location.state.title;
+
+            let samePaths = this.state.paths.filter((object: { title: any; path: any; }) => object.title === loadedTitle);
+
+            if (samePaths.length > 0) {
+                const index = getIndex(samePaths[0], this.state.paths);
+                this.setState({pathIndex: index, title: loadedTitle})
+            }
+        } else {
+            this.setState({pathIndex: 0, title: "Nebula"})
+        }
+
+        console.log(this.state.paths[this.state.pathIndex])
+    }
+
     render() {
         const goToObjectPage = (title: string) => {
             this.props.history.push({
@@ -29,15 +99,20 @@ class StellarCycle extends React.Component<any, any> {
         return (
             <>
                 <Container fluid className={"d-flex h-100 flex-column"} style={{margin: "0", padding: "0", backgroundImage:`url(${stellarBackground})`}}>
-                    <Row style={{margin: "3%"}}>
+                    <Row style={{margin: "3% 3% 0 3%"}}>
                         <Col>
                             <p style={{color: "white", fontSize: "28px", fontWeight: "bold"}}>Stellar Life Cycle</p>
+                        </Col>
+                    </Row>
+                    <Row style={{margin: "0 0 50px 0"}}>
+                        <Col>
+                            <p style={{color: "white", fontSize: "18px", fontWeight: "bold"}}>{this.state.title}</p>
                         </Col>
                     </Row>
 
                     <Row style={{margin: 0}}>
                         <div style={{position: "absolute", top: "10%", left: "5%", margin: 0, width: "100%", height: "1000px"}}>
-                            <Animation />
+                            <Animation path={this.state.paths[this.state.pathIndex].path} />
                         </div>
 
                         <Col className={"col-3 justify-content-center align-content-center stellar-circle"} style={{padding: "0"}}>
@@ -59,7 +134,7 @@ class StellarCycle extends React.Component<any, any> {
                         <Col style={{padding: "0"}}>
                             <Row className={"justify-content-center align-content-center"} style={{margin: 0}}>
                                 <Col className={"col-3 justify-content-center align-content-center  stellar-circle"} style={{padding: "0"}}>
-                                    <Container fluid  onClick={() => goToObjectPage("Avg Star")}>
+                                    <Container fluid  onClick={() => goToObjectPage("Average Star")}>
                                         <Row>
                                             <Col>
                                                 <img src={avgstar} width={"50%"}/>

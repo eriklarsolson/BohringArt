@@ -102,7 +102,7 @@ class ObjectPage extends React.Component<any, any> {
                         massValue: 0,
                     },
                     {
-                        title: "Stellar Black Hole",
+                        title: "Black Hole",
                         image: blackhole,
                         temperatureValue: 0,
                         sizeValue: 0,
@@ -290,7 +290,10 @@ class ObjectPage extends React.Component<any, any> {
                                     <Col className={"col-4 justify-content-center align-content-center"}>
                                         <Button className={"green-button"} style={{float: "right", width: 200,
                                             clipPath: "polygon(0 0, 90% 0, 100% 100%, 10% 100%)"}}
-                                                onClick={() => this.props.history.push('/activity/stellar-cycle')}>All Stages</Button>
+                                                onClick={() => this.props.history.push({
+                                                    pathname: '/activity/stellar-cycle',
+                                                    state: { title: this.state.stellarObjects[this.state.massClass][this.state.index].title }
+                                                })}>All Stages</Button>
                                     </Col>
                                 </Row>
                             </Container>
