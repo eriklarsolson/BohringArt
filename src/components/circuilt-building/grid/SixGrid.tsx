@@ -11,6 +11,7 @@ import {setCurrentComponent} from "./Functionality";
 export interface GridProps {
     components: any,
     showGrid: boolean,
+    currentComponent: any
 }
 
 /** Styling properties applied to the board element */
@@ -27,7 +28,7 @@ const squareStyle: React.CSSProperties = { width: '16.65%', height: '16.65%' }
  * The chessboard component
  * @param props The react props
  */
-export const SixGrid: React.FC<GridProps> = ({components, showGrid}) => {
+export const SixGrid: React.FC<GridProps> = ({components, showGrid, currentComponent}) => {
 
     function renderSquare(i: number) {
         const x = i % 6
@@ -35,7 +36,7 @@ export const SixGrid: React.FC<GridProps> = ({components, showGrid}) => {
 
         return (
             <div key={i} style={squareStyle}>
-                <GridSquare showGrid={showGrid} x={x} y={y} components={components}>
+                <GridSquare showGrid={showGrid} x={x} y={y} components={components} currentComponent={currentComponent}>
                     {Object.keys(components).map((key, index) =>
                         renderPiece(x, y, components[key].x, components[key].y, components[key].type,))}
                 </GridSquare>

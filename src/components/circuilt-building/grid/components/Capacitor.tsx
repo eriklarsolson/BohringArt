@@ -13,7 +13,6 @@ export interface ComponentProps {
 }
 
 export const Capacitor: React.FC<ComponentProps> = ({oneGridStyling}) => {
-    const [rotateDeg, setRotateDeg] = useState<number>(0)
     const [toggleView, setToggleView] = useState<boolean>(false)
 
     const setMonitor = (monitor: any) => {
@@ -27,14 +26,6 @@ export const Capacitor: React.FC<ComponentProps> = ({oneGridStyling}) => {
         }),
 
     })
-
-    const clickRotate = () => {
-        setRotateDeg(rotateDeg+90)
-        style = {
-            transform: "rotate(" + rotateDeg + "deg)",
-            cursor: 'move',
-        }
-    }
 
     let gridStyling: React.CSSProperties  = {};
     if(!oneGridStyling) {
@@ -50,7 +41,6 @@ export const Capacitor: React.FC<ComponentProps> = ({oneGridStyling}) => {
     };
 
     const toggleViewAction = () => {
-        console.log("test")
         setToggleView(!toggleView)
 
         if(toggleView) {
@@ -70,12 +60,6 @@ export const Capacitor: React.FC<ComponentProps> = ({oneGridStyling}) => {
         <>
             <DragPreviewImage connect={preview} src={capacitor} />
             <Container fluid style={{...gridStyling}}>
-
-                {!oneGridStyling &&
-                <div style={{...toggleStyling}}>
-                    <img src={rotate} onClick={clickRotate} />
-                </div>
-                }
                 <Row className={"justify-content-center align-content-center"}>
                     <div className={"col"} ref={drag}
                          style={{

@@ -32,9 +32,9 @@ class ObjectPage extends React.Component<any, any> {
                     {
                         title: "Nebula",
                         image: nebula,
-                        temperatureValue: 0,
-                        sizeValue: 0,
-                        massValue: 0,
+                        temperatureValue: 20,
+                        sizeValue: 5,
+                        massValue: 10,
                     },
                     {
                         title: "Average Star",
@@ -149,15 +149,27 @@ class ObjectPage extends React.Component<any, any> {
         };
 
         const changeTemperature = (event: any, newValue: any) => {
-            this.setState({temperatureValue: newValue})
+            let objects = [...this.state.stellarObjects];
+            let object = {...objects[this.state.massClass][this.state.index]};
+            object.temperatureValue = newValue;
+            objects[this.state.massClass][this.state.index] = object;
+            this.setState({stellarObjects: objects});
         }
 
         const changeSize = (event: any, newValue: any) => {
-            this.setState({sizeValue: newValue})
+            let objects = [...this.state.stellarObjects];
+            let object = {...objects[this.state.massClass][this.state.index]};
+            object.sizeValue = newValue;
+            objects[this.state.massClass][this.state.index] = object;
+            this.setState({stellarObjects: objects});
         }
 
         const changeMass = (event: any, newValue: any) => {
-            this.setState({massValue: newValue})
+            let objects = [...this.state.stellarObjects];
+            let object = {...objects[this.state.massClass][this.state.index]};
+            object.massValue = newValue;
+            objects[this.state.massClass][this.state.index] = object;
+            this.setState({stellarObjects: objects});
         }
 
         const leftArrow = () => {
