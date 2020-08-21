@@ -4,9 +4,12 @@ import {Concave} from "./components/Concave";
 import {Viewpoint} from "./components/Viewpoint";
 import {FlatMirror} from "./components/FlatMirror";
 import {Convex} from "./components/Convex";
+import {TelescopeTypes} from "../../shared/models/TelescopeTypes";
 
 export interface GridProps {
     components: any,
+    currentComponent: any
+    showGrid: boolean,
 }
 
 /** Styling properties applied to the board element */
@@ -17,22 +20,22 @@ const boardStyle: React.CSSProperties = {
     flexWrap: 'wrap',
 }
 /** Styling properties applied to each square element */
-const squareStyle: React.CSSProperties = { width: '10%', height: '100%' }
+const squareStyle: React.CSSProperties = { width: '20%', height: '100%' }
 
 /**
  * The chessboard component
  * @param props The react props
  */
-export const TelescopeGrid: React.FC<GridProps> = ({components}) => {
+export const TelescopeGrid: React.FC<GridProps> = ({components, currentComponent, showGrid}) => {
 
     function renderSquare(i: number) {
-        const x = i % 10
+        const x = i % 5
         const y = Math.floor(i)
 
 
         return (
             <div key={i} style={squareStyle}>
-                <GridSquare x={x} y={y} components={components}>
+                <GridSquare x={x} y={y} components={components} currentComponent={currentComponent} showGrid={showGrid}>
                     {Object.keys(components).map((key, index) =>
                         renderPiece(x, y, components[key].x, components[key].y, components[key].type,))}
                 </GridSquare>
@@ -44,13 +47,13 @@ export const TelescopeGrid: React.FC<GridProps> = ({components}) => {
         const isCompHere = x === compX && y === compY
 
         switch (type) {
-            case "concave":
+            case TelescopeTypes.CONCAVE:
                 return isCompHere ? <Concave oneGridStyling={false} /> : null
-            case "viewpoint":
+            case TelescopeTypes.VIEWPOINT:
                 return isCompHere ? <Viewpoint oneGridStyling={false} /> : null
-            case "convex":
+            case TelescopeTypes.CONVEX:
                 return isCompHere ? <Convex oneGridStyling={false} /> : null
-            case "flatmirror":
+            case TelescopeTypes.FLATMIRROR:
                 return isCompHere ? <FlatMirror oneGridStyling={false} /> : null
             default:
                 return isCompHere ? <Concave oneGridStyling={false} /> : null
@@ -58,7 +61,7 @@ export const TelescopeGrid: React.FC<GridProps> = ({components}) => {
     }
 
     const squares = []
-    for (let i = 0; i < 10; i += 1) {
+    for (let i = 0; i < 5; i += 1) {
         squares.push(renderSquare(i))
     }
 

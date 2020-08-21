@@ -19,6 +19,10 @@ type Coordinate = {
     y: number;
 };
 
+//TODO
+// https://www.dummies.com/web-design-development/site-development/how-to-use-a-pattern-as-a-fill-or-stroke-with-the-html5-canvas-tag/
+// Add metal engrave pattern to line
+
 const Canvas = ({ width, height, canvasRef, tool, color, size, toolActive }: CanvasProps) => {
     const [isPainting, setIsPainting] = useState(false);
     const [mousePosition, setMousePosition] = useState<Coordinate | undefined>(undefined);

@@ -24,12 +24,12 @@ export const FlatMirror: React.FC<ComponentProps> = ({oneGridStyling}) => {
 
     })
 
-    let gridStyling: React.CSSProperties  = {};
+    let gridStyling: React.CSSProperties  = {height: "100%"};
     const setGridStyling = () => {
         if(!oneGridStyling) {
             gridStyling = {
                 padding: 0,
-                marginTop: 5
+                height: "100%"
             }
         }
     }
@@ -40,7 +40,7 @@ export const FlatMirror: React.FC<ComponentProps> = ({oneGridStyling}) => {
             <DragPreviewImage connect={preview} src={battery} />
             <Container fluid style={{...gridStyling}}>
 
-                <Row className={"justify-content-center align-content-center"}>
+                <Row className={"justify-content-center align-content-center"} style={{height: "100%"}}>
                     <Col ref={drag}
                          style={{
                              ...style,

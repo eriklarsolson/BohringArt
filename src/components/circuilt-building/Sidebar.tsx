@@ -66,9 +66,9 @@ class Sidebar extends React.Component<any, any> {
                    }
 
                     <Row className={"justify-content-center"} style={{margin: 0}}>
-                        <Col className={"col-6"}>
+                        <Col className={"col-7"}>
                             <Button style={{backgroundColor: "#F8EDDD", width: "150px", color: "black",
-                                fontSize: "18px", clipPath: "polygon(0 0, 90% 0, 100% 100%, 10% 100%)"}}
+                                fontSize: "18px", clipPath: "polygon(0 0, 90% 0, 100% 100%, 0 100%)", float: "left"}}
                                     onClick={() => setComponentsList([])}>Reset</Button>
                         </Col>
                     </Row>

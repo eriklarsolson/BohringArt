@@ -8,19 +8,40 @@ import 'font-awesome/css/font-awesome.min.css';
 import TelescopeQuestionPopup from "../shared/modals/TelescopeQuestionPopup";
 import {Animation} from "./Animation";
 import "./Telescope.scss"
+import {start} from "repl";
 
 class TelescopeActivity extends React.Component<any, any> {
     constructor(props: any) {
         super(props);
         this.state = {
             questionPopupOpened: false,
+            paths: [
+                {
+                    path: "M451.77734375,268.77734375c98.2,11.2,112.3,13.8,210.6,24.1c352.8,-6.5,365.6,-11.9,719.8,-15.1c-124.5,44.3,-138.0,44.6,-262.6,84.0c-123.2,32.2,-137.0,36.1,-260.5,67.3c-74.8,12.6,-89.2,12.8,-164.0,26.1c-42.9,14.6,-52.4,24.7,-98.0,36.8c-5.8,-111.9,-1.8,-124.5,-2.3,-234.8c6.3,-89.3,8.1,-103.6,15.0,-192.9",
+
+                }
+            ],
+            animationRunning: false,
+            showGrid: true,
         };
     }
-
 
     render() {
         const cycleQuestionPopup = () => {
             this.setState({questionPopupOpened: !this.state.questionPopupOpened})
+        }
+
+        const startAnimation = () => {
+            if(this.state.animationRunning) {
+                this.setState({animationRunning: false});
+            } else {
+                this.setState({animationRunning: true});
+
+            }
+        }
+
+        const cycleGrid = () => {
+            this.setState({showGrid: !this.state.showGrid})
         }
 
         return (
@@ -56,13 +77,34 @@ class TelescopeActivity extends React.Component<any, any> {
                                                 Help
                                             </Button>
                                         </Row>
+
+                                        <Row style={{margin: 0}} className={"justify-content-end"}>
+                                            <Button className={"blue-button"} style={{marginBottom: 15, width: 200,
+                                            }}
+                                                    onClick={cycleGrid}>
+                                                Toggle Grid
+                                            </Button>
+                                        </Row>
                                     </Col>
                                 </Row>
 
                                 <Row style={{margin: 0}}>
                                     <Col className={"justify-content-center align-content-center"} style={{padding: 0}}>
                                         <div style={{width: "1000px", height: "400px", backgroundImage:`url(${satellite})`, margin: "auto"}}>
-                                            <TelescopeGridContainer />
+                                            {this.state.animationRunning &&
+                                            <div style={{
+                                                position: "absolute",
+                                                top: "-25px",
+                                                left: "-5%",
+                                                margin: 0,
+                                                width: "100%",
+                                                height: "90%"
+                                            }}>
+                                                <Animation path={this.state.paths[0].path}/>
+                                            </div>
+                                            }
+
+                                            <TelescopeGridContainer showGrid={this.state.showGrid} />
                                         </div>
                                     </Col>
                                 </Row>
@@ -82,9 +124,10 @@ class TelescopeActivity extends React.Component<any, any> {
                                     </Col>
 
                                     <Col className={"col-3 ml-auto mr-auto"} style={{padding: 0}}>
-                                        <Button className={"green-button"} style={{float: "right", width: 200,
-                                            clipPath: "polygon(0 0, 90% 0, 100% 100%, 10% 100%)"}}>
-                                            Run Simulation
+                                        <Button className={"green-button"} style={{float: "right", width: 250,
+                                            clipPath: "polygon(0 0, 90% 0, 100% 100%, 10% 100%)"}}
+                                            onClick={startAnimation}>
+                                            {this.state.animationRunning ? 'Reset' : 'Start'} Simulation
                                         </Button>
                                     </Col>
 
@@ -95,10 +138,6 @@ class TelescopeActivity extends React.Component<any, any> {
                                             Next
                                         </Button>
                                     </Col>
-                                </Row>
-
-                                <Row style={{margin: 0}} className={"justify-content-center animation-container"}>
-                                    <Animation key={1} />
                                 </Row>
                             </Container>
                         </Col>

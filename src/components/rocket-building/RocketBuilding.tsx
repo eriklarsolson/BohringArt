@@ -12,6 +12,14 @@ class RocketBuilding extends React.Component<any, any> {
         super(props);
         this.state = {
             popupOpened: true,
+            payloads: ["red", "green"],
+            payloadIndex: 0,
+            interstages: ["red", "green"],
+            interstageIndex: 0,
+            sideBoosters: ["red", "green"],
+            sideBoosterIndex: 0,
+            engines: ["red", "green"],
+            engineIndex: 0
         };
     }
 
@@ -22,33 +30,65 @@ class RocketBuilding extends React.Component<any, any> {
 
         const payloadArrow = (left: boolean) => {
             if(left) {
-
+                if (this.state.payloadIndex + 1 === this.state.payloads.length) {
+                    this.setState({payloadIndex: 0})
+                } else {
+                    this.setState({payloadIndex: this.state.payloadIndex + 1})
+                }
             } else {
-
+                if (this.state.payloadIndex - 1 === -1) {
+                    this.setState({payloadIndex: this.state.payloads.length - 1})
+                } else {
+                    this.setState({payloadIndex: this.state.payloadIndex - 1})
+                }
             }
         }
 
         const insterstageArrow = (left: boolean) => {
             if(left) {
-
+                if (this.state.interstageIndex + 1 === this.state.interstages.length) {
+                    this.setState({interstageIndex: 0})
+                } else {
+                    this.setState({interstageIndex: this.state.interstageIndex + 1})
+                }
             } else {
-
+                if (this.state.interstageIndex - 1 === -1) {
+                    this.setState({interstageIndex: this.state.interstages.length - 1})
+                } else {
+                    this.setState({interstageIndex: this.state.interstageIndex - 1})
+                }
             }
         }
 
         const sideBoostersArrow = (left: boolean) => {
             if(left) {
-
+                if (this.state.sideBoosterIndex + 1 === this.state.sideBoosters.length) {
+                    this.setState({sideBoosterIndex: 0})
+                } else {
+                    this.setState({sideBoosterIndex: this.state.sideBoosterIndex + 1})
+                }
             } else {
-
+                if (this.state.sideBoosterIndex - 1 === -1) {
+                    this.setState({sideBoosterIndex: this.state.sideBoosters.length - 1})
+                } else {
+                    this.setState({sideBoosterIndex: this.state.sideBoosterIndex - 1})
+                }
             }
         }
 
         const engineArrow = (left: boolean) => {
             if(left) {
-
+                if (this.state.engineIndex + 1 === this.state.engines.length) {
+                    this.setState({engineIndex: 0})
+                } else {
+                    this.setState({engineIndex: this.state.engineIndex + 1})
+                }
             } else {
-
+                if (this.state.engineIndex - 1 === -1) {
+                    this.setState({engineIndex: this.state.engines.length - 1})
+                } else {
+                    this.setState({engineIndex: this.state.engineIndex - 1})
+                }
             }
         }
 
@@ -90,79 +130,126 @@ class RocketBuilding extends React.Component<any, any> {
 
                                 <Row style={{margin: 0}}>
                                     <Container fluid>
-                                        {/*Payload*/}
-                                        <Row className={"justify-content-center"} style={{margin: 10}}>
-                                            <Col style={{display: "flex"}} className={"col-2 align-items-center justify-content-end"}>
-                                                <img className={"arrow"} src={leftarrow} style={{filter: "contrast(0%)"}}
-                                                     height="100px" alt={"left arrow"}
-                                                     onClick={() => payloadArrow(true)} />
+                                        {/*/!*Payload*!/*/}
+                                        {/*<Row className={"justify-content-center"} style={{margin: 10}}>*/}
+                                        {/*    <Col style={{display: "flex"}} className={"col-2 align-items-center justify-content-end"}>*/}
+                                        {/*        <img className={"arrow"} src={leftarrow} style={{filter: "contrast(0%)"}}*/}
+                                        {/*             height="100px" alt={"left arrow"}*/}
+                                        {/*             onClick={() => payloadArrow(true)} />*/}
+                                        {/*    </Col>*/}
+
+                                        {/*    <Col className={"col-4"}>*/}
+                                        {/*        <div style={{width: 150, height: 100, backgroundColor: this.state.payloads[this.state.payloadIndex]}} />*/}
+                                        {/*    </Col>*/}
+
+                                        {/*    <Col style={{display: "flex"}} className={"col-2 align-items-center justify-content-start"}>*/}
+                                        {/*        <img className={"arrow"} src={rightarrow} style={{filter: "contrast(0%)"}}*/}
+                                        {/*             height="100px" alt={"right arrow"}*/}
+                                        {/*             onClick={() => payloadArrow(false)} />*/}
+                                        {/*    </Col>*/}
+                                        {/*</Row>*/}
+
+                                        {/*/!*Interstage*!/*/}
+                                        {/*<Row className={"justify-content-center"} style={{margin: 10}}>*/}
+                                        {/*    <Col style={{display: "flex"}} className={"col-2 align-items-center justify-content-end"}>*/}
+                                        {/*        <img className={"arrow"} src={leftarrow} style={{filter: "contrast(0%)"}}*/}
+                                        {/*             height="100px" alt={"left arrow"}*/}
+                                        {/*             onClick={() => insterstageArrow(true)} />*/}
+                                        {/*    </Col>*/}
+
+                                        {/*    <Col className={"col-4"}>*/}
+                                        {/*        <div style={{width: 150, height: 300, backgroundColor: this.state.interstages[this.state.interstageIndex]}} />*/}
+                                        {/*    </Col>*/}
+
+                                        {/*    <Col style={{display: "flex"}} className={"col-2 align-items-center justify-content-start"}>*/}
+                                        {/*        <img className={"arrow"} src={rightarrow} style={{filter: "contrast(0%)"}}*/}
+                                        {/*             height="100px" alt={"right arrow"}*/}
+                                        {/*             onClick={() => insterstageArrow(false)} />*/}
+                                        {/*    </Col>*/}
+                                        {/*</Row>*/}
+
+                                        <Row>
+                                            <Col className={"col-2"}>
+                                                <Row>
+                                                    <img className={"arrow"} src={leftarrow} style={{filter: "contrast(0%)"}}
+                                                         height="100px" alt={"left arrow"}
+                                                         onClick={() => payloadArrow(true)} />
+                                                </Row>
+
+                                                <Row>
+                                                    <img className={"arrow"} src={leftarrow} style={{filter: "contrast(0%)"}}
+                                                         height="100px" alt={"left arrow"}
+                                                         onClick={() => insterstageArrow(true)} />
+                                                </Row>
+
+                                                <Row>
+                                                    <img className={"arrow"} src={leftarrow} style={{filter: "contrast(0%)"}}
+                                                         height="100px" alt={"left arrow"}
+                                                         onClick={() => sideBoostersArrow(true)} />
+                                                </Row>
+
+                                                <Row>
+                                                    <img className={"arrow"} src={leftarrow} style={{filter: "contrast(0%)"}}
+                                                         height="100px" alt={"left arrow"}
+                                                         onClick={() => engineArrow(true)} />
+                                                </Row>
                                             </Col>
 
-                                            <Col className={"col-4"}>
-                                                <div style={{width: 200, height: 200, backgroundColor: "black"}}></div>
+                                            <Col>
+                                                <Row className={"justify-content-center"}>
+                                                    <Col className={"col-3"}>
+                                                        <div style={{width: 150, height: 250, position: "absolute", bottom: 0, right: 0,
+                                                            backgroundColor: this.state.sideBoosters[this.state.sideBoosterIndex]}} />
+                                                    </Col>
+
+                                                    <Col className={"col-3"} style={{margin: 5}}>
+                                                        <Row className={"justify-content-center"} style={{margin: 5}}>
+                                                            <div style={{width: 150, height: 100,
+                                                                backgroundColor: this.state.payloads[this.state.payloadIndex]}} />
+                                                        </Row>
+
+                                                        <Row className={"justify-content-center"} style={{margin: 5}}>
+                                                            <div style={{width: 150, height: 300,
+                                                                backgroundColor: this.state.interstages[this.state.interstageIndex]}} />
+                                                        </Row>
+
+                                                        <Row className={"justify-content-center"} style={{margin: 5}}>
+                                                            <div style={{width: 150, height: 150,
+                                                                backgroundColor: this.state.engines[this.state.engineIndex]}} />
+                                                        </Row>
+                                                    </Col>
+
+                                                    <Col className={"col-3"}>
+                                                        <div style={{width: 150, height: 250, position: "absolute", bottom: 0, left: 0,
+                                                            backgroundColor: this.state.sideBoosters[this.state.sideBoosterIndex]}} />
+                                                    </Col>
+                                                </Row>
                                             </Col>
 
-                                            <Col style={{display: "flex"}} className={"col-2 align-items-center justify-content-start"}>
-                                                <img className={"arrow"} src={rightarrow} style={{filter: "contrast(0%)"}}
-                                                     height="100px" alt={"right arrow"}
-                                                     onClick={() => payloadArrow(false)} />
-                                            </Col>
-                                        </Row>
+                                            <Col className={"col-2"}>
+                                                <Row>
+                                                    <img className={"arrow"} src={rightarrow} style={{filter: "contrast(0%)"}}
+                                                         height="100px" alt={"left arrow"}
+                                                         onClick={() => payloadArrow(false)} />
+                                                </Row>
 
-                                        {/*Interstage*/}
-                                        <Row className={"justify-content-center"} style={{margin: 10}}>
-                                            <Col style={{display: "flex"}} className={"col-2 align-items-center justify-content-end"}>
-                                                <img className={"arrow"} src={leftarrow} style={{filter: "contrast(0%)"}}
-                                                     height="100px" alt={"left arrow"}
-                                                     onClick={() => insterstageArrow(true)} />
-                                            </Col>
+                                                <Row>
+                                                    <img className={"arrow"} src={rightarrow} style={{filter: "contrast(0%)"}}
+                                                         height="100px" alt={"left arrow"}
+                                                         onClick={() => insterstageArrow(false)} />
+                                                </Row>
 
-                                            <Col className={"col-4"}>
-                                                <div style={{width: 200, height: 200, backgroundColor: "black"}}></div>
-                                            </Col>
+                                                <Row>
+                                                    <img className={"arrow"} src={rightarrow} style={{filter: "contrast(0%)"}}
+                                                         height="100px" alt={"right arrow"}
+                                                         onClick={() => sideBoostersArrow(false)} />
+                                                </Row>
 
-                                            <Col style={{display: "flex"}} className={"col-2 align-items-center justify-content-start"}>
-                                                <img className={"arrow"} src={rightarrow} style={{filter: "contrast(0%)"}}
-                                                     height="100px" alt={"right arrow"}
-                                                     onClick={() => insterstageArrow(false)} />
-                                            </Col>
-                                        </Row>
-
-                                        {/*Side Boosters*/}
-                                        <Row className={"justify-content-center"} style={{margin: 10}}>
-                                            <Col style={{display: "flex"}} className={"col-2 align-items-center justify-content-end"}>
-                                                <img className={"arrow"} src={leftarrow} style={{filter: "contrast(0%)"}}
-                                                     height="100px" alt={"left arrow"}
-                                                     onClick={() => sideBoostersArrow(true)} />
-                                            </Col>
-
-                                            <Col className={"col-4"}>
-                                                <div style={{width: 200, height: 200, backgroundColor: "black"}}></div>
-                                            </Col>
-
-                                            <Col style={{display: "flex"}} className={"col-2 align-items-center justify-content-start"}>
-                                                <img className={"arrow"} src={rightarrow} style={{filter: "contrast(0%)"}}
-                                                     height="100px" alt={"right arrow"}
-                                                     onClick={() => sideBoostersArrow(false)} />
-                                            </Col>
-                                        </Row>
-
-                                        {/*Engine*/}
-                                        <Row className={"justify-content-center"} style={{margin: 10}}>
-                                            <Col style={{display: "flex"}} className={"col-2 align-items-center justify-content-end"}>
-                                                <img className={"arrow"} src={leftarrow} style={{filter: "contrast(0%)"}}
-                                                     height="100px" alt={"left arrow"}
-                                                     onClick={() => engineArrow(true)} />
-                                            </Col>
-
-                                            <Col className={"col-4"}>
-                                                <div style={{width: 200, height: 200, backgroundColor: "black"}}></div>
-                                            </Col>
-
-                                            <Col style={{display: "flex"}} className={"col-2 align-items-center justify-content-start"}>
-                                                <img className={"arrow"} src={rightarrow} style={{filter: "contrast(0%)"}}
-                                                     height="100px" alt={"right arrow"}
-                                                     onClick={() => engineArrow(false)} />
+                                                <Row>
+                                                    <img className={"arrow"} src={rightarrow} style={{filter: "contrast(0%)"}}
+                                                         height="100px" alt={"right arrow"}
+                                                         onClick={() => engineArrow(false)} />
+                                                </Row>
                                             </Col>
                                         </Row>
                                     </Container>

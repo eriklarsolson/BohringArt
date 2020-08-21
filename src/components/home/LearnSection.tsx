@@ -1,6 +1,6 @@
 import React from "react";
 import { Container, Row, Col } from 'react-bootstrap'
-import hubble from './hubble.png';
+import circuitbuilding from './circuitbuilding.png';
 import './Home.scss';
 import {LearnSectionModel} from "../shared/models/LearnSectionModel";
 
@@ -15,10 +15,10 @@ class LearnSection extends React.Component<any, any> {
 
     render() {
         let images = [
-            hubble,
-            hubble,
-            hubble,
-            hubble
+            circuitbuilding,
+            circuitbuilding,
+            circuitbuilding,
+            circuitbuilding
         ]
 
         let learnSections: Array<LearnSectionModel> = [
@@ -49,8 +49,8 @@ class LearnSection extends React.Component<any, any> {
                <Container fluid>
                    <h1 style={{color: "#002245;", margin: "5%"}}>What You'll Learn</h1>
 
-                   <Row>
-                       <Col className="col-sm-2" style={{color: "white"}}>
+                   <Row className={"justify-content-center"}>
+                       <Col className="col-3 col-sm-3 col-lg-2" style={{color: "white"}}>
                             <Row style={{margin: "10px"}}>
                                 <div className={"number-block"} style={{width: "100px", height: "100px",
                                     backgroundColor: "#29405B"}} onMouseOver={() => changeLearnSection(0)}
@@ -84,7 +84,7 @@ class LearnSection extends React.Component<any, any> {
                            </Row>
                        </Col>
 
-                       <Col className="col-lg-9" style={{width: "100px", height: "auto", backgroundColor: "#F8EDDD", color: "#29405B", marginBottom: "5%"}}>
+                       <Col className="col-8" style={{width: "100px", backgroundColor: "#29405B", color: "white", marginBottom: "5%"}}>
                            <Row>
                                <Col>
                                    <h1>{learnSections[this.state.learnSelection].Title}</h1>

@@ -24,12 +24,12 @@ export const Concave: React.FC<ComponentProps> = ({oneGridStyling}) => {
 
     })
 
-    let gridStyling: React.CSSProperties  = {};
+    let gridStyling: React.CSSProperties  = {height: "100%"};
     const setGridStyling = () => {
         if(!oneGridStyling) {
             gridStyling = {
                 padding: 0,
-                marginTop: 5
+                height: "100%"
             }
         }
     }
@@ -40,13 +40,13 @@ export const Concave: React.FC<ComponentProps> = ({oneGridStyling}) => {
             <DragPreviewImage connect={preview} src={resistor} />
             <Container fluid style={{...gridStyling}}>
 
-                <Row className={"justify-content-center align-content-center"}>
+                <Row className={"justify-content-center align-items-center"} style={{height: "100%"}}>
                     <Col ref={drag}
                          style={{
                              ...style,
                              opacity: isDragging ? 0.5 : 1,
                          }}>
-                        <img src={resistor}/>
+                        <img src={resistor} />
                     </Col>
                 </Row>
             </Container>

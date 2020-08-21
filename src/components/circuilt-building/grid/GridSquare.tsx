@@ -6,7 +6,6 @@ import { ComponentTypes } from '../../shared/models/ComponentTypes'
 import { ColorOverlay } from './ColorOverlay'
 import {DragItem} from "../../shared/models/DragItem";
 import rotate from "./components/images/rotate.png";
-import {Container} from "react-bootstrap";
 
 export interface GridSquareProps {
     x: number
@@ -55,9 +54,9 @@ export const GridSquare: React.FC<GridSquareProps> = ({x, y, children, showGrid,
             style={gridStyling}
             onMouseDown={() => setCurrentComponent(x, y)}>
             {children.length > 0 && clicked &&
-            <div style={{position: "absolute", top: -35, right: -10, marginTop: 1, marginRight: 1}}>
-                <img src={rotate} onClick={clickRotate} />
-            </div>
+                <div style={{position: "absolute", top: -35, right: -10, marginTop: 1, marginRight: 1}}>
+                    <img src={rotate} onClick={clickRotate} />
+                </div>
             }
 
             <Square rotateDeg={rotateDeg} clicked={clicked} showGrid={showGrid}>{children}</Square>
