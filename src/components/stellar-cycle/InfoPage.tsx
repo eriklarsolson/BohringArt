@@ -122,7 +122,7 @@ class InfoPage extends React.Component<any, any> {
                                                 clipPath: "polygon(10px 0, 100% 0, 100% 100%, 15% 100%)"}}
                                                 onClick={() => this.props.history.push({
                                                     pathname: '/activity/object-page',
-                                                    state: { title: this.state.title }
+                                                    state: { title: this.state.title, popupOpened: false }
                                             })}>
                                                 <i className="fa fa-arrow-right" />
                                             </Button>

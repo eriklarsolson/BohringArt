@@ -3,7 +3,6 @@ import { Container, Row, Col } from 'react-bootstrap'
 import hubble from './hubble.png';
 import './Home.scss';
 import {LearnSectionModel} from "../shared/models/LearnSectionModel";
-import Button from "react-bootstrap/Button";
 
 class LearnSection extends React.Component<any, any> {
     constructor(props: any) {
@@ -12,10 +11,6 @@ class LearnSection extends React.Component<any, any> {
             learnSelection: 0,
             imageSelection: 0
         }
-    }
-
-    async changeLearnSection(index: number) {
-        await this.setState({ learnSelection: index });
     }
 
     render() {
@@ -45,6 +40,10 @@ class LearnSection extends React.Component<any, any> {
             }
         ]
 
+        const changeLearnSection = (index: number) => {
+            this.setState({ learnSelection: index });
+        }
+
         return (
             <>
                <Container fluid>
@@ -54,28 +53,32 @@ class LearnSection extends React.Component<any, any> {
                        <Col className="col-sm-2" style={{color: "white"}}>
                             <Row style={{margin: "10px"}}>
                                 <div className={"number-block"} style={{width: "100px", height: "100px",
-                                    backgroundColor: "#29405B"}} onMouseOver={() => this.changeLearnSection(0)}>
+                                    backgroundColor: "#29405B"}} onMouseOver={() => changeLearnSection(0)}
+                                     onClick={() => this.props.goToActivity(0)}>
                                     <h1>01</h1>
                                 </div>
                             </Row>
 
                            <Row style={{margin: "10px"}}>
                                <div className={"number-block"} style={{width: "100px", height: "100px",
-                                   backgroundColor: "#29405B"}} onMouseOver={() => this.changeLearnSection(1)}>
+                                   backgroundColor: "#29405B"}} onMouseOver={() => changeLearnSection(1)}
+                                    onClick={() => this.props.goToActivity(1)}>
                                    <h1>02</h1>
                                </div>
                            </Row>
 
                            <Row style={{margin: "10px"}}>
                                <div className={"number-block"} style={{width: "100px", height: "100px",
-                                   backgroundColor: "#29405B"}} onMouseOver={() => this.changeLearnSection(2)}>
+                                   backgroundColor: "#29405B"}} onMouseOver={() => changeLearnSection(2)}
+                                    onClick={() => this.props.goToActivity(2)}>
                                    <h1>02</h1>
                                </div>
                            </Row>
 
                            <Row style={{margin: "10px"}}>
                                <div className={"number-block"} style={{width: "100px", height: "100px",
-                                   backgroundColor: "#29405B"}} onMouseOver={() => this.changeLearnSection(3)}>
+                                   backgroundColor: "#29405B"}} onMouseOver={() => changeLearnSection(3)}
+                                    onClick={() => this.props.goToActivity(3)}>
                                    <h1>03</h1>
                                </div>
                            </Row>

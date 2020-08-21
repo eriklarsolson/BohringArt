@@ -142,6 +142,10 @@ class ObjectPage extends React.Component<any, any> {
                 const index = getIndex(samePlaceComponents[0], this.state.stellarObjects[0]);
                 this.setState({index: index, massClass: 0})
             }
+
+            if(this.props.location.state.popupOpened !== undefined) {
+                this.setState({popupOpened: this.props.location.state.popupOpened})
+            }
         } else {
             this.setState({index: 0, massClass: 0})
         }
@@ -309,7 +313,7 @@ class ObjectPage extends React.Component<any, any> {
                                     <Col className={"col-2 ml-auto"} style={{padding: 0, marginTop: "3%"}}>
                                         <Row style={{margin: 0}} className={"justify-content-end"}>
                                             <Button className={"blue-button"} style={{marginBottom: 15, width: 200,
-                                                clipPath: "polygon(10px 0, 100% 0, 100% 100%, 15% 100%)"}}
+                                                }}
                                                 onClick={() => this.props.history.push({
                                                     pathname: '/activity/info-page',
                                                     state: { title: this.state.stellarObjects[this.state.massClass][this.state.index].title }
@@ -321,7 +325,7 @@ class ObjectPage extends React.Component<any, any> {
                                         <Row style={{margin: 0}} className={"justify-content-end"}>
                                             <Row style={{margin: 0}} className={"justify-content-end"}>
                                                 <Button className={"blue-button"} style={{marginBottom: 15, width: 200,
-                                                    clipPath: "polygon(10px 0, 100% 0, 100% 100%, 15% 100%)"}}  onClick={cyclePopup}>Objective</Button>
+                                                    }}  onClick={cyclePopup}>Objective</Button>
                                             </Row>
                                         </Row>
                                     </Col>

@@ -27,7 +27,7 @@ class StellarCycle extends React.Component<any, any> {
             paths: [
                 {
                     title: "Nebula",
-                    path: "M143.79,232.78,150.79,250.78,500.79,200.78,1349.79"
+                    path: "M143.79,232.78,0,0,0,0,0" //TODO - Big confusion here - if I delete any number, it breaks animation for rest of objects
                 },
                 {
                     title: "Average Star",
@@ -92,14 +92,15 @@ class StellarCycle extends React.Component<any, any> {
         const goToObjectPage = (title: string) => {
             this.props.history.push({
                 pathname: '/activity/object-page',
-                state: { title: title }
+                state: { title: title, popupOpened: false }
             })
         }
 
         return (
             <>
-                <Container fluid className={"d-flex h-100 flex-column"} style={{margin: "0", padding: "0", backgroundImage:`url(${stellarBackground})`}}>
-                    <Row style={{margin: "3% 3% 0 3%"}}>
+                <Container fluid style={{margin: 0, padding: 0, backgroundRepeat: "repeat", backgroundPosition: "center",
+                    backgroundImage:`url(${stellarBackground})`, backgroundSize: "cover"}}>
+                    <Row style={{paddingTop: 25}}>
                         <Col>
                             <p style={{color: "white", fontSize: "28px", fontWeight: "bold"}}>Stellar Life Cycle</p>
                         </Col>
@@ -111,7 +112,7 @@ class StellarCycle extends React.Component<any, any> {
                     </Row>
 
                     <Row style={{margin: 0}}>
-                        <div style={{position: "absolute", top: "10%", left: "5%", margin: 0, width: "100%", height: "1000px"}}>
+                        <div style={{position: "absolute", top: "10%", left: "5%", margin: 0, width: "100%", height: "100%"}}>
                             <Animation path={this.state.paths[this.state.pathIndex].path} />
                         </div>
 
@@ -280,7 +281,7 @@ class StellarCycle extends React.Component<any, any> {
                         </Col>
                     </Row>
 
-                    <Row style={{margin: "20px"}}>
+                    <Row style={{padding: 20, margin: 20}}>
                         <Col>
                             <Button className={"green-button"} style={{float: "left", width: 100,
                                 clipPath: "polygon(0 0, 90% 0, 100% 100%, 10% 100%)"}}

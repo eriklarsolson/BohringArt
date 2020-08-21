@@ -51,7 +51,7 @@ class TelescopeActivity extends React.Component<any, any> {
                                     <Col className={"col-2 ml-auto"} style={{padding: 0, marginTop: "3%"}}>
                                         <Row style={{margin: 0}} className={"justify-content-end"}>
                                             <Button className={"blue-button"} style={{marginBottom: 15, width: 200,
-                                                clipPath: "polygon(10px 0, 100% 0, 100% 100%, 15% 100%)"}}
+                                                }}
                                                 onClick={cycleQuestionPopup}>
                                                 Help
                                             </Button>

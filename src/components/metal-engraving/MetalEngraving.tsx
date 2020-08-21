@@ -94,7 +94,6 @@ class MetalEngraving extends React.Component<any, any> {
         }
 
         const addStencil = (object: any) => {
-            this.setState({engravingPopupOpened: false})
             const canvas: HTMLCanvasElement = this.state.canvasRef.current;
             const context = canvas.getContext('2d');
 
@@ -243,6 +242,7 @@ class MetalEngraving extends React.Component<any, any> {
                                         {/*    </div> : ''}*/}
                                     </Col>
 
+                                    {(this.state.tool !== TOOL_OPTICS && this.state.tool !== TOOL_PRISM) &&
                                     <Col className={"col-2"}>
                                         {/*TODO - Shapes of filters*/}
                                         <Typography id="width-slider" gutterBottom style={{fontWeight: "bold", color: "#29405B", fontSize: 18, float: "left"}}>
@@ -250,12 +250,8 @@ class MetalEngraving extends React.Component<any, any> {
                                         </Typography>
                                         <SizeSlider aria-labelledby="width-slider" value={this.props.size}
                                                     setSize={changeSize} />
-
-                                        {/*<div className="options" style={{marginBottom:20}}>*/}
-                                        {/*    <label htmlFor="">Size: </label>*/}
-                                        {/*    <input min="1" max="40" type="range" value={this.props.size} onChange={(e) => this.setState({size: parseInt(e.target.value)})} />*/}
-                                        {/*</div>*/}
                                     </Col>
+                                    }
                                 </Row>
                             </Container>
                         </Col>
@@ -263,19 +259,19 @@ class MetalEngraving extends React.Component<any, any> {
                         <Col className={"col-2 ml-auto"} style={{padding: 0}}>
                             <Row className={"justify-content-end"} style={{margin: 0, marginTop: "10%"}}>
                                     <Button className={"blue-button"} style={{width: 200, marginBottom: 15,
-                                        clipPath: "polygon(10px 0, 100% 0, 100% 100%, 15% 100%)"}} onClick={cycleQuestionPopup}>Question</Button>
+                                        }} onClick={cycleQuestionPopup}>Question</Button>
                             </Row>
                             <Row className={"justify-content-end"} style={{margin: 0}}>
                                     <Button className={"blue-button"} style={{width: 200, marginBottom: 15,
-                                        clipPath: "polygon(10px 0, 100% 0, 100% 100%, 15% 100%)"}} onClick={openEngravingPopup}>Stencil</Button>
+                                        }} onClick={openEngravingPopup}>Stencil</Button>
                             </Row>
                             <Row className={"justify-content-end"} style={{margin: 0}}>
                                     <Button className={"blue-button"} style={{width: 200, marginBottom: 15,
-                                        clipPath: "polygon(10px 0, 100% 0, 100% 100%, 15% 100%)"}} onClick={openPopup}>Objective</Button>
+                                        }} onClick={openPopup}>Objective</Button>
                             </Row>
                             <Row className={"justify-content-end"} style={{margin: 0}}>
                                     <Button className={"blue-button"} style={{width: 200,
-                                        clipPath: "polygon(10px 0, 100% 0, 100% 100%, 15% 100%)"}} onClick={toggleViewpointPopup}>Viewpoint</Button>
+                                        }} onClick={toggleViewpointPopup}>Viewpoint</Button>
                             </Row>
 
                             <Row className={"justify-content-end"} style={{margin: 0, position: "absolute", bottom: "5%"}}>
