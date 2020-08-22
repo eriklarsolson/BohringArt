@@ -113,7 +113,7 @@ class CircuitBuilding extends React.Component<any, any> {
                                     <Row style={{margin: 0}}>
                                         <Col className="col-2" style={{margin: "3%"}}>
                                             <Button className={"green-button"} style={{float: "left", width: 100,
-                                                clipPath: "polygon(0 0, 90% 0, 100% 100%, 10% 100%)"}}
+                                                clipPath: "polygon(0 0, 95% 0, 100% 100%, 5% 100%)"}}
                                                     onClick={goToLastLevel}><i className="fa fa-arrow-left" /></Button>
                                         </Col>
 
@@ -155,7 +155,7 @@ class CircuitBuilding extends React.Component<any, any> {
 
                                         <Col className={"ml-auto col-2"}>
                                             <Button className={"green-button"} style={{float: "right", width: 200,
-                                                clipPath: "polygon(0 0, 90% 0, 100% 100%, 10% 100%)"}}
+                                                clipPath: "polygon(0 0, 95% 0, 100% 100%, 5% 100%)"}}
                                                     onClick={goToNextLevel}>Next</Button>
                                         </Col>
                                     </Row>

@@ -19,7 +19,6 @@ export const OneGridContainer: React.FC<GridContainerProps> = ({componentType}) 
     const [zIndex, setZIndex] = useState<number>(-1)
     const [tooltipShowing, setTooltipShowing] = useState<boolean>(false)
 
-
     // useEffect(() => observe((components: any) => setComponentsList(components)))
     let tooltipStyle: React.CSSProperties = {
         position: "absolute",

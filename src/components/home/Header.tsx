@@ -15,7 +15,7 @@ class Header extends React.Component {
                     <Row style={{display: "block"}}>
                         <h1>Help us Launch a Telescope</h1>
                     </Row>
-                    <Row style={{display: "block"}}>
+                    <Row style={{display: "block", textAlign: "left"}}>
                         <p>
                             In this practice, you will learn the building of a circuit to build an electric telescope.
                             After preparing the telescope it the engine will be observed before being launched to observe star life cycles
@@ -28,7 +28,7 @@ class Header extends React.Component {
                             type="submit"
                             className={"btn green-button"}
                             style={{width: "30%",
-                            clipPath: "polygon(0 0, 90% 0, 100% 100%, 10% 100%)"}}>
+                            clipPath: "polygon(0 0, 95% 0, 100% 100%, 5% 100%)"}}>
                             Start
                         </Button>
                     </Row>

@@ -20,37 +20,145 @@ export const TOOL_STAR = 'star';
 export const TOOL_ERASER = 'eraser';
 
 class Sidebar extends React.Component<any, any> {
+    constructor(props: any) {
+        super(props);
+        this.state = {
+            moduleIndex: 0,
+            moduleProperties: [
+                {
+                    rightValue: 0,
+                    zIndex: -1,
+                    tooltipShowing: false,
+                    title: "laser",
+                    description: "laser description"
+                },
+                {
+                    rightValue: 0,
+                    zIndex: -1,
+                    tooltipShowing: false,
+                    title: "optics",
+                    description: "optics description"
+                },
+                {
+                    rightValue: 0,
+                    zIndex: -1,
+                    tooltipShowing: false,
+                    title: "prism",
+                    description: "prism description"
+                }
+            ]
+        }
+    }
     render() {
+        let tooltipStyle: React.CSSProperties = {
+            position: "absolute",
+            right: this.state.moduleProperties[this.state.moduleIndex].rightValue,
+            top: 50,
+            width: 400,
+            height: "auto",
+            minHeight: 100,
+            backgroundColor: "rgba(82, 82, 82, 0.9)",
+            transition: ".3s ease-in-out",
+            zIndex: this.state.moduleProperties[this.state.moduleIndex].zIndex,
+            textAlign: "left",
+        }
+
+        const showTooltip = (index: number) => {
+            let modules = [...this.state.moduleProperties];
+            let module = {...modules[index]};
+
+            if(this.state.moduleProperties[index].tooltipShowing) {
+                module.rightValue = 0;
+                module.zIndex = -1;
+                module.tooltipShowing = false;
+            } else {
+                module.rightValue = -350;
+                module.zIndex = 1;
+                module.tooltipShowing = true;
+            }
+
+            modules[index] = module;
+            this.setState({moduleIndex: index, moduleProperties: modules});
+        }
+
+        const hideTooltip = (index: number) => {
+            let modules = [...this.state.moduleProperties];
+            let module = {...modules[index]};
+
+            module.rightValue = 0;
+            module.zIndex = -1;
+            module.tooltipShowing = false;
+
+            modules[index] = module;
+            this.setState({moduleProperties: modules});
+        }
+
         return (
             <>
                <Container style={{backgroundColor: "#29405B", margin: "0", padding: "0", height: "100%"}}>
                    <h3 style={{paddingTop: "15px"}}>Modules</h3>
 
                    <Row className={"justify-content-center"} style={{margin: "5px"}}>
-                       <Col className={"col-8"} style={{backgroundColor: "white"}}>
+                       <Col className={"col-8"} style={{backgroundColor: "white"}} onMouseOut={() => hideTooltip(0)}
+                            onMouseOver={() => showTooltip(0)}>
                            <img src={lasercomponenticon}
                                style={{width: "100px", height: "100px"}}
                                className={this.props.tool === TOOL_LASER  ? 'item-active' : 'item'}
                                onClick={() => this.props.setTool(TOOL_LASER)} />
                        </Col>
+
+                       <div style={tooltipStyle}>
+                           <Container fluid>
+                               <Row style={{padding: 0}}>
+                                   <p style={{fontWeight: "bold", margin: 0}}>{this.state.moduleProperties[0].title}</p>
+                               </Row>
+                               <Row style={{padding: 0}}>
+                                   {this.state.moduleProperties[0].description}
+                               </Row>
+                           </Container>
+                       </div>
                    </Row>
 
-                   <Row className={"justify-content-center"} style={{margin: "5px"}}>
+                   <Row className={"justify-content-center"} style={{margin: "5px"}} onMouseOut={() => hideTooltip(1)}
+                        onMouseOver={() => showTooltip(1)}>
                        <Col className={"col-8"} style={{backgroundColor: "white"}}>
                            <img src={optics}
                                 style={{width: "100px", height: "100px"}}
                                 className={this.props.tool === TOOL_OPTICS  ? 'item-active' : 'item'}
                                 onClick={() => this.props.setTool(TOOL_OPTICS)} />
                        </Col>
+
+                       <div style={tooltipStyle}>
+                           <Container fluid>
+                               <Row style={{padding: 0}}>
+                                   <p style={{fontWeight: "bold", margin: 0}}>{this.state.moduleProperties[1].title}</p>
+                               </Row>
+                               <Row style={{padding: 0}}>
+                                   {this.state.moduleProperties[1].description}
+                               </Row>
+                           </Container>
+                       </div>
                    </Row>
 
-                   <Row className={"justify-content-center"} style={{margin: "5px"}}>
+                   <Row className={"justify-content-center"} style={{margin: "5px"}} onMouseOut={() => hideTooltip(2)}
+                        onMouseOver={() => showTooltip(2)}>
                        <Col className={"col-8"} style={{backgroundColor: "white"}}>
                            <img src={prism}
                                 style={{width: "100px", height: "100px"}}
                                 className={this.props.tool === TOOL_PRISM  ? 'item-active' : 'item'}
                                 onClick={() => this.props.setTool(TOOL_PRISM)} />
                        </Col>
+
+                       <div style={tooltipStyle}>
+                           <Container fluid>
+                               <Row style={{padding: 0}}>
+                                   <p style={{fontWeight: "bold", margin: 0}}>{this.state.moduleProperties[2].title}</p>
+                               </Row>
+                               <Row style={{padding: 0}}>
+                                   {this.state.moduleProperties[2].description}
+                               </Row>
+                           </Container>
+                       </div>
                    </Row>
 
                    <Accordion defaultActiveKey="1">
@@ -120,13 +228,13 @@ class Sidebar extends React.Component<any, any> {
                    <Row className={"justify-content-center"} style={{marginTop: 50}}>
                        <Col className={"col-4"}>
                            <Button style={{backgroundColor: "#F8EDDD", width: "100px", color: "black",
-                               fontSize: "18px", clipPath: "polygon(0 0, 90% 0, 100% 100%, 10% 100%)"}}
+                               fontSize: "18px", clipPath: "polygon(0 0, 95% 0, 100% 100%, 5% 100%)"}}
                                    onClick={this.props.clearCanvas}>Reset</Button>
                        </Col>
 
                        <Col className={"col-4"}>
                            <Button style={{backgroundColor: "#F8EDDD", width: "100px", color: "black",
-                               fontSize: "18px", clipPath: "polygon(0 0, 90% 0, 100% 100%, 10% 100%)"}}
+                               fontSize: "18px", clipPath: "polygon(0 0, 95% 0, 100% 100%, 5% 100%)"}}
                                    className={this.props.tool === TOOL_ERASER  ? 'item-active' : 'item'}
                                    onClick={() => this.props.setTool(TOOL_ERASER)}>Eraser</Button>
                        </Col>

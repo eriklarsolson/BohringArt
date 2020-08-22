@@ -148,7 +148,7 @@ class MetalEngraving extends React.Component<any, any> {
                                 <Row style={{margin: "3%"}}>
                                     <Col className={"col-3"}>
                                         <Button className={"green-button"} style={{float: "left", width: 100,
-                                            clipPath: "polygon(0 0, 90% 0, 100% 100%, 10% 100%)"}}
+                                            clipPath: "polygon(0 0, 95% 0, 100% 100%, 5% 100%)"}}
                                                 onClick={() => this.props.history.push('/activity/circuit-building')}>
                                             <i className="fa fa-arrow-left" />
                                         </Button>
@@ -277,7 +277,7 @@ class MetalEngraving extends React.Component<any, any> {
                             <Row className={"justify-content-end"} style={{margin: 0, position: "absolute", bottom: "5%"}}>
                                 <Col style={{padding: 0}}>
                                     <Button className={"green-button"} style={{float: "right", width: 200,
-                                        clipPath: "polygon(0 0, 90% 0, 100% 100%, 10% 100%)"}}
+                                        clipPath: "polygon(0 0, 95% 0, 100% 100%, 5% 100%)"}}
                                             onClick={() => this.props.history.push('/activity/telescope-activity')}>Next</Button>
                                 </Col>
                             </Row>

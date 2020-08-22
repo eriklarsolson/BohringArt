@@ -110,7 +110,7 @@ class RocketBuilding extends React.Component<any, any> {
                                 <Row style={{margin: 0}}>
                                     <Col className="col-2" style={{margin: "3%"}}>
                                         <Button className={"green-button"} style={{float: "left", width: 100,
-                                            clipPath: "polygon(0 0, 90% 0, 100% 100%, 10% 100%)"}}
+                                            clipPath: "polygon(0 0, 95% 0, 100% 100%, 5% 100%)"}}
                                                 onClick={() => this.props.history.push('/activity/telescope-activity')}>
                                             <i className="fa fa-arrow-left" />
                                         </Button>
@@ -257,16 +257,14 @@ class RocketBuilding extends React.Component<any, any> {
 
                                 <Row style={{margin: "3%"}}>
                                     <Col>
-
-                                    </Col>
-
-                                    <Col>
                                         <Button className={"green-button"} style={{float: "right", width: 200,
-                                            clipPath: "polygon(0 0, 90% 0, 100% 100%, 10% 100%)"}}
+                                            clipPath: "polygon(0 0, 95% 0, 100% 100%, 5% 100%)"}}
                                                 onClick={() => this.props.history.push({
-                                                    pathname: '/activity/object-page',
-                                                    state: { title: "Nebula" }
-                                                })}>Next</Button>
+                                                    pathname: '/activity/flight-simulator',
+                                                    state: {payloadIndex: this.state.payloadIndex,
+                                                            interstageIndex: this.state.interstageIndex,
+                                                            sideBoostersIndex: this.state.sideBoostersIndex,
+                                                            engineIndex: this.state.engineIndex}})}>Test Rocket</Button>
                                     </Col>
                                 </Row>
                             </Container>

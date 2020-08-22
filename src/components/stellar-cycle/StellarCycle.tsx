@@ -284,7 +284,7 @@ class StellarCycle extends React.Component<any, any> {
                     <Row style={{padding: 20, margin: 20}}>
                         <Col>
                             <Button className={"green-button"} style={{float: "left", width: 100,
-                                clipPath: "polygon(0 0, 90% 0, 100% 100%, 10% 100%)"}}
+                                clipPath: "polygon(0 0, 95% 0, 100% 100%, 5% 100%)"}}
                                     onClick={() => this.props.history.push({
                                         pathname: '/activity/object-page',
                                         state: { title: "Nebula" }
@@ -295,7 +295,7 @@ class StellarCycle extends React.Component<any, any> {
 
                         <Col>
                             <Button className={"green-button"} style={{float: "right", width: 200,
-                                clipPath: "polygon(0 0, 90% 0, 100% 100%, 10% 100%)"}}
+                                clipPath: "polygon(0 0, 95% 0, 100% 100%, 5% 100%)"}}
                                     onClick={() => this.props.history.push({
                                         pathname: '/',
                                         state: { popupOpened: true }

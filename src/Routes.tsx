@@ -11,6 +11,7 @@ import {StellarCycle} from "./components/stellar-cycle";
 import ObjectPage from "./components/stellar-cycle/ObjectPage";
 import InfoPage from "./components/stellar-cycle/InfoPage";
 import {RocketBuilding} from "./components/rocket-building";
+import FlightSimulator from "./components/rocket-building/FlightSimulator";
 
 class Routes extends Component {
     render() {
@@ -21,6 +22,7 @@ class Routes extends Component {
                     <Route path="/activity/metal-engraving" component={MetalEngraving} />
                     <Route path="/activity/telescope-activity" component={TelescopeActivity} />
                     <Route path="/activity/rocket-building" component={RocketBuilding} />
+                    <Route path="/activity/flight-simulator" component={FlightSimulator} />
                     <Route path="/activity/stellar-cycle" component={StellarCycle} />
                     <Route path="/activity/object-page" component={ObjectPage} />
                     <Route path="/activity/info-page" component={InfoPage} />

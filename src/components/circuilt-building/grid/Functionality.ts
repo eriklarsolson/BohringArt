@@ -1,7 +1,12 @@
 import {ComponentTypes} from "../../shared/models/ComponentTypes";
 
 let observers: PositionObserver[] = []
-export type PositionObserver = ((component: {x: number, y: number, type: string, voltage: number, rotateDeg: number}) => void) | null
+export type PositionObserver = ((component: {x: number, y: number, type: string, voltage: number, rotateDeg: number, }) => void) | null
+
+//TODO - what new fields are needed for activity to work?
+// 1. componentType used for wires (straight, corner, 3-4 prong) & switch (toggle on/off)
+// 2.
+
 let currentComponent = 0;
 let currentLevel = 0;
 let passed = false;
