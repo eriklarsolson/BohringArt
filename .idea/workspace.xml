@@ -11,24 +11,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="7ea8f8f2-9ee1-4223-8be2-70ed23ed7286" name="Default Changelist" comment="updates to home page (learn section), telescope activity, &amp; rocket building activity">
-      <change afterPath="$PROJECT_DIR$/src/components/rocket-building/Animation.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/rocket-building/FlightSimulator.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/rocket-building/Rocket.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/shared/modals/CircuitErrorPopup.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Routes.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Routes.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/circuilt-building/CircuitBuilding.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/circuilt-building/CircuitBuilding.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/circuilt-building/grid/Functionality.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/circuilt-building/grid/Functionality.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/circuilt-building/grid/OneGridContainer.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/circuilt-building/grid/OneGridContainer.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/home/Header.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/home/Header.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/metal-engraving/MetalEngraving.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/metal-engraving/MetalEngraving.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/metal-engraving/Sidebar.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/metal-engraving/Sidebar.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/rocket-building/RocketBuilding.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/rocket-building/RocketBuilding.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/shared/modals/Popup.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/shared/modals/Popup.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/stellar-cycle/ObjectPage.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/stellar-cycle/ObjectPage.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/stellar-cycle/StellarCycle.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/stellar-cycle/StellarCycle.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/stellar-cycle/StellarCycle.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/stellar-cycle/StellarCycle.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/telescope-activity/Sidebar.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/telescope-activity/Sidebar.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/telescope-activity/TelescopeActivity.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/telescope-activity/TelescopeActivity.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/circuilt-building/grid/GridSquare.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/circuilt-building/grid/GridSquare.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/circuilt-building/grid/SixGridContainer.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/circuilt-building/grid/SixGridContainer.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/circuilt-building/grid/Square.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/circuilt-building/grid/Square.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/stellar-cycle/Animation.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/stellar-cycle/Animation.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -53,7 +42,7 @@
     <property name="TERMINAL_CUSTOM_COMMANDS_GOT_IT" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="ignore.virus.scanning.warn.message" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/components/rocket-building" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/components/shared/modals" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
@@ -62,19 +51,19 @@
     <property name="ts.external.directory.path" value="C:\Users\energ\Documents\ContractWork\DetroitMuseum\bohringart\node_modules\typescript\lib" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Users\energ\Documents\ContractWork\DetroitMuseum\bohringart\src\components\rocket-building" />
-      <recent name="C:\Users\energ\Documents\ContractWork\DetroitMuseum\bohringart\src\components\home" />
-      <recent name="C:\Users\energ\Documents\ContractWork\DetroitMuseum\bohringart\src\components\stellar-cycle\images" />
-      <recent name="C:\Users\energ\Documents\ContractWork\DetroitMuseum\bohringart\src\components\telescope-activity\grid\components\images" />
-      <recent name="C:\Users\energ\Documents\ContractWork\DetroitMuseum\bohringart\src\components\metal-engraving" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\energ\Documents\ContractWork\DetroitMuseum\bohringart\src\components\circuilt-building\grid\components\images" />
       <recent name="C:\Users\energ\Documents\ContractWork\DetroitMuseum\bohringart\src\components\stellar-cycle\images" />
       <recent name="C:\Users\energ\Documents\ContractWork\DetroitMuseum\bohringart\src\components\shared\modals" />
       <recent name="C:\Users\energ\Documents\ContractWork\DetroitMuseum\bohringart\src\components\telescope-activity\grid\components\images" />
       <recent name="C:\Users\energ\Documents\ContractWork\DetroitMuseum\bohringart\src\components\metal-engraving" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\energ\Documents\ContractWork\DetroitMuseum\bohringart\src\components\shared\modals" />
+      <recent name="C:\Users\energ\Documents\ContractWork\DetroitMuseum\bohringart\src\components\rocket-building" />
+      <recent name="C:\Users\energ\Documents\ContractWork\DetroitMuseum\bohringart\src\components\home" />
+      <recent name="C:\Users\energ\Documents\ContractWork\DetroitMuseum\bohringart\src\components\stellar-cycle\images" />
+      <recent name="C:\Users\energ\Documents\ContractWork\DetroitMuseum\bohringart\src\components\telescope-activity\grid\components\images" />
     </key>
   </component>
   <component name="SvnConfiguration">
@@ -118,6 +107,8 @@
       <workItem from="1597928027728" duration="22980000" />
       <workItem from="1598012667394" duration="13284000" />
       <workItem from="1598107684315" duration="1855000" />
+      <workItem from="1598215622647" duration="4438000" />
+      <workItem from="1598272035348" duration="12698000" />
     </task>
     <task id="LOCAL-00001" summary="I dun made this look real good in this commit here &#10;&#10;(Lots of styling updates)">
       <created>1595814945436</created>
@@ -374,10 +365,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="769" y="434" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1920.1040@0.0.1920.1040" timestamp="1597192452326" />
-    <state x="1481" y="161" width="780" height="801" key="find.popup" timestamp="1598039440037">
+    <state x="1481" y="161" width="780" height="801" key="find.popup" timestamp="1598287566421">
       <screen x="0" y="0" width="2560" height="1040" />
     </state>
-    <state x="1481" y="161" width="780" height="801" key="find.popup/-1920.0.1920.1040/0.0.2560.1040@0.0.2560.1040" timestamp="1598039440037" />
+    <state x="1481" y="161" width="780" height="801" key="find.popup/-1920.0.1920.1040/0.0.2560.1040@0.0.2560.1040" timestamp="1598287566421" />
     <state x="222" y="236" width="549" height="534" key="find.popup/0.0.1500.960@0.0.1500.960" timestamp="1595724537154" />
     <state x="1111" y="160" width="585" height="624" key="find.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1597886543166" />
     <state x="601" y="246" width="700" height="530" key="recent.locations.popup" timestamp="1595211874198">

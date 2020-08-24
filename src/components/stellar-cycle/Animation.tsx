@@ -32,7 +32,7 @@ export const Animation: React.FC<AnimationProps> = ({path}) => {
                     initial="hidden"
                     animate="visible"
                     transition={{
-                        default: {duration: 4, ease: "easeInOut"},
+                        default: {duration: 3, ease: "easeInOut"},
                         // fill: {duration: 4, ease: [1, 1, 1, 1]}
                     }}
                 />

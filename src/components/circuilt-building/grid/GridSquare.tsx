@@ -1,11 +1,17 @@
 import React, {useState} from 'react'
-import {DragSourceMonitor, useDrag, useDrop} from 'react-dnd'
+import {useDrop} from 'react-dnd'
 import { Square } from './Square'
-import {canMoveComponent, getCurrentX, getCurrentY, moveComponent, setCurrentComponent} from './Functionality'
+import {
+    canMoveComponent,
+    moveComponent,
+    setCurrentComponent,
+    setCurrentComponentsRotation
+} from './Functionality'
 import { ComponentTypes } from '../../shared/models/ComponentTypes'
 import { ColorOverlay } from './ColorOverlay'
 import {DragItem} from "../../shared/models/DragItem";
 import rotate from "./components/images/rotate.png";
+import {start} from "repl";
 
 export interface GridSquareProps {
     x: number
@@ -17,6 +23,12 @@ export interface GridSquareProps {
 }
 
 export const GridSquare: React.FC<GridSquareProps> = ({x, y, children, showGrid, currentComponent}) => {
+    let startingRotateDeg = 0
+    if(currentComponent !== undefined) {
+        startingRotateDeg = currentComponent.rotateDeg;
+    }
+    const [rotateDeg, setRotateDeg] = useState<number>(startingRotateDeg)
+
     const [{ isOver, canDrop }, drop] = useDrop({
         accept: [ComponentTypes.WIRE, ComponentTypes.BATTERY, ComponentTypes.RESISTOR
             ,ComponentTypes.SWITCH , ComponentTypes.INDUCTOR , ComponentTypes.CAPACITOR],
@@ -35,19 +47,22 @@ export const GridSquare: React.FC<GridSquareProps> = ({x, y, children, showGrid,
     };
 
     let clicked = false;
+
     if(currentComponent !== undefined && currentComponent.x === x && currentComponent.y === y) {
         clicked = true;
     }
 
-    const [rotateDeg, setRotateDeg] = useState<number>(0)
     const clickRotate = () => {
-        if(rotateDeg + 90 > 360) {
+        console.log("Rotate deg: " + rotateDeg)
+        if (rotateDeg + 90 === 360) {
             setRotateDeg(0)
+            setCurrentComponentsRotation(0)
         } else {
-            setRotateDeg(rotateDeg+90)
+            setRotateDeg(rotateDeg + 90)
+            setCurrentComponentsRotation(rotateDeg + 90)
         }
-    }
 
+    }
     return (
         <div
             ref={drop}
@@ -59,7 +74,15 @@ export const GridSquare: React.FC<GridSquareProps> = ({x, y, children, showGrid,
                 </div>
             }
 
-            <Square rotateDeg={rotateDeg} clicked={clicked} showGrid={showGrid}>{children}</Square>
+            <Square clicked={clicked} showGrid={showGrid}>
+                {currentComponent !== undefined && currentComponent.x === x && currentComponent.y === y ?
+                    <div style={{transform: "rotate(" + currentComponent.rotateDeg + "deg)"}}>
+                        {children}
+                    </div>
+                    :
+                    <div>{children}</div>
+                }
+            </Square>
             {isOver && !canDrop && <ColorOverlay color="red" />}
             {!isOver && canDrop && <ColorOverlay color="yellow" />}
             {isOver && canDrop && <ColorOverlay color="green" />}

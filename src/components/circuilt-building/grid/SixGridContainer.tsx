@@ -1,18 +1,20 @@
 import React, {useState, useEffect, useCallback} from 'react'
 import {
-    getComponents,
+    boardHasIssue,
+    getComponents, getCurrentBoardIssue,
     getCurrentComponent,
     getCurrentX,
     getPassed,
     getTotalVoltage,
     moveComponent,
-    observe, setCurrentComponentsVoltage
+    observe, setBoardHasIssue, setCurrentComponentsVoltage
 } from './Functionality'
 import {SixGrid} from "./SixGrid";
 import {Container, Row, Col} from "react-bootstrap";
 import update from 'immutability-helper'
 import {ComponentTypes} from "../../shared/models/ComponentTypes";
 import {Slider, Typography, withStyles} from "@material-ui/core";
+import CircuitErrorPopup from "../../shared/modals/CircuitErrorPopup";
 
 const containerStyle: React.CSSProperties = {
     width: 500,
@@ -32,6 +34,8 @@ export const SixGridContainer: React.FC<GridContainerProps> = ({objectiveImage, 
         {x: 0, y: 0, type: ComponentTypes.BATTERY, voltage: 0, rotateDeg: 0})
 
     const [totalVoltage, setTotalVoltage] = useState<number>(0)
+    const [errorPopup, setErrorPopup] = useState<boolean>(false)
+    const [successPopup, setSuccessPopup] = useState<boolean>(false)
 
     const didItPass = (component: {x: number, y: number, type: string, voltage: number, rotateDeg: number}) => {
         setCurrentComp(component)
@@ -39,6 +43,11 @@ export const SixGridContainer: React.FC<GridContainerProps> = ({objectiveImage, 
 
         if(getPassed()) {
             console.log("PASSED!")
+        }
+
+        if(boardHasIssue()) {
+            setErrorPopup(true)
+            setBoardHasIssue(false)
         }
     }
 
@@ -138,6 +147,8 @@ export const SixGridContainer: React.FC<GridContainerProps> = ({objectiveImage, 
                     </Row>
                 }
             </Container>
+
+            <CircuitErrorPopup title={"Error!"} description={getCurrentBoardIssue()} open={errorPopup} closePopup={() => setErrorPopup(false)} />
         </>
     )
 }
