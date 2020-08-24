@@ -10,14 +10,16 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7ea8f8f2-9ee1-4223-8be2-70ed23ed7286" name="Default Changelist" comment="updates to home page (learn section), telescope activity, &amp; rocket building activity">
-      <change afterPath="$PROJECT_DIR$/src/components/shared/modals/CircuitErrorPopup.tsx" afterDir="false" />
+    <list default="true" id="7ea8f8f2-9ee1-4223-8be2-70ed23ed7286" name="Default Changelist" comment="working on verification steps for circuit building (checking for errors, if there is a circuit, etc...)">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/circuilt-building/grid/Functionality.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/circuilt-building/grid/Functionality.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/circuilt-building/grid/GridSquare.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/circuilt-building/grid/GridSquare.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/circuilt-building/grid/SixGridContainer.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/circuilt-building/grid/SixGridContainer.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/circuilt-building/grid/Square.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/circuilt-building/grid/Square.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/stellar-cycle/Animation.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/stellar-cycle/Animation.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/metal-engraving/MetalEngraving.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/metal-engraving/MetalEngraving.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/metal-engraving/Sidebar.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/metal-engraving/Sidebar.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/metal-engraving/lasercomponenticon.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/metal-engraving/laser_COMPONENT.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/metal-engraving/lasericon.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/metal-engraving/laser_OFF.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/metal-engraving/lasericonactive.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/metal-engraving/lasericonon.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/shared/modals/MetalEngravingQuestionPopup.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/shared/modals/MetalEngravingQuestionPopup.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -108,7 +110,7 @@
       <workItem from="1598012667394" duration="13284000" />
       <workItem from="1598107684315" duration="1855000" />
       <workItem from="1598215622647" duration="4438000" />
-      <workItem from="1598272035348" duration="12698000" />
+      <workItem from="1598272035348" duration="16229000" />
     </task>
     <task id="LOCAL-00001" summary="I dun made this look real good in this commit here &#10;&#10;(Lots of styling updates)">
       <created>1595814945436</created>
@@ -257,7 +259,14 @@
       <option name="project" value="LOCAL" />
       <updated>1598034895582</updated>
     </task>
-    <option name="localTasksCounter" value="22" />
+    <task id="LOCAL-00022" summary="working on verification steps for circuit building (checking for errors, if there is a circuit, etc...)">
+      <created>1598304744233</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1598304744233</updated>
+    </task>
+    <option name="localTasksCounter" value="23" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -297,7 +306,8 @@
     <MESSAGE value="fixing up things on various pages (especially sliders)" />
     <MESSAGE value="bug fixing and adding wire type toggle on circuit building" />
     <MESSAGE value="updates to home page (learn section), telescope activity, &amp; rocket building activity" />
-    <option name="LAST_COMMIT_MESSAGE" value="updates to home page (learn section), telescope activity, &amp; rocket building activity" />
+    <MESSAGE value="working on verification steps for circuit building (checking for errors, if there is a circuit, etc...)" />
+    <option name="LAST_COMMIT_MESSAGE" value="working on verification steps for circuit building (checking for errors, if there is a circuit, etc...)" />
   </component>
   <component name="WindowStateProjectService">
     <state x="828" y="178" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1595441686616">
@@ -312,13 +322,15 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="765" y="236" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1040@0.0.1920.1040" timestamp="1595382862279" />
-    <state x="690" y="267" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1597863252597">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state x="920" y="267" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1598309550319">
+      <screen x="0" y="0" width="2560" height="1040" />
     </state>
+    <state x="920" y="267" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/-1920.0.1920.1040/0.0.2560.1040@0.0.2560.1040" timestamp="1598309550319" />
     <state x="690" y="267" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1597863252597" />
-    <state x="92" y="92" width="1736" height="856" key="DiffContextDialog" timestamp="1595972265667">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state x="123" y="92" width="1736" height="856" key="DiffContextDialog" timestamp="1598304764879">
+      <screen x="0" y="0" width="2560" height="1040" />
     </state>
+    <state x="123" y="92" key="DiffContextDialog/-1920.0.1920.1040/0.0.2560.1040@0.0.2560.1040" timestamp="1598304764879" />
     <state x="92" y="92" width="1736" height="856" key="DiffContextDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1595972265667" />
     <state x="629" y="298" key="EditFileWatcherDialog" timestamp="1594947783720">
       <screen x="0" y="0" width="1920" height="1040" />
@@ -352,10 +364,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="461" y="165" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1595965465549" />
-    <state x="736" y="253" key="Vcs.Push.Dialog.v2" timestamp="1598034898211">
+    <state x="736" y="253" key="Vcs.Push.Dialog.v2" timestamp="1598304765629">
       <screen x="0" y="0" width="2560" height="1040" />
     </state>
-    <state x="736" y="253" key="Vcs.Push.Dialog.v2/-1920.0.1920.1040/0.0.2560.1040@0.0.2560.1040" timestamp="1598034898211" />
+    <state x="736" y="253" key="Vcs.Push.Dialog.v2/-1920.0.1920.1040/0.0.2560.1040@0.0.2560.1040" timestamp="1598304765629" />
     <state x="552" y="253" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1597885372762" />
     <state x="565" y="130" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser" timestamp="1595958216715">
       <screen x="0" y="0" width="1920" height="1040" />
@@ -379,10 +391,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="736" y="292" key="refactoring.ChangeSignatureDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1595374531681" />
-    <state x="821" y="240" key="run.anything.popup" timestamp="1598033187380">
+    <state x="821" y="240" key="run.anything.popup" timestamp="1598310379681">
       <screen x="0" y="0" width="2560" height="1040" />
     </state>
-    <state x="821" y="240" key="run.anything.popup/-1920.0.1920.1040/0.0.2560.1040@0.0.2560.1040" timestamp="1598033187380" />
+    <state x="821" y="240" key="run.anything.popup/-1920.0.1920.1040/0.0.2560.1040@0.0.2560.1040" timestamp="1598310379681" />
     <state x="482" y="223" key="run.anything.popup/0.0.1500.960@0.0.1500.960" timestamp="1595717092125" />
     <state x="616" y="240" key="run.anything.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1597861525568" />
     <state x="831" y="225" width="896" height="678" key="search.everywhere.popup" timestamp="1597946582200">

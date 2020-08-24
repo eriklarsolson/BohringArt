@@ -1,7 +1,7 @@
 import React from "react";
 import {Button, Modal} from "react-bootstrap";
 import { Container, Row, Col } from 'react-bootstrap'
-import lasercomponenticon from "../../metal-engraving/lasercomponenticon.png";
+import lasercomponenticon from "../../metal-engraving/laser_COMPONENT.png";
 import optics from "../../metal-engraving/optics.png";
 import prism from "../../metal-engraving/prism.png";
 import {TOOL_LASER, TOOL_OPTICS, TOOL_PRISM} from "../../metal-engraving/Sidebar";

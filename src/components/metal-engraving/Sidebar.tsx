@@ -1,6 +1,6 @@
 import React from "react";
 import { Container, Row, Col } from 'react-bootstrap'
-import lasercomponenticon from "./lasercomponenticon.png";
+import lasercomponenticon from "./laser_COMPONENT.png";
 import optics from "./optics.png";
 import prism from "./prism.png";
 import square from "./square.png";

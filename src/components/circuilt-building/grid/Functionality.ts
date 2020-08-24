@@ -223,16 +223,9 @@ export function moveComponent(toX: number, toY: number, type: string): void {
 function checkForErrors() {
     //TODO - Eventually going to need a function to check if there is a parallel circuit here
 
-    //TODO - Need to have this only be checked when a full circuit is complete, not every time there is a new piece
-    // let boardOnlyContainsWiresAndBatteries = true;
-
     //This (inefficient) method loops through each component in the list and finds all components around it
     //TODO - Need to get rid of square from +1 x, +1 y. Only check blocks from right next to components
     for(let i = 0; i < components.length; i++) {
-        // if(components[i].type !== ComponentTypes.WIRE && components[i].type !== ComponentTypes.BATTERY) {
-        //     boardOnlyContainsWiresAndBatteries = false;
-        // }
-
         let componentsAroundCurrent = []
         for(let j = 0; j < components.length; j++) {
             if(components[i] !== components[j]) {
@@ -258,28 +251,20 @@ function checkForErrors() {
 }
 
 function checkIfPassed(): void {
-    //TODO - Need to check if there any breaks in the circuit. Don't run this function if there is
-    // Also need to check if circuit is all wires and buttons here, or should I do that above
-
-    hasPath()
-
     if(!boardHasIssues) {
-
-
-        const passingLevel: { x: number; y: number; type: string, voltage: number, rotateDeg: number}[] = getCurrentLevelPass()
-
-        //TODO - Doesn't work
-        if(passingLevel.every(v => components.includes(v))) {
-            passed = true;
-        }
+        hasCircuit();
     }
+
+    // const passingLevel: { x: number; y: number; type: string, voltage: number, rotateDeg: number}[] = getCurrentLevelPass()
+    //
+    // //TODO - Doesn't work
+    // if(passingLevel.every(v => components.includes(v))) {
+    //     passed = true;
+    // }
 }
 
-//TODO - Do I need to generate a 3d matrix for the var below or can I just the current components list array that I have?
-
-// Method for finding and printing
-// whether the path exists or not
-function hasPath() {
+// Function for finding whether a circuit exists or not
+function hasCircuit() {
     //Build matrix variable here
     let matrix: Array<Array<number>> = [
         [0, 0, 0, 0, 0, 0, 0],
@@ -296,8 +281,6 @@ function hasPath() {
 
     matrix[1][6] = 1
     matrix[4][6] = 2
-
-    console.log(matrix)
 
     // Defining visited array to keep
     // track of already visited indexes
@@ -328,85 +311,74 @@ function hasPath() {
             }
     }
 }
-    if (flag)
+    if (flag) {
         console.log("yes there is a path")
-    else
+
+        //Check here if the circuit only contains wires and batteries
+        let boardOnlyContainsWiresAndBatteries = true;
+        for(let i = 0; i < components.length; i++) {
+            if (components[i].type !== ComponentTypes.WIRE && components[i].type !== ComponentTypes.BATTERY) {
+                boardOnlyContainsWiresAndBatteries = false;
+            }
+        }
+
+        if(boardOnlyContainsWiresAndBatteries) {
+            boardHasIssues = true;
+            boardCurrentIssue = "You have short-circuited the board! Do not build a circuit that contains only wires and/or batteries"
+            //TODO - Reset the board?
+        }
+    } else {
         console.log("no path found brother")
+    }
 }
 
 // Method for checking boundaries
 function isSafe(i: number, j: number, matrix: Array<Array<number>>) {
     return i >= 0 && i < matrix.length && j >= 0 && j < matrix[0].length;
-
 }
 
-// Returns true if there is a
-// path from a source (a
-// cell with value 1) to a
-// destination (a cell with
-// value 2)
-function isPath(i: number, j: number, visited: Array<Array<boolean>>, matrix: Array<Array<number>>)
-{
-
-    // Checking the boundaries, walls and
-    // whether the cell is unvisited
+// Returns true if there is a path from a source (a cell with value 1) to a destination (a cell with value 2)
+function isPath(i: number, j: number, visited: Array<Array<boolean>>, matrix: Array<Array<number>>) {
+    // Checking the boundaries, walls and, whether the cell is unvisited
     if (isSafe(i, j, matrix) && matrix[i][j] !== 0 && !visited[i][j]) {
         // Make the cell visited
         visited[i][j] = true;
 
-        // if the cell is the required
-        // destination then return true
+        // If the cell is the required destination, then return true
         if (matrix[i][j] === 2) return true;
 
-        // traverse up
         const up = isPath(i - 1, j, visited, matrix);
+        if (up) return true;
 
-        // if path is found in up
-        // direction return true
-        if (up)
-            return true;
-
-        // traverse left
         const left = isPath(i, j - 1, visited, matrix);
-
-        // if path is found in left
-        // direction return true
         if (left) return true;
 
-        // traverse down
         const down = isPath(i + 1, j, visited, matrix);
+        if (down) return true;
 
-        // if path is found in down
-        // direction return true
-        if (down)
-            return true;
-
-        // traverse right
         const right = isPath(i, j + 1, visited, matrix);
-
-        // if path is found in right
-        // direction return true
-        if (right)
-            return true;
+        if (right) return true;
     }
-    // no path has been found
+
+    // No path has been found
     return false;
 }
-function getCurrentLevelPass(): any {
-    if(currentLevel === 0) {
-        let components: { x: number; y: number; type: string, voltage: number, rotateDeg: number}[] =  []
-        components.push({x: 0, y: 0, type: ComponentTypes.BATTERY, voltage: 0, rotateDeg: 0})
-        return components
-    } else if(currentLevel === 1) {
-        let components: { x: number; y: number; type: string, voltage: number, rotateDeg: number}[] =  []
-        components.push({x: 0, y: 0, type: ComponentTypes.BATTERY, voltage: 0, rotateDeg: 0})
-        return components
-    } else if(currentLevel === 2) {
-        let components: { x: number; y: number; type: string, voltage: number, rotateDeg: number}[] =  []
-        components.push({x: 0, y: 0, type: ComponentTypes.BATTERY, voltage: 0, rotateDeg: 0})
-        return components
-    }
 
-    return []
-}
+// function getCurrentLevelPass(): any {
+//     if(currentLevel === 0) {
+//         let components: { x: number; y: number; type: string, voltage: number, rotateDeg: number}[] =  []
+//         components.push({x: 0, y: 0, type: ComponentTypes.BATTERY, voltage: 0, rotateDeg: 0})
+//         return components
+//     } else if(currentLevel === 1) {
+//         let components: { x: number; y: number; type: string, voltage: number, rotateDeg: number}[] =  []
+//         components.push({x: 0, y: 0, type: ComponentTypes.BATTERY, voltage: 0, rotateDeg: 0})
+//         return components
+//     } else if(currentLevel === 2) {
+//         let components: { x: number; y: number; type: string, voltage: number, rotateDeg: number}[] =  []
+//         components.push({x: 0, y: 0, type: ComponentTypes.BATTERY, voltage: 0, rotateDeg: 0})
+//         return components
+//     }
+//
+//     return []
+// }
 
