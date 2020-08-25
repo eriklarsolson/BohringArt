@@ -10,7 +10,10 @@ class Sidebar extends React.Component<any, any> {
     render() {
         return (
             <>
-               <Container style={{backgroundColor: "#29405B", margin: "0", padding: "0", height: "100%",}}>
+               <Container style={{margin: "0", padding: "0", height: "100%"}}>
+                   <div style={{position: "absolute", width: "100%", height: "100%", backgroundColor: "#29405B",
+                       clipPath: "polygon(0 0,90% 0, 100% 100%, 0 100%)"}} />
+
                    <h3 style={{paddingTop: "15px"}}>Modules</h3>
                    <Row>
                        <Col>

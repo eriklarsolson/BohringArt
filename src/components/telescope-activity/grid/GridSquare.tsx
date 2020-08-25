@@ -46,12 +46,12 @@ export const GridSquare: React.FC<GridSquareProps> = ({x, y, children, showGrid,
     }
 
     const clickRotate = () => {
-        if (rotateDeg + 90 === 360) {
+        if (rotateDeg + 45 === 360) {
             setRotateDeg(0)
             setCurrentComponentsRotation(0)
         } else {
-            setRotateDeg(rotateDeg + 90)
-            setCurrentComponentsRotation(rotateDeg + 90)
+            setRotateDeg(rotateDeg + 45)
+            setCurrentComponentsRotation(rotateDeg + 45)
         }
     }
 
@@ -68,11 +68,11 @@ export const GridSquare: React.FC<GridSquareProps> = ({x, y, children, showGrid,
 
             <Square clicked={clicked} showGrid={showGrid}>
                 {currentComponent !== undefined && currentComponent.x === x && currentComponent.y === y ?
-                    <div style={{transform: "rotate(" + currentComponent.rotateDeg + "deg)"}}>
+                    <div style={{transform: "rotate(" + currentComponent.rotateDeg + "deg)", height: "100%"}}>
                         {children}
                     </div>
                     :
-                    <div>{children}</div>
+                    <div style={{height: "100%"}}>{children}</div>
                 }
             </Square>
             {isOver && !canDrop && <ColorOverlay color="red" />}

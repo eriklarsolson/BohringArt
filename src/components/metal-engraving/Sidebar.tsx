@@ -24,81 +24,16 @@ class Sidebar extends React.Component<any, any> {
     constructor(props: any) {
         super(props);
         this.state = {
-            moduleIndex: 0,
-            moduleProperties: [
-                {
-                    rightValue: 0,
-                    zIndex: -1,
-                    tooltipShowing: false,
-                    title: "laser",
-                    description: "laser description"
-                },
-                {
-                    rightValue: 0,
-                    zIndex: -1,
-                    tooltipShowing: false,
-                    title: "optics",
-                    description: "optics description"
-                },
-                {
-                    rightValue: 0,
-                    zIndex: -1,
-                    tooltipShowing: false,
-                    title: "prism",
-                    description: "prism description"
-                }
-            ]
+
         }
     }
     render() {
-        let tooltipStyle: React.CSSProperties = {
-            position: "absolute",
-            right: this.state.moduleProperties[this.state.moduleIndex].rightValue,
-            top: 50,
-            width: 400,
-            height: "auto",
-            minHeight: 100,
-            backgroundColor: "rgba(82, 82, 82, 0.9)",
-            transition: ".3s ease-in-out",
-            zIndex: this.state.moduleProperties[this.state.moduleIndex].zIndex,
-            textAlign: "left",
-        }
-
-        //TODO - Need to make each box a separate component function to manage tooltip within that
-        const showTooltip = (index: number) => {
-            let modules = [...this.state.moduleProperties];
-            let module = {...modules[index]};
-
-            if(this.state.moduleProperties[index].tooltipShowing) {
-                module.rightValue = 0;
-                module.zIndex = -1;
-                module.tooltipShowing = false;
-            } else {
-                module.rightValue = -350;
-                module.zIndex = 1;
-                module.tooltipShowing = true;
-            }
-
-            modules[index] = module;
-
-            this.setState({moduleIndex: index, moduleProperties: modules});
-        }
-
-        const hideTooltip = (index: number) => {
-            let modules = [...this.state.moduleProperties];
-            let module = {...modules[index]};
-
-            module.rightValue = 0;
-            module.zIndex = -1;
-            module.tooltipShowing = false;
-
-            modules[index] = module;
-            this.setState({moduleProperties: modules});
-        }
-
         return (
             <>
-               <Container style={{backgroundColor: "#29405B", margin: "0", padding: "0", height: "100%"}}>
+               <Container style={{margin: "0", padding: "0", height: "100%"}}>
+                   <div style={{position: "absolute", width: "100%", height: "100%", backgroundColor: "#29405B",
+                       clipPath: "polygon(0 0,90% 0, 100% 100%, 0 100%)"}} />
+
                    <h3 style={{paddingTop: "15px"}}>Modules</h3>
 
                    <Row className={"justify-content-center"} style={{margin: "5px"}}>
