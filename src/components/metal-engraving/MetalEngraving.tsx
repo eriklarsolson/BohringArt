@@ -5,15 +5,15 @@ import Button from "react-bootstrap/Button";
 import Popup from "../shared/modals/Popup";
 import Canvas from "./Canvas";
 import EngravingPopup from "../shared/modals/Engraving/EngravingPopup";
-import laser_OFF from "./laser_OFF.png";
+import laser_OFF from "./images/laser_OFF.png";
 import laser_WHITE from "./images/laser_WHITE.png"
 import laser_RED from "./images/laser_RED.png"
 import laser_YELLOW from "./images/laser_YELLOW.png"
 import laser_GREEN from "./images/laser_GREEN.png"
 import laser_BLUE from "./images/laser_BLUE.png"
 import laser_PINK from "./images/laser_PINK.png"
-import optics from "./optics_small.png";
-import prism from "./prism_small.png";
+import optics from "./images/optics_small.png";
+import prism from "./images/prism_small.png";
 import {Slider, Typography, withStyles} from "@material-ui/core";
 import ViewpointPopup from "../shared/modals/ViewpointPopup";
 import CircuitPopup from "../shared/modals/CircuitPopup";

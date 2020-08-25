@@ -11,39 +11,14 @@ import {
     withStyles
 } from "@material-ui/core";
 import "./StellarCycle.scss";
+import PropertiesSlider from "./PropertiesSlider";
 
 class Sidebar extends React.Component<any, any> {
     render() {
-        //TODO - This current styling breaks the slider (doesn't slide smoothly)
-        const StellarSlider = withStyles({
-            root: {
-                color: 'white',
-                height: 6,
-            },
-            thumb: {
-                height: 24,
-                width: 24,
-                backgroundColor: '#fff',
-                border: '2px solid currentColor',
-                marginTop: -10,
-                marginLeft: -12,
-                '&:focus, &:hover, &$active': {
-                    boxShadow: 'inherit',
-                },
-            },
-            track: {
-                height: 6,
-                borderRadius: 2,
-                backgroundColor: '#fff',
-            },
-            rail: {
-                height: 6,
-                borderRadius: 2,
-            },
-        })(Slider);
-
         let massClassString = "Average"
+        let max = 100
         if(this.props.massClass === 1) {
+            max = 120
             massClassString = "Massive"
         }
 
@@ -71,7 +46,8 @@ class Sidebar extends React.Component<any, any> {
                            <Typography id="temperature-slider" gutterBottom style={{float: "left", fontWeight: "bold", fontSize: "20px"}}>
                                Temperature
                            </Typography>
-                           <StellarSlider value={this.props.temperature} onChange={this.props.changeTemperature} aria-labelledby="temperature-slider" />
+                           <PropertiesSlider value={this.props.temperature} changeValue={this.props.changeTemperature}
+                                             aria-labelledby="temperature-slider" max={max} />
                        </Col>
                    </Row>
 
@@ -80,7 +56,8 @@ class Sidebar extends React.Component<any, any> {
                            <Typography id="size-slider" gutterBottom style={{float: "left", fontWeight: "bold", fontSize: "20px"}}>
                                Size
                            </Typography>
-                           <StellarSlider value={this.props.size} onChange={this.props.changeSize} aria-labelledby="size-slider" />
+                           <PropertiesSlider value={this.props.size} changeValue={this.props.changeSize}
+                                             aria-labelledby="size-slider" max={max} />
                        </Col>
                    </Row>
 
@@ -89,7 +66,8 @@ class Sidebar extends React.Component<any, any> {
                            <Typography id="mass-slider" gutterBottom style={{float: "left", fontWeight: "bold", fontSize: "20px"}}>
                                Mass
                            </Typography>
-                           <StellarSlider value={this.props.mass} onChange={this.props.changeMass} aria-labelledby="mass-slider" />
+                           <PropertiesSlider value={this.props.mass} changeValue={this.props.changeMass}
+                                             aria-labelledby="mass-slider" max={max} />
                        </Col>
                    </Row>
 

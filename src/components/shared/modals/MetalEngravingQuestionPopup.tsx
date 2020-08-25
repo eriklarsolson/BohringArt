@@ -1,9 +1,9 @@
 import React from "react";
 import {Button, Modal} from "react-bootstrap";
 import { Container, Row, Col } from 'react-bootstrap'
-import lasercomponenticon from "../../metal-engraving/laser_COMPONENT.png";
-import optics from "../../metal-engraving/optics.png";
-import prism from "../../metal-engraving/prism.png";
+import lasercomponenticon from "../../metal-engraving/images/laser_COMPONENT.png";
+import optics from "../../metal-engraving/images/optics.png";
+import prism from "../../metal-engraving/images/prism.png";
 import {TOOL_LASER, TOOL_OPTICS, TOOL_PRISM} from "../../metal-engraving/Sidebar";
 
 class MetalEngravingQuestionPopup extends React.Component<any, any> {

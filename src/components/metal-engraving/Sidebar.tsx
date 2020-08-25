@@ -1,8 +1,8 @@
 import React from "react";
 import { Container, Row, Col } from 'react-bootstrap'
-import lasercomponenticon from "./laser_COMPONENT.png";
-import optics from "./optics.png";
-import prism from "./prism.png";
+import lasercomponenticon from "./images/laser_COMPONENT.png";
+import optics from "./images/optics.png";
+import prism from "./images/prism.png";
 import square from "./square.png";
 import circle from "./circle.png";
 import triangle from "./triangle.png";
@@ -63,6 +63,7 @@ class Sidebar extends React.Component<any, any> {
             textAlign: "left",
         }
 
+        //TODO - Need to make each box a separate component function to manage tooltip within that
         const showTooltip = (index: number) => {
             let modules = [...this.state.moduleProperties];
             let module = {...modules[index]};
@@ -78,6 +79,7 @@ class Sidebar extends React.Component<any, any> {
             }
 
             modules[index] = module;
+
             this.setState({moduleIndex: index, moduleProperties: modules});
         }
 

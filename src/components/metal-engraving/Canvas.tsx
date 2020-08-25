@@ -1,8 +1,8 @@
 import React, { useCallback, useEffect, useState } from 'react';
 import canvasBackground from './metal_background.png'
 import {TOOL_ELLIPSE, TOOL_STAR, TOOL_TRIANGLE, TOOL_RECTANGLE, TOOL_ERASER, TOOL_LASER, TOOL_OPTICS,TOOL_PRISM} from "./MetalEngraving";
-import optics from "./optics.png";
-import prism from "./prism.png";
+import optics from "./images/optics.png";
+import prism from "./images/prism.png";
 
 interface CanvasProps {
     width: number;

@@ -33,41 +33,41 @@ class ObjectPage extends React.Component<any, any> {
                     {
                         title: "Nebula",
                         image: nebula,
-                        temperatureValue: 20,
-                        sizeValue: 5,
-                        massValue: 10,
+                        temperatureValue: 40,
+                        sizeValue: 60,
+                        massValue: 80,
                         timeValue: 20,
                     },
                     {
                         title: "Average Star",
                         image: avgstar,
-                        temperatureValue: 0,
-                        sizeValue: 0,
-                        massValue: 0,
+                        temperatureValue: 20,
+                        sizeValue: 40,
+                        massValue: 40,
                         timeValue: 40,
                     },
                     {
                         title: "Red Giant",
                         image: redgiant,
-                        temperatureValue: 0,
-                        sizeValue: 0,
-                        massValue: 0,
+                        temperatureValue: 60,
+                        sizeValue: 20,
+                        massValue: 60,
                         timeValue: 60,
                     },
                     {
                         title: "Planetary Nebula",
                         image: planetarynebula,
-                        temperatureValue: 0,
-                        sizeValue: 0,
-                        massValue: 0,
+                        temperatureValue: 80,
+                        sizeValue: 80,
+                        massValue: 20,
                         timeValue: 80,
                     },
                     {
                         title: "White Dwarf",
                         image: whitedwarf,
-                        temperatureValue: 0,
-                        sizeValue: 0,
-                        massValue: 0,
+                        temperatureValue: 100,
+                        sizeValue: 100,
+                        massValue: 100,
                         timeValue: 100
                     }
                 ],
@@ -75,49 +75,49 @@ class ObjectPage extends React.Component<any, any> {
                     {
                         title: "Nebula",
                         image: nebula,
-                        temperatureValue: 0,
-                        sizeValue: 0,
-                        massValue: 0,
+                        temperatureValue: 20,
+                        sizeValue: 20,
+                        massValue: 20,
                         timeValue: 20,
                     },
                     {
                         title: "Massive Star",
                         image: massivestar,
-                        temperatureValue: 0,
-                        sizeValue: 0,
-                        massValue: 0,
+                        temperatureValue: 40,
+                        sizeValue: 40,
+                        massValue: 40,
                         timeValue: 40,
                     },
                     {
                         title: "Red Supergiant",
                         image: redsupergiant,
-                        temperatureValue: 0,
-                        sizeValue: 0,
-                        massValue: 0,
+                        temperatureValue: 60,
+                        sizeValue: 60,
+                        massValue: 60,
                         timeValue: 60,
                     },
                     {
                         title: "Supernova",
                         image: supernova,
-                        temperatureValue: 0,
-                        sizeValue: 0,
-                        massValue: 0,
+                        temperatureValue: 80,
+                        sizeValue: 80,
+                        massValue: 80,
                         timeValue: 80,
                     },
                     {
                         title: "Neutron Star",
                         image: neutronstar,
-                        temperatureValue: 0,
-                        sizeValue: 0,
-                        massValue: 0,
+                        temperatureValue: 100,
+                        sizeValue: 100,
+                        massValue: 100,
                         timeValue: 100,
                     },
                     {
                         title: "Black Hole",
                         image: blackhole,
-                        temperatureValue: 0,
-                        sizeValue: 0,
-                        massValue: 0,
+                        temperatureValue: 120,
+                        sizeValue: 120,
+                        massValue: 120,
                         timeValue: 120,
                     }
                 ]
@@ -168,27 +168,34 @@ class ObjectPage extends React.Component<any, any> {
         //TODO - Currently this lets you change the values of each stellar object (next 3 functions). Instead, it
         // should find the closest object to what you change them to and display that stellar object (not update their values)
         const changeTemperature = (event: any, newValue: any) => {
-            let objects = [...this.state.stellarObjects];
-            let object = {...objects[this.state.massClass][this.state.index]};
-            object.temperatureValue = newValue;
-            objects[this.state.massClass][this.state.index] = object;
-            this.setState({stellarObjects: objects});
+            const samePlaceComponents = this.state.stellarObjects[this.state.massClass].filter((object: { temperatureValue: any; }) => object.temperatureValue === newValue);
+            if (samePlaceComponents.length > 0) {
+                const index = getIndex(samePlaceComponents[0], this.state.stellarObjects[this.state.massClass]);
+                this.setState({index: index})
+            }
         }
 
         const changeSize = (event: any, newValue: any) => {
-            let objects = [...this.state.stellarObjects];
-            let object = {...objects[this.state.massClass][this.state.index]};
-            object.sizeValue = newValue;
-            objects[this.state.massClass][this.state.index] = object;
-            this.setState({stellarObjects: objects});
+            const samePlaceComponents = this.state.stellarObjects[this.state.massClass].filter((object: { sizeValue: any; }) => object.sizeValue === newValue);
+            if (samePlaceComponents.length > 0) {
+                const index = getIndex(samePlaceComponents[0], this.state.stellarObjects[this.state.massClass]);
+                this.setState({index: index})
+            }
         }
 
         const changeMass = (event: any, newValue: any) => {
-            let objects = [...this.state.stellarObjects];
-            let object = {...objects[this.state.massClass][this.state.index]};
-            object.massValue = newValue;
-            objects[this.state.massClass][this.state.index] = object;
-            this.setState({stellarObjects: objects});
+            //Don't delete this. Useful code to change property of one object within array (for state)
+            // let objects = [...this.state.stellarObjects];
+            // let object = {...objects[this.state.massClass][this.state.index]};
+            // object.massValue = newValue;
+            // objects[this.state.massClass][this.state.index] = object;
+            // this.setState({stellarObjects: objects});
+
+            const samePlaceComponents = this.state.stellarObjects[this.state.massClass].filter((object: { massValue: any; }) => object.massValue === newValue);
+            if (samePlaceComponents.length > 0) {
+                const index = getIndex(samePlaceComponents[0], this.state.stellarObjects[this.state.massClass]);
+                this.setState({index: index})
+            }
         }
 
         const changeTime = (event: any, newValue: any) => {
