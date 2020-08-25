@@ -32,7 +32,6 @@ export const TelescopeGrid: React.FC<GridProps> = ({components, currentComponent
         const x = i % 5
         const y = Math.floor(i)
 
-
         return (
             <div key={i} style={squareStyle}>
                 <GridSquare x={x} y={y} components={components} currentComponent={currentComponent} showGrid={showGrid}>

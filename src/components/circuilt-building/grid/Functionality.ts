@@ -36,7 +36,6 @@ export function setBoardHasIssue(issue: boolean) {
     boardHasIssues = issue;
 }
 
-
 export function deleteCurrentComponent() {
     components.splice(currentComponent, 1);
     currentComponent = currentComponent - 1

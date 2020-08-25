@@ -1,6 +1,15 @@
-import React, { useCallback, useEffect, useState } from 'react';
+import React, {useCallback, useEffect, useState} from 'react';
 import canvasBackground from './metal_background.png'
-import {TOOL_ELLIPSE, TOOL_STAR, TOOL_TRIANGLE, TOOL_RECTANGLE, TOOL_ERASER, TOOL_LASER, TOOL_OPTICS,TOOL_PRISM} from "./MetalEngraving";
+import {
+    TOOL_ELLIPSE,
+    TOOL_ERASER,
+    TOOL_LASER,
+    TOOL_OPTICS,
+    TOOL_PRISM,
+    TOOL_RECTANGLE,
+    TOOL_STAR,
+    TOOL_TRIANGLE
+} from "./MetalEngraving";
 import optics from "./images/optics.png";
 import prism from "./images/prism.png";
 
@@ -171,6 +180,23 @@ const Canvas = ({ width, height, canvasRef, tool, color, size, toolActive }: Can
         }
     }
 
+    function GetPixel(x: any, y: any) {
+        const canvas: HTMLCanvasElement = canvasRef.current;
+        const context = canvas.getContext('2d');
+        var p = context?.getImageData(x, y, 1, 1).data;
+        if (p) {
+            return "#" + ("000000" + rgbToHex(p[0], p[1], p[2])).slice(-6);
+        }
+
+        return null;
+    }
+
+    function rgbToHex(r: number, g: number, b: number) {
+        if (r > 255 || g > 255 || b > 255)
+            throw "Invalid color component";
+        return ((r << 16) | (g << 8) | b).toString(16);
+    }
+
     const draw = (originalMousePosition: Coordinate, newMousePosition: Coordinate) => {
 
         if (!canvasRef.current) {
@@ -195,9 +221,23 @@ const Canvas = ({ width, height, canvasRef, tool, color, size, toolActive }: Can
 
                     context.beginPath();
                     context.moveTo(originalMousePosition.x, originalMousePosition.y);
+
+                    //Don't allow laser to draw over other lasers of dark engraving
+                    //TODO - Make it so that its only for darker colors than what your current choice is (also doesn't really fully work right now)
+                    const pixelColor = GetPixel(newMousePosition.x, newMousePosition.y);
+                    console.log(pixelColor)
+
+                    let otherColorFound = false;
+                    if(pixelColor !== "#000000" && pixelColor !== getBurnColor(color)) {
+                        otherColorFound = true;
+                    }
+
+                    if(otherColorFound) {
+                        context.strokeStyle = "transparent";
+                    }
+
                     context.lineTo(newMousePosition.x, newMousePosition.y);
                     context.closePath();
-
                     context.stroke();
                 } else if (tool === TOOL_OPTICS) {
                     const startX = newMousePosition.x < originalMousePosition.x ? newMousePosition.x : originalMousePosition.x;

@@ -13,7 +13,7 @@ export const RocketAnimation: React.FC<AnimationProps>  = ({images}) => {
                 // scale: [1, 2, 2, 1, 1],
                 // rotate: [0, 0, 270, 270, 0],
                 // x: [100, 200, 300, 400, 500],
-                x: [0, 1300]
+                x: [0, 2500]
                 // borderRadius: ["20%", "20%", "50%", "50%", "20%"]
             }}
 
@@ -24,30 +24,30 @@ export const RocketAnimation: React.FC<AnimationProps>  = ({images}) => {
                 loop: Infinity,
                 repeatDelay: 1
             }}>
-            <Container fluid>
+            <Container fluid style={{transform: "rotate(90deg)"}}>
                 <Row>
                     <Col>
-                        <img src={images[0]} style={{transform: "rotate(90deg)"}} />
+                        <img src={images[0]} />
                     </Col>
                 </Row>
 
                 <Row>
-                    <Col className={"col-3"}>
-                        <img src={images[1]} style={{transform: "rotate(90deg)"}} />
+                    <Col className={"col-6"}>
+                        <img src={images[1]} />
                     </Col>
 
-                    <Col className={"col-3"}>
-                        <img src={images[2]} style={{transform: "rotate(90deg)"}} />
+                    <Col className={"col-6"}>
+                        <img src={images[2]}  />
                     </Col>
 
-                    <Col className={"col-3"}>
-                        <img src={images[3]} style={{transform: "rotate(90deg)"}} />
+                    <Col className={"col-6"}>
+                        <img src={images[3]} />
                     </Col>
                 </Row>
 
                 <Row>
                     <Col>
-                        <img src={images[0]} style={{transform: "rotate(90deg)"}} />
+                        <img src={images[0]} />
                     </Col>
                 </Row>
             </Container>

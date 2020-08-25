@@ -53,7 +53,6 @@ export const GridSquare: React.FC<GridSquareProps> = ({x, y, children, showGrid,
     }
 
     const clickRotate = () => {
-        console.log("Rotate deg: " + rotateDeg)
         if (rotateDeg + 90 === 360) {
             setRotateDeg(0)
             setCurrentComponentsRotation(0)
@@ -61,8 +60,8 @@ export const GridSquare: React.FC<GridSquareProps> = ({x, y, children, showGrid,
             setRotateDeg(rotateDeg + 90)
             setCurrentComponentsRotation(rotateDeg + 90)
         }
-
     }
+
     return (
         <div
             ref={drop}

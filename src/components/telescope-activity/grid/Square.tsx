@@ -4,10 +4,9 @@ export interface SquareProps {
     children: JSX.Element
     showGrid: boolean
     clicked: boolean
-    rotateDeg: number,
 }
 
-export const Square: React.FC<SquareProps> = ({ children, showGrid, clicked, rotateDeg }) => {
+export const Square: React.FC<SquareProps> = ({ children, showGrid, clicked }) => {
 
     let squareStyle = {
         width: '100%',
@@ -15,7 +14,6 @@ export const Square: React.FC<SquareProps> = ({ children, showGrid, clicked, rot
         color: 'black',
         backgroundColor: 'transparent',
         border: '1px solid grey',
-        transform: "rotate(" + rotateDeg + "deg)",
     }
 
     if(!showGrid) {
@@ -25,7 +23,6 @@ export const Square: React.FC<SquareProps> = ({ children, showGrid, clicked, rot
             color: 'black',
             backgroundColor: 'transparent',
             border: '0',
-            transform: "rotate(" + rotateDeg + "deg)",
         }
     }
 
@@ -36,7 +33,6 @@ export const Square: React.FC<SquareProps> = ({ children, showGrid, clicked, rot
             color: 'black',
             backgroundColor: 'transparent',
             border: '3px solid black',
-            transform: "rotate(" + rotateDeg + "deg)",
         }
     }
 

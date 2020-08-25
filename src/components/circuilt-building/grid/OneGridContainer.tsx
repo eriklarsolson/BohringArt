@@ -9,7 +9,6 @@ export interface GridContainerProps {
 const containerStyle: React.CSSProperties = {
     width: 150,
     height: 100,
-    border: '1px solid gray',
 }
 
 export const OneGridContainer: React.FC<GridContainerProps> = ({componentType}) => {
@@ -31,6 +30,7 @@ export const OneGridContainer: React.FC<GridContainerProps> = ({componentType}) 
         transition: ".3s ease-in-out",
         zIndex: zIndex,
         textAlign: "left",
+        clipPath: "polygon(0 0, 100% 0, 100% 100%, 2% 100%)"
     }
 
     const showTooltip = () => {
@@ -39,7 +39,7 @@ export const OneGridContainer: React.FC<GridContainerProps> = ({componentType}) 
             setZIndex(-1)
             setTooltipShowing(false)
         } else {
-            setRightValue(-300)
+            setRightValue(-295)
             setZIndex(1)
             setTooltipShowing(true)
         }
@@ -80,12 +80,12 @@ export const OneGridContainer: React.FC<GridContainerProps> = ({componentType}) 
                 </div>
 
                 <div style={tooltipStyle}>
-                    <Container fluid>
+                    <Container fluid style={{margin: 10}}>
                         <Row style={{padding: 0}}>
                             <p style={{fontWeight: "bold", margin: 0}}>{components[0].type}</p>
                         </Row>
-                        <Row style={{padding: 0}}>
-                            {getTooltipDescription()}
+                        <Row style={{padding: 5}}>
+                            <p>{getTooltipDescription()}</p>
                         </Row>
                     </Container>
                 </div>

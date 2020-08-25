@@ -19,7 +19,8 @@ export const TelescopeGridContainer: React.FC<GridContainerProps> = ({showGrid})
 
     //I don't actually use this currentComp variable, but I need the useEffect on observe below and it's working right now
     //and I don't want to change it
-    const [currentComp, setCurrentComp] = useState<{x: number, y: number, type: string}>({x: 0, y: 0, type: TelescopeTypes.CONCAVE})
+    const [currentComp, setCurrentComp] = useState<{x: number, y: number, type: string, rotateDeg: number}>(
+        {x: 0, y: 0, type: TelescopeTypes.CONCAVE, rotateDeg: 0})
 
     useEffect(() => observe((component: any) => setCurrentComp(component)))
 

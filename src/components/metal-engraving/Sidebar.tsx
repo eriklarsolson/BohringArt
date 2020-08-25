@@ -10,6 +10,7 @@ import star from "./star.png";
 import Button from "react-bootstrap/Button";
 import Accordion from "react-bootstrap/Accordion"
 import {Card} from "@material-ui/core";
+import {SidebarModule} from "./SidebarModule";
 export const TOOL_LASER = 'laser';
 export const TOOL_OPTICS = 'optics';
 export const TOOL_PRISM = 'prism';
@@ -101,66 +102,15 @@ class Sidebar extends React.Component<any, any> {
                    <h3 style={{paddingTop: "15px"}}>Modules</h3>
 
                    <Row className={"justify-content-center"} style={{margin: "5px"}}>
-                       <Col className={"col-8"} style={{backgroundColor: "white"}} onMouseOut={() => hideTooltip(0)}
-                            onMouseOver={() => showTooltip(0)}>
-                           <img src={lasercomponenticon}
-                               style={{width: "100px", height: "100px"}}
-                               className={this.props.tool === TOOL_LASER  ? 'item-active' : 'item'}
-                               onClick={() => this.props.setTool(TOOL_LASER)} />
-                       </Col>
-
-                       <div style={tooltipStyle}>
-                           <Container fluid>
-                               <Row style={{padding: 0}}>
-                                   <p style={{fontWeight: "bold", margin: 0}}>{this.state.moduleProperties[0].title}</p>
-                               </Row>
-                               <Row style={{padding: 0}}>
-                                   {this.state.moduleProperties[0].description}
-                               </Row>
-                           </Container>
-                       </div>
+                       <SidebarModule tool={this.props.tool} toolToShow={TOOL_LASER} setTool={this.props.setTool} title={"laser"} description={"laser description"} />
                    </Row>
 
-                   <Row className={"justify-content-center"} style={{margin: "5px"}} onMouseOut={() => hideTooltip(1)}
-                        onMouseOver={() => showTooltip(1)}>
-                       <Col className={"col-8"} style={{backgroundColor: "white"}}>
-                           <img src={optics}
-                                style={{width: "100px", height: "100px"}}
-                                className={this.props.tool === TOOL_OPTICS  ? 'item-active' : 'item'}
-                                onClick={() => this.props.setTool(TOOL_OPTICS)} />
-                       </Col>
-
-                       <div style={tooltipStyle}>
-                           <Container fluid>
-                               <Row style={{padding: 0}}>
-                                   <p style={{fontWeight: "bold", margin: 0}}>{this.state.moduleProperties[1].title}</p>
-                               </Row>
-                               <Row style={{padding: 0}}>
-                                   {this.state.moduleProperties[1].description}
-                               </Row>
-                           </Container>
-                       </div>
+                   <Row className={"justify-content-center"} style={{margin: "5px"}}>
+                       <SidebarModule tool={this.props.tool} toolToShow={TOOL_OPTICS} setTool={this.props.setTool} title={"optics"} description={"optics description"} />
                    </Row>
 
-                   <Row className={"justify-content-center"} style={{margin: "5px"}} onMouseOut={() => hideTooltip(2)}
-                        onMouseOver={() => showTooltip(2)}>
-                       <Col className={"col-8"} style={{backgroundColor: "white"}}>
-                           <img src={prism}
-                                style={{width: "100px", height: "100px"}}
-                                className={this.props.tool === TOOL_PRISM  ? 'item-active' : 'item'}
-                                onClick={() => this.props.setTool(TOOL_PRISM)} />
-                       </Col>
-
-                       <div style={tooltipStyle}>
-                           <Container fluid>
-                               <Row style={{padding: 0}}>
-                                   <p style={{fontWeight: "bold", margin: 0}}>{this.state.moduleProperties[2].title}</p>
-                               </Row>
-                               <Row style={{padding: 0}}>
-                                   {this.state.moduleProperties[2].description}
-                               </Row>
-                           </Container>
-                       </div>
+                   <Row className={"justify-content-center"} style={{margin: "5px"}}>
+                       <SidebarModule tool={this.props.tool} toolToShow={TOOL_PRISM} setTool={this.props.setTool} title={"prism"} description={"prism description"} />
                    </Row>
 
                    <Accordion defaultActiveKey="1">
