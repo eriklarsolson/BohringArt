@@ -7,18 +7,97 @@ import Popup from "../shared/modals/Popup";
 import leftarrow from "../stellar-cycle/leftarrow.png";
 import rightarrow from "../stellar-cycle/rightarrow.png";
 
+//Image imports
+import payload_1 from "./images/payloads/payload_1.png"
+import payload_2 from "./images/payloads/payload_2.png"
+import payload_3 from "./images/payloads/payload_3.png"
+import interstage_1 from "./images/interstages/interstage_1.png"
+import interstage_2 from "./images/interstages/interstage_2.png"
+import sideBooster_1 from "./images/sideBoosters/sideBooster_1.png"
+import sideBooster_2 from "./images/sideBoosters/sideBooster_2.png"
+import engine_1 from "./images/engines/engine_1.png"
+import engine_2 from "./images/engines/engine_2.png"
+
 class RocketBuilding extends React.Component<any, any> {
     constructor(props: any) {
         super(props);
         this.state = {
+            parentIndex: 0,
             popupOpened: true,
-            payloads: ["red", "green"],
+            payloads: [
+                {
+                    image: payload_1,
+                    title: "Payload 1",
+                    mass: 1000,
+                    airResistance: 5,
+                    fuelCapacity: 10
+                },
+                {
+                    image: payload_2,
+                    title: "Payload 2",
+                    mass: 2222,
+                    airResistance: 2,
+                    fuelCapacity: 10
+                },
+                {
+                    image: payload_3,
+                    title: "Payload 3",
+                    mass: 333,
+                    airResistance: 5,
+                    fuelCapacity: 9
+                }
+            ],
             payloadIndex: 0,
-            interstages: ["red", "green"],
+            interstages: [
+                {
+                    image: interstage_1,
+                    title: "Interstage 1",
+                    mass: 1000,
+                    airResistance: 5,
+                    fuelCapacity: 10
+                },
+                {
+                    image: interstage_2,
+                    title: "Interstage 2",
+                    mass: 2222,
+                    airResistance: 2,
+                    fuelCapacity: 10
+                }
+            ],
             interstageIndex: 0,
-            sideBoosters: ["red", "green"],
+            sideBoosters: [
+                {
+                    image: sideBooster_1,
+                    title: "Side Booster 1",
+                    mass: 1000,
+                    airResistance: 5,
+                    fuelCapacity: 10
+                },
+                {
+                    image: sideBooster_2,
+                    title: "Side Booster 2",
+                    mass: 2222,
+                    airResistance: 2,
+                    fuelCapacity: 10
+                }
+            ],
             sideBoosterIndex: 0,
-            engines: ["red", "green"],
+            engines: [
+                {
+                    image: engine_1,
+                    title: "Engine 1",
+                    mass: 1000,
+                    airResistance: 5,
+                    fuelCapacity: 10
+                },
+                {
+                    image: engine_2,
+                    title: "Engine 2",
+                    mass: 2222,
+                    airResistance: 2,
+                    fuelCapacity: 10
+                }
+            ],
             engineIndex: 0
         };
     }
@@ -29,6 +108,8 @@ class RocketBuilding extends React.Component<any, any> {
         }
 
         const payloadArrow = (left: boolean) => {
+            this.setState({parentIndex: 0})
+
             if(left) {
                 if (this.state.payloadIndex + 1 === this.state.payloads.length) {
                     this.setState({payloadIndex: 0})
@@ -45,6 +126,8 @@ class RocketBuilding extends React.Component<any, any> {
         }
 
         const insterstageArrow = (left: boolean) => {
+            this.setState({parentIndex: 1})
+
             if(left) {
                 if (this.state.interstageIndex + 1 === this.state.interstages.length) {
                     this.setState({interstageIndex: 0})
@@ -61,6 +144,8 @@ class RocketBuilding extends React.Component<any, any> {
         }
 
         const sideBoostersArrow = (left: boolean) => {
+            this.setState({parentIndex: 2})
+
             if(left) {
                 if (this.state.sideBoosterIndex + 1 === this.state.sideBoosters.length) {
                     this.setState({sideBoosterIndex: 0})
@@ -77,6 +162,8 @@ class RocketBuilding extends React.Component<any, any> {
         }
 
         const engineArrow = (left: boolean) => {
+            this.setState({parentIndex: 3})
+
             if(left) {
                 if (this.state.engineIndex + 1 === this.state.engines.length) {
                     this.setState({engineIndex: 0})
@@ -92,6 +179,39 @@ class RocketBuilding extends React.Component<any, any> {
             }
         }
 
+        //Depending on what type of piece you clicked last, display details in sidebar about that list
+        const getCorrectList = () => {
+            if (this.state.parentIndex === 0) {
+                return this.state.payloads;
+            } else if (this.state.parentIndex === 1) {
+                return this.state.interstages;
+            } else if (this.state.parentIndex === 2) {
+                return this.state.sideBoosters;
+            } else if (this.state.parentIndex === 3) {
+                return this.state.engines;
+            }
+        }
+
+        const getCorrectIndex = () => {
+            if (this.state.parentIndex === 0) {
+                return this.state.payloadIndex;
+            } else if (this.state.parentIndex === 1) {
+                return this.state.interstageIndex;
+            } else if (this.state.parentIndex === 2) {
+                return this.state.sideBoosterIndex
+            } else if (this.state.parentIndex === 3) {
+                return this.state.engineIndex;
+            }
+        }
+
+        const getSidebarObject = () => {
+            console.log(this.state.parentIndex)
+            const correctList = getCorrectList();
+            const correctIndex = getCorrectIndex();
+
+            return correctList[correctIndex];
+        }
+
         return (
             <>
                 <Popup title={"03 To The Stars"}
@@ -102,7 +222,10 @@ class RocketBuilding extends React.Component<any, any> {
                 <Container fluid className={"d-flex h-100 flex-column"} style={{margin: "0", padding: "0", backgroundColor: "#F8EDDD"}}>
                     <Row className={"flex-grow-1"}>
                         <Col className={"col-2 vh-100"} style={{color: "white"}}>
-                            <Sidebar />
+                            <Sidebar title={getSidebarObject().title}
+                                     mass={getSidebarObject().mass}
+                                     airResistance={getSidebarObject().airResistance}
+                                     fuelCapacity={getSidebarObject().fuelCapacity} />
                         </Col>
 
                         <Col className={"col-10"} style={{margin: "0", padding: "0"}}>
@@ -130,98 +253,59 @@ class RocketBuilding extends React.Component<any, any> {
 
                                 <Row style={{margin: 0}}>
                                     <Container fluid>
-                                        {/*/!*Payload*!/*/}
-                                        {/*<Row className={"justify-content-center"} style={{margin: 10}}>*/}
-                                        {/*    <Col style={{display: "flex"}} className={"col-2 align-items-center justify-content-end"}>*/}
-                                        {/*        <img className={"arrow"} src={leftarrow} style={{filter: "contrast(0%)"}}*/}
-                                        {/*             height="100px" alt={"left arrow"}*/}
-                                        {/*             onClick={() => payloadArrow(true)} />*/}
-                                        {/*    </Col>*/}
-
-                                        {/*    <Col className={"col-4"}>*/}
-                                        {/*        <div style={{width: 150, height: 100, backgroundColor: this.state.payloads[this.state.payloadIndex]}} />*/}
-                                        {/*    </Col>*/}
-
-                                        {/*    <Col style={{display: "flex"}} className={"col-2 align-items-center justify-content-start"}>*/}
-                                        {/*        <img className={"arrow"} src={rightarrow} style={{filter: "contrast(0%)"}}*/}
-                                        {/*             height="100px" alt={"right arrow"}*/}
-                                        {/*             onClick={() => payloadArrow(false)} />*/}
-                                        {/*    </Col>*/}
-                                        {/*</Row>*/}
-
-                                        {/*/!*Interstage*!/*/}
-                                        {/*<Row className={"justify-content-center"} style={{margin: 10}}>*/}
-                                        {/*    <Col style={{display: "flex"}} className={"col-2 align-items-center justify-content-end"}>*/}
-                                        {/*        <img className={"arrow"} src={leftarrow} style={{filter: "contrast(0%)"}}*/}
-                                        {/*             height="100px" alt={"left arrow"}*/}
-                                        {/*             onClick={() => insterstageArrow(true)} />*/}
-                                        {/*    </Col>*/}
-
-                                        {/*    <Col className={"col-4"}>*/}
-                                        {/*        <div style={{width: 150, height: 300, backgroundColor: this.state.interstages[this.state.interstageIndex]}} />*/}
-                                        {/*    </Col>*/}
-
-                                        {/*    <Col style={{display: "flex"}} className={"col-2 align-items-center justify-content-start"}>*/}
-                                        {/*        <img className={"arrow"} src={rightarrow} style={{filter: "contrast(0%)"}}*/}
-                                        {/*             height="100px" alt={"right arrow"}*/}
-                                        {/*             onClick={() => insterstageArrow(false)} />*/}
-                                        {/*    </Col>*/}
-                                        {/*</Row>*/}
-
                                         <Row>
                                             <Col className={"col-2"}>
                                                 <Row>
                                                     <img className={"arrow"} src={leftarrow} style={{filter: "contrast(0%)"}}
                                                          height="100px" alt={"left arrow"}
+                                                         onMouseOver={() => this.setState({parentIndex: 0})}
                                                          onClick={() => payloadArrow(true)} />
                                                 </Row>
 
                                                 <Row>
                                                     <img className={"arrow"} src={leftarrow} style={{filter: "contrast(0%)"}}
                                                          height="100px" alt={"left arrow"}
+                                                         onMouseOver={() => this.setState({parentIndex: 1})}
                                                          onClick={() => insterstageArrow(true)} />
                                                 </Row>
 
                                                 <Row>
                                                     <img className={"arrow"} src={leftarrow} style={{filter: "contrast(0%)"}}
                                                          height="100px" alt={"left arrow"}
+                                                         onMouseOver={() => this.setState({parentIndex: 2})}
                                                          onClick={() => sideBoostersArrow(true)} />
                                                 </Row>
 
                                                 <Row>
                                                     <img className={"arrow"} src={leftarrow} style={{filter: "contrast(0%)"}}
                                                          height="100px" alt={"left arrow"}
+                                                         onMouseOver={() => this.setState({parentIndex: 3})}
                                                          onClick={() => engineArrow(true)} />
                                                 </Row>
                                             </Col>
 
                                             <Col>
                                                 <Row className={"justify-content-center"}>
-                                                    <Col className={"col-3"}>
-                                                        <div style={{width: 150, height: 250, position: "absolute", bottom: 0, right: 0,
-                                                            backgroundColor: this.state.sideBoosters[this.state.sideBoosterIndex]}} />
+                                                    <Col className={"col-2 align-self-end"}>
+                                                        <img src={this.state.sideBoosters[this.state.sideBoosterIndex].image} />
                                                     </Col>
 
-                                                    <Col className={"col-3"} style={{margin: 5}}>
+                                                    <Col className={"col-1"} style={{margin: 5}}>
                                                         <Row className={"justify-content-center"} style={{margin: 5}}>
-                                                            <div style={{width: 150, height: 100,
-                                                                backgroundColor: this.state.payloads[this.state.payloadIndex]}} />
+                                                            <img src={this.state.payloads[this.state.payloadIndex].image} />
                                                         </Row>
 
                                                         <Row className={"justify-content-center"} style={{margin: 5}}>
-                                                            <div style={{width: 150, height: 300,
-                                                                backgroundColor: this.state.interstages[this.state.interstageIndex]}} />
+                                                            <img src={this.state.interstages[this.state.interstageIndex].image} />
                                                         </Row>
 
                                                         <Row className={"justify-content-center"} style={{margin: 5}}>
-                                                            <div style={{width: 150, height: 150,
-                                                                backgroundColor: this.state.engines[this.state.engineIndex]}} />
+                                                            <img src={this.state.engines[this.state.engineIndex].image} />
                                                         </Row>
                                                     </Col>
 
-                                                    <Col className={"col-3"}>
-                                                        <div style={{width: 150, height: 250, position: "absolute", bottom: 0, left: 0,
-                                                            backgroundColor: this.state.sideBoosters[this.state.sideBoosterIndex]}} />
+                                                    <Col className={"col-2 align-self-end"}>
+                                                        <img src={this.state.sideBoosters[this.state.sideBoosterIndex].image} />
                                                     </Col>
                                                 </Row>
                                             </Col>
@@ -230,24 +314,28 @@ class RocketBuilding extends React.Component<any, any> {
                                                 <Row>
                                                     <img className={"arrow"} src={rightarrow} style={{filter: "contrast(0%)"}}
                                                          height="100px" alt={"left arrow"}
+                                                         onMouseOver={() => this.setState({parentIndex: 0})}
                                                          onClick={() => payloadArrow(false)} />
                                                 </Row>
 
                                                 <Row>
                                                     <img className={"arrow"} src={rightarrow} style={{filter: "contrast(0%)"}}
                                                          height="100px" alt={"left arrow"}
+                                                         onMouseOver={() => this.setState({parentIndex: 1})}
                                                          onClick={() => insterstageArrow(false)} />
                                                 </Row>
 
                                                 <Row>
                                                     <img className={"arrow"} src={rightarrow} style={{filter: "contrast(0%)"}}
                                                          height="100px" alt={"right arrow"}
+                                                         onMouseOver={() => this.setState({parentIndex: 2})}
                                                          onClick={() => sideBoostersArrow(false)} />
                                                 </Row>
 
                                                 <Row>
                                                     <img className={"arrow"} src={rightarrow} style={{filter: "contrast(0%)"}}
                                                          height="100px" alt={"right arrow"}
+                                                         onMouseOver={() => this.setState({parentIndex: 3})}
                                                          onClick={() => engineArrow(false)} />
                                                 </Row>
                                             </Col>
@@ -261,10 +349,10 @@ class RocketBuilding extends React.Component<any, any> {
                                             clipPath: "polygon(0 0, 95% 0, 100% 100%, 5% 100%)"}}
                                                 onClick={() => this.props.history.push({
                                                     pathname: '/activity/flight-simulator',
-                                                    state: {payloadIndex: this.state.payloadIndex,
-                                                            interstageIndex: this.state.interstageIndex,
-                                                            sideBoostersIndex: this.state.sideBoostersIndex,
-                                                            engineIndex: this.state.engineIndex}})}>Test Rocket</Button>
+                                                    state: {payload: this.state.payloads[this.state.payloadIndex],
+                                                            interstage: this.state.interstages[this.state.interstageIndex],
+                                                            sideBooster: this.state.sideBoosters[this.state.sideBoosterIndex],
+                                                            engine: this.state.engines[this.state.engineIndex]}})}>Test Rocket</Button>
                                     </Col>
                                 </Row>
                             </Container>

@@ -121,7 +121,6 @@ class MetalEngraving extends React.Component<any, any> {
                 } else {
                     this.setState({cursor: getActiveLaserIcon()})
                     this.setState({toolActive: true})
-
                 }
             }
         }

@@ -5,24 +5,21 @@ import 'font-awesome/css/font-awesome.min.css';
 import stellarBackground from "../stellar-cycle/stellarBackground.png";
 import "./Rocket.scss"
 import {Animation} from "./Animation";
+import sideBooster_2 from "./images/sideBoosters/sideBooster_2.png"
 
 class FlightSimulator extends React.Component<any, any> {
     constructor(props: any) {
         super(props);
         this.state = {
-            payloadIndex: this.props.location.state.payloadIndex,
-            interstageIndex: this.props.location.state.interstageIndex,
-            sideBoostersIndex: this.props.location.state.sideBoostersIndex,
-            engineIndex: this.props.location.state.engineIndex,
-            payloadImages: [],
-            interstageImages: [],
-            sideBoosterImages: [],
-            engineImages: [] //TODO
+            payload: this.props.location.state.payload,
+            interstage: this.props.location.state.interstage,
+            sideBooster: this.props.location.state.sideBooster,
+            engine: this.props.location.state.engine,
         };
     }
 
     render() {
-
+    console.log(this.state.payload)
 
         return (
             <>
@@ -35,21 +32,9 @@ class FlightSimulator extends React.Component<any, any> {
                     </Row>
 
                     <Row>
-                        <div className={"side-booster-left"}>
-                            <Animation />
-                        </div>
-                    </Row>
-
-                    <Row>
-                        <div className={"interstage"}>
-                            <Animation />
-                        </div>
-                    </Row>
-
-
-                    <Row>
-                        <div className={"side-booster-right"}>
-                            <Animation />
+                        <div className={"ship"}>
+                            <Animation images={[this.state.sideBooster.image, this.state.engine.image,
+                                this.state.interstage.image, this.state.payload.image]} />
                         </div>
                     </Row>
 
