@@ -4,8 +4,9 @@ import Button from "react-bootstrap/Button";
 import 'font-awesome/css/font-awesome.min.css';
 import stellarBackground from "../stellar-cycle/stellarBackground.png";
 import "./Rocket.scss"
-import {Animation} from "./Animation";
+import {RocketAnimation} from "./RocketAnimation";
 import sideBooster_2 from "./images/sideBoosters/sideBooster_2.png"
+import {BackgroundAnimation} from "./BackgroundAnimation";
 
 class FlightSimulator extends React.Component<any, any> {
     constructor(props: any) {
@@ -18,13 +19,18 @@ class FlightSimulator extends React.Component<any, any> {
         };
     }
 
+    componentDidMount() {
+
+    }
+
     render() {
-    console.log(this.state.payload)
+        //TODO - Need to show error popup if rocket is bad combo of parts (different scenarios)
 
         return (
             <>
-                <Container className={"vh-100"} fluid style={{margin: 0, padding: 0, backgroundRepeat: "repeat", backgroundPosition: "center",
-                    backgroundImage:`url(${stellarBackground})`, backgroundSize: "cover"}}>
+                <Container className={"vh-100"} fluid style={{margin: 0, padding: 0}}>
+                    <BackgroundAnimation />
+
                     <Row style={{paddingTop: 25}}>
                         <Col>
                             <p style={{color: "white", fontSize: "28px", fontWeight: "bold"}}>Flight Simulator</p>
@@ -33,7 +39,7 @@ class FlightSimulator extends React.Component<any, any> {
 
                     <Row>
                         <div className={"ship"}>
-                            <Animation images={[this.state.sideBooster.image, this.state.engine.image,
+                            <RocketAnimation images={[this.state.sideBooster.image, this.state.engine.image,
                                 this.state.interstage.image, this.state.payload.image]} />
                         </div>
                     </Row>

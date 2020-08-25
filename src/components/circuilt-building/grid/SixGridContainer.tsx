@@ -14,7 +14,7 @@ import {Container, Row, Col} from "react-bootstrap";
 import update from 'immutability-helper'
 import {ComponentTypes} from "../../shared/models/ComponentTypes";
 import {Slider, Typography, withStyles} from "@material-ui/core";
-import CircuitErrorPopup from "../../shared/modals/CircuitErrorPopup";
+import ErrorPopup from "../../shared/modals/ErrorPopup";
 
 const containerStyle: React.CSSProperties = {
     width: 500,
@@ -148,7 +148,7 @@ export const SixGridContainer: React.FC<GridContainerProps> = ({objectiveImage, 
                 }
             </Container>
 
-            <CircuitErrorPopup title={"Error!"} description={getCurrentBoardIssue()} open={errorPopup} closePopup={() => setErrorPopup(false)} />
+            <ErrorPopup title={"Error!"} description={getCurrentBoardIssue()} open={errorPopup} closePopup={() => setErrorPopup(false)} />
         </>
     )
 }

@@ -12,6 +12,7 @@ import redgiant from "./images/redgiant.png"
 import redsupergiant from "./images/redsupergiant.png"
 import supernova from "./images/supernova.png"
 import whitedwarf from "./images/whitedwarf.png"
+import {StellarInfoAnimation} from "./StellarInfoAnimation";
 
 class InfoPage extends React.Component<any, any> {
     constructor(props: any) {
@@ -108,7 +109,7 @@ class InfoPage extends React.Component<any, any> {
                     backgroundImage:`url(${stellarBackground})`, textAlign: "left"}}>
                     <Row style={{margin: 0, padding: 0}}>
                         <Col className={"col-6 vh-100 align-items-center justify-content-center"} style={{display: "flex", margin: 0, padding: 0}}>
-                                    <img src={this.state.image} />
+                                    <StellarInfoAnimation image={this.state.image} />
                         </Col>
 
                         <Col className={"col-6 vh-100"} style={{margin: 0, padding: 0, backgroundColor: "#29405B",

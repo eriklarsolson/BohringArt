@@ -17,7 +17,7 @@ export interface AnimationProps {
     path: string
 }
 
-export const Animation: React.FC<AnimationProps> = ({path}) => {
+export const StellarPathAnimation: React.FC<AnimationProps> = ({path}) => {
 
     return (
         <div className="stellar-container">

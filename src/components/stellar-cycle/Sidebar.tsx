@@ -12,6 +12,7 @@ import {
 } from "@material-ui/core";
 import "./StellarCycle.scss";
 import PropertiesSlider from "./PropertiesSlider";
+import MassClassRadio from "./MassClassRadio";
 
 class Sidebar extends React.Component<any, any> {
     render() {
@@ -25,19 +26,13 @@ class Sidebar extends React.Component<any, any> {
         return (
             <>
                <Container style={{backgroundColor: "#29405B", margin: 0, padding: 0, height: "100%",
-                   clipPath: "polygon(0 0, 80% 0, 100% 100%, 0 100%)", paddingRight: 25}}>
+                   clipPath: "polygon(0 0, 90% 0, 100% 100%, 0 100%)", paddingRight: 25}}>
                    <h3 style={{paddingTop: "15px", paddingBottom: "30px"}}>Attributes</h3>
 
                    <Row style={{margin: "5px"}}>
                        <Col>
-                           <FormControl component="fieldset" style={{float: "left", margin: "10%"}}>
-                               <FormLabel component="legend" style={{color: "white", fontSize: "20px", fontWeight: "bold"}}>Mass Class</FormLabel>
-                               <RadioGroup aria-label="gender" name="gender1" value={massClassString}
-                                           onChange={this.props.handleMassChange}>
-                                   <FormControlLabel value="Average" control={<Radio />} label="Average" />
-                                   <FormControlLabel value="Massive" control={<Radio />} label="Massive" />
-                               </RadioGroup>
-                           </FormControl>
+                           <MassClassRadio value={massClassString}
+                                                 changeValue={this.props.handleMassChange} />
                        </Col>
                    </Row>
 

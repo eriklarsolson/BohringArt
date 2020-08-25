@@ -2,7 +2,7 @@ import React from "react";
 import {Button, Modal} from "react-bootstrap";
 import { Container, Row, Col } from 'react-bootstrap'
 
-class CircuitErrorPopup extends React.Component<any, any> {
+class ErrorPopup extends React.Component<any, any> {
     render() {
         return (
             <Modal show={this.props.open}
@@ -34,4 +34,4 @@ class CircuitErrorPopup extends React.Component<any, any> {
         )
     }
 }
-export default CircuitErrorPopup;
+export default ErrorPopup;

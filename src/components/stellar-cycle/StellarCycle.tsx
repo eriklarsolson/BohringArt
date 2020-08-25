@@ -15,7 +15,7 @@ import redsupergiant from './images/redsupergiant.png';
 import supernova from './images/supernova.png';
 import whitedwarf from './images/whitedwarf.png';
 import 'font-awesome/css/font-awesome.min.css';
-import {Animation} from "./Animation";
+import {StellarPathAnimation} from "./StellarPathAnimation";
 import {getIndex} from "../circuilt-building/grid/Functionality";
 
 class StellarCycle extends React.Component<any, any> {
@@ -113,7 +113,7 @@ class StellarCycle extends React.Component<any, any> {
 
                     <Row style={{margin: 0}}>
                         <div style={{position: "absolute", top: "10%", left: "5%", margin: 0, width: "100%", height: "100%"}}>
-                            <Animation path={this.state.paths[this.state.pathIndex].path} />
+                            <StellarPathAnimation path={this.state.paths[this.state.pathIndex].path} />
                         </div>
 
                         <Col className={"col-3 justify-content-center align-content-center stellar-circle"} style={{padding: "0"}}>

@@ -45,7 +45,7 @@ export const Animation: React.FC<AnimationProps> = ({path}) => {
 // import * as React from "react";
 // import { motion } from "framer-motion";
 //
-// export const Animation = () => {
+// export const RocketAnimation = () => {
 //     return (
 //         <motion.div
 //             animate={{

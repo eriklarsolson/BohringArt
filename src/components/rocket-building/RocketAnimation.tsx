@@ -6,19 +6,19 @@ export interface AnimationProps {
     images: any
 }
 
-export const Animation: React.FC<AnimationProps>  = ({images}) => {
+export const RocketAnimation: React.FC<AnimationProps>  = ({images}) => {
     return (
         <motion.div
             animate={{
                 // scale: [1, 2, 2, 1, 1],
                 // rotate: [0, 0, 270, 270, 0],
                 // x: [100, 200, 300, 400, 500],
-                x: [0, 2500]
+                x: [0, 1300]
                 // borderRadius: ["20%", "20%", "50%", "50%", "20%"]
             }}
 
             transition={{
-                duration: 6,
+                duration: 15,
                 ease: "easeInOut",
                 times: [0, 1],
                 loop: Infinity,

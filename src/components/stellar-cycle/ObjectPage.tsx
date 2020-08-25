@@ -157,6 +157,7 @@ class ObjectPage extends React.Component<any, any> {
         }
 
         const handleMassChange = (event: { target: { value: any; }; }) => {
+            console.log(event.target.value)
             if(event.target.value === "Average") {
                 this.setState({massClass: 0});
             } else {
@@ -165,8 +166,6 @@ class ObjectPage extends React.Component<any, any> {
             this.setState({index: 0});
         };
 
-        //TODO - Currently this lets you change the values of each stellar object (next 3 functions). Instead, it
-        // should find the closest object to what you change them to and display that stellar object (not update their values)
         const changeTemperature = (event: any, newValue: any) => {
             const samePlaceComponents = this.state.stellarObjects[this.state.massClass].filter((object: { temperatureValue: any; }) => object.temperatureValue === newValue);
             if (samePlaceComponents.length > 0) {
@@ -184,7 +183,7 @@ class ObjectPage extends React.Component<any, any> {
         }
 
         const changeMass = (event: any, newValue: any) => {
-            //Don't delete this. Useful code to change property of one object within array (for state)
+            // Don't delete this. Useful code to change property of one object within array (for state)
             // let objects = [...this.state.stellarObjects];
             // let object = {...objects[this.state.massClass][this.state.index]};
             // object.massValue = newValue;

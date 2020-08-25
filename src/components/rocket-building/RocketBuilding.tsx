@@ -205,7 +205,6 @@ class RocketBuilding extends React.Component<any, any> {
         }
 
         const getSidebarObject = () => {
-            console.log(this.state.parentIndex)
             const correctList = getCorrectList();
             const correctIndex = getCorrectIndex();
 

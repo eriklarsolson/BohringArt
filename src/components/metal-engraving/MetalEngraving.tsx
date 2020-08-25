@@ -108,7 +108,7 @@ class MetalEngraving extends React.Component<any, any> {
             //Only allowed one stencil at a time, so clear canvas each time one is added
             clearCanvas();
 
-            context?.drawImage(image, 210, 150, 400, 400);
+            context?.drawImage(image, 100, 20, 600, 600);
         }
 
         const rightClick = (event: { preventDefault: () => void; }) => {
