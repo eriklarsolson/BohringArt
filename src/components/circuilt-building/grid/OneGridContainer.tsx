@@ -1,22 +1,25 @@
 import React, {useState} from 'react'
 import {OneGrid} from './OneGrid'
-import { Container, Row, Col } from 'react-bootstrap'
+import {Container, Row} from 'react-bootstrap'
 
 export interface GridContainerProps {
     componentType: string
+    paddingRight: string
+    extraRightVal: number
 }
 
-const containerStyle: React.CSSProperties = {
-    width: 150,
-    height: 100,
-}
-
-export const OneGridContainer: React.FC<GridContainerProps> = ({componentType}) => {
+export const OneGridContainer: React.FC<GridContainerProps> = ({componentType, paddingRight, extraRightVal}) => {
     const [components, setComponents] = useState<[{ x: number, y: number, type: string }]>([{ x: 0, y: 0, type: componentType }])
 
-    const [rightValue, setRightValue] = useState<number>(0)
+    const [rightValue, setRightValue] = useState<string>("0%")
     const [zIndex, setZIndex] = useState<number>(-1)
     const [tooltipShowing, setTooltipShowing] = useState<boolean>(false)
+
+    const containerStyle: React.CSSProperties = {
+        width: 200,
+        height: 100,
+        paddingRight: paddingRight
+    }
 
     // useEffect(() => observe((components: any) => setComponentsList(components)))
     let tooltipStyle: React.CSSProperties = {
@@ -35,18 +38,31 @@ export const OneGridContainer: React.FC<GridContainerProps> = ({componentType}) 
 
     const showTooltip = () => {
         if(tooltipShowing) {
-            setRightValue(0)
+            setRightValue("0")
             setZIndex(-1)
             setTooltipShowing(false)
         } else {
-            setRightValue(-295)
+            setRightValue(newRightValue + "%")
             setZIndex(1)
             setTooltipShowing(true)
         }
     }
 
+    //Each component has a unique padding right, so gotta combine -75% above for tooltip with the custom padding so they line up when hovering
+    const getRightValWithPadding = () => {
+        const rightVal = -75
+        // const paddingRightVal = paddingRight.substring(0, paddingRight.length - 1)
+        //
+        // const newVal = rightVal - (parseInt(paddingRightVal) * 2)
+        // console.log(paddingRightVal)
+        // console.log(newVal)
+
+        return rightVal - extraRightVal
+    }
+    const newRightValue = getRightValWithPadding()
+
     const hideTooltip = () => {
-        setRightValue(0)
+        setRightValue("0")
         setZIndex(-1)
         setTooltipShowing(false)
     }

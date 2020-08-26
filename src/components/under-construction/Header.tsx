@@ -56,13 +56,13 @@ class Header extends React.Component {
                                 </Row>
                                 <Row className={"justify-content-center"}>
                                     <Button
-                                        href="/activity/circuit-building"
+                                        href="/"
                                         variant="primary"
                                         type="submit"
                                         className={"btn green-button"}
-                                        style={{width: "30%",
+                                        style={{width: "50%",
                                             clipPath: "polygon(0 0, 95% 0, 100% 100%, 5% 100%)"}}>
-                                        Start
+                                        Under Construction - Coming Soon
                                     </Button>
                                 </Row>
                             </Container>

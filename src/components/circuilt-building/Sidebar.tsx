@@ -12,30 +12,30 @@ class Sidebar extends React.Component<any, any> {
             <>
                <Container style={{margin: "0", padding: "0", height: "100%"}}>
                    <div style={{position: "absolute", width: "100%", height: "100%", backgroundColor: "#29405B",
-                       clipPath: "polygon(0 0,90% 0, 100% 100%, 0 100%)"}} />
+                       clipPath: "polygon(0 0,80% 0, 100% 100%, 0 100%)"}} />
 
                    <h3 style={{paddingTop: "15px"}}>Modules</h3>
                    <Row>
                        <Col>
-                           <OneGridContainer componentType={"wire"} />
+                           <OneGridContainer componentType={"wire"} paddingRight={"15%"} extraRightVal={5} />
                        </Col>
                    </Row>
 
                    <Row>
                        <Col>
-                           <OneGridContainer componentType={"battery"} />
+                           <OneGridContainer componentType={"battery"} paddingRight={"12%"} extraRightVal={7} />
                        </Col>
                    </Row>
 
                    <Row>
                        <Col>
-                           <OneGridContainer componentType={"resistor"} />
+                           <OneGridContainer componentType={"resistor"} paddingRight={"9%"} extraRightVal={9} />
                        </Col>
                    </Row>
 
                    <Row>
                        <Col>
-                           <OneGridContainer componentType={"switch"} />
+                           <OneGridContainer componentType={"switch"} paddingRight={"6%"} extraRightVal={11} />
                        </Col>
                    </Row>
 
@@ -43,7 +43,7 @@ class Sidebar extends React.Component<any, any> {
                    {this.props.currentLevel > 1 ?
                        <Row>
                             <Col>
-                                <OneGridContainer componentType={"inductor"} />
+                                <OneGridContainer componentType={"inductor"} paddingRight={"3%"} extraRightVal={13} />
                             </Col>
                        </Row>
                    :
@@ -57,7 +57,7 @@ class Sidebar extends React.Component<any, any> {
                    {this.props.currentLevel > 2 ?
                        <Row>
                            <Col>
-                               <OneGridContainer componentType={"capacitor"} />
+                               <OneGridContainer componentType={"capacitor"} paddingRight={"0%"} extraRightVal={15} />
                            </Col>
                         </Row>
                    :

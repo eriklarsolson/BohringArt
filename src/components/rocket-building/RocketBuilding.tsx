@@ -6,8 +6,6 @@ import 'font-awesome/css/font-awesome.min.css';
 import Popup from "../shared/modals/Popup";
 import leftarrow from "../stellar-cycle/leftarrow.png";
 import rightarrow from "../stellar-cycle/rightarrow.png";
-
-//Image imports
 import payload_1 from "./images/payloads/payload_1.png"
 import payload_2 from "./images/payloads/payload_2.png"
 import payload_3 from "./images/payloads/payload_3.png"
@@ -17,11 +15,13 @@ import sideBooster_1 from "./images/sideBoosters/sideBooster_1.png"
 import sideBooster_2 from "./images/sideBoosters/sideBooster_2.png"
 import engine_1 from "./images/engines/engine_1.png"
 import engine_2 from "./images/engines/engine_2.png"
+import RocketBuildingQuestionPopup from "../shared/modals/RocketBuildingQuestionPopup";
 
 class RocketBuilding extends React.Component<any, any> {
     constructor(props: any) {
         super(props);
         this.state = {
+            questionPopupOpened: false,
             parentIndex: 0,
             popupOpened: true,
             payloads: [
@@ -103,6 +103,10 @@ class RocketBuilding extends React.Component<any, any> {
     }
 
     render() {
+        const cycleQuestionPopup = () => {
+            this.setState({questionPopupOpened: !this.state.questionPopupOpened})
+        }
+
         const cyclePopup = () => {
             this.setState({popupOpened: !this.state.popupOpened})
         }
@@ -215,12 +219,14 @@ class RocketBuilding extends React.Component<any, any> {
             <>
                 <Popup title={"03 To The Stars"}
                        open={this.state.popupOpened}
-                       description={"description goes here"}
+                       description={"Using the arrows on the left and right, create a rocket consisting of an engine, boosters, a body, and a cone. Make sure to account for fuel, air resistance, and weight as all affect the rocket’s motion greatly. Click LAUNCH  to send your rocket off into space with the telescope as the payload. Along the way, answer TEXT-based questions that determine the fate of your journey! Remember to answer the questions keeping in mind the cost of the rocket as well as the survival of its crew. \n"}
                        closePopup={cyclePopup} />
 
+                <RocketBuildingQuestionPopup open={this.state.questionPopupOpened} closePopup={cycleQuestionPopup} />
+
                 <Container fluid className={"d-flex h-100 flex-column"} style={{margin: "0", padding: "0", backgroundColor: "#F8EDDD"}}>
-                    <Row className={"flex-grow-1"}>
-                        <Col className={"col-2 vh-100"} style={{color: "white"}}>
+                    <Row style={{margin: 0}}>
+                        <Col className={"col-2 vh-100"} style={{color: "white", padding: 0}}>
                             <Sidebar title={getSidebarObject().title}
                                      mass={getSidebarObject().mass}
                                      airResistance={getSidebarObject().airResistance}
@@ -245,7 +251,12 @@ class RocketBuilding extends React.Component<any, any> {
                                     <Col className={"col-2 ml-auto"} style={{padding: 0, marginTop: "3%"}}>
                                         <Row style={{margin: 0}} className={"justify-content-end"}>
                                             <Button className={"blue-button"} style={{marginBottom: 15, width: 200,
-                                                }}>More Info</Button>
+                                                }} onClick={cycleQuestionPopup}>More Info</Button>
+                                        </Row>
+
+                                        <Row style={{margin: 0}} className={"justify-content-end"}>
+                                            <Button className={"blue-button"} style={{marginBottom: 15, width: 200,
+                                            }} onClick={cyclePopup}>Objective</Button>
                                         </Row>
                                     </Col>
                                 </Row>
@@ -351,7 +362,7 @@ class RocketBuilding extends React.Component<any, any> {
                                                     state: {payload: this.state.payloads[this.state.payloadIndex],
                                                             interstage: this.state.interstages[this.state.interstageIndex],
                                                             sideBooster: this.state.sideBoosters[this.state.sideBoosterIndex],
-                                                            engine: this.state.engines[this.state.engineIndex]}})}>Test Rocket</Button>
+                                                            engine: this.state.engines[this.state.engineIndex]}})}>Launch</Button>
                                     </Col>
                                 </Row>
                             </Container>

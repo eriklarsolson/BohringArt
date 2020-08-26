@@ -1,30 +1,29 @@
 import React from "react";
 import {Button, Modal} from "react-bootstrap";
 import { Container, Row, Col } from 'react-bootstrap'
-import concave from "../../telescope-activity/grid/components/images/concave.png";
-import convex from "../../telescope-activity/grid/components/images/convex.png";
-import flatmirror from "../../telescope-activity/grid/components/images/flatmirror.png";
-import viewpoint from "../../telescope-activity/grid/components/images/viewpoint.png";
+import payload_1 from "../../rocket-building/images/payloads/payload_1.png"
+import interstage_1 from "../../rocket-building/images/interstages/interstage_1.png"
+import sideBooster_1 from "../../rocket-building/images/sideBoosters/sideBooster_1.png"
+import engine_1 from "../../rocket-building/images/engines/engine_1.png"
 
-
-class TelescopeQuestionPopup extends React.Component<any, any> {
+class RocketBuildingQuestionPopup extends React.Component<any, any> {
     constructor(props: any) {
         super(props);
         this.state = {
-            title: "Concave",
-            description: "concave description",
+            title: "Payload",
+            description: "Payload description",
         }
     }
     render() {
         const loadModuleDescription = (module: string) => {
-            if (module === "Concave") {
-                this.setState({title: "Concave", description: "Concave description"})
-            } else if (module === "Convex") {
-                this.setState({title: "Convex", description: "Convex description"})
-            } else if (module === "Flat Mirror") {
-                this.setState({title: "Flat Mirror", description: "Flat Mirror description"})
-            } else if (module === "Viewpoint") {
-                this.setState({title: "Viewpoint", description: "Viewpoint description"})
+            if (module === "Payload") {
+                this.setState({title: "Payload", description: "Payload description"})
+            } else if (module === "Interstage") {
+                this.setState({title: "Interstage", description: "Interstage description"})
+            } else if (module === "SideBooster") {
+                this.setState({title: "Side Booster", description: "Side Booster description"})
+            } else if (module === "Engine") {
+                this.setState({title: "Engine", description: "Engine description"})
             }
         }
 
@@ -46,33 +45,33 @@ class TelescopeQuestionPopup extends React.Component<any, any> {
                             <Col className={"col-3 align-content-center justify-content-center vh-50"} style={{height: "500px"}}>
                                 <Row className={"justify-content-center"} style={{margin: "5px"}}>
                                     <Col className={"col-12"} style={{backgroundColor: "#F8EDDD"}}
-                                         onMouseOver={() => loadModuleDescription("Concave")}>
-                                        <img src={concave}
-                                             style={{width: "100px", height: "100px"}} />
+                                         onMouseOver={() => loadModuleDescription("Payload")} >
+                                        <img src={payload_1}
+                                             style={{height: "100px"}} />
                                     </Col>
                                 </Row>
 
                                 <Row className={"justify-content-center"} style={{margin: "5px"}}>
                                     <Col className={"col-12"} style={{backgroundColor: "#F8EDDD"}}
-                                         onMouseOver={() => loadModuleDescription("Convex")}>
-                                        <img src={convex}
-                                             style={{width: "100px", height: "100px"}} />
+                                         onMouseOver={() => loadModuleDescription("Interstage")}>
+                                        <img src={interstage_1}
+                                             style={{height: "100px"}}/>
                                     </Col>
                                 </Row>
 
                                 <Row className={"justify-content-center"} style={{margin: "5px"}}>
                                     <Col className={"col-12"} style={{backgroundColor: "#F8EDDD"}}
-                                         onMouseOver={() => loadModuleDescription("Flat Mirror")}>
-                                        <img src={flatmirror}
-                                             style={{width: "100px", height: "100px"}} />
+                                         onMouseOver={() => loadModuleDescription("SideBooster")}>
+                                        <img src={sideBooster_1}
+                                             style={{height: "100px"}} />
                                     </Col>
                                 </Row>
 
                                 <Row className={"justify-content-center"} style={{margin: "5px"}}>
                                     <Col className={"col-12"} style={{backgroundColor: "#F8EDDD"}}
-                                         onMouseOver={() => loadModuleDescription("Viewpoint")}>
-                                        <img src={viewpoint}
-                                             style={{width: "100px", height: "100px"}} />
+                                         onMouseOver={() => loadModuleDescription("Engine")}>
+                                        <img src={engine_1}
+                                             style={{height: "100px"}} />
                                     </Col>
                                 </Row>
                             </Col>
@@ -97,4 +96,4 @@ class TelescopeQuestionPopup extends React.Component<any, any> {
         )
     }
 }
-export default TelescopeQuestionPopup;
+export default RocketBuildingQuestionPopup;

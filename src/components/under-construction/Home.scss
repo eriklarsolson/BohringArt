@@ -1,0 +1,18 @@
+.home-text {
+  display: block;
+  position: absolute;
+  width: 50%;
+  color: #fff;
+  left: 0;
+  top: 15%;
+  padding: 1em;
+  font-weight: 700;
+  z-index: 2;
+}
+
+.number-block:hover {
+  border: 5px solid #29405B !important;
+  background-color: white !important;
+  color: #29405B;
+  cursor: pointer;
+}

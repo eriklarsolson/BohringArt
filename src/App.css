@@ -61,3 +61,7 @@
 .green-button:hover {
   border: 1px solid transparent !important;
 }
+
+.modal-xl {
+  max-width: 75%;
+}

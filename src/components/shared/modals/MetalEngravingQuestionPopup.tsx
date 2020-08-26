@@ -49,26 +49,26 @@ class MetalEngravingQuestionPopup extends React.Component<any, any> {
                         <Row className={"justify-content-center"} style={{padding: "10px"}}>
                             <Col className={"col-3 align-content-center justify-content-center vh-50"} style={{height: "500px"}}>
                                 <Row className={"justify-content-center"} style={{margin: "5px"}}>
-                                    <Col className={"col-12"} style={{backgroundColor: "#F8EDDD"}}>
+                                    <Col className={"col-12"} style={{backgroundColor: "#F8EDDD"}}
+                                         onMouseOver={() => loadModuleDescription("laser")}>
                                         <img src={lasercomponenticon}
-                                             style={{width: "100px", height: "100px"}}
-                                             onMouseOver={() => loadModuleDescription("laser")} />
+                                             style={{width: "100px", height: "100px"}} />
                                     </Col>
                                 </Row>
 
                                 <Row className={"justify-content-center"} style={{margin: "5px"}}>
-                                    <Col className={"col-12"} style={{backgroundColor: "#F8EDDD"}}>
+                                    <Col className={"col-12"} style={{backgroundColor: "#F8EDDD"}}
+                                         onMouseOver={() => loadModuleDescription("optics")}>
                                         <img src={optics}
-                                             style={{width: "100px", height: "100px"}}
-                                             onMouseOver={() => loadModuleDescription("optics")} />
+                                             style={{width: "100px", height: "100px"}} />
                                     </Col>
                                 </Row>
 
                                 <Row className={"justify-content-center"} style={{margin: "5px"}}>
-                                    <Col className={"col-12"} style={{backgroundColor: "#F8EDDD"}}>
+                                    <Col className={"col-12"} style={{backgroundColor: "#F8EDDD"}}
+                                         onMouseOver={() => loadModuleDescription("prism")}>
                                         <img src={prism}
-                                             style={{width: "100px", height: "100px"}}
-                                             onMouseOver={() => loadModuleDescription("prism")} />
+                                             style={{width: "100px", height: "100px"}} />
                                     </Col>
                                 </Row>
                             </Col>

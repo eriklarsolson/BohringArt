@@ -99,16 +99,16 @@ export const SixGridContainer: React.FC<GridContainerProps> = ({objectiveImage, 
         <>
             <Container fluid>
                 <Row className={"justify-content-center align-content-center align-items-center"}>
-                    <Col className={"col-4"} style={{padding: "0", margin: "0"}}>
+                    <Col className={"col-4"} style={{maxWidth: 500, flex: "0 0 500px", padding: "0", margin: "0"}}>
                         <div className={"d-flex justify-content-center align-content-center"}>
                             <div style={containerStyle}>
                                 <SixGrid showGrid={showGrid} components={getComponents()} currentComponent={currentComp} />
                             </div>
                         </div>
                     </Col>
-                    <Col className={"col-2"} style={{padding: "0", margin: "0"}}>
+                    <Col className={"col-1"} style={{padding: "0", margin: "0"}}>
                         <img src={objectiveImage} width={"200px"} />
-                        <div style={{position: "absolute", top: "55%", right: "100px", transform: "translate(-50%, -50%)"}}>
+                        <div style={{position: "absolute", top: "55%", right: 0, transform: "translate(-50%, -50%)"}}>
                             <p style={{fontWeight: "bold", fontSize: "16px", color: "white"}}>{totalVoltage}v</p>
                         </div>
                     </Col>

@@ -209,7 +209,7 @@ class MetalEngraving extends React.Component<any, any> {
                                     </Col>
 
                                     <Col>
-                                        <p style={{color: "#29405B", fontSize: "28px", fontWeight: "bold"}}>Metal Engraving</p>
+                                        <p style={{color: "#29405B", fontSize: "28px", fontWeight: "bold"}}>Laser And Lenses</p>
                                     </Col>
                                 </Row>
 

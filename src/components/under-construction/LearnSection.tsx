@@ -14,13 +14,6 @@ class LearnSection extends React.Component<any, any> {
     }
 
     render() {
-        let images = [
-            circuitbuilding,
-            circuitbuilding,
-            circuitbuilding,
-            circuitbuilding
-        ]
-
         let learnSections: Array<LearnSectionModel> = [
             {
                 Title: " Circuit Construction",
@@ -53,32 +46,28 @@ class LearnSection extends React.Component<any, any> {
                        <Col className="col-2" style={{color: "white"}}>
                             <Row className="justify-content-center" style={{margin: "10px"}}>
                                 <div className={"number-block"} style={{width: "100px", height: "100px",
-                                    backgroundColor: "#29405B"}} onMouseOver={() => changeLearnSection(0)}
-                                     onClick={() => this.props.goToActivity(0)}>
+                                    backgroundColor: "#29405B"}} onMouseOver={() => changeLearnSection(0)}>
                                     <h1>01</h1>
                                 </div>
                             </Row>
 
                            <Row className="justify-content-center" style={{margin: "10px"}}>
                                <div className={"number-block"} style={{width: "100px", height: "100px",
-                                   backgroundColor: "#29405B"}} onMouseOver={() => changeLearnSection(1)}
-                                    onClick={() => this.props.goToActivity(1)}>
+                                   backgroundColor: "#29405B"}} onMouseOver={() => changeLearnSection(1)}>
                                    <h1>02</h1>
                                </div>
                            </Row>
 
                            <Row className="justify-content-center" style={{margin: "10px"}}>
                                <div className={"number-block"} style={{width: "100px", height: "100px",
-                                   backgroundColor: "#29405B"}} onMouseOver={() => changeLearnSection(2)}
-                                    onClick={() => this.props.goToActivity(2)}>
+                                   backgroundColor: "#29405B"}} onMouseOver={() => changeLearnSection(2)}>
                                    <h1>03</h1>
                                </div>
                            </Row>
 
                            <Row className="justify-content-center" style={{margin: "10px"}}>
                                <div className={"number-block"} style={{width: "100px", height: "100px",
-                                   backgroundColor: "#29405B"}} onMouseOver={() => changeLearnSection(3)}
-                                    onClick={() => this.props.goToActivity(3)}>
+                                   backgroundColor: "#29405B"}} onMouseOver={() => changeLearnSection(3)}>
                                    <h1>04</h1>
                                </div>
                            </Row>

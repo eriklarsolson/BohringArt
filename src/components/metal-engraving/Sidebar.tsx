@@ -3,10 +3,10 @@ import { Container, Row, Col } from 'react-bootstrap'
 import lasercomponenticon from "./images/laser_COMPONENT.png";
 import optics from "./images/optics.png";
 import prism from "./images/prism.png";
-import square from "./square.png";
+import square from "./images/square.png";
 import circle from "./circle.png";
-import triangle from "./triangle.png";
-import star from "./star.png";
+import triangle from "./images/triangle.png";
+import star from "./images/star.png";
 import Button from "react-bootstrap/Button";
 import Accordion from "react-bootstrap/Accordion"
 import {Card} from "@material-ui/core";
@@ -24,10 +24,16 @@ class Sidebar extends React.Component<any, any> {
     constructor(props: any) {
         super(props);
         this.state = {
-
+            currentArrow: "fa-arrow-down"
         }
     }
+
     render() {
+        const changeShapeArrow = () => {
+
+        }
+
+
         return (
             <>
                <Container style={{margin: "0", padding: "0", height: "100%"}}>
@@ -64,7 +70,7 @@ class Sidebar extends React.Component<any, any> {
                            <Row className={"justify-content-center"}>
                                <Col className="col-8" style={{backgroundColor: "#C4C4C4"}}>
                                    <Accordion.Toggle as={Button} variant="link" eventKey="0">
-                                       <i className="fa fa-arrow-down" style={{color: "#42949F"}} />
+                                       <i className="fa fa-arrow-down" style={{color: "#42949F"}} onClick={changeShapeArrow} />
                                    </Accordion.Toggle>
                                </Col>
                            </Row>

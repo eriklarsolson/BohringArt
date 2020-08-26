@@ -7,6 +7,7 @@ import resistor from "../../circuilt-building/grid/components/images/resistor.pn
 import switchImg from "../../circuilt-building/grid/components/images/switch.png"
 import inductor from "../../circuilt-building/grid/components/images/inductor.png"
 import capacitor from "../../circuilt-building/grid/components/images/capacitor.png"
+import square from "../../metal-engraving/images/square.png"
 
 class CircuitPopup extends React.Component<any, any> {
     constructor(props: any) {
@@ -31,13 +32,17 @@ class CircuitPopup extends React.Component<any, any> {
                 this.setState({title: "Inductor", description: "Inductor description"})
             } else if (module === "Capacitor") {
                 this.setState({title: "Capacitor", description: "Capacitor description"})
+            } else if (module === "Series") {
+                this.setState({title: "Series Circuit", description: "Series Circuit description"})
+            } else if (module === "Parallel") {
+                this.setState({title: "Parallel Circuit", description: "Parallel Circuit description"})
             }
         }
 
         return (
             <Modal show={this.props.open}
                    onClick={this.props.closeCircuitPopup}
-                   size="lg"
+                   size="xl"
                     style={{maxWidth: "1500px !important", padding: "30px"}}>
                 <Modal.Header closeButton>
                 </Modal.Header>
@@ -48,8 +53,8 @@ class CircuitPopup extends React.Component<any, any> {
                             <p style={{color: "#29405B", fontSize: "30px", fontWeight: "bold"}}>Modules</p>
                         </Row>
 
-                        <Row style={{padding: "10px"}}>
-                            <Col className={"col-3 align-content-center justify-content-center vh-50"} style={{height: "500px"}}>
+                        <Row className={"justify-content-center"} style={{padding: "10px"}}>
+                            <Col className={"col-2 align-content-center justify-content-center vh-50"} style={{height: "500px"}}>
                                 <Row className={"justify-content-center"} style={{margin: "5px"}}>
                                     <Col className={"col-12"} style={{backgroundColor: "#F8EDDD"}}>
                                         <img src={wire}
@@ -73,9 +78,17 @@ class CircuitPopup extends React.Component<any, any> {
                                              onMouseOver={() => loadModuleDescription("Resistor")} />
                                     </Col>
                                 </Row>
+
+                                <Row className={"justify-content-center"} style={{margin: "5px"}}>
+                                    <Col className={"col-12"} style={{backgroundColor: "#F8EDDD"}}>
+                                        <img src={switchImg}
+                                             style={{width: "100px", height: "100px"}}
+                                             onMouseOver={() => loadModuleDescription("Switch")} />
+                                    </Col>
+                                </Row>
                             </Col>
 
-                            <Col className={"align-content-center justify-content-center"} style={{width: "100%", height: "500px",
+                            <Col className={"col-6 align-content-center justify-content-center"} style={{width: "100%", height: "500px",
                                 color: "#29405B", backgroundColor: "#DBEAEF", marginLeft: "5%", marginRight: "5%"}}>
                                 <Row>
                                     <Col>
@@ -89,15 +102,7 @@ class CircuitPopup extends React.Component<any, any> {
                                 </Row>
                             </Col>
 
-                            <Col className={"col-3 align-content-center justify-content-center"} style={{height: "500px"}}>
-                                <Row className={"justify-content-center"} style={{margin: "5px"}}>
-                                    <Col className={"col-12"} style={{backgroundColor: "#F8EDDD"}}>
-                                        <img src={switchImg}
-                                             style={{width: "100px", height: "100px"}}
-                                             onMouseOver={() => loadModuleDescription("Switch")} />
-                                    </Col>
-                                </Row>
-
+                            <Col className={"col-2 align-content-center justify-content-center"} style={{height: "500px"}}>
                                 <Row className={"justify-content-center"} style={{margin: "5px"}}>
                                     <Col className={"col-12"} style={{backgroundColor: "#F8EDDD"}}>
                                         <img src={inductor}
@@ -111,6 +116,22 @@ class CircuitPopup extends React.Component<any, any> {
                                         <img src={capacitor}
                                              style={{width: "100px", height: "100px"}}
                                              onMouseOver={() => loadModuleDescription("Capacitor")} />
+                                    </Col>
+                                </Row>
+
+                                <Row className={"justify-content-center"} style={{margin: "5px"}}>
+                                    <Col className={"col-12"} style={{backgroundColor: "#F8EDDD"}}>
+                                        <img src={square}
+                                             style={{width: "100px", height: "100px"}}
+                                             onMouseOver={() => loadModuleDescription("Series")} />
+                                    </Col>
+                                </Row>
+
+                                <Row className={"justify-content-center"} style={{margin: "5px"}}>
+                                    <Col className={"col-12"} style={{backgroundColor: "#F8EDDD"}}>
+                                        <img src={square}
+                                             style={{width: "100px", height: "100px"}}
+                                             onMouseOver={() => loadModuleDescription("Parallel")} />
                                     </Col>
                                 </Row>
                             </Col>
