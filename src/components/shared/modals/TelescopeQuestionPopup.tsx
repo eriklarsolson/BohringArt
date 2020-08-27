@@ -31,8 +31,8 @@ class TelescopeQuestionPopup extends React.Component<any, any> {
         return (
             <Modal show={this.props.open}
                    onClick={this.props.closePopup}
-                   size="lg"
-                   style={{maxWidth: "1500px !important", padding: "30px"}}>
+                   size="xl"
+                   style={{padding: "30px"}}>
                 <Modal.Header closeButton>
                 </Modal.Header>
 
@@ -45,7 +45,7 @@ class TelescopeQuestionPopup extends React.Component<any, any> {
                         <Row className={"justify-content-center"} style={{padding: "10px"}}>
                             <Col className={"col-3 align-content-center justify-content-center vh-50"} style={{height: "500px"}}>
                                 <Row className={"justify-content-center"} style={{margin: "5px"}}>
-                                    <Col className={"col-12"} style={{backgroundColor: "#F8EDDD"}}
+                                    <Col className={"col-10"} style={{backgroundColor: "#F8EDDD"}}
                                          onMouseOver={() => loadModuleDescription("Concave")}>
                                         <img src={concave}
                                              style={{width: "100px", height: "100px"}} />
@@ -53,7 +53,7 @@ class TelescopeQuestionPopup extends React.Component<any, any> {
                                 </Row>
 
                                 <Row className={"justify-content-center"} style={{margin: "5px"}}>
-                                    <Col className={"col-12"} style={{backgroundColor: "#F8EDDD"}}
+                                    <Col className={"col-10"} style={{backgroundColor: "#F8EDDD"}}
                                          onMouseOver={() => loadModuleDescription("Convex")}>
                                         <img src={convex}
                                              style={{width: "100px", height: "100px"}} />
@@ -61,7 +61,7 @@ class TelescopeQuestionPopup extends React.Component<any, any> {
                                 </Row>
 
                                 <Row className={"justify-content-center"} style={{margin: "5px"}}>
-                                    <Col className={"col-12"} style={{backgroundColor: "#F8EDDD"}}
+                                    <Col className={"col-10"} style={{backgroundColor: "#F8EDDD"}}
                                          onMouseOver={() => loadModuleDescription("Flat Mirror")}>
                                         <img src={flatmirror}
                                              style={{width: "100px", height: "100px"}} />
@@ -69,7 +69,7 @@ class TelescopeQuestionPopup extends React.Component<any, any> {
                                 </Row>
 
                                 <Row className={"justify-content-center"} style={{margin: "5px"}}>
-                                    <Col className={"col-12"} style={{backgroundColor: "#F8EDDD"}}
+                                    <Col className={"col-10"} style={{backgroundColor: "#F8EDDD"}}
                                          onMouseOver={() => loadModuleDescription("Viewpoint")}>
                                         <img src={viewpoint}
                                              style={{width: "100px", height: "100px"}} />

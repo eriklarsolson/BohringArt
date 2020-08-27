@@ -17,9 +17,9 @@
   fill: none;
   width: 100%;
   overflow: visible;
-  stroke: #E1C973;
+  stroke: red; //old color - E1C973
   stroke-width: 10;
   stroke-linejoin: round;
   stroke-linecap: round;
-  filter: blur(2px);
+  filter: blur(1px);
 }

@@ -9,6 +9,7 @@ import TelescopeQuestionPopup from "../shared/modals/TelescopeQuestionPopup";
 import {Animation} from "./Animation";
 import "./Telescope.scss"
 import {start} from "repl";
+import {deleteCurrentComponent, generatePath} from "./grid/Functionality";
 
 class TelescopeActivity extends React.Component<any, any> {
     constructor(props: any) {
@@ -32,6 +33,9 @@ class TelescopeActivity extends React.Component<any, any> {
         }
 
         const startAnimation = () => {
+            //TODO - Need to get check components here for which pieces are where and what angle they are on
+            // Can I build the path instead of having custom one for every solution? AHHHHHHHHHH
+
             if(this.state.animationRunning) {
                 this.setState({animationRunning: false});
             } else {
@@ -92,16 +96,14 @@ class TelescopeActivity extends React.Component<any, any> {
                                     <Col className={"justify-content-center align-content-center"} style={{padding: 0}}>
                                         <div style={{width: "1000px", height: "400px", backgroundImage:`url(${satellite})`, margin: "auto"}}>
                                             {this.state.animationRunning &&
-                                            <div style={{
-                                                position: "absolute",
-                                                top: "-25px",
-                                                left: "-5%",
-                                                margin: 0,
-                                                width: "100%",
-                                                height: "90%"
-                                            }}>
-                                                <Animation path={this.state.paths[0].path}/>
-                                            </div>
+                                                <div style={{
+                                                    position: "absolute",
+                                                    margin: 0,
+                                                    width: "100%",
+                                                    height: "100%"
+                                                }}>
+                                                    <Animation path={generatePath()}/>
+                                                </div>
                                             }
 
                                             <TelescopeGridContainer showGrid={this.state.showGrid} />
@@ -109,16 +111,10 @@ class TelescopeActivity extends React.Component<any, any> {
                                     </Col>
                                 </Row>
 
-                                <Row style={{margin: 0, marginTop: 15, marginBottom: 15}}>
-                                    <Col className={"justify-content-center align-content-center"} style={{padding: 0}}>
-                                       Focus Bar
-                                    </Col>
-                                </Row>
-
                                 <Row className="justify-content-center" style={{margin: "3%"}}>
                                     <Col className={"col-3"} style={{padding: 0}}>
                                         <Button style={{float: "left", backgroundColor: "transparent", fontSize: "20px",
-                                            fontWeight: "bold"}}>
+                                            fontWeight: "bold"}} onClick={deleteCurrentComponent}>
                                             <i className="fa fa-trash-o" style={{color: "black"}} />
                                         </Button>
                                     </Col>

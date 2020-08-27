@@ -33,7 +33,6 @@ export const GridSquare: React.FC<GridSquareProps> = ({x, y, children, showGrid,
         }),
     })
 
-    //TODO Add border around selected piece
     let gridStyling: React.CSSProperties  = {
         position: 'relative',
         width: '100%',

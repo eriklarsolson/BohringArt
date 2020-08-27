@@ -1,3 +1,4 @@
+import {TelescopeTypes} from "../../shared/models/TelescopeTypes";
 
 let observers: PositionObserver[] = []
 export type PositionObserver = ((component: {x: number, y: number, type: string, rotateDeg: number}) => void) | null
@@ -18,12 +19,21 @@ export function setCurrentComponent(x: number, y: number) {
     currentX = x;
     currentY = y;
 
+    console.log(currentX)
+    console.log(currentY)
+
     const samePlaceComponents = components.filter(component => component.x === x && component.y === y)
     if(samePlaceComponents.length > 0) {
-        const index = getIndex(samePlaceComponents[0], components);
-        currentComponent = index;
-        emitChange();
+        currentComponent = getIndex(samePlaceComponents[0], components);
     }
+
+    emitChange();
+}
+
+export function deleteCurrentComponent() {
+    components.splice(currentComponent, 1);
+    currentComponent = currentComponent - 1
+    emitChange();
 }
 
 export function setCurrentComponentsRotation(rotateDeg: number) {
@@ -91,6 +101,7 @@ export function moveComponent(toX: number, toY: number, type: string): void {
         const index = getIndex(samePlaceComponents[0], components);
         components[index] = {x: toX, y: toY, type: type, rotateDeg: components[currentComponent].rotateDeg}
 
+        //TODO - If you select an object on grid, and then drag from side bar to delete another grid space, it deletes the object you also had selected previously
         components.splice(currentComponent, 1);
     } else {
         if(components[currentComponent] !== undefined) {
@@ -117,6 +128,70 @@ export function moveComponent(toX: number, toY: number, type: string): void {
     currentComponent = components.length - 1;
 
     emitChange();
+}
+
+//TODO - Eventually, this laser will have to encounter the right edge of telescope and start coming backwards to interact with mirrors facing backwards
+// before ending up in piece above first grid space (goal)
+export function generatePath(): string {
+    let stringPath = "M0 300"; //NOTE: First val is x, second is y (y from top, so 300 down I believe?)
+
+    //Initial straight line to get to first grid square
+    let yPos = 300
+    let xPos = 190
+
+    stringPath += " L" + xPos + " " + yPos
+
+    let xChange = 0;
+    let yChange = 0;
+
+    for(let i = 0; i < components.length; i++) {
+        const component = components[i];
+
+        console.log(component.type)
+        console.log(component.rotateDeg)
+
+        xChange = 0;
+        yChange = 0;
+
+        //Check if piece is facing away from you, (so pass through going straight)
+        if(component.rotateDeg !== 0 && component.rotateDeg !== 45 && component.rotateDeg !== 315) {
+            xChange = 200
+        } else {
+            //TODO - Check rotation here as well (if doesnt' fail above)
+            if(component.type === TelescopeTypes.CONCAVE) {
+                xChange = 150
+                yChange = 10
+            } else if(component.type === TelescopeTypes.CONVEX) {
+                xChange = 150
+                yChange = 60
+            } else if(component.type === TelescopeTypes.FLATMIRROR) { //NOTE: Notice the minuses here for testing
+                xChange = 150
+                yChange = 50
+            } else if(component.type === TelescopeTypes.VIEWPOINT) {
+                xChange = 150
+                yChange = 25
+            }
+        }
+
+        console.log(xPos)
+        console.log(yPos)
+
+        xPos += xChange / 2;
+        yPos += yChange;
+
+        stringPath += " L" + xPos + " " + yPos
+
+        xPos += xChange / 2;
+        yPos -= yChange;
+
+        stringPath += " L" + xPos + " " + yPos
+
+        console.log("---------")
+    }
+
+    console.log(stringPath)
+
+    return stringPath
 }
 
 export function setComponentsList(newComponents: any): void {

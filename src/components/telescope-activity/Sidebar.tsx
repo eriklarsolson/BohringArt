@@ -2,6 +2,7 @@ import React from "react";
 import { Container, Row, Col } from 'react-bootstrap'
 import {OneGridContainer} from "./grid/OneGridContainer";
 import Button from "react-bootstrap/Button";
+import {setComponentsList} from "./grid/Functionality";
 
 class Sidebar extends React.Component {
     render() {
@@ -36,7 +37,8 @@ class Sidebar extends React.Component {
                    <Row className={"justify-content-center"}>
                        <Col className={"col-6"}>
                            <Button style={{backgroundColor: "#F8EDDD", width: "150px", color: "black",
-                               fontSize: "18px", clipPath: "polygon(0 0, 95% 0, 100% 100%, 5% 100%)"}}>Reset</Button>
+                               fontSize: "18px", clipPath: "polygon(0 0, 95% 0, 100% 100%, 5% 100%)"}}
+                                   onClick={() => setComponentsList([])}>Reset</Button>
                        </Col>
                    </Row>
                </Container>
