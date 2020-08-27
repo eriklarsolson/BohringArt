@@ -13,40 +13,38 @@ export const RocketAnimation: React.FC<AnimationProps>  = ({images}) => {
                 // scale: [1, 2, 2, 1, 1],
                 // rotate: [0, 0, 270, 270, 0],
                 // x: [100, 200, 300, 400, 500],
-                x: [0, 2500]
+                y: [0, -350]
                 // borderRadius: ["20%", "20%", "50%", "50%", "20%"]
             }}
 
             transition={{
-                duration: 15,
-                ease: "easeInOut",
+                duration: 80,
+                ease: "linear",
                 times: [0, 1],
                 loop: Infinity,
                 repeatDelay: 1
             }}>
-            <Container fluid style={{transform: "rotate(90deg)"}}>
-                <Row>
-                    <Col>
+            <Container fluid>
+                <Row className={"justify-content-center"}>
+                    <Col className={"col-1 align-self-end"}>
                         <img src={images[0]} />
                     </Col>
-                </Row>
 
-                <Row>
-                    <Col className={"col-6"}>
-                        <img src={images[1]} />
+                    <Col className={"col-1"} style={{margin: 5}}>
+                        <Row className={"justify-content-center"} style={{margin: 5}}>
+                            <img src={images[3]} />
+                        </Row>
+
+                        <Row className={"justify-content-center"} style={{margin: 5}}>
+                            <img src={images[2]} />
+                        </Row>
+
+                        <Row className={"justify-content-center"} style={{margin: 5}}>
+                            <img src={images[1]} />
+                        </Row>
                     </Col>
 
-                    <Col className={"col-6"}>
-                        <img src={images[2]}  />
-                    </Col>
-
-                    <Col className={"col-6"}>
-                        <img src={images[3]} />
-                    </Col>
-                </Row>
-
-                <Row>
-                    <Col>
+                    <Col className={"col-1 align-self-end"}>
                         <img src={images[0]} />
                     </Col>
                 </Row>

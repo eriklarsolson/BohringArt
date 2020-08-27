@@ -1,7 +1,7 @@
 import {ComponentTypes} from "../../shared/models/ComponentTypes";
 
 let observers: PositionObserver[] = []
-export type PositionObserver = ((component: {x: number, y: number, type: string, voltage: number, rotateDeg: number, }) => void) | null
+export type PositionObserver = ((component: {x: number, y: number, type: string, voltage: number, rotateDeg: number, componentType: number}) => void) | null
 
 //TODO - what new fields are needed for activity to work?
 // 1. componentType used for wires (straight, corner, 3-4 prong) & switch (toggle on/off)
@@ -14,7 +14,11 @@ let boardCurrentIssue = ""
 let boardHasIssues = false;
 let currentX = -1;
 let currentY = -1;
-let components: { x: number; y: number; type: string, voltage: number, rotateDeg: number}[] =  []
+let components: { x: number; y: number; type: string, voltage: number, rotateDeg: number, componentType: number}[] =  []
+
+//This variable is for wires and switches. If current comp is wire, this is changed with wire arrows to change between
+// 3 different types of wires. For switch, it is for on/off status.
+let componentType = 0; //Wire -> 0: straight, 1: corner, 3: tri
 
 export function getComponents(): any {
     return components;
@@ -22,6 +26,17 @@ export function getComponents(): any {
 
 export function getCurrentComponent(): any {
     return components[currentComponent];
+}
+
+export function setComponentType(type: number) {
+    componentType = type;
+
+    console.log(componentType)
+}
+
+export function getComponentType() {
+    console.log(componentType)
+    return componentType;
 }
 
 export function boardHasIssue(): boolean {
@@ -67,6 +82,10 @@ export function setCurrentComponentsRotation(rotateDeg: number) {
         console.log(components[currentComponent])
         emitChange();
     }
+}
+
+export function getComponentAtPos(x: number, y: number) {
+    return components.filter(component => component.x === x && component.y === y)[0];
 }
 
 export function getTotalVoltage(): number {
@@ -155,7 +174,14 @@ export function moveComponent(toX: number, toY: number, type: string): void {
 
     if(samePlaceComponents.length > 0) {
         const index = getIndex(samePlaceComponents[0], components);
-        components[index] = {x: toX, y: toY, type: type, voltage: components[currentComponent].voltage, rotateDeg: components[currentComponent].rotateDeg}
+        components[index] = {
+            x: toX,
+            y: toY,
+            type: type,
+            voltage: components[currentComponent].voltage,
+            rotateDeg: components[currentComponent].rotateDeg,
+            componentType: componentType
+        }
 
         components.splice(currentComponent, 1);
     } else {
@@ -165,7 +191,8 @@ export function moveComponent(toX: number, toY: number, type: string): void {
                 y: toY,
                 type: type,
                 voltage: components[currentComponent].voltage,
-                rotateDeg: components[currentComponent].rotateDeg
+                rotateDeg: components[currentComponent].rotateDeg,
+                componentType: componentType
             });
         } else {
             components.push({
@@ -173,7 +200,8 @@ export function moveComponent(toX: number, toY: number, type: string): void {
                 y: toY,
                 type: type,
                 voltage: 0,
-                rotateDeg: 0
+                rotateDeg: 0,
+                componentType: componentType
             });
         }
 
@@ -184,8 +212,8 @@ export function moveComponent(toX: number, toY: number, type: string): void {
 
     currentComponent = components.length - 1;
 
-    checkForErrors();
-    checkIfPassed();
+    checkForErrors()
+    hasCircuit();
 
     emitChange();
 }
@@ -216,12 +244,10 @@ export function moveComponent(toX: number, toY: number, type: string): void {
 //Check if you short circuited the board
 //TODO
 // Current list of things to check for:
-//  1. Check if circuit is only wires and battery and if so, short-circuit
+//  1. Check if circuit is only wires and battery and if so, short-circuit (COMPLETE)
 //  2. If two batteries in parallel not same voltage, short circuit
 //  3.
 function checkForErrors() {
-    //TODO - Eventually going to need a function to check if there is a parallel circuit here
-
     //This (inefficient) method loops through each component in the list and finds all components around it
     //TODO - Need to get rid of square from +1 x, +1 y. Only check blocks from right next to components
     for(let i = 0; i < components.length; i++) {
@@ -239,31 +265,52 @@ function checkForErrors() {
         //TODO - Check for all logic here from list above
         for(let k = 0; k < componentsAroundCurrent.length; k++) {
             if(components[i].type === componentsAroundCurrent[k].type) {
-                //TODO - Kinda works
-                if((components[i].rotateDeg % 180) !== (componentsAroundCurrent[k].rotateDeg % 180)) {
-                    boardHasIssues = true;
-                    boardCurrentIssue = "Battery directions not correct"
+                //TODO - Kinda works - BUT ALSO VERY BROKEN :)
+                if(components[i].type === ComponentTypes.BATTERY && componentsAroundCurrent[k].type === ComponentTypes.BATTERY) {
+                    if((components[i].rotateDeg % 180) !== (componentsAroundCurrent[k].rotateDeg % 180)) {
+                        boardHasIssues = true;
+                        boardCurrentIssue = "Battery directions not correct"
+                    }
                 }
             }
         }
     }
 }
 
-function checkIfPassed(): void {
-    if(!boardHasIssues) {
-        hasCircuit();
+function checkIfPassed(path: any): void {
+
+    //Check here if the circuit only contains wires and batteries
+    let boardOnlyContainsWiresAndBatteries = true;
+    for(let i = 0; i < components.length; i++) {
+        if (components[i].type !== ComponentTypes.WIRE && components[i].type !== ComponentTypes.BATTERY) {
+            boardOnlyContainsWiresAndBatteries = false;
+        }
     }
 
-    // const passingLevel: { x: number; y: number; type: string, voltage: number, rotateDeg: number}[] = getCurrentLevelPass()
-    //
-    // //TODO - Doesn't work
-    // if(passingLevel.every(v => components.includes(v))) {
-    //     passed = true;
-    // }
+    if(boardOnlyContainsWiresAndBatteries) {
+        boardHasIssues = true;
+        boardCurrentIssue = "You have short-circuited the board! Do not build a circuit that contains only wires and/or batteries"
+        //TODO - Reset the board?
+    }
+
+    //TODO - Check here if the circuit has power (voltage)
+
+
+    //TODO - Check if any of the switches are turned off
+
+
+    //TODO - Check if all the pieces (especially wires) are in correct type and rotation deg <- THIS IS GOING TO BE THE HARDEST
+
+
+    //TODO - Now that there is a path and you passed all the issues above, then check if you reached successful voltage
+    // and other requirements needed for the level
+
 }
 
 // Function for finding whether a circuit exists or not
 function hasCircuit() {
+    //TODO - Eventually going to need a function to check if there is a parallel circuit as well
+
     //Build matrix variable here
     let matrix: Array<Array<number>> = [
         [0, 0, 0, 0, 0, 0, 0],
@@ -313,19 +360,8 @@ function hasCircuit() {
     if (flag) {
         console.log("yes there is a path")
 
-        //Check here if the circuit only contains wires and batteries
-        let boardOnlyContainsWiresAndBatteries = true;
-        for(let i = 0; i < components.length; i++) {
-            if (components[i].type !== ComponentTypes.WIRE && components[i].type !== ComponentTypes.BATTERY) {
-                boardOnlyContainsWiresAndBatteries = false;
-            }
-        }
-
-        if(boardOnlyContainsWiresAndBatteries) {
-            boardHasIssues = true;
-            boardCurrentIssue = "You have short-circuited the board! Do not build a circuit that contains only wires and/or batteries"
-            //TODO - Reset the board?
-        }
+        //TODO - Need to pass path in, and anything else needed from above?
+        checkIfPassed(null)
     } else {
         console.log("no path found brother")
     }

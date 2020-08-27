@@ -6,27 +6,30 @@ import stellarBackground from "../stellar-cycle/stellarBackground.png";
 export const BackgroundAnimation: React.FC  = () => {
     return (
         <motion.div
+            layout
             animate={{
-                // scale: [1, 2, 2, 1, 1],
+                scale: [1, 2],
                 // rotate: [0, 0, 270, 270, 0],
-                x: [0, -500]
+                // y: [0, -500]
                 // borderRadius: ["20%", "20%", "50%", "50%", "20%"]
             }}
 
             style={{
+                zIndex: -1,
                 height: "100%",
-                width: 2500,
+                width: "100%",
                 position:"absolute",
                 backgroundRepeat: "repeat",
-                backgroundPosition: "0 0",
-                backgroundImage:`url(${stellarBackground})`,
-                backgroundSize: "auto 100%"}}
+                overflow: "hidden"
+            }}
 
             transition={{
-                duration: 5,
+                duration: 30,
                 ease: "linear",
                 times: [0, 1],
                 loop: Infinity,
-            }} />
+            }}>
+            <img src={stellarBackground} />
+        </motion.div>
     );
 };

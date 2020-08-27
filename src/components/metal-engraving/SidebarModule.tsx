@@ -22,13 +22,14 @@ export const SidebarModule: React.FC<Props> = ({tool, toolToShow, setTool, title
         position: "absolute",
         right: rightValue,
         top: 0,
-        width: 300,
+        width: 400,
         height: "auto",
         minHeight: 100,
         backgroundColor: "rgba(82, 82, 82, 0.9)",
         transition: ".3s ease-in-out",
         zIndex: zIndex,
         textAlign: "left",
+        clipPath: "polygon(0 0, 100% 0, 100% 100%, 2% 100%)"
     }
 
     const showTooltip = () => {
@@ -37,7 +38,7 @@ export const SidebarModule: React.FC<Props> = ({tool, toolToShow, setTool, title
             setZIndex(-1)
             setTooltipShowing(false)
         } else {
-            setRightValue(-295)
+            setRightValue(-380)
             setZIndex(1)
             setTooltipShowing(true)
         }
@@ -62,19 +63,21 @@ export const SidebarModule: React.FC<Props> = ({tool, toolToShow, setTool, title
     return (
         <>
 
-            <Col className={"col-8"} style={{backgroundColor: "white"}}
+            <Col className={"col-8"} style={{backgroundColor: "transparent"}}
                  onMouseOver={showTooltip} onMouseOut={hideTooltip}>
-                <img src={getToolImage()}
-                     style={{width: "100px", height: "100px"}}
-                     className={tool === toolToShow  ? 'item-active' : 'item'}
-                     onClick={() => setTool(toolToShow)} />
+                <div style={{backgroundColor: "white", clipPath: "polygon(0 0, 95% 0, 100% 100%, 0 100%)"}}>
+                    <img src={getToolImage()}
+                         style={{width: "100px", height: "100px"}}
+                         className={tool === toolToShow  ? 'item-active' : 'item'}
+                         onClick={() => setTool(toolToShow)} />
+                </div>
 
                 <div style={tooltipStyle}>
-                    <Container fluid>
+                    <Container fluid style={{margin: 10}}>
                         <Row style={{padding: 0}}>
                             <p style={{fontWeight: "bold", margin: 0}}>{title}</p>
                         </Row>
-                        <Row style={{padding: 0}}>
+                        <Row style={{padding: 5}}>
                             {description}
                         </Row>
                     </Container>

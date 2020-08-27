@@ -2,7 +2,7 @@ import React, {useState} from 'react'
 import {useDrop} from 'react-dnd'
 import { Square } from './Square'
 import {
-    canMoveComponent,
+    canMoveComponent, getComponentAtPos,
     moveComponent,
     setCurrentComponent,
     setCurrentComponentsRotation
@@ -24,8 +24,15 @@ export interface GridSquareProps {
 
 export const GridSquare: React.FC<GridSquareProps> = ({x, y, children, showGrid, currentComponent}) => {
     let startingRotateDeg = 0
-    if(currentComponent !== undefined) {
-        startingRotateDeg = currentComponent.rotateDeg;
+
+    //TODO - Come back to this later, but we can access the children var which can show us the type of object in the grid square.
+    // Can we instead handle component type here like wire type or switch on/off?
+
+    //Instead of current component, get rotate deg from component using x and y above
+    //TODO - The rotation goes back to 0 when you click off a component, but goes back to its correct once you click again
+    const componentAtThisPosition = getComponentAtPos(x, y)
+    if(componentAtThisPosition !== undefined) {
+        startingRotateDeg = componentAtThisPosition.rotateDeg;
     }
     const [rotateDeg, setRotateDeg] = useState<number>(startingRotateDeg)
 

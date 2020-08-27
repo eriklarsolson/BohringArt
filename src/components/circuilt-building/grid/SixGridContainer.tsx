@@ -1,6 +1,6 @@
 import React, {useState, useEffect, useCallback} from 'react'
 import {
-    boardHasIssue,
+    boardHasIssue, deleteCurrentComponent,
     getComponents, getCurrentBoardIssue,
     getCurrentComponent,
     getCurrentX,
@@ -15,6 +15,7 @@ import update from 'immutability-helper'
 import {ComponentTypes} from "../../shared/models/ComponentTypes";
 import {Slider, Typography, withStyles} from "@material-ui/core";
 import ErrorPopup from "../../shared/modals/ErrorPopup";
+import Button from "react-bootstrap/Button";
 
 const containerStyle: React.CSSProperties = {
     width: 500,
@@ -24,9 +25,10 @@ const containerStyle: React.CSSProperties = {
 export interface GridContainerProps {
     objectiveImage: any,
     showGrid: boolean,
+    goToNextLevel: any
 }
 
-export const SixGridContainer: React.FC<GridContainerProps> = ({objectiveImage, showGrid}) => {
+export const SixGridContainer: React.FC<GridContainerProps> = ({objectiveImage, showGrid, goToNextLevel}) => {
 
     //I don't actually use this currentComp variable, but I need the useEffect on observe below and it's working right now
     //and I don't want to change it
@@ -114,38 +116,52 @@ export const SixGridContainer: React.FC<GridContainerProps> = ({objectiveImage, 
                     </Col>
                 </Row>
 
-                {currentComp !== undefined && currentComp.type === ComponentTypes.BATTERY &&
-                    <Row className={"justify-content-center"} style={{marginTop: 25}}>
-                        <Col className={"col-2 justify-content-center align-content center"}>
-                            <Typography id="volt-slider" gutterBottom style={{color: "#29405B"}}>
-                                Volt Selector
-                            </Typography>
+                <Row style={{margin: "3%"}}>
+                    <Col className={"col-2"}>
+                        <Button style={{float: "left", backgroundColor: "transparent", fontSize: "20px", fontWeight: "bold"}}
+                                onClick={deleteCurrentComponent}><i className="fa fa-trash-o" style={{color: "black"}} /></Button>
+                    </Col>
+
+                    <Col className={"ml-auto col-2 justify-content-center align-content center"}>
+                        {currentComp !== undefined && currentComp.type === ComponentTypes.BATTERY &&
+                            <>
+                                <Typography id="volt-slider" gutterBottom style={{color: "#29405B"}}>
+                                    Volt Selector
+                                </Typography>
                                 <Container fluid>
                                     <Row>
                                         <Col className={"col-1"}>
                                             <i className="fa fa-minus" style={{cursor: "pointer", color: "#29405B"}}
-                                               onClick={() => changeVoltage(false)} />
+                                            onClick={() => changeVoltage(false)} />
                                         </Col>
                                         <Col>
                                             <VoltageSlider aria-labelledby="volt-slider" step={1}
-                                                           marks min={0} max={10}
-                                                           value={currentComp.voltage}
-                                                           onChange={handleVoltageChange} />
+                                            marks min={0} max={10}
+                                            value={currentComp.voltage}
+                                            onChange={handleVoltageChange} />
                                         </Col>
                                         <Col className={"col-1"}>
                                             <i className="fa fa-plus" style={{cursor: "pointer", color: "#29405B"}}
-                                               onClick={() => changeVoltage(true)} />
+                                            onClick={() => changeVoltage(true)} />
                                         </Col>
                                         <Col className={"col-1"}>
                                             <p style={{color: "#29405B", fontWeight: "bold"}}>
-                                                {currentComp.voltage}v
+                                            {currentComp.voltage}v
                                             </p>
                                         </Col>
                                     </Row>
                                 </Container>
-                        </Col>
-                    </Row>
-                }
+                            </>
+                        }
+                    </Col>
+
+                    {/*TODO - Eventually don't show this until you pass the circuit level*/}
+                    <Col className={"ml-auto col-2"}>
+                        <Button className={"green-button"} style={{float: "right", width: 200,
+                            clipPath: "polygon(0 0, 95% 0, 100% 100%, 5% 100%)"}}
+                                onClick={goToNextLevel}>Next</Button>
+                    </Col>
+                </Row>
             </Container>
 
             <ErrorPopup title={"Error!"} description={getCurrentBoardIssue()} open={errorPopup} closePopup={() => setErrorPopup(false)} />

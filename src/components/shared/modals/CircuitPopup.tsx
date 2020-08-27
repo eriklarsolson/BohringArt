@@ -14,28 +14,28 @@ class CircuitPopup extends React.Component<any, any> {
         super(props);
         this.state = {
             title: "Wire",
-            description: "Wire description",
+            description: "A conducting, metal rod designed to transfer charges. Electrons can flow through these with little to no resistance, typically. However, making a wire longer increases resistance but thickening it decreases resistance. ",
         }
     }
 
     render() {
         const loadModuleDescription = (module: string) => {
             if (module === "Wire") {
-                this.setState({title: "Wire", description: "Wire description"})
+                this.setState({title: "Wire", description: "A conducting, metal rod designed to transfer charges. Electrons can flow through these with little to no resistance, typically. However, making a wire longer increases resistance but thickening it decreases resistance. "})
             } else if (module === "Battery") {
-                this.setState({title: "Battery", description: "Battery description"})
+                this.setState({title: "Battery", description: "Designed to deliver energy to the circuit via electrons flowing from the negative to the positive terminal(side). Batteries are essential components to numerous household products. The flow of electrons is a result of a chemical potential difference between the two sides of the battery; the energy across a concentration of atoms can be different between the two sides, resulting in the flow of energy from the more energetic side to the less. "})
             } else if (module === "Resistor") {
-                this.setState({title: "Resistor", description: "Resistor description"})
+                this.setState({title: "Resistor", description: "A device designed to restrict the flow of electrons in the circuit. A resistor itself is nothing more than a dense wire. A good analogy for resistors is cars in traffic; a car can definitely move faster and easier in an empty road vs a congested one. Therefore, in a resistor, current, the measure of the flow of electrons, drops. Also, note that since electrons heat up the material itself, the current experiences a drop in energy, measured in Volts.   "})
             } else if (module === "Switch") {
-                this.setState({title: "Switch", description: "Switch description"})
+                this.setState({title: "Switch", description: "Circuit component used to redirect the flow of current to another pathway, also can be used for stopping the flow of electricity by breaking the connection in a pathway."})
             } else if (module === "Inductor") {
-                this.setState({title: "Inductor", description: "Inductor description"})
+                this.setState({title: "Inductor", description: "A coil of wire which,when a current flows through it,produces a magnetic field. Similarly, a magnetic field passing through this coil can induce a current in the wire. An inductor stores the electric energy that flows through the wire in the magnetic surrounding the coil.\n"})
             } else if (module === "Capacitor") {
-                this.setState({title: "Capacitor", description: "Capacitor description"})
+                this.setState({title: "Capacitor", description: "Two oppositely charged, parallel plates separated by air or another insulator that store electric energy and charge. The larger the voltage that a battery applies to a capacitor, the larger the charge on each plate. The larger the charge, the larger the capacitance of the capacitor. This capacitance describes the capacitor’s ability to store electric energy and charge."})
             } else if (module === "Series") {
-                this.setState({title: "Series Circuit", description: "Series Circuit description"})
+                this.setState({title: "Series Circuit", description: "A circuit with one branch for charges in the circuit to flow through. Since there is only one pathway, charges must flow through all components on that path. This circuit configuration can be compared to driving down a one-way street with one lane, you cannot deviate from the path. Because the charges cannot split between pathways the current (charges moving per second) is the same. Capacitors in this configuration function like a parallel circuit for just resistors. "})
             } else if (module === "Parallel") {
-                this.setState({title: "Parallel Circuit", description: "Parallel Circuit description"})
+                this.setState({title: "Parallel Circuit", description: "A circuit with numerous branches for charges in the circuit to flow through, much like choosing which road to take on the interstate. This refers to the placement of components like wires, resistors, and capacitors. Since the charges now “see” multiple pathways, the current(charges moving per second), is split between the branches depending on the components themselves. Capacitors in this configuration function like a series circuit for just resistors."})
             }
         }
 

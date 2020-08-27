@@ -9,13 +9,10 @@ import objective2wire from './objective2wire.png'
 import objective3wire from './objective3wire.png'
 import CircuitPopup from "../shared/modals/CircuitPopup";
 import {
-    deleteCurrentComponent, getComponents,
-    getCurrentComponent, getCurrentX,
+    deleteCurrentComponent,
     setComponentsList,
-    setCurrentComponentsVoltage,
     setCurrentLevel
 } from "./grid/Functionality";
-import {Slider, Typography, withStyles} from "@material-ui/core";
 import 'font-awesome/css/font-awesome.min.css';
 
 class CircuitBuilding extends React.Component<any, any> {
@@ -140,23 +137,7 @@ class CircuitBuilding extends React.Component<any, any> {
                                     <Row style={{margin: "0"}}>
                                         <Col>
                                             <SixGridContainer objectiveImage={this.state.gridImages[this.state.currentLevel - 1]}
-                                                              showGrid={this.state.showGrid} />
-                                        </Col>
-                                    </Row>
-
-                                    <Row style={{margin: "3%"}}>
-                                        <Col className={"col-2"}>
-                                            <Button style={{float: "left", backgroundColor: "transparent", fontSize: "20px", fontWeight: "bold"}}
-                                                    onClick={deleteCurrentComponent}><i className="fa fa-trash-o" style={{color: "black"}} /></Button>
-                                        {/*    fa-spin */}
-                                        </Col>
-
-
-
-                                        <Col className={"ml-auto col-2"}>
-                                            <Button className={"green-button"} style={{float: "right", width: 200,
-                                                clipPath: "polygon(0 0, 95% 0, 100% 100%, 5% 100%)"}}
-                                                    onClick={goToNextLevel}>Next</Button>
+                                                              showGrid={this.state.showGrid} goToNextLevel={goToNextLevel} />
                                         </Col>
                                     </Row>
                                 </Container>

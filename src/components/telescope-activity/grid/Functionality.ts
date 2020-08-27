@@ -158,6 +158,7 @@ export function generatePath(): string {
             xChange = 200
         } else {
             //TODO - Check rotation here as well (if doesnt' fail above)
+            // ALSO Some pieces are technically supposed to make the piece reflect backwards, so do we go backwards in array to interact with last piece????????
             if(component.type === TelescopeTypes.CONCAVE) {
                 xChange = 150
                 yChange = 10
