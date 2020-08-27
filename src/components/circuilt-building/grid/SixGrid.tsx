@@ -37,7 +37,7 @@ export const SixGrid: React.FC<GridProps> = ({components, showGrid, currentCompo
         return (
             <div key={i} style={squareStyle}>
                 <GridSquare showGrid={showGrid} x={x} y={y} components={components} currentComponent={currentComponent}>
-                    {Object.keys(components).map((key, index) =>
+                    {Object.keys(components).map((key) =>
                         renderPiece(x, y, components[key].x, components[key].y, components[key].type,))}
                 </GridSquare>
             </div>
@@ -50,7 +50,7 @@ export const SixGrid: React.FC<GridProps> = ({components, showGrid, currentCompo
 
         switch (type) {
             case "wire":
-                return isCompHere ? <Wire oneGridStyling={false} /> : null
+                return isCompHere ? <Wire x={x} y={y} oneGridStyling={false} /> : null
             case "battery":
                 return isCompHere ? <Battery oneGridStyling={false} /> : null
             case "resistor":
@@ -62,7 +62,7 @@ export const SixGrid: React.FC<GridProps> = ({components, showGrid, currentCompo
             case "inductor":
                 return isCompHere ? <Inductor oneGridStyling={false} /> : null
             default:
-                return isCompHere ? <Wire oneGridStyling={false} /> : null
+                return isCompHere ? <Wire x={x} y={y} oneGridStyling={false} /> : null
         }
     }
 

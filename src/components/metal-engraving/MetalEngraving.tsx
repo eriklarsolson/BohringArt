@@ -221,12 +221,7 @@ class MetalEngraving extends React.Component<any, any> {
                                 </Row>
 
                                 <Row style={{margin: "3%"}}>
-                                    {/*<Col className={"col-2"}>*/}
-                                    {/*    */}
-                                    {/*</Col>*/}
-
                                     <Col className={"col-6"}>
-                                        {/*TODO - Color Selector*/}
                                         {(this.state.tool !== TOOL_ERASER) ?
                                         <>
                                             <Container fluid>
@@ -302,7 +297,7 @@ class MetalEngraving extends React.Component<any, any> {
                                         <Typography id="width-slider" gutterBottom style={{fontWeight: "bold", color: "#29405B", fontSize: 18, float: "left"}}>
                                             {(this.state.tool === TOOL_LASER || this.state.tool === TOOL_ERASER) ? "Width" : "Size"}
                                         </Typography>
-                                        <SizeSlider aria-labelledby="width-slider" value={this.props.size}
+                                        <SizeSlider aria-labelledby="width-slider" value={this.state.size}
                                                     setSize={changeSize} />
                                     </Col>
                                     }

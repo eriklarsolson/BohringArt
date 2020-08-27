@@ -86,7 +86,6 @@ const Canvas = ({ width, height, canvasRef, tool, color, size, toolActive }: Can
         };
     }, [paint]);
 
-    //TODO - Need to check types if its continuous drawing or like rectangle
     const exitPaint = useCallback(() => {
         if (mousePosition && newMousePosition) {
             if(tool !== TOOL_ERASER && tool !== TOOL_LASER) {
@@ -251,6 +250,9 @@ const Canvas = ({ width, height, canvasRef, tool, color, size, toolActive }: Can
                     context.closePath();
                     context.stroke();
                 } else if (tool === TOOL_OPTICS) {
+
+                    //TODO - Actually need to create optic lens effect, not just put image on canvas
+
                     const startX = newMousePosition.x < originalMousePosition.x ? newMousePosition.x : originalMousePosition.x;
                     const startY = newMousePosition.y < originalMousePosition.y ? newMousePosition.y : originalMousePosition.y;
                     const widthX = Math.abs(originalMousePosition.x - newMousePosition.x);
@@ -261,6 +263,9 @@ const Canvas = ({ width, height, canvasRef, tool, color, size, toolActive }: Can
 
                     context?.drawImage(image, startX, startY, widthX, widthY);
                 } else if (tool === TOOL_PRISM) {
+
+                    //TODO - Actually need to create prism effect, not just put image on canvas
+
                     const startX = newMousePosition.x < originalMousePosition.x ? newMousePosition.x : originalMousePosition.x;
                     const startY = newMousePosition.y < originalMousePosition.y ? newMousePosition.y : originalMousePosition.y;
                     const widthX = Math.abs(originalMousePosition.x - newMousePosition.x);
@@ -283,7 +288,7 @@ const Canvas = ({ width, height, canvasRef, tool, color, size, toolActive }: Can
                     context.save();
                     context.beginPath();
                     context.lineWidth = size;
-                    context.strokeStyle = color;
+                    context.strokeStyle = getBurnColor(color);
                     // context.fillStyle = item.fill;
                     drawEllipsePolifyll(centerX, centerY, radiusX, radiusY);
                     context.stroke();
@@ -298,7 +303,7 @@ const Canvas = ({ width, height, canvasRef, tool, color, size, toolActive }: Can
 
                     context.beginPath();
                     context.lineWidth = size;
-                    context.strokeStyle = color;
+                    context.strokeStyle = getBurnColor(color);
                     // context.fillStyle = item.fill;
                     context.rect(startX, startY, widthX, widthY);
                     context.stroke();

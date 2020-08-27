@@ -144,53 +144,56 @@ export function generatePath(): string {
     let xChange = 0;
     let yChange = 0;
 
-    for(let i = 0; i < components.length; i++) {
+    for(let i = 0; i < 5; i++) {
         const component = components[i];
 
-        console.log(component.type)
-        console.log(component.rotateDeg)
+        if(component !== undefined) {
+            console.log(component.type)
+            console.log(component.rotateDeg)
 
-        xChange = 0;
-        yChange = 0;
+            xChange = 0;
+            yChange = 0;
 
-        //Check if piece is facing away from you, (so pass through going straight)
-        if(component.rotateDeg !== 0 && component.rotateDeg !== 45 && component.rotateDeg !== 315) {
-            xChange = 200
-        } else {
-            //TODO - Check rotation here as well (if doesnt' fail above)
-            // ALSO Some pieces are technically supposed to make the piece reflect backwards, so do we go backwards in array to interact with last piece????????
-            if(component.type === TelescopeTypes.CONCAVE) {
-                xChange = 150
-                yChange = 10
-            } else if(component.type === TelescopeTypes.CONVEX) {
-                xChange = 150
-                yChange = 60
-            } else if(component.type === TelescopeTypes.FLATMIRROR) { //NOTE: Notice the minuses here for testing
-                xChange = 150
-                yChange = 50
-            } else if(component.type === TelescopeTypes.VIEWPOINT) {
-                xChange = 150
-                yChange = 25
+            //Check if piece is facing away from you, (so pass through going straight)
+            if (component.rotateDeg !== 0 && component.rotateDeg !== 45 && component.rotateDeg !== 315) {
+                xChange = 200
+            } else {
+                //TODO - Check rotation here as well (if doesnt' fail above)
+                // ALSO Some pieces are technically supposed to make the piece reflect backwards, so do we go backwards in array to interact with last piece????????
+                if (component.type === TelescopeTypes.CONCAVE) {
+                    xChange = 150
+                    yChange = 10
+                } else if (component.type === TelescopeTypes.CONVEX) {
+                    xChange = 150
+                    yChange = 80
+                } else if (component.type === TelescopeTypes.FLATMIRROR) { //NOTE: Notice the minuses here for testing
+                    xChange = 150
+                    yChange = -80
+                } else if (component.type === TelescopeTypes.VIEWPOINT) {
+                    xChange = 150
+                    yChange = 25
+                }
             }
+        } else {
+            //If no component found in grid square, just go straight to next grid square
+            xChange = 200;
+            yChange = 0;
         }
-
-        console.log(xPos)
-        console.log(yPos)
 
         xPos += xChange / 2;
         yPos += yChange;
 
         stringPath += " L" + xPos + " " + yPos
+        console.log(stringPath)
 
         xPos += xChange / 2;
         yPos -= yChange;
 
         stringPath += " L" + xPos + " " + yPos
+        console.log(stringPath)
 
         console.log("---------")
     }
-
-    console.log(stringPath)
 
     return stringPath
 }

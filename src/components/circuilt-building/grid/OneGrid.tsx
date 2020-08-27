@@ -34,7 +34,7 @@ export class OneGrid extends React.Component<GridProps> {
         function renderSwitch(type: string) {
             switch (type) {
                 case 'wire':
-                    return <Wire oneGridStyling={true} />;
+                    return <Wire x={0} y={0} oneGridStyling={true} />;
                 case 'battery':
                     return <Battery oneGridStyling={true} />;
                 case 'resistor':

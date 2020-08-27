@@ -15,9 +15,25 @@ let style: React.CSSProperties = {
 }
 export interface ComponentProps {
     oneGridStyling: boolean,
+    x: number,
+    y: number
 }
 
-export const Wire: React.FC<ComponentProps> = ({oneGridStyling}) => {
+export const Wire: React.FC<ComponentProps> = ({x, y, oneGridStyling}) => {
+    //TODO - How did I just figure out I can pass in the x and y values? I WANNA DIEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE
+    console.log(x)
+    console.log(y)
+    let gridStyling: React.CSSProperties  = {height: "100%"};
+    if(!oneGridStyling) {
+        gridStyling = {
+            padding: 0,
+        }
+
+        //TODO
+    } else {
+        //TODO
+    }
+
 
     const setMonitor = (monitor: any) => {
         return monitor.isDragging()
@@ -30,16 +46,6 @@ export const Wire: React.FC<ComponentProps> = ({oneGridStyling}) => {
         }),
 
     })
-
-    let gridStyling: React.CSSProperties  = {height: "100%"};
-    const setGridStyling = () => {
-        if(!oneGridStyling) {
-            gridStyling = {
-                padding: 0,
-            }
-        }
-    }
-    setGridStyling();
 
     const [images, setImages] = useState<any>([wire, cornerwire, triwire])
     const [index, setIndex] = useState<number>(getComponentType)

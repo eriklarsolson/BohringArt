@@ -3,14 +3,10 @@ import {ComponentTypes} from "../../shared/models/ComponentTypes";
 let observers: PositionObserver[] = []
 export type PositionObserver = ((component: {x: number, y: number, type: string, voltage: number, rotateDeg: number, componentType: number}) => void) | null
 
-//TODO - what new fields are needed for activity to work?
-// 1. componentType used for wires (straight, corner, 3-4 prong) & switch (toggle on/off)
-// 2.
-
 let currentComponent = 0;
 let currentLevel = 0;
 let passed = false;
-let boardCurrentIssue = ""
+let boardCurrentIssue = "" //TODO - Should this be an array of strings instead for multiple issues. Or could I append to this string?
 let boardHasIssues = false;
 let currentX = -1;
 let currentY = -1;
@@ -85,7 +81,9 @@ export function setCurrentComponentsRotation(rotateDeg: number) {
 }
 
 export function getComponentAtPos(x: number, y: number) {
-    return components.filter(component => component.x === x && component.y === y)[0];
+    const component = components.filter(component => component.x === x && component.y === y)[0];
+    console.log(component)
+    return component;
 }
 
 export function getTotalVoltage(): number {
@@ -229,7 +227,7 @@ export function moveComponent(toX: number, toY: number, type: string): void {
 //  2. When put in series, resistances are just added normally
 //  3. When put in parallel, resistances are added inversely. Take the inverse of each resistance, add it up,
 //      and then take the inverse of the sum. The total resistance will be less than each individual one.
-//  4. CAN CHANGE RESISTANCE HERE SO NEED NEW SLIDER
+//  4. CAN CHANGE RESISTANCE HERE SO NEED NEW SLIDER (Note: can I just change name of voltage slider and use that?)
 // Capacitor
 //  1. Stores electricity (for a certain time, so time component needed - great)
 //  2. In series, capacitance is added using inverse rule
@@ -277,7 +275,7 @@ function checkForErrors() {
     }
 }
 
-function checkIfPassed(path: any): void {
+function checkIfPassed(matrix: Array<Array<number>>, visited: Array<Array<boolean>>): void {
 
     //Check here if the circuit only contains wires and batteries
     let boardOnlyContainsWiresAndBatteries = true;
@@ -293,18 +291,45 @@ function checkIfPassed(path: any): void {
         //TODO - Reset the board?
     }
 
-    //TODO - Check here if the circuit has power (voltage)
+    const currentTotalVoltage = getTotalVoltage();
+    if(currentTotalVoltage !== 0) {
+        //TODO - Check if any of the switches are turned off
 
 
-    //TODO - Check if any of the switches are turned off
+        //TODO - Check if all the pieces (especially wires) are in correct type and rotation deg <- THIS IS GOING TO BE THE HARDEST
 
 
-    //TODO - Check if all the pieces (especially wires) are in correct type and rotation deg <- THIS IS GOING TO BE THE HARDEST
+        //TODO - Now that there is a path and you passed all the issues above, then check if you reached successful voltage
+        // and other requirements needed for the level (used all needed pieces, etc...)
+        // NOTE: Probably can refactor the if statement below to just assign variable values, and then do logic below them to reduce code
+        let circuitPasses = false;
+        if(currentLevel === 0) {
+            const neededVoltage = 5;
 
+            if(neededVoltage === currentTotalVoltage) {
+                //TODO
+            }
+        } else if(currentLevel === 1) {
+            const neededVoltage = 20;
 
-    //TODO - Now that there is a path and you passed all the issues above, then check if you reached successful voltage
-    // and other requirements needed for the level
+            if(neededVoltage === currentTotalVoltage) {
+                //TODO
+            }
+        } else if(currentLevel === 2) {
+            const neededVoltage = 60;
 
+            if(neededVoltage === currentTotalVoltage) {
+                //TODO
+            }
+        }
+
+        if(circuitPasses) {
+            //TODO - If you pass circuit successfully, un-hide "Next" button for next level or activity
+            // 1. Should I show a toast or message anywhere saying you completed the level's task?
+            // 2. Also, I'll need to switch the image of the object we are powering with the circuit to the "powered" version (gif?)
+
+        }
+    }
 }
 
 // Function for finding whether a circuit exists or not
@@ -342,6 +367,7 @@ function hasCircuit() {
     // path exists or not
     let flag = false;
 
+    //7 here on j variable for extra column on right side, that holds the beginning and end point for circuit (off the grid)
     for (let i = 0; i < 6; i++) {
     for (let j = 0; j < 7; j++) {
         // if matrix[i][j] is source
@@ -360,8 +386,8 @@ function hasCircuit() {
     if (flag) {
         console.log("yes there is a path")
 
-        //TODO - Need to pass path in, and anything else needed from above?
-        checkIfPassed(null)
+        //TODO - Need to pass anything else from above?
+        checkIfPassed(matrix, visited)
     } else {
         console.log("no path found brother")
     }
