@@ -50,19 +50,19 @@ export const SixGrid: React.FC<GridProps> = ({components, showGrid, currentCompo
 
         switch (type) {
             case "wire":
-                return isCompHere ? <Wire x={x} y={y} oneGridStyling={false} /> : null
+                return isCompHere ? <Wire x={x} y={y} currentComponent={currentComponent} oneGridStyling={false} /> : null
             case "battery":
-                return isCompHere ? <Battery oneGridStyling={false} /> : null
+                return isCompHere ? <Battery x={x} y={y} currentComponent={currentComponent} oneGridStyling={false} /> : null
             case "resistor":
-                return isCompHere ? <Resistor oneGridStyling={false} /> : null
+                return isCompHere ? <Resistor x={x} y={y} currentComponent={currentComponent} oneGridStyling={false} /> : null
             case "capacitor":
-                return isCompHere ? <Capacitor oneGridStyling={false} /> : null
+                return isCompHere ? <Capacitor x={x} y={y} currentComponent={currentComponent} oneGridStyling={false} /> : null
             case "switch":
-                return isCompHere ? <Switch oneGridStyling={false} /> : null
+                return isCompHere ? <Switch x={x} y={y} currentComponent={currentComponent} oneGridStyling={false} /> : null
             case "inductor":
-                return isCompHere ? <Inductor oneGridStyling={false} /> : null
+                return isCompHere ? <Inductor x={x} y={y} currentComponent={currentComponent} oneGridStyling={false} /> : null
             default:
-                return isCompHere ? <Wire x={x} y={y} oneGridStyling={false} /> : null
+                return isCompHere ? <Wire x={x} y={y} currentComponent={currentComponent} oneGridStyling={false} /> : null
         }
     }
 

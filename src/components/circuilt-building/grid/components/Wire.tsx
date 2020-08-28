@@ -8,7 +8,7 @@ import rotate from './images/rotate.png'
 import { Container, Row, Col } from 'react-bootstrap'
 import leftarrow from "../../../stellar-cycle/leftarrow.png"
 import rightarrow from "../../../stellar-cycle/rightarrow.png";
-import {getComponentType, setComponentType} from "../Functionality";
+import {getComponentAtPos, getComponentType, setComponentType} from "../Functionality";
 
 let style: React.CSSProperties = {
     cursor: 'move',
@@ -16,24 +16,33 @@ let style: React.CSSProperties = {
 export interface ComponentProps {
     oneGridStyling: boolean,
     x: number,
-    y: number
+    y: number,
+    currentComponent: any
 }
 
-export const Wire: React.FC<ComponentProps> = ({x, y, oneGridStyling}) => {
-    //TODO - How did I just figure out I can pass in the x and y values? I WANNA DIEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE
-    console.log(x)
-    console.log(y)
+export const Wire: React.FC<ComponentProps> = ({x, y, oneGridStyling, currentComponent}) => {
+    //Set rotation degree of the image below if there is a component here (could be any component or currently selected one)
+    let startingRotateDeg = 0
+    const componentAtThisPosition = getComponentAtPos(x, y)
+
+    if(componentAtThisPosition !== currentComponent) {
+        if(componentAtThisPosition !== undefined) {
+            startingRotateDeg = componentAtThisPosition.rotateDeg;
+        }
+    } else {
+        if(componentAtThisPosition !== undefined) {
+            startingRotateDeg = currentComponent.rotateDeg;
+        }
+    }
+
+    const [rotateDeg, setRotateDeg] = useState<number>(startingRotateDeg)
+
     let gridStyling: React.CSSProperties  = {height: "100%"};
     if(!oneGridStyling) {
         gridStyling = {
             padding: 0,
         }
-
-        //TODO
-    } else {
-        //TODO
     }
-
 
     const setMonitor = (monitor: any) => {
         return monitor.isDragging()

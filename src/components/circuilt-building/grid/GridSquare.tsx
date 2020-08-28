@@ -23,18 +23,7 @@ export interface GridSquareProps {
 }
 
 export const GridSquare: React.FC<GridSquareProps> = ({x, y, children, showGrid, currentComponent}) => {
-    let startingRotateDeg = 0
-
-    //TODO - Come back to this later, but we can access the children var which can show us the type of object in the grid square.
-    // Can we instead handle component type here like wire type or switch on/off?
-
-    //Instead of current component, get rotate deg from component using x and y above
-    //TODO - The rotation goes back to 0 when you click off a component, but goes back to its correct once you click again
-    const componentAtThisPosition = getComponentAtPos(x, y)
-    if(componentAtThisPosition !== undefined) {
-        startingRotateDeg = componentAtThisPosition.rotateDeg;
-    }
-    const [rotateDeg, setRotateDeg] = useState<number>(startingRotateDeg)
+    const [rotateDeg, setRotateDeg] = useState<number>(0)
 
     const [{ isOver, canDrop }, drop] = useDrop({
         accept: [ComponentTypes.WIRE, ComponentTypes.BATTERY, ComponentTypes.RESISTOR
@@ -59,7 +48,9 @@ export const GridSquare: React.FC<GridSquareProps> = ({x, y, children, showGrid,
         clicked = true;
     }
 
+    //TODO - There is a bug here. Has to do with up above where I set rotateDeg state. Probably need to get current components rotate deg?
     const clickRotate = () => {
+        console.log(rotateDeg)
         if (rotateDeg + 90 === 360) {
             setRotateDeg(0)
             setCurrentComponentsRotation(0)
@@ -81,13 +72,9 @@ export const GridSquare: React.FC<GridSquareProps> = ({x, y, children, showGrid,
             }
 
             <Square clicked={clicked} showGrid={showGrid}>
-                {currentComponent !== undefined && currentComponent.x === x && currentComponent.y === y ?
-                    <div style={{transform: "rotate(" + currentComponent.rotateDeg + "deg)"}}>
-                        {children}
-                    </div>
-                    :
-                    <div>{children}</div>
-                }
+                <div style={{transform: "rotate(" + rotateDeg + "deg)"}}>
+                    {children}
+                </div>
             </Square>
             {isOver && !canDrop && <ColorOverlay color="red" />}
             {!isOver && canDrop && <ColorOverlay color="yellow" />}

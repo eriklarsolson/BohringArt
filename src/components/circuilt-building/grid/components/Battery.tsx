@@ -4,15 +4,42 @@ import { ComponentTypes } from '../../../shared/models/ComponentTypes'
 import battery from './images/battery.png'
 import rotate from './images/rotate.png'
 import { Container, Row, Col } from 'react-bootstrap'
+import {getComponentAtPos, setCurrentComponentsRotation} from "../Functionality";
+import {Square} from "../Square";
 
 let style: React.CSSProperties = {
     cursor: 'move',
 }
 export interface ComponentProps {
     oneGridStyling: boolean,
+    x: number,
+    y: number,
+    currentComponent: any
 }
 
-export const Battery: React.FC<ComponentProps> = ({oneGridStyling}) => {
+export const Battery: React.FC<ComponentProps> = ({x, y, oneGridStyling, currentComponent}) => {
+    //Set rotation degree of the image below if there is a component here (could be any component or currently selected one)
+    let startingRotateDeg = 0
+    const componentAtThisPosition = getComponentAtPos(x, y)
+
+    if(componentAtThisPosition !== currentComponent) {
+        if(componentAtThisPosition !== undefined) {
+            startingRotateDeg = componentAtThisPosition.rotateDeg;
+        }
+    } else {
+        if(componentAtThisPosition !== undefined) {
+            startingRotateDeg = currentComponent.rotateDeg;
+        }
+    }
+
+    const [rotateDeg, setRotateDeg] = useState<number>(startingRotateDeg)
+
+    let gridStyling: React.CSSProperties  = {height: "100%"};
+    if(!oneGridStyling) {
+        gridStyling = {
+            padding: 0,
+        }
+    }
 
     const setMonitor = (monitor: any) => {
         return monitor.isDragging()
@@ -26,17 +53,6 @@ export const Battery: React.FC<ComponentProps> = ({oneGridStyling}) => {
 
     })
 
-    let gridStyling: React.CSSProperties  = {};
-    const setGridStyling = () => {
-        if(!oneGridStyling) {
-            gridStyling = {
-                padding: 0,
-                marginTop: 5
-            }
-        }
-    }
-    setGridStyling();
-
     return (
         <>
             <DragPreviewImage connect={preview} src={battery} />
@@ -47,7 +63,9 @@ export const Battery: React.FC<ComponentProps> = ({oneGridStyling}) => {
                              ...style,
                              opacity: isDragging ? 0.5 : 1,
                          }}>
-                        <img src={battery} width={"90%"} />
+                        <div style={{transform: "rotate(" + rotateDeg + "deg)"}}>
+                            <img src={battery} width={"90%"} />
+                        </div>
                     </Col>
                 </Row>
             </Container>

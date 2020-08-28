@@ -34,19 +34,19 @@ export class OneGrid extends React.Component<GridProps> {
         function renderSwitch(type: string) {
             switch (type) {
                 case 'wire':
-                    return <Wire x={0} y={0} oneGridStyling={true} />;
+                    return <Wire x={0} y={0} currentComponent={undefined} oneGridStyling={true} />;
                 case 'battery':
-                    return <Battery oneGridStyling={true} />;
+                    return <Battery x={0} y={0} currentComponent={undefined} oneGridStyling={true} />;
                 case 'resistor':
-                    return <Resistor oneGridStyling={true} />;
+                    return <Resistor x={0} y={0} currentComponent={undefined} oneGridStyling={true} />;
                 case 'switch':
-                    return <Switch oneGridStyling={true} />;
+                    return <Switch x={0} y={0} currentComponent={undefined} oneGridStyling={true} />;
                 case 'inductor':
-                    return <Inductor oneGridStyling={true} />;
+                    return <Inductor x={0} y={0} currentComponent={undefined} oneGridStyling={true} />;
                 case 'capacitor':
-                    return <Capacitor oneGridStyling={true} />;
+                    return <Capacitor x={0} y={0} currentComponent={undefined} oneGridStyling={true} />;
                 default:
-                    return <Battery oneGridStyling={true} />;
+                    return <Battery x={0} y={0} currentComponent={undefined} oneGridStyling={true} />;
             }
         }
 
