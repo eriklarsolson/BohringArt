@@ -263,30 +263,30 @@ class RocketBuilding extends React.Component<any, any> {
 
                                 <Row style={{margin: 0}}>
                                     <Container fluid>
-                                        <Row>
-                                            <Col className={"col-2"}>
-                                                <Row>
+                                        <Row className={"justify-content-center"}>
+                                            <Col className={"col-1"}>
+                                                <Row style={{marginTop: 30, marginBottom: 30}}>
                                                     <img className={"arrow"} src={leftarrow} style={{filter: "contrast(0%)"}}
                                                          height="100px" alt={"left arrow"}
                                                          onMouseOver={() => this.setState({parentIndex: 0})}
                                                          onClick={() => payloadArrow(true)} />
                                                 </Row>
 
-                                                <Row>
+                                                <Row style={{marginTop: 30, marginBottom: 30}}>
                                                     <img className={"arrow"} src={leftarrow} style={{filter: "contrast(0%)"}}
                                                          height="100px" alt={"left arrow"}
                                                          onMouseOver={() => this.setState({parentIndex: 1})}
                                                          onClick={() => insterstageArrow(true)} />
                                                 </Row>
 
-                                                <Row>
+                                                <Row style={{marginTop: 30, marginBottom: 30}}>
                                                     <img className={"arrow"} src={leftarrow} style={{filter: "contrast(0%)"}}
                                                          height="100px" alt={"left arrow"}
                                                          onMouseOver={() => this.setState({parentIndex: 2})}
                                                          onClick={() => sideBoostersArrow(true)} />
                                                 </Row>
 
-                                                <Row>
+                                                <Row style={{marginTop: 30, marginBottom: 30}}>
                                                     <img className={"arrow"} src={leftarrow} style={{filter: "contrast(0%)"}}
                                                          height="100px" alt={"left arrow"}
                                                          onMouseOver={() => this.setState({parentIndex: 3})}
@@ -294,13 +294,13 @@ class RocketBuilding extends React.Component<any, any> {
                                                 </Row>
                                             </Col>
 
-                                            <Col>
+                                            <Col className={"col-5"}>
                                                 <Row className={"justify-content-center"}>
                                                     <Col className={"col-2 align-self-end"}>
                                                         <img src={this.state.sideBoosters[this.state.sideBoosterIndex].image} />
                                                     </Col>
 
-                                                    <Col className={"col-1"} style={{margin: 5}}>
+                                                    <Col className={"col-2"} style={{margin: 5}}>
                                                         <Row className={"justify-content-center"} style={{margin: 5}}>
                                                             <img src={this.state.payloads[this.state.payloadIndex].image} />
                                                         </Row>
@@ -320,29 +320,29 @@ class RocketBuilding extends React.Component<any, any> {
                                                 </Row>
                                             </Col>
 
-                                            <Col className={"col-2"}>
-                                                <Row>
+                                            <Col className={"col-1"}>
+                                                <Row style={{marginTop: 30, marginBottom: 30}}>
                                                     <img className={"arrow"} src={rightarrow} style={{filter: "contrast(0%)"}}
                                                          height="100px" alt={"left arrow"}
                                                          onMouseOver={() => this.setState({parentIndex: 0})}
                                                          onClick={() => payloadArrow(false)} />
                                                 </Row>
 
-                                                <Row>
+                                                <Row style={{marginTop: 30, marginBottom: 30}}>
                                                     <img className={"arrow"} src={rightarrow} style={{filter: "contrast(0%)"}}
                                                          height="100px" alt={"left arrow"}
                                                          onMouseOver={() => this.setState({parentIndex: 1})}
                                                          onClick={() => insterstageArrow(false)} />
                                                 </Row>
 
-                                                <Row>
+                                                <Row style={{marginTop: 30, marginBottom: 30}}>
                                                     <img className={"arrow"} src={rightarrow} style={{filter: "contrast(0%)"}}
                                                          height="100px" alt={"right arrow"}
                                                          onMouseOver={() => this.setState({parentIndex: 2})}
                                                          onClick={() => sideBoostersArrow(false)} />
                                                 </Row>
 
-                                                <Row>
+                                                <Row style={{marginTop: 30, marginBottom: 30}}>
                                                     <img className={"arrow"} src={rightarrow} style={{filter: "contrast(0%)"}}
                                                          height="100px" alt={"right arrow"}
                                                          onMouseOver={() => this.setState({parentIndex: 3})}
@@ -353,9 +353,9 @@ class RocketBuilding extends React.Component<any, any> {
                                     </Container>
                                 </Row>
 
-                                <Row style={{margin: "3%"}}>
+                                <Row style={{paddingRight: "0", marginRight: 0}}>
                                     <Col>
-                                        <Button className={"green-button"} style={{float: "right", width: 200,
+                                        <Button className={"green-button"} style={{float: "right", width: 200, marginBottom: 10,
                                             clipPath: "polygon(0 0, 95% 0, 100% 100%, 5% 100%)"}}
                                                 onClick={() => this.props.history.push({
                                                     pathname: '/activity/flight-simulator',

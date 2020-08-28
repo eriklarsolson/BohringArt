@@ -4,6 +4,7 @@ import {Header} from "./components/shared/header";
 import {Route} from "react-router";
 import Routes from "./Routes";
 import {BrowserRouter} from "react-router-dom";
+import {Footer} from "./components/shared/footer";
 
 function App() {
   return (
@@ -13,6 +14,8 @@ function App() {
                   <Header />
 
                   <Route component={Routes} />
+
+                  <Footer />
               </div>
           </BrowserRouter>
       </>

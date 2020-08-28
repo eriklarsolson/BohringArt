@@ -294,11 +294,16 @@ class ObjectPage extends React.Component<any, any> {
                 <Container fluid className={"d-flex h-100 flex-column"} style={{margin: 0, padding: 0, backgroundImage:`url(${stellarBackground})`}}>
                     <Row className={"flex-grow-1"} style={{margin: 0}}>
                         <Col className={"col-2 vh-100"} style={{color: "white", padding: 0}}>
-                            <Sidebar temperature={this.state.stellarObjects[this.state.massClass][this.state.index].temperatureValue} changeTemperature={changeTemperature}
-                                     size={this.state.stellarObjects[this.state.massClass][this.state.index].sizeValue} changeSize={changeSize}
-                                     mass={this.state.stellarObjects[this.state.massClass][this.state.index].massValue} changeMass={changeMass}
+                            <Sidebar currentObject={this.state.stellarObjects[this.state.massClass][this.state.index]}
+                                     temperature={this.state.stellarObjects[this.state.massClass][this.state.index].temperatureValue}
+                                     changeTemperature={changeTemperature}
+                                     size={this.state.stellarObjects[this.state.massClass][this.state.index].sizeValue}
+                                     changeSize={changeSize}
+                                     mass={this.state.stellarObjects[this.state.massClass][this.state.index].massValue}
+                                     changeMass={changeMass}
                                      description={this.state.stellarObjects[this.state.massClass][this.state.index].description}
-                                     massClass={this.state.massClass} handleMassChange={handleMassChange} />
+                                     massClass={this.state.massClass}
+                                     handleMassChange={handleMassChange} />
                         </Col>
 
                         <Col className={"col-10"} style={{margin: "0", padding: "0"}}>
@@ -369,12 +374,15 @@ class ObjectPage extends React.Component<any, any> {
                                     </Col>
 
                                     <Col className={"col-4 justify-content-center align-content-center"}>
+                                        {this.state.stellarObjects[this.state.massClass][this.state.index].title !== "Nebula" &&
                                         <Button className={"green-button"} style={{float: "right", width: 200,
                                             clipPath: "polygon(0 0, 95% 0, 100% 100%, 5% 100%)"}}
                                                 onClick={() => this.props.history.push({
                                                     pathname: '/activity/stellar-cycle',
-                                                    state: { title: this.state.stellarObjects[this.state.massClass][this.state.index].title }
-                                                })}>All Stages</Button>
+                                                    state: {title: this.state.stellarObjects[this.state.massClass][this.state.index].title}})}>
+                                            All Stages
+                                        </Button>
+                                        }
                                     </Col>
                                 </Row>
                             </Container>

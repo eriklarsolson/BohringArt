@@ -54,6 +54,9 @@ const Header = (props: {location: any }) => {
                         <Nav.Link as={Link} to='/about' active={location.pathname.startsWith('/about')}>
                             About Us
                         </Nav.Link>
+                        <Nav.Link as={Link} to='/contact' active={location.pathname.startsWith('/contact')}>
+                            Contact Us
+                        </Nav.Link>
                     </Nav>
                 </Navbar.Collapse>
             </Navbar>

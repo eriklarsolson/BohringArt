@@ -1,7 +1,6 @@
 import React from 'react';
 import './About.scss';
 import { Container, Row, Col } from 'react-bootstrap'
-import 'react-toastify/dist/ReactToastify.css';
 
 class AboutUs extends React.Component<any, any> {
     render() {

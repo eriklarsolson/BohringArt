@@ -65,3 +65,7 @@
 .modal-xl {
   max-width: 75%;
 }
+
+.fa-instagram:hover {
+  cursor: pointer;
+}

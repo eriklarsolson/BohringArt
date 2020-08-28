@@ -36,35 +36,45 @@ class Sidebar extends React.Component<any, any> {
                        </Col>
                    </Row>
 
-                   <Row style={{marginLeft: 15, marginRight: 15, marginTop: "10%", marginBottom: 15}}>
-                       <Col>
-                           <Typography id="temperature-slider" gutterBottom style={{float: "left", fontWeight: "bold", fontSize: "20px"}}>
-                               Temperature
-                           </Typography>
-                           <PropertiesSlider value={this.props.temperature} changeValue={this.props.changeTemperature}
-                                             aria-labelledby="temperature-slider" max={max} />
-                       </Col>
-                   </Row>
+                   {this.props.currentObject.title !== "Nebula" ?
+                       <>
+                           {this.props.currentObject.title !== "Average Star" && this.props.currentObject.title !== "Massive Star" &&
+                            <>
+                               <Row style={{marginLeft: 15, marginRight: 15, marginTop: "10%", marginBottom: 15}}>
+                                   <Col>
+                                       <Typography id="temperature-slider" gutterBottom style={{float: "left", fontWeight: "bold", fontSize: "20px"}}>
+                                           Temperature
+                                       </Typography>
+                                       <PropertiesSlider value={this.props.temperature} changeValue={this.props.changeTemperature}
+                                                         aria-labelledby="temperature-slider" max={max} />
+                                   </Col>
+                               </Row>
 
-                   <Row style={{margin: 15}}>
-                       <Col>
-                           <Typography id="size-slider" gutterBottom style={{float: "left", fontWeight: "bold", fontSize: "20px"}}>
-                               Size
-                           </Typography>
-                           <PropertiesSlider value={this.props.size} changeValue={this.props.changeSize}
-                                             aria-labelledby="size-slider" max={max} />
-                       </Col>
-                   </Row>
+                               <Row style={{margin: 15}}>
+                                   <Col>
+                                       <Typography id="size-slider" gutterBottom style={{float: "left", fontWeight: "bold", fontSize: "20px"}}>
+                                           Size
+                                       </Typography>
+                                       <PropertiesSlider value={this.props.size} changeValue={this.props.changeSize}
+                                                         aria-labelledby="size-slider" max={max} />
+                                   </Col>
+                               </Row>
+                             </>
+                           }
 
-                   <Row style={{margin: 15}}>
-                       <Col>
-                           <Typography id="mass-slider" gutterBottom style={{float: "left", fontWeight: "bold", fontSize: "20px"}}>
-                               Mass
-                           </Typography>
-                           <PropertiesSlider value={this.props.mass} changeValue={this.props.changeMass}
-                                             aria-labelledby="mass-slider" max={max} />
-                       </Col>
-                   </Row>
+                           <Row style={{margin: 15}}>
+                               <Col>
+                                   <Typography id="mass-slider" gutterBottom style={{float: "left", fontWeight: "bold", fontSize: "20px"}}>
+                                       Mass
+                                   </Typography>
+                                   <PropertiesSlider value={this.props.mass} changeValue={this.props.changeMass}
+                                                     aria-labelledby="mass-slider" max={max} />
+                               </Col>
+                           </Row>
+                       </>
+                       :
+                       <div></div>
+                       }
 
                    {/*<hr style={{backgroundColor: "white", height: "4px", margin: "30px 10px 30px 10px", borderRadius: "30px"}}/>*/}
 

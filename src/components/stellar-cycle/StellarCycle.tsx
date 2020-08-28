@@ -281,7 +281,7 @@ class StellarCycle extends React.Component<any, any> {
                         </Col>
                     </Row>
 
-                    <Row style={{padding: 20, margin: 20}}>
+                    <Row style={{padding: 20}}>
                         <Col>
                             <Button className={"green-button"} style={{float: "left", width: 100,
                                 clipPath: "polygon(0 0, 95% 0, 100% 100%, 5% 100%)"}}

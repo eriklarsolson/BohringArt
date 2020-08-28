@@ -163,17 +163,17 @@ const Canvas = ({ width, height, canvasRef, tool, color, size, toolActive }: Can
     const getBurnColor = (color: string) => {
         switch(color) {
             case "#FFFFFF":
-                return lighten("#000000", 0.5);
+                return lighten("#000000", 0.6);
             case "#EB3324":
-                return lighten("#000000", 0.4);
+                return lighten("#000000", 0.5);
             case "#F2F551":
-                return lighten("#000000", 0.3);
+                return lighten("#000000", 0.4);
             case "#76FA68":
-                return lighten("#000000", 0.2);
+                return lighten("#000000", 0.3);
             case "#3686F7":
-                return lighten("#000000", 0.1);
+                return lighten("#000000", 0.2);
             case "#EA3690":
-                return lighten("#000000", 0.0);
+                return lighten("#000000", 0.1);
             default:
                 return "white"
         }
@@ -220,10 +220,9 @@ const Canvas = ({ width, height, canvasRef, tool, color, size, toolActive }: Can
 
                     context.beginPath();
 
+                    //TODO - Make it so that its only for darker colors than what your current choice is (also doesn't really fully work right now)
                     //Don't allow laser to draw over other lasers of dark engraving
                     const oldPixelColor = GetPixel(originalMousePosition.x+2, originalMousePosition.y+2);
-                    console.log(oldPixelColor)
-
                     let otherColorFound = false;
                     if(oldPixelColor !== "#000000" && oldPixelColor !== getBurnColor(color)) {
                         otherColorFound = true;
@@ -232,10 +231,7 @@ const Canvas = ({ width, height, canvasRef, tool, color, size, toolActive }: Can
                     context.moveTo(originalMousePosition.x, originalMousePosition.y);
 
                     //Don't allow laser to draw over other lasers of dark engraving
-                    //TODO - Make it so that its only for darker colors than what your current choice is (also doesn't really fully work right now)
                     const newPixelColor = GetPixel(newMousePosition.x, newMousePosition.y);
-                    console.log(newPixelColor)
-
                     if(!otherColorFound) {
                         if (newPixelColor !== "#000000" && newPixelColor !== getBurnColor(color)) {
                             otherColorFound = true;
@@ -309,20 +305,41 @@ const Canvas = ({ width, height, canvasRef, tool, color, size, toolActive }: Can
                     context.stroke();
                     // if (item.fill) context.fill();
                 } else if (tool === TOOL_TRIANGLE) {
-                    //TODO
-                    // const startX = newMousePosition.x < originalMousePosition.x ? newMousePosition.x : originalMousePosition.x;
-                    // const startY = newMousePosition.y < originalMousePosition.y ? newMousePosition.y : originalMousePosition.y;
-                    // const widthX = Math.abs(originalMousePosition.x - newMousePosition.x);
-                    // const widthY = Math.abs(originalMousePosition.y - newMousePosition.y);
-                    // context.beginPath();
-                    // context.moveTo(startX, startY);
-                    // context.lineTo(startX + widthX / 2, startY + widthY);
-                    // context.lineTo(startX - widthX / 2, startY + widthY);
-                    // context.closePath();
-                    // //context.fillStyle = fillStyle;
-                    // //context.fill();
+                    const startX = newMousePosition.x < originalMousePosition.x ? newMousePosition.x : originalMousePosition.x;
+                    const startY = newMousePosition.y < originalMousePosition.y ? newMousePosition.y : originalMousePosition.y;
+                    const widthX = Math.abs(originalMousePosition.x - newMousePosition.x);
+                    const widthY = Math.abs(originalMousePosition.y - newMousePosition.y);
+                    context.beginPath();
+                    context.lineWidth = size;
+                    context.strokeStyle = getBurnColor(color);
+                    context.moveTo(startX, startY);
+
+                    //TODO - To create smaller triangle, divide the widthX / 2
+
+                    context.lineTo(startX + widthX, startY + widthY);
+                    context.lineTo(startX - widthX, startY + widthY);
+                    context.closePath()
+                    context.stroke();
                 } else if (tool === TOOL_STAR) {
-                    //TODO
+                    //TODO - Currently broken (Also breaks everything else after using)
+                    const startX = newMousePosition.x < originalMousePosition.x ? newMousePosition.x : originalMousePosition.x;
+                    const startY = newMousePosition.y < originalMousePosition.y ? newMousePosition.y : originalMousePosition.y;
+
+                    context.save();
+                    context.beginPath();
+                    context.lineWidth = size;
+                    context.strokeStyle = getBurnColor(color);
+                    context.translate(startX, startY); //TODO - Has to do with this line moving the 0,0 position of grid
+                    context.moveTo(0,0-9);
+                    for (var i = 0; i < 5; i++) {
+                        context.rotate(Math.PI / 5);
+                        context.lineTo(0, 0 - (9*6));
+                        context.rotate(Math.PI / 5);
+                        context.lineTo(0, 0 - 9);
+                    }
+                    context.closePath();
+                    context.stroke();
+                    // context.restore();
                 }
             }
         }
