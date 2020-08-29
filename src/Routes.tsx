@@ -30,7 +30,7 @@ class Routes extends Component {
                     <Route path="/about" component={AboutUs} />
                     <Route path="/contact" component={ContactUs} />
                     <Route path="/resources" component={Resources} />
-                    <Route path="/" component={Home} />
+                    <Route exact path="/" component={Home} />
                     <Route path="/home" component={Home} />
                     <Route path="*" component={PageNotFound} />
                 </Switch>

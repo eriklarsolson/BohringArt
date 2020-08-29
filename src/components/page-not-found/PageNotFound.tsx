@@ -13,11 +13,11 @@ const PageNotFound = () => {
                     </div>
 
                     <h2>
-                        We are sorry, Page not found for <code>{loc.pathname}</code>
+                        Sorry, not even physics could help you find the page you’re looking for.
                     </h2>
 
                     <p>
-                        The page you are looking for might have been removed.
+                        Page not found for <code>{loc.pathname}</code>
                     </p>
 
                     <Link to="/">Back to home</Link>

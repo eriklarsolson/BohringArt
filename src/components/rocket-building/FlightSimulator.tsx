@@ -38,47 +38,41 @@ class FlightSimulator extends React.Component<any, any> {
                     textAlign: "left", overflow: "hidden", backgroundImage:`url(${stellarBackground})`}}>
                     {/*<BackgroundAnimation />*/}
 
-                    <Row style={{margin: 0, padding: 0}}>
-                        <Col className={"col-6 vh-100 align-items-center justify-content-center"} style={{display: "flex", margin: 0, padding: 0}}>
-                            <Col style={{height: "90%", maxWidth: 30}}>
-                                <div style={{position: "absolute", backgroundColor: "white", height: "100%"}} />
-                                <RocketBarAnimation />
-                            </Col>
+                    <Row style={{margin: 10, padding: 0}}>
+                        <Col>
+                            <RocketBarAnimation />
+                        </Col>
+                    </Row>
 
+                    <Row style={{margin: 0, padding: 0}}>
+                        <Col className={"align-items-center justify-content-center"} style={{display: "flex", margin: 0, padding: 0}}>
                             <Col className={"ship"}>
                                 <RocketAnimation images={[this.state.sideBooster.image, this.state.engine.image,
                                     this.state.interstage.image, this.state.payload.image]} />
                             </Col>
                         </Col>
+                    </Row>
 
-                        <Col className={"col-6 vh-100"} style={{margin: 0, padding: 0, backgroundColor: "#29405B",
-                            color: "white", clipPath: "polygon(0 0, 100% 0, 100% 100%, 10% 100%)"}}>
-                            <Container fluid style={{margin: 0, padding: 0}}>
-                                <Row className="justify-content-center" style={{margin: 0, padding: 0}}>
-                                    <Col className={"col-8"}>
+                    <Row>
+                        {/*  TODO - Text scenarios with yes/no go here for ship situations  */}
+                    </Row>
 
-                                    </Col>
-                                </Row>
+                    <Row style={{margin: "3%"}}>
+                        <Col>
+                            <Button className={"green-button"} style={{float: "left", width: 100,
+                                clipPath: "polygon(0 0, 95% 0, 100% 100%, 5% 100%)"}}
+                                    onClick={() => this.props.history.push('/activity/rocket-building')}>
+                                <i className="fa fa-arrow-left" />
+                            </Button>
+                        </Col>
 
-                                <Row style={{margin: "3%"}}>
-                                    <Col>
-                                        <Button className={"green-button"} style={{float: "left", width: 100,
-                                            clipPath: "polygon(0 0, 95% 0, 100% 100%, 5% 100%)"}}
-                                                onClick={() => this.props.history.push('/activity/rocket-building')}>
-                                            <i className="fa fa-arrow-left" />
-                                        </Button>
-                                    </Col>
-
-                                    <Col>
-                                        <Button className={"green-button"} style={{float: "right", width: 200,
-                                            clipPath: "polygon(0 0, 95% 0, 100% 100%, 5% 100%)"}}
-                                                onClick={() => this.props.history.push({
-                                                    pathname: '/activity/object-page',
-                                                    state: { title: "Nebula" }
-                                                })}>Complete</Button>
-                                    </Col>
-                                </Row>
-                            </Container>
+                        <Col>
+                            <Button className={"green-button"} style={{float: "right", width: 200,
+                                clipPath: "polygon(0 0, 95% 0, 100% 100%, 5% 100%)"}}
+                                    onClick={() => this.props.history.push({
+                                        pathname: '/activity/object-page',
+                                        state: { title: "Nebula" }
+                                    })}>Complete</Button>
                         </Col>
                     </Row>
                 </Container>
