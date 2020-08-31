@@ -16,6 +16,7 @@ import sideBooster_2 from "./images/sideBoosters/sideBooster_2.png"
 import engine_1 from "./images/engines/engine_1.png"
 import engine_2 from "./images/engines/engine_2.png"
 import RocketBuildingQuestionPopup from "../shared/modals/RocketBuildingQuestionPopup";
+import background from "./images/background.png";
 
 class RocketBuilding extends React.Component<any, any> {
     constructor(props: any) {
@@ -224,7 +225,7 @@ class RocketBuilding extends React.Component<any, any> {
 
                 <RocketBuildingQuestionPopup open={this.state.questionPopupOpened} closePopup={cycleQuestionPopup} />
 
-                <Container fluid className={"d-flex h-100 flex-column"} style={{margin: "0", padding: "0", backgroundColor: "#F8EDDD"}}>
+                <Container fluid className={"d-flex h-100 flex-column"} style={{margin: "0", padding: "0", backgroundImage:`url(${background})`}}>
                     <Row style={{margin: 0}}>
                         <Col className={"col-2 vh-100"} style={{color: "white", padding: 0}}>
                             <Sidebar title={getSidebarObject().title}
@@ -263,7 +264,7 @@ class RocketBuilding extends React.Component<any, any> {
 
                                 <Row style={{margin: 0}}>
                                     <Container fluid>
-                                        <Row className={"justify-content-center"}>
+                                        <Row style={{marginLeft: "10%"}}>
                                             <Col className={"col-1"}>
                                                 <Row style={{marginTop: 30, marginBottom: 30}}>
                                                     <img className={"arrow"} src={leftarrow} style={{filter: "contrast(0%)"}}
@@ -294,13 +295,13 @@ class RocketBuilding extends React.Component<any, any> {
                                                 </Row>
                                             </Col>
 
-                                            <Col className={"col-5"}>
+                                            <Col className={"col-4"}>
                                                 <Row className={"justify-content-center"}>
-                                                    <Col className={"col-2 align-self-end"}>
+                                                    <Col className={"col-2 align-self-end"}  style={{margin: 5, padding: 0}}>
                                                         <img src={this.state.sideBoosters[this.state.sideBoosterIndex].image} />
                                                     </Col>
 
-                                                    <Col className={"col-2"} style={{margin: 5}}>
+                                                    <Col className={"col-3"} style={{margin: 5, padding: 0}}>
                                                         <Row className={"justify-content-center"} style={{margin: 5}}>
                                                             <img src={this.state.payloads[this.state.payloadIndex].image} />
                                                         </Row>
@@ -314,7 +315,7 @@ class RocketBuilding extends React.Component<any, any> {
                                                         </Row>
                                                     </Col>
 
-                                                    <Col className={"col-2 align-self-end"}>
+                                                    <Col className={"col-2 align-self-end"}  style={{margin: 5, padding: 0}}>
                                                         <img src={this.state.sideBoosters[this.state.sideBoosterIndex].image} />
                                                     </Col>
                                                 </Row>
@@ -348,6 +349,138 @@ class RocketBuilding extends React.Component<any, any> {
                                                          onMouseOver={() => this.setState({parentIndex: 3})}
                                                          onClick={() => engineArrow(false)} />
                                                 </Row>
+                                            </Col>
+
+                                            <Col className={"col-4"} style={{marginLeft: 50, marginTop: 50}}>
+                                                <Container fluid style={{color: "white"}}>
+                                                    <Row className={"justify-content-center"} style={{margin: 15}}>
+                                                        <Col className={"col-12"} style={{backgroundColor: "#29405B"}}>
+                                                            <Container fluid style={{padding: 0}}>
+                                                                <Row style={{backgroundColor: "#42949F", padding: 5}}>
+                                                                    <Col className="col-12" style={{margin: 0, textAlign: "left"}}>
+                                                                        <p style={{marginBottom: 0, fontSize: 22, fontWeight: "bold"}}>Cone</p>
+                                                                    </Col>
+                                                                </Row>
+
+                                                                <Row style={{backgroundColor: "#162F4D", textAlign: "left", padding: 5}}>
+                                                                    <Col className={"col-3"}>
+                                                                        <p style={{marginBottom: 0, fontSize: 12}}>Parts</p>
+                                                                    </Col>
+
+                                                                    <Col>
+                                                                        <p style={{marginBottom: 0, fontSize: 12}}>Fuel Capacity</p>
+                                                                    </Col>
+
+                                                                    <Col>
+                                                                        <p style={{marginBottom: 0, fontSize: 12}}>Air Resistance</p>
+                                                                    </Col>
+                                                                </Row>
+
+                                                                <Row style={{backgroundColor: "#29405B", textAlign: "left", padding: 5}}>
+                                                                    <Col>
+                                                                        <p style={{marginBottom: 0, fontSize: 14}}>Option 1</p>
+                                                                    </Col>
+                                                                </Row>
+                                                            </Container>
+                                                        </Col>
+                                                    </Row>
+
+                                                    <Row className={"justify-content-center"} style={{margin: 15}}>
+                                                        <Col className={"col-12"} style={{backgroundColor: "#29405B"}}>
+                                                            <Container fluid style={{padding: 0}}>
+                                                                <Row style={{backgroundColor: "#42949F", padding: 5}}>
+                                                                    <Col className="col-12" style={{margin: 0, textAlign: "left"}}>
+                                                                        <p style={{marginBottom: 0, fontSize: 22, fontWeight: "bold"}}>Body</p>
+                                                                    </Col>
+                                                                </Row>
+
+                                                                <Row style={{backgroundColor: "#162F4D", textAlign: "left", padding: 5}}>
+                                                                    <Col className={"col-3"}>
+                                                                        <p style={{marginBottom: 0, fontSize: 12}}>Parts</p>
+                                                                    </Col>
+
+                                                                    <Col>
+                                                                        <p style={{marginBottom: 0, fontSize: 12}}>Fuel Capacity</p>
+                                                                    </Col>
+
+                                                                    <Col>
+                                                                        <p style={{marginBottom: 0, fontSize: 12}}>Air Resistance</p>
+                                                                    </Col>
+                                                                </Row>
+
+                                                                <Row style={{backgroundColor: "#29405B", textAlign: "left", padding: 5}}>
+                                                                    <Col>
+                                                                        <p style={{marginBottom: 0, fontSize: 14}}>Option 1</p>
+                                                                    </Col>
+                                                                </Row>
+                                                            </Container>
+                                                        </Col>
+                                                    </Row>
+
+                                                    <Row className={"justify-content-center"} style={{margin: 15}}>
+                                                        <Col className={"col-12"} style={{backgroundColor: "#29405B"}}>
+                                                            <Container fluid style={{padding: 0}}>
+                                                                <Row style={{backgroundColor: "#42949F", padding: 5}}>
+                                                                    <Col className="col-12" style={{margin: 0, textAlign: "left"}}>
+                                                                        <p style={{marginBottom: 0, fontSize: 22, fontWeight: "bold"}}>Boosters</p>
+                                                                    </Col>
+                                                                </Row>
+
+                                                                <Row style={{backgroundColor: "#162F4D", textAlign: "left", padding: 5}}>
+                                                                    <Col className={"col-3"}>
+                                                                        <p style={{marginBottom: 0, fontSize: 12}}>Parts</p>
+                                                                    </Col>
+
+                                                                    <Col>
+                                                                        <p style={{marginBottom: 0, fontSize: 12}}>Fuel Capacity</p>
+                                                                    </Col>
+
+                                                                    <Col>
+                                                                        <p style={{marginBottom: 0, fontSize: 12}}>Air Resistance</p>
+                                                                    </Col>
+                                                                </Row>
+
+                                                                <Row style={{backgroundColor: "#29405B", textAlign: "left", padding: 5}}>
+                                                                    <Col>
+                                                                        <p style={{marginBottom: 0, fontSize: 14}}>Option 1</p>
+                                                                    </Col>
+                                                                </Row>
+                                                            </Container>
+                                                        </Col>
+                                                    </Row>
+
+                                                    <Row className={"justify-content-center"} style={{margin: 15}}>
+                                                        <Col className={"col-12"} style={{backgroundColor: "#29405B"}}>
+                                                            <Container fluid style={{padding: 0}}>
+                                                                <Row style={{backgroundColor: "#42949F", padding: 5}}>
+                                                                    <Col className="col-12" style={{margin: 0, textAlign: "left"}}>
+                                                                        <p style={{marginBottom: 0, fontSize: 22, fontWeight: "bold"}}>Engine</p>
+                                                                    </Col>
+                                                                </Row>
+
+                                                                <Row style={{backgroundColor: "#162F4D", textAlign: "left", padding: 5}}>
+                                                                    <Col className={"col-3"}>
+                                                                        <p style={{marginBottom: 0, fontSize: 12}}>Parts</p>
+                                                                    </Col>
+
+                                                                    <Col>
+                                                                        <p style={{marginBottom: 0, fontSize: 12}}>Fuel Capacity</p>
+                                                                    </Col>
+
+                                                                    <Col>
+                                                                        <p style={{marginBottom: 0, fontSize: 12}}>Air Resistance</p>
+                                                                    </Col>
+                                                                </Row>
+
+                                                                <Row style={{backgroundColor: "#29405B", textAlign: "left", padding: 5}}>
+                                                                    <Col>
+                                                                        <p style={{marginBottom: 0, fontSize: 14}}>Option 1</p>
+                                                                    </Col>
+                                                                </Row>
+                                                            </Container>
+                                                        </Col>
+                                                    </Row>
+                                                </Container>
                                             </Col>
                                         </Row>
                                     </Container>

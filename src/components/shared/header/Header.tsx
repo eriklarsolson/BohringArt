@@ -2,6 +2,8 @@ import React from 'react';
 import {Nav, Navbar,NavDropdown} from "react-bootstrap";
 import {Link, withRouter} from "react-router-dom";
 import './Header.scss';
+import line from "./line.png"
+import logo from "./logo.png"
 
 const Header = (props: {location: any }) => {
     const { location } = props;
@@ -18,10 +20,16 @@ const Header = (props: {location: any }) => {
     return (
         <>
             <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark" className="main-menu" style={{zIndex: 1}}>
-                <Navbar.Brand href="/">BOHRINGART</Navbar.Brand>
+                <Navbar.Brand href="/" style={{textAlign: "right"}}>
+                    <img src={logo} alt={"Logo"} />
+                </Navbar.Brand>
+
                 <Navbar.Toggle aria-controls="responsive-navbar-nav" />
                 <Navbar.Collapse id="responsive-navbar-nav">
+                    <img src={line} alt={"Menu seperator"} />
+
                     <Nav className="mr-auto" activeKey={location.pathname}>
+
                         <Nav.Link as={Link} to={{pathname: '/', state: { popupOpened: false }}}
                                   active={location.pathname.startsWith('/home') || location.pathname === '/'}>
                             Home

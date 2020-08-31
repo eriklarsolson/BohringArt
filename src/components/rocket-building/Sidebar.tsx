@@ -7,7 +7,7 @@ class Sidebar extends React.Component<any, any> {
             <>
                <Container style={{backgroundColor: "#29405B", margin: 0, height: "100%", textAlign: "left",
                    clipPath: "polygon(0 0, 80% 0, 100% 100%, 0 100%)", padding: 25}}>
-                   <h3 style={{paddingTop: "15px"}}>STATS</h3>
+                   <h3 style={{paddingTop: "15px"}}>PARTS</h3>
 
                    <Row style={{marginTop: 25}}>
                        <Col>
@@ -16,6 +16,12 @@ class Sidebar extends React.Component<any, any> {
                    </Row>
 
                    <Row>
+                       <Col className={"col-8"}>
+                           <hr style={{backgroundColor: "white"}} />
+                       </Col>
+                   </Row>
+
+                   <Row style={{paddingTop: "15%"}}>
                        <Col>
                            <h5>Total Mass</h5>
                        </Col>
@@ -27,7 +33,7 @@ class Sidebar extends React.Component<any, any> {
                        </Col>
                    </Row>
 
-                   <Row>
+                   <Row  style={{marginTop: "15%"}}>
                        <Col>
                            <h5>Air Resistance</h5>
                        </Col>
@@ -39,7 +45,7 @@ class Sidebar extends React.Component<any, any> {
                        </Col>
                    </Row>
 
-                   <Row>
+                   <Row  style={{marginTop: "15%"}}>
                        <Col>
                            <h5>Fuel Capacity</h5>
                        </Col>
