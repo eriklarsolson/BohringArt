@@ -29,22 +29,22 @@ class RocketBuilding extends React.Component<any, any> {
                 {
                     image: payload_1,
                     title: "Payload 1",
-                    mass: 1000,
+                    mass: 50,
                     airResistance: 5,
-                    fuelCapacity: 10
+                    fuelCapacity: 80
                 },
                 {
                     image: payload_2,
                     title: "Payload 2",
-                    mass: 2222,
-                    airResistance: 2,
+                    mass: 30,
+                    airResistance: 12,
                     fuelCapacity: 10
                 },
                 {
                     image: payload_3,
                     title: "Payload 3",
-                    mass: 333,
-                    airResistance: 5,
+                    mass: 99,
+                    airResistance: 23,
                     fuelCapacity: 9
                 }
             ],
@@ -53,14 +53,14 @@ class RocketBuilding extends React.Component<any, any> {
                 {
                     image: interstage_1,
                     title: "Interstage 1",
-                    mass: 1000,
-                    airResistance: 5,
-                    fuelCapacity: 10
+                    mass: 53,
+                    airResistance: 78,
+                    fuelCapacity: 54
                 },
                 {
                     image: interstage_2,
                     title: "Interstage 2",
-                    mass: 2222,
+                    mass: 27,
                     airResistance: 2,
                     fuelCapacity: 10
                 }
@@ -70,16 +70,16 @@ class RocketBuilding extends React.Component<any, any> {
                 {
                     image: sideBooster_1,
                     title: "Side Booster 1",
-                    mass: 1000,
-                    airResistance: 5,
-                    fuelCapacity: 10
+                    mass: 59,
+                    airResistance: 9,
+                    fuelCapacity: 23
                 },
                 {
                     image: sideBooster_2,
                     title: "Side Booster 2",
-                    mass: 2222,
-                    airResistance: 2,
-                    fuelCapacity: 10
+                    mass: 50,
+                    airResistance: 11,
+                    fuelCapacity: 34
                 }
             ],
             sideBoosterIndex: 0,
@@ -87,15 +87,15 @@ class RocketBuilding extends React.Component<any, any> {
                 {
                     image: engine_1,
                     title: "Engine 1",
-                    mass: 1000,
+                    mass: 85,
                     airResistance: 5,
-                    fuelCapacity: 10
+                    fuelCapacity: 53
                 },
                 {
                     image: engine_2,
                     title: "Engine 2",
-                    mass: 2222,
-                    airResistance: 2,
+                    mass: 33,
+                    airResistance: 23,
                     fuelCapacity: 10
                 }
             ],
@@ -130,7 +130,7 @@ class RocketBuilding extends React.Component<any, any> {
             }
         }
 
-        const insterstageArrow = (left: boolean) => {
+        const interstageArrow = (left: boolean) => {
             this.setState({parentIndex: 1})
 
             if(left) {
@@ -228,10 +228,14 @@ class RocketBuilding extends React.Component<any, any> {
                 <Container fluid className={"d-flex h-100 flex-column"} style={{margin: "0", padding: "0", backgroundImage:`url(${background})`}}>
                     <Row style={{margin: 0}}>
                         <Col className={"col-2 vh-100"} style={{color: "white", padding: 0}}>
-                            <Sidebar title={getSidebarObject().title}
-                                     mass={getSidebarObject().mass}
-                                     airResistance={getSidebarObject().airResistance}
-                                     fuelCapacity={getSidebarObject().fuelCapacity} />
+                            <Sidebar cone={this.state.payloads[this.state.payloadIndex]}
+                                     changeCone={payloadArrow}
+                                     body={this.state.interstages[this.state.interstageIndex]}
+                                     changeBody={interstageArrow}
+                                     booster={this.state.sideBoosters[this.state.sideBoosterIndex]}
+                                     changeBooster={sideBoostersArrow}
+                                     engine={this.state.engines[this.state.engineIndex]}
+                                     changeEngine={engineArrow}/>
                         </Col>
 
                         <Col className={"col-10"} style={{margin: "0", padding: "0"}}>
@@ -264,36 +268,36 @@ class RocketBuilding extends React.Component<any, any> {
 
                                 <Row style={{margin: 0}}>
                                     <Container fluid>
-                                        <Row style={{marginLeft: "10%"}}>
-                                            <Col className={"col-1"}>
-                                                <Row style={{marginTop: 30, marginBottom: 30}}>
-                                                    <img className={"arrow"} src={leftarrow} style={{filter: "contrast(0%)"}}
-                                                         height="100px" alt={"left arrow"}
-                                                         onMouseOver={() => this.setState({parentIndex: 0})}
-                                                         onClick={() => payloadArrow(true)} />
-                                                </Row>
+                                        <Row className={"justify-content-center"}>
+                                            {/*<Col className={"col-1"}>*/}
+                                            {/*    <Row style={{marginTop: 30, marginBottom: 30}}>*/}
+                                            {/*        <img className={"arrow"} src={leftarrow} style={{filter: "contrast(0%)"}}*/}
+                                            {/*             height="100px" alt={"left arrow"}*/}
+                                            {/*             onMouseOver={() => this.setState({parentIndex: 0})}*/}
+                                            {/*             onClick={() => payloadArrow(true)} />*/}
+                                            {/*    </Row>*/}
 
-                                                <Row style={{marginTop: 30, marginBottom: 30}}>
-                                                    <img className={"arrow"} src={leftarrow} style={{filter: "contrast(0%)"}}
-                                                         height="100px" alt={"left arrow"}
-                                                         onMouseOver={() => this.setState({parentIndex: 1})}
-                                                         onClick={() => insterstageArrow(true)} />
-                                                </Row>
+                                            {/*    <Row style={{marginTop: 30, marginBottom: 30}}>*/}
+                                            {/*        <img className={"arrow"} src={leftarrow} style={{filter: "contrast(0%)"}}*/}
+                                            {/*             height="100px" alt={"left arrow"}*/}
+                                            {/*             onMouseOver={() => this.setState({parentIndex: 1})}*/}
+                                            {/*             onClick={() => interstageArrow(true)} />*/}
+                                            {/*    </Row>*/}
 
-                                                <Row style={{marginTop: 30, marginBottom: 30}}>
-                                                    <img className={"arrow"} src={leftarrow} style={{filter: "contrast(0%)"}}
-                                                         height="100px" alt={"left arrow"}
-                                                         onMouseOver={() => this.setState({parentIndex: 2})}
-                                                         onClick={() => sideBoostersArrow(true)} />
-                                                </Row>
+                                            {/*    <Row style={{marginTop: 30, marginBottom: 30}}>*/}
+                                            {/*        <img className={"arrow"} src={leftarrow} style={{filter: "contrast(0%)"}}*/}
+                                            {/*             height="100px" alt={"left arrow"}*/}
+                                            {/*             onMouseOver={() => this.setState({parentIndex: 2})}*/}
+                                            {/*             onClick={() => sideBoostersArrow(true)} />*/}
+                                            {/*    </Row>*/}
 
-                                                <Row style={{marginTop: 30, marginBottom: 30}}>
-                                                    <img className={"arrow"} src={leftarrow} style={{filter: "contrast(0%)"}}
-                                                         height="100px" alt={"left arrow"}
-                                                         onMouseOver={() => this.setState({parentIndex: 3})}
-                                                         onClick={() => engineArrow(true)} />
-                                                </Row>
-                                            </Col>
+                                            {/*    <Row style={{marginTop: 30, marginBottom: 30}}>*/}
+                                            {/*        <img className={"arrow"} src={leftarrow} style={{filter: "contrast(0%)"}}*/}
+                                            {/*             height="100px" alt={"left arrow"}*/}
+                                            {/*             onMouseOver={() => this.setState({parentIndex: 3})}*/}
+                                            {/*             onClick={() => engineArrow(true)} />*/}
+                                            {/*    </Row>*/}
+                                            {/*</Col>*/}
 
                                             <Col className={"col-4"}>
                                                 <Row className={"justify-content-center"}>
@@ -321,167 +325,35 @@ class RocketBuilding extends React.Component<any, any> {
                                                 </Row>
                                             </Col>
 
-                                            <Col className={"col-1"}>
-                                                <Row style={{marginTop: 30, marginBottom: 30}}>
-                                                    <img className={"arrow"} src={rightarrow} style={{filter: "contrast(0%)"}}
-                                                         height="100px" alt={"left arrow"}
-                                                         onMouseOver={() => this.setState({parentIndex: 0})}
-                                                         onClick={() => payloadArrow(false)} />
-                                                </Row>
+                                            {/*<Col className={"col-1"}>*/}
+                                            {/*    <Row style={{marginTop: 30, marginBottom: 30}}>*/}
+                                            {/*        <img className={"arrow"} src={rightarrow} style={{filter: "contrast(0%)"}}*/}
+                                            {/*             height="100px" alt={"left arrow"}*/}
+                                            {/*             onMouseOver={() => this.setState({parentIndex: 0})}*/}
+                                            {/*             onClick={() => payloadArrow(false)} />*/}
+                                            {/*    </Row>*/}
 
-                                                <Row style={{marginTop: 30, marginBottom: 30}}>
-                                                    <img className={"arrow"} src={rightarrow} style={{filter: "contrast(0%)"}}
-                                                         height="100px" alt={"left arrow"}
-                                                         onMouseOver={() => this.setState({parentIndex: 1})}
-                                                         onClick={() => insterstageArrow(false)} />
-                                                </Row>
+                                            {/*    <Row style={{marginTop: 30, marginBottom: 30}}>*/}
+                                            {/*        <img className={"arrow"} src={rightarrow} style={{filter: "contrast(0%)"}}*/}
+                                            {/*             height="100px" alt={"left arrow"}*/}
+                                            {/*             onMouseOver={() => this.setState({parentIndex: 1})}*/}
+                                            {/*             onClick={() => interstageArrow(false)} />*/}
+                                            {/*    </Row>*/}
 
-                                                <Row style={{marginTop: 30, marginBottom: 30}}>
-                                                    <img className={"arrow"} src={rightarrow} style={{filter: "contrast(0%)"}}
-                                                         height="100px" alt={"right arrow"}
-                                                         onMouseOver={() => this.setState({parentIndex: 2})}
-                                                         onClick={() => sideBoostersArrow(false)} />
-                                                </Row>
+                                            {/*    <Row style={{marginTop: 30, marginBottom: 30}}>*/}
+                                            {/*        <img className={"arrow"} src={rightarrow} style={{filter: "contrast(0%)"}}*/}
+                                            {/*             height="100px" alt={"right arrow"}*/}
+                                            {/*             onMouseOver={() => this.setState({parentIndex: 2})}*/}
+                                            {/*             onClick={() => sideBoostersArrow(false)} />*/}
+                                            {/*    </Row>*/}
 
-                                                <Row style={{marginTop: 30, marginBottom: 30}}>
-                                                    <img className={"arrow"} src={rightarrow} style={{filter: "contrast(0%)"}}
-                                                         height="100px" alt={"right arrow"}
-                                                         onMouseOver={() => this.setState({parentIndex: 3})}
-                                                         onClick={() => engineArrow(false)} />
-                                                </Row>
-                                            </Col>
-
-                                            <Col className={"col-4"} style={{marginLeft: 50, marginTop: 50}}>
-                                                <Container fluid style={{color: "white"}}>
-                                                    <Row className={"justify-content-center"} style={{margin: 15}}>
-                                                        <Col className={"col-12"} style={{backgroundColor: "#29405B"}}>
-                                                            <Container fluid style={{padding: 0}}>
-                                                                <Row style={{backgroundColor: "#42949F", padding: 5}}>
-                                                                    <Col className="col-12" style={{margin: 0, textAlign: "left"}}>
-                                                                        <p style={{marginBottom: 0, fontSize: 22, fontWeight: "bold"}}>Cone</p>
-                                                                    </Col>
-                                                                </Row>
-
-                                                                <Row style={{backgroundColor: "#162F4D", textAlign: "left", padding: 5}}>
-                                                                    <Col className={"col-3"}>
-                                                                        <p style={{marginBottom: 0, fontSize: 12}}>Parts</p>
-                                                                    </Col>
-
-                                                                    <Col>
-                                                                        <p style={{marginBottom: 0, fontSize: 12}}>Fuel Capacity</p>
-                                                                    </Col>
-
-                                                                    <Col>
-                                                                        <p style={{marginBottom: 0, fontSize: 12}}>Air Resistance</p>
-                                                                    </Col>
-                                                                </Row>
-
-                                                                <Row style={{backgroundColor: "#29405B", textAlign: "left", padding: 5}}>
-                                                                    <Col>
-                                                                        <p style={{marginBottom: 0, fontSize: 14}}>Option 1</p>
-                                                                    </Col>
-                                                                </Row>
-                                                            </Container>
-                                                        </Col>
-                                                    </Row>
-
-                                                    <Row className={"justify-content-center"} style={{margin: 15}}>
-                                                        <Col className={"col-12"} style={{backgroundColor: "#29405B"}}>
-                                                            <Container fluid style={{padding: 0}}>
-                                                                <Row style={{backgroundColor: "#42949F", padding: 5}}>
-                                                                    <Col className="col-12" style={{margin: 0, textAlign: "left"}}>
-                                                                        <p style={{marginBottom: 0, fontSize: 22, fontWeight: "bold"}}>Body</p>
-                                                                    </Col>
-                                                                </Row>
-
-                                                                <Row style={{backgroundColor: "#162F4D", textAlign: "left", padding: 5}}>
-                                                                    <Col className={"col-3"}>
-                                                                        <p style={{marginBottom: 0, fontSize: 12}}>Parts</p>
-                                                                    </Col>
-
-                                                                    <Col>
-                                                                        <p style={{marginBottom: 0, fontSize: 12}}>Fuel Capacity</p>
-                                                                    </Col>
-
-                                                                    <Col>
-                                                                        <p style={{marginBottom: 0, fontSize: 12}}>Air Resistance</p>
-                                                                    </Col>
-                                                                </Row>
-
-                                                                <Row style={{backgroundColor: "#29405B", textAlign: "left", padding: 5}}>
-                                                                    <Col>
-                                                                        <p style={{marginBottom: 0, fontSize: 14}}>Option 1</p>
-                                                                    </Col>
-                                                                </Row>
-                                                            </Container>
-                                                        </Col>
-                                                    </Row>
-
-                                                    <Row className={"justify-content-center"} style={{margin: 15}}>
-                                                        <Col className={"col-12"} style={{backgroundColor: "#29405B"}}>
-                                                            <Container fluid style={{padding: 0}}>
-                                                                <Row style={{backgroundColor: "#42949F", padding: 5}}>
-                                                                    <Col className="col-12" style={{margin: 0, textAlign: "left"}}>
-                                                                        <p style={{marginBottom: 0, fontSize: 22, fontWeight: "bold"}}>Boosters</p>
-                                                                    </Col>
-                                                                </Row>
-
-                                                                <Row style={{backgroundColor: "#162F4D", textAlign: "left", padding: 5}}>
-                                                                    <Col className={"col-3"}>
-                                                                        <p style={{marginBottom: 0, fontSize: 12}}>Parts</p>
-                                                                    </Col>
-
-                                                                    <Col>
-                                                                        <p style={{marginBottom: 0, fontSize: 12}}>Fuel Capacity</p>
-                                                                    </Col>
-
-                                                                    <Col>
-                                                                        <p style={{marginBottom: 0, fontSize: 12}}>Air Resistance</p>
-                                                                    </Col>
-                                                                </Row>
-
-                                                                <Row style={{backgroundColor: "#29405B", textAlign: "left", padding: 5}}>
-                                                                    <Col>
-                                                                        <p style={{marginBottom: 0, fontSize: 14}}>Option 1</p>
-                                                                    </Col>
-                                                                </Row>
-                                                            </Container>
-                                                        </Col>
-                                                    </Row>
-
-                                                    <Row className={"justify-content-center"} style={{margin: 15}}>
-                                                        <Col className={"col-12"} style={{backgroundColor: "#29405B"}}>
-                                                            <Container fluid style={{padding: 0}}>
-                                                                <Row style={{backgroundColor: "#42949F", padding: 5}}>
-                                                                    <Col className="col-12" style={{margin: 0, textAlign: "left"}}>
-                                                                        <p style={{marginBottom: 0, fontSize: 22, fontWeight: "bold"}}>Engine</p>
-                                                                    </Col>
-                                                                </Row>
-
-                                                                <Row style={{backgroundColor: "#162F4D", textAlign: "left", padding: 5}}>
-                                                                    <Col className={"col-3"}>
-                                                                        <p style={{marginBottom: 0, fontSize: 12}}>Parts</p>
-                                                                    </Col>
-
-                                                                    <Col>
-                                                                        <p style={{marginBottom: 0, fontSize: 12}}>Fuel Capacity</p>
-                                                                    </Col>
-
-                                                                    <Col>
-                                                                        <p style={{marginBottom: 0, fontSize: 12}}>Air Resistance</p>
-                                                                    </Col>
-                                                                </Row>
-
-                                                                <Row style={{backgroundColor: "#29405B", textAlign: "left", padding: 5}}>
-                                                                    <Col>
-                                                                        <p style={{marginBottom: 0, fontSize: 14}}>Option 1</p>
-                                                                    </Col>
-                                                                </Row>
-                                                            </Container>
-                                                        </Col>
-                                                    </Row>
-                                                </Container>
-                                            </Col>
+                                            {/*    <Row style={{marginTop: 30, marginBottom: 30}}>*/}
+                                            {/*        <img className={"arrow"} src={rightarrow} style={{filter: "contrast(0%)"}}*/}
+                                            {/*             height="100px" alt={"right arrow"}*/}
+                                            {/*             onMouseOver={() => this.setState({parentIndex: 3})}*/}
+                                            {/*             onClick={() => engineArrow(false)} />*/}
+                                            {/*    </Row>*/}
+                                            {/*</Col>*/}
                                         </Row>
                                     </Container>
                                 </Row>

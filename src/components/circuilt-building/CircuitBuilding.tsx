@@ -137,7 +137,7 @@ class CircuitBuilding extends React.Component<any, any> {
                                         <Col className={"col-2 ml-auto"} style={{padding: 0, marginTop: "3%"}}>
                                             <Row style={{margin: 0}} className={"justify-content-end"}>
                                                 <Button className={"blue-button"} style={{marginBottom: 15, width: 200,
-                                                    }} onClick={cycleCircuitPopup}>Question</Button>
+                                                    }} onClick={cycleCircuitPopup}>More Info</Button>
                                             </Row>
                                             <Row style={{margin: 0}} className={"justify-content-end"}>
                                                 <Button className={"blue-button"} style={{marginBottom: 15, width: 200,
