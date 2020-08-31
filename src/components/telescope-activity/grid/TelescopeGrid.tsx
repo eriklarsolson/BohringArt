@@ -20,7 +20,7 @@ const boardStyle: React.CSSProperties = {
     flexWrap: 'wrap',
 }
 /** Styling properties applied to each square element */
-const squareStyle: React.CSSProperties = { width: '20%', height: '100%' }
+const squareStyle: React.CSSProperties = { width: '20%', height: '33%' }
 
 /**
  * The chessboard component
@@ -60,7 +60,7 @@ export const TelescopeGrid: React.FC<GridProps> = ({components, currentComponent
     }
 
     const squares = []
-    for (let i = 0; i < 5; i += 1) {
+    for (let i = 0; i < 15; i += 1) {
         squares.push(renderSquare(i))
     }
 

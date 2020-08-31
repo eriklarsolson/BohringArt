@@ -238,7 +238,7 @@ const Canvas = ({ width, height, canvasRef, tool, color, size, toolActive }: Can
                         }
                     }
 
-                    if(otherColorFound) {
+                    if(tool !== TOOL_ERASER && otherColorFound) {
                         context.strokeStyle = "transparent";
                     }
 
@@ -247,17 +247,28 @@ const Canvas = ({ width, height, canvasRef, tool, color, size, toolActive }: Can
                     context.stroke();
                 } else if (tool === TOOL_OPTICS) {
 
-                    //TODO - Actually need to create optic lens effect, not just put image on canvas
+                    //TODO - Needs some work
 
                     const startX = newMousePosition.x < originalMousePosition.x ? newMousePosition.x : originalMousePosition.x;
                     const startY = newMousePosition.y < originalMousePosition.y ? newMousePosition.y : originalMousePosition.y;
                     const widthX = Math.abs(originalMousePosition.x - newMousePosition.x);
                     const widthY = Math.abs(originalMousePosition.y - newMousePosition.y);
+                    // context.fillStyle = item.fill;
 
-                    const image = new Image();
-                    image.src = optics
-
-                    context?.drawImage(image, startX, startY, widthX, widthY);
+                    for(let i = 1; i < 6; i++) {
+                        context.beginPath();
+                        context.lineWidth = size;
+                        context.strokeStyle = lighten("#000000", (i / 10));
+                        context.fillStyle = lighten("#000000", (i / 10));
+                        context.rect(startX, (startY / 5) * i, widthX, (widthY / 5));
+                        context.stroke();
+                        context.fill();
+                        context.closePath();
+                    }
+                    // const image = new Image();
+                    // image.src = optics
+                    //
+                    // context?.drawImage(image, startX, startY, widthX, widthY);
                 } else if (tool === TOOL_PRISM) {
 
                     //TODO - Actually need to create prism effect, not just put image on canvas

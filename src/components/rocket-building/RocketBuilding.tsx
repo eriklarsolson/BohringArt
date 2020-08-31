@@ -4,8 +4,6 @@ import Sidebar from "./Sidebar";
 import Button from "react-bootstrap/Button";
 import 'font-awesome/css/font-awesome.min.css';
 import ObjectivePopup from "../shared/modals/ObjectivePopup";
-import leftarrow from "../stellar-cycle/leftarrow.png";
-import rightarrow from "../stellar-cycle/rightarrow.png";
 import payload_1 from "./images/payloads/payload_1.png"
 import payload_2 from "./images/payloads/payload_2.png"
 import payload_3 from "./images/payloads/payload_3.png"
@@ -15,8 +13,8 @@ import sideBooster_1 from "./images/sideBoosters/sideBooster_1.png"
 import sideBooster_2 from "./images/sideBoosters/sideBooster_2.png"
 import engine_1 from "./images/engines/engine_1.png"
 import engine_2 from "./images/engines/engine_2.png"
-import RocketBuildingQuestionPopup from "../shared/modals/RocketBuildingQuestionPopup";
 import background from "./images/background.png";
+import {MoreInfoAnimation} from "./MoreInfoAnimation";
 
 class RocketBuilding extends React.Component<any, any> {
     constructor(props: any) {
@@ -223,7 +221,14 @@ class RocketBuilding extends React.Component<any, any> {
                                 description={"Using the arrows on the left and right, create a rocket consisting of an engine, boosters, a body, and a cone. Make sure to account for fuel, air resistance, and weight as all affect the rocket’s motion greatly. Click LAUNCH  to send your rocket off into space with the telescope as the payload. Along the way, answer TEXT-based questions that determine the fate of your journey! Remember to answer the questions keeping in mind the cost of the rocket as well as the survival of its crew. \n"}
                                 closePopup={cyclePopup} />
 
-                <RocketBuildingQuestionPopup open={this.state.questionPopupOpened} closePopup={cycleQuestionPopup} />
+                {/*<RocketBuildingQuestionPopup open={this.state.questionPopupOpened} closePopup={cycleQuestionPopup} />*/}
+
+                {this.state.questionPopupOpened &&
+                <div style={{position: "absolute", width: "100%", height: "100%", zIndex: 10, overflow: "hidden"}}>
+                    <MoreInfoAnimation setParentState={() => cycleQuestionPopup()} />
+                </div>
+                }
+
 
                 <Container fluid className={"d-flex h-100 flex-column"} style={{margin: "0", padding: "0", backgroundImage:`url(${background})`}}>
                     <Row style={{margin: 0}}>

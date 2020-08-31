@@ -23,7 +23,7 @@ class Sidebar extends React.Component<any, any> {
 
                                <Row className={"justify-content-center"} style={{backgroundColor: "#42949F", textAlign: "left", padding: 5}}>
                                    <Col className={"col-1"}>
-                                       <img src={leftarrow} style={{height: 15}} onClick={() => this.props.changeCone(false)} />
+                                       <img src={leftarrow} className={"arrow"} style={{height: 15}} onClick={() => this.props.changeCone(false)} />
                                    </Col>
 
                                    <Col className={"col-5"}>
@@ -31,7 +31,7 @@ class Sidebar extends React.Component<any, any> {
                                    </Col>
 
                                    <Col className={"col-1"} style={{float: "left"}}>
-                                       <img src={rightarrow} style={{height: 15}} onClick={() => this.props.changeCone(true)} />
+                                       <img src={rightarrow} className={"arrow"} style={{height: 15}} onClick={() => this.props.changeCone(true)} />
                                    </Col>
                                </Row>
 
@@ -41,9 +41,9 @@ class Sidebar extends React.Component<any, any> {
                                            <Col className={"col-5"}>
                                                <p style={{marginBottom: 0, fontSize: 12}}>Fuel Capacity</p>
                                            </Col>
-                                           <Col className={"col-1"} style={{width: 20, height: 20, backgroundColor: "#162F4C"}}>
-                                               <p style={{fontSize: 10, marginBottom: 0}}>{this.props.cone.fuelCapacity}</p>
-                                           </Col>
+                                           <div style={{minWidth: 20, backgroundColor: "#162F4C"}}>
+                                               <p style={{padding: 5, fontSize: 10, marginBottom: 0}}>{this.props.cone.fuelCapacity}</p>
+                                           </div>
                                            <Col  className={"col-5"}>
                                                <PartPropertySlider value={this.props.cone.fuelCapacity} />
                                            </Col>
@@ -53,9 +53,9 @@ class Sidebar extends React.Component<any, any> {
                                            <Col className={"col-5"}>
                                                <p style={{marginBottom: 0, fontSize: 12}}>Air Resistance</p>
                                            </Col>
-                                           <Col className={"col-1"} style={{width: 20, height: 20, backgroundColor: "#162F4C"}}>
-                                               <p style={{fontSize: 10, marginBottom: 0}}>{this.props.cone.airResistance}</p>
-                                           </Col>
+                                           <div style={{minWidth: 20, backgroundColor: "#162F4C"}}>
+                                               <p style={{padding: 5, fontSize: 10, marginBottom: 0}}>{this.props.cone.airResistance}</p>
+                                           </div>
                                            <Col className={"col-5"}>
                                                <PartPropertySlider value={this.props.cone.airResistance} />
                                            </Col>
@@ -65,9 +65,9 @@ class Sidebar extends React.Component<any, any> {
                                            <Col className={"col-5"}>
                                                <p style={{marginBottom: 0, fontSize: 12}}>Total Mass</p>
                                            </Col>
-                                           <Col className={"col-1"} style={{width: 20, height: 20, backgroundColor: "#162F4C"}}>
-                                               <p style={{fontSize: 10, marginBottom: 0}}>{this.props.cone.mass}</p>
-                                           </Col>
+                                           <div style={{minWidth: 20, backgroundColor: "#162F4C"}}>
+                                               <p style={{padding: 5, fontSize: 10, marginBottom: 0}}>{this.props.cone.mass}</p>
+                                           </div>
                                            <Col  className={"col-5"}>
                                                <PartPropertySlider value={this.props.cone.mass} />
                                            </Col>
@@ -89,7 +89,7 @@ class Sidebar extends React.Component<any, any> {
 
                                <Row className={"justify-content-center"} style={{backgroundColor: "#42949F", textAlign: "left", padding: 5}}>
                                    <Col className={"col-1"}>
-                                       <img src={leftarrow} style={{height: 15}} onClick={() => this.props.changeBody(false)} />
+                                       <img src={leftarrow} className={"arrow"} style={{height: 15}} onClick={() => this.props.changeBody(false)} />
                                    </Col>
 
                                    <Col className={"col-5"}>
@@ -97,7 +97,7 @@ class Sidebar extends React.Component<any, any> {
                                    </Col>
 
                                    <Col className={"col-1"} style={{float: "left"}}>
-                                       <img src={rightarrow} style={{height: 15}} onClick={() => this.props.changeBody(true)} />
+                                       <img src={rightarrow} className={"arrow"} style={{height: 15}} onClick={() => this.props.changeBody(true)} />
                                    </Col>
                                </Row>
 
@@ -107,9 +107,9 @@ class Sidebar extends React.Component<any, any> {
                                            <Col className={"col-5"}>
                                                <p style={{marginBottom: 0, fontSize: 12}}>Fuel Capacity</p>
                                            </Col>
-                                           <Col className={"col-1"} style={{width: 20, height: 20, backgroundColor: "#162F4C"}}>
-                                               <p style={{fontSize: 10, marginBottom: 0}}>{this.props.body.fuelCapacity}</p>
-                                           </Col>
+                                           <div style={{minWidth: 20, backgroundColor: "#162F4C"}}>
+                                               <p style={{padding: 5, fontSize: 10, marginBottom: 0}}>{this.props.body.fuelCapacity}</p>
+                                           </div>
                                            <Col  className={"col-5"}>
                                                <PartPropertySlider value={this.props.body.fuelCapacity} />
                                            </Col>
@@ -119,9 +119,9 @@ class Sidebar extends React.Component<any, any> {
                                            <Col className={"col-5"}>
                                                <p style={{marginBottom: 0, fontSize: 12}}>Air Resistance</p>
                                            </Col>
-                                           <Col className={"col-1"} style={{width: 20, height: 20, backgroundColor: "#162F4C"}}>
-                                               <p style={{fontSize: 10, marginBottom: 0}}>{this.props.body.airResistance}</p>
-                                           </Col>
+                                           <div style={{minWidth: 20, backgroundColor: "#162F4C"}}>
+                                               <p style={{padding: 5, fontSize: 10, marginBottom: 0}}>{this.props.body.airResistance}</p>
+                                           </div>
                                            <Col className={"col-5"}>
                                                <PartPropertySlider value={this.props.body.airResistance} />
                                            </Col>
@@ -131,9 +131,9 @@ class Sidebar extends React.Component<any, any> {
                                            <Col className={"col-5"}>
                                                <p style={{marginBottom: 0, fontSize: 12}}>Total Mass</p>
                                            </Col>
-                                           <Col className={"col-1"} style={{width: 20, height: 20, backgroundColor: "#162F4C"}}>
-                                               <p style={{fontSize: 10, marginBottom: 0}}>{this.props.body.mass}</p>
-                                           </Col>
+                                           <div style={{minWidth: 20, backgroundColor: "#162F4C"}}>
+                                               <p style={{padding: 5, fontSize: 10, marginBottom: 0}}>{this.props.body.mass}</p>
+                                           </div>
                                            <Col  className={"col-5"}>
                                                <PartPropertySlider value={this.props.body.mass} />
                                            </Col>
@@ -155,7 +155,7 @@ class Sidebar extends React.Component<any, any> {
 
                                <Row className={"justify-content-center"} style={{backgroundColor: "#42949F", textAlign: "left", padding: 5}}>
                                    <Col className={"col-1"}>
-                                       <img src={leftarrow} style={{height: 15}} onClick={() => this.props.changeBooster(false)} />
+                                       <img src={leftarrow} className={"arrow"} style={{height: 15}} onClick={() => this.props.changeBooster(false)} />
                                    </Col>
 
                                    <Col className={"col-5"}>
@@ -163,7 +163,7 @@ class Sidebar extends React.Component<any, any> {
                                    </Col>
 
                                    <Col className={"col-1"} style={{float: "left"}}>
-                                       <img src={rightarrow} style={{height: 15}} onClick={() => this.props.changeBooster(true)} />
+                                       <img src={rightarrow} className={"arrow"} style={{height: 15}} onClick={() => this.props.changeBooster(true)} />
                                    </Col>
                                </Row>
 
@@ -173,9 +173,9 @@ class Sidebar extends React.Component<any, any> {
                                            <Col className={"col-5"}>
                                                <p style={{marginBottom: 0, fontSize: 12}}>Fuel Capacity</p>
                                            </Col>
-                                           <Col className={"col-1"} style={{width: 20, height: 20, backgroundColor: "#162F4C"}}>
-                                               <p style={{fontSize: 10, marginBottom: 0}}>{this.props.booster.fuelCapacity}</p>
-                                           </Col>
+                                           <div style={{minWidth: 20, backgroundColor: "#162F4C"}}>
+                                               <p style={{padding: 5, fontSize: 10, marginBottom: 0}}>{this.props.booster.fuelCapacity}</p>
+                                           </div>
                                            <Col  className={"col-5"}>
                                                <PartPropertySlider value={this.props.booster.fuelCapacity} />
                                            </Col>
@@ -185,9 +185,9 @@ class Sidebar extends React.Component<any, any> {
                                            <Col className={"col-5"}>
                                                <p style={{marginBottom: 0, fontSize: 12}}>Air Resistance</p>
                                            </Col>
-                                           <Col className={"col-1"} style={{width: 20, height: 20, backgroundColor: "#162F4C"}}>
-                                               <p style={{fontSize: 10, marginBottom: 0}}>{this.props.booster.airResistance}</p>
-                                           </Col>
+                                           <div style={{minWidth: 20, backgroundColor: "#162F4C"}}>
+                                               <p style={{padding: 5, fontSize: 10, marginBottom: 0}}>{this.props.booster.airResistance}</p>
+                                           </div>
                                            <Col className={"col-5"}>
                                                <PartPropertySlider value={this.props.booster.airResistance} />
                                            </Col>
@@ -197,9 +197,9 @@ class Sidebar extends React.Component<any, any> {
                                            <Col className={"col-5"}>
                                                <p style={{marginBottom: 0, fontSize: 12}}>Total Mass</p>
                                            </Col>
-                                           <Col className={"col-1"} style={{width: 20, height: 20, backgroundColor: "#162F4C"}}>
-                                               <p style={{fontSize: 10, marginBottom: 0}}>{this.props.booster.mass}</p>
-                                           </Col>
+                                           <div style={{minWidth: 20, backgroundColor: "#162F4C"}}>
+                                               <p style={{padding: 5, fontSize: 10, marginBottom: 0}}>{this.props.booster.mass}</p>
+                                           </div>
                                            <Col  className={"col-5"}>
                                                <PartPropertySlider value={this.props.booster.mass} />
                                            </Col>
@@ -221,7 +221,7 @@ class Sidebar extends React.Component<any, any> {
 
                                <Row className={"justify-content-center"} style={{backgroundColor: "#42949F", textAlign: "left", padding: 5}}>
                                    <Col className={"col-1"}>
-                                       <img src={leftarrow} style={{height: 15}} onClick={() => this.props.changeEngine(false)} />
+                                       <img src={leftarrow} className={"arrow"} style={{height: 15}} onClick={() => this.props.changeEngine(false)} />
                                    </Col>
 
                                    <Col className={"col-5"}>
@@ -229,7 +229,7 @@ class Sidebar extends React.Component<any, any> {
                                    </Col>
 
                                    <Col className={"col-1"} style={{float: "left"}}>
-                                       <img src={rightarrow} style={{height: 15}} onClick={() => this.props.changeEngine(true)} />
+                                       <img src={rightarrow} className={"arrow"} style={{height: 15}} onClick={() => this.props.changeEngine(true)} />
                                    </Col>
                                </Row>
 
@@ -239,9 +239,9 @@ class Sidebar extends React.Component<any, any> {
                                            <Col className={"col-5"}>
                                                <p style={{marginBottom: 0, fontSize: 12}}>Fuel Capacity</p>
                                            </Col>
-                                           <Col className={"col-1"} style={{width: 20, height: 20, backgroundColor: "#162F4C"}}>
-                                               <p style={{fontSize: 10, marginBottom: 0}}>{this.props.engine.fuelCapacity}</p>
-                                           </Col>
+                                           <div style={{minWidth: 20, backgroundColor: "#162F4C"}}>
+                                               <p style={{padding: 5, fontSize: 10, marginBottom: 0}}>{this.props.engine.fuelCapacity}</p>
+                                           </div>
                                            <Col  className={"col-5"}>
                                                <PartPropertySlider value={this.props.engine.fuelCapacity} />
                                            </Col>
@@ -251,9 +251,9 @@ class Sidebar extends React.Component<any, any> {
                                            <Col className={"col-5"}>
                                                <p style={{marginBottom: 0, fontSize: 12}}>Air Resistance</p>
                                            </Col>
-                                           <Col className={"col-1"} style={{width: 20, height: 20, backgroundColor: "#162F4C"}}>
-                                               <p style={{fontSize: 10, marginBottom: 0}}>{this.props.engine.airResistance}</p>
-                                           </Col>
+                                           <div style={{minWidth: 20, backgroundColor: "#162F4C"}}>
+                                               <p style={{padding: 5, fontSize: 10, marginBottom: 0}}>{this.props.engine.airResistance}</p>
+                                           </div>
                                            <Col className={"col-5"}>
                                                <PartPropertySlider value={this.props.engine.airResistance} />
                                            </Col>
@@ -263,9 +263,9 @@ class Sidebar extends React.Component<any, any> {
                                            <Col className={"col-5"}>
                                                <p style={{marginBottom: 0, fontSize: 12}}>Total Mass</p>
                                            </Col>
-                                           <Col className={"col-1"} style={{width: 20, height: 20, backgroundColor: "#162F4C"}}>
-                                               <p style={{fontSize: 10, marginBottom: 0}}>{this.props.engine.mass}</p>
-                                           </Col>
+                                           <div style={{minWidth: 20, backgroundColor: "#162F4C"}}>
+                                               <p style={{padding: 5, fontSize: 10, marginBottom: 0}}>{this.props.engine.mass}</p>
+                                           </div>
                                            <Col  className={"col-5"}>
                                                <PartPropertySlider value={this.props.engine.mass} />
                                            </Col>

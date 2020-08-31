@@ -5,11 +5,10 @@ import Button from "react-bootstrap/Button";
 import satellite from './satellite.png'
 import {TelescopeGridContainer} from "./grid/TelescopeGridContainer";
 import 'font-awesome/css/font-awesome.min.css';
-import TelescopeQuestionPopup from "../shared/modals/TelescopeQuestionPopup";
 import {Animation} from "./Animation";
 import "./Telescope.scss"
-import {start} from "repl";
 import {deleteCurrentComponent, generatePath} from "./grid/Functionality";
+import {MoreInfoAnimation} from "./MoreInfoAnimation";
 
 class TelescopeActivity extends React.Component<any, any> {
     constructor(props: any) {
@@ -50,7 +49,14 @@ class TelescopeActivity extends React.Component<any, any> {
 
         return (
             <>
-                <TelescopeQuestionPopup open={this.state.questionPopupOpened} closePopup={cycleQuestionPopup} />
+                {/*<TelescopeQuestionPopup open={this.state.questionPopupOpened} closePopup={cycleQuestionPopup} />*/}
+
+                {this.state.questionPopupOpened &&
+                <div style={{position: "absolute", width: "100%", height: "100%", zIndex: 10, overflow: "hidden"}}>
+                    <MoreInfoAnimation setParentState={() => cycleQuestionPopup()} />
+                </div>
+                }
+
 
                 <Container fluid className={"d-flex h-100 flex-column"} style={{margin: "0", padding: "0", backgroundColor: "#F8EDDD"}}>
                     <Row className={"flex-grow-1"} style={{margin: 0}}>
@@ -94,7 +100,17 @@ class TelescopeActivity extends React.Component<any, any> {
 
                                 <Row style={{margin: 0}}>
                                     <Col className={"justify-content-center align-content-center"} style={{padding: 0}}>
-                                        <div style={{width: "1000px", height: "400px", backgroundImage:`url(${satellite})`, margin: "auto"}}>
+                                        <div style={{width: 1200, margin: "auto"}}>
+                                            <div style={{
+                                                position: "absolute",
+                                                margin: 0,
+                                                width: "100%",
+                                                height: "100%",
+                                                left: 0
+                                            }}>
+                                                <img src={satellite} height={500} />
+                                            </div>
+
                                             {this.state.animationRunning &&
                                                 <div style={{
                                                     position: "absolute",

@@ -4,7 +4,6 @@ import Sidebar from "./Sidebar";
 import Button from "react-bootstrap/Button";
 import ObjectivePopup from "../shared/modals/ObjectivePopup";
 import Canvas from "./Canvas";
-import EngravingPopup from "../shared/modals/Engraving/EngravingPopup";
 import laser_OFF from "./images/laser_OFF.png";
 import laser_WHITE from "./images/laser_WHITE.png"
 import laser_RED from "./images/laser_RED.png"
@@ -14,11 +13,11 @@ import laser_BLUE from "./images/laser_BLUE.png"
 import laser_PINK from "./images/laser_PINK.png"
 import optics from "./images/optics_small.png";
 import prism from "./images/prism_small.png";
-import {Slider, Typography, withStyles} from "@material-ui/core";
-import ViewpointPopup from "../shared/modals/ViewpointPopup";
-import CircuitPopup from "../shared/modals/CircuitPopup";
-import MetalEngravingQuestionPopup from "../shared/modals/MetalEngravingQuestionPopup";
+import {Typography} from "@material-ui/core";
 import SizeSlider from "./SizeSlider";
+import {MoreInfoAnimation} from "./MoreInfoAnimation";
+import {ViewpointInfoAnimation} from "./ViewpointInfoAnimation";
+import {StencilsAnimation} from "./StencilsAnimation";
 
 export const TOOL_LASER = 'laser';
 export const TOOL_OPTICS = 'optics';
@@ -58,15 +57,11 @@ class MetalEngraving extends React.Component<any, any> {
             this.setState({popupOpened: false})
         }
 
-        const openEngravingPopup = () => {
-            this.setState({engravingPopupOpened: true})
+        const cvcleEngravingPopup = () => {
+            this.setState({engravingPopupOpened: !this.state.engravingPopupOpened})
         }
 
-        const closeEngravingPopup = () => {
-            this.setState({engravingPopupOpened: false})
-        }
-
-        const toggleViewpointPopup = () => {
+        const cycleViewpointPopup = () => {
             this.setState({viewpointPopupOpened: !this.state.viewpointPopupOpened})
         }
 
@@ -174,7 +169,13 @@ class MetalEngraving extends React.Component<any, any> {
 
         return (
             <>
-                <MetalEngravingQuestionPopup open={this.state.questionPopupOpened} closePopup={cycleQuestionPopup} />
+                {/*<MetalEngravingQuestionPopup open={this.state.questionPopupOpened} closePopup={cycleQuestionPopup} />*/}
+
+                {this.state.questionPopupOpened &&
+                    <div style={{position: "absolute", width: "100%", height: "100%", zIndex: 10, overflow: "hidden"}}>
+                        <MoreInfoAnimation setParentState={() => cycleQuestionPopup()} />
+                    </div>
+                }
 
                 <ObjectivePopup title={"02 Laser and Lenses Objective"}
                                 open={this.state.popupOpened}
@@ -185,10 +186,22 @@ class MetalEngraving extends React.Component<any, any> {
                           "of the optics activity. Click OBJECTIVE to see the objective for this activity."}
                                 closePopup={closePopup} />
 
-               <EngravingPopup open={this.state.engravingPopupOpened} closePopup={closeEngravingPopup}
-                               addStencil={addStencil} />
+               {/*<EngravingPopup open={this.state.engravingPopupOpened} closePopup={closeEngravingPopup}*/}
+               {/*                addStencil={addStencil} />*/}
 
-                <ViewpointPopup open={this.state.viewpointPopupOpened} closePopup={toggleViewpointPopup} />
+                {this.state.engravingPopupOpened &&
+                <div style={{position: "absolute", width: "100%", height: "100%", zIndex: 10, overflow: "hidden"}}>
+                    <StencilsAnimation setParentState={() => cvcleEngravingPopup()}  addStencil={addStencil} />
+                </div>
+                }
+
+                {/*<ViewpointPopup open={this.state.viewpointPopupOpened} closePopup={toggleViewpointPopup} />*/}
+
+                {this.state.viewpointPopupOpened &&
+                    <div style={{position: "absolute", width: "100%", height: "100%", zIndex: 10, overflow: "hidden"}}>
+                        <ViewpointInfoAnimation setParentState={() => cycleViewpointPopup()} />
+                    </div>
+                }
 
                 <Container fluid className={"d-flex h-100 flex-column"} style={{margin: "0", padding: "0", backgroundColor: "#F8EDDD"}}>
                     <Row className={"flex-grow-1"} style={{margin: 0}}>
@@ -311,7 +324,7 @@ class MetalEngraving extends React.Component<any, any> {
                             </Row>
                             <Row className={"justify-content-end"} style={{margin: 0}}>
                                     <Button className={"blue-button"} style={{width: 200, marginBottom: 15,
-                                        }} onClick={openEngravingPopup}>Stencil</Button>
+                                        }} onClick={cvcleEngravingPopup}>Stencil</Button>
                             </Row>
                             <Row className={"justify-content-end"} style={{margin: 0}}>
                                     <Button className={"blue-button"} style={{width: 200, marginBottom: 15,
@@ -319,7 +332,7 @@ class MetalEngraving extends React.Component<any, any> {
                             </Row>
                             <Row className={"justify-content-end"} style={{margin: 0}}>
                                     <Button className={"blue-button"} style={{width: 200,
-                                        }} onClick={toggleViewpointPopup}>Viewpoint</Button>
+                                        }} onClick={cycleViewpointPopup}>Viewpoint</Button>
                             </Row>
 
                             <Row className={"justify-content-end"} style={{margin: 0, position: "absolute", bottom: 25}}>

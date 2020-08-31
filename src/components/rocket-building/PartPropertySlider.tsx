@@ -20,7 +20,7 @@ const PropertySlider = withStyles({
         height: 10,
     },
     thumb: {
-        height: 15,
+        height: 14,
         width: 10,
         backgroundColor: '#3BD186',
         borderRadius: 0,
@@ -30,7 +30,7 @@ const PropertySlider = withStyles({
         },
     },
     track: {
-        height: 15,
+        height: 14,
     },
     rail: {
         height: 10,

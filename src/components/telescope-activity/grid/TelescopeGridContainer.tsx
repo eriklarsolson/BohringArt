@@ -8,7 +8,7 @@ import {TelescopeTypes} from "../../shared/models/TelescopeTypes";
 const containerStyle: React.CSSProperties = {
     marginTop: 200,
     width: 750,
-    height: 150,
+    height: 250,
 }
 
 export interface GridContainerProps {

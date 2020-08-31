@@ -10,9 +10,10 @@ class Sidebar extends React.Component {
             <>
                <Container style={{backgroundColor: "#29405B", margin: "0", padding: "0", height: "100%"}}>
                    <h3 style={{paddingTop: "15px"}}>Modules</h3>
+
                    <Row>
                        <Col>
-                           <OneGridContainer componentType={"concave"} />
+                           <OneGridContainer componentType={"viewpoint"} />
                        </Col>
                    </Row>
 
@@ -24,13 +25,13 @@ class Sidebar extends React.Component {
 
                    <Row>
                        <Col>
-                           <OneGridContainer componentType={"flatmirror"} />
+                           <OneGridContainer componentType={"concave"} />
                        </Col>
                    </Row>
 
                    <Row>
                        <Col>
-                           <OneGridContainer componentType={"viewpoint"} />
+                           <OneGridContainer componentType={"flatmirror"} />
                        </Col>
                    </Row>
 
