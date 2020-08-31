@@ -15,6 +15,7 @@ import {
 } from "./grid/Functionality";
 import 'font-awesome/css/font-awesome.min.css';
 import {ToastContainer} from "react-toastify";
+import {MoreInfoAnimation} from "./MoreInfoAnimation";
 
 class CircuitBuilding extends React.Component<any, any> {
     constructor(props: any) {
@@ -92,11 +93,17 @@ class CircuitBuilding extends React.Component<any, any> {
 
         return (
             <>
-                <CircuitPopup open={this.state.circuitPopupOpened} closeCircuitPopup={cycleCircuitPopup} />
+                {/*<CircuitPopup open={this.state.circuitPopupOpened} closeCircuitPopup={cycleCircuitPopup} />*/}
 
                 <ObjectivePopup open={this.state.popupOpened} title={this.state.popupTitle}
                                 description={this.state.popupDescriptions[this.state.currentLevel - 1]}
                                 closePopup={cyclePopup} />
+
+                {this.state.circuitPopupOpened &&
+                    <div style={{position: "absolute", width: "100%", height: "100%", zIndex: 10, overflow: "hidden"}}>
+                        <MoreInfoAnimation setParentState={() => cycleCircuitPopup()} />
+                    </div>
+                }
 
                     <Container fluid className={"d-flex h-100 flex-column"} style={{margin: "0", padding: "0", backgroundColor: "#F8EDDD"}}>
                         <Row className={"flex-grow-1"} style={{margin: "0"}}>
@@ -115,11 +122,15 @@ class CircuitBuilding extends React.Component<any, any> {
 
                                         <Col style={{margin: "3%"}}>
                                             <Row className={"justify-content-center"}>
-                                                <p style={{color: "#29405B", fontSize: "28px", fontWeight: "bold", marginBottom: 0}}>Circuit Board level {this.state.currentLevel}</p>
+                                                <p style={{color: "#29405B", fontSize: 28, fontWeight: "bold", marginBottom: 0}}>Circuit Board level {this.state.currentLevel}</p>
                                             </Row>
 
                                             <Row className={"justify-content-center"}>
-                                                <p style={{color: "#29405B", fontSize: "14px", fontWeight: "bold"}}>Needed voltage: {this.state.neededVoltages[this.state.currentLevel - 1]}</p>
+                                                <p style={{color: "#29405B", fontSize: 14, fontWeight: "bold", marginBottom: 0}}>Needed voltage: {this.state.neededVoltages[this.state.currentLevel - 1]}</p>
+                                            </Row>
+
+                                            <Row className={"justify-content-center"}>
+                                                <p style={{color: "#29405B", fontSize: 14, marginBottom: 0}}>Note: This is a drag-and-drop activity using the components on the left sidebar</p>
                                             </Row>
                                         </Col>
 

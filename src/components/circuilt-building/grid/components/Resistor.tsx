@@ -62,7 +62,7 @@ export const Resistor: React.FC<ComponentProps> = ({x, y, oneGridStyling, curren
                              ...style,
                              opacity: isDragging ? 0.5 : 1,
                          }}>
-                        <img src={resistor} width={"90%"} />
+                        <img src={resistor} width={"100%"} />
                     </Col>
                 </Row>
             </Container>

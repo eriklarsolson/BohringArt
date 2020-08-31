@@ -70,6 +70,24 @@ export const Wire: React.FC<ComponentProps> = ({x, y, oneGridStyling, currentCom
         }
     }
 
+    let wireStyling: React.CSSProperties = {}
+    if(index === 0) {
+        wireStyling = {
+            width: "100%"
+        }
+    } else  if(index === 1) {
+        wireStyling = {
+            width: "57%",
+            float: "right",
+            marginTop: 35
+        }
+    } else  if(index === 2) {
+        wireStyling = {
+            width: "100%",
+            marginTop: 35
+        }
+    }
+
     return (
         <>
             <DragPreviewImage connect={preview} src={wire} />
@@ -92,15 +110,15 @@ export const Wire: React.FC<ComponentProps> = ({x, y, oneGridStyling, currentCom
                         }
 
                         {!oneGridStyling && index === 0 &&
-                            <img src={images[index]} width={"90%"}/>
+                            <img src={images[index]} style={wireStyling} />
                         }
 
                         {!oneGridStyling && index === 1 &&
-                        <img src={images[index]} width={"70%"} style={{marginTop: 25}} />
+                        <img src={images[index]} style={wireStyling} />
                         }
 
                         {!oneGridStyling && index === 2 &&
-                        <img src={images[index]} width={"90%"} style={{marginTop: 25}} />
+                        <img src={images[index]} style={wireStyling} />
                         }
 
                     </Col>

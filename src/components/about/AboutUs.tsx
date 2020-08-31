@@ -26,51 +26,52 @@ class AboutUs extends React.Component<any, any> {
                                 </Row>
 
                                 <Row className={"justify-content-center"}>
-                                    <Col className={"col-10"}>
+                                    <Col className={"col-6"}>
                                         <Container fluid>
-                                            <Row>
-                                                <Col style={{margin: 20,  clipPath: "polygon(0 0, 95% 0, 100% 100%, 5% 100%)"}}
-                                                     className="col-sm-8 col-md-6 col-lg-2">
+                                            <Row className={"justify-content-center"}>
+                                                <Col style={{margin: 20, clipPath: "polygon(0 0, 95% 0, 100% 100%, 5% 100%)"}}
+                                                     className="col-sm-12 col-md-3">
                                                     <img src={danny} />
                                                 </Col>
 
-                                                <Col style={{margin: 20,  clipPath: "polygon(0 0, 95% 0, 100% 100%, 5% 100%)"}}
-                                                     className="col-sm-8 col-md-6 col-lg-2">
+                                                <Col style={{margin: 20, clipPath: "polygon(0 0, 95% 0, 100% 100%, 5% 100%)"}}
+                                                     className="col-sm-12 col-md-3">
                                                     <img src={dena} />
                                                 </Col>
 
-                                                <Col style={{margin: 20,  clipPath: "polygon(0 0, 95% 0, 100% 100%, 5% 100%)"}}
-                                                     className="col-sm-8 col-md-6 col-lg-2">
+                                                <Col style={{margin: 20, clipPath: "polygon(0 0, 95% 0, 100% 100%, 5% 100%)"}}
+                                                     className="col-sm-12 col-md-3">
                                                     <img src={parisa} />
                                                 </Col>
 
-                                                <Col style={{margin: 20}} className="col-sm-8 col-md-65 col-lg-2">
+                                                <Col style={{margin: 20, clipPath: "polygon(0 0, 95% 0, 100% 100%, 5% 100%)"}}
+                                                     className="col-sm-12 col-md-3">
                                                     <img src={person1} />
                                                 </Col>
 
-                                                <Col style={{margin: 20,  clipPath: "polygon(0 0, 95% 0, 100% 100%, 5% 100%)"}}
-                                                     className="col-sm-8 col-md-6 col-lg-2">
+                                                <Col style={{margin: 20, clipPath: "polygon(0 0, 95% 0, 100% 100%, 5% 100%)"}}
+                                                     className="col-sm-12 col-md-3">
                                                     <img src={person2} />
                                                 </Col>
 
-                                                <Col style={{margin: 20,  clipPath: "polygon(0 0, 95% 0, 100% 100%, 5% 100%)"}}
-                                                     className="col-sm-8 col-md-6 col-lg-2">
+                                                <Col style={{margin: 20, clipPath: "polygon(0 0, 95% 0, 100% 100%, 5% 100%)"}}
+                                                     className="col-sm-12 col-md-3">
                                                     <img src={person3} />
                                                 </Col>
 
-                                                <Col style={{margin: 20,  clipPath: "polygon(0 0, 95% 0, 100% 100%, 5% 100%)"}}
-                                                     className="col-sm-8 col-md-6 col-lg-2">
+                                                <Col style={{margin: 20, clipPath: "polygon(0 0, 95% 0, 100% 100%, 5% 100%)"}}
+                                                     className="col-sm-12 col-md-3">
                                                     <img src={person4} />
                                                 </Col>
 
-                                                <Col style={{margin: 20,  clipPath: "polygon(0 0, 95% 0, 100% 100%, 5% 100%)"}}
-                                                     className="col-sm-8 col-md-6 col-lg-2">
+                                                <Col style={{margin: 20, clipPath: "polygon(0 0, 95% 0, 100% 100%, 5% 100%)"}}
+                                                     className="col-sm-12 col-md-3">
                                                     <img src={person5} />
                                                 </Col>
 
-                                                <Col style={{margin: 20,  clipPath: "polygon(0 0, 95% 0, 100% 100%, 5% 100%)"}}
-                                                     className="col-sm-8 col-md-6 col-lg-2">
-                                                    <img src={lars} width={"100%"} />
+                                                <Col style={{margin: 20, clipPath: "polygon(0 0, 95% 0, 100% 100%, 5% 100%)"}}
+                                                     className="col-sm-12 col-md-3">
+                                                    <img src={lars} style={{maxHeight: 250}} />
                                                 </Col>
                                             </Row>
                                         </Container>
@@ -79,7 +80,7 @@ class AboutUs extends React.Component<any, any> {
                             </Container>
                         </Row>
 
-                        <Row style={{marginTop: 50}}>
+                        <Row style={{marginTop: 50}} className={"justify-content-center"}>
                             <Col className={"col-6"} style={{padding: 100}}>
                                 <Container fluid>
                                     <Row  style={{textAlign: "left", padding: "5%"}}>
@@ -96,6 +97,20 @@ class AboutUs extends React.Component<any, any> {
                                             The physics students (with Dena’s supervision) will be responsible for communicating selected
                                             physics concepts to the designers. The designers will then use their knowledge to create
                                             infographics that elucidate physics phenomena.
+                                        </p>
+                                    </Row>
+                                </Container>
+                            </Col>
+
+                            <Col className={"ml-auto col-5"} style={{backgroundColor: "rgba(82, 82, 82, 0.8)", clipPath: "polygon(0 10%, 100% 0, 100% 100%, 10% 100%)"}}>
+                                <Container fluid style={{padding: 100}}>
+                                    <Row  style={{textAlign: "left", padding: "5%"}}>
+                                        <h1 style={{fontWeight: "bolder", color: "white"}}>WHY BOHRING?</h1>
+                                    </Row>
+
+                                    <Row style={{textAlign: "left", display: "block", padding: "5%"}}>
+                                        <p style={{color: "white"}}>
+                                            Niels bohr was a ... text goes here. text goes here. text goes here. text goes here. text goes here. text goes here. text goes here. text goes here. text goes here. text goes here. text goes here. text goes here. text goes here. text goes here. text goes here. text goes here. text goes here. text goes here. text goes here. text goes here. text goes here. text goes here. text goes here. text goes here. text goes here. text goes here. text goes here. text goes here. text goes here. text goes here. text goes here. text goes here
                                         </p>
                                     </Row>
                                 </Container>

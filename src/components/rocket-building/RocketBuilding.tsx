@@ -298,25 +298,25 @@ class RocketBuilding extends React.Component<any, any> {
                                             <Col className={"col-4"}>
                                                 <Row className={"justify-content-center"}>
                                                     <Col className={"col-2 align-self-end"}  style={{margin: 5, padding: 0}}>
-                                                        <img src={this.state.sideBoosters[this.state.sideBoosterIndex].image} />
+                                                        <img className={"part-image"} src={this.state.sideBoosters[this.state.sideBoosterIndex].image} />
                                                     </Col>
 
                                                     <Col className={"col-3"} style={{margin: 5, padding: 0}}>
                                                         <Row className={"justify-content-center"} style={{margin: 5}}>
-                                                            <img src={this.state.payloads[this.state.payloadIndex].image} />
+                                                            <img className={"part-image"} src={this.state.payloads[this.state.payloadIndex].image} />
                                                         </Row>
 
                                                         <Row className={"justify-content-center"} style={{margin: 5}}>
-                                                            <img src={this.state.interstages[this.state.interstageIndex].image} />
+                                                            <img className={"part-image"} src={this.state.interstages[this.state.interstageIndex].image} />
                                                         </Row>
 
                                                         <Row className={"justify-content-center"} style={{margin: 5}}>
-                                                            <img src={this.state.engines[this.state.engineIndex].image} />
+                                                            <img className={"part-image"} src={this.state.engines[this.state.engineIndex].image} />
                                                         </Row>
                                                     </Col>
 
                                                     <Col className={"col-2 align-self-end"}  style={{margin: 5, padding: 0}}>
-                                                        <img src={this.state.sideBoosters[this.state.sideBoosterIndex].image} />
+                                                        <img className={"part-image"} src={this.state.sideBoosters[this.state.sideBoosterIndex].image} />
                                                     </Col>
                                                 </Row>
                                             </Col>

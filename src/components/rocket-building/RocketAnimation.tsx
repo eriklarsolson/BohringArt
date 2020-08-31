@@ -26,7 +26,7 @@ export const RocketAnimation: React.FC<AnimationProps>  = ({images}) => {
             }}>
             <Container fluid style={{transform: "rotate(90deg)", height: 500}}>
                 <Row className={"justify-content-center"}>
-                    <Col className={"col-1 align-self-end"}>
+                    <Col className={"col-1 align-self-end"} style={{padding: 0, flex: "0 0 3%", maxWidth: "3%"}}>
                         <img src={images[0]} />
                     </Col>
 
@@ -44,7 +44,7 @@ export const RocketAnimation: React.FC<AnimationProps>  = ({images}) => {
                         </Row>
                     </Col>
 
-                    <Col className={"col-1 align-self-end"}>
+                    <Col className={"col-1 align-self-end"} style={{padding: 0, flex: "0 0 3%", maxWidth: "3%"}}>
                         <img src={images[0]} />
                     </Col>
                 </Row>

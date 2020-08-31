@@ -62,7 +62,7 @@ export const Capacitor: React.FC<ComponentProps> = ({x, y, oneGridStyling, curre
                              ...style,
                              opacity: isDragging ? 0.5 : 1,
                          }}>
-                        <img src={capacitor} width={"90%"} />
+                        <img src={capacitor} width={"100%"} />
                     </div>
                 </Row>
             </Container>

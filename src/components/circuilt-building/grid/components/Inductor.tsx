@@ -62,7 +62,7 @@ export const Inductor: React.FC<ComponentProps> = ({x, y, oneGridStyling, curren
                              ...style,
                              opacity: isDragging ? 0.5 : 1,
                          }}>
-                        <img src={inductor} width={"90%"} />
+                        <img src={inductor} width={"100%"} />
                     </Col>
                 </Row>
             </Container>

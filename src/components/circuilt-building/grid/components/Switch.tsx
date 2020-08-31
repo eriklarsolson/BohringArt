@@ -64,7 +64,7 @@ export const Switch: React.FC<ComponentProps> = ({x, y, oneGridStyling, currentC
                              ...style,
                              opacity: isDragging ? 0.5 : 1,
                          }}>
-                        <img src={switchImage} width={"90%"} />
+                        <img src={switchImage} width={"100%"} />
                     </Col>
                 </Row>
             </Container>

@@ -51,7 +51,7 @@ class RocketBuildingQuestionPopup extends React.Component<any, any> {
                                     <Col className={"col-10"} style={{backgroundColor: "#F8EDDD"}}
                                          onMouseOver={() => loadModuleDescription("Payload")} >
                                         <img src={payload_1}
-                                             style={{height: "100px"}} />
+                                             style={{height: 100, padding: 10, display: "block", margin: "auto"}} />
                                     </Col>
                                 </Row>
 
@@ -59,7 +59,7 @@ class RocketBuildingQuestionPopup extends React.Component<any, any> {
                                     <Col className={"col-10"} style={{backgroundColor: "#F8EDDD"}}
                                          onMouseOver={() => loadModuleDescription("Interstage")}>
                                         <img src={interstage_1}
-                                             style={{height: "100px"}}/>
+                                             style={{height: 100, padding: 10, transform: "rotate(90deg)", display: "block", margin: "auto"}}/>
                                     </Col>
                                 </Row>
 
@@ -67,7 +67,7 @@ class RocketBuildingQuestionPopup extends React.Component<any, any> {
                                     <Col className={"col-10"} style={{backgroundColor: "#F8EDDD"}}
                                          onMouseOver={() => loadModuleDescription("SideBooster")}>
                                         <img src={sideBooster_1}
-                                             style={{height: "100px"}} />
+                                             style={{height: 100, padding: 10, transform: "rotate(90deg)", display: "block", margin: "auto"}} />
                                     </Col>
                                 </Row>
 
@@ -75,7 +75,7 @@ class RocketBuildingQuestionPopup extends React.Component<any, any> {
                                     <Col className={"col-10"} style={{backgroundColor: "#F8EDDD"}}
                                          onMouseOver={() => loadModuleDescription("Engine")}>
                                         <img src={engine_1}
-                                             style={{height: "100px"}} />
+                                             style={{height: 100, padding: 10, display: "block", margin: "auto"}} />
                                     </Col>
                                 </Row>
                             </Col>

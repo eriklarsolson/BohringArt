@@ -11,7 +11,7 @@ export interface GridContainerProps {
 export const OneGridContainer: React.FC<GridContainerProps> = ({componentType, paddingRight, extraRightVal}) => {
     const [components, setComponents] = useState<[{ x: number, y: number, type: string }]>([{ x: 0, y: 0, type: componentType }])
 
-    const [rightValue, setRightValue] = useState<string>("0%")
+    const [rightValue, setRightValue] = useState<number>(0)
     const [zIndex, setZIndex] = useState<number>(-1)
     const [tooltipShowing, setTooltipShowing] = useState<boolean>(false)
 
@@ -33,16 +33,16 @@ export const OneGridContainer: React.FC<GridContainerProps> = ({componentType, p
         transition: ".3s ease-in-out",
         zIndex: zIndex,
         textAlign: "left",
-        clipPath: "polygon(0 0, 100% 0, 100% 100%, 2% 100%)"
+        clipPath: "polygon(0 0, 100% 0, 100% 100%, 3% 100%)"
     }
 
     const showTooltip = () => {
         if(tooltipShowing) {
-            setRightValue("0")
+            setRightValue(0)
             setZIndex(-1)
             setTooltipShowing(false)
         } else {
-            setRightValue(newRightValue + "%")
+            setRightValue(newRightValue)
             setZIndex(1)
             setTooltipShowing(true)
         }
@@ -50,19 +50,13 @@ export const OneGridContainer: React.FC<GridContainerProps> = ({componentType, p
 
     //Each component has a unique padding right, so gotta combine -75% above for tooltip with the custom padding so they line up when hovering
     const getRightValWithPadding = () => {
-        const rightVal = -75
-        // const paddingRightVal = paddingRight.substring(0, paddingRight.length - 1)
-        //
-        // const newVal = rightVal - (parseInt(paddingRightVal) * 2)
-        // console.log(paddingRightVal)
-        // console.log(newVal)
-
+        const rightVal = -275
         return rightVal - extraRightVal
     }
     const newRightValue = getRightValWithPadding()
 
     const hideTooltip = () => {
-        setRightValue("0")
+        setRightValue(0)
         setZIndex(-1)
         setTooltipShowing(false)
     }

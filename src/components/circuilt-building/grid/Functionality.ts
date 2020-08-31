@@ -197,7 +197,6 @@ export function moveComponent(toX: number, toY: number, type: string): void {
     } else {
         //TODO - Currently just reset voltage and rotate degree if they move the piece. Need to check if the piece that was just moved was new piece of current
         // Since when put
-        // DIS IS NEXT
         components.push({
             x: toX,
             y: toY,

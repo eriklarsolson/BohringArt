@@ -220,7 +220,7 @@ class MetalEngraving extends React.Component<any, any> {
                                     </Col>
                                 </Row>
 
-                                <Row style={{margin: "3%"}}>
+                                <Row style={{marginLeft: 25}}>
                                     <Col className={"col-6"}>
                                         {(this.state.tool !== TOOL_ERASER) ?
                                         <>
@@ -293,7 +293,6 @@ class MetalEngraving extends React.Component<any, any> {
 
                                     {(this.state.tool !== TOOL_OPTICS && this.state.tool !== TOOL_PRISM) &&
                                     <Col className={"col-2"}>
-                                        {/*TODO - Shapes of filters*/}
                                         <Typography id="width-slider" gutterBottom style={{fontWeight: "bold", color: "#29405B", fontSize: 18, float: "left"}}>
                                             {(this.state.tool === TOOL_LASER || this.state.tool === TOOL_ERASER) ? "Width" : "Size"}
                                         </Typography>
@@ -323,7 +322,7 @@ class MetalEngraving extends React.Component<any, any> {
                                         }} onClick={toggleViewpointPopup}>Viewpoint</Button>
                             </Row>
 
-                            <Row className={"justify-content-end"} style={{margin: 0, position: "absolute", bottom: "5%"}}>
+                            <Row className={"justify-content-end"} style={{margin: 0, position: "absolute", bottom: 25}}>
                                 <Col style={{padding: 0}}>
                                     <Button className={"green-button"} style={{float: "right", width: 200,
                                         clipPath: "polygon(0 0, 95% 0, 100% 100%, 5% 100%)"}}

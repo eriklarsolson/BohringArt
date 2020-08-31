@@ -26,12 +26,6 @@ class FlightSimulator extends React.Component<any, any> {
     }
 
     render() {
-        //TODO - Need to show error if rocket is bad combo of parts (different scenarios)
-
-        //TODO - To expand on this above and think about solution for animation interacting with different scenarios,
-        // We could pass in the starting and stopping value, and just increment those as we answer different questions
-        // (so start at last endpoint, etc..)
-
         return (
             <>
                 <Container fluid className={"d-flex h-100 flex-column"} style={{margin: "0", padding: "0",
