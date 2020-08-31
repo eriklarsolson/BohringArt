@@ -1,2 +1,2 @@
-import Home from './Home'
-export { Home }
+import UnderConstruction from './UnderConstruction'
+export { UnderConstruction }

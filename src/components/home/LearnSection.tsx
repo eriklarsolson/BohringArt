@@ -92,7 +92,7 @@ class LearnSection extends React.Component<any, any> {
                                         Learn how lenses manipulate light to understand how your telescope sees distant stars. Experiment with the variables that affect the image formed when shining light through a lens, and begin controlling the type of image you see by manipulating these variables.
                                     </p>
                                     <Button
-                                        href="/activity/circuit-building"
+                                        href="/activity/metal-engraving"
                                         variant="primary"
                                         type="submit"
                                         className={"btn green-button"}
@@ -114,10 +114,10 @@ class LearnSection extends React.Component<any, any> {
                                <Col>
                                    <h4>TO THE STARS</h4>
                                    <p>
-                                       Physics Student add a longer description to this part.
+                                       Create a rocket consisting of an engine, boosters, a body, and a cone. Make sure to account for fuel, air resistance, and weight as all affect the rocket’s motion greatly! Send your rocket off into space with the telescope as the payload and along the way, answer TEXT-based questions that determine the fate of your journey!
                                    </p>
                                    <Button
-                                       href="/activity/circuit-building"
+                                       href="/activity/rocket-building"
                                        variant="primary"
                                        type="submit"
                                        className={"btn green-button"}
@@ -140,7 +140,7 @@ class LearnSection extends React.Component<any, any> {
                                        Learn more about what your telescope sees, and a star’s life cycle from creation to destruction. See how important certain variables such as mass and radius are in determining the next phase and the stellar event, i.e. a supernova.
                                    </p>
                                    <Button
-                                       href="/activity/circuit-building"
+                                       href="/activity/object-page"
                                        variant="primary"
                                        type="submit"
                                        className={"btn green-button"}
