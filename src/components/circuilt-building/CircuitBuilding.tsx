@@ -11,9 +11,10 @@ import CircuitPopup from "../shared/modals/CircuitPopup";
 import {
     deleteCurrentComponent,
     setComponentsList,
-    setCurrentLevel
+    setCurrentLevel, setPassed
 } from "./grid/Functionality";
 import 'font-awesome/css/font-awesome.min.css';
+import {ToastContainer} from "react-toastify";
 
 class CircuitBuilding extends React.Component<any, any> {
     constructor(props: any) {
@@ -38,15 +39,11 @@ class CircuitBuilding extends React.Component<any, any> {
             currentLevel: 1,
             showGrid: true,
             gridImages: [objective1wire, objective2wire, objective3wire],
-            currentVoltage: 0
+            neededVoltages: [10, 20, 60]
         };
     }
 
     render() {
-        const setCurrentVoltage = (voltage: number) => {
-            this.setState({currentVoltage: voltage});
-        }
-
         const goToNextLevel = () => {
             const nextLevel = this.state.currentLevel + 1;
 
@@ -58,6 +55,7 @@ class CircuitBuilding extends React.Component<any, any> {
 
             const titleString = "Level " + nextLevel + " Objective"
             this.setState({popupTitle: titleString})
+            setPassed(false)
             setCurrentLevel(nextLevel)
             setComponentsList([])
             cyclePopup()
@@ -74,6 +72,7 @@ class CircuitBuilding extends React.Component<any, any> {
 
             const titleString = "Level " + pastLevel + " Objective"
             this.setState({popupTitle: titleString})
+            setPassed(false)
             setCurrentLevel(pastLevel)
             setComponentsList([])
             cyclePopup()
@@ -115,7 +114,13 @@ class CircuitBuilding extends React.Component<any, any> {
                                         </Col>
 
                                         <Col style={{margin: "3%"}}>
-                                            <p style={{color: "#29405B", fontSize: "28px", fontWeight: "bold"}}>Circuit Board level {this.state.currentLevel}</p>
+                                            <Row className={"justify-content-center"}>
+                                                <p style={{color: "#29405B", fontSize: "28px", fontWeight: "bold", marginBottom: 0}}>Circuit Board level {this.state.currentLevel}</p>
+                                            </Row>
+
+                                            <Row className={"justify-content-center"}>
+                                                <p style={{color: "#29405B", fontSize: "14px", fontWeight: "bold"}}>Needed voltage: {this.state.neededVoltages[this.state.currentLevel - 1]}</p>
+                                            </Row>
                                         </Col>
 
                                         <Col className={"col-2 ml-auto"} style={{padding: 0, marginTop: "3%"}}>
@@ -144,6 +149,17 @@ class CircuitBuilding extends React.Component<any, any> {
                             </Col>
                         </Row>
                     </Container>
+
+                <ToastContainer
+                    position="top-center"
+                    autoClose={3000}
+                    hideProgressBar={false}
+                    newestOnTop={false}
+                    closeOnClick
+                    rtl={false}
+                    pauseOnFocusLoss
+                    draggable
+                    pauseOnHover />
             </>
         )
     }

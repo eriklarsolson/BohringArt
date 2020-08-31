@@ -1,13 +1,13 @@
 import React, {useState, useEffect, useCallback} from 'react'
 import {
-    boardHasIssue, deleteCurrentComponent,
-    getComponents, getCurrentBoardIssue,
+    getBoardHasIssues, deleteCurrentComponent,
+    getComponents, getCurrentBoardIssues,
     getCurrentComponent,
     getCurrentX,
     getPassed,
     getTotalVoltage,
     moveComponent,
-    observe, setBoardHasIssue, setCurrentComponentsVoltage
+    observe, setBoardHasIssue, setCurrentComponentsVoltage, setCurrentBoardIssues, hasCircuit, emitChange
 } from './Functionality'
 import {SixGrid} from "./SixGrid";
 import {Container, Row, Col} from "react-bootstrap";
@@ -16,6 +16,8 @@ import {ComponentTypes} from "../../shared/models/ComponentTypes";
 import {Slider, Typography, withStyles} from "@material-ui/core";
 import ErrorPopup from "../../shared/modals/ErrorPopup";
 import Button from "react-bootstrap/Button";
+import {toast, ToastContainer} from "react-toastify";
+import 'react-toastify/dist/ReactToastify.css';
 
 const containerStyle: React.CSSProperties = {
     width: 500,
@@ -37,20 +39,31 @@ export const SixGridContainer: React.FC<GridContainerProps> = ({objectiveImage, 
 
     const [totalVoltage, setTotalVoltage] = useState<number>(0)
     const [errorPopup, setErrorPopup] = useState<boolean>(false)
-    const [successPopup, setSuccessPopup] = useState<boolean>(false)
+
+    let popupCalled = false;
 
     const didItPass = (component: {x: number, y: number, type: string, voltage: number, rotateDeg: number}) => {
         setCurrentComp(component)
         setTotalVoltage(getTotalVoltage())
 
         if(getPassed()) {
-            console.log("PASSED!")
+            if(!popupCalled) {
+                toast("You have completed this level! Click the 'Next' button to move on!");
+                //TODO - This shows up multiple times on being called
+                popupCalled = true;
+            }
         }
 
-        if(boardHasIssue()) {
+        if(getBoardHasIssues()) {
             setErrorPopup(true)
-            setBoardHasIssue(false)
         }
+    }
+
+    //Reset issues every time they see error popup so they can make changes and have new errors be re-generated
+    const setErrorsOff = () => {
+        setErrorPopup(false)
+        setCurrentBoardIssues([])
+        setBoardHasIssue(false)
     }
 
     //TODO - This current styling breaks the slider (doesn't slide smoothly)
@@ -155,16 +168,22 @@ export const SixGridContainer: React.FC<GridContainerProps> = ({objectiveImage, 
                         }
                     </Col>
 
-                    {/*TODO - Eventually don't show this until you pass the circuit level*/}
+                    {/*TODO - this is somehow not picking up when getPassed gets updated?*/}
                     <Col className={"ml-auto col-2"}>
-                        <Button className={"green-button"} style={{float: "right", width: 200,
-                            clipPath: "polygon(0 0, 95% 0, 100% 100%, 5% 100%)"}}
-                                onClick={goToNextLevel}>Next</Button>
+                        {getPassed() &&
+                            <Button className={"green-button"} style={{float: "right", width: 200,
+                                clipPath: "polygon(0 0, 95% 0, 100% 100%, 5% 100%)"}}
+                                    onClick={goToNextLevel}>Next</Button>
+                            // :
+                            // <Button className={"green-button"} style={{float: "right", width: 200,
+                            //     clipPath: "polygon(0 0, 95% 0, 100% 100%, 5% 100%)"}}
+                            //         onClick={() => hasCircuit()}>Check If Passed</Button>
+                        }
                     </Col>
                 </Row>
             </Container>
 
-            <ErrorPopup title={"Error!"} description={getCurrentBoardIssue()} open={errorPopup} closePopup={() => setErrorPopup(false)} />
+            <ErrorPopup title={"Error!"} description={getCurrentBoardIssues()} open={errorPopup} closePopup={() => setErrorsOff()} />
         </>
     )
 }

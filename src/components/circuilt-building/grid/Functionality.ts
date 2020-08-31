@@ -6,11 +6,14 @@ export type PositionObserver = ((component: {x: number, y: number, type: string,
 let currentComponent = 0;
 let currentLevel = 0;
 let passed = false;
-let boardCurrentIssue = "" //TODO - Should this be an array of strings instead for multiple issues. Or could I append to this string?
+let boardCurrentIssues: string[] = [] //TODO - Should this be an array of strings instead for multiple issues. Or could I append to this string?
 let boardHasIssues = false;
 let currentX = -1;
 let currentY = -1;
 let components: { x: number; y: number; type: string, voltage: number, rotateDeg: number, componentType: number}[] =  []
+
+//TODO - Not a bad idea to store seperate lists of each type of component as well to easily loop through, or just do function and pass in type to return?
+
 
 //This variable is for wires and switches. If current comp is wire, this is changed with wire arrows to change between
 // 3 different types of wires. For switch, it is for on/off status.
@@ -26,21 +29,22 @@ export function getCurrentComponent(): any {
 
 export function setComponentType(type: number) {
     componentType = type;
-
-    console.log(componentType)
 }
 
 export function getComponentType() {
-    console.log(componentType)
     return componentType;
 }
 
-export function boardHasIssue(): boolean {
+export function getBoardHasIssues(): boolean {
     return boardHasIssues;
 }
 
-export function getCurrentBoardIssue(): string {
-    return boardCurrentIssue;
+export function getCurrentBoardIssues(): string[] {
+    return boardCurrentIssues;
+}
+
+export function setCurrentBoardIssues(issues: string[]) {
+    boardCurrentIssues = issues;
 }
 
 export function setBoardHasIssue(issue: boolean) {
@@ -51,6 +55,8 @@ export function deleteCurrentComponent() {
     components.splice(currentComponent, 1);
     currentComponent = currentComponent - 1
     emitChange();
+
+    hasCircuit();
 }
 
 export function getCurrentX(): any {
@@ -65,10 +71,15 @@ export function getPassed() {
     return passed;
 }
 
+export function setPassed(passedVal: boolean) {
+    passed = passedVal;
+}
+
 export function setCurrentComponentsVoltage(voltage: number) {
     if (components.length > 0) {
         components[currentComponent].voltage = voltage;
         emitChange();
+        hasCircuit()
     }
 }
 
@@ -77,16 +88,17 @@ export function setCurrentComponentsRotation(rotateDeg: number) {
         components[currentComponent].rotateDeg = rotateDeg;
         console.log(components[currentComponent])
         emitChange();
+        hasCircuit()
     }
 }
 
 export function getComponentAtPos(x: number, y: number) {
-    const component = components.filter(component => component.x === x && component.y === y)[0];
-    console.log(component)
-    return component;
+    return components.filter(component => component.x === x && component.y === y)[0];
 }
 
 export function getTotalVoltage(): number {
+    //TODO - Need to pass in components list that only has ones from the circuit, so doesn't count components outside of circuit
+
     let total = 0;
 
     for(var i = 0; i < components.length; i++) {
@@ -106,8 +118,7 @@ export function setCurrentComponent(x: number, y: number) {
 
     const samePlaceComponents = components.filter(component => component.x === x && component.y === y)
     if(samePlaceComponents.length > 0) {
-        const index = getIndex(samePlaceComponents[0], components);
-        currentComponent = index;
+        currentComponent = getIndex(samePlaceComponents[0], components);
         emitChange();
     }
 }
@@ -122,7 +133,7 @@ export function setComponentsList(newComponents: any): void {
     emitChange()
 }
 
-function emitChange() {
+export function emitChange() {
     observers.forEach((o) => o && o(components[currentComponent]))
 }
 
@@ -147,6 +158,7 @@ export function canMoveComponent(toX: number, toY: number): boolean {
         //Can move anywhere on grid
         return (Math.abs(dx) >= 0 || Math.abs(dy) >= 0)
     } else {
+        //TODO - Can crash here if you delete currentComponent
         const x = components[currentComponent].x
         const y = components[currentComponent].y
         const dx = toX - x
@@ -183,25 +195,17 @@ export function moveComponent(toX: number, toY: number, type: string): void {
 
         components.splice(currentComponent, 1);
     } else {
-        if(components[currentComponent] !== undefined) {
-            components.push({
-                x: toX,
-                y: toY,
-                type: type,
-                voltage: components[currentComponent].voltage,
-                rotateDeg: components[currentComponent].rotateDeg,
-                componentType: componentType
-            });
-        } else {
-            components.push({
-                x: toX,
-                y: toY,
-                type: type,
-                voltage: 0,
-                rotateDeg: 0,
-                componentType: componentType
-            });
-        }
+        //TODO - Currently just reset voltage and rotate degree if they move the piece. Need to check if the piece that was just moved was new piece of current
+        // Since when put
+        // DIS IS NEXT
+        components.push({
+            x: toX,
+            y: toY,
+            type: type,
+            voltage: 0,
+            rotateDeg: 0,
+            componentType: componentType
+        });
 
         if(currentX !== -1 && currentY !== -1) {
             components.splice(currentComponent, 1);
@@ -210,9 +214,8 @@ export function moveComponent(toX: number, toY: number, type: string): void {
 
     currentComponent = components.length - 1;
 
-    checkForErrors()
-    hasCircuit();
-
+    checkForErrors();
+    hasCircuit()
     emitChange();
 }
 
@@ -239,12 +242,9 @@ export function moveComponent(toX: number, toY: number, type: string): void {
 // Switch
 //  1. Can toggle on and off to disable/enable circuit
 
-//Check if you short circuited the board
-//TODO
-// Current list of things to check for:
-//  1. Check if circuit is only wires and battery and if so, short-circuit (COMPLETE)
-//  2. If two batteries in parallel not same voltage, short circuit
-//  3.
+//TODO - Check if you short circuited the board
+//  If two batteries in parallel not same voltage, short circuit
+// NOTE: can this be combined with functions below?
 function checkForErrors() {
     //This (inefficient) method loops through each component in the list and finds all components around it
     //TODO - Need to get rid of square from +1 x, +1 y. Only check blocks from right next to components
@@ -260,14 +260,14 @@ function checkForErrors() {
         }
         console.log("components around: " + componentsAroundCurrent)
 
-        //TODO - Check for all logic here from list above
         for(let k = 0; k < componentsAroundCurrent.length; k++) {
             if(components[i].type === componentsAroundCurrent[k].type) {
                 //TODO - Kinda works - BUT ALSO VERY BROKEN :)
                 if(components[i].type === ComponentTypes.BATTERY && componentsAroundCurrent[k].type === ComponentTypes.BATTERY) {
                     if((components[i].rotateDeg % 180) !== (componentsAroundCurrent[k].rotateDeg % 180)) {
                         boardHasIssues = true;
-                        boardCurrentIssue = "Battery directions not correct"
+                        boardCurrentIssues.push("Battery directions not correct")
+                        passed = false;
                     }
                 }
             }
@@ -276,64 +276,87 @@ function checkForErrors() {
 }
 
 function checkIfPassed(matrix: Array<Array<number>>, visited: Array<Array<boolean>>): void {
-
-    //Check here if the circuit only contains wires and batteries
-    let boardOnlyContainsWiresAndBatteries = true;
-    for(let i = 0; i < components.length; i++) {
-        if (components[i].type !== ComponentTypes.WIRE && components[i].type !== ComponentTypes.BATTERY) {
-            boardOnlyContainsWiresAndBatteries = false;
-        }
-    }
-
-    if(boardOnlyContainsWiresAndBatteries) {
-        boardHasIssues = true;
-        boardCurrentIssue = "You have short-circuited the board! Do not build a circuit that contains only wires and/or batteries"
-        //TODO - Reset the board?
-    }
+    //TODO - So take the matrix and visited variables and loop through to check each component at a time sorted by
+    // where they appear in circuit. Might have to create array in hasCircuit() that adds the component if it is the next
+    // one found in visited
 
     const currentTotalVoltage = getTotalVoltage();
-    if(currentTotalVoltage !== 0) {
-        //TODO - Check if any of the switches are turned off
+    let neededVoltage = 0;
+    let circuitPasses = false;
 
+    if(currentTotalVoltage !== 0) {
+        //Check here if the circuit only contains wires and batteries
+        let boardOnlyContainsWiresAndBatteries = true;
+        for(let i = 0; i < components.length; i++) {
+            if (components[i].type !== ComponentTypes.WIRE && components[i].type !== ComponentTypes.BATTERY) {
+                boardOnlyContainsWiresAndBatteries = false;
+            }
+        }
+
+        if(boardOnlyContainsWiresAndBatteries) {
+            boardHasIssues = true;
+            boardCurrentIssues.push("You have short-circuited the board! Do not build a circuit that contains only wires and/or batteries")
+            passed = false;
+        }
+
+        //Check if any of the switches are turned off
+        const switchComponents = getComponentsByType(ComponentTypes.SWITCH)
+        let hasSwitch = false;
+        for(let i = 0; i < switchComponents.length; i++) {
+            const switchComp = switchComponents[i];
+
+            //1 is off for switches
+            if(switchComp.componentType === 1) {
+               hasSwitch = true;
+            }
+        }
+
+        if(hasSwitch) {
+            boardHasIssues = true;
+            boardCurrentIssues.push("You have a switch that is turned off")
+            passed = false;
+        }
 
         //TODO - Check if all the pieces (especially wires) are in correct type and rotation deg <- THIS IS GOING TO BE THE HARDEST
 
 
         //TODO - Now that there is a path and you passed all the issues above, then check if you reached successful voltage
         // and other requirements needed for the level (used all needed pieces, etc...)
-        // NOTE: Probably can refactor the if statement below to just assign variable values, and then do logic below them to reduce code
-        let circuitPasses = false;
         if(currentLevel === 0) {
-            const neededVoltage = 5;
-
-            if(neededVoltage === currentTotalVoltage) {
-                //TODO
-            }
+            neededVoltage = 10;
         } else if(currentLevel === 1) {
-            const neededVoltage = 20;
-
-            if(neededVoltage === currentTotalVoltage) {
-                //TODO
-            }
+            neededVoltage = 20;
         } else if(currentLevel === 2) {
-            const neededVoltage = 60;
+            neededVoltage = 60;
+        }
 
-            if(neededVoltage === currentTotalVoltage) {
-                //TODO
+        if(neededVoltage === currentTotalVoltage) {
+            //TODO
+
+
+            circuitPasses = true;
+            if(circuitPasses) {
+                //TODO - If you pass circuit successfully, un-hide "Next" button for next level or activity
+                // 1. Should I show a toast or message anywhere saying you completed the level's task?
+                // 2. I'll need to switch the image of the object we are powering with the circuit to the "powered" version (gif?)
+
+                passed = true;
+                emitChange();
             }
+        } else {
+            passed = false;
         }
-
-        if(circuitPasses) {
-            //TODO - If you pass circuit successfully, un-hide "Next" button for next level or activity
-            // 1. Should I show a toast or message anywhere saying you completed the level's task?
-            // 2. Also, I'll need to switch the image of the object we are powering with the circuit to the "powered" version (gif?)
-
-        }
+    } else {
+        boardHasIssues = true;
+        boardCurrentIssues.push("You built a circuit, but it has no voltage")
+        passed = false;
     }
+
+    emitChange();
 }
 
 // Function for finding whether a circuit exists or not
-function hasCircuit() {
+export function hasCircuit() {
     //TODO - Eventually going to need a function to check if there is a parallel circuit as well
 
     //Build matrix variable here
@@ -386,10 +409,10 @@ function hasCircuit() {
     if (flag) {
         console.log("yes there is a path")
 
-        //TODO - Need to pass anything else from above?
         checkIfPassed(matrix, visited)
     } else {
         console.log("no path found brother")
+        passed = false;
     }
 }
 
@@ -423,6 +446,10 @@ function isPath(i: number, j: number, visited: Array<Array<boolean>>, matrix: Ar
 
     // No path has been found
     return false;
+}
+
+function getComponentsByType(type: string) {
+    return components.filter(component => component.type === type);
 }
 
 // function getCurrentLevelPass(): any {

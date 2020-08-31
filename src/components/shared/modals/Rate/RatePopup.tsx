@@ -20,7 +20,7 @@ class RatePopup extends React.Component<any, any> {
     render() {
         const submitRating = (selection: string) => {
             //TODO
-            toast(selection + " clicked!");
+            toast("Thank you for submitting a rating!");
             closePopup()
         }
 
@@ -30,7 +30,6 @@ class RatePopup extends React.Component<any, any> {
 
         return (
             <>
-
                 <Modal show={this.state.popupOpened}
                        onClick={closePopup}
                        size="lg"

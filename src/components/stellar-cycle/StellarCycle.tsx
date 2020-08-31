@@ -14,6 +14,7 @@ import redgiant from './images/redgiant.png';
 import redsupergiant from './images/redsupergiant.png';
 import supernova from './images/supernova.png';
 import whitedwarf from './images/whitedwarf.png';
+import white_dwarf_path from './images/white_dwarf_path.png';
 import 'font-awesome/css/font-awesome.min.css';
 import {StellarPathAnimation} from "./StellarPathAnimation";
 import {getIndex} from "../circuilt-building/grid/Functionality";
@@ -111,171 +112,178 @@ class StellarCycle extends React.Component<any, any> {
                         </Col>
                     </Row>
 
-                    <Row style={{margin: 0}}>
-                        <div style={{position: "absolute", top: "10%", left: "5%", margin: 0, width: "100%", height: "100%"}}>
-                            <StellarPathAnimation path={this.state.paths[this.state.pathIndex].path} />
-                        </div>
+                    <Row style={{margin: 0}} className={"justify-content-center"}>
+                        <Col className={"col-10"}>
+                            <Row>
+                                <div style={{position: "absolute", top: "10%", left: "5%", margin: 0, width: "100%", height: "100%"}}>
+                                    <StellarPathAnimation path={this.state.paths[this.state.pathIndex].path} />
+                                </div>
 
-                        <Col className={"col-3 justify-content-center align-content-center stellar-circle"} style={{padding: "0"}}>
-                            <Container fluid  onClick={() => goToObjectPage("Nebula")}>
-                                <Row>
-                                    <Col>
-                                       <img src={nebula} width={"50%"}/>
-                                    </Col>
-                                </Row>
+                                <div style={{position: "absolute", top: "5%", left: "7%", margin: 0, width: "65%"}}>
+                                    <img src={white_dwarf_path} width={"100%"} />
+                                </div>
 
-                                <Row>
-                                    <Col>
-                                        <p style={{fontSize: "24px", color: "white"}}>Nebula</p>
-                                    </Col>
-                                </Row>
-                            </Container>
-                        </Col>
+                                <Col className={"col-2 justify-content-center align-content-center stellar-circle"}
+                                     onClick={() => goToObjectPage("Nebula")} style={{marginTop: 100, padding: "0"}}>
+                                    <Row>
+                                        <Col>
+                                            <img src={nebula} width={"50%"} />
+                                        </Col>
+                                    </Row>
 
-                        <Col style={{padding: "0"}}>
-                            <Row className={"justify-content-center align-content-center"} style={{margin: 0}}>
-                                <Col className={"col-3 justify-content-center align-content-center  stellar-circle"} style={{padding: "0"}}>
-                                    <Container fluid  onClick={() => goToObjectPage("Average Star")}>
-                                        <Row>
-                                            <Col>
-                                                <img src={avgstar} width={"50%"}/>
-                                            </Col>
-                                        </Row>
-
-                                        <Row>
-                                            <Col>
-                                                <p style={{fontSize: "24px", color: "white"}}>Average Star</p>
-                                            </Col>
-                                        </Row>
-                                    </Container>
+                                    <Row>
+                                        <Col>
+                                            <p style={{fontSize: "24px", color: "white"}}>Nebula</p>
+                                        </Col>
+                                    </Row>
                                 </Col>
 
-                                <Col className={"col-3 justify-content-center align-content-center stellar-circle"} style={{padding: "0"}}>
-                                    <Container fluid  onClick={() => goToObjectPage("Red Giant")}>
-                                        <Row>
-                                            <Col>
-                                                <img src={redgiant} width={"50%"}/>
-                                            </Col>
-                                        </Row>
+                                <Col className={"col-9"} style={{padding: "0"}}>
+                                    <Row className={"justify-content-center align-content-center"} style={{margin: 0, marginBottom: 50}}>
+                                        <Col className={"col-3 justify-content-center align-content-center  stellar-circle"} style={{padding: "0"}}>
+                                            <Container fluid  onClick={() => goToObjectPage("Average Star")}>
+                                                <Row>
+                                                    <Col>
+                                                        <img src={avgstar} width={"50%"}/>
+                                                    </Col>
+                                                </Row>
 
-                                        <Row>
-                                            <Col>
-                                                <p style={{fontSize: "24px", color: "white"}}>Red Giant</p>
-                                            </Col>
-                                        </Row>
-                                    </Container>
-                                </Col>
+                                                <Row>
+                                                    <Col>
+                                                        <p style={{fontSize: "24px", color: "white"}}>Average Star</p>
+                                                    </Col>
+                                                </Row>
+                                            </Container>
+                                        </Col>
 
-                                <Col className={"col-3 justify-content-center align-content-center stellar-circle"} style={{padding: "0"}}>
-                                    <Container fluid  onClick={() => goToObjectPage("Planetary Nebula")}>
-                                        <Row>
-                                            <Col>
-                                                <img src={planetarynebula} width={"50%"}/>
-                                            </Col>
-                                        </Row>
+                                        <Col className={"col-3 justify-content-center align-content-center stellar-circle"} style={{padding: "0"}}>
+                                            <Container fluid  onClick={() => goToObjectPage("Red Giant")}>
+                                                <Row>
+                                                    <Col>
+                                                        <img src={redgiant} width={"50%"}/>
+                                                    </Col>
+                                                </Row>
 
-                                        <Row>
-                                            <Col>
-                                                <p style={{fontSize: "24px", color: "white"}}>Planetary Nebula</p>
-                                            </Col>
-                                        </Row>
-                                    </Container>
-                                </Col>
+                                                <Row>
+                                                    <Col>
+                                                        <p style={{fontSize: "24px", color: "white"}}>Red Giant</p>
+                                                    </Col>
+                                                </Row>
+                                            </Container>
+                                        </Col>
 
-                                <Col className={"col-3 justify-content-center align-content-center stellar-circle"} style={{padding: "0"}}>
-                                    <Container fluid  onClick={() => goToObjectPage("White Dwarf")}>
-                                        <Row>
-                                            <Col>
-                                                <img src={whitedwarf} width={"50%"}/>
-                                            </Col>
-                                        </Row>
+                                        <Col className={"col-3 justify-content-center align-content-center stellar-circle"} style={{padding: "0"}}>
+                                            <Container fluid  onClick={() => goToObjectPage("Planetary Nebula")}>
+                                                <Row>
+                                                    <Col>
+                                                        <img src={planetarynebula} width={"50%"}/>
+                                                    </Col>
+                                                </Row>
 
-                                        <Row>
-                                            <Col>
-                                                <p style={{fontSize: "24px", color: "white"}}>White Dwarf</p>
-                                            </Col>
-                                        </Row>
-                                    </Container>
-                                </Col>
-                            </Row>
+                                                <Row>
+                                                    <Col>
+                                                        <p style={{fontSize: "24px", color: "white"}}>Planetary Nebula</p>
+                                                    </Col>
+                                                </Row>
+                                            </Container>
+                                        </Col>
 
-                            <Row className={"justify-content-center align-content-center"} style={{margin: 0}}>
-                                <Col className={"col-3 justify-content-center align-content-center stellar-circle"} style={{padding: "0"}}>
-                                    <Container fluid  onClick={() => goToObjectPage("Massive Star")}>
-                                        <Row>
-                                            <Col>
-                                                <img src={massivestar} width={"50%"}/>
-                                            </Col>
-                                        </Row>
+                                        <Col className={"col-3 justify-content-center align-content-center stellar-circle"} style={{padding: "0"}}>
+                                            <Container fluid  onClick={() => goToObjectPage("White Dwarf")}>
+                                                <Row>
+                                                    <Col>
+                                                        <img src={whitedwarf} width={"50%"}/>
+                                                    </Col>
+                                                </Row>
 
-                                        <Row>
-                                            <Col>
-                                                <p style={{fontSize: "24px", color: "white"}}>Massive Star</p>
-                                            </Col>
-                                        </Row>
-                                    </Container>
-                                </Col>
+                                                <Row>
+                                                    <Col>
+                                                        <p style={{fontSize: "24px", color: "white"}}>White Dwarf</p>
+                                                    </Col>
+                                                </Row>
+                                            </Container>
+                                        </Col>
+                                    </Row>
 
-                                <Col className={"col-3 justify-content-center align-content-center stellar-circle"} style={{padding: "0"}}>
-                                    <Container fluid  onClick={() => goToObjectPage("Red Supergiant")}>
-                                        <Row>
-                                            <Col>
-                                                <img src={redsupergiant} width={"50%"}/>
-                                            </Col>
-                                        </Row>
+                                    <Row className={"justify-content-center align-content-center"} style={{margin: 0}}>
+                                        <Col className={"col-3 justify-content-center align-content-center stellar-circle"} style={{padding: "0"}}>
+                                            <Container fluid  onClick={() => goToObjectPage("Massive Star")}>
+                                                <Row>
+                                                    <Col>
+                                                        <img src={massivestar} width={"50%"}/>
+                                                    </Col>
+                                                </Row>
 
-                                        <Row>
-                                            <Col>
-                                                <p style={{fontSize: "24px", color: "white"}}>Red Supergiant</p>
-                                            </Col>
-                                        </Row>
-                                    </Container>
-                                </Col>
+                                                <Row>
+                                                    <Col>
+                                                        <p style={{fontSize: "24px", color: "white"}}>Massive Star</p>
+                                                    </Col>
+                                                </Row>
+                                            </Container>
+                                        </Col>
 
-                                <Col className={"col-3 justify-content-center align-content-center stellar-circle"} style={{padding: "0"}}>
-                                    <Container fluid  onClick={() => goToObjectPage("Supernova")}>
-                                        <Row>
-                                            <Col>
-                                                <img src={supernova} width={"50%"}/>
-                                            </Col>
-                                        </Row>
+                                        <Col className={"col-3 justify-content-center align-content-center stellar-circle"} style={{padding: "0"}}>
+                                            <Container fluid  onClick={() => goToObjectPage("Red Supergiant")}>
+                                                <Row>
+                                                    <Col>
+                                                        <img src={redsupergiant} width={"50%"}/>
+                                                    </Col>
+                                                </Row>
 
-                                        <Row>
-                                            <Col>
-                                                <p style={{fontSize: "24px", color: "white"}}>Supernova</p>
-                                            </Col>
-                                        </Row>
-                                    </Container>
-                                </Col>
+                                                <Row>
+                                                    <Col>
+                                                        <p style={{fontSize: "24px", color: "white"}}>Red Supergiant</p>
+                                                    </Col>
+                                                </Row>
+                                            </Container>
+                                        </Col>
 
-                                <Col className={"col-3 justify-content-center align-content-center stellar-circle"} style={{padding: "0"}}>
-                                    <Container fluid  onClick={() => goToObjectPage("Neutron Star")}>
-                                        <Row>
-                                            <Col>
-                                                <img src={neutronstar} width={"50%"}/>
-                                            </Col>
-                                        </Row>
+                                        <Col className={"col-3 justify-content-center align-content-center stellar-circle"} style={{padding: "0"}}>
+                                            <Container fluid  onClick={() => goToObjectPage("Supernova")}>
+                                                <Row>
+                                                    <Col>
+                                                        <img src={supernova} width={"50%"}/>
+                                                    </Col>
+                                                </Row>
 
-                                        <Row>
-                                            <Col>
-                                                <p style={{fontSize: "24px", color: "white"}}>Neutron Star</p>
-                                            </Col>
-                                        </Row>
-                                    </Container>
+                                                <Row>
+                                                    <Col>
+                                                        <p style={{fontSize: "24px", color: "white"}}>Supernova</p>
+                                                    </Col>
+                                                </Row>
+                                            </Container>
+                                        </Col>
 
-                                    <Container fluid  onClick={() => goToObjectPage("Black Hole")}>
-                                        <Row>
-                                            <Col>
-                                                <img src={blackhole} width={"50%"}/>
-                                            </Col>
-                                        </Row>
+                                        <Col className={"col-3 justify-content-center align-content-center stellar-circle"} style={{padding: "0"}}>
+                                            <Container fluid  onClick={() => goToObjectPage("Neutron Star")}>
+                                                <Row>
+                                                    <Col>
+                                                        <img src={neutronstar} width={"50%"}/>
+                                                    </Col>
+                                                </Row>
 
-                                        <Row>
-                                            <Col>
-                                                <p style={{fontSize: "24px", color: "white"}}>Black Hole</p>
-                                            </Col>
-                                        </Row>
-                                    </Container>
+                                                <Row>
+                                                    <Col>
+                                                        <p style={{fontSize: "24px", color: "white"}}>Neutron Star</p>
+                                                    </Col>
+                                                </Row>
+                                            </Container>
+
+                                            <Container fluid  onClick={() => goToObjectPage("Black Hole")}>
+                                                <Row>
+                                                    <Col>
+                                                        <img src={blackhole} width={"50%"}/>
+                                                    </Col>
+                                                </Row>
+
+                                                <Row>
+                                                    <Col>
+                                                        <p style={{fontSize: "24px", color: "white"}}>Black Hole</p>
+                                                    </Col>
+                                                </Row>
+                                            </Container>
+                                        </Col>
+                                    </Row>
                                 </Col>
                             </Row>
                         </Col>

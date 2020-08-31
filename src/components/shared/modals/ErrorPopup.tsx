@@ -4,6 +4,8 @@ import { Container, Row, Col } from 'react-bootstrap'
 
 class ErrorPopup extends React.Component<any, any> {
     render() {
+        console.log(this.props.description)
+
         return (
             <Modal show={this.props.open}
                    onClick={this.props.closePopup}

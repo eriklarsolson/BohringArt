@@ -1,28 +1,35 @@
 import React from 'react';
 import {useLocation} from "react-router";
-import {Link} from "react-router-dom";
+import Button from "react-bootstrap/Button";
+import { Container, Row, Col } from 'react-bootstrap'
 
 const PageNotFound = () => {
     const loc = useLocation();
     return (
         <React.Fragment>
-            <div id="notFound">
-                <div className="notFound">
-                    <div className="notFound-404">
-                        <h1>404</h1>
-                    </div>
+            <Container fluid>
+                <Row className={"vh-100 justify-content-center align-content-center"}>
+                    <Col className={"col-4"}>
+                        <h1 style={{color: "#29405B", fontWeight: "bold"}}>
+                            Sorry, not even physics could help you find the page you’re looking for.
+                        </h1>
 
-                    <h2>
-                        Sorry, not even physics could help you find the page you’re looking for.
-                    </h2>
+                        <p>
+                            <code>{loc.pathname}</code>
+                        </p>
 
-                    <p>
-                        Page not found for <code>{loc.pathname}</code>
-                    </p>
-
-                    <Link to="/">Back to home</Link>
-                </div>
-            </div>
+                        <Button
+                            href="/"
+                            variant="primary"
+                            type="submit"
+                            className={"btn green-button"}
+                            style={{width: 150,
+                                clipPath: "polygon(0 0, 95% 0, 100% 100%, 5% 100%)"}}>
+                            Home
+                        </Button>
+                    </Col>
+                </Row>
+            </Container>
         </React.Fragment>
     )
 };

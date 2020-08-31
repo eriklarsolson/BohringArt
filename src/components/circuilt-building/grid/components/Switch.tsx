@@ -52,6 +52,8 @@ export const Switch: React.FC<ComponentProps> = ({x, y, oneGridStyling, currentC
 
     })
 
+    //TODO - Need to be able to click this and toggle it on/off (componentType property of component, 0 is on, 1 is off)
+
     return (
         <>
             <DragPreviewImage connect={preview} src={switchImage} />

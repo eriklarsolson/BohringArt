@@ -44,27 +44,25 @@ class ContactUs extends React.Component<any, any> {
                                         </Row>
 
                                         <Row className="justify-content-center">
-                                            <Col className={"col-6"}>
+                                            <Col className={"col-10"}>
                                                 <Row>
                                                     <Col>
                                                         <div className={"form-group"}>
                                                             <label>
                                                                 First Name:
-                                                                <input className="form-control" type="text" required={true}
-                                                                       value={this.state.firstName} style={{width: 200}}
-                                                                       onChange={(event => this.setState({firstName: event.target.value}))} />
                                                             </label>
+                                                            <input className="form-control" type="text" required={true}
+                                                                   value={this.state.firstName} style={{width: "100%"}}
+                                                                   onChange={(event => this.setState({firstName: event.target.value}))} />
                                                         </div>
                                                     </Col>
 
                                                     <Col>
                                                         <div className={"form-group"}>
-                                                            <label>
-                                                                Last Name:
-                                                                <input className="form-control" type="text" required={true}
-                                                                       value={this.state.lastName} style={{width: 200}}
-                                                                       onChange={(event => this.setState({lastName: event.target.value}))} />
-                                                            </label>
+                                                            <label>Last Name:</label>
+                                                            <input className="form-control" type="text" required={true}
+                                                                   value={this.state.lastName} style={{width: "100%"}}
+                                                                   onChange={(event => this.setState({lastName: event.target.value}))} />
                                                         </div>
                                                     </Col>
                                                 </Row>
@@ -72,27 +70,23 @@ class ContactUs extends React.Component<any, any> {
                                         </Row>
 
                                         <Row className="justify-content-center">
-                                            <Col className={"col-6"}>
+                                            <Col className={"col-10"}>
                                                 <Row>
                                                     <Col>
                                                         <div className={"form-group"}>
-                                                            <label>
-                                                                Email:
-                                                                <input className="form-control" type="text" required={true}
-                                                                       value={this.state.email} style={{width: 200}}
-                                                                       onChange={(event => this.setState({email: event.target.value}))} />
-                                                            </label>
+                                                            <label>Email:</label>
+                                                            <input className="form-control" type="text" required={true}
+                                                                   value={this.state.email} style={{width: "100%"}}
+                                                                   onChange={(event => this.setState({email: event.target.value}))} />
                                                         </div>
                                                     </Col>
 
                                                     <Col>
                                                         <div className={"form-group"}>
-                                                            <label>
-                                                                Phone #:
-                                                                <input className="form-control" type="text"
-                                                                       value={this.state.phoneNum} style={{width: 200}}
-                                                                       onChange={(event => this.setState({phoneNum: event.target.value}))} />
-                                                            </label>
+                                                            <label>Phone #:</label>
+                                                            <input className="form-control" type="text"
+                                                                   value={this.state.phoneNum} style={{width: "100%"}}
+                                                                   onChange={(event => this.setState({phoneNum: event.target.value}))} />
                                                         </div>
                                                     </Col>
                                                 </Row>
@@ -102,12 +96,11 @@ class ContactUs extends React.Component<any, any> {
                                         <Row className="justify-content-center">
                                             <Col className={"col-10"}>
                                                 <div className={"form-group"}>
-                                                    <label>
-                                                        Message:
-                                                        <textarea className="form-control" required={true}
-                                                                  value={this.state.message} style={{width: 450}}
-                                                                  onChange={(event => this.setState({message: event.target.value}))} />
-                                                    </label>
+                                                    <label>Message:</label>
+
+                                                    <textarea className="form-control" required={true}
+                                                              value={this.state.message} style={{width: "100%"}}
+                                                              onChange={(event => this.setState({message: event.target.value}))} />
                                                 </div>
                                             </Col>
                                         </Row>

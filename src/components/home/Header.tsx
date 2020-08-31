@@ -5,6 +5,7 @@ import Button from 'react-bootstrap/Button';
 import {Container, Row, Col} from 'react-bootstrap'
 import {TelescopeAnimation} from "./TelescopeAnimation";
 import {EarthAnimation} from "./EarthAnimation";
+import 'react-toastify/dist/ReactToastify.css';
 
 class Header extends React.Component {
     render() {
@@ -43,7 +44,7 @@ class Header extends React.Component {
                             <Container fluid>
                                 <Row className={"justify-content-center"} style={{textAlign: "left"}}>
                                     <Col className={"col-8"}>
-                                        <p style={{fontWeight: "bold", fontSize: 45}}>Help us Launch a Telescope</p>
+                                        <p style={{fontWeight: "bold", fontSize: 35}}>Help us Launch a Telescope</p>
                                     </Col>
                                 </Row>
                                 <Row className={"justify-content-center"} style={{textAlign: "left"}}>
