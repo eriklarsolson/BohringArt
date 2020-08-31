@@ -32,55 +32,62 @@ class RatePopup extends React.Component<any, any> {
             <>
                 <Modal show={this.state.popupOpened}
                        onClick={closePopup}
-                       size="lg"
+                       size="xl"
                         style={{paddingTop: "60px"}}>
-                    <Modal.Header closeButton>
-                    </Modal.Header>
-
                     <Modal.Body style={{color: "#29405B"}}>
                         <Container fluid>
-                            <Row style={{textAlign: "center", display: "block", paddingTop: "50px"}}>
-                                <p style={{fontSize: "30px", fontWeight: "bold", color: "#29405B"}}>Congratulations!</p>
-                            </Row>
-
-                            <Row style={{textAlign: "center", display: "block"}}>
-                                <p style={{color: "#29405B"}}>You have successfully launched the telescope into space!
-                                    How did you feel about these activities? Click an image to submit your vote!</p>
-                            </Row>
-
-                            <Row className={"justify-content-center align-content-center"} style={{padding: "10px"}}>
-                                <Col className={"col-2"} style={{textAlign: "center", margin: "10px"}}>
-                                    <img src={bored} className={"rate-img"} onClick={() => submitRating("bored")} />
-                                    <p style={{color: "#29405B", fontWeight: "bold", fontSize: "16px"}}>Bored</p>
-                                </Col>
-
-                                <Col className={"col-2"} style={{textAlign: "center", margin: "10px"}}>
-                                    <img src={sad} className={"rate-img"} onClick={() => submitRating("sad")} />
-                                    <p style={{color: "#29405B", fontWeight: "bold", fontSize: "16px"}}>Sad</p>
-                                </Col>
-
-                                <Col className={"col-2"} style={{textAlign: "center", margin: "10px"}}>
-                                    <img src={neutral} className={"rate-img"} onClick={() => submitRating("neutral")} />
-                                    <p style={{color: "#29405B", fontWeight: "bold", fontSize: "16px"}}>Neutral</p>
-                                </Col>
-
-                                <Col className={"col-2"} style={{textAlign: "center", margin: "10px"}}>
-                                    <img src={happy} className={"rate-img"} onClick={() => submitRating("happy")} />
-                                    <p style={{color: "#29405B", fontWeight: "bold", fontSize: "16px"}}>Happy</p>
-                                </Col>
-
-                                <Col className={"col-2"} style={{textAlign: "center", margin: "10px"}}>
-                                    <img src={smart} className={"rate-img"} onClick={() => submitRating("smart")} />
-                                    <p style={{color: "#29405B", fontWeight: "bold"}}>Smart</p>
+                            <Row>
+                                <Col className={"col-2 ml-auto"}>
+                                    <Button className={"blue-button"} style={{float: "right", width: 50,
+                                        clipPath: "polygon(0 0, 95% 0, 100% 100%, 5% 100%)", fontWeight: "bold"}}>X</Button>
                                 </Col>
                             </Row>
 
-                            <Row className={"justify-content-center align-content-center"} style={{paddingBottom: "30px", float: "right"}}>
-                                <Button variant="primary" style={{backgroundColor: "#3BD186", width: "150px", marginRight: "50px",
-                                    fontSize: "20px", fontWeight: "bold"}} onClick={closePopup}>
-                                    Finish
-                                </Button>
-                            </Row>
+                            <Container fluid style={{padding: 100}}>
+                                <Row style={{textAlign: "left"}}>
+                                    <p style={{fontSize: "30px", fontWeight: "bold", color: "#29405B"}}>Congratulations!</p>
+                                </Row>
+
+                                <Row style={{textAlign: "left"}}>
+                                    <p style={{color: "#29405B"}}>You have successfully launched the telescope into space!
+                                        How did you feel about these activities? Click an image to submit your vote!</p>
+                                </Row>
+
+                                <Row className={"justify-content-center align-content-center"} style={{padding: "10px"}}>
+                                    <Col className={"col-2"} style={{textAlign: "center", margin: "10px"}}>
+                                        <img src={bored} className={"rate-img"} onClick={() => submitRating("bored")} />
+                                        <p style={{color: "#29405B", fontWeight: "bold", fontSize: "16px"}}>Bored</p>
+                                    </Col>
+
+                                    <Col className={"col-2"} style={{textAlign: "center", margin: "10px"}}>
+                                        <img src={sad} className={"rate-img"} onClick={() => submitRating("sad")} />
+                                        <p style={{color: "#29405B", fontWeight: "bold", fontSize: "16px"}}>Sad</p>
+                                    </Col>
+
+                                    <Col className={"col-2"} style={{textAlign: "center", margin: "10px"}}>
+                                        <img src={neutral} className={"rate-img"} onClick={() => submitRating("neutral")} />
+                                        <p style={{color: "#29405B", fontWeight: "bold", fontSize: "16px"}}>Neutral</p>
+                                    </Col>
+
+                                    <Col className={"col-2"} style={{textAlign: "center", margin: "10px"}}>
+                                        <img src={happy} className={"rate-img"} onClick={() => submitRating("happy")} />
+                                        <p style={{color: "#29405B", fontWeight: "bold", fontSize: "16px"}}>Happy</p>
+                                    </Col>
+
+                                    <Col className={"col-2"} style={{textAlign: "center", margin: "10px"}}>
+                                        <img src={smart} className={"rate-img"} onClick={() => submitRating("smart")} />
+                                        <p style={{color: "#29405B", fontWeight: "bold"}}>Smart</p>
+                                    </Col>
+                                </Row>
+
+                                <Row className={"justify-content-center align-content-center"} style={{paddingBottom: "30px", float: "right"}}>
+                                    <Button className={"green-button"} style={{backgroundColor: "#3BD186",
+                                        width: 150, clipPath: "polygon(0 0, 95% 0, 100% 100%, 5% 100%)",
+                                        fontSize: "20px", fontWeight: "bold"}} onClick={closePopup}>
+                                        Submit
+                                    </Button>
+                                </Row>
+                            </Container>
                         </Container>
                     </Modal.Body>
                 </Modal>

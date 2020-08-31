@@ -24,7 +24,7 @@ export const RocketAnimation: React.FC<AnimationProps>  = ({images}) => {
                 loop: Infinity,
                 repeatDelay: 1
             }}>
-            <Container fluid style={{transform: "rotate(90deg)"}}>
+            <Container fluid style={{transform: "rotate(90deg)", height: 500}}>
                 <Row className={"justify-content-center"}>
                     <Col className={"col-1 align-self-end"}>
                         <img src={images[0]} />

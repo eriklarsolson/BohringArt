@@ -3,7 +3,7 @@ import {Container, Row, Col, Modal} from 'react-bootstrap'
 import Sidebar from "./Sidebar";
 import Button from "react-bootstrap/Button";
 import 'font-awesome/css/font-awesome.min.css';
-import Popup from "../shared/modals/Popup";
+import ObjectivePopup from "../shared/modals/ObjectivePopup";
 import leftarrow from "../stellar-cycle/leftarrow.png";
 import rightarrow from "../stellar-cycle/rightarrow.png";
 import payload_1 from "./images/payloads/payload_1.png"
@@ -218,10 +218,10 @@ class RocketBuilding extends React.Component<any, any> {
 
         return (
             <>
-                <Popup title={"03 To The Stars"}
-                       open={this.state.popupOpened}
-                       description={"Using the arrows on the left and right, create a rocket consisting of an engine, boosters, a body, and a cone. Make sure to account for fuel, air resistance, and weight as all affect the rocket’s motion greatly. Click LAUNCH  to send your rocket off into space with the telescope as the payload. Along the way, answer TEXT-based questions that determine the fate of your journey! Remember to answer the questions keeping in mind the cost of the rocket as well as the survival of its crew. \n"}
-                       closePopup={cyclePopup} />
+                <ObjectivePopup title={"03 To The Stars"}
+                                open={this.state.popupOpened}
+                                description={"Using the arrows on the left and right, create a rocket consisting of an engine, boosters, a body, and a cone. Make sure to account for fuel, air resistance, and weight as all affect the rocket’s motion greatly. Click LAUNCH  to send your rocket off into space with the telescope as the payload. Along the way, answer TEXT-based questions that determine the fate of your journey! Remember to answer the questions keeping in mind the cost of the rocket as well as the survival of its crew. \n"}
+                                closePopup={cyclePopup} />
 
                 <RocketBuildingQuestionPopup open={this.state.questionPopupOpened} closePopup={cycleQuestionPopup} />
 

@@ -18,7 +18,7 @@ import whitedwarf from "./images/whitedwarf.png"
 import './StellarCycle.scss'
 import {getIndex} from "../circuilt-building/grid/Functionality";
 import {Slider, withStyles} from "@material-ui/core";
-import Popup from "../shared/modals/Popup";
+import ObjectivePopup from "../shared/modals/ObjectivePopup";
 import TimelineSlider from "./TimelineSlider";
 
 class ObjectPage extends React.Component<any, any> {
@@ -280,16 +280,16 @@ class ObjectPage extends React.Component<any, any> {
 
         return (
             <>
-                <Popup title={"04 Stellar Life Cycle"}
-                       open={this.state.popupOpened}
-                       description={"In this final activity, use the sliders to see how mass, temperature, and size are " +
+                <ObjectivePopup title={"04 Stellar Life Cycle"}
+                                open={this.state.popupOpened}
+                                description={"In this final activity, use the sliders to see how mass, temperature, and size are " +
                        "related as you move through the stages of the stellar life cycle. You may choose between using a " +
                        "star of average mass (like the sun) or a supermassive star, mass is the main variable used to " +
                        "determine which stages the star will go through and how long its lifespan will be. When viewing " +
                        "a stage, click the MORE INFO button to see an in depth description. You can also click on the " +
                        "ALL STAGES button to go back to the stellar life cycle diagram. Once you are finished exploring, " +
                        "click on the COMPLETE button to close out the activity."}
-                       closePopup={cyclePopup} />
+                                closePopup={cyclePopup} />
 
                 <Container fluid className={"d-flex h-100 flex-column"} style={{margin: 0, padding: 0, backgroundImage:`url(${stellarBackground})`}}>
                     <Row className={"flex-grow-1"} style={{margin: 0}}>

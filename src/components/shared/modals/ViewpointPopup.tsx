@@ -10,13 +10,17 @@ class ViewpointPopup extends React.Component<any, any> {
                    onClick={this.props.closePopup}
                    size="lg"
                     style={{maxWidth: "1500px !important", padding: "30px"}}>
-                <Modal.Header closeButton>
-                </Modal.Header>
-
                 <Modal.Body style={{color: "#29405B"}}>
                     <Container fluid>
-                        <Row style={{textAlign: "left", display: "block"}}>
-                            <p style={{color: "#29405B", fontSize: "30px", fontWeight: "bold"}}>Pop-up Viewpoint: Lens Focusing Light on Metal</p>
+                        <Row>
+                            <Col className={"col-10"}>
+                                <p style={{color: "#29405B", fontSize: 25, fontWeight: "bold"}}>Pop-up Viewpoint: Lens Focusing Light on Metal</p>
+                            </Col>
+
+                            <Col className={"col-1 ml-auto"}>
+                                <Button className={"blue-button"} style={{float: "right", width: 50,
+                                    clipPath: "polygon(0 0, 95% 0, 100% 100%, 5% 100%)", fontWeight: "bold"}}>X</Button>
+                            </Col>
                         </Row>
 
                         <Row style={{padding: "10px"}} className={"align-content-center justify-content-center"}>

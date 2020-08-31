@@ -32,13 +32,17 @@ class RocketBuildingQuestionPopup extends React.Component<any, any> {
                    onClick={this.props.closePopup}
                    size="xl"
                    style={{padding: "30px"}}>
-                <Modal.Header closeButton>
-                </Modal.Header>
-
                 <Modal.Body style={{color: "#29405B"}}>
                     <Container fluid>
-                        <Row style={{textAlign: "center", display: "block"}}>
-                            <p style={{color: "#29405B", fontSize: "30px", fontWeight: "bold"}}>Modules</p>
+                        <Row>
+                            <Col className={"col-3"}>
+                                <p style={{color: "#29405B", fontSize: "35px", fontWeight: "bold"}}>Parts</p>
+                            </Col>
+
+                            <Col className={"col-3 ml-auto"}>
+                                <Button className={"blue-button"} style={{float: "right", width: 50,
+                                    clipPath: "polygon(0 0, 95% 0, 100% 100%, 5% 100%)", fontWeight: "bold"}}>X</Button>
+                            </Col>
                         </Row>
 
                         <Row className={"justify-content-center"} style={{padding: "10px"}}>

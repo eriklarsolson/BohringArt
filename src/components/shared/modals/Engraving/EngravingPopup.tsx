@@ -13,40 +13,43 @@ class EngravingPopup extends React.Component<any, any> {
                    onClick={this.props.closePopup}
                    size="lg"
                     style={{maxWidth: "1500px !important", padding: "30px"}}>
-                <Modal.Header closeButton>
-                    <p style={{color: "#29405B", fontSize: "35px", fontWeight: "bold"}}>Stencil</p>
-
-                </Modal.Header>
-
                 <Modal.Body style={{color: "#29405B"}}>
                     <Container fluid>
-                        <Row style={{padding: "10px", backgroundColor: "#29405B",
-                            clipPath: "polygon(0 0, 98% 0, 100% 100%, 2% 100%)"}} className={"align-content-center justify-content-center"}>
-                            <Col>
-                                <button
-                                    style={{width: "150px", height: "150px", backgroundImage:`url(${planet})`,
-                                        backgroundSize: "150px 150px"}}
+                        <Row>
+                            <Col className={"col-3"}>
+                                <p style={{color: "#29405B", fontSize: "35px", fontWeight: "bold"}}>Stencil</p>
+                            </Col>
+
+                            <Col className={"col-3 ml-auto"}>
+                                <Button className={"blue-button"} style={{float: "right", width: 50,
+                                    clipPath: "polygon(0 0, 95% 0, 100% 100%, 5% 100%)", fontWeight: "bold"}}>X</Button>
+                            </Col>
+                        </Row>
+
+                        <Row style={{padding: 50,
+                            clipPath: "polygon(0 0, 98% 0, 100% 100%, 2% 100%)"}}
+                             className={"align-content-center justify-content-center"}>
+                            <Col className="col-3" style={{backgroundColor: "#DBEAEF", clipPath: "polygon(0 0, 95% 0, 100% 100%, 5% 100%)"}}>
+                                <img
+                                    src={planet}
                                     onClick={() => this.props.addStencil(planet)} />
                             </Col>
 
-                            <Col>
-                                <button
-                                    style={{width: "150px", height: "150px", backgroundImage:`url(${logo})`,
-                                        backgroundSize: "150px 150px"}}
+                            <Col className="col-3" style={{backgroundColor: "#DBEAEF", clipPath: "polygon(0 0, 95% 0, 100% 100%, 5% 100%)"}}>
+                                <img
+                                    src={logo}
                                     onClick={() => this.props.addStencil(logo)} />
                             </Col>
 
-                            <Col>
-                                <button
-                                    style={{width: "150px", height: "150px", backgroundImage:`url(${plant})`,
-                                        backgroundSize: "150px 150px"}}
+                            <Col className="col-3" style={{backgroundColor: "#DBEAEF", clipPath: "polygon(0 0, 95% 0, 100% 100%, 5% 100%)"}}>
+                                <img
+                                    src={plant}
                                     onClick={() => this.props.addStencil(plant)} />
                             </Col>
 
-                            <Col>
-                                <button
-                                    style={{width: "150px", height: "150px", backgroundImage:`url(${snowman})`,
-                                        backgroundSize: "150px 150px"}}
+                            <Col className="col-3" style={{backgroundColor: "#DBEAEF", clipPath: "polygon(0 0, 95% 0, 100% 100%, 5% 100%)"}}>
+                                <img
+                                    src={snowman}
                                     onClick={() => this.props.addStencil(snowman)} />
                             </Col>
                         </Row>

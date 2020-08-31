@@ -1,7 +1,7 @@
 import React from "react";
 import {Container, Row, Col, Modal} from 'react-bootstrap'
 import Button from "react-bootstrap/Button";
-import Popup from "../shared/modals/Popup";
+import ObjectivePopup from "../shared/modals/ObjectivePopup";
 import './StellarCycle.scss'
 import stellarBackground from './stellarBackground.png';
 import avgstar from './images/avgstar.png';

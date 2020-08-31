@@ -2,7 +2,7 @@ import React from "react";
 import {Container, Row, Col, Modal} from 'react-bootstrap'
 import Sidebar from "./Sidebar";
 import Button from "react-bootstrap/Button";
-import Popup from "../shared/modals/Popup";
+import ObjectivePopup from "../shared/modals/ObjectivePopup";
 import Canvas from "./Canvas";
 import EngravingPopup from "../shared/modals/Engraving/EngravingPopup";
 import laser_OFF from "./images/laser_OFF.png";
@@ -176,14 +176,14 @@ class MetalEngraving extends React.Component<any, any> {
             <>
                 <MetalEngravingQuestionPopup open={this.state.questionPopupOpened} closePopup={cycleQuestionPopup} />
 
-                <Popup title={"02 Laser and Lenses Objective"}
-                       open={this.state.popupOpened}
-                       description={"Using lasers, prisms, and lenses, create an " +
+                <ObjectivePopup title={"02 Laser and Lenses Objective"}
+                                open={this.state.popupOpened}
+                                description={"Using lasers, prisms, and lenses, create an " +
                           "artistic design on a metal sheet. The laser can be altered to include numerous shapes, colors, and widths " +
                           "beneficial to the engraving. You can use the UNDO and RESET buttons to change any mistakes on your design. " +
                           "Once you are satisfied with your creation, press the NEXT button to move on to the telescope building part " +
                           "of the optics activity. Click OBJECTIVE to see the objective for this activity."}
-                       closePopup={closePopup} />
+                                closePopup={closePopup} />
 
                <EngravingPopup open={this.state.engravingPopupOpened} closePopup={closeEngravingPopup}
                                addStencil={addStencil} />

@@ -2,7 +2,7 @@ import React, {useCallback, useEffect, useState} from "react";
 import {Container, Row, Col, Modal} from 'react-bootstrap'
 import Sidebar from "./Sidebar";
 import Button from "react-bootstrap/Button";
-import Popup from "../shared/modals/Popup";
+import ObjectivePopup from "../shared/modals/ObjectivePopup";
 import {SixGridContainer} from "./grid/SixGridContainer";
 import objective1wire from './objective1wire.png'
 import objective2wire from './objective2wire.png'
@@ -94,9 +94,9 @@ class CircuitBuilding extends React.Component<any, any> {
             <>
                 <CircuitPopup open={this.state.circuitPopupOpened} closeCircuitPopup={cycleCircuitPopup} />
 
-                <Popup open={this.state.popupOpened} title={this.state.popupTitle}
-                                                  description={this.state.popupDescriptions[this.state.currentLevel - 1]}
-                                                  closePopup={cyclePopup} />
+                <ObjectivePopup open={this.state.popupOpened} title={this.state.popupTitle}
+                                description={this.state.popupDescriptions[this.state.currentLevel - 1]}
+                                closePopup={cyclePopup} />
 
                     <Container fluid className={"d-flex h-100 flex-column"} style={{margin: "0", padding: "0", backgroundColor: "#F8EDDD"}}>
                         <Row className={"flex-grow-1"} style={{margin: "0"}}>
