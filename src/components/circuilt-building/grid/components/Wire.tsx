@@ -88,6 +88,8 @@ export const Wire: React.FC<ComponentProps> = ({x, y, oneGridStyling, currentCom
         }
     }
 
+    //TODO - Add rotate functionality (look at battery and grid square as examples)
+
     return (
         <>
             <DragPreviewImage connect={preview} src={wire} />

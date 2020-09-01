@@ -10,24 +10,25 @@ class Sidebar extends React.Component<any, any> {
             <>
                <Container style={{backgroundColor: "#29405B", margin: 0, height: "100%", textAlign: "left",
                    clipPath: "polygon(0 0, 90% 0, 100% 100%, 0 100%)"}}>
-                   <h4 style={{paddingTop: "15px"}}>PARTS</h4>
+
+                   <h4 style={{paddingLeft: 10}}>PARTS</h4>
 
                    <Row className={"justify-content-center"}>
                        <Col className={"col-11"} style={{backgroundColor: "#29405B", padding: 0}}>
                            <Container fluid style={{padding: 0}}>
                                <Row style={{backgroundColor: "#162F4C", padding: 5}}>
                                    <Col className="col-12" style={{margin: 0, textAlign: "left"}}>
-                                       <p style={{marginBottom: 0, fontSize: 18, fontWeight: "bold"}}>Cone</p>
+                                       <p style={{marginBottom: 0, fontSize: 16, fontWeight: "bold"}}>Cone</p>
                                    </Col>
                                </Row>
 
-                               <Row className={"justify-content-center"} style={{backgroundColor: "#42949F", textAlign: "left", padding: 5}}>
+                               <Row className={"justify-content-center"} style={{backgroundColor: "#42949F", textAlign: "left", padding: 2}}>
                                    <Col className={"col-1"}>
                                        <img src={leftarrow} className={"arrow"} style={{height: 15}} onClick={() => this.props.changeCone(false)} />
                                    </Col>
 
                                    <Col className={"col-5"}>
-                                       <p style={{marginBottom: 0, fontSize: 14, textAlign: "center", fontWeight: "bold"}}>{this.props.cone.title}</p>
+                                       <p style={{marginBottom: 0, fontSize: 12, textAlign: "center", fontWeight: "bold"}}>{this.props.cone.title}</p>
                                    </Col>
 
                                    <Col className={"col-1"} style={{float: "left"}}>
@@ -83,17 +84,17 @@ class Sidebar extends React.Component<any, any> {
                            <Container fluid style={{padding: 0}}>
                                <Row style={{backgroundColor: "#162F4C", padding: 5}}>
                                    <Col className="col-12" style={{margin: 0, textAlign: "left"}}>
-                                       <p style={{marginBottom: 0, fontSize: 18, fontWeight: "bold"}}>Body</p>
+                                       <p style={{marginBottom: 0, fontSize: 16, fontWeight: "bold"}}>Body</p>
                                    </Col>
                                </Row>
 
-                               <Row className={"justify-content-center"} style={{backgroundColor: "#42949F", textAlign: "left", padding: 5}}>
+                               <Row className={"justify-content-center"} style={{backgroundColor: "#42949F", textAlign: "left", padding: 2}}>
                                    <Col className={"col-1"}>
                                        <img src={leftarrow} className={"arrow"} style={{height: 15}} onClick={() => this.props.changeBody(false)} />
                                    </Col>
 
                                    <Col className={"col-5"}>
-                                       <p style={{marginBottom: 0, fontSize: 14, textAlign: "center", fontWeight: "bold"}}>{this.props.body.title}</p>
+                                       <p style={{marginBottom: 0, fontSize: 12, textAlign: "center", fontWeight: "bold"}}>{this.props.body.title}</p>
                                    </Col>
 
                                    <Col className={"col-1"} style={{float: "left"}}>
@@ -149,17 +150,17 @@ class Sidebar extends React.Component<any, any> {
                            <Container fluid style={{padding: 0}}>
                                <Row style={{backgroundColor: "#162F4C", padding: 5}}>
                                    <Col className="col-12" style={{margin: 0, textAlign: "left"}}>
-                                       <p style={{marginBottom: 0, fontSize: 18, fontWeight: "bold"}}>Boosters</p>
+                                       <p style={{marginBottom: 0, fontSize: 16, fontWeight: "bold"}}>Boosters</p>
                                    </Col>
                                </Row>
 
-                               <Row className={"justify-content-center"} style={{backgroundColor: "#42949F", textAlign: "left", padding: 5}}>
+                               <Row className={"justify-content-center"} style={{backgroundColor: "#42949F", textAlign: "left", padding: 2}}>
                                    <Col className={"col-1"}>
                                        <img src={leftarrow} className={"arrow"} style={{height: 15}} onClick={() => this.props.changeBooster(false)} />
                                    </Col>
 
                                    <Col className={"col-5"}>
-                                       <p style={{marginBottom: 0, fontSize: 14, textAlign: "center", fontWeight: "bold"}}>{this.props.booster.title}</p>
+                                       <p style={{marginBottom: 0, fontSize: 12, textAlign: "center", fontWeight: "bold"}}>{this.props.booster.title}</p>
                                    </Col>
 
                                    <Col className={"col-1"} style={{float: "left"}}>
@@ -215,17 +216,17 @@ class Sidebar extends React.Component<any, any> {
                            <Container fluid style={{padding: 0}}>
                                <Row style={{backgroundColor: "#162F4C", padding: 5}}>
                                    <Col className="col-12" style={{margin: 0, textAlign: "left"}}>
-                                       <p style={{marginBottom: 0, fontSize: 18, fontWeight: "bold"}}>Engine</p>
+                                       <p style={{marginBottom: 0, fontSize: 16, fontWeight: "bold"}}>Engine</p>
                                    </Col>
                                </Row>
 
-                               <Row className={"justify-content-center"} style={{backgroundColor: "#42949F", textAlign: "left", padding: 5}}>
+                               <Row className={"justify-content-center"} style={{backgroundColor: "#42949F", textAlign: "left", padding: 2}}>
                                    <Col className={"col-1"}>
                                        <img src={leftarrow} className={"arrow"} style={{height: 15}} onClick={() => this.props.changeEngine(false)} />
                                    </Col>
 
                                    <Col className={"col-5"}>
-                                       <p style={{marginBottom: 0, fontSize: 14, textAlign: "center", fontWeight: "bold"}}>{this.props.engine.title}</p>
+                                       <p style={{marginBottom: 0, fontSize: 12, textAlign: "center", fontWeight: "bold"}}>{this.props.engine.title}</p>
                                    </Col>
 
                                    <Col className={"col-1"} style={{float: "left"}}>

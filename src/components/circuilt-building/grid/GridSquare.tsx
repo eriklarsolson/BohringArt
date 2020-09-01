@@ -23,8 +23,6 @@ export interface GridSquareProps {
 }
 
 export const GridSquare: React.FC<GridSquareProps> = ({x, y, children, showGrid, currentComponent}) => {
-    const [rotateDeg, setRotateDeg] = useState<number>(0)
-
     const [{ isOver, canDrop }, drop] = useDrop({
         accept: [ComponentTypes.WIRE, ComponentTypes.BATTERY, ComponentTypes.RESISTOR
             ,ComponentTypes.SWITCH , ComponentTypes.INDUCTOR , ComponentTypes.CAPACITOR],
@@ -48,6 +46,7 @@ export const GridSquare: React.FC<GridSquareProps> = ({x, y, children, showGrid,
         clicked = true;
     }
 
+    const [rotateDeg, setRotateDeg] = useState<number>(0)
     //TODO - There is a bug here. Has to do with up above where I set rotateDeg state. Probably need to get current components rotate deg?
     const clickRotate = () => {
         console.log(rotateDeg)

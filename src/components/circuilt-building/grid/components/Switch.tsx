@@ -1,10 +1,18 @@
 import React, {useState} from 'react'
 import { DragPreviewImage, useDrag } from 'react-dnd'
 import { ComponentTypes } from '../../../shared/models/ComponentTypes'
-import switchImage from './images/switch.png'
+import switchOn from './images/switch.png'
+import switchOff from './images/switch_off.png'
 import rotate from './images/rotate.png'
 import { Container, Row, Col } from 'react-bootstrap'
-import {getComponentAtPos} from "../Functionality";
+import {
+    getComponentAtPos,
+    hasCircuit,
+    setAllSwitchesOn,
+    setComponentType,
+    setComponentTypeOnClick
+} from "../Functionality";
+import {Button} from "@material-ui/core";
 
 let style: React.CSSProperties = {
     cursor: 'move',
@@ -17,6 +25,9 @@ export interface ComponentProps {
 }
 
 export const Switch: React.FC<ComponentProps> = ({x, y, oneGridStyling, currentComponent}) => {
+    const [turnedOn, setTurnedOn] = useState<boolean>(true)
+    const [switchImage, setSwitchImage] = useState<any>(switchOn)
+
     //Set rotation degree of the image below if there is a component here (could be any component or currently selected one)
     let startingRotateDeg = 0
     const componentAtThisPosition = getComponentAtPos(x, y)
@@ -24,10 +35,18 @@ export const Switch: React.FC<ComponentProps> = ({x, y, oneGridStyling, currentC
     if(componentAtThisPosition !== currentComponent) {
         if(componentAtThisPosition !== undefined) {
             startingRotateDeg = componentAtThisPosition.rotateDeg;
+
+            if(componentAtThisPosition.componentType === 1) {
+                setTurnedOn(false)
+            }
         }
     } else {
         if(componentAtThisPosition !== undefined) {
             startingRotateDeg = currentComponent.rotateDeg;
+
+            if(currentComponent.componentType === 1) {
+                setTurnedOn(false)
+            }
         }
     }
 
@@ -52,7 +71,24 @@ export const Switch: React.FC<ComponentProps> = ({x, y, oneGridStyling, currentC
 
     })
 
-    //TODO - Need to be able to click this and toggle it on/off (componentType property of component, 0 is on, 1 is off)
+    //Need to be able to click this and toggle it on/off (componentType property of component, 0 is on, 1 is off)
+    //TODO - this is the big broken
+    const toggleSwitch = () => {
+        if(turnedOn) {
+            //TODO - if I turn it off and then move it, it crashes. If I turn it off and on and move it, it does not
+            setSwitchImage(switchOff)
+            setTurnedOn(false)
+            setComponentType(1)
+            setAllSwitchesOn(false)
+        } else {
+            setSwitchImage(switchOn)
+            setTurnedOn(true)
+            setComponentType(0)
+            setAllSwitchesOn(true)
+        }
+    }
+
+    //TODO - Add rotate functionality (look at battery and grid square as examples)
 
     return (
         <>
@@ -63,8 +99,11 @@ export const Switch: React.FC<ComponentProps> = ({x, y, oneGridStyling, currentC
                          style={{
                              ...style,
                              opacity: isDragging ? 0.5 : 1,
-                         }}>
-                        <img src={switchImage} width={"100%"} />
+                         }}
+                         onClick={toggleSwitch}>
+                        {/*<Button onClick={toggleSwitch} style={{backgroundColor: "transparent", width: "100%", height: "100%"}}>*/}
+                            <img src={switchImage} width={"100%"} />
+                        {/*</Button>*/}
                     </Col>
                 </Row>
             </Container>

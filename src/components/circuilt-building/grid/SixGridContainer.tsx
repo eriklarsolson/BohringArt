@@ -1,13 +1,22 @@
 import React, {useState, useEffect, useCallback} from 'react'
 import {
-    getBoardHasIssues, deleteCurrentComponent,
-    getComponents, getCurrentBoardIssues,
+    getBoardHasIssues,
+    deleteCurrentComponent,
+    getComponents,
+    getCurrentBoardIssues,
     getCurrentComponent,
     getCurrentX,
     getPassed,
     getTotalVoltage,
     moveComponent,
-    observe, setBoardHasIssue, setCurrentComponentsVoltage, setCurrentBoardIssues, hasCircuit, emitChange
+    observe,
+    setBoardHasIssue,
+    setCurrentComponentsVoltage,
+    setCurrentBoardIssues,
+    hasCircuit,
+    emitChange,
+    addBoardIssue,
+    setPassed
 } from './Functionality'
 import {SixGrid} from "./SixGrid";
 import {Container, Row, Col} from "react-bootstrap";
@@ -101,7 +110,23 @@ export const SixGridContainer: React.FC<GridContainerProps> = ({objectiveImage, 
     const changeVoltage = (increase: boolean) => {
         if(getComponents().length > 0) {
             if (increase && (getCurrentComponent().voltage + 1) <= 10) {
-                setCurrentComponentsVoltage(getCurrentComponent().voltage + 1);
+
+                if(getCurrentComponent().type === ComponentTypes.RESISTOR) {
+                    let total = getTotalVoltage();
+                    total = total - 1;
+
+                    console.log(total)
+
+                    if(total < 0) {
+                        setBoardHasIssue(true)
+                        addBoardIssue("You cannot have negative voltage")
+                        // setPassed(false)
+                    } else {
+                        setCurrentComponentsVoltage(getCurrentComponent().voltage + 1);
+                    }
+                } else {
+                    setCurrentComponentsVoltage(getCurrentComponent().voltage + 1);
+                }
             } else if (!increase && (getCurrentComponent().voltage - 1) >= 0) {
                 setCurrentComponentsVoltage(getCurrentComponent().voltage - 1);
             }
@@ -136,10 +161,15 @@ export const SixGridContainer: React.FC<GridContainerProps> = ({objectiveImage, 
                     </Col>
 
                     <Col className={"ml-auto col-2 justify-content-center align-content center"}>
-                        {currentComp !== undefined && currentComp.type === ComponentTypes.BATTERY &&
+                        {currentComp !== undefined && (currentComp.type === ComponentTypes.BATTERY ||
+                            currentComp.type === ComponentTypes.RESISTOR) &&
                             <>
                                 <Typography id="volt-slider" gutterBottom style={{color: "#29405B"}}>
-                                    Volt Selector
+                                    {currentComp.type === ComponentTypes.BATTERY ?
+                                        <p>Voltage</p>
+                                    :
+                                        <p>Resistance</p>
+                                    }
                                 </Typography>
                                 <Container fluid>
                                     <Row>

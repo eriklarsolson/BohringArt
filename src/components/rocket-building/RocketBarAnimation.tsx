@@ -4,10 +4,10 @@ import {Container, Row, Col} from 'react-bootstrap'
 import rocketIcon from "./images/rocketIcon.png"
 
 export interface AnimationProps {
-
+    xStart: number
 }
 
-export const RocketBarAnimation: React.FC<AnimationProps>  = () => {
+export const RocketBarAnimation: React.FC<AnimationProps>  = ({xStart}) => {
     return (
         <>
             <div style={{height: 10, width: "100%", backgroundColor: "white"}}>
@@ -19,18 +19,18 @@ export const RocketBarAnimation: React.FC<AnimationProps>  = () => {
                     // scale: [1, 2, 2, 1, 1],
                     // rotate: [0, 0, 270, 270, 0],
                     // x: [100, 200, 300, 400, 500],
-                    x: [0, 1500]
+                    x: [xStart, xStart + 250]
                     // borderRadius: ["20%", "20%", "50%", "50%", "20%"]
                 }}
 
                 style={{backgroundColor: "transparent"}}
 
                 transition={{
-                    duration: 5,
+                    duration: 3,
                     ease: "easeInOut",
                     times: [0, 1],
-                    loop: Infinity,
-                    repeatDelay: 1
+                    // loop: Infinity,
+                    // repeatDelay: 1
                 }}>
                 <img src={rocketIcon} style={{transform: "rotate(90deg)"}} />
             </motion.div>

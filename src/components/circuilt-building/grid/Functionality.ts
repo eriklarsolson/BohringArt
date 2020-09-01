@@ -6,6 +6,7 @@ export type PositionObserver = ((component: {x: number, y: number, type: string,
 let currentComponent = 0;
 let currentLevel = 0;
 let passed = false;
+let allSwitchesOn = true;
 let boardCurrentIssues: string[] = [] //TODO - Should this be an array of strings instead for multiple issues. Or could I append to this string?
 let boardHasIssues = false;
 let currentX = -1;
@@ -27,6 +28,22 @@ export function getCurrentComponent(): any {
     return components[currentComponent];
 }
 
+//This is for the switch when you click it to turn it off and on
+export function setComponentTypeOnClick(type: number) {
+    if (components.length > 0) {
+        components[currentComponent].componentType = type;
+    }
+}
+
+export function getAllSwitchesOn() {
+    return allSwitchesOn;
+}
+
+export function setAllSwitchesOn(status: boolean) {
+    allSwitchesOn = status;
+}
+
+//This is for wire, where you use arrows to toggle. Sets what the next component type will be
 export function setComponentType(type: number) {
     componentType = type;
 }
@@ -43,6 +60,11 @@ export function getCurrentBoardIssues(): string[] {
     return boardCurrentIssues;
 }
 
+export function addBoardIssue(issue: string) {
+    boardCurrentIssues.push(issue);
+    emitChange()
+}
+
 export function setCurrentBoardIssues(issues: string[]) {
     boardCurrentIssues = issues;
 }
@@ -54,8 +76,8 @@ export function setBoardHasIssue(issue: boolean) {
 export function deleteCurrentComponent() {
     components.splice(currentComponent, 1);
     currentComponent = currentComponent - 1
-    emitChange();
 
+    emitChange();
     hasCircuit();
 }
 
@@ -102,7 +124,11 @@ export function getTotalVoltage(): number {
     let total = 0;
 
     for(var i = 0; i < components.length; i++) {
-        total += components[i].voltage
+        if(components[i].type === ComponentTypes.BATTERY) {
+            total += components[i].voltage
+        } else if(components[i].type === ComponentTypes.RESISTOR) {
+            total -= components[i].voltage
+        }
     }
 
     return total;
@@ -117,8 +143,10 @@ export function setCurrentComponent(x: number, y: number) {
     currentY = y;
 
     const samePlaceComponents = components.filter(component => component.x === x && component.y === y)
+    console.log(samePlaceComponents)
     if(samePlaceComponents.length > 0) {
         currentComponent = getIndex(samePlaceComponents[0], components);
+        console.log(currentComponent)
         emitChange();
     }
 }
@@ -182,21 +210,9 @@ export function getIndex(value: any, arr: string | any[]) {
 export function moveComponent(toX: number, toY: number, type: string): void {
     const samePlaceComponents = components.filter(component => component.x === toX && component.y === toY);
 
-    if(samePlaceComponents.length > 0) {
-        const index = getIndex(samePlaceComponents[0], components);
-        components[index] = {
-            x: toX,
-            y: toY,
-            type: type,
-            voltage: components[currentComponent].voltage,
-            rotateDeg: components[currentComponent].rotateDeg,
-            componentType: componentType
-        }
-
-        components.splice(currentComponent, 1);
-    } else {
-        //TODO - Currently just reset voltage and rotate degree if they move the piece. Need to check if the piece that was just moved was new piece of current
-        // Since when put
+    //TODO - Need to test to make sure this is working fully!
+    // Note: It is not right now though, crashes after turning switch off and moving it
+    if(components.length === 0) {
         components.push({
             x: toX,
             y: toY,
@@ -205,9 +221,32 @@ export function moveComponent(toX: number, toY: number, type: string): void {
             rotateDeg: 0,
             componentType: componentType
         });
+    } else {
+        if(samePlaceComponents.length > 0) {
+            const index = getIndex(samePlaceComponents[0], components);
+            components[index] = {
+                x: toX,
+                y: toY,
+                type: type,
+                voltage: components[currentComponent].voltage,
+                rotateDeg: components[currentComponent].rotateDeg,
+                componentType: componentType
+            }
 
-        if(currentX !== -1 && currentY !== -1) {
             components.splice(currentComponent, 1);
+        } else {
+            components.push({
+                x: toX,
+                y: toY,
+                type: type,
+                voltage: components[currentComponent].voltage,
+                rotateDeg: components[currentComponent].rotateDeg,
+                componentType: componentType
+            });
+
+            if(currentX !== -1 && currentY !== -1) {
+                components.splice(currentComponent, 1);
+            }
         }
     }
 
@@ -294,23 +333,23 @@ function checkIfPassed(matrix: Array<Array<number>>, visited: Array<Array<boolea
 
         if(boardOnlyContainsWiresAndBatteries) {
             boardHasIssues = true;
-            boardCurrentIssues.push("You have short-circuited the board! Do not build a circuit that contains only wires and/or batteries")
+            boardCurrentIssues.push("Do not build a circuit that contains only wires and/or batteries!")
             passed = false;
         }
 
-        //Check if any of the switches are turned off
-        const switchComponents = getComponentsByType(ComponentTypes.SWITCH)
-        let hasSwitch = false;
-        for(let i = 0; i < switchComponents.length; i++) {
-            const switchComp = switchComponents[i];
+        // //Check if any of the switches are turned off
+        // const switchComponents = getComponentsByType(ComponentTypes.SWITCH)
+        // let hasSwitch = false;
+        // for(let i = 0; i < switchComponents.length; i++) {
+        //     const switchComp = switchComponents[i];
+        //
+        //     //1 is off for switches
+        //     if(switchComp.componentType === 1) {
+        //        hasSwitch = true;
+        //     }
+        // }
 
-            //1 is off for switches
-            if(switchComp.componentType === 1) {
-               hasSwitch = true;
-            }
-        }
-
-        if(hasSwitch) {
+        if(!allSwitchesOn) {
             boardHasIssues = true;
             boardCurrentIssues.push("You have a switch that is turned off")
             passed = false;
@@ -321,6 +360,9 @@ function checkIfPassed(matrix: Array<Array<number>>, visited: Array<Array<boolea
 
         //TODO - Now that there is a path and you passed all the issues above, then check if you reached successful voltage
         // and other requirements needed for the level (used all needed pieces, etc...)
+
+
+        //Setting needed voltage depending on level
         if(currentLevel === 0) {
             neededVoltage = 10;
         } else if(currentLevel === 1) {
@@ -333,12 +375,8 @@ function checkIfPassed(matrix: Array<Array<number>>, visited: Array<Array<boolea
             //TODO
 
 
-            circuitPasses = true;
-            if(circuitPasses) {
-                //TODO - If you pass circuit successfully, un-hide "Next" button for next level or activity
-                // 1. Should I show a toast or message anywhere saying you completed the level's task?
-                // 2. I'll need to switch the image of the object we are powering with the circuit to the "powered" version (gif?)
-
+            if(!boardHasIssues) {
+                // TODO - I'll need to switch the image of the object we are powering with the circuit to the "powered" version (gif?)
                 passed = true;
                 emitChange();
             }

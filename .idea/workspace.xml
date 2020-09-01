@@ -10,32 +10,21 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7ea8f8f2-9ee1-4223-8be2-70ed23ed7286" name="Default Changelist" comment="rebuild of rocket building page and built out new &quot;more info&quot; slide out for circuit building">
-      <change afterPath="$PROJECT_DIR$/src/components/metal-engraving/MoreInfoAnimation.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/metal-engraving/StencilsAnimation.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/metal-engraving/ViewpointInfoAnimation.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/metal-engraving/images/Viewpoint.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/metal-engraving/images/logo.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/metal-engraving/images/planet.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/metal-engraving/images/plant.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/metal-engraving/images/snowman.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/rocket-building/MoreInfoAnimation.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/telescope-activity/MoreInfoAnimation.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/telescope-activity/ccd.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/telescope-activity/interior.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/telescope-activity/terms.png" afterDir="false" />
+    <list default="true" id="7ea8f8f2-9ee1-4223-8be2-70ed23ed7286" name="Default Changelist" comment="popup refractor to slide out animation (done for all popups now)">
+      <change afterPath="$PROJECT_DIR$/src/components/circuilt-building/grid/components/images/cross-wire.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/circuilt-building/grid/components/images/switch_off.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.firebase/hosting.YnVpbGQ.cache" beforeDir="false" afterPath="$PROJECT_DIR$/.firebase/hosting.YnVpbGQ.cache" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/circuilt-building/MoreInfoAnimation.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/circuilt-building/MoreInfoAnimation.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/metal-engraving/Canvas.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/metal-engraving/Canvas.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/metal-engraving/MetalEngraving.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/metal-engraving/MetalEngraving.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/rocket-building/PartPropertySlider.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/rocket-building/PartPropertySlider.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/rocket-building/Rocket.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/rocket-building/Rocket.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/rocket-building/RocketBuilding.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/rocket-building/RocketBuilding.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/circuilt-building/grid/Functionality.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/circuilt-building/grid/Functionality.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/circuilt-building/grid/GridSquare.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/circuilt-building/grid/GridSquare.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/circuilt-building/grid/SixGridContainer.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/circuilt-building/grid/SixGridContainer.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/circuilt-building/grid/components/Capacitor.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/circuilt-building/grid/components/Capacitor.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/circuilt-building/grid/components/Resistor.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/circuilt-building/grid/components/Resistor.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/circuilt-building/grid/components/Switch.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/circuilt-building/grid/components/Switch.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/circuilt-building/grid/components/Wire.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/circuilt-building/grid/components/Wire.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/rocket-building/FlightSimulator.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/rocket-building/FlightSimulator.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/rocket-building/RocketBarAnimation.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/rocket-building/RocketBarAnimation.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/rocket-building/Sidebar.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/rocket-building/Sidebar.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/telescope-activity/Sidebar.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/telescope-activity/Sidebar.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/telescope-activity/TelescopeActivity.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/telescope-activity/TelescopeActivity.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/telescope-activity/grid/TelescopeGrid.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/telescope-activity/grid/TelescopeGrid.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/telescope-activity/grid/TelescopeGridContainer.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/telescope-activity/grid/TelescopeGridContainer.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -61,7 +50,7 @@
     <property name="TERMINAL_CUSTOM_COMMANDS_GOT_IT" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="ignore.virus.scanning.warn.message" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/components/telescope-activity" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/components/circuilt-building/grid/components/images" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
@@ -71,11 +60,11 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\energ\Documents\ContractWork\DetroitMuseum\bohringart\src\components\circuilt-building\grid\components\images" />
       <recent name="C:\Users\energ\Documents\ContractWork\DetroitMuseum\bohringart\src\components\telescope-activity" />
       <recent name="C:\Users\energ\Documents\ContractWork\DetroitMuseum\bohringart\src\components\rocket-building" />
       <recent name="C:\Users\energ\Documents\ContractWork\DetroitMuseum\bohringart\src\components\metal-engraving\images" />
       <recent name="C:\Users\energ\Documents\ContractWork\DetroitMuseum\bohringart\src\components\metal-engraving" />
-      <recent name="C:\Users\energ\Documents\ContractWork\DetroitMuseum\bohringart\src\components\circuilt-building" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\energ\Documents\ContractWork\DetroitMuseum\bohringart\src\components\metal-engraving\images" />
@@ -133,7 +122,7 @@
       <workItem from="1598529400095" duration="23831000" />
       <workItem from="1598622373427" duration="11573000" />
       <workItem from="1598827578761" duration="19085000" />
-      <workItem from="1598877177391" duration="23365000" />
+      <workItem from="1598877177391" duration="32525000" />
     </task>
     <task id="LOCAL-00001" summary="I dun made this look real good in this commit here &#10;&#10;(Lots of styling updates)">
       <created>1595814945436</created>
@@ -401,7 +390,14 @@
       <option name="project" value="LOCAL" />
       <updated>1598901731481</updated>
     </task>
-    <option name="localTasksCounter" value="39" />
+    <task id="LOCAL-00039" summary="popup refractor to slide out animation (done for all popups now)">
+      <created>1598910759610</created>
+      <option name="number" value="00039" />
+      <option name="presentableId" value="LOCAL-00039" />
+      <option name="project" value="LOCAL" />
+      <updated>1598910759610</updated>
+    </task>
+    <option name="localTasksCounter" value="40" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -421,7 +417,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="More stuff all over the project" />
     <MESSAGE value="working on voltage implementation for circuit building and styles on various other pages" />
     <MESSAGE value="Question modal implementations for various activities" />
     <MESSAGE value="Little work on circuit building page, and initial animation on stellar cycle page" />
@@ -446,7 +441,8 @@
     <MESSAGE value="Many changes to About Us, all popups, flight simulator page/animations, etc..." />
     <MESSAGE value="This site has a lot of styling to it" />
     <MESSAGE value="rebuild of rocket building page and built out new &quot;more info&quot; slide out for circuit building" />
-    <option name="LAST_COMMIT_MESSAGE" value="rebuild of rocket building page and built out new &quot;more info&quot; slide out for circuit building" />
+    <MESSAGE value="popup refractor to slide out animation (done for all popups now)" />
+    <option name="LAST_COMMIT_MESSAGE" value="popup refractor to slide out animation (done for all popups now)" />
   </component>
   <component name="WindowStateProjectService">
     <state x="828" y="178" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1595441686616">
@@ -504,10 +500,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="461" y="165" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1595965465549" />
-    <state x="736" y="253" key="Vcs.Push.Dialog.v2" timestamp="1598901735853">
+    <state x="736" y="253" key="Vcs.Push.Dialog.v2" timestamp="1598910762789">
       <screen x="0" y="0" width="2560" height="1040" />
     </state>
-    <state x="736" y="253" key="Vcs.Push.Dialog.v2/-1920.0.1920.1040/0.0.2560.1040@0.0.2560.1040" timestamp="1598901735853" />
+    <state x="736" y="253" key="Vcs.Push.Dialog.v2/-1920.0.1920.1040/0.0.2560.1040@0.0.2560.1040" timestamp="1598910762789" />
     <state x="552" y="253" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1597885372762" />
     <state x="565" y="130" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser" timestamp="1595958216715">
       <screen x="0" y="0" width="1920" height="1040" />
@@ -518,10 +514,10 @@
     </state>
     <state x="1025" y="434" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/-1920.0.1920.1040/0.0.2560.1040@0.0.2560.1040" timestamp="1598902144179" />
     <state x="769" y="434" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1920.1040@0.0.1920.1040" timestamp="1597192452326" />
-    <state x="1482" y="161" width="780" height="801" key="find.popup" timestamp="1598892424696">
+    <state x="1482" y="161" width="780" height="801" key="find.popup" timestamp="1598924799788">
       <screen x="0" y="0" width="2560" height="1040" />
     </state>
-    <state x="1482" y="161" width="780" height="801" key="find.popup/-1920.0.1920.1040/0.0.2560.1040@0.0.2560.1040" timestamp="1598892424696" />
+    <state x="1482" y="161" width="780" height="801" key="find.popup/-1920.0.1920.1040/0.0.2560.1040@0.0.2560.1040" timestamp="1598924799788" />
     <state x="222" y="236" width="549" height="534" key="find.popup/0.0.1500.960@0.0.1500.960" timestamp="1595724537154" />
     <state x="1111" y="160" width="585" height="624" key="find.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1597886543166" />
     <state x="601" y="246" width="700" height="530" key="recent.locations.popup" timestamp="1595211874198">
@@ -538,10 +534,10 @@
     <state x="821" y="240" key="run.anything.popup/-1920.0.1920.1040/0.0.2560.1040@0.0.2560.1040" timestamp="1598896527776" />
     <state x="482" y="223" key="run.anything.popup/0.0.1500.960@0.0.1500.960" timestamp="1595717092125" />
     <state x="616" y="240" key="run.anything.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1597861525568" />
-    <state x="831" y="225" width="896" height="678" key="search.everywhere.popup" timestamp="1598902530390">
+    <state x="831" y="225" width="896" height="678" key="search.everywhere.popup" timestamp="1598930097827">
       <screen x="0" y="0" width="2560" height="1040" />
     </state>
-    <state x="831" y="225" width="896" height="678" key="search.everywhere.popup/-1920.0.1920.1040/0.0.2560.1040@0.0.2560.1040" timestamp="1598902530390" />
+    <state x="831" y="225" width="896" height="678" key="search.everywhere.popup/-1920.0.1920.1040/0.0.2560.1040@0.0.2560.1040" timestamp="1598930097827" />
     <state x="623" y="225" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1597762536030" />
   </component>
 </project>

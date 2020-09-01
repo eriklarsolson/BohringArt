@@ -52,6 +52,8 @@ export const Resistor: React.FC<ComponentProps> = ({x, y, oneGridStyling, curren
 
     })
 
+    //TODO - Add rotate functionality (look at battery and grid square as examples)
+
     return (
         <>
             <DragPreviewImage connect={preview} src={resistor} />

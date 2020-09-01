@@ -52,6 +52,8 @@ export const Capacitor: React.FC<ComponentProps> = ({x, y, oneGridStyling, curre
 
     })
 
+    //TODO - Add rotate functionality (look at battery and grid square as examples)
+
     return (
         <>
             <DragPreviewImage connect={preview} src={capacitor} />
