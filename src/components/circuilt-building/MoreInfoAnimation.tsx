@@ -8,7 +8,8 @@ import resistor from "./grid/components/images/resistor.png"
 import switchPic from "./grid/components/images/switch.png"
 import capacitor from "./grid/components/images/capacitor.png"
 import inductor from "./grid/components/images/inductor.png"
-import square from "../metal-engraving/images/square.png"
+import series from "./grid/components/images/series.png"
+import parallel from "./grid/components/images/parallel.png"
 
 export interface AnimationProps {
     setParentState: any
@@ -129,14 +130,14 @@ export const MoreInfoAnimation: React.FC<AnimationProps>  = ({setParentState}) =
                                     <Row style={{margin: 5, marginLeft: 80, width: 175}}>
                                         <Col className="col-12" onMouseOver={() => changeInfo("Series")}
                                              style={{height: 100, backgroundColor: "#F8EDDD", clipPath: "polygon(0 0, 93% 0, 100% 100%, 5% 100%)"}}>
-                                            <img src={square} />
+                                            <img src={series} style={{height: "100%", padding: 20}} />
                                         </Col>
                                     </Row>
 
                                     <Row style={{margin: 5, marginLeft: 90, width: 175}}>
                                         <Col className="col-12" onMouseOver={() => changeInfo("Parallel")}
                                              style={{height: 100, backgroundColor: "#F8EDDD", clipPath: "polygon(0 0, 93% 0, 100% 100%, 5% 100%)"}}>
-                                            <img src={square} />
+                                            <img src={parallel} style={{height: "100%", padding: 20}} />
                                         </Col>
                                     </Row>
                                 </Container>

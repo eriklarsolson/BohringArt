@@ -84,7 +84,7 @@ class TelescopeActivity extends React.Component<any, any> {
                                             <Button className={"blue-button"} style={{marginBottom: 15, width: 200,
                                                 }}
                                                 onClick={cycleQuestionPopup}>
-                                                Help
+                                                More Info
                                             </Button>
                                         </Row>
 

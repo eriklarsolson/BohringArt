@@ -10,21 +10,18 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7ea8f8f2-9ee1-4223-8be2-70ed23ed7286" name="Default Changelist" comment="popup refractor to slide out animation (done for all popups now)">
-      <change afterPath="$PROJECT_DIR$/src/components/circuilt-building/grid/components/images/cross-wire.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/circuilt-building/grid/components/images/switch_off.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.firebase/hosting.YnVpbGQ.cache" beforeDir="false" afterPath="$PROJECT_DIR$/.firebase/hosting.YnVpbGQ.cache" afterDir="false" />
+    <list default="true" id="7ea8f8f2-9ee1-4223-8be2-70ed23ed7286" name="Default Changelist" comment="Implemented resistor and began implementation of switch on circuit building activity, and also begin implementing questions/scenarios on flight simulator page">
+      <change afterPath="$PROJECT_DIR$/src/components/circuilt-building/grid/components/images/parallel.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/circuilt-building/grid/components/images/series.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/circuilt-building/grid/Functionality.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/circuilt-building/grid/Functionality.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/circuilt-building/grid/GridSquare.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/circuilt-building/grid/GridSquare.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/circuilt-building/grid/SixGridContainer.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/circuilt-building/grid/SixGridContainer.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/circuilt-building/grid/components/Capacitor.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/circuilt-building/grid/components/Capacitor.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/circuilt-building/grid/components/Resistor.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/circuilt-building/grid/components/Resistor.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/circuilt-building/grid/components/Switch.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/circuilt-building/grid/components/Switch.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/circuilt-building/grid/components/Wire.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/circuilt-building/grid/components/Wire.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/circuilt-building/MoreInfoAnimation.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/circuilt-building/MoreInfoAnimation.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/metal-engraving/MetalEngraving.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/metal-engraving/MetalEngraving.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/metal-engraving/MoreInfoAnimation.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/metal-engraving/MoreInfoAnimation.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/rocket-building/FlightSimulator.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/rocket-building/FlightSimulator.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/rocket-building/MoreInfoAnimation.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/rocket-building/MoreInfoAnimation.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/rocket-building/RocketBarAnimation.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/rocket-building/RocketBarAnimation.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/rocket-building/Sidebar.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/rocket-building/Sidebar.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/telescope-activity/MoreInfoAnimation.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/telescope-activity/MoreInfoAnimation.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/telescope-activity/TelescopeActivity.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/telescope-activity/TelescopeActivity.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -122,7 +119,7 @@
       <workItem from="1598529400095" duration="23831000" />
       <workItem from="1598622373427" duration="11573000" />
       <workItem from="1598827578761" duration="19085000" />
-      <workItem from="1598877177391" duration="32525000" />
+      <workItem from="1598877177391" duration="33440000" />
     </task>
     <task id="LOCAL-00001" summary="I dun made this look real good in this commit here &#10;&#10;(Lots of styling updates)">
       <created>1595814945436</created>
@@ -397,7 +394,14 @@
       <option name="project" value="LOCAL" />
       <updated>1598910759610</updated>
     </task>
-    <option name="localTasksCounter" value="40" />
+    <task id="LOCAL-00040" summary="Implemented resistor and began implementation of switch on circuit building activity, and also begin implementing questions/scenarios on flight simulator page">
+      <created>1598930488253</created>
+      <option name="number" value="00040" />
+      <option name="presentableId" value="LOCAL-00040" />
+      <option name="project" value="LOCAL" />
+      <updated>1598930488253</updated>
+    </task>
+    <option name="localTasksCounter" value="41" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -417,7 +421,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="working on voltage implementation for circuit building and styles on various other pages" />
     <MESSAGE value="Question modal implementations for various activities" />
     <MESSAGE value="Little work on circuit building page, and initial animation on stellar cycle page" />
     <MESSAGE value="wworking on circuit building and stellar cycle pages" />
@@ -442,7 +445,8 @@
     <MESSAGE value="This site has a lot of styling to it" />
     <MESSAGE value="rebuild of rocket building page and built out new &quot;more info&quot; slide out for circuit building" />
     <MESSAGE value="popup refractor to slide out animation (done for all popups now)" />
-    <option name="LAST_COMMIT_MESSAGE" value="popup refractor to slide out animation (done for all popups now)" />
+    <MESSAGE value="Implemented resistor and began implementation of switch on circuit building activity, and also begin implementing questions/scenarios on flight simulator page" />
+    <option name="LAST_COMMIT_MESSAGE" value="Implemented resistor and began implementation of switch on circuit building activity, and also begin implementing questions/scenarios on flight simulator page" />
   </component>
   <component name="WindowStateProjectService">
     <state x="828" y="178" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1595441686616">
@@ -500,10 +504,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="461" y="165" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1595965465549" />
-    <state x="736" y="253" key="Vcs.Push.Dialog.v2" timestamp="1598910762789">
+    <state x="736" y="253" key="Vcs.Push.Dialog.v2" timestamp="1598930491130">
       <screen x="0" y="0" width="2560" height="1040" />
     </state>
-    <state x="736" y="253" key="Vcs.Push.Dialog.v2/-1920.0.1920.1040/0.0.2560.1040@0.0.2560.1040" timestamp="1598910762789" />
+    <state x="736" y="253" key="Vcs.Push.Dialog.v2/-1920.0.1920.1040/0.0.2560.1040@0.0.2560.1040" timestamp="1598930491130" />
     <state x="552" y="253" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1597885372762" />
     <state x="565" y="130" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser" timestamp="1595958216715">
       <screen x="0" y="0" width="1920" height="1040" />
@@ -514,10 +518,10 @@
     </state>
     <state x="1025" y="434" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/-1920.0.1920.1040/0.0.2560.1040@0.0.2560.1040" timestamp="1598902144179" />
     <state x="769" y="434" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1920.1040@0.0.1920.1040" timestamp="1597192452326" />
-    <state x="1482" y="161" width="780" height="801" key="find.popup" timestamp="1598924799788">
+    <state x="1482" y="161" width="780" height="801" key="find.popup" timestamp="1598930958833">
       <screen x="0" y="0" width="2560" height="1040" />
     </state>
-    <state x="1482" y="161" width="780" height="801" key="find.popup/-1920.0.1920.1040/0.0.2560.1040@0.0.2560.1040" timestamp="1598924799788" />
+    <state x="1482" y="161" width="780" height="801" key="find.popup/-1920.0.1920.1040/0.0.2560.1040@0.0.2560.1040" timestamp="1598930958833" />
     <state x="222" y="236" width="549" height="534" key="find.popup/0.0.1500.960@0.0.1500.960" timestamp="1595724537154" />
     <state x="1111" y="160" width="585" height="624" key="find.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1597886543166" />
     <state x="601" y="246" width="700" height="530" key="recent.locations.popup" timestamp="1595211874198">

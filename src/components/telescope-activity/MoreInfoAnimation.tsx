@@ -78,35 +78,35 @@ export const MoreInfoAnimation: React.FC<AnimationProps>  = ({setParentState}) =
                                     <Row style={{margin: 5, marginLeft: 20, width: 175}}>
                                         <Col className="col-12" onMouseOver={() => changeInfo("Mirrors")}
                                              style={{height: 100, backgroundColor: "#F8EDDD", clipPath: "polygon(0 0, 93% 0, 100% 100%, 5% 100%)"}}>
-                                            <img src={viewpoint} />
+                                            <img src={viewpoint} style={{height: "100%", padding: 10}} />
                                         </Col>
                                     </Row>
 
                                     <Row style={{margin: 5, marginLeft: 30, width: 175}}>
                                         <Col className="col-12" onMouseOver={() => changeInfo("Lens")}
                                              style={{height: 100, backgroundColor: "#F8EDDD", clipPath: "polygon(0 0, 93% 0, 100% 100%, 5% 100%)"}}>
-                                            <img src={convex} />
+                                            <img src={convex} style={{height: "100%", padding: 10}} />
                                         </Col>
                                     </Row>
 
                                     <Row style={{margin: 5, marginLeft: 40, width: 175}}>
                                         <Col className="col-12" onMouseOver={() => changeInfo("Telescope")}
                                              style={{height: 100, backgroundColor: "#F8EDDD", clipPath: "polygon(0 0, 93% 0, 100% 100%, 5% 100%)"}}>
-                                            <img src={interior} />
+                                            <img src={interior} style={{height: "100%", padding: 10}} />
                                         </Col>
                                     </Row>
 
                                     <Row style={{margin: 5, marginLeft: 50, width: 175}}>
                                         <Col className="col-12" onMouseOver={() => changeInfo("CCD")}
                                              style={{height: 100, backgroundColor: "#F8EDDD", clipPath: "polygon(0 0, 93% 0, 100% 100%, 5% 100%)"}}>
-                                            <img src={ccd} />
+                                            <img src={ccd} style={{height: "100%", padding: 10}} />
                                         </Col>
                                     </Row>
 
                                     <Row style={{margin: 5, marginLeft: 65, width: 175}}>
                                         <Col className="col-12" onMouseOver={() => changeInfo("Terminology")}
                                              style={{height: 100, backgroundColor: "#F8EDDD", clipPath: "polygon(0 0, 93% 0, 100% 100%, 5% 100%)"}}>
-                                            <img src={terms} />
+                                            <img src={terms} style={{width: "75%", padding: 10, marginTop: 25}} />
                                         </Col>
                                     </Row>
                                 </Container>

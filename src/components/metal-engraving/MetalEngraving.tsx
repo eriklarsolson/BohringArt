@@ -320,7 +320,7 @@ class MetalEngraving extends React.Component<any, any> {
                         <Col className={"col-2 ml-auto"} style={{padding: 0}}>
                             <Row className={"justify-content-end"} style={{margin: 0, marginTop: "10%"}}>
                                     <Button className={"blue-button"} style={{width: 200, marginBottom: 15,
-                                        }} onClick={cycleQuestionPopup}>Question</Button>
+                                        }} onClick={cycleQuestionPopup}>More Info</Button>
                             </Row>
                             <Row className={"justify-content-end"} style={{margin: 0}}>
                                     <Button className={"blue-button"} style={{width: 200, marginBottom: 15,

@@ -42,7 +42,7 @@ class FlightSimulator extends React.Component<any, any> {
 
         const updateIteration = (answer: boolean) => {
             if(answer) {
-                this.setState({iteration: this.state.iteration + 1, xStart: this.state.xStart + 250})
+                this.setState({iteration: this.state.iteration + 1, xStart: this.state.xStart + 300})
                 //TODO - Update scenario's state for answer
 
                 runTimer()
