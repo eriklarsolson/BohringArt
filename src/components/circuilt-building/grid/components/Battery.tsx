@@ -27,12 +27,27 @@ export const Battery: React.FC<ComponentProps> = ({x, y, oneGridStyling, current
             startingRotateDeg = componentAtThisPosition.rotateDeg;
         }
     } else {
-        if(componentAtThisPosition !== undefined) {
+        if(currentComponent !== undefined) {
             startingRotateDeg = currentComponent.rotateDeg;
         }
     }
 
     const [rotateDeg, setRotateDeg] = useState<number>(startingRotateDeg)
+    const clickRotate = () => {
+        console.log(rotateDeg)
+        if (rotateDeg + 90 === 360) {
+            setRotateDeg(0)
+            setCurrentComponentsRotation(0)
+        } else {
+            setRotateDeg(rotateDeg + 90)
+            setCurrentComponentsRotation(rotateDeg + 90)
+        }
+    }
+
+    let clicked = false;
+    if(currentComponent !== undefined && currentComponent.x === x && currentComponent.y === y) {
+        clicked = true;
+    }
 
     let gridStyling: React.CSSProperties  = {height: "100%"};
     if(!oneGridStyling) {
@@ -50,13 +65,18 @@ export const Battery: React.FC<ComponentProps> = ({x, y, oneGridStyling, current
         collect: (monitor) => ({
             isDragging: setMonitor(monitor),
         }),
-
     })
 
     return (
         <>
             <DragPreviewImage connect={preview} src={battery} />
             <Container fluid style={{...gridStyling}}>
+                {clicked &&
+                <div style={{position: "absolute", top: -35, right: -10, marginTop: 1, marginRight: 1}}>
+                    <img src={rotate} onClick={clickRotate} />
+                </div>
+                }
+
                 <Row className={"justify-content-center align-content-center"}>
                     <Col ref={drag}
                          style={{

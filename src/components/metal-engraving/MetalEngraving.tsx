@@ -75,7 +75,7 @@ class MetalEngraving extends React.Component<any, any> {
             if(tool === TOOL_LASER) {
                 this.setState({cursor: laser_WHITE})
             } else if(tool === TOOL_OPTICS) {
-                this.setState({cursor: optics})
+                this.setState({cursor: laser_WHITE})
             } else if(tool === TOOL_PRISM) {
                 this.setState({cursor: prism})
             } else {
@@ -94,6 +94,7 @@ class MetalEngraving extends React.Component<any, any> {
         }
 
         const addStencil = (object: any) => {
+            //TODO - Sometimes this doesn't add to canvas?
             const canvas: HTMLCanvasElement = this.state.canvasRef.current;
             const context = canvas.getContext('2d');
 
@@ -239,48 +240,54 @@ class MetalEngraving extends React.Component<any, any> {
                                         <>
                                             <Container fluid>
                                                 <Row>
-                                                    <Col style={{padding: 0, margin: 5}} className={"col-1"}>
-                                                        <Button style={{backgroundColor: "#FFFFFF", borderRadius: 100,
-                                                            width: "40px", height: "40px", border: "2px solid rgba(0, 0, 0, 0.25)" }}
-                                                             onClick={() => setColor("#FFFFFF")}
-                                                        />
-                                                    </Col>
+                                                    {/*{this.state.tool !== TOOL_LASER &&*/}
+                                                    {/*    <Col style={{padding: 0, margin: 5}} className={"col-1"}>*/}
+                                                    {/*        <Button style={{backgroundColor: "#FFFFFF", borderRadius: 100,*/}
+                                                    {/*            width: "40px", height: "40px", border: "2px solid rgba(0, 0, 0, 0.25)" }}*/}
+                                                    {/*                onClick={() => setColor("#FFFFFF")}*/}
+                                                    {/*        />*/}
+                                                    {/*    </Col>*/}
+                                                    {/*}*/}
 
 
-                                                    <Col style={{padding: 0, margin: 5}} className={"col-1"}>
-                                                        <Button style={{backgroundColor: "#EB3324", borderRadius: 100,
-                                                            width: "40px", height: "40px", border: "2px solid rgba(0, 0, 0, 0.25)" }}
-                                                             onClick={() => setColor("#EB3324")}
-                                                        />
-                                                    </Col>
+                                                    {this.state.tool !== TOOL_PRISM &&
+                                                        <>
+                                                        <Col style={{padding: 0, margin: 5}} className={"col-1"}>
+                                                            <Button style={{backgroundColor: "#EB3324", borderRadius: 100,
+                                                                width: "40px", height: "40px", border: "2px solid rgba(0, 0, 0, 0.25)" }}
+                                                                    onClick={() => setColor("#EB3324")}
+                                                            />
+                                                        </Col>
 
-                                                    <Col style={{padding: 0, margin: 5}} className={"col-1"}>
-                                                        <Button style={{backgroundColor: "#F2F551", borderRadius: 100,
+                                                        <Col style={{padding: 0, margin: 5}} className={"col-1"}>
+                                                            <Button style={{backgroundColor: "#F2F551", borderRadius: 100,
                                                             width: "40px", height: "40px", border: "2px solid rgba(0, 0, 0, 0.25)" }}
-                                                             onClick={() => setColor("#F2F551")}
-                                                        />
-                                                    </Col>
+                                                            onClick={() => setColor("#F2F551")}
+                                                            />
+                                                        </Col>
 
-                                                    <Col style={{padding: 0, margin: 5}} className={"col-1"}>
-                                                        <Button style={{backgroundColor: "#76FA68", borderRadius: 100,
+                                                        <Col style={{padding: 0, margin: 5}} className={"col-1"}>
+                                                            <Button style={{backgroundColor: "#76FA68", borderRadius: 100,
                                                             width: "40px", height: "40px", border: "2px solid rgba(0, 0, 0, 0.25)" }}
-                                                             onClick={() => setColor("#76FA68")}
-                                                        />
-                                                    </Col>
+                                                            onClick={() => setColor("#76FA68")}
+                                                            />
+                                                        </Col>
 
-                                                    <Col style={{padding: 0, margin: 5}} className={"col-1"}>
-                                                        <Button style={{backgroundColor: "#3686F7", borderRadius: 100,
+                                                        <Col style={{padding: 0, margin: 5}} className={"col-1"}>
+                                                            <Button style={{backgroundColor: "#3686F7", borderRadius: 100,
                                                             width: "40px", height: "40px", border: "2px solid rgba(0, 0, 0, 0.25)" }}
-                                                             onClick={() => setColor("#3686F7")}
-                                                        />
-                                                    </Col>
+                                                            onClick={() => setColor("#3686F7")}
+                                                            />
+                                                        </Col>
 
-                                                    <Col style={{padding: 0, margin: 5}} className={"col-1"}>
-                                                        <Button style={{backgroundColor: "#EA3690", borderRadius: 100,
+                                                        <Col style={{padding: 0, margin: 5}} className={"col-1"}>
+                                                            <Button style={{backgroundColor: "#EA3690", borderRadius: 100,
                                                             width: "40px", height: "40px", border: "2px solid rgba(0, 0, 0, 0.25)" }}
-                                                             onClick={() => setColor("#EA3690")}
-                                                        />
-                                                    </Col>
+                                                            onClick={() => setColor("#EA3690")}
+                                                            />
+                                                        </Col>
+                                                        </>
+                                                    }
                                                 </Row>
                                             </Container>
                                         </>
@@ -304,10 +311,10 @@ class MetalEngraving extends React.Component<any, any> {
                                         {/*    </div> : ''}*/}
                                     </Col>
 
-                                    {(this.state.tool !== TOOL_OPTICS && this.state.tool !== TOOL_PRISM) &&
+                                    {this.state.tool !== TOOL_PRISM  &&
                                     <Col className={"col-2"}>
                                         <Typography id="width-slider" gutterBottom style={{fontWeight: "bold", color: "#29405B", fontSize: 18, float: "left"}}>
-                                            {(this.state.tool === TOOL_LASER || this.state.tool === TOOL_ERASER) ? "Width" : "Size"}
+                                            {(this.state.tool === TOOL_OPTICS || this.state.tool === TOOL_LASER || this.state.tool === TOOL_ERASER) ? "Width" : "Size"}
                                         </Typography>
                                         <SizeSlider aria-labelledby="width-slider" value={this.state.size}
                                                     setSize={changeSize} />

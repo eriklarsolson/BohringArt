@@ -14,8 +14,7 @@ class Home extends React.Component<any, any> {
             } else if(learnSelection === 2) {
                 this.props.history.push('/activity/rocket-building')
             } else if(learnSelection === 3) {
-                console.log("how")
-                this.props.history.push('/activity/stellar-cycle')
+                this.props.history.push('/activity/object-page')
             }
         }
         return (

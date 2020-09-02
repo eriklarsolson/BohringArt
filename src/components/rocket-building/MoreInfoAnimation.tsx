@@ -8,9 +8,9 @@ import resistor from "./grid/components/images/resistor.png"
 import lasercomponenticon from "./images/laser_COMPONENT.png";
 import optics from "./images/optics.png";
 import prism from "./images/prism.png";
-import payload_1 from "./images/payloads/payload_1.png"
-import interstage_1 from "./images/interstages/interstage_1.png"
-import sideBooster_1 from "./images/sideBoosters/sideBooster_1.png"
+import cone_1 from "./images/cones/cone_1.png"
+import body_1 from "./images/bodys/body_1.png"
+import booster_4_middle from "./images/boosters/booster_4_middle.png"
 import engine_1 from "./images/engines/engine_1.png"
 
 export interface AnimationProps {
@@ -77,21 +77,21 @@ export const MoreInfoAnimation: React.FC<AnimationProps>  = ({setParentState}) =
                                     <Row style={{margin: 5, marginLeft: 10, width: 175}}>
                                         <Col className="col-12" onMouseOver={() => changeInfo("Cone")}
                                              style={{height: 100, backgroundColor: "#F8EDDD", clipPath: "polygon(0 0, 93% 0, 100% 100%, 5% 100%)"}}>
-                                            <img src={payload_1} style={{height: "100%", padding: 10}}  />
+                                            <img src={cone_1} style={{height: "100%", padding: 10}}  />
                                         </Col>
                                     </Row>
 
                                     <Row style={{margin: 5, marginLeft: 20, width: 175}}>
                                         <Col className="col-12" onMouseOver={() => changeInfo("Body")}
                                              style={{height: 100, backgroundColor: "#F8EDDD", clipPath: "polygon(0 0, 93% 0, 100% 100%, 5% 100%)"}}>
-                                            <img src={interstage_1} style={{height: "100%", transform: "rotate(90deg)"}}  />
+                                            <img src={body_1} style={{height: "100%", transform: "rotate(90deg)"}}  />
                                         </Col>
                                     </Row>
 
                                     <Row style={{margin: 5, marginLeft: 30, width: 175}}>
                                         <Col className="col-12" onMouseOver={() => changeInfo("SideBooster")}
                                              style={{height: 100, backgroundColor: "#F8EDDD", clipPath: "polygon(0 0, 93% 0, 100% 100%, 5% 100%)"}}>
-                                            <img src={sideBooster_1} style={{height: "100%", transform: "rotate(90deg)"}}  />
+                                            <img src={booster_4_middle} style={{height: "100%", transform: "rotate(90deg)"}}  />
                                         </Col>
                                     </Row>
 

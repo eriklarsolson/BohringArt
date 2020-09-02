@@ -53,29 +53,30 @@ const Header = (props: {location: any }) => {
                                     Circuit Construction
                                 </NavDropdown.Item>
                                 <NavDropdown.Item as={Link} to={{pathname: '/activity/metal-engraving'}}
-                                                  active={location.pathname.startsWith('/activity/metal-engraving')}>
+                                                  active={location.pathname.startsWith('/activity/metal-engraving') ||
+                                                  location.pathname.startsWith('/activity/telescope-activity')}>
                                     Lasers And Lenses
                                 </NavDropdown.Item>
                                 <NavDropdown.Item as={Link} to={{pathname: '/activity/rocket-building'}}
-                                                  active={location.pathname.startsWith('/activity/rocket-building')}>
+                                                  active={location.pathname.startsWith('/activity/rocket-building') ||
+                                                  location.pathname.startsWith('/activity/flight-simulator')}>
                                     To The Stars
                                 </NavDropdown.Item>
                                 <NavDropdown.Item as={Link} to={{pathname: '/activity/object-page'}}
-                                                  active={location.pathname.startsWith('/activity/object-page')}>
+                                                  active={location.pathname.startsWith('/activity/object-page') ||
+                                                  location.pathname.startsWith('/activity/info-page') ||
+                                                  location.pathname.startsWith('/activity/stellar-cycle')}>
                                     Stellar Life Cycle
                                 </NavDropdown.Item>
                             </NavDropdown>
                         </Nav>
 
                         <Nav className="ml-auto" activeKey={location.pathname}>
-                            <Nav.Link as={Link} to="/resources" active={location.pathname.startsWith('/resources')}>
-                                Resources
-                            </Nav.Link>
+                            {/*<Nav.Link as={Link} to="/resources" active={location.pathname.startsWith('/resources')}>*/}
+                            {/*    Resources*/}
+                            {/*</Nav.Link>*/}
                             <Nav.Link as={Link} to='/about' active={location.pathname.startsWith('/about')}>
                                 About Us
-                            </Nav.Link>
-                            <Nav.Link as={Link} to='/contact' active={location.pathname.startsWith('/contact')}>
-                                Contact Us
                             </Nav.Link>
                         </Nav>
                     </Navbar.Collapse>

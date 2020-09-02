@@ -10,8 +10,6 @@ import {
     TOOL_STAR,
     TOOL_TRIANGLE
 } from "./MetalEngraving";
-import optics from "./images/optics.png";
-import prism from "./images/prism.png";
 
 interface CanvasProps {
     width: number;
@@ -62,7 +60,7 @@ const Canvas = ({ width, height, canvasRef, tool, color, size, toolActive }: Can
             if (isPainting) {
                 const newMousePosition = getCoordinates(event);
 
-                if(tool === TOOL_ERASER || tool === TOOL_LASER) {
+                if(tool === TOOL_ERASER || tool === TOOL_LASER || tool === TOOL_OPTICS) {
                     if (mousePosition && newMousePosition) {
                         draw(mousePosition, newMousePosition);
                         setMousePosition(newMousePosition);
@@ -88,7 +86,7 @@ const Canvas = ({ width, height, canvasRef, tool, color, size, toolActive }: Can
 
     const exitPaint = useCallback(() => {
         if (mousePosition && newMousePosition) {
-            if(tool !== TOOL_ERASER && tool !== TOOL_LASER) {
+            if(tool !== TOOL_ERASER && tool !== TOOL_LASER && tool !== TOOL_OPTICS) {
                 draw(mousePosition, newMousePosition);
             }
         }
@@ -179,6 +177,10 @@ const Canvas = ({ width, height, canvasRef, tool, color, size, toolActive }: Can
         }
     }
 
+    const getLensColor = (color: string) => {
+        return lighten(color, -0.3)
+    }
+
     function GetPixel(x: any, y: any) {
         const canvas: HTMLCanvasElement = canvasRef.current;
         const context = canvas.getContext('2d');
@@ -207,11 +209,13 @@ const Canvas = ({ width, height, canvasRef, tool, color, size, toolActive }: Can
             const context = canvas.getContext('2d');
             if (context) {
                 context.globalCompositeOperation = "source-over"
-                if (tool === TOOL_ERASER || tool === TOOL_LASER) {
+                if (tool === TOOL_ERASER || tool === TOOL_LASER || tool === TOOL_OPTICS) {
 
-                    if (tool !== TOOL_ERASER) {
+                    if (tool === TOOL_LASER) {
                         context.strokeStyle = getBurnColor(color);
-                    } else {
+                    } else if (tool === TOOL_OPTICS) {
+                        context.strokeStyle = getLensColor(getBurnColor(color));
+                    } else if (tool === TOOL_ERASER) {
                         context.globalCompositeOperation = "destination-out";
                         context.strokeStyle = "rgba(0,0,0,1)";
                     }
@@ -220,32 +224,32 @@ const Canvas = ({ width, height, canvasRef, tool, color, size, toolActive }: Can
 
                     context.beginPath();
 
-                    //TODO - Make it so that its only for darker colors than what your current choice is (also doesn't really fully work right now)
-                    //Don't allow laser to draw over other lasers of dark engraving
-                    const oldPixelColor = GetPixel(originalMousePosition.x+2, originalMousePosition.y+2);
-                    let otherColorFound = false;
-                    if(oldPixelColor !== "#000000" && oldPixelColor !== getBurnColor(color)) {
-                        otherColorFound = true;
-                    }
+                    // //TODO - Make it so that its only for darker colors than what your current choice is (also doesn't really fully work right now)
+                    // //Don't allow laser to draw over other lasers of dark engraving
+                    // const oldPixelColor = GetPixel(originalMousePosition.x+2, originalMousePosition.y+2);
+                    // let otherColorFound = false;
+                    // if(oldPixelColor !== "#000000" && oldPixelColor !== getBurnColor(color)) {
+                    //     otherColorFound = true;
+                    // }
 
                     context.moveTo(originalMousePosition.x, originalMousePosition.y);
 
-                    //Don't allow laser to draw over other lasers of dark engraving
-                    const newPixelColor = GetPixel(newMousePosition.x, newMousePosition.y);
-                    if(!otherColorFound) {
-                        if (newPixelColor !== "#000000" && newPixelColor !== getBurnColor(color)) {
-                            otherColorFound = true;
-                        }
-                    }
-
-                    if(tool !== TOOL_ERASER && otherColorFound) {
-                        context.strokeStyle = "transparent";
-                    }
+                    // //Don't allow laser to draw over other lasers of dark engraving
+                    // const newPixelColor = GetPixel(newMousePosition.x, newMousePosition.y);
+                    // if(!otherColorFound) {
+                    //     if (newPixelColor !== "#000000" && newPixelColor !== getBurnColor(color)) {
+                    //         otherColorFound = true;
+                    //     }
+                    // }
+                    //
+                    // if(tool !== TOOL_ERASER && otherColorFound) {
+                    //     context.strokeStyle = "transparent";
+                    // }
 
                     context.lineTo(newMousePosition.x, newMousePosition.y);
                     context.closePath();
                     context.stroke();
-                } else if (tool === TOOL_OPTICS) {
+                } else if (tool === TOOL_PRISM) {
 
                     //TODO - Needs some work
 
@@ -269,19 +273,6 @@ const Canvas = ({ width, height, canvasRef, tool, color, size, toolActive }: Can
                     // image.src = optics
                     //
                     // context?.drawImage(image, startX, startY, widthX, widthY);
-                } else if (tool === TOOL_PRISM) {
-
-                    //TODO - Actually need to create prism effect, not just put image on canvas
-
-                    const startX = newMousePosition.x < originalMousePosition.x ? newMousePosition.x : originalMousePosition.x;
-                    const startY = newMousePosition.y < originalMousePosition.y ? newMousePosition.y : originalMousePosition.y;
-                    const widthX = Math.abs(originalMousePosition.x - newMousePosition.x);
-                    const widthY = Math.abs(originalMousePosition.y - newMousePosition.y);
-
-                    const image = new Image();
-                    image.src = prism
-
-                    context?.drawImage(image, startX, startY, widthX, widthY);
                 } else if (tool === TOOL_ELLIPSE) {
                     const startX = originalMousePosition.x;
                     const startY = originalMousePosition.y;

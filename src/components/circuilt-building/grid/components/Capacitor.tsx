@@ -4,7 +4,7 @@ import { ComponentTypes } from '../../../shared/models/ComponentTypes'
 import capacitor from './images/capacitor.png'
 import rotate from './images/rotate.png'
 import { Container, Row, Col } from 'react-bootstrap'
-import {getComponentAtPos} from "../Functionality";
+import {getComponentAtPos, setCurrentComponentsRotation} from "../Functionality";
 
 let style: React.CSSProperties = {
     cursor: 'move',
@@ -26,12 +26,27 @@ export const Capacitor: React.FC<ComponentProps> = ({x, y, oneGridStyling, curre
             startingRotateDeg = componentAtThisPosition.rotateDeg;
         }
     } else {
-        if(componentAtThisPosition !== undefined) {
+        if(currentComponent !== undefined) {
             startingRotateDeg = currentComponent.rotateDeg;
         }
     }
 
     const [rotateDeg, setRotateDeg] = useState<number>(startingRotateDeg)
+    const clickRotate = () => {
+        console.log(rotateDeg)
+        if (rotateDeg + 90 === 360) {
+            setRotateDeg(0)
+            setCurrentComponentsRotation(0)
+        } else {
+            setRotateDeg(rotateDeg + 90)
+            setCurrentComponentsRotation(rotateDeg + 90)
+        }
+    }
+
+    let clicked = false;
+    if(currentComponent !== undefined && currentComponent.x === x && currentComponent.y === y) {
+        clicked = true;
+    }
 
     let gridStyling: React.CSSProperties  = {height: "100%"};
     if(!oneGridStyling) {
@@ -49,22 +64,27 @@ export const Capacitor: React.FC<ComponentProps> = ({x, y, oneGridStyling, curre
         collect: (monitor) => ({
             isDragging: setMonitor(monitor),
         }),
-
     })
-
-    //TODO - Add rotate functionality (look at battery and grid square as examples)
 
     return (
         <>
             <DragPreviewImage connect={preview} src={capacitor} />
             <Container fluid style={{...gridStyling}}>
+                {clicked &&
+                <div style={{position: "absolute", top: -35, right: -10, marginTop: 1, marginRight: 1}}>
+                    <img src={rotate} onClick={clickRotate} />
+                </div>
+                }
+
                 <Row className={"justify-content-center align-content-center"}>
                     <div className={"col"} ref={drag}
                          style={{
                              ...style,
                              opacity: isDragging ? 0.5 : 1,
                          }}>
-                        <img src={capacitor} width={"100%"} />
+                        <div style={{transform: "rotate(" + rotateDeg + "deg)"}}>
+                            <img src={capacitor} width={"100%"} />
+                        </div>
                     </div>
                 </Row>
             </Container>

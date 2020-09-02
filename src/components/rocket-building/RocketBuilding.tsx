@@ -4,15 +4,27 @@ import Sidebar from "./Sidebar";
 import Button from "react-bootstrap/Button";
 import 'font-awesome/css/font-awesome.min.css';
 import ObjectivePopup from "../shared/modals/ObjectivePopup";
-import payload_1 from "./images/payloads/payload_1.png"
-import payload_2 from "./images/payloads/payload_2.png"
-import payload_3 from "./images/payloads/payload_3.png"
-import interstage_1 from "./images/interstages/interstage_1.png"
-import interstage_2 from "./images/interstages/interstage_2.png"
-import sideBooster_1 from "./images/sideBoosters/sideBooster_1.png"
-import sideBooster_2 from "./images/sideBoosters/sideBooster_2.png"
+import cone_1 from "./images/cones/cone_1.png"
+import cone_2 from "./images/cones/cone_2.png"
+import cone_3 from "./images/cones/cone_3.png"
+import cone_4 from "./images/cones/cone_4.png"
+import body_1 from "./images/bodys/body_1.png"
+import body_2 from "./images/bodys/body_2.png"
+import body_3 from "./images/bodys/body_3.png"
+import body_4 from "./images/bodys/body_4.png"
 import engine_1 from "./images/engines/engine_1.png"
 import engine_2 from "./images/engines/engine_2.png"
+import engine_3 from "./images/engines/engine_3.png"
+import engine_4 from "./images/engines/engine_4.png"
+import booster_1_left from "./images/boosters/booster_1_left.png"
+import booster_1_right from "./images/boosters/booster_1_right.png"
+import booster_2_left from "./images/boosters/booster_2_left.png"
+import booster_2_right from "./images/boosters/booster_2_right.png"
+import booster_3_left from "./images/boosters/booster_3_left.png"
+import booster_3_right from "./images/boosters/booster_3_right.png"
+import booster_4_left from "./images/boosters/booster_4_left.png"
+import booster_4_middle from "./images/boosters/booster_4_middle.png"
+import booster_4_right from "./images/boosters/booster_4_right.png"
 import background from "./images/background.png";
 import {MoreInfoAnimation} from "./MoreInfoAnimation";
 
@@ -23,64 +35,107 @@ class RocketBuilding extends React.Component<any, any> {
             questionPopupOpened: false,
             parentIndex: 0,
             popupOpened: true,
-            payloads: [
+            cones: [
                 {
-                    image: payload_1,
-                    title: "Payload 1",
+                    image: cone_1,
+                    title: "Cone 1",
                     mass: 50,
                     airResistance: 5,
                     fuelCapacity: 80
                 },
                 {
-                    image: payload_2,
-                    title: "Payload 2",
+                    image: cone_2,
+                    title: "Cone 2",
                     mass: 30,
                     airResistance: 12,
                     fuelCapacity: 10
                 },
                 {
-                    image: payload_3,
-                    title: "Payload 3",
+                    image: cone_3,
+                    title: "Cone 3",
                     mass: 99,
                     airResistance: 23,
                     fuelCapacity: 9
+                },
+                {
+                    image: cone_4,
+                    title: "Cone 4",
+                    mass: 23,
+                    airResistance: 23,
+                    fuelCapacity: 23
                 }
             ],
-            payloadIndex: 0,
-            interstages: [
+            coneIndex: 0,
+            bodys: [
                 {
-                    image: interstage_1,
-                    title: "Interstage 1",
+                    image: body_1,
+                    title: "Body 1",
                     mass: 53,
                     airResistance: 78,
                     fuelCapacity: 54
                 },
                 {
-                    image: interstage_2,
-                    title: "Interstage 2",
+                    image: body_2,
+                    title: "Body 2",
                     mass: 27,
                     airResistance: 2,
                     fuelCapacity: 10
+                },
+                {
+                    image: body_3,
+                    title: "Body 3",
+                    mass: 53,
+                    airResistance: 78,
+                    fuelCapacity: 54
+                },
+                {
+                    image: body_4,
+                    title: "Body 4",
+                    mass: 22,
+                    airResistance: 99,
+                    fuelCapacity: 1
                 }
             ],
-            interstageIndex: 0,
-            sideBoosters: [
+            bodyIndex: 0,
+            boosters: [
                 {
-                    image: sideBooster_1,
-                    title: "Side Booster 1",
+                    leftImage: booster_1_left,
+                    rightImage: booster_1_right,
+                    middleImage: null,
+                    title: "Booster 1",
                     mass: 59,
                     airResistance: 9,
                     fuelCapacity: 23
                 },
                 {
-                    image: sideBooster_2,
-                    title: "Side Booster 2",
-                    mass: 50,
-                    airResistance: 11,
-                    fuelCapacity: 34
-                }
+                    leftImage: booster_2_left,
+                    rightImage: booster_2_right,
+                    middleImage: null,
+                    title: "Booster 3",
+                    mass: 59,
+                    airResistance: 9,
+                    fuelCapacity: 23
+                },
+                {
+                    leftImage: booster_3_left,
+                    rightImage: booster_3_right,
+                    middleImage: null,
+                    title: "Booster 3",
+                    mass: 59,
+                    airResistance: 9,
+                    fuelCapacity: 23
+                },
+                {
+                    leftImage: booster_4_left,
+                    rightImage: booster_4_right,
+                    middleImage: booster_4_middle,
+                    title: "Booster 4",
+                    mass: 59,
+                    airResistance: 9,
+                    fuelCapacity: 23
+                },
             ],
-            sideBoosterIndex: 0,
+            boosterIndex: 0,
             engines: [
                 {
                     image: engine_1,
@@ -92,6 +147,20 @@ class RocketBuilding extends React.Component<any, any> {
                 {
                     image: engine_2,
                     title: "Engine 2",
+                    mass: 33,
+                    airResistance: 23,
+                    fuelCapacity: 10
+                },
+                {
+                    image: engine_1,
+                    title: "Engine 3",
+                    mass: 85,
+                    airResistance: 5,
+                    fuelCapacity: 53
+                },
+                {
+                    image: engine_2,
+                    title: "Engine 4",
                     mass: 33,
                     airResistance: 23,
                     fuelCapacity: 10
@@ -114,16 +183,16 @@ class RocketBuilding extends React.Component<any, any> {
             this.setState({parentIndex: 0})
 
             if(left) {
-                if (this.state.payloadIndex + 1 === this.state.payloads.length) {
-                    this.setState({payloadIndex: 0})
+                if (this.state.coneIndex + 1 === this.state.cones.length) {
+                    this.setState({coneIndex: 0})
                 } else {
-                    this.setState({payloadIndex: this.state.payloadIndex + 1})
+                    this.setState({coneIndex: this.state.coneIndex + 1})
                 }
             } else {
-                if (this.state.payloadIndex - 1 === -1) {
-                    this.setState({payloadIndex: this.state.payloads.length - 1})
+                if (this.state.coneIndex - 1 === -1) {
+                    this.setState({coneIndex: this.state.cones.length - 1})
                 } else {
-                    this.setState({payloadIndex: this.state.payloadIndex - 1})
+                    this.setState({coneIndex: this.state.coneIndex - 1})
                 }
             }
         }
@@ -132,34 +201,34 @@ class RocketBuilding extends React.Component<any, any> {
             this.setState({parentIndex: 1})
 
             if(left) {
-                if (this.state.interstageIndex + 1 === this.state.interstages.length) {
-                    this.setState({interstageIndex: 0})
+                if (this.state.bodyIndex + 1 === this.state.bodys.length) {
+                    this.setState({bodyIndex: 0})
                 } else {
-                    this.setState({interstageIndex: this.state.interstageIndex + 1})
+                    this.setState({bodyIndex: this.state.bodyIndex + 1})
                 }
             } else {
-                if (this.state.interstageIndex - 1 === -1) {
-                    this.setState({interstageIndex: this.state.interstages.length - 1})
+                if (this.state.bodyIndex - 1 === -1) {
+                    this.setState({bodyIndex: this.state.bodys.length - 1})
                 } else {
-                    this.setState({interstageIndex: this.state.interstageIndex - 1})
+                    this.setState({bodyIndex: this.state.bodyIndex - 1})
                 }
             }
         }
 
-        const sideBoostersArrow = (left: boolean) => {
+        const boostersArrow = (left: boolean) => {
             this.setState({parentIndex: 2})
 
             if(left) {
-                if (this.state.sideBoosterIndex + 1 === this.state.sideBoosters.length) {
-                    this.setState({sideBoosterIndex: 0})
+                if (this.state.boosterIndex + 1 === this.state.boosters.length) {
+                    this.setState({boosterIndex: 0})
                 } else {
-                    this.setState({sideBoosterIndex: this.state.sideBoosterIndex + 1})
+                    this.setState({boosterIndex: this.state.boosterIndex + 1})
                 }
             } else {
-                if (this.state.sideBoosterIndex - 1 === -1) {
-                    this.setState({sideBoosterIndex: this.state.sideBoosters.length - 1})
+                if (this.state.boosterIndex - 1 === -1) {
+                    this.setState({boosterIndex: this.state.boosters.length - 1})
                 } else {
-                    this.setState({sideBoosterIndex: this.state.sideBoosterIndex - 1})
+                    this.setState({boosterIndex: this.state.boosterIndex - 1})
                 }
             }
         }
@@ -185,11 +254,11 @@ class RocketBuilding extends React.Component<any, any> {
         //Depending on what type of piece you clicked last, display details in sidebar about that list
         const getCorrectList = () => {
             if (this.state.parentIndex === 0) {
-                return this.state.payloads;
+                return this.state.cones;
             } else if (this.state.parentIndex === 1) {
-                return this.state.interstages;
+                return this.state.bodys;
             } else if (this.state.parentIndex === 2) {
-                return this.state.sideBoosters;
+                return this.state.boosters;
             } else if (this.state.parentIndex === 3) {
                 return this.state.engines;
             }
@@ -197,21 +266,45 @@ class RocketBuilding extends React.Component<any, any> {
 
         const getCorrectIndex = () => {
             if (this.state.parentIndex === 0) {
-                return this.state.payloadIndex;
+                return this.state.coneIndex;
             } else if (this.state.parentIndex === 1) {
-                return this.state.interstageIndex;
+                return this.state.bodyIndex;
             } else if (this.state.parentIndex === 2) {
-                return this.state.sideBoosterIndex
+                return this.state.boosterIndex
             } else if (this.state.parentIndex === 3) {
                 return this.state.engineIndex;
             }
         }
 
-        const getSidebarObject = () => {
-            const correctList = getCorrectList();
-            const correctIndex = getCorrectIndex();
+        const getTotalFuelCapacity = () => {
+            let total = 0;
+            total += this.state.cones[this.state.coneIndex].fuelCapacity;
+            total += this.state.bodys[this.state.bodyIndex].fuelCapacity;
+            total += (this.state.boosters[this.state.boosterIndex].fuelCapacity * 2); //Note: 2 side boosters
+            total += this.state.engines[this.state.engineIndex].fuelCapacity;
 
-            return correctList[correctIndex];
+            return total;
+        }
+
+        const getTotalAirResistance = () => {
+            let total = 0;
+            total += this.state.cones[this.state.coneIndex].airResistance;
+            total += this.state.bodys[this.state.bodyIndex].airResistance;
+            total += (this.state.boosters[this.state.boosterIndex].airResistance * 2); //Note: 2 side boosters
+            total += this.state.engines[this.state.engineIndex].airResistance;
+
+            return total;
+        }
+
+
+        const getTotalMass = () => {
+            let total = 0;
+            total += this.state.cones[this.state.coneIndex].mass;
+            total += this.state.bodys[this.state.bodyIndex].mass;
+            total += (this.state.boosters[this.state.boosterIndex].mass * 2); //Note: 2 side boosters
+            total += this.state.engines[this.state.engineIndex].mass;
+
+            return total;
         }
 
         return (
@@ -233,12 +326,12 @@ class RocketBuilding extends React.Component<any, any> {
                 <Container fluid className={"d-flex h-100 flex-column"} style={{margin: "0", padding: "0", backgroundImage:`url(${background})`}}>
                     <Row style={{margin: 0}}>
                         <Col className={"col-2 vh-100"} style={{color: "white", padding: 0}}>
-                            <Sidebar cone={this.state.payloads[this.state.payloadIndex]}
+                            <Sidebar cone={this.state.cones[this.state.coneIndex]}
                                      changeCone={payloadArrow}
-                                     body={this.state.interstages[this.state.interstageIndex]}
+                                     body={this.state.bodys[this.state.bodyIndex]}
                                      changeBody={interstageArrow}
-                                     booster={this.state.sideBoosters[this.state.sideBoosterIndex]}
-                                     changeBooster={sideBoostersArrow}
+                                     booster={this.state.boosters[this.state.boosterIndex]}
+                                     changeBooster={boostersArrow}
                                      engine={this.state.engines[this.state.engineIndex]}
                                      changeEngine={engineArrow}/>
                         </Col>
@@ -246,7 +339,7 @@ class RocketBuilding extends React.Component<any, any> {
                         <Col className={"col-10"} style={{margin: "0", padding: "0"}}>
                             <Container fluid style={{margin: "0", padding: "0"}}>
                                 <Row style={{margin: 0}}>
-                                    <Col className="col-2" style={{margin: "3%"}}>
+                                    <Col className="col-2" style={{margin: "2%"}}>
                                         <Button className={"green-button"} style={{float: "left", width: 100,
                                             clipPath: "polygon(0 0, 95% 0, 100% 100%, 5% 100%)"}}
                                                 onClick={() => this.props.history.push('/activity/telescope-activity')}>
@@ -254,11 +347,11 @@ class RocketBuilding extends React.Component<any, any> {
                                         </Button>
                                     </Col>
 
-                                    <Col style={{margin: "3%"}}>
+                                    <Col style={{margin: "2%"}}>
                                         <p style={{color: "#29405B", fontSize: "28px", fontWeight: "bold"}}>Rocket Assembly</p>
                                     </Col>
 
-                                    <Col className={"col-2 ml-auto"} style={{padding: 0, marginTop: "3%"}}>
+                                    <Col className={"col-2 ml-auto"} style={{padding: 0, marginTop: "2%"}}>
                                         <Row style={{margin: 0}} className={"justify-content-end"}>
                                             <Button className={"blue-button"} style={{marginBottom: 15, width: 200,
                                                 }} onClick={cycleQuestionPopup}>More Info</Button>
@@ -293,7 +386,7 @@ class RocketBuilding extends React.Component<any, any> {
                                             {/*        <img className={"arrow"} src={leftarrow} style={{filter: "contrast(0%)"}}*/}
                                             {/*             height="100px" alt={"left arrow"}*/}
                                             {/*             onMouseOver={() => this.setState({parentIndex: 2})}*/}
-                                            {/*             onClick={() => sideBoostersArrow(true)} />*/}
+                                            {/*             onClick={() => boostersArrow(true)} />*/}
                                             {/*    </Row>*/}
 
                                             {/*    <Row style={{marginTop: 30, marginBottom: 30}}>*/}
@@ -304,30 +397,70 @@ class RocketBuilding extends React.Component<any, any> {
                                             {/*    </Row>*/}
                                             {/*</Col>*/}
 
-                                            <Col className={"col-4"}>
-                                                <Row className={"justify-content-center"}>
-                                                    <Col className={"col-2 align-self-end"}  style={{margin: 5, padding: 0}}>
-                                                        <img className={"part-image"} src={this.state.sideBoosters[this.state.sideBoosterIndex].image} />
+                                            <Col className={"ml-auto col-4"}>
+                                                <Row className={"justify-content-center"} style={{maxHeight: 1100}}>
+                                                    {this.state.boosterIndex === 3 &&
+                                                        <div style={{position: "absolute", width: "17%", left: "41.5%", top: "65%", zIndex: 10}}>
+                                                            <img src={booster_4_middle} style={{width: "100%"}} />
+                                                        </div>
+                                                    }
+
+                                                    <Col className={"col-2 align-self-end"}  style={{padding: 0}}>
+                                                        <img className={"part-image"} src={this.state.boosters[this.state.boosterIndex].leftImage} style={{width: "80%"}} />
                                                     </Col>
 
-                                                    <Col className={"col-3"} style={{margin: 5, padding: 0}}>
+                                                    <Col className={"col-3"} style={{padding: 0}}>
                                                         <Row className={"justify-content-center"} style={{margin: 5}}>
-                                                            <img className={"part-image"} src={this.state.payloads[this.state.payloadIndex].image} />
+                                                            <img className={"part-image"} src={this.state.cones[this.state.coneIndex].image} style={{width: "80%"}} />
                                                         </Row>
 
                                                         <Row className={"justify-content-center"} style={{margin: 5}}>
-                                                            <img className={"part-image"} src={this.state.interstages[this.state.interstageIndex].image} />
+                                                            <img className={"part-image"} src={this.state.bodys[this.state.bodyIndex].image} style={{width: "80%"}} />
                                                         </Row>
 
                                                         <Row className={"justify-content-center"} style={{margin: 5}}>
-                                                            <img className={"part-image"} src={this.state.engines[this.state.engineIndex].image} />
+                                                            <img className={"part-image"} src={this.state.engines[this.state.engineIndex].image} style={{width: "80%"}} />
                                                         </Row>
                                                     </Col>
 
-                                                    <Col className={"col-2 align-self-end"}  style={{margin: 5, padding: 0}}>
-                                                        <img className={"part-image"} src={this.state.sideBoosters[this.state.sideBoosterIndex].image} />
+                                                    <Col className={"col-2 align-self-end"}  style={{padding: 0}}>
+                                                        <img className={"part-image"} src={this.state.boosters[this.state.boosterIndex].rightImage} style={{width: "80%"}} />
                                                     </Col>
                                                 </Row>
+                                            </Col>
+
+                                            <Col className={"ml-auto col-3"} style={{color: "white", textAlign: "left", marginTop: "20%"}}>
+                                                <Container fluid>
+                                                    <Row>
+                                                        <Col style={{backgroundColor: "#162F4C"}}>
+                                                            <p style={{fontWeight: "bold", fontSize: 22, marginTop: 10}}>Totals</p>
+                                                        </Col>
+                                                    </Row>
+
+                                                    <Row>
+                                                        <Col style={{backgroundColor: "#29405B", padding: 10}}>
+                                                            <Container fluid>
+                                                                <Row>
+                                                                    <Col style={{padding: 5}}>
+                                                                        <p style={{fontWeight: "bold", fontSize: 18}}>Fuel Capacity: {getTotalFuelCapacity()}</p>
+                                                                    </Col>
+                                                                </Row>
+
+                                                                <Row>
+                                                                    <Col style={{padding: 5}}>
+                                                                        <p style={{fontWeight: "bold", fontSize: 18}}>Air Resistance: {getTotalAirResistance()}</p>
+                                                                    </Col>
+                                                                </Row>
+
+                                                                <Row>
+                                                                    <Col style={{padding: 5}}>
+                                                                        <p style={{fontWeight: "bold", fontSize: 18}}>Total Mass: {getTotalMass()}</p>
+                                                                    </Col>
+                                                                </Row>
+                                                            </Container>
+                                                        </Col>
+                                                    </Row>
+                                                </Container>
                                             </Col>
 
                                             {/*<Col className={"col-1"}>*/}
@@ -349,7 +482,7 @@ class RocketBuilding extends React.Component<any, any> {
                                             {/*        <img className={"arrow"} src={rightarrow} style={{filter: "contrast(0%)"}}*/}
                                             {/*             height="100px" alt={"right arrow"}*/}
                                             {/*             onMouseOver={() => this.setState({parentIndex: 2})}*/}
-                                            {/*             onClick={() => sideBoostersArrow(false)} />*/}
+                                            {/*             onClick={() => boostersArrow(false)} />*/}
                                             {/*    </Row>*/}
 
                                             {/*    <Row style={{marginTop: 30, marginBottom: 30}}>*/}
@@ -369,10 +502,12 @@ class RocketBuilding extends React.Component<any, any> {
                                             clipPath: "polygon(0 0, 95% 0, 100% 100%, 5% 100%)"}}
                                                 onClick={() => this.props.history.push({
                                                     pathname: '/activity/flight-simulator',
-                                                    state: {payload: this.state.payloads[this.state.payloadIndex],
-                                                            interstage: this.state.interstages[this.state.interstageIndex],
-                                                            sideBooster: this.state.sideBoosters[this.state.sideBoosterIndex],
-                                                            engine: this.state.engines[this.state.engineIndex]}})}>Launch</Button>
+                                                    state: {cone: this.state.cones[this.state.coneIndex],
+                                                        body: this.state.bodys[this.state.bodyIndex],
+                                                        booster: this.state.boosters[this.state.boosterIndex],
+                                                        engine: this.state.engines[this.state.engineIndex]}})}>
+                                            Launch
+                                        </Button>
                                     </Col>
                                 </Row>
                             </Container>

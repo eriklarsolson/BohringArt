@@ -10,14 +10,40 @@ import person3 from "./images/person3.png"
 import person4 from "./images/person4.png"
 import person5 from "./images/person5.png"
 import lars from "./images/lars.png"
+import niels from "./images/niels.png"
+import Button from "react-bootstrap/Button";
 
 class AboutUs extends React.Component<any, any> {
+    constructor(props: any) {
+        super(props);
+        this.state = {
+            name: "",
+            email: "",
+            phoneNum: "",
+            message: "",
+        }
+    }
+
+
+    handleSubmit(event: any) {
+        console.log(this.state.firstName)
+        console.log(this.state.lastName)
+        console.log(this.state.email)
+        console.log(this.state.phoneNum)
+        console.log(this.state.message)
+
+        //TODO - Need to connect this to email so it actually sends
+
+        event.preventDefault();
+    }
+
+
     render() {
+
         return (
             <>
-                    <Container fluid style={{margin: 0}}>
-                        <Row className="justify-content-center" style={{paddingBottom: "10%", backgroundColor: "#29405B",
-                            clipPath: "polygon(0 0, 100% 0, 100% 85%, 0 100%)"}}>
+                    <Container fluid style={{margin: 0, backgroundColor: "#29405B"}}>
+                        <Row className="justify-content-center">
                             <Container fluid>
                                 <Row  className={"justify-content-center"}>
                                     <Col className={"col-10"}>
@@ -80,8 +106,8 @@ class AboutUs extends React.Component<any, any> {
                             </Container>
                         </Row>
 
-                        <Row style={{marginTop: 50}} className={"justify-content-center"}>
-                            <Col className={"col-6"} style={{padding: 100}}>
+                        <Row className={"justify-content-center"} style={{clipPath: "polygon(0 100px, 100% 0, 100% 95%, 0 100%)"}}>
+                            <Col className={"col-6"} style={{padding: 100, backgroundColor: "#F8EDDD"}}>
                                 <Container fluid>
                                     <Row  style={{textAlign: "left", padding: "5%"}}>
                                         <h1 style={{fontWeight: "bolder", color: "#29405B"}}>PROJECT PURPOSE</h1>
@@ -102,7 +128,7 @@ class AboutUs extends React.Component<any, any> {
                                 </Container>
                             </Col>
 
-                            <Col className={"ml-auto col-5"} style={{backgroundColor: "rgba(82, 82, 82, 0.8)", clipPath: "polygon(0 10%, 100% 0, 100% 100%, 10% 100%)"}}>
+                            <Col className={"col-6"} style={{backgroundColor: "rgba(82, 82, 82, 0.8)", paddingBottom: 100}}>
                                 <Container fluid style={{padding: 100}}>
                                     <Row  style={{textAlign: "left", padding: "5%"}}>
                                         <h1 style={{fontWeight: "bolder", color: "white"}}>WHY BOHRING?</h1>
@@ -110,11 +136,101 @@ class AboutUs extends React.Component<any, any> {
 
                                     <Row style={{textAlign: "left", display: "block", padding: "5%"}}>
                                         <p style={{color: "white"}}>
-                                            Niels bohr was a ... text goes here. text goes here. text goes here. text goes here. text goes here. text goes here. text goes here. text goes here. text goes here. text goes here. text goes here. text goes here. text goes here. text goes here. text goes here. text goes here. text goes here. text goes here. text goes here. text goes here. text goes here. text goes here. text goes here. text goes here. text goes here. text goes here. text goes here. text goes here. text goes here. text goes here. text goes here. text goes here
+                                            Niels Bohr was one of the foremost scientists of modern physics, best known
+                                            for his substantial contributions to quantum theory and his Nobel Prize-winning
+                                            research on the structure of atoms. Born in Copenhagen in 1885 to well-educated
+                                            parents, Bohr became interested in physics at a young age. He studied the subject
+                                            throughout his undergraduate and graduate years and earned a doctorate in physics
+                                            in 1911 from Copenhagen University. While still a student, Bohr won a contest
+                                            put on by the Academy of Sciences in Copenhagen for his investigation into
+                                            the measurements of liquid surface tension using oscillating fluid jets.
+                                            Working in the laboratory of his father (a renowned physiologist),
+                                            Bohr conducted several experiments and even made his own glass test tubes.
                                         </p>
+                                    </Row>
+
+                                    <Row>
+                                        <img src={niels} alt={"Niels Bohr picture"} />
                                     </Row>
                                 </Container>
                             </Col>
+                        </Row>
+
+
+                        <Row style={{backgroundColor: "#29405B", color: "white", paddingTop: 100, textAlign: "left"}} className="justify-content-center">
+                            <Container fluid>
+                                <Row className="justify-content-center">
+                                    <Col className={"col-4"}>
+                                        <p style={{fontSize: 48, fontWeight: "bold"}}>CONTACT US</p>
+                                    </Col>
+                                </Row>
+
+                                <Row className="justify-content-center">
+                                    <Col className={"col-4"} style={{ clipPath: "polygon(0 0, 95% 0, 100% 100%, 5% 100%)", backgroundColor: "#F8EDDD", color: "black", padding: 25}}>
+                                        <Container fluid style={{margin: 0}}>
+                                            <form onSubmit={this.handleSubmit}>
+                                                <Row className="justify-content-center">
+                                                    <Col className={"col-12"}>
+                                                        <Row>
+                                                            <Col>
+                                                                <div className={"form-group"}>
+                                                                    <label style={{fontWeight: "bold"}}>Name:</label>
+                                                                    <input className="form-control" type="text" required={true}
+                                                                           value={this.state.name} style={{width: "100%"}}
+                                                                           onChange={(event => this.setState({name: event.target.value}))} />
+                                                                </div>
+                                                            </Col>
+                                                        </Row>
+                                                    </Col>
+                                                </Row>
+
+                                                <Row className="justify-content-center">
+                                                    <Col className={"col-12"}>
+                                                        <Row>
+                                                            <Col>
+                                                                <div className={"form-group"}>
+                                                                    <label style={{fontWeight: "bold"}}>Email:</label>
+                                                                    <input className="form-control" type="text" required={true}
+                                                                           value={this.state.email} style={{width: "100%"}}
+                                                                           onChange={(event => this.setState({email: event.target.value}))} />
+                                                                </div>
+                                                            </Col>
+
+                                                            {/*<Col>*/}
+                                                            {/*    <div className={"form-group"}>*/}
+                                                            {/*        <label>Phone #:</label>*/}
+                                                            {/*        <input className="form-control" type="text"*/}
+                                                            {/*               value={this.state.phoneNum} style={{width: "100%"}}*/}
+                                                            {/*               onChange={(event => this.setState({phoneNum: event.target.value}))} />*/}
+                                                            {/*    </div>*/}
+                                                            {/*</Col>*/}
+                                                        </Row>
+                                                    </Col>
+                                                </Row>
+
+                                                <Row className="justify-content-center">
+                                                    <Col className={"col-12"}>
+                                                        <div className={"form-group"}>
+                                                            <label style={{fontWeight: "bold"}}>Message:</label>
+
+                                                            <textarea className="form-control" required={true}
+                                                                      value={this.state.message} style={{width: "100%"}}
+                                                                      onChange={(event => this.setState({message: event.target.value}))} />
+                                                        </div>
+                                                    </Col>
+                                                </Row>
+                                            </form>
+                                        </Container>
+                                    </Col>
+                                </Row>
+
+                                <Row className="justify-content-center" style={{marginTop: 10}}>
+                                    <Col className={"col-4"}>
+                                        <input type={"submit"}  className={"green-button"} style={{float: "right", width: 200,
+                                            clipPath: "polygon(0 0, 95% 0, 100% 100%, 5% 100%)", color: "white"}} value={"Submit"} />
+                                    </Col>
+                                </Row>
+                            </Container>
                         </Row>
                     </Container>
                 {/*<div className="about-banner">*/}

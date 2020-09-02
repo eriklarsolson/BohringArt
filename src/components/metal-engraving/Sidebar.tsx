@@ -100,17 +100,17 @@ class Sidebar extends React.Component<any, any> {
                                                    </button>
                                                </Col>
                                            </Row>
-                                           <Row>
-                                               <Col style={{margin: 5}}>
-                                                   <button
-                                                       style={{width: 75, height: 75, backgroundColor: "transparent", border: 0}}
-                                                       className={this.props.tool === TOOL_STAR  ? 'item-active' : 'item'}
-                                                       onClick={() => this.props.setTool(TOOL_STAR)}
-                                                   >
-                                                       <img src={star} />
-                                                   </button>
-                                               </Col>
-                                           </Row>
+                                           {/*<Row>*/}
+                                           {/*    <Col style={{margin: 5}}>*/}
+                                           {/*        <button*/}
+                                           {/*            style={{width: 75, height: 75, backgroundColor: "transparent", border: 0}}*/}
+                                           {/*            className={this.props.tool === TOOL_STAR  ? 'item-active' : 'item'}*/}
+                                           {/*            onClick={() => this.props.setTool(TOOL_STAR)}*/}
+                                           {/*        >*/}
+                                           {/*            <img src={star} />*/}
+                                           {/*        </button>*/}
+                                           {/*    </Col>*/}
+                                           {/*</Row>*/}
                                        </Container>
                                    </Accordion.Collapse>
                                </Col>

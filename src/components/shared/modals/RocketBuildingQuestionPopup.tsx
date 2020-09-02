@@ -1,9 +1,9 @@
 import React from "react";
 import {Button, Modal} from "react-bootstrap";
 import { Container, Row, Col } from 'react-bootstrap'
-import payload_1 from "../../rocket-building/images/payloads/payload_1.png"
-import interstage_1 from "../../rocket-building/images/interstages/interstage_1.png"
-import sideBooster_1 from "../../rocket-building/images/sideBoosters/sideBooster_1.png"
+import payload_1 from "../../rocket-building/images/cones/payload_1.png"
+import interstage_1 from "../../rocket-building/images/bodys/body_1.png"
+import sideBooster_1 from "../../rocket-building/images/boosters/sideBooster_1.png"
 import engine_1 from "../../rocket-building/images/engines/engine_1.png"
 
 class RocketBuildingQuestionPopup extends React.Component<any, any> {

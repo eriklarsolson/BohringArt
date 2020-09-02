@@ -13,7 +13,6 @@ import ObjectPage from "./components/stellar-cycle/ObjectPage";
 import InfoPage from "./components/stellar-cycle/InfoPage";
 import {RocketBuilding} from "./components/rocket-building";
 import FlightSimulator from "./components/rocket-building/FlightSimulator";
-import {ContactUs} from "./components/contact";
 import {UnderConstruction} from "./components/under-construction";
 
 class Routes extends Component {
@@ -30,7 +29,6 @@ class Routes extends Component {
                     <Route path="/activity/object-page" component={ObjectPage} />
                     <Route path="/activity/info-page" component={InfoPage} />
                     <Route path="/about" component={AboutUs} />
-                    <Route path="/contact" component={ContactUs} />
                     <Route path="/resources" component={Resources} />
                     <Route exact path="/" component={UnderConstruction} />
                     <Route path="/home" component={Home} />

@@ -69,7 +69,7 @@ export const StencilsAnimation: React.FC<AnimationProps>  = ({setParentState, ad
                                 </Row>
 
                                 <Row className={"justify-content-center"} style={{margin: 10}}>
-                                    <Col className="col-5" style={{backgroundColor: "#DBEAEF", clipPath: "polygon(0 0, 95% 0, 100% 100%, 5% 100%)"}}>
+                                    <Col className="col-5" style={{backgroundColor: "#DBEAEF", clipPath: "polygon(0 0, 100% 0, 100% 100%, 5% 100%)"}}>
                                         <img
                                             src={planet}
                                             onClick={() => addStencilAndClose(planet)} />
@@ -77,7 +77,7 @@ export const StencilsAnimation: React.FC<AnimationProps>  = ({setParentState, ad
                                 </Row>
 
                                 <Row className={"justify-content-center"} style={{margin: 10}}>
-                                    <Col className="col-5" style={{backgroundColor: "#DBEAEF", clipPath: "polygon(0 0, 95% 0, 100% 100%, 5% 100%)"}}>
+                                    <Col className="col-5" style={{backgroundColor: "#DBEAEF", clipPath: "polygon(0 0, 100% 0, 100% 100%, 5% 100%)"}}>
                                         <img
                                             src={logo}
                                             onClick={() => addStencilAndClose(logo)} />
@@ -85,7 +85,7 @@ export const StencilsAnimation: React.FC<AnimationProps>  = ({setParentState, ad
                                 </Row>
 
                                 <Row className={"justify-content-center"} style={{margin: 10}}>
-                                    <Col className="col-5" style={{backgroundColor: "#DBEAEF", clipPath: "polygon(0 0, 95% 0, 100% 100%, 5% 100%)"}}>
+                                    <Col className="col-5" style={{backgroundColor: "#DBEAEF", clipPath: "polygon(0 0, 100% 0, 100% 100%, 5% 100%)"}}>
                                         <img
                                             src={plant}
                                             onClick={() => addStencilAndClose(plant)} />
@@ -93,7 +93,7 @@ export const StencilsAnimation: React.FC<AnimationProps>  = ({setParentState, ad
                                 </Row>
 
                                 <Row className={"justify-content-center"} style={{margin: 10}}>
-                                    <Col className="col-5" style={{backgroundColor: "#DBEAEF", clipPath: "polygon(0 0, 95% 0, 100% 100%, 5% 100%)"}}>
+                                    <Col className="col-5" style={{backgroundColor: "#DBEAEF", clipPath: "polygon(0 0, 100% 0, 100% 100%, 5% 100%)"}}>
                                         <img
                                             src={snowman}
                                             onClick={() => addStencilAndClose(snowman)} />

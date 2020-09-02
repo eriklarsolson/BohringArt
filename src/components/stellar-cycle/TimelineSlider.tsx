@@ -44,7 +44,6 @@ interface Props {
     children: React.ReactElement;
     value: number
     max: number
-    marks: any
     changeTime: any
 }
 
@@ -60,7 +59,6 @@ export default function TimelineSlider(props: any) {
                 step={20}
                 max={props.max}
                 valueLabelDisplay="off"
-                // marks={props.marks}
                 onChange={props.changeTime}
             />
         </div>

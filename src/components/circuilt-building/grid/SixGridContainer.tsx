@@ -1,31 +1,25 @@
-import React, {useState, useEffect, useCallback} from 'react'
+import React, {useState, useEffect} from 'react'
 import {
     getBoardHasIssues,
     deleteCurrentComponent,
     getComponents,
     getCurrentBoardIssues,
     getCurrentComponent,
-    getCurrentX,
     getPassed,
     getTotalVoltage,
-    moveComponent,
     observe,
     setBoardHasIssue,
     setCurrentComponentsVoltage,
     setCurrentBoardIssues,
-    hasCircuit,
-    emitChange,
     addBoardIssue,
-    setPassed
 } from './Functionality'
 import {SixGrid} from "./SixGrid";
 import {Container, Row, Col} from "react-bootstrap";
-import update from 'immutability-helper'
 import {ComponentTypes} from "../../shared/models/ComponentTypes";
 import {Slider, Typography, withStyles} from "@material-ui/core";
 import ErrorPopup from "../../shared/modals/ErrorPopup";
 import Button from "react-bootstrap/Button";
-import {toast, ToastContainer} from "react-toastify";
+import {toast} from "react-toastify";
 import 'react-toastify/dist/ReactToastify.css';
 
 const containerStyle: React.CSSProperties = {
@@ -40,9 +34,6 @@ export interface GridContainerProps {
 }
 
 export const SixGridContainer: React.FC<GridContainerProps> = ({objectiveImage, showGrid, goToNextLevel}) => {
-
-    //I don't actually use this currentComp variable, but I need the useEffect on observe below and it's working right now
-    //and I don't want to change it
     const [currentComp, setCurrentComp] = useState<{x: number, y: number, type: string, voltage: number, rotateDeg: number}>(
         {x: 0, y: 0, type: ComponentTypes.BATTERY, voltage: 0, rotateDeg: 0})
 

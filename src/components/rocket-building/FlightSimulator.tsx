@@ -5,18 +5,15 @@ import 'font-awesome/css/font-awesome.min.css';
 import stellarBackground from "../stellar-cycle/stellarBackground.png";
 import "./Rocket.scss"
 import {RocketAnimation} from "./RocketAnimation";
-import sideBooster_2 from "./images/sideBoosters/sideBooster_2.png"
-import {BackgroundAnimation} from "./BackgroundAnimation";
-import {StellarInfoAnimation} from "../stellar-cycle/StellarInfoAnimation";
 import {RocketBarAnimation} from "./RocketBarAnimation";
 
 class FlightSimulator extends React.Component<any, any> {
     constructor(props: any) {
         super(props);
         this.state = {
-            payload: this.props.location.state.payload,
-            interstage: this.props.location.state.interstage,
-            sideBooster: this.props.location.state.sideBooster,
+            cone: this.props.location.state.cone,
+            body: this.props.location.state.body,
+            booster: this.props.location.state.booster,
             engine: this.props.location.state.engine,
             iteration: 0,
             xStart: 0,
@@ -74,8 +71,8 @@ class FlightSimulator extends React.Component<any, any> {
                     <Row style={{margin: 0, padding: 0}}>
                         <Col className={"align-items-center justify-content-center"} style={{display: "flex", margin: 0, padding: 0}}>
                             <Col className={"ship"}>
-                                <RocketAnimation images={[this.state.sideBooster.image, this.state.engine.image,
-                                    this.state.interstage.image, this.state.payload.image]} />
+                                <RocketAnimation cone={this.state.cone} body={this.state.body} engine={this.state.engine}
+                                                 booster={this.state.booster} />
                             </Col>
                         </Col>
                     </Row>
@@ -88,7 +85,6 @@ class FlightSimulator extends React.Component<any, any> {
                     </Row>
 
                     <Row className={"justify-content-center"}>
-                        {/*  TODO - Text scenarios with yes/no go here for ship situations  */}
                         <Col className={"col-8"} style={{padding: 15, color: "white"}}>
                             <div style={{position: "absolute", width: "100%", height: "100%",
                                 backgroundColor: "black", opacity: 0.7}} />

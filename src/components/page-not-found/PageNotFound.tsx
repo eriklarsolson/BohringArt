@@ -7,12 +7,16 @@ const PageNotFound = () => {
     const loc = useLocation();
     return (
         <React.Fragment>
-            <Container fluid>
+            <Container fluid style={{backgroundColor: "#F8EDDD"}}>
                 <Row className={"vh-100 justify-content-center align-content-center"}>
                     <Col className={"col-4"}>
-                        <h1 style={{color: "#29405B", fontWeight: "bold"}}>
+                        <p style={{color: "#29405B", fontWeight: "bolder", fontSize: 144}}>
+                            404
+                        </p>
+
+                        <p style={{color: "#29405B", fontWeight: "bold", fontSize: 36}}>
                             Sorry, not even physics could help you find the page you’re looking for.
-                        </h1>
+                        </p>
 
                         <p>
                             <code>{loc.pathname}</code>
@@ -23,7 +27,7 @@ const PageNotFound = () => {
                             variant="primary"
                             type="submit"
                             className={"btn green-button"}
-                            style={{width: 150,
+                            style={{width: 200,
                                 clipPath: "polygon(0 0, 95% 0, 100% 100%, 5% 100%)"}}>
                             Home
                         </Button>

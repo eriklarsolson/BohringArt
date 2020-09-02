@@ -10,7 +10,7 @@ import {
     hasCircuit,
     setAllSwitchesOn,
     setComponentType,
-    setComponentTypeOnClick
+    setComponentTypeOnClick, setCurrentComponentsRotation
 } from "../Functionality";
 import {Button} from "@material-ui/core";
 
@@ -35,22 +35,29 @@ export const Switch: React.FC<ComponentProps> = ({x, y, oneGridStyling, currentC
     if(componentAtThisPosition !== currentComponent) {
         if(componentAtThisPosition !== undefined) {
             startingRotateDeg = componentAtThisPosition.rotateDeg;
-
-            if(componentAtThisPosition.componentType === 1) {
-                setTurnedOn(false)
-            }
         }
     } else {
-        if(componentAtThisPosition !== undefined) {
+        if(currentComponent !== undefined) {
             startingRotateDeg = currentComponent.rotateDeg;
-
-            if(currentComponent.componentType === 1) {
-                setTurnedOn(false)
-            }
         }
     }
 
     const [rotateDeg, setRotateDeg] = useState<number>(startingRotateDeg)
+    const clickRotate = () => {
+        console.log(rotateDeg)
+        if (rotateDeg + 90 === 360) {
+            setRotateDeg(0)
+            setCurrentComponentsRotation(0)
+        } else {
+            setRotateDeg(rotateDeg + 90)
+            setCurrentComponentsRotation(rotateDeg + 90)
+        }
+    }
+
+    let clicked = false;
+    if(currentComponent !== undefined && currentComponent.x === x && currentComponent.y === y) {
+        clicked = true;
+    }
 
     let gridStyling: React.CSSProperties  = {height: "100%"};
     if(!oneGridStyling) {
@@ -94,6 +101,12 @@ export const Switch: React.FC<ComponentProps> = ({x, y, oneGridStyling, currentC
         <>
             <DragPreviewImage connect={preview} src={switchImage} />
             <Container fluid style={{...gridStyling}}>
+                {clicked &&
+                <div style={{position: "absolute", top: -35, right: -10, marginTop: 1, marginRight: 1}}>
+                    <img src={rotate} onClick={clickRotate} />
+                </div>
+                }
+
                 <Row className={"justify-content-center align-content-center"}>
                     <Col ref={drag}
                          style={{
@@ -101,9 +114,9 @@ export const Switch: React.FC<ComponentProps> = ({x, y, oneGridStyling, currentC
                              opacity: isDragging ? 0.5 : 1,
                          }}
                          onClick={toggleSwitch}>
-                        {/*<Button onClick={toggleSwitch} style={{backgroundColor: "transparent", width: "100%", height: "100%"}}>*/}
+                        <div style={{transform: "rotate(" + rotateDeg + "deg)"}}>
                             <img src={switchImage} width={"100%"} />
-                        {/*</Button>*/}
+                        </div>
                     </Col>
                 </Row>
             </Container>

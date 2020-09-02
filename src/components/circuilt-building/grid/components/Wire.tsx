@@ -4,11 +4,12 @@ import { ComponentTypes } from '../../../shared/models/ComponentTypes'
 import wire from './images/wire.png'
 import cornerwire from './images/corner-wire.png'
 import triwire from './images/tri-wire.png'
+import crosswire from './images/cross-wire.png'
 import rotate from './images/rotate.png'
 import { Container, Row, Col } from 'react-bootstrap'
 import leftarrow from "../../../stellar-cycle/leftarrow.png"
 import rightarrow from "../../../stellar-cycle/rightarrow.png";
-import {getComponentAtPos, getComponentType, setComponentType} from "../Functionality";
+import {getComponentAtPos, getComponentType, setComponentType, setCurrentComponentsRotation} from "../Functionality";
 
 let style: React.CSSProperties = {
     cursor: 'move',
@@ -30,12 +31,27 @@ export const Wire: React.FC<ComponentProps> = ({x, y, oneGridStyling, currentCom
             startingRotateDeg = componentAtThisPosition.rotateDeg;
         }
     } else {
-        if(componentAtThisPosition !== undefined) {
+        if(currentComponent !== undefined) {
             startingRotateDeg = currentComponent.rotateDeg;
         }
     }
 
     const [rotateDeg, setRotateDeg] = useState<number>(startingRotateDeg)
+    const clickRotate = () => {
+        console.log(rotateDeg)
+        if (rotateDeg + 90 === 360) {
+            setRotateDeg(0)
+            setCurrentComponentsRotation(0)
+        } else {
+            setRotateDeg(rotateDeg + 90)
+            setCurrentComponentsRotation(rotateDeg + 90)
+        }
+    }
+
+    let clicked = false;
+    if(currentComponent !== undefined && currentComponent.x === x && currentComponent.y === y) {
+        clicked = true;
+    }
 
     let gridStyling: React.CSSProperties  = {height: "100%"};
     if(!oneGridStyling) {
@@ -56,7 +72,7 @@ export const Wire: React.FC<ComponentProps> = ({x, y, oneGridStyling, currentCom
 
     })
 
-    const [images, setImages] = useState<any>([wire, cornerwire, triwire])
+    const [images, setImages] = useState<any>([wire, cornerwire, triwire, crosswire])
     const [index, setIndex] = useState<number>(getComponentType)
 
     //TODO - set component type when cycling here (maybe could be variable in functionality class that is updated what type of wire object we are viewing?)
@@ -71,7 +87,7 @@ export const Wire: React.FC<ComponentProps> = ({x, y, oneGridStyling, currentCom
     }
 
     let wireStyling: React.CSSProperties = {}
-    if(index === 0) {
+    if(index === 0 || index === 3) {
         wireStyling = {
             width: "100%"
         }
@@ -94,6 +110,13 @@ export const Wire: React.FC<ComponentProps> = ({x, y, oneGridStyling, currentCom
         <>
             <DragPreviewImage connect={preview} src={wire} />
             <Container fluid style={{...gridStyling}}>
+                {clicked && index !== 3 &&
+                <div style={{position: "absolute", top: -35, right: -10, marginTop: 1, marginRight: 1}}>
+                    <img src={rotate} onClick={clickRotate} />
+                </div>
+                }
+
+                <div style={{transform: "rotate(" + rotateDeg + "deg)"}}>
                 <Row className={"justify-content-center align-items-center"} style={{height: "100%"}}>
                     {oneGridStyling &&
                         <Col className={"col-1"} style={{padding: 0}}>
@@ -107,22 +130,13 @@ export const Wire: React.FC<ComponentProps> = ({x, y, oneGridStyling, currentCom
                              opacity: isDragging ? 0.5 : 1,
                              height: "100%"
                          }}>
-                        {oneGridStyling &&
-                            <img src={images[index]} width={100}/>
-                        }
+                            {oneGridStyling &&
+                                <img src={images[index]} width={100}/>
+                            }
 
-                        {!oneGridStyling && index === 0 &&
-                            <img src={images[index]} style={wireStyling} />
-                        }
-
-                        {!oneGridStyling && index === 1 &&
-                        <img src={images[index]} style={wireStyling} />
-                        }
-
-                        {!oneGridStyling && index === 2 &&
-                        <img src={images[index]} style={wireStyling} />
-                        }
-
+                            {!oneGridStyling  &&
+                                <img src={images[index]} style={wireStyling} />
+                            }
                     </Col>
 
                     {oneGridStyling &&
@@ -131,6 +145,7 @@ export const Wire: React.FC<ComponentProps> = ({x, y, oneGridStyling, currentCom
                         </Col>
                     }
                 </Row>
+                </div>
             </Container>
         </>
     )

@@ -1,14 +1,7 @@
 import React from "react";
 import { Container, Row, Col } from 'react-bootstrap'
 import {
-    FormControl,
-    FormControlLabel,
-    FormLabel,
-    Radio,
-    RadioGroup,
-    Slider,
     Typography,
-    withStyles
 } from "@material-ui/core";
 import "./StellarCycle.scss";
 import PropertiesSlider from "./PropertiesSlider";
@@ -21,6 +14,18 @@ class Sidebar extends React.Component<any, any> {
         if(this.props.massClass === 1) {
             max = 120
             massClassString = "Massive"
+        }
+
+        const changeValue = (type: number) => {
+            if(this.props.currentObject.title === "Average Star" && this.props.currentObject.title === "Massive Star") {
+                if(type === 0) {
+                    this.props.changeTemperature()
+                } else if(type === 1) {
+                    this.props.changeSize()
+                } else if(type === 2) {
+                    this.props.changeMass()
+                }
+            }
         }
 
         return (
@@ -38,7 +43,7 @@ class Sidebar extends React.Component<any, any> {
 
                    {this.props.currentObject.title !== "Nebula" ?
                        <>
-                           {this.props.currentObject.title !== "Average Star" && this.props.currentObject.title !== "Massive Star" &&
+                           {this.props.showSliders &&
                             <>
                                <Row style={{marginLeft: 15, marginRight: 15, marginTop: "10%", marginBottom: 15}}>
                                    <Col>
@@ -63,11 +68,12 @@ class Sidebar extends React.Component<any, any> {
                            }
 
                            <Row style={{margin: 15}}>
-                               <Col>
+                               <Col onMouseUp={this.props.showPropertySliders}>
                                    <Typography id="mass-slider" gutterBottom style={{float: "left", fontWeight: "bold", fontSize: "20px"}}>
                                        Mass
                                    </Typography>
-                                   <PropertiesSlider value={this.props.mass} changeValue={this.props.changeMass}
+                                   <PropertiesSlider value={this.props.mass}
+                                                     changeValue={this.props.changeMass}
                                                      aria-labelledby="mass-slider" max={max} />
                                </Col>
                            </Row>

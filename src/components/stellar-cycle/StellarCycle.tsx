@@ -91,9 +91,14 @@ class StellarCycle extends React.Component<any, any> {
 
     render() {
         const goToObjectPage = (title: string) => {
+            let disableSliders = true;
+            if(title === "Average Star" || title === "Massive Star") {
+                disableSliders = false;
+            }
+
             this.props.history.push({
                 pathname: '/activity/object-page',
-                state: { title: title, popupOpened: false }
+                state: { title: title, popupOpened: false, disableSliders: disableSliders }
             })
         }
 

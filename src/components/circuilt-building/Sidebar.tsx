@@ -48,10 +48,10 @@ class Sidebar extends React.Component<any, any> {
                        </Row>
                    :
                        <Row className={"justify-content-center"} style={{margin: 5}}>
-                           <Col className="col-8" style={{backgroundColor: "white", filter: "brightness(50%)",
+                           <div style={{width: 200, backgroundColor: "white", filter: "brightness(50%)",
                                clipPath: "polygon(0 0, 95% 0, 100% 100%, 0 100%)"}}>
                                 <img src={inductor} style={{pointerEvents: "none", filter: "blur(5px)"}} />
-                           </Col>
+                           </div>
                        </Row>
                    }
 
@@ -63,10 +63,10 @@ class Sidebar extends React.Component<any, any> {
                         </Row>
                    :
                        <Row className={"justify-content-center"} style={{margin: 5, marginTop: 10}}>
-                           <Col className="col-8" style={{backgroundColor: "white", filter: "brightness(50%)",
+                           <div style={{width: 200, backgroundColor: "white", filter: "brightness(50%)",
                                clipPath: "polygon(0 0, 95% 0, 100% 100%, 0 100%)"}}>
                                <img src={capacitor} style={{pointerEvents: "none", filter: "blur(5px)"}} />
-                           </Col>
+                           </div>
                        </Row>
                    }
 
