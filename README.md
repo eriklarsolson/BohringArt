@@ -1,44 +1,39 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# BohringArt
+Website: [www.BohringArt.com](https://www.bohringart.com)
 
-## Available Scripts
+Gallery: [www.Detroit.ScienceGallery.com/FuturePresent](https://detroit.sciencegallery.com/futurepresent)
 
-In the project directory, you can run:
+## Project Description
+BohringArt is an interactive online exhibit for the "Future Present" gallery from a collaboration between the Science Gallery Of Detroit & Michigan State University. 
 
-### `npm start`
+## Exhibit Description
+"In this collaborative project, we propose to design an educational kiosk, using the principles of interactive design, that will convey physics concepts effectively to college students. The concepts are chosen from Introductory Physics courses. Depending on the number of students and mediators we hire, we will expand on the scientific visualization. We will recruit at least two undergraduate physics students, two undergraduate graphic designers, and two programmers from computer science & Engineering. The physics students (with Dena’s supervision) will be responsible for communicating selected physics concepts to the designers. The designers will then use their knowledge to create infographics that elucidate physics phenomena."
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## Activites
+### Circuit Construction
+Learn about circuit components to build one that can power your satellite. Demonstrate the flow of electrons in a circuit and how circuit components (capacitors, resistors, inductors, etc.) can affect their energy.
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+**Link**: [/activity/circuit-building](https://www.bohringart.com/activity/circuit-building)
 
-### `npm test`
+### Laser and Lenses
+Learn how lenses manipulate light to understand how your telescope sees distant stars. Experiment with the variables that affect the image formed when shining light through a lens, and begin controlling the type of image you see by manipulating these variables.
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+##### Metal Engraving 
+Description here
 
-### `npm run build`
+**Link**: [/activity/metal-engraving](https://www.bohringart.com/activity/metal-engraving)
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
+##### Telescope activity
+Description here
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
+**Link**: [/activity/telescope-activity](https://www.bohringart.com/activity/telescope-activity)
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### To The Stars
+Create a rocket consisting of an engine, boosters, a body, and a cone. Make sure to account for fuel, air resistance, and weight as all affect the rocket’s motion greatly! Send your rocket off into space with the telescope as the payload and along the way, answer TEXT-based questions that determine the fate of your journey!
 
-### `npm run eject`
+**Link**: [/activity/rocket-building](https://www.bohringart.com/activity/rocket-building)
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+### Stellar Life Cycle
+Learn more about what your telescope sees, and a star’s life cycle from creation to destruction. See how important certain variables such as mass and radius are in determining the next phase and the stellar event, i.e. a supernova.
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+**Link**: [/activity/stellar-cycle](https://www.bohringart.com/activity/object-page)
