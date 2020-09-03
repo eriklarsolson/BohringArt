@@ -1,44 +1,26 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# BohringArt
+Website: [www.BohringArt.com](https://www.bohringart.com)
 
-## Available Scripts
+Gallery: [www.Detroit.ScienceGallery.com/FuturePresent](https://detroit.sciencegallery.com/futurepresent)
 
-In the project directory, you can run:
+### Project Description
+BohringArt is an interactive online exhibit for the "Future Present" gallery from a collaboration between the Science Gallery Of Detroit & Michigan State University. 
 
-### `npm start`
+### Exhibit Description
+"In this collaborative project, we propose to design an educational kiosk, using the principles of interactive design, that will convey physics concepts effectively to college students. The concepts are chosen from Introductory Physics courses. Depending on the number of students and mediators we hire, we will expand on the scientific visualization. We will recruit at least two undergraduate physics students, two undergraduate graphic designers, and two programmers from computer science & Engineering. The physics students (with Dena’s supervision) will be responsible for communicating selected physics concepts to the designers. The designers will then use their knowledge to create infographics that elucidate physics phenomena."
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+### Activites
+##### Circuit Construction
+Circuit building description here
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+##### Laser and Lenses
+Laser and Lenses description here
 
-### `npm test`
+##### Telescope activity
+Telescope activity description here
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+##### To The Stars
+To The Stars description here
 
-### `npm run build`
-
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+##### Stellar Life Cycle
+Stellar Life Cycle description here
