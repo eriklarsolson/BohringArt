@@ -22,9 +22,6 @@ export const MoreInfoAnimation: React.FC<AnimationProps>  = ({setParentState}) =
     const [title, setTitle] = useState<string>("WIRE");
     const [description, setDescription] = useState<string>("A conducting, metal rod designed to transfer charges. Electrons can flow through these with little to no resistance, typically. However, making a wire longer increases resistance but thickening it decreases resistance.");
 
-    let xStart = 1200;
-    let xEnd = 400;
-
     const setClosed = () => {
         setOpen(false)
         setParentState()
@@ -56,7 +53,7 @@ export const MoreInfoAnimation: React.FC<AnimationProps>  = ({setParentState}) =
                     // scale: [1, 2, 2, 1, 1],
                     // rotate: [0, 0, 270, 270, 0],
                     // x: [100, 200, 300, 400, 500],
-                    x: [1200, 400],
+                    x: [1200, 350],
                     opacity: [0, 1]
                 }}
 

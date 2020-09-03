@@ -2,6 +2,7 @@ import * as React from "react";
 import { motion } from "framer-motion";
 import {Container, Row, Col} from 'react-bootstrap'
 import booster_4_middle from "./images/boosters/booster_4_middle.png";
+import big_fire from "./images/Big Fire.png"
 
 export interface AnimationProps {
     cone: any
@@ -36,11 +37,16 @@ export const RocketAnimation: React.FC<AnimationProps>  = ({cone, body, engine, 
                     </div>
                     }
 
-                    <Col className={"col-1 align-self-end"} style={{padding: 0, flex: "0 0 60px", maxWidth: "60px"}}>
-                        <img src={booster.leftImage} style={{width: "100%"}} />
+                    <Col className={"col-1 align-self-end"} style={{marginBottom: 100, padding: 0, flex: "0 0 70px", maxWidth: "70px"}}>
+                        <Row>
+                            <img src={booster.leftImage} style={{width: "100%"}} />
+                        </Row>
+                        <Row>
+                            <img src={big_fire} style={{width: "80%"}} />
+                        </Row>
                     </Col>
 
-                    <Col className={"col-1"}>
+                    <Col className={"col-1"} style={{padding: 0}}>
                         <Row className={"justify-content-center"}>
                             <img src={cone.image} style={{width: "80%"}} />
                         </Row>
@@ -52,10 +58,19 @@ export const RocketAnimation: React.FC<AnimationProps>  = ({cone, body, engine, 
                         <Row className={"justify-content-center"}>
                             <img src={engine.image} style={{width: "80%"}} />
                         </Row>
+
+                        <Row className={"justify-content-center"}>
+                            <img src={big_fire} style={{width: "80%"}} />
+                        </Row>
                     </Col>
 
-                    <Col className={"col-1 align-self-end"} style={{padding: 0, flex: "0 0 60px", maxWidth: "60px"}}>
-                        <img src={booster.rightImage} style={{width: "100%"}} />
+                    <Col className={"col-1 align-self-end"} style={{marginBottom: 100, padding: 0, flex: "0 0 70px", maxWidth: "70px"}}>
+                        <Row>
+                            <img src={booster.rightImage} style={{width: "100%"}} />
+                        </Row>
+                        <Row>
+                            <img src={big_fire} style={{width: "80%"}} />
+                        </Row>
                     </Col>
                 </Row>
             </Container>

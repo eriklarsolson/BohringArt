@@ -57,62 +57,64 @@ class Sidebar extends React.Component<any, any> {
                    <Accordion defaultActiveKey="1">
                        <Container>
                            <Row className={"justify-content-center"}>
-                               <Col className="col-8" style={{backgroundColor: "#F8EDDD", paddingTop: 10, paddingBottom: 10}}>
-                                   <button
-                                       style={{width: 75, height: 75, backgroundColor: "transparent", border: 0}}
-                                       className={this.props.tool === TOOL_RECTANGLE  ? 'item-active' : 'item'}
-                                       onClick={() => this.props.setTool(TOOL_RECTANGLE)}
-                                   >
-                                       <img src={square} />
-                                   </button>
-                               </Col>
-                           </Row>
-                           <Row className={"justify-content-center"}>
-                               <Col className="col-8" style={{backgroundColor: "#C4C4C4"}}>
-                                   <Accordion.Toggle as={Button} variant="link" eventKey="0">
-                                       <i className="fa fa-arrow-down" style={{color: "#42949F"}} onClick={changeShapeArrow} />
-                                   </Accordion.Toggle>
-                               </Col>
-                           </Row>
-                           <Row className={"justify-content-center"}>
-                               <Col className="col-8" style={{backgroundColor: "#F8EDDD"}}>
-                                   <Accordion.Collapse eventKey="0">
-                                       <Container fluid>
-                                           <Row>
-                                               <Col style={{margin: 5}}>
-                                                   <button
-                                                       style={{width: 75, height: 75, backgroundColor: "transparent", border: 0}}
-                                                       className={this.props.tool === TOOL_ELLIPSE  ? 'item-active' : 'item'}
-                                                       onClick={() => this.props.setTool(TOOL_ELLIPSE)}
-                                                   >
-                                                       <img src={circle} />
-                                                   </button>
-                                               </Col>
-                                           </Row>
-                                           <Row>
-                                               <Col style={{margin: 5}}>
-                                                   <button
-                                                       style={{width: 75, height: 75, backgroundColor: "transparent", border: 0}}
-                                                       className={this.props.tool === TOOL_TRIANGLE  ? 'item-active' : 'item'}
-                                                       onClick={() => this.props.setTool(TOOL_TRIANGLE)}
-                                                   >
-                                                       <img src={triangle} />
-                                                   </button>
-                                               </Col>
-                                           </Row>
-                                           {/*<Row>*/}
-                                           {/*    <Col style={{margin: 5}}>*/}
-                                           {/*        <button*/}
-                                           {/*            style={{width: 75, height: 75, backgroundColor: "transparent", border: 0}}*/}
-                                           {/*            className={this.props.tool === TOOL_STAR  ? 'item-active' : 'item'}*/}
-                                           {/*            onClick={() => this.props.setTool(TOOL_STAR)}*/}
-                                           {/*        >*/}
-                                           {/*            <img src={star} />*/}
-                                           {/*        </button>*/}
-                                           {/*    </Col>*/}
-                                           {/*</Row>*/}
-                                       </Container>
-                                   </Accordion.Collapse>
+                               <Col className="col-7" style={{marginLeft: 10, clipPath: "polygon(0 0, 95% 0, 100% 100%, 0 100%)"}}>
+                                   <Row className={"justify-content-center"}>
+                                       <Col className="col-12" style={{backgroundColor: "#F8EDDD", paddingTop: 10, paddingBottom: 10}}>
+                                           <button
+                                               style={{width: 75, height: 75, backgroundColor: "transparent", border: 0}}
+                                               className={this.props.tool === TOOL_RECTANGLE  ? 'item-active' : 'item'}
+                                               onClick={() => this.props.setTool(TOOL_RECTANGLE)}
+                                           >
+                                               <img src={square} />
+                                           </button>
+                                       </Col>
+                                   </Row>
+
+                                   <Row className={"justify-content-center"} style={{backgroundColor: "#C4C4C4"}}>
+                                       <Accordion.Toggle as={Button} variant="link" eventKey="0">
+                                           <i className="fa fa-arrow-down" style={{color: "#42949F"}} onClick={changeShapeArrow} />
+                                       </Accordion.Toggle>
+                                   </Row>
+
+                                   <Row className={"justify-content-center"} style={{backgroundColor: "#F8EDDD"}}>
+                                       <Accordion.Collapse eventKey="0">
+                                           <Container fluid style={{backgroundColor: "#F8EDDD"}}>
+                                               <Row>
+                                                   <Col style={{margin: 5}}>
+                                                       <button
+                                                           style={{width: 75, height: 75, backgroundColor: "transparent", border: 0}}
+                                                           className={this.props.tool === TOOL_ELLIPSE  ? 'item-active' : 'item'}
+                                                           onClick={() => this.props.setTool(TOOL_ELLIPSE)}
+                                                       >
+                                                           <img src={circle} />
+                                                       </button>
+                                                   </Col>
+                                               </Row>
+                                               <Row>
+                                                   <Col style={{margin: 5}}>
+                                                       <button
+                                                           style={{width: 75, height: 75, backgroundColor: "transparent", border: 0}}
+                                                           className={this.props.tool === TOOL_TRIANGLE  ? 'item-active' : 'item'}
+                                                           onClick={() => this.props.setTool(TOOL_TRIANGLE)}
+                                                       >
+                                                           <img src={triangle} />
+                                                       </button>
+                                                   </Col>
+                                               </Row>
+                                               {/*<Row>*/}
+                                               {/*    <Col style={{margin: 5}}>*/}
+                                               {/*        <button*/}
+                                               {/*            style={{width: 75, height: 75, backgroundColor: "transparent", border: 0}}*/}
+                                               {/*            className={this.props.tool === TOOL_STAR  ? 'item-active' : 'item'}*/}
+                                               {/*            onClick={() => this.props.setTool(TOOL_STAR)}*/}
+                                               {/*        >*/}
+                                               {/*            <img src={star} />*/}
+                                               {/*        </button>*/}
+                                               {/*    </Col>*/}
+                                               {/*</Row>*/}
+                                           </Container>
+                                       </Accordion.Collapse>
+                                   </Row>
                                </Col>
                            </Row>
                        </Container>

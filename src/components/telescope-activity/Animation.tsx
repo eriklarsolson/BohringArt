@@ -15,11 +15,12 @@ const icon = {
 };
 
 export interface AnimationProps {
-    path: string
+    paths: any
 }
 
-export const Animation: React.FC<AnimationProps> = ({path}) => {
+export const Animation: React.FC<AnimationProps> = ({paths}) => {
 
+    //TODO - Need to display 3 lasers below
     return (
         <div className="telescope-container">
             <motion.svg
@@ -28,7 +29,29 @@ export const Animation: React.FC<AnimationProps> = ({path}) => {
                 className="telescope-item"
             >
                 <motion.path
-                    d={path}
+                    d={paths[0]}
+                    variants={icon}
+                    initial="hidden"
+                    animate="visible"
+                    transition={{
+                        default: {duration: 7, ease: "easeInOut"},
+                        // fill: {duration: 4, ease: [1, 1, 1, 1]}
+                    }}
+                />
+
+                <motion.path
+                    d={paths[1]}
+                    variants={icon}
+                    initial="hidden"
+                    animate="visible"
+                    transition={{
+                        default: {duration: 7, ease: "easeInOut"},
+                        // fill: {duration: 4, ease: [1, 1, 1, 1]}
+                    }}
+                />
+
+                <motion.path
+                    d={paths[2]}
                     variants={icon}
                     initial="hidden"
                     animate="visible"

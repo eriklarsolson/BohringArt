@@ -152,14 +152,14 @@ class RocketBuilding extends React.Component<any, any> {
                     fuelCapacity: 10
                 },
                 {
-                    image: engine_1,
+                    image: engine_3,
                     title: "Engine 3",
                     mass: 85,
                     airResistance: 5,
                     fuelCapacity: 53
                 },
                 {
-                    image: engine_2,
+                    image: engine_4,
                     title: "Engine 4",
                     mass: 33,
                     airResistance: 23,

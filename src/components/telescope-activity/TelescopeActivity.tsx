@@ -7,7 +7,7 @@ import {TelescopeGridContainer} from "./grid/TelescopeGridContainer";
 import 'font-awesome/css/font-awesome.min.css';
 import {Animation} from "./Animation";
 import "./Telescope.scss"
-import {deleteCurrentComponent, generatePath} from "./grid/Functionality";
+import {deleteCurrentComponent, generatePaths} from "./grid/Functionality";
 import {MoreInfoAnimation} from "./MoreInfoAnimation";
 
 class TelescopeActivity extends React.Component<any, any> {
@@ -100,7 +100,7 @@ class TelescopeActivity extends React.Component<any, any> {
 
                                 <Row style={{margin: 0}}>
                                     <Col className={"justify-content-center align-content-center"} style={{padding: 0}}>
-                                        <div style={{width: 1200, margin: "auto"}}>
+                                        <div style={{width: 1200, margin: "auto", height: 500}}>
                                             <div style={{
                                                 position: "absolute",
                                                 margin: 0,
@@ -109,18 +109,18 @@ class TelescopeActivity extends React.Component<any, any> {
                                                 left: 0
                                             }}>
                                                 <img src={satellite} height={500} />
-                                            </div>
-
-                                            {this.state.animationRunning &&
+                                                {this.state.animationRunning &&
                                                 <div style={{
                                                     position: "absolute",
                                                     margin: 0,
+                                                    top: 0,
                                                     width: "100%",
                                                     height: "100%"
                                                 }}>
-                                                    <Animation path={generatePath()}/>
+                                                    <Animation paths={generatePaths()} />
                                                 </div>
-                                            }
+                                                }
+                                            </div>
 
                                             <TelescopeGridContainer showGrid={this.state.showGrid} />
                                         </div>

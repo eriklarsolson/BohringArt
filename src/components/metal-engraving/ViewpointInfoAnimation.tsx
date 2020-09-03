@@ -44,22 +44,34 @@ export const ViewpointInfoAnimation: React.FC<AnimationProps>  = ({setParentStat
                                 clipPath: "polygon(0 0, 100% 0, 100% 100%, 10% 100%)"}} />
 
                             <Container>
-                                <Row className={"justify-content-center"} style={{marginBottom: "50%"}}>
+                                <Row className={"justify-content-center"} style={{marginBottom: "10%"}}>
 
-                                    <Col className={"col-5"}>
-                                        <h2 style={{color: "white", textAlign: "left"}}>Viewpoint</h2>
-                                    </Col>
-
-                                    <Col className={"col-3"}>
+                                    <Col className={"ml-auto col-3"}>
                                         <Button className={"green-button"} style={{float: "right", width: 100,
                                             clipPath: "polygon(0 0, 95% 0, 100% 100%, 5% 100%)"}}
                                                 onClick={() => setClosed()}><i className="fa fa-arrow-right" /></Button>
                                     </Col>
                                 </Row>
 
+                                <Row>
+                                    <Col>
+                                        <h2 style={{color: "white"}}>
+                                            Viewpoint
+                                        </h2>
+                                    </Col>
+                                </Row>
+
+                                <Row className={"justify-content-center"} style={{marginBottom: 150}}>
+                                    <Col className={"col-10"}>
+                                        <p style={{color: "white"}}>
+                                            This viewpoint is to show how the laser light interacts with the lens piece. The light is focused by the lens, thus making the outgoing light might stronger than the initial, allowing it to make a deeper cut
+                                        </p>
+                                    </Col>
+                                </Row>
+
                                 <Row className={"justify-content-center"}>
                                     <Col className={"col-10"}>
-                                        <img src={viewpoint} style={{width: 750, transform: "rotate(90deg)"}} />
+                                        <img src={viewpoint} style={{width: "100%", transform: "rotate(90deg)"}} />
                                     </Col>
                                 </Row>
                             </Container>

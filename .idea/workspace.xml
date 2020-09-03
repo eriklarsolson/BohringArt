@@ -10,83 +10,24 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7ea8f8f2-9ee1-4223-8be2-70ed23ed7286" name="Default Changelist" comment="fixed styling on &quot;more info&quot; slide out panels, and a few other touch-ups">
-      <change afterPath="$PROJECT_DIR$/src/components/about/images/niels.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/rocket-building/images/Big Fire.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/rocket-building/images/Little Fire.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/rocket-building/images/bodys/body_1.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/rocket-building/images/bodys/body_2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/rocket-building/images/bodys/body_3.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/rocket-building/images/bodys/body_4.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/rocket-building/images/boosters/booster_1_left.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/rocket-building/images/boosters/booster_1_right.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/rocket-building/images/boosters/booster_2_left.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/rocket-building/images/boosters/booster_2_right.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/rocket-building/images/boosters/booster_3_left.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/rocket-building/images/boosters/booster_3_right.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/rocket-building/images/boosters/booster_4_left.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/rocket-building/images/boosters/booster_4_middle.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/rocket-building/images/boosters/booster_4_right.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/rocket-building/images/cones/cone_1.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/rocket-building/images/cones/cone_2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/rocket-building/images/cones/cone_3.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/rocket-building/images/cones/cone_4.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/rocket-building/images/engines/engine_3.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/rocket-building/images/engines/engine_4.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/shared/modals/StellarPropertiesPopup.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/stellar-cycle/images/massive_star_1.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/stellar-cycle/images/massive_star_2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/stellar-cycle/images/massive_star_3.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/stellar-cycle/images/massive_star_4.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/stellar-cycle/images/massive_star_5.png" afterDir="false" />
+    <list default="true" id="7ea8f8f2-9ee1-4223-8be2-70ed23ed7286" name="Default Changelist" comment="Added all images to rocket building activity, added logic to stellar cycle, worked on about us page, and a few other things">
+      <change afterPath="$PROJECT_DIR$/src/components/shared/footer/sgd.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.firebase/hosting.YnVpbGQ.cache" beforeDir="false" afterPath="$PROJECT_DIR$/.firebase/hosting.YnVpbGQ.cache" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Routes.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Routes.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/about/AboutUs.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/about/AboutUs.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/circuilt-building/Sidebar.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/circuilt-building/Sidebar.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/circuilt-building/grid/GridSquare.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/circuilt-building/grid/GridSquare.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/circuilt-building/grid/SixGridContainer.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/circuilt-building/grid/SixGridContainer.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/circuilt-building/grid/components/Battery.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/circuilt-building/grid/components/Battery.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/circuilt-building/grid/components/Capacitor.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/circuilt-building/grid/components/Capacitor.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/circuilt-building/grid/components/Inductor.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/circuilt-building/grid/components/Inductor.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/circuilt-building/grid/components/Resistor.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/circuilt-building/grid/components/Resistor.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/circuilt-building/grid/components/Switch.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/circuilt-building/grid/components/Switch.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/circuilt-building/grid/components/Wire.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/circuilt-building/grid/components/Wire.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/contact/ContactUs.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/contact/index.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/home/Home.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/home/Home.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/home/Home.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/home/Home.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/home/LearnSection.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/home/LearnSection.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/metal-engraving/Canvas.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/metal-engraving/Canvas.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/metal-engraving/MetalEngraving.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/metal-engraving/MetalEngraving.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/circuilt-building/MoreInfoAnimation.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/circuilt-building/MoreInfoAnimation.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/metal-engraving/MoreInfoAnimation.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/metal-engraving/MoreInfoAnimation.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/metal-engraving/Sidebar.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/metal-engraving/Sidebar.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/metal-engraving/StencilsAnimation.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/metal-engraving/StencilsAnimation.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/page-not-found/PageNotFound.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/page-not-found/PageNotFound.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/metal-engraving/ViewpointInfoAnimation.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/metal-engraving/ViewpointInfoAnimation.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/rocket-building/FlightSimulator.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/rocket-building/FlightSimulator.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/rocket-building/MoreInfoAnimation.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/rocket-building/MoreInfoAnimation.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/rocket-building/Rocket.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/rocket-building/Rocket.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/rocket-building/RocketAnimation.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/rocket-building/RocketAnimation.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/rocket-building/RocketBarAnimation.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/rocket-building/RocketBarAnimation.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/rocket-building/RocketBuilding.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/rocket-building/RocketBuilding.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/rocket-building/images/engines/engine_1.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/rocket-building/images/engines/engine_1.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/rocket-building/images/engines/engine_2.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/rocket-building/images/engines/engine_2.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/rocket-building/images/interstages/interstage_1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/rocket-building/images/interstages/interstage_2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/rocket-building/images/payloads/payload_1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/rocket-building/images/payloads/payload_2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/rocket-building/images/payloads/payload_3.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/rocket-building/images/sideBoosters/sideBooster_1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/rocket-building/images/sideBoosters/sideBooster_2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/rocket-building/Sidebar.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/rocket-building/Sidebar.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/shared/footer/Footer.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/shared/footer/Footer.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/shared/header/Header.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/shared/header/Header.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/shared/modals/RocketBuildingQuestionPopup.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/shared/modals/RocketBuildingQuestionPopup.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/stellar-cycle/ObjectPage.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/stellar-cycle/ObjectPage.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/stellar-cycle/Sidebar.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/stellar-cycle/Sidebar.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/stellar-cycle/StellarCycle.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/stellar-cycle/StellarCycle.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/stellar-cycle/TimelineSlider.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/stellar-cycle/TimelineSlider.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/stellar-cycle/images/blackhole.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/stellar-cycle/images/blackhole.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/stellar-cycle/images/nebula.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/stellar-cycle/images/nebula.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/stellar-cycle/images/neutronstar.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/stellar-cycle/images/neutronstar.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/stellar-cycle/images/whitedwarf.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/stellar-cycle/images/whitedwarf.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/telescope-activity/Animation.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/telescope-activity/Animation.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/telescope-activity/TelescopeActivity.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/telescope-activity/TelescopeActivity.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/telescope-activity/grid/Functionality.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/telescope-activity/grid/Functionality.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -112,7 +53,7 @@
     <property name="TERMINAL_CUSTOM_COMMANDS_GOT_IT" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="ignore.virus.scanning.warn.message" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/components/stellar-cycle/images" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/components/rocket-building" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
@@ -121,19 +62,19 @@
     <property name="ts.external.directory.path" value="C:\Users\energ\Documents\ContractWork\DetroitMuseum\bohringart\node_modules\typescript\lib" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\energ\Documents\ContractWork\DetroitMuseum\bohringart\src\components\rocket-building\images\engines" />
-      <recent name="C:\Users\energ\Documents\ContractWork\DetroitMuseum\bohringart\src\components\rocket-building\images\payloads" />
-      <recent name="C:\Users\energ\Documents\ContractWork\DetroitMuseum\bohringart\src\components\rocket-building\images\sideBoosters" />
-      <recent name="C:\Users\energ\Documents\ContractWork\DetroitMuseum\bohringart\src\components\rocket-building\images\interstages" />
-      <recent name="C:\Users\energ\Documents\ContractWork\DetroitMuseum\bohringart\src\components\rocket-building\images" />
-    </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\energ\Documents\ContractWork\DetroitMuseum\bohringart\src\components\rocket-building" />
       <recent name="C:\Users\energ\Documents\ContractWork\DetroitMuseum\bohringart\src\components\stellar-cycle\images" />
       <recent name="C:\Users\energ\Documents\ContractWork\DetroitMuseum\bohringart\src\components\shared\modals" />
       <recent name="C:\Users\energ\Documents\ContractWork\DetroitMuseum\bohringart\src\components\about\images" />
       <recent name="C:\Users\energ\Documents\ContractWork\DetroitMuseum\bohringart\src\components\circuilt-building\grid\components\images" />
-      <recent name="C:\Users\energ\Documents\ContractWork\DetroitMuseum\bohringart\src\components\telescope-activity" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\energ\Documents\ContractWork\DetroitMuseum\bohringart\src\components\rocket-building\images" />
+      <recent name="C:\Users\energ\Documents\ContractWork\DetroitMuseum\bohringart\src\components\rocket-building\images\engines" />
+      <recent name="C:\Users\energ\Documents\ContractWork\DetroitMuseum\bohringart\src\components\rocket-building\images\payloads" />
+      <recent name="C:\Users\energ\Documents\ContractWork\DetroitMuseum\bohringart\src\components\rocket-building\images\sideBoosters" />
+      <recent name="C:\Users\energ\Documents\ContractWork\DetroitMuseum\bohringart\src\components\rocket-building\images\interstages" />
     </key>
   </component>
   <component name="SvnConfiguration">
@@ -185,7 +126,8 @@
       <workItem from="1598622373427" duration="11573000" />
       <workItem from="1598827578761" duration="19085000" />
       <workItem from="1598877177391" duration="33598000" />
-      <workItem from="1598964559301" duration="23804000" />
+      <workItem from="1598964559301" duration="26676000" />
+      <workItem from="1599050151226" duration="5800000" />
     </task>
     <task id="LOCAL-00001" summary="I dun made this look real good in this commit here &#10;&#10;(Lots of styling updates)">
       <created>1595814945436</created>
@@ -474,7 +416,14 @@
       <option name="project" value="LOCAL" />
       <updated>1598931418744</updated>
     </task>
-    <option name="localTasksCounter" value="42" />
+    <task id="LOCAL-00042" summary="Added all images to rocket building activity, added logic to stellar cycle, worked on about us page, and a few other things">
+      <created>1599015386820</created>
+      <option name="number" value="00042" />
+      <option name="presentableId" value="LOCAL-00042" />
+      <option name="project" value="LOCAL" />
+      <updated>1599015386820</updated>
+    </task>
+    <option name="localTasksCounter" value="43" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -494,7 +443,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Little work on circuit building page, and initial animation on stellar cycle page" />
     <MESSAGE value="wworking on circuit building and stellar cycle pages" />
     <MESSAGE value="fixing up things on various pages (especially sliders)" />
     <MESSAGE value="bug fixing and adding wire type toggle on circuit building" />
@@ -519,7 +467,8 @@
     <MESSAGE value="popup refractor to slide out animation (done for all popups now)" />
     <MESSAGE value="Implemented resistor and began implementation of switch on circuit building activity, and also begin implementing questions/scenarios on flight simulator page" />
     <MESSAGE value="fixed styling on &quot;more info&quot; slide out panels, and a few other touch-ups" />
-    <option name="LAST_COMMIT_MESSAGE" value="fixed styling on &quot;more info&quot; slide out panels, and a few other touch-ups" />
+    <MESSAGE value="Added all images to rocket building activity, added logic to stellar cycle, worked on about us page, and a few other things" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added all images to rocket building activity, added logic to stellar cycle, worked on about us page, and a few other things" />
   </component>
   <component name="WindowStateProjectService">
     <state x="828" y="178" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1595441686616">
@@ -577,10 +526,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="461" y="165" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1595965465549" />
-    <state x="736" y="253" key="Vcs.Push.Dialog.v2" timestamp="1598931422133">
+    <state x="736" y="253" key="Vcs.Push.Dialog.v2" timestamp="1599015393323">
       <screen x="0" y="0" width="2560" height="1040" />
     </state>
-    <state x="736" y="253" key="Vcs.Push.Dialog.v2/-1920.0.1920.1040/0.0.2560.1040@0.0.2560.1040" timestamp="1598931422133" />
+    <state x="736" y="253" key="Vcs.Push.Dialog.v2/-1920.0.1920.1040/0.0.2560.1040@0.0.2560.1040" timestamp="1599015393323" />
     <state x="552" y="253" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1597885372762" />
     <state x="565" y="130" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser" timestamp="1595958216715">
       <screen x="0" y="0" width="1920" height="1040" />

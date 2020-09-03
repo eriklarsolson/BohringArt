@@ -132,14 +132,20 @@ export function moveComponent(toX: number, toY: number, type: string): void {
 
 //TODO - Eventually, this laser will have to encounter the right edge of telescope and start coming backwards to interact with mirrors facing backwards
 // before ending up in piece above first grid space (goal)
-export function generatePath(): string {
-    let stringPath = "M0 300"; //NOTE: First val is x, second is y (y from top, so 300 down I believe?)
+export function generatePaths(): string[] {
+    let stringPath1 = "M0 250"; //NOTE: First val is x, second is y (y from top, so 300 down I believe?)
+    let stringPath2 = "M0 350";
+    let stringPath3 = "M0 450";
 
     //Initial straight line to get to first grid square
-    let yPos = 300
     let xPos = 190
+    let yPos1 = 250
+    let yPos2 = 350
+    let yPos3 = 450
 
-    stringPath += " L" + xPos + " " + yPos
+    stringPath1 += " L" + xPos + " " + yPos1
+    stringPath2 += " L" + xPos + " " + yPos2
+    stringPath3 += " L" + xPos + " " + yPos3
 
     let xChange = 0;
     let yChange = 0;
@@ -181,21 +187,31 @@ export function generatePath(): string {
         }
 
         xPos += xChange / 2;
-        yPos += yChange;
+        //TODO
+        yPos1 += yChange;
+        yPos2 += yChange;
+        yPos3 += yChange;
 
-        stringPath += " L" + xPos + " " + yPos
-        console.log(stringPath)
+        stringPath1 += " L" + xPos + " " + yPos1
+        stringPath2 += " L" + xPos + " " + yPos2
+        stringPath3 += " L" + xPos + " " + yPos3
+        console.log(stringPath1)
 
         xPos += xChange / 2;
-        yPos -= yChange;
+        //TODO
+        yPos1 -= yChange;
+        yPos2 -= yChange;
+        yPos3 -= yChange;
 
-        stringPath += " L" + xPos + " " + yPos
-        console.log(stringPath)
+        stringPath1 += " L" + xPos + " " + yPos1
+        stringPath2 += " L" + xPos + " " + yPos2
+        stringPath3 += " L" + xPos + " " + yPos3
+        console.log(stringPath1)
 
         console.log("---------")
     }
 
-    return stringPath
+    return [stringPath1, stringPath2, stringPath3]
 }
 
 export function setComponentsList(newComponents: any): void {

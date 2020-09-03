@@ -27,7 +27,7 @@ class Sidebar extends React.Component<any, any> {
                                        <img src={leftarrow} className={"arrow"} style={{height: 15}} onClick={() => this.props.changeCone(false)} />
                                    </Col>
 
-                                   <Col className={"col-5"}>
+                                   <Col className={"col-5 align-self-center"}>
                                        <p style={{marginBottom: 0, fontSize: 12, textAlign: "center", fontWeight: "bold"}}>{this.props.cone.title}</p>
                                    </Col>
 
@@ -93,7 +93,7 @@ class Sidebar extends React.Component<any, any> {
                                        <img src={leftarrow} className={"arrow"} style={{height: 15}} onClick={() => this.props.changeBody(false)} />
                                    </Col>
 
-                                   <Col className={"col-5"}>
+                                   <Col className={"col-5 align-self-center"}>
                                        <p style={{marginBottom: 0, fontSize: 12, textAlign: "center", fontWeight: "bold"}}>{this.props.body.title}</p>
                                    </Col>
 
@@ -159,7 +159,7 @@ class Sidebar extends React.Component<any, any> {
                                        <img src={leftarrow} className={"arrow"} style={{height: 15}} onClick={() => this.props.changeBooster(false)} />
                                    </Col>
 
-                                   <Col className={"col-5"}>
+                                   <Col className={"col-5  align-self-center"}>
                                        <p style={{marginBottom: 0, fontSize: 12, textAlign: "center", fontWeight: "bold"}}>{this.props.booster.title}</p>
                                    </Col>
 
@@ -225,7 +225,7 @@ class Sidebar extends React.Component<any, any> {
                                        <img src={leftarrow} className={"arrow"} style={{height: 15}} onClick={() => this.props.changeEngine(false)} />
                                    </Col>
 
-                                   <Col className={"col-5"}>
+                                   <Col className={"col-5  align-self-center"}>
                                        <p style={{marginBottom: 0, fontSize: 12, textAlign: "center", fontWeight: "bold"}}>{this.props.engine.title}</p>
                                    </Col>
 

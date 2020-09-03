@@ -39,7 +39,7 @@ class FlightSimulator extends React.Component<any, any> {
 
         const updateIteration = (answer: boolean) => {
             if(answer) {
-                this.setState({iteration: this.state.iteration + 1, xStart: this.state.xStart + 300})
+                this.setState({iteration: this.state.iteration + 1, xStart: this.state.xStart + 200})
                 //TODO - Update scenario's state for answer
 
                 runTimer()
@@ -78,16 +78,20 @@ class FlightSimulator extends React.Component<any, any> {
                     </Row>
 
 
-                    <Row style={{margin: 10, padding: 0}} className={"justify-content-center"}>
-                        <Col className={"col-8"}>
-                            <RocketBarAnimation xStart={this.state.xStart} />
-                        </Col>
-                    </Row>
+                    {/*<Row style={{margin: 10, padding: 0}} className={"justify-content-center"}>*/}
+                    {/*    <Col className={"col-8"}>*/}
+                    {/*        <RocketBarAnimation xStart={this.state.xStart} />*/}
+                    {/*    </Col>*/}
+                    {/*</Row>*/}
 
                     <Row className={"justify-content-center"}>
-                        <Col className={"col-8"} style={{padding: 15, color: "white"}}>
+                        <Col className={"col-5"} style={{margin: 50}}>
+                            <RocketBarAnimation xStart={this.state.xStart} />
+                        </Col>
+
+                        <Col className={"col-4"} style={{padding: 15, color: "white", minHeight: 280}}>
                             <div style={{position: "absolute", width: "100%", height: "100%",
-                                backgroundColor: "black", opacity: 0.7}} />
+                                backgroundColor: "rgba(17, 28, 74, 0.9)"}} />
 
                                 <Container>
                                     <Row style={{padding: 10}}>
@@ -104,16 +108,16 @@ class FlightSimulator extends React.Component<any, any> {
 
                                     {this.state.loadedScenario !== "Flying to your destination" && this.state.iteration !== 3 &&
                                         <Row className={"justify-content-center"} style={{marginTop: 25}}>
-                                            <Col className={"col-4"}>
-                                                <Button className={"green-button"} style={{float: "right", width: 200,
+                                            <Col className={"col-6 col-md-4"}>
+                                                <Button className={"green-button"} style={{float: "right", width: "50%",
                                                     clipPath: "polygon(0 0, 95% 0, 100% 100%, 5% 100%)"}}
                                                         onClick={() => updateIteration(false)}>
                                                     No
                                                 </Button>
                                             </Col>
 
-                                            <Col className={"col-4"}>
-                                                <Button className={"green-button"} style={{float: "right", width: 200,
+                                            <Col className={"col-6 col-md-4"}>
+                                                <Button className={"green-button"} style={{float: "right", width: "50%",
                                                     clipPath: "polygon(0 0, 95% 0, 100% 100%, 5% 100%)"}}
                                                     onClick={() => updateIteration(true)}>
                                                     Yes
