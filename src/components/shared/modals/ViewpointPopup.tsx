@@ -25,7 +25,7 @@ class ViewpointPopup extends React.Component<any, any> {
 
                         <Row style={{padding: "10px"}} className={"align-content-center justify-content-center"}>
                             <Col>
-                                <img src={viewpoint} width={"100%"} />
+                                <img alt={"Viewpoint"} src={viewpoint} width={"100%"} />
                             </Col>
                         </Row>
                     </Container>

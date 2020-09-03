@@ -1,5 +1,5 @@
 import React from "react";
-import {Container, Row, Col, Modal} from 'react-bootstrap'
+import { Container, Row, Col } from 'react-bootstrap'
 import Sidebar from "./Sidebar";
 import Button from "react-bootstrap/Button";
 import 'font-awesome/css/font-awesome.min.css';
@@ -243,31 +243,6 @@ class RocketBuilding extends React.Component<any, any> {
             }
         }
 
-        //Depending on what type of piece you clicked last, display details in sidebar about that list
-        const getCorrectList = () => {
-            if (this.state.parentIndex === 0) {
-                return this.state.cones;
-            } else if (this.state.parentIndex === 1) {
-                return this.state.bodys;
-            } else if (this.state.parentIndex === 2) {
-                return this.state.boosters;
-            } else if (this.state.parentIndex === 3) {
-                return this.state.engines;
-            }
-        }
-
-        const getCorrectIndex = () => {
-            if (this.state.parentIndex === 0) {
-                return this.state.coneIndex;
-            } else if (this.state.parentIndex === 1) {
-                return this.state.bodyIndex;
-            } else if (this.state.parentIndex === 2) {
-                return this.state.boosterIndex
-            } else if (this.state.parentIndex === 3) {
-                return this.state.engineIndex;
-            }
-        }
-
         const getTotalThrust = () => {
             let total = 0;
             total += (this.state.boosters[this.state.boosterIndex].thrust * 2); //Note: 2 side boosters
@@ -397,30 +372,30 @@ class RocketBuilding extends React.Component<any, any> {
                                                 <Row className={"justify-content-center"} style={{maxHeight: 1100}}>
                                                     {this.state.boosterIndex === 3 &&
                                                         <div style={{position: "absolute", width: "17%", left: "41.5%", top: "65%", zIndex: 10}}>
-                                                            <img src={booster_4_middle} style={{width: "100%"}} />
+                                                            <img alt={"Booster Middle"} src={booster_4_middle} style={{width: "100%"}} />
                                                         </div>
                                                     }
 
                                                     <Col className={"col-2 align-self-end"}  style={{padding: 0}}>
-                                                        <img className={"part-image"} src={this.state.boosters[this.state.boosterIndex].leftImage} style={{width: "80%"}} />
+                                                        <img alt={"Booster Left"} className={"part-image"} src={this.state.boosters[this.state.boosterIndex].leftImage} style={{width: "80%"}} />
                                                     </Col>
 
                                                     <Col className={"col-3"} style={{padding: 0}}>
                                                         <Row className={"justify-content-center"} style={{margin: 5}}>
-                                                            <img className={"part-image"} src={this.state.cones[this.state.coneIndex].image} style={{width: "80%"}} />
+                                                            <img alt={"Cone"} className={"part-image"} src={this.state.cones[this.state.coneIndex].image} style={{width: "80%"}} />
                                                         </Row>
 
                                                         <Row className={"justify-content-center"} style={{margin: 5}}>
-                                                            <img className={"part-image"} src={this.state.bodys[this.state.bodyIndex].image} style={{width: "80%"}} />
+                                                            <img alt={"Body"} className={"part-image"} src={this.state.bodys[this.state.bodyIndex].image} style={{width: "80%"}} />
                                                         </Row>
 
                                                         <Row className={"justify-content-center"} style={{margin: 5}}>
-                                                            <img className={"part-image"} src={this.state.engines[this.state.engineIndex].image} style={{width: "80%"}} />
+                                                            <img alt={"Engine"} className={"part-image"} src={this.state.engines[this.state.engineIndex].image} style={{width: "80%"}} />
                                                         </Row>
                                                     </Col>
 
                                                     <Col className={"col-2 align-self-end"}  style={{padding: 0}}>
-                                                        <img className={"part-image"} src={this.state.boosters[this.state.boosterIndex].rightImage} style={{width: "80%"}} />
+                                                        <img alt={"Booster Right"} className={"part-image"} src={this.state.boosters[this.state.boosterIndex].rightImage} style={{width: "80%"}} />
                                                     </Col>
                                                 </Row>
                                             </Col>

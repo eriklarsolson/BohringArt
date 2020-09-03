@@ -1,5 +1,5 @@
 import React from "react";
-import {Container, Row, Col, Modal} from 'react-bootstrap'
+import { Container, Row, Col } from 'react-bootstrap'
 import Sidebar from "./Sidebar";
 import Button from "react-bootstrap/Button";
 import ObjectivePopup from "../shared/modals/ObjectivePopup";

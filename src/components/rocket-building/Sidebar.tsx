@@ -24,7 +24,7 @@ class Sidebar extends React.Component<any, any> {
 
                                <Row className={"justify-content-center"} style={{backgroundColor: "#42949F", textAlign: "left", padding: 2}}>
                                    <Col className={"col-1"}>
-                                       <img src={leftarrow} className={"arrow"} style={{height: 15}} onClick={() => this.props.changeCone(false)} />
+                                       <img alt={"Arrow"} src={leftarrow} className={"arrow"} style={{height: 15}} onClick={() => this.props.changeCone(false)} />
                                    </Col>
 
                                    <Col className={"col-5 align-self-center"}>
@@ -32,7 +32,7 @@ class Sidebar extends React.Component<any, any> {
                                    </Col>
 
                                    <Col className={"col-1"} style={{float: "left"}}>
-                                       <img src={rightarrow} className={"arrow"} style={{height: 15}} onClick={() => this.props.changeCone(true)} />
+                                       <img alt={"Arrow"} src={rightarrow} className={"arrow"} style={{height: 15}} onClick={() => this.props.changeCone(true)} />
                                    </Col>
                                </Row>
 
@@ -78,7 +78,7 @@ class Sidebar extends React.Component<any, any> {
 
                                <Row className={"justify-content-center"} style={{backgroundColor: "#42949F", textAlign: "left", padding: 2}}>
                                    <Col className={"col-1"}>
-                                       <img src={leftarrow} className={"arrow"} style={{height: 15}} onClick={() => this.props.changeBody(false)} />
+                                       <img alt={"Arrow"} src={leftarrow} className={"arrow"} style={{height: 15}} onClick={() => this.props.changeBody(false)} />
                                    </Col>
 
                                    <Col className={"col-5 align-self-center"}>
@@ -86,7 +86,7 @@ class Sidebar extends React.Component<any, any> {
                                    </Col>
 
                                    <Col className={"col-1"} style={{float: "left"}}>
-                                       <img src={rightarrow} className={"arrow"} style={{height: 15}} onClick={() => this.props.changeBody(true)} />
+                                       <img alt={"Arrow"}src={rightarrow} className={"arrow"} style={{height: 15}} onClick={() => this.props.changeBody(true)} />
                                    </Col>
                                </Row>
 
@@ -132,7 +132,7 @@ class Sidebar extends React.Component<any, any> {
 
                                <Row className={"justify-content-center"} style={{backgroundColor: "#42949F", textAlign: "left", padding: 2}}>
                                    <Col className={"col-1"}>
-                                       <img src={leftarrow} className={"arrow"} style={{height: 15}} onClick={() => this.props.changeBooster(false)} />
+                                       <img alt={"Arrow"} src={leftarrow} className={"arrow"} style={{height: 15}} onClick={() => this.props.changeBooster(false)} />
                                    </Col>
 
                                    <Col className={"col-5  align-self-center"}>
@@ -140,7 +140,7 @@ class Sidebar extends React.Component<any, any> {
                                    </Col>
 
                                    <Col className={"col-1"} style={{float: "left"}}>
-                                       <img src={rightarrow} className={"arrow"} style={{height: 15}} onClick={() => this.props.changeBooster(true)} />
+                                       <img alt={"Arrow"} src={rightarrow} className={"arrow"} style={{height: 15}} onClick={() => this.props.changeBooster(true)} />
                                    </Col>
                                </Row>
 
@@ -210,7 +210,7 @@ class Sidebar extends React.Component<any, any> {
 
                                <Row className={"justify-content-center"} style={{backgroundColor: "#42949F", textAlign: "left", padding: 2}}>
                                    <Col className={"col-1"}>
-                                       <img src={leftarrow} className={"arrow"} style={{height: 15}} onClick={() => this.props.changeEngine(false)} />
+                                       <img alt={"Arrow"} src={leftarrow} className={"arrow"} style={{height: 15}} onClick={() => this.props.changeEngine(false)} />
                                    </Col>
 
                                    <Col className={"col-5  align-self-center"}>
@@ -218,7 +218,7 @@ class Sidebar extends React.Component<any, any> {
                                    </Col>
 
                                    <Col className={"col-1"} style={{float: "left"}}>
-                                       <img src={rightarrow} className={"arrow"} style={{height: 15}} onClick={() => this.props.changeEngine(true)} />
+                                       <img alt={"Arrow"} src={rightarrow} className={"arrow"} style={{height: 15}} onClick={() => this.props.changeEngine(true)} />
                                    </Col>
                                </Row>
 

@@ -29,7 +29,7 @@ export const BackgroundAnimation: React.FC  = () => {
                 times: [0, 1],
                 loop: Infinity,
             }}>
-            <img src={stellarBackground} />
+            <img alt={"Stellar Background"} src={stellarBackground} />
         </motion.div>
     );
 };

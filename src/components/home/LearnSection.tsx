@@ -1,9 +1,6 @@
 import React from "react";
 import { Container, Row, Col } from 'react-bootstrap'
-import circuitbuilding from './circuitbuilding.png';
 import './Home.scss';
-import {LearnSectionModel} from "../shared/models/LearnSectionModel";
-import Button from "react-bootstrap/Button";
 import one from "./1.png"
 import two from "./2.png"
 import three from "./3.png"
@@ -35,7 +32,7 @@ class LearnSection extends React.Component<any, any> {
                                  padding: 25, marginBottom: 40}}>
                             <Row>
                                 <Col className={"col-3"} style={{overflow: "hidden"}}>
-                                    <img src={one} />
+                                    <img alt={"#1"} src={one} />
                                 </Col>
                                 <Col>
                                     <h4>CIRCUIT CONSTRUCTION</h4>
@@ -62,7 +59,7 @@ class LearnSection extends React.Component<any, any> {
                                  padding: 25, marginBottom: 40}}>
                             <Row>
                                 <Col className={"col-3"} style={{overflow: "hidden"}}>
-                                    <img src={two} />
+                                    <img alt={"#2"} src={two} />
                                 </Col>
                                 <Col>
                                     <h4>LASERS AND LENSES</h4>
@@ -91,7 +88,7 @@ class LearnSection extends React.Component<any, any> {
                                 padding: 25, marginLeft: "4%", marginBottom: 40}}>
                            <Row>
                                <Col className={"col-3"} style={{overflow: "hidden"}}>
-                                   <img src={three} />
+                                   <img alt={"#3"} src={three} />
                                </Col>
                                <Col>
                                    <h4>TO THE STARS</h4>
@@ -119,7 +116,7 @@ class LearnSection extends React.Component<any, any> {
                                 padding: 25, marginBottom: 40}}>
                            <Row>
                                <Col className={"col-3"} style={{overflow: "hidden"}}>
-                                   <img src={four} />
+                                   <img alt={"#4"} src={four} />
                                </Col>
                                <Col>
                                    <h4>STELLAR LIFE CYCLE</h4>

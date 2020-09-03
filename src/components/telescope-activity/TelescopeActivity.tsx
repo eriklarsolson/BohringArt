@@ -1,5 +1,5 @@
-import React, {useState} from "react";
-import {Container, Row, Col, Modal} from 'react-bootstrap'
+import React from "react";
+import { Container, Row, Col } from 'react-bootstrap'
 import Sidebar from "./Sidebar";
 import Button from "react-bootstrap/Button";
 import satellite from './satellite.png'
@@ -108,7 +108,7 @@ class TelescopeActivity extends React.Component<any, any> {
                                                 height: "100%",
                                                 left: 0
                                             }}>
-                                                <img src={satellite} height={500} />
+                                                <img alt={"Telescope"} src={satellite} height={500} />
                                                 {this.state.animationRunning &&
                                                 <div style={{
                                                     position: "absolute",

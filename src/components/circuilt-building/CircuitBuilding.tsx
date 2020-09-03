@@ -1,5 +1,5 @@
-import React, {useCallback, useEffect, useState} from "react";
-import {Container, Row, Col, Modal} from 'react-bootstrap'
+import React from "react";
+import { Container, Row, Col } from 'react-bootstrap'
 import Sidebar from "./Sidebar";
 import Button from "react-bootstrap/Button";
 import ObjectivePopup from "../shared/modals/ObjectivePopup";
@@ -7,9 +7,7 @@ import {SixGridContainer} from "./grid/SixGridContainer";
 import objective1wire from './objective1wire.png'
 import objective2wire from './objective2wire.png'
 import objective3wire from './objective3wire.png'
-import CircuitPopup from "../shared/modals/CircuitPopup";
 import {
-    deleteCurrentComponent,
     setComponentsList,
     setCurrentLevel, setPassed
 } from "./grid/Functionality";

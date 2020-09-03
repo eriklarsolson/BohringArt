@@ -16,18 +16,6 @@ class Sidebar extends React.Component<any, any> {
             massClassString = "Massive"
         }
 
-        const changeValue = (type: number) => {
-            if(this.props.currentObject.title === "Average Star" && this.props.currentObject.title === "Massive Star") {
-                if(type === 0) {
-                    this.props.changeTemperature()
-                } else if(type === 1) {
-                    this.props.changeSize()
-                } else if(type === 2) {
-                    this.props.changeMass()
-                }
-            }
-        }
-
         return (
             <>
                <Container style={{backgroundColor: "#29405B", margin: 0, padding: 0, height: "100%",

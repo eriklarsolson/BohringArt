@@ -1,6 +1,5 @@
 import * as React from "react";
 import { motion } from "framer-motion";
-import {Container, Row, Col} from 'react-bootstrap'
 
 export interface AnimationProps {
     image: any
@@ -22,7 +21,7 @@ export const StellarInfoAnimation: React.FC<AnimationProps>  = ({image}) => {
                 ease: "easeOut",
                 times: [0, 1],
             }}>
-            <img src={image} style={{minWidth: 400}} />
+            <img alt={"Stellar Object"} src={image} style={{minWidth: 400}} />
         </motion.div>
     );
 };

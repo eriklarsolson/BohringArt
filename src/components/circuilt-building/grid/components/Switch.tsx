@@ -7,12 +7,10 @@ import rotate from './images/rotate.png'
 import { Container, Row, Col } from 'react-bootstrap'
 import {
     getComponentAtPos,
-    hasCircuit,
     setAllSwitchesOn,
     setComponentType,
-    setComponentTypeOnClick, setCurrentComponentsRotation
+    setCurrentComponentsRotation
 } from "../Functionality";
-import {Button} from "@material-ui/core";
 
 let style: React.CSSProperties = {
     cursor: 'move',
@@ -95,15 +93,13 @@ export const Switch: React.FC<ComponentProps> = ({x, y, oneGridStyling, currentC
         }
     }
 
-    //TODO - Add rotate functionality (look at battery and grid square as examples)
-
     return (
         <>
             <DragPreviewImage connect={preview} src={switchImage} />
             <Container fluid style={{...gridStyling}}>
                 {clicked &&
                 <div style={{position: "absolute", top: -35, right: -10, marginTop: 1, marginRight: 1}}>
-                    <img src={rotate} onClick={clickRotate} />
+                    <img alt={"Rotate"} src={rotate} onClick={clickRotate} />
                 </div>
                 }
 
@@ -115,7 +111,7 @@ export const Switch: React.FC<ComponentProps> = ({x, y, oneGridStyling, currentC
                          }}
                          onClick={toggleSwitch}>
                         <div style={{transform: "rotate(" + rotateDeg + "deg)"}}>
-                            <img src={switchImage} width={"100%"} />
+                            <img alt={"Switch"} src={switchImage} width={"100%"} />
                         </div>
                     </Col>
                 </Row>

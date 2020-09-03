@@ -2,12 +2,6 @@ import * as React from "react";
 import { motion } from "framer-motion";
 import { Container, Row, Col, Button } from 'react-bootstrap'
 import {useState} from "react";
-import wire from "./grid/components/images/wire.png"
-import battery from "./grid/components/images/battery.png"
-import resistor from "./grid/components/images/resistor.png"
-import lasercomponenticon from "./images/laser_COMPONENT.png";
-import optics from "./images/optics.png";
-import prism from "./images/prism.png";
 import cone_1 from "./images/cones/cone_1.png"
 import body_1 from "./images/bodys/body_1.png"
 import booster_4_middle from "./images/boosters/booster_4_middle.png"
@@ -74,28 +68,28 @@ export const MoreInfoAnimation: React.FC<AnimationProps>  = ({setParentState}) =
                                     <Row style={{margin: 5, marginLeft: 10, width: 175}}>
                                         <Col className="col-12" onMouseOver={() => changeInfo("Cone")}
                                              style={{height: 100, backgroundColor: "#F8EDDD", clipPath: "polygon(0 0, 93% 0, 100% 100%, 5% 100%)"}}>
-                                            <img src={cone_1} style={{height: "100%", padding: 10}}  />
+                                            <img alt={"Cone"} src={cone_1} style={{height: "100%", padding: 10}}  />
                                         </Col>
                                     </Row>
 
                                     <Row style={{margin: 5, marginLeft: 20, width: 175}}>
                                         <Col className="col-12" onMouseOver={() => changeInfo("Body")}
                                              style={{height: 100, backgroundColor: "#F8EDDD", clipPath: "polygon(0 0, 93% 0, 100% 100%, 5% 100%)"}}>
-                                            <img src={body_1} style={{height: "100%", transform: "rotate(90deg)"}}  />
+                                            <img alt={"Body"} src={body_1} style={{height: "100%", transform: "rotate(90deg)"}}  />
                                         </Col>
                                     </Row>
 
                                     <Row style={{margin: 5, marginLeft: 30, width: 175}}>
                                         <Col className="col-12" onMouseOver={() => changeInfo("SideBooster")}
                                              style={{height: 100, backgroundColor: "#F8EDDD", clipPath: "polygon(0 0, 93% 0, 100% 100%, 5% 100%)"}}>
-                                            <img src={booster_4_middle} style={{height: "100%", transform: "rotate(90deg)"}}  />
+                                            <img alt={"Booster"} src={booster_4_middle} style={{height: "100%", transform: "rotate(90deg)"}}  />
                                         </Col>
                                     </Row>
 
                                     <Row style={{margin: 5, marginLeft: 40, width: 175}}>
                                         <Col className="col-12" onMouseOver={() => changeInfo("Engine")}
                                              style={{height: 100, backgroundColor: "#F8EDDD", clipPath: "polygon(0 0, 93% 0, 100% 100%, 5% 100%)"}}>
-                                            <img src={engine_1} style={{height: "100%", padding: 10}} />
+                                            <img alt={"Engine"} src={engine_1} style={{height: "100%", padding: 10}} />
                                         </Col>
                                     </Row>
                                 </Container>

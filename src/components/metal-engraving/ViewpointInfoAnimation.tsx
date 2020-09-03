@@ -71,7 +71,7 @@ export const ViewpointInfoAnimation: React.FC<AnimationProps>  = ({setParentStat
 
                                 <Row className={"justify-content-center"}>
                                     <Col className={"col-6"}>
-                                        <img src={viewpoint} style={{width: "100%", transform: "rotate(90deg)"}} />
+                                        <img alt={"Viewpoint"} src={viewpoint} style={{width: "100%", transform: "rotate(90deg)"}} />
                                     </Col>
                                 </Row>
                             </Container>

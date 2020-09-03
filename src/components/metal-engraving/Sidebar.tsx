@@ -1,15 +1,10 @@
 import React from "react";
 import { Container, Row, Col } from 'react-bootstrap'
-import lasercomponenticon from "./images/laser_COMPONENT.png";
-import optics from "./images/optics.png";
-import prism from "./images/prism.png";
 import square from "./images/square.png";
 import circle from "./circle.png";
 import triangle from "./images/triangle.png";
-import star from "./images/star.png";
 import Button from "react-bootstrap/Button";
 import Accordion from "react-bootstrap/Accordion"
-import {Card} from "@material-ui/core";
 import {SidebarModule} from "./SidebarModule";
 export const TOOL_LASER = 'laser';
 export const TOOL_OPTICS = 'optics';
@@ -65,7 +60,7 @@ class Sidebar extends React.Component<any, any> {
                                                className={this.props.tool === TOOL_RECTANGLE  ? 'item-active' : 'item'}
                                                onClick={() => this.props.setTool(TOOL_RECTANGLE)}
                                            >
-                                               <img className="clickable-image" src={square} />
+                                               <img alt={"Square"} className="clickable-image" src={square} />
                                            </button>
                                        </Col>
                                    </Row>
@@ -86,7 +81,7 @@ class Sidebar extends React.Component<any, any> {
                                                            className={this.props.tool === TOOL_ELLIPSE  ? 'item-active' : 'item'}
                                                            onClick={() => this.props.setTool(TOOL_ELLIPSE)}
                                                        >
-                                                           <img className="clickable-image" src={circle} />
+                                                           <img alt={"Circle"} className="clickable-image" src={circle} />
                                                        </button>
                                                    </Col>
                                                </Row>
@@ -97,7 +92,7 @@ class Sidebar extends React.Component<any, any> {
                                                            className={this.props.tool === TOOL_TRIANGLE  ? 'item-active' : 'item'}
                                                            onClick={() => this.props.setTool(TOOL_TRIANGLE)}
                                                        >
-                                                           <img className="clickable-image" src={triangle} />
+                                                           <img alt={"Triangle"} className="clickable-image" src={triangle} />
                                                        </button>
                                                    </Col>
                                                </Row>

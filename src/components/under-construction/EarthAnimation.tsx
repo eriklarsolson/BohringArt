@@ -13,7 +13,7 @@ export const EarthAnimation: React.FC  = () => {
                 ease: "linear",
                 times: [0, 1],
             }}>
-            <img src={earth} style={{width: 750}} />
+            <img alt={"Earth"} src={earth} style={{width: 750}} />
         </motion.div>
     );
 };

@@ -67,7 +67,7 @@ export const SidebarModule: React.FC<Props> = ({tool, toolToShow, setTool, title
                  onMouseOver={showTooltip} onMouseOut={hideTooltip}>
                 <div className={"clickable-image"} style={{backgroundColor: "white", clipPath: "polygon(0 0, 95% 0, 100% 100%, 0 100%)"}}
                      onClick={() => setTool(toolToShow)} >
-                    <img src={getToolImage()}
+                    <img alt={"Engraving Tool"} src={getToolImage()}
                          style={{width: "100px", height: "100px"}}
                          className={tool === toolToShow  ? 'item-active' : 'item'} />
                 </div>

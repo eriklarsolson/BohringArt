@@ -33,43 +33,43 @@ export const RocketAnimation: React.FC<AnimationProps>  = ({cone, body, engine, 
                 <Row className={"justify-content-center"}>
                     {booster.middleImage !== null &&
                     <div style={{position: "absolute", width: "7%", left: "47%", top: "105%", zIndex: 10}}>
-                        <img src={booster_4_middle} style={{width: "80%"}} />
+                        <img alt={"Booster Middle"} src={booster_4_middle} style={{width: "80%"}} />
                     </div>
                     }
 
                     <Col className={"col-1 align-self-end"} style={{marginBottom: 100, padding: 0, flex: "0 0 70px", maxWidth: "70px"}}>
                         <Row>
-                            <img src={booster.leftImage} style={{width: "100%"}} />
+                            <img alt={"Booster Left"} src={booster.leftImage} style={{width: "100%"}} />
                         </Row>
                         <Row>
-                            <img src={big_fire} style={{width: "80%"}} />
+                            <img alt={"Fire"} src={big_fire} style={{width: "80%"}} />
                         </Row>
                     </Col>
 
                     <Col className={"col-1"} style={{padding: 0}}>
                         <Row className={"justify-content-center"}>
-                            <img src={cone.image} style={{width: "80%"}} />
+                            <img alt={"Cone"} src={cone.image} style={{width: "80%"}} />
                         </Row>
 
                         <Row className={"justify-content-center"}>
-                            <img src={body.image} style={{width: "80%"}} />
+                            <img alt={"Body"} src={body.image} style={{width: "80%"}} />
                         </Row>
 
                         <Row className={"justify-content-center"}>
-                            <img src={engine.image} style={{width: "80%"}} />
+                            <img alt={"Engine"} src={engine.image} style={{width: "80%"}} />
                         </Row>
 
                         <Row className={"justify-content-center"}>
-                            <img src={big_fire} style={{width: "80%"}} />
+                            <img alt={"Fire"} src={big_fire} style={{width: "80%"}} />
                         </Row>
                     </Col>
 
                     <Col className={"col-1 align-self-end"} style={{marginBottom: 100, padding: 0, flex: "0 0 70px", maxWidth: "70px"}}>
                         <Row>
-                            <img src={booster.rightImage} style={{width: "100%"}} />
+                            <img alt={"Booster Right"} src={booster.rightImage} style={{width: "100%"}} />
                         </Row>
                         <Row>
-                            <img src={big_fire} style={{width: "80%"}} />
+                            <img alt={"Fire"} src={big_fire} style={{width: "80%"}} />
                         </Row>
                     </Col>
                 </Row>

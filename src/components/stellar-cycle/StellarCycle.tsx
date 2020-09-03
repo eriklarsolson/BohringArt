@@ -1,7 +1,6 @@
 import React from "react";
-import {Container, Row, Col, Modal} from 'react-bootstrap'
+import { Container, Row, Col } from 'react-bootstrap'
 import Button from "react-bootstrap/Button";
-import ObjectivePopup from "../shared/modals/ObjectivePopup";
 import './StellarCycle.scss'
 import stellarBackground from './stellarBackground.png';
 import avgstar from './images/avgstar.png';
@@ -125,14 +124,14 @@ class StellarCycle extends React.Component<any, any> {
                                 </div>
 
                                 <div style={{position: "absolute", top: "5%", left: "7%", margin: 0, width: "65%"}}>
-                                    <img src={white_dwarf_path} width={"100%"} />
+                                    <img alt={"White Dwarf Star Path"} src={white_dwarf_path} width={"100%"} />
                                 </div>
 
                                 <Col className={"col-2 justify-content-center align-content-center stellar-circle"}
                                      onClick={() => goToObjectPage("Nebula")} style={{marginTop: 100, padding: "0"}}>
                                     <Row>
                                         <Col>
-                                            <img src={nebula} width={"50%"} />
+                                            <img alt={"Nebula"} src={nebula} width={"50%"} />
                                         </Col>
                                     </Row>
 
@@ -149,7 +148,7 @@ class StellarCycle extends React.Component<any, any> {
                                             <Container fluid  onClick={() => goToObjectPage("Average Star")}>
                                                 <Row>
                                                     <Col>
-                                                        <img src={avgstar} width={"50%"}/>
+                                                        <img alt={"Average Star"} src={avgstar} width={"50%"}/>
                                                     </Col>
                                                 </Row>
 
@@ -165,7 +164,7 @@ class StellarCycle extends React.Component<any, any> {
                                             <Container fluid  onClick={() => goToObjectPage("Red Giant")}>
                                                 <Row>
                                                     <Col>
-                                                        <img src={redgiant} width={"50%"}/>
+                                                        <img alt={"Red Giant"} src={redgiant} width={"50%"}/>
                                                     </Col>
                                                 </Row>
 
@@ -181,7 +180,7 @@ class StellarCycle extends React.Component<any, any> {
                                             <Container fluid  onClick={() => goToObjectPage("Planetary Nebula")}>
                                                 <Row>
                                                     <Col>
-                                                        <img src={planetarynebula} width={"50%"}/>
+                                                        <img alt={"Nebula"} src={planetarynebula} width={"50%"}/>
                                                     </Col>
                                                 </Row>
 
@@ -197,7 +196,7 @@ class StellarCycle extends React.Component<any, any> {
                                             <Container fluid  onClick={() => goToObjectPage("White Dwarf")}>
                                                 <Row>
                                                     <Col>
-                                                        <img src={whitedwarf} width={"50%"}/>
+                                                        <img alt={"White Dwarf"} src={whitedwarf} width={"50%"}/>
                                                     </Col>
                                                 </Row>
 
@@ -215,7 +214,7 @@ class StellarCycle extends React.Component<any, any> {
                                             <Container fluid  onClick={() => goToObjectPage("Massive Star")}>
                                                 <Row>
                                                     <Col>
-                                                        <img src={massivestar} width={"50%"}/>
+                                                        <img alt={"Massive Star"} src={massivestar} width={"50%"}/>
                                                     </Col>
                                                 </Row>
 
@@ -231,7 +230,7 @@ class StellarCycle extends React.Component<any, any> {
                                             <Container fluid  onClick={() => goToObjectPage("Red Supergiant")}>
                                                 <Row>
                                                     <Col>
-                                                        <img src={redsupergiant} width={"50%"}/>
+                                                        <img alt={"Red Supergiant"} src={redsupergiant} width={"50%"}/>
                                                     </Col>
                                                 </Row>
 
@@ -247,7 +246,7 @@ class StellarCycle extends React.Component<any, any> {
                                             <Container fluid  onClick={() => goToObjectPage("Supernova")}>
                                                 <Row>
                                                     <Col>
-                                                        <img src={supernova} width={"50%"}/>
+                                                        <img alt={"Supernova"} src={supernova} width={"50%"}/>
                                                     </Col>
                                                 </Row>
 
@@ -263,7 +262,7 @@ class StellarCycle extends React.Component<any, any> {
                                             <Container fluid  onClick={() => goToObjectPage("Neutron Star")}>
                                                 <Row>
                                                     <Col>
-                                                        <img src={neutronstar} width={"50%"}/>
+                                                        <img alt={"Neutron Star"} src={neutronstar} width={"50%"}/>
                                                     </Col>
                                                 </Row>
 
@@ -277,7 +276,7 @@ class StellarCycle extends React.Component<any, any> {
                                             <Container fluid  onClick={() => goToObjectPage("Black Hole")}>
                                                 <Row>
                                                     <Col>
-                                                        <img src={blackhole} width={"50%"}/>
+                                                        <img alt={"Black Hole"} src={blackhole} width={"50%"}/>
                                                     </Col>
                                                 </Row>
 

@@ -1,5 +1,5 @@
 import React from "react";
-import {Container, Row, Col, Modal} from 'react-bootstrap'
+import { Container, Row, Col } from 'react-bootstrap'
 import Button from "react-bootstrap/Button";
 import 'font-awesome/css/font-awesome.min.css';
 import stellarBackground from "../stellar-cycle/stellarBackground.png";

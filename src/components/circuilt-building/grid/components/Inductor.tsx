@@ -73,7 +73,7 @@ export const Inductor: React.FC<ComponentProps> = ({x, y, oneGridStyling, curren
             <Container fluid style={{...gridStyling}}>
                 {clicked &&
                 <div style={{position: "absolute", top: -35, right: -10, marginTop: 1, marginRight: 1}}>
-                    <img src={rotate} onClick={clickRotate} />
+                    <img alt={"Rotate"} src={rotate} onClick={clickRotate} />
                 </div>
                 }
 
@@ -84,7 +84,7 @@ export const Inductor: React.FC<ComponentProps> = ({x, y, oneGridStyling, curren
                              opacity: isDragging ? 0.5 : 1,
                          }}>
                         <div style={{transform: "rotate(" + rotateDeg + "deg)"}}>
-                            <img src={inductor} width={"100%"} />
+                            <img alt={"Inductor"} src={inductor} width={"100%"} />
                         </div>
                     </Col>
                 </Row>

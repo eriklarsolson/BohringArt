@@ -1,9 +1,7 @@
-import React, {useState} from "react";
-import {Container, Row, Col, Modal} from 'react-bootstrap'
+import React from "react";
+import { Container, Row, Col } from 'react-bootstrap'
 import Button from "react-bootstrap/Button";
 import stellarBackground from './stellarBackground.png';
-import rightarrow from './rightarrow.png';
-import leftarrow from './leftarrow.png';
 import Sidebar from "./Sidebar";
 import avgstar from "./images/avgstar.png"
 import blackhole from "./images/blackhole.png"
@@ -22,7 +20,6 @@ import supernova from "./images/supernova.png"
 import whitedwarf from "./images/whitedwarf.png"
 import './StellarCycle.scss'
 import {getIndex} from "../circuilt-building/grid/Functionality";
-import {Slider, withStyles} from "@material-ui/core";
 import ObjectivePopup from "../shared/modals/ObjectivePopup";
 import TimelineSlider from "./TimelineSlider";
 import StellarPropertiesPopup from "../shared/modals/StellarPropertiesPopup";
@@ -372,21 +369,21 @@ class ObjectPage extends React.Component<any, any> {
             }
         }
 
-        const leftArrow = () => {
-            if(this.state.index - 1 === -1) {
-                this.setState({index: this.state.stellarObjects[this.state.massClass].length - 1})
-            } else {
-                this.setState({index: this.state.index - 1})
-            }
-        }
-
-        const rightArrow = () => {
-            if (this.state.index + 1 === this.state.stellarObjects[this.state.massClass].length) {
-                this.setState({index: 0})
-            } else {
-                this.setState({index: this.state.index + 1})
-            }
-        }
+        // const leftArrow = () => {
+        //     if(this.state.index - 1 === -1) {
+        //         this.setState({index: this.state.stellarObjects[this.state.massClass].length - 1})
+        //     } else {
+        //         this.setState({index: this.state.index - 1})
+        //     }
+        // }
+        //
+        // const rightArrow = () => {
+        //     if (this.state.index + 1 === this.state.stellarObjects[this.state.massClass].length) {
+        //         this.setState({index: 0})
+        //     } else {
+        //         this.setState({index: this.state.index + 1})
+        //     }
+        // }
 
         let max = 100
         if(this.state.massClass === 1) {
@@ -506,13 +503,13 @@ class ObjectPage extends React.Component<any, any> {
                                             this.state.stellarObjects[this.state.massClass][this.state.index].title === "Massive Star") ?
                                             <>
                                                 {this.state.stellarObjects[this.state.massClass][this.state.index].title === "Massive Star" ?
-                                                    <img src={this.state.massiveStars[this.state.massiveIndex].image} style={{height: "450px"}} />
+                                                    <img alt={"Massive Star"} src={this.state.massiveStars[this.state.massiveIndex].image} style={{height: "450px"}} />
                                                     :
-                                                    <img src={this.state.averageStars[this.state.averageIndex].image} style={{height: "450px"}} />
+                                                    <img alt={"Average Star"} src={this.state.averageStars[this.state.averageIndex].image} style={{height: "450px"}} />
                                                 }
                                             </>
                                             :
-                                            <img src={this.state.stellarObjects[this.state.massClass][this.state.index].image} style={{height: "450px"}} />
+                                            <img alt={"Stellar Object"} src={this.state.stellarObjects[this.state.massClass][this.state.index].image} style={{height: "450px"}} />
                                         }
                                     </Col>
 

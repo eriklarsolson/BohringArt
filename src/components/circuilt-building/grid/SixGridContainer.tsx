@@ -138,7 +138,7 @@ export const SixGridContainer: React.FC<GridContainerProps> = ({objectiveImage, 
                         </div>
                     </Col>
                     <Col className={"col-1"} style={{padding: "0", margin: "0"}}>
-                        <img src={objectiveImage} style={{height: 260}} />
+                        <img alt={"Circuit Objective"} src={objectiveImage} style={{height: 260}} />
                         <div style={{position: "absolute", top: "55%", right: 0, transform: "translate(-50%, -50%)"}}>
                             <p style={{fontWeight: "bold", fontSize: "16px", color: "white"}}>{totalVoltage}v</p>
                         </div>

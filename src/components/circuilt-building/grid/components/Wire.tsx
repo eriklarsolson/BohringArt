@@ -72,7 +72,7 @@ export const Wire: React.FC<ComponentProps> = ({x, y, oneGridStyling, currentCom
 
     })
 
-    const [images, setImages] = useState<any>([wire, cornerwire, triwire, crosswire])
+    const images = useState<any>([wire, cornerwire, triwire, crosswire])
     const [index, setIndex] = useState<number>(getComponentType)
 
     //TODO - set component type when cycling here (maybe could be variable in functionality class that is updated what type of wire object we are viewing?)
@@ -112,7 +112,7 @@ export const Wire: React.FC<ComponentProps> = ({x, y, oneGridStyling, currentCom
             <Container fluid style={{...gridStyling}}>
                 {clicked && index !== 3 &&
                 <div style={{position: "absolute", top: -35, right: -10, marginTop: 1, marginRight: 1}}>
-                    <img src={rotate} onClick={clickRotate} />
+                    <img alt={"Rotate"} src={rotate} onClick={clickRotate} />
                 </div>
                 }
 
@@ -120,7 +120,7 @@ export const Wire: React.FC<ComponentProps> = ({x, y, oneGridStyling, currentCom
                 <Row className={"justify-content-center align-items-center"} style={{height: "100%"}}>
                     {oneGridStyling &&
                         <Col className={"col-1"} style={{padding: 0}}>
-                            <img src={leftarrow} style={{width: 25, filter: "contrast(0%)"}} onClick={cycleImages}/>
+                            <img alt={"Arrow"} src={leftarrow} style={{width: 25, filter: "contrast(0%)"}} onClick={cycleImages}/>
                         </Col>
                     }
 
@@ -131,17 +131,17 @@ export const Wire: React.FC<ComponentProps> = ({x, y, oneGridStyling, currentCom
                              height: "100%"
                          }}>
                             {oneGridStyling &&
-                                <img src={images[index]} width={100}/>
+                                <img alt={"Wire"} src={images[index]} width={100}/>
                             }
 
                             {!oneGridStyling  &&
-                                <img src={images[index]} style={wireStyling} />
+                                <img alt={"Wire"} src={images[index]} style={wireStyling} />
                             }
                     </Col>
 
                     {oneGridStyling &&
                         <Col className={"col-1"} style={{padding: 0}}>
-                            <img src={rightarrow} style={{width: 25, filter: "contrast(0%)"}} onClick={cycleImages}/>
+                            <img alt={"Arrow"} src={rightarrow} style={{width: 25, filter: "contrast(0%)"}} onClick={cycleImages}/>
                         </Col>
                     }
                 </Row>

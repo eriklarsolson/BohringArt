@@ -30,25 +30,25 @@ class EngravingPopup extends React.Component<any, any> {
                             clipPath: "polygon(0 0, 98% 0, 100% 100%, 2% 100%)"}}
                              className={"align-content-center justify-content-center"}>
                             <Col className="col-3" style={{backgroundColor: "#DBEAEF", clipPath: "polygon(0 0, 95% 0, 100% 100%, 5% 100%)"}}>
-                                <img
+                                <img alt={"Planet"}
                                     src={planet}
                                     onClick={() => this.props.addStencil(planet)} />
                             </Col>
 
                             <Col className="col-3" style={{backgroundColor: "#DBEAEF", clipPath: "polygon(0 0, 95% 0, 100% 100%, 5% 100%)"}}>
-                                <img
+                                <img alt={""}
                                     src={logo}
                                     onClick={() => this.props.addStencil(logo)} />
                             </Col>
 
                             <Col className="col-3" style={{backgroundColor: "#DBEAEF", clipPath: "polygon(0 0, 95% 0, 100% 100%, 5% 100%)"}}>
-                                <img
+                                <img alt={""}
                                     src={plant}
                                     onClick={() => this.props.addStencil(plant)} />
                             </Col>
 
                             <Col className="col-3" style={{backgroundColor: "#DBEAEF", clipPath: "polygon(0 0, 95% 0, 100% 100%, 5% 100%)"}}>
-                                <img
+                                <img alt={""}
                                     src={snowman}
                                     onClick={() => this.props.addStencil(snowman)} />
                             </Col>

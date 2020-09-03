@@ -63,27 +63,27 @@ class RatePopup extends React.Component<any, any> {
 
                                 <Row className={"justify-content-center align-content-center"} style={{padding: "10px"}}>
                                     <Col className={"col-2"} style={{textAlign: "center", margin: "10px"}}>
-                                        <img src={bored} className={"rate-img"} onClick={() => submitRating("bored")} />
+                                        <img alt={"Bored"} src={bored} className={"rate-img"} onClick={() => submitRating("bored")} />
                                         <p style={{color: "#29405B", fontWeight: "bold", fontSize: "16px"}}>Bored</p>
                                     </Col>
 
                                     <Col className={"col-2"} style={{textAlign: "center", margin: "10px"}}>
-                                        <img src={sad} className={"rate-img"} onClick={() => submitRating("sad")} />
+                                        <img alt={"Sad"} src={sad} className={"rate-img"} onClick={() => submitRating("sad")} />
                                         <p style={{color: "#29405B", fontWeight: "bold", fontSize: "16px"}}>Sad</p>
                                     </Col>
 
                                     <Col className={"col-2"} style={{textAlign: "center", margin: "10px"}}>
-                                        <img src={neutral} className={"rate-img"} onClick={() => submitRating("neutral")} />
+                                        <img alt={"Neutral"} src={neutral} className={"rate-img"} onClick={() => submitRating("neutral")} />
                                         <p style={{color: "#29405B", fontWeight: "bold", fontSize: "16px"}}>Neutral</p>
                                     </Col>
 
                                     <Col className={"col-2"} style={{textAlign: "center", margin: "10px"}}>
-                                        <img src={happy} className={"rate-img"} onClick={() => submitRating("happy")} />
+                                        <img alt={"Happy"} src={happy} className={"rate-img"} onClick={() => submitRating("happy")} />
                                         <p style={{color: "#29405B", fontWeight: "bold", fontSize: "16px"}}>Happy</p>
                                     </Col>
 
                                     <Col className={"col-2"} style={{textAlign: "center", margin: "10px"}}>
-                                        <img src={smart} className={"rate-img"} onClick={() => submitRating("smart")} />
+                                        <img alt={"Smart"} src={smart} className={"rate-img"} onClick={() => submitRating("smart")} />
                                         <p style={{color: "#29405B", fontWeight: "bold"}}>Smart</p>
                                     </Col>
                                 </Row>

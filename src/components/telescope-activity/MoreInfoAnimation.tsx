@@ -4,7 +4,6 @@ import { Container, Row, Col, Button } from 'react-bootstrap'
 import {useState} from "react";
 import interior from "./interior.png";
 import convex from "./grid/components/images/convex.png";
-import flatmirror from "./grid/components/images/flatmirror.png";
 import viewpoint from "./grid/components/images/viewpoint.png";
 import terms from "./terms.png";
 import ccd from "./ccd.png";
@@ -78,35 +77,35 @@ export const MoreInfoAnimation: React.FC<AnimationProps>  = ({setParentState}) =
                                     <Row style={{margin: 5, marginLeft: 20, width: 175}}>
                                         <Col className="col-12" onMouseOver={() => changeInfo("Mirrors")}
                                              style={{height: 100, backgroundColor: "#F8EDDD", clipPath: "polygon(0 0, 93% 0, 100% 100%, 5% 100%)"}}>
-                                            <img src={viewpoint} style={{height: "100%", padding: 10}} />
+                                            <img alt={"Viewpoint"} src={viewpoint} style={{height: "100%", padding: 10}} />
                                         </Col>
                                     </Row>
 
                                     <Row style={{margin: 5, marginLeft: 30, width: 175}}>
                                         <Col className="col-12" onMouseOver={() => changeInfo("Lens")}
                                              style={{height: 100, backgroundColor: "#F8EDDD", clipPath: "polygon(0 0, 93% 0, 100% 100%, 5% 100%)"}}>
-                                            <img src={convex} style={{height: "100%", padding: 10}} />
+                                            <img alt={"Convex"} src={convex} style={{height: "100%", padding: 10}} />
                                         </Col>
                                     </Row>
 
                                     <Row style={{margin: 5, marginLeft: 40, width: 175}}>
                                         <Col className="col-12" onMouseOver={() => changeInfo("Telescope")}
                                              style={{height: 100, backgroundColor: "#F8EDDD", clipPath: "polygon(0 0, 93% 0, 100% 100%, 5% 100%)"}}>
-                                            <img src={interior} style={{height: "100%", padding: 10}} />
+                                            <img alt={"Interior Telescope"} src={interior} style={{height: "100%", padding: 10}} />
                                         </Col>
                                     </Row>
 
                                     <Row style={{margin: 5, marginLeft: 50, width: 175}}>
                                         <Col className="col-12" onMouseOver={() => changeInfo("CCD")}
                                              style={{height: 100, backgroundColor: "#F8EDDD", clipPath: "polygon(0 0, 93% 0, 100% 100%, 5% 100%)"}}>
-                                            <img src={ccd} style={{height: "100%", padding: 10}} />
+                                            <img alt={"CCD Telescope Piece"} src={ccd} style={{height: "100%", padding: 10}} />
                                         </Col>
                                     </Row>
 
                                     <Row style={{margin: 5, marginLeft: 65, width: 175}}>
                                         <Col className="col-12" onMouseOver={() => changeInfo("Terminology")}
                                              style={{height: 100, backgroundColor: "#F8EDDD", clipPath: "polygon(0 0, 93% 0, 100% 100%, 5% 100%)"}}>
-                                            <img src={terms} style={{width: "75%", padding: 10, marginTop: 25}} />
+                                            <img alt={"Terms"} src={terms} style={{width: "75%", padding: 10, marginTop: 25}} />
                                         </Col>
                                     </Row>
                                 </Container>

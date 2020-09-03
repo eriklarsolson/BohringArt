@@ -1,6 +1,6 @@
-import React, {useState} from 'react'
+import React from 'react'
 import { DragPreviewImage, useDrag } from 'react-dnd'
-import battery from './images/flatmirror.png'
+import flatmirror from './images/flatmirror.png'
 import { Container, Row, Col } from 'react-bootstrap'
 import {TelescopeTypes} from "../../../shared/models/TelescopeTypes";
 
@@ -37,7 +37,7 @@ export const FlatMirror: React.FC<ComponentProps> = ({oneGridStyling}) => {
 
     return (
         <>
-            <DragPreviewImage connect={preview} src={battery} />
+            <DragPreviewImage connect={preview} src={flatmirror} />
             <Container fluid style={{...gridStyling}}>
 
                 <Row className={"justify-content-center align-content-center"} style={{height: "100%"}}>
@@ -46,7 +46,7 @@ export const FlatMirror: React.FC<ComponentProps> = ({oneGridStyling}) => {
                              ...style,
                              opacity: isDragging ? 0.5 : 1,
                          }}>
-                        <img src={battery} />
+                        <img alt={"Flat Mirror"} src={flatmirror} />
                     </Col>
                 </Row>
             </Container>

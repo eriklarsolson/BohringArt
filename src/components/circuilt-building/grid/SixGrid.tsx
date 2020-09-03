@@ -1,4 +1,4 @@
-import React, {useState} from 'react'
+import React from 'react'
 import {GridSquare} from "./GridSquare";
 import {Battery} from "./components/Battery";
 import {Resistor} from "./components/Resistor";
@@ -6,7 +6,6 @@ import {Wire} from "./components/Wire";
 import {Switch} from "./components/Switch";
 import {Inductor} from "./components/Inductor";
 import {Capacitor} from "./components/Capacitor";
-import {setCurrentComponent} from "./Functionality";
 
 export interface GridProps {
     components: any,

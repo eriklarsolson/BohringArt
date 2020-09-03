@@ -1,6 +1,6 @@
 import React from "react";
 import {Button, Modal} from "react-bootstrap";
-import { Container, Row, Col } from 'react-bootstrap'
+import { Container, Row } from 'react-bootstrap'
 
 class ErrorPopup extends React.Component<any, any> {
     render() {

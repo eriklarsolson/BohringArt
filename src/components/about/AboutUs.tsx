@@ -71,47 +71,47 @@ class AboutUs extends React.Component<any, any> {
                                             <Row className={"justify-content-center"}>
                                                 <Col style={{margin: 20, clipPath: "polygon(0 0, 95% 0, 100% 100%, 5% 100%)"}}
                                                      className="col-sm-12 col-md-3">
-                                                    <img src={danny} />
+                                                    <img alt={"About Us Person"} src={danny} />
                                                 </Col>
 
                                                 <Col style={{margin: 20, clipPath: "polygon(0 0, 95% 0, 100% 100%, 5% 100%)"}}
                                                      className="col-sm-12 col-md-3">
-                                                    <img src={dena} />
+                                                    <img alt={"About Us Person"} src={dena} />
                                                 </Col>
 
                                                 <Col style={{margin: 20, clipPath: "polygon(0 0, 95% 0, 100% 100%, 5% 100%)"}}
                                                      className="col-sm-12 col-md-3">
-                                                    <img src={parisa} />
+                                                    <img alt={"About Us Person"} src={parisa} />
                                                 </Col>
 
                                                 <Col style={{margin: 20, clipPath: "polygon(0 0, 95% 0, 100% 100%, 5% 100%)"}}
                                                      className="col-sm-12 col-md-3">
-                                                    <img src={person1} />
+                                                    <img alt={"About Us Person"} src={person1} />
                                                 </Col>
 
                                                 <Col style={{margin: 20, clipPath: "polygon(0 0, 95% 0, 100% 100%, 5% 100%)"}}
                                                      className="col-sm-12 col-md-3">
-                                                    <img src={person2} />
+                                                    <img alt={"About Us Person"} src={person2} />
                                                 </Col>
 
                                                 <Col style={{margin: 20, clipPath: "polygon(0 0, 95% 0, 100% 100%, 5% 100%)"}}
                                                      className="col-sm-12 col-md-3">
-                                                    <img src={person3} />
+                                                    <img alt={"About Us Person"} src={person3} />
                                                 </Col>
 
                                                 <Col style={{margin: 20, clipPath: "polygon(0 0, 95% 0, 100% 100%, 5% 100%)"}}
                                                      className="col-sm-12 col-md-3">
-                                                    <img src={person4} />
+                                                    <img alt={"About Us Person"} src={person4} />
                                                 </Col>
 
                                                 <Col style={{margin: 20, clipPath: "polygon(0 0, 95% 0, 100% 100%, 5% 100%)"}}
                                                      className="col-sm-12 col-md-3">
-                                                    <img src={person5} />
+                                                    <img alt={"About Us Person"} src={person5} />
                                                 </Col>
 
                                                 <Col style={{margin: 20, clipPath: "polygon(0 0, 95% 0, 100% 100%, 5% 100%)"}}
                                                      className="col-sm-12 col-md-3">
-                                                    <img src={lars} style={{maxHeight: 250}} />
+                                                    <img alt={"About Us Person"} src={lars} style={{maxHeight: 250}} />
                                                 </Col>
                                             </Row>
                                         </Container>
@@ -164,7 +164,7 @@ class AboutUs extends React.Component<any, any> {
                                     </Row>
 
                                     <Row>
-                                        <img src={niels} alt={"Niels Bohr picture"} />
+                                        <img src={niels} alt={"Niels Bohr person"} />
                                     </Row>
                                 </Container>
                             </Col>

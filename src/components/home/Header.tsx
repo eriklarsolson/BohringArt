@@ -70,7 +70,7 @@ class Header extends React.Component {
                         </Col>
 
                         <Col style={{padding: 0, overflow: "hidden"}}>
-                            <img src={stellarBackground} />
+                            <img alt={"Stellar Background"} src={stellarBackground} />
 
                             <div style={{position: "absolute", top: "25%", right: "10%"}}>
                                 <TelescopeAnimation />

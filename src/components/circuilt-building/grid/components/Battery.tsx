@@ -1,11 +1,10 @@
-import React, {useEffect, useState} from 'react'
+import React, { useState } from 'react'
 import { DragPreviewImage, useDrag } from 'react-dnd'
 import { ComponentTypes } from '../../../shared/models/ComponentTypes'
 import battery from './images/battery.png'
 import rotate from './images/rotate.png'
 import { Container, Row, Col } from 'react-bootstrap'
 import {getComponentAtPos, setCurrentComponentsRotation} from "../Functionality";
-import {Square} from "../Square";
 
 let style: React.CSSProperties = {
     cursor: 'move',
@@ -73,7 +72,7 @@ export const Battery: React.FC<ComponentProps> = ({x, y, oneGridStyling, current
             <Container fluid style={{...gridStyling}}>
                 {clicked &&
                 <div style={{position: "absolute", top: -35, right: -10, marginTop: 1, marginRight: 1}}>
-                    <img src={rotate} onClick={clickRotate} />
+                    <img alt={"Rotate"} src={rotate} onClick={clickRotate} />
                 </div>
                 }
 
@@ -84,7 +83,7 @@ export const Battery: React.FC<ComponentProps> = ({x, y, oneGridStyling, current
                              opacity: isDragging ? 0.5 : 1,
                          }}>
                         <div style={{transform: "rotate(" + rotateDeg + "deg)"}}>
-                            <img src={battery} width={"100%"} />
+                            <img alt={"Battery"} src={battery} width={"100%"} />
                         </div>
                     </Col>
                 </Row>

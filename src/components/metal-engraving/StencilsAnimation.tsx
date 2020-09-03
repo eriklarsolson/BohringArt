@@ -1,7 +1,6 @@
 import * as React from "react";
 import { motion } from "framer-motion";
 import { Container, Row, Col, Button } from 'react-bootstrap'
-import viewpoint from "./images/Viewpoint.png"
 import {useState} from "react";
 import logo from "./images/logo.png"
 import planet from "./images/planet.png"
@@ -71,7 +70,7 @@ export const StencilsAnimation: React.FC<AnimationProps>  = ({setParentState, ad
                                 <Row className={"justify-content-center"} style={{margin: 10}}>
                                     <Col className="col-5" style={{backgroundColor: "#DBEAEF", clipPath: "polygon(0 0, 100% 0, 100% 100%, 5% 100%)"}}>
                                         <img className={"clickable-image"}
-                                            src={planet}
+                                            src={planet} alt={"Planet"}
                                             onClick={() => addStencilAndClose(planet)} />
                                     </Col>
                                 </Row>
@@ -79,7 +78,7 @@ export const StencilsAnimation: React.FC<AnimationProps>  = ({setParentState, ad
                                 <Row className={"justify-content-center"} style={{margin: 10}}>
                                     <Col className="col-5" style={{backgroundColor: "#DBEAEF", clipPath: "polygon(0 0, 100% 0, 100% 100%, 5% 100%)"}}>
                                         <img className={"clickable-image"}
-                                            src={logo}
+                                            src={logo} alt={"Logo"}
                                             onClick={() => addStencilAndClose(logo)} />
                                     </Col>
                                 </Row>
@@ -87,7 +86,7 @@ export const StencilsAnimation: React.FC<AnimationProps>  = ({setParentState, ad
                                 <Row className={"justify-content-center"} style={{margin: 10}}>
                                     <Col className="col-5" style={{backgroundColor: "#DBEAEF", clipPath: "polygon(0 0, 100% 0, 100% 100%, 5% 100%)"}}>
                                         <img className={"clickable-image"}
-                                            src={plant}
+                                            src={plant} alt={"Plant"}
                                             onClick={() => addStencilAndClose(plant)} />
                                     </Col>
                                 </Row>
@@ -95,7 +94,7 @@ export const StencilsAnimation: React.FC<AnimationProps>  = ({setParentState, ad
                                 <Row className={"justify-content-center"} style={{margin: 10}}>
                                     <Col className="col-5" style={{backgroundColor: "#DBEAEF", clipPath: "polygon(0 0, 100% 0, 100% 100%, 5% 100%)"}}>
                                         <img className={"clickable-image"}
-                                            src={snowman}
+                                            src={snowman} alt={"Snowman"}
                                             onClick={() => addStencilAndClose(snowman)} />
                                     </Col>
                                 </Row>

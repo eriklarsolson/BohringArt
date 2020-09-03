@@ -2,9 +2,6 @@ import * as React from "react";
 import { motion } from "framer-motion";
 import { Container, Row, Col, Button } from 'react-bootstrap'
 import {useState} from "react";
-import wire from "./grid/components/images/wire.png"
-import battery from "./grid/components/images/battery.png"
-import resistor from "./grid/components/images/resistor.png"
 import lasercomponenticon from "./images/laser_COMPONENT.png";
 import optics from "./images/optics.png";
 import prism from "./images/prism.png";
@@ -17,9 +14,6 @@ export const MoreInfoAnimation: React.FC<AnimationProps>  = ({setParentState}) =
     const [open, setOpen] = useState<boolean>(true);
     const [title, setTitle] = useState<string>("WIRE");
     const [description, setDescription] = useState<string>("A conducting, metal rod designed to transfer charges. Electrons can flow through these with little to no resistance, typically. However, making a wire longer increases resistance but thickening it decreases resistance.");
-
-    let xStart = 1200;
-    let xEnd = 400;
 
     const setClosed = () => {
         setOpen(false)
@@ -72,21 +66,21 @@ export const MoreInfoAnimation: React.FC<AnimationProps>  = ({setParentState}) =
                                     <Row style={{margin: 5, marginLeft: 10, width: 175}}>
                                         <Col className="col-12" onMouseOver={() => changeInfo("laser")}
                                              style={{height: 100, backgroundColor: "#F8EDDD", clipPath: "polygon(0 0, 93% 0, 100% 100%, 5% 100%)"}}>
-                                            <img src={lasercomponenticon} />
+                                            <img alt={"Laser"} src={lasercomponenticon} />
                                         </Col>
                                     </Row>
 
                                     <Row style={{margin: 5, marginLeft: 20, width: 175}}>
                                         <Col className="col-12" onMouseOver={() => changeInfo("optics")}
                                              style={{height: 100, backgroundColor: "#F8EDDD", clipPath: "polygon(0 0, 93% 0, 100% 100%, 5% 100%)"}}>
-                                            <img src={optics} style={{height: "100%", padding: 15}} />
+                                            <img alt={"Lens"} src={optics} style={{height: "100%", padding: 15}} />
                                         </Col>
                                     </Row>
 
                                     <Row style={{margin: 5, marginLeft: 30, width: 175}}>
                                         <Col className="col-12" onMouseOver={() => changeInfo("prism")}
                                              style={{height: 100, backgroundColor: "#F8EDDD", clipPath: "polygon(0 0, 93% 0, 100% 100%, 5% 100%)"}}>
-                                            <img src={prism} style={{height: "100%", padding: 15}} />
+                                            <img alt={"Prism"} src={prism} style={{height: "100%", padding: 15}} />
                                         </Col>
                                     </Row>
                                 </Container>

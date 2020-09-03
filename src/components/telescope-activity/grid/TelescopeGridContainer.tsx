@@ -1,8 +1,7 @@
 import React, {useState, useEffect} from 'react'
-import {getComponents, moveComponent, observe} from './Functionality'
+import {getComponents, observe} from './Functionality'
 import {TelescopeGrid} from "./TelescopeGrid";
 import {Container, Row, Col} from "react-bootstrap";
-import {ComponentTypes} from "../../shared/models/ComponentTypes";
 import {TelescopeTypes} from "../../shared/models/TelescopeTypes";
 
 const containerStyle: React.CSSProperties = {

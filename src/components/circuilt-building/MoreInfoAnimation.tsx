@@ -20,9 +20,6 @@ export const MoreInfoAnimation: React.FC<AnimationProps>  = ({setParentState}) =
     const [title, setTitle] = useState<string>("WIRE");
     const [description, setDescription] = useState<string>("A conducting, metal rod designed to transfer charges. Electrons can flow through these with little to no resistance, typically. However, making a wire longer increases resistance but thickening it decreases resistance.");
 
-    let xStart = 1200;
-    let xEnd = 400;
-
     const setClosed = () => {
         setOpen(false)
         setParentState()
@@ -88,56 +85,56 @@ export const MoreInfoAnimation: React.FC<AnimationProps>  = ({setParentState}) =
                                     <Row style={{margin: 5, marginLeft: 10, width: 175}}>
                                         <Col className="col-12" onMouseOver={() => changeInfo("Wire")}
                                              style={{height: 100, backgroundColor: "#F8EDDD", clipPath: "polygon(0 0, 93% 0, 100% 100%, 5% 100%)"}}>
-                                            <img src={wire} />
+                                            <img alt={"Wire"} src={wire} />
                                         </Col>
                                     </Row>
 
                                     <Row style={{margin: 5, marginLeft: 20, width: 175}}>
                                         <Col className="col-12" onMouseOver={() => changeInfo("Battery")}
                                              style={{height: 100, backgroundColor: "#F8EDDD", clipPath: "polygon(0 0, 93% 0, 100% 100%, 5% 100%)"}}>
-                                            <img src={battery} />
+                                            <img alt={"Battery"} src={battery} />
                                         </Col>
                                     </Row>
 
                                     <Row style={{margin: 5, marginLeft: 30, width: 175}}>
                                         <Col className="col-12" onMouseOver={() => changeInfo("Resistor")}
                                              style={{height: 100, backgroundColor: "#F8EDDD", clipPath: "polygon(0 0, 93% 0, 100% 100%, 5% 100%)"}}>
-                                            <img src={resistor} />
+                                            <img alt={"Resistor"} src={resistor} />
                                         </Col>
                                     </Row>
 
                                     <Row style={{margin: 5, marginLeft: 40, width: 175}}>
                                         <Col className="col-12" onMouseOver={() => changeInfo("Switch")}
                                              style={{height: 100, backgroundColor: "#F8EDDD", clipPath: "polygon(0 0, 93% 0, 100% 100%, 5% 100%)"}}>
-                                            <img src={switchPic} />
+                                            <img alt={"Switch"} src={switchPic} />
                                         </Col>
                                     </Row>
 
                                     <Row style={{margin: 5, marginLeft: 50, width: 175}}>
                                         <Col className="col-12" onMouseOver={() => changeInfo("Capacitor")}
                                              style={{height: 100, backgroundColor: "#F8EDDD", clipPath: "polygon(0 0, 93% 0, 100% 100%, 5% 100%)"}}>
-                                            <img src={capacitor} />
+                                            <img alt={"Resistor"} src={capacitor} />
                                         </Col>
                                     </Row>
 
                                     <Row style={{margin: 5, marginLeft: 65, width: 175}}>
                                         <Col className="col-12" onMouseOver={() => changeInfo("Inductor")}
                                              style={{height: 100, backgroundColor: "#F8EDDD", clipPath: "polygon(0 0, 93% 0, 100% 100%, 5% 100%)"}}>
-                                            <img src={inductor} />
+                                            <img alt={"Inductor"} src={inductor} />
                                         </Col>
                                     </Row>
 
                                     <Row style={{margin: 5, marginLeft: 80, width: 175}}>
                                         <Col className="col-12" onMouseOver={() => changeInfo("Series")}
                                              style={{height: 100, backgroundColor: "#F8EDDD", clipPath: "polygon(0 0, 93% 0, 100% 100%, 5% 100%)"}}>
-                                            <img src={series} style={{height: "100%", padding: 20}} />
+                                            <img alt={"Series Circuit"} src={series} style={{height: "100%", padding: 20}} />
                                         </Col>
                                     </Row>
 
                                     <Row style={{margin: 5, marginLeft: 90, width: 175}}>
                                         <Col className="col-12" onMouseOver={() => changeInfo("Parallel")}
                                              style={{height: 100, backgroundColor: "#F8EDDD", clipPath: "polygon(0 0, 93% 0, 100% 100%, 5% 100%)"}}>
-                                            <img src={parallel} style={{height: "100%", padding: 20}} />
+                                            <img alt={"Parallel Circuit"} src={parallel} style={{height: "100%", padding: 20}} />
                                         </Col>
                                     </Row>
                                 </Container>

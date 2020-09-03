@@ -1,8 +1,6 @@
 import React from "react";
 import { Container, Row, Col } from 'react-bootstrap'
 import './Home.scss';
-import {LearnSectionModel} from "../shared/models/LearnSectionModel";
-import Button from "react-bootstrap/Button";
 import one from "./1.png"
 import two from "./2.png"
 import three from "./3.png"
@@ -24,7 +22,7 @@ class LearnSection extends React.Component<any, any> {
                         <Col className={"col-10 col-md-4"} style={{clipPath: "polygon(0 0, 95% 0, 100% 100%, 5% 100%)", backgroundColor: "#29405B", padding: 25}}>
                             <Row>
                                 <Col className={"col-3"} style={{overflow: "hidden"}}>
-                                    <img src={one} />
+                                    <img alt={"#1"} src={one} />
                                 </Col>
                                 <Col>
                                     <h4>CIRCUIT CONSTRUCTION</h4>
@@ -36,7 +34,7 @@ class LearnSection extends React.Component<any, any> {
                         <Col className={"col-10 col-md-4"} style={{clipPath: "polygon(0 0, 95% 0, 100% 100%, 5% 100%)", backgroundColor: "#29405B", padding: 25}}>
                             <Row>
                                 <Col className={"col-3"} style={{overflow: "hidden"}}>
-                                    <img src={two} />
+                                    <img alt={"#2"} src={two} />
                                 </Col>
                                 <Col>
                                     <h4>LASERS AND LENSES</h4>
@@ -52,7 +50,7 @@ class LearnSection extends React.Component<any, any> {
                        <Col className={"col-10 col-md-4"} style={{clipPath: "polygon(0 0, 95% 0, 100% 100%, 5% 100%)", backgroundColor: "#29405B", padding: 25, marginLeft: "4%"}}>
                            <Row>
                                <Col className={"col-3"} style={{overflow: "hidden"}}>
-                                   <img src={three} />
+                                   <img alt={"#3"} src={three} />
                                </Col>
                                <Col>
                                    <h4>TO THE STARS</h4>
@@ -66,7 +64,7 @@ class LearnSection extends React.Component<any, any> {
                        <Col className={"col-10 col-md-4"} style={{clipPath: "polygon(0 0, 95% 0, 100% 100%, 5% 100%)", backgroundColor: "#29405B", padding: 25}}>
                            <Row>
                                <Col className={"col-3"} style={{overflow: "hidden"}}>
-                                   <img src={four} />
+                                   <img alt={"#4"} src={four} />
                                </Col>
                                <Col>
                                    <h4>STELLAR LIFE CYCLE</h4>

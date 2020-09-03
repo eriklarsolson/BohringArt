@@ -3,7 +3,7 @@ import { DragPreviewImage, useDrag } from 'react-dnd'
 import { ComponentTypes } from '../../../shared/models/ComponentTypes'
 import capacitor from './images/capacitor.png'
 import rotate from './images/rotate.png'
-import { Container, Row, Col } from 'react-bootstrap'
+import { Container, Row } from 'react-bootstrap'
 import {getComponentAtPos, setCurrentComponentsRotation} from "../Functionality";
 
 let style: React.CSSProperties = {
@@ -72,7 +72,7 @@ export const Capacitor: React.FC<ComponentProps> = ({x, y, oneGridStyling, curre
             <Container fluid style={{...gridStyling}}>
                 {clicked &&
                 <div style={{position: "absolute", top: -35, right: -10, marginTop: 1, marginRight: 1}}>
-                    <img src={rotate} onClick={clickRotate} />
+                    <img alt={"Rotate"} src={rotate} onClick={clickRotate} />
                 </div>
                 }
 
@@ -83,7 +83,7 @@ export const Capacitor: React.FC<ComponentProps> = ({x, y, oneGridStyling, curre
                              opacity: isDragging ? 0.5 : 1,
                          }}>
                         <div style={{transform: "rotate(" + rotateDeg + "deg)"}}>
-                            <img src={capacitor} width={"100%"} />
+                            <img alt={"Capacitor"} src={capacitor} width={"100%"} />
                         </div>
                     </div>
                 </Row>

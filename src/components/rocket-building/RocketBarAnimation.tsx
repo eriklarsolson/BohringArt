@@ -1,6 +1,5 @@
 import * as React from "react";
 import { motion } from "framer-motion";
-import {Container, Row, Col} from 'react-bootstrap'
 import rocketIcon from "./images/rocketIcon.png"
 
 export interface AnimationProps {
@@ -32,7 +31,7 @@ export const RocketBarAnimation: React.FC<AnimationProps>  = ({xStart}) => {
                     // loop: Infinity,
                     // repeatDelay: 1
                 }}>
-                <img src={rocketIcon} style={{transform: "rotate(90deg)", marginTop: 120}} />
+                <img alt={"Rocket Icon"} src={rocketIcon} style={{transform: "rotate(90deg)", marginTop: 120}} />
             </motion.div>
         </>
     );
