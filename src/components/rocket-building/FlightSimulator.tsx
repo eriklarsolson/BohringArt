@@ -20,15 +20,15 @@ class FlightSimulator extends React.Component<any, any> {
             scenarios: [
                 {
                     question: "On your way to ____ you discover that your rocket cannot hold enough fuel to return home. Do you turn back, or risk having to eject your telescope or living supplies to get your crew back home?",
-                    answer: "NA", //Not answered is default, and will update on their selection
+                    answer: undefined, //Undefined is default, and will update on their selection
                 },
                 {
                     question: "There was an unexpected gravitational factor that has thrown the rocket off course, do you use 50% of your designated return fuel in order to stay on course?",
-                    answer: "NA", //Not answered is default, and will update on their selection
+                    answer: undefined,
                 },
                 {
                     question: "The lifetime of the isotope heating up the telescope is only going to last ten years. Do you want to use more fuel to speed things up? ",
-                    answer: "NA", //Not answered is default, and will update on their selection
+                    answer: undefined,
                 }
             ],
             loadedScenario: "Flying to your destination"
@@ -38,14 +38,17 @@ class FlightSimulator extends React.Component<any, any> {
     render() {
 
         const updateIteration = (answer: boolean) => {
-            if(answer) {
-                this.setState({iteration: this.state.iteration + 1, xStart: this.state.xStart + 200})
-                //TODO - Update scenario's state for answer
-
-                runTimer()
-            }
-
             //TODO - What happens if they hit no on mission prompt? Does the ship explode???
+
+            //Update scenario's state for answer
+            let scenarios = [...this.state.scenarios];
+            let scenario = {...scenarios[this.state.iteration]};
+            scenario.answer = answer;
+            scenarios[this.state.iteration]= scenario;
+            this.setState({scenarios: scenarios});
+
+            this.setState({iteration: this.state.iteration + 1, xStart: this.state.xStart + 200})
+            runTimer()
         }
 
         const updateScenarioDetails = () => {

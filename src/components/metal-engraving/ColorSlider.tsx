@@ -15,15 +15,15 @@ const useStyles = makeStyles((theme: Theme) =>
     }),
 );
 
-const StellarSlider = withStyles({
+const ColorChooser = withStyles({
     root: {
-        color: 'white',
+        color: '#29405B',
         height: 6,
     },
     thumb: {
         height: 24,
         width: 24,
-        backgroundColor: '#fff',
+        backgroundColor: '#29405B',
         border: '2px solid currentColor',
         marginTop: -10,
         marginLeft: -12,
@@ -34,7 +34,7 @@ const StellarSlider = withStyles({
     track: {
         height: 6,
         borderRadius: 2,
-        backgroundColor: '#fff',
+        backgroundColor: '#29405B',
     },
     rail: {
         height: 6,
@@ -49,15 +49,15 @@ interface Props {
     changeValue: any
 }
 
-export default function PropertiesSlider(props: any) {
+export default function ColorSlider(props: any) {
     const classes = useStyles();
 
     return (
         <div className={classes.root}>
-            {/* */}
-            <StellarSlider
+            <ColorChooser
                 value={props.value}
                 step={20}
+                min={20}
                 max={props.max}
                 valueLabelDisplay="off"
                 onChange={props.changeValue}

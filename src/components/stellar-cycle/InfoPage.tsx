@@ -117,10 +117,13 @@ class InfoPage extends React.Component<any, any> {
                             <Container fluid style={{margin: 0, padding: 0}}>
 
                                 <Row style={{margin: 0, marginBottom: "5%"}}>
-                                    <Col className={"col-2 ml-auto"} style={{padding: 0, marginTop: "3%"}}>
+                                    <Col className={"col-8 align-self-center"} style={{textAlign: "center", marginTop: 25}}>
+                                        <p style={{fontWeight: "bold", fontSize: "48px", marginBottom: 0}}>{this.state.title}</p>
+                                    </Col>
+
+                                    <Col className={"col-2 ml-auto align-self-center"} style={{padding: 0, marginTop: 25}}>
                                         <Row style={{margin: 0}} className={"justify-content-end"}>
-                                            <Button className={"green-button"} style={{width: 200,
-                                                clipPath: "polygon(10px 0, 100% 0, 100% 100%, 15% 100%)"}}
+                                            <Button className={"green-button"} style={{width: 200}}
                                                 onClick={() => this.props.history.push({
                                                     pathname: '/activity/object-page',
                                                     state: { title: this.state.title, popupOpened: false }
@@ -128,12 +131,6 @@ class InfoPage extends React.Component<any, any> {
                                                 <i className="fa fa-arrow-right" />
                                             </Button>
                                         </Row>
-                                    </Col>
-                                </Row>
-
-                                <Row className="justify-content-center" style={{margin: 0, padding: 0}}>
-                                    <Col className={"col-8"}>
-                                        <h1>{this.state.title}</h1>
                                     </Col>
                                 </Row>
 

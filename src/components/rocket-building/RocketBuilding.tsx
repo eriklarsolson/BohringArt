@@ -41,28 +41,24 @@ class RocketBuilding extends React.Component<any, any> {
                     title: "Cone 1",
                     mass: 50,
                     airResistance: 5,
-                    fuelCapacity: 80
                 },
                 {
                     image: cone_2,
                     title: "Cone 2",
                     mass: 30,
                     airResistance: 12,
-                    fuelCapacity: 10
                 },
                 {
                     image: cone_3,
                     title: "Cone 3",
                     mass: 99,
                     airResistance: 23,
-                    fuelCapacity: 9
                 },
                 {
                     image: cone_4,
                     title: "Cone 4",
                     mass: 23,
                     airResistance: 23,
-                    fuelCapacity: 23
                 }
             ],
             coneIndex: 0,
@@ -71,28 +67,24 @@ class RocketBuilding extends React.Component<any, any> {
                     image: body_1,
                     title: "Body 1",
                     mass: 53,
-                    airResistance: 78,
                     fuelCapacity: 54
                 },
                 {
                     image: body_2,
                     title: "Body 2",
                     mass: 27,
-                    airResistance: 2,
                     fuelCapacity: 10
                 },
                 {
                     image: body_3,
                     title: "Body 3",
                     mass: 53,
-                    airResistance: 78,
                     fuelCapacity: 54
                 },
                 {
                     image: body_4,
                     title: "Body 4",
                     mass: 22,
-                    airResistance: 99,
                     fuelCapacity: 1
                 }
             ],
@@ -103,9 +95,10 @@ class RocketBuilding extends React.Component<any, any> {
                     rightImage: booster_1_right,
                     middleImage: null,
                     title: "Booster 1",
-                    mass: 59,
-                    airResistance: 9,
-                    fuelCapacity: 23
+                    mass: 24,
+                    airResistance: 3,
+                    fuelCapacity: 45,
+                    thrust: 10
                 },
                 {
                     leftImage: booster_2_left,
@@ -114,16 +107,18 @@ class RocketBuilding extends React.Component<any, any> {
                     title: "Booster 3",
                     mass: 59,
                     airResistance: 9,
-                    fuelCapacity: 23
+                    fuelCapacity: 23,
+                    thrust: 25
                 },
                 {
                     leftImage: booster_3_left,
                     rightImage: booster_3_right,
                     middleImage: null,
                     title: "Booster 3",
-                    mass: 59,
-                    airResistance: 9,
-                    fuelCapacity: 23
+                    mass: 67,
+                    airResistance: 99,
+                    fuelCapacity: 3,
+                    thrust: 35
                 },
                 {
                     leftImage: booster_4_left,
@@ -132,7 +127,8 @@ class RocketBuilding extends React.Component<any, any> {
                     title: "Booster 4",
                     mass: 59,
                     airResistance: 9,
-                    fuelCapacity: 23
+                    fuelCapacity: 23,
+                    thrust: 45
                 },
             ],
             boosterIndex: 0,
@@ -141,29 +137,25 @@ class RocketBuilding extends React.Component<any, any> {
                     image: engine_1,
                     title: "Engine 1",
                     mass: 85,
-                    airResistance: 5,
-                    fuelCapacity: 53
+                    thrust: 15
                 },
                 {
                     image: engine_2,
                     title: "Engine 2",
                     mass: 33,
-                    airResistance: 23,
-                    fuelCapacity: 10
+                    thrust: 25
                 },
                 {
                     image: engine_3,
                     title: "Engine 3",
                     mass: 85,
-                    airResistance: 5,
-                    fuelCapacity: 53
+                    thrust: 35
                 },
                 {
                     image: engine_4,
                     title: "Engine 4",
                     mass: 33,
-                    airResistance: 23,
-                    fuelCapacity: 10
+                    thrust: 45
                 }
             ],
             engineIndex: 0
@@ -276,12 +268,18 @@ class RocketBuilding extends React.Component<any, any> {
             }
         }
 
+        const getTotalThrust = () => {
+            let total = 0;
+            total += (this.state.boosters[this.state.boosterIndex].thrust * 2); //Note: 2 side boosters
+            total += this.state.engines[this.state.engineIndex].thrust;
+
+            return total;
+        }
+
         const getTotalFuelCapacity = () => {
             let total = 0;
-            total += this.state.cones[this.state.coneIndex].fuelCapacity;
             total += this.state.bodys[this.state.bodyIndex].fuelCapacity;
             total += (this.state.boosters[this.state.boosterIndex].fuelCapacity * 2); //Note: 2 side boosters
-            total += this.state.engines[this.state.engineIndex].fuelCapacity;
 
             return total;
         }
@@ -289,9 +287,7 @@ class RocketBuilding extends React.Component<any, any> {
         const getTotalAirResistance = () => {
             let total = 0;
             total += this.state.cones[this.state.coneIndex].airResistance;
-            total += this.state.bodys[this.state.bodyIndex].airResistance;
             total += (this.state.boosters[this.state.boosterIndex].airResistance * 2); //Note: 2 side boosters
-            total += this.state.engines[this.state.engineIndex].airResistance;
 
             return total;
         }
@@ -455,6 +451,12 @@ class RocketBuilding extends React.Component<any, any> {
                                                                 <Row>
                                                                     <Col style={{padding: 5}}>
                                                                         <p style={{fontWeight: "bold", fontSize: 18}}>Total Mass: {getTotalMass()}</p>
+                                                                    </Col>
+                                                                </Row>
+
+                                                                <Row>
+                                                                    <Col style={{padding: 5}}>
+                                                                        <p style={{fontWeight: "bold", fontSize: 18}}>Thrust: {getTotalThrust()}</p>
                                                                     </Col>
                                                                 </Row>
                                                             </Container>

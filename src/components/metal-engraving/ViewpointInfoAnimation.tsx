@@ -39,14 +39,14 @@ export const ViewpointInfoAnimation: React.FC<AnimationProps>  = ({setParentStat
 
                 <Container>
                     <Row>
-                        <Col className={"col-7 vh-100 ml-auto"}>
+                        <Col className={"col-10 vh-100 ml-auto"}>
                             <div style={{position: "absolute", width: "100%", height: "100%", backgroundColor: "#29405B",
                                 clipPath: "polygon(0 0, 100% 0, 100% 100%, 10% 100%)"}} />
 
                             <Container>
                                 <Row className={"justify-content-center"} style={{marginBottom: "10%"}}>
 
-                                    <Col className={"ml-auto col-3"}>
+                                    <Col className={"col-8"}>
                                         <Button className={"green-button"} style={{float: "right", width: 100,
                                             clipPath: "polygon(0 0, 95% 0, 100% 100%, 5% 100%)"}}
                                                 onClick={() => setClosed()}><i className="fa fa-arrow-right" /></Button>
@@ -70,7 +70,7 @@ export const ViewpointInfoAnimation: React.FC<AnimationProps>  = ({setParentStat
                                 </Row>
 
                                 <Row className={"justify-content-center"}>
-                                    <Col className={"col-10"}>
+                                    <Col className={"col-6"}>
                                         <img src={viewpoint} style={{width: "100%", transform: "rotate(90deg)"}} />
                                     </Col>
                                 </Row>

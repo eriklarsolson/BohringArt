@@ -8,6 +8,7 @@ import sad from './sad.png';
 import smart from './smart.png';
 import './Rate.scss';
 import {toast} from "react-toastify";
+import emailjs from "emailjs-com";
 
 class RatePopup extends React.Component<any, any> {
     constructor(props: any) {
@@ -19,8 +20,15 @@ class RatePopup extends React.Component<any, any> {
 
     render() {
         const submitRating = (selection: string) => {
-            //TODO
-            toast("Thank you for submitting a rating!");
+
+            emailjs.send('1234', 'template_nu3qszb', {rating: selection}, 'user_4GY0SIFrayOWVCLxTbmk0')
+                .then(function(response) {
+                    console.log('SUCCESS!', response.status, response.text);
+                    toast("Thank you for submitting a rating!");
+                }, function(error) {
+                    console.log('FAILED...', error);
+                    toast("Your rating failed to send");
+                });
             closePopup()
         }
 
@@ -84,7 +92,7 @@ class RatePopup extends React.Component<any, any> {
                                     <Button className={"green-button"} style={{backgroundColor: "#3BD186",
                                         width: 150, clipPath: "polygon(0 0, 95% 0, 100% 100%, 5% 100%)",
                                         fontSize: "20px", fontWeight: "bold"}} onClick={closePopup}>
-                                        Submit
+                                        Close
                                     </Button>
                                 </Row>
                             </Container>

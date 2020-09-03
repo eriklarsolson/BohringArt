@@ -11,7 +11,8 @@ import person4 from "./images/person4.png"
 import person5 from "./images/person5.png"
 import lars from "./images/lars.png"
 import niels from "./images/niels.png"
-import Button from "react-bootstrap/Button";
+import emailjs from 'emailjs-com';
+import {toast, ToastContainer} from "react-toastify";
 
 class AboutUs extends React.Component<any, any> {
     constructor(props: any) {
@@ -25,23 +26,36 @@ class AboutUs extends React.Component<any, any> {
     }
 
 
-    handleSubmit(event: any) {
-        console.log(this.state.firstName)
-        console.log(this.state.lastName)
-        console.log(this.state.email)
-        console.log(this.state.phoneNum)
-        console.log(this.state.message)
-
-        //TODO - Need to connect this to email so it actually sends
-
-        event.preventDefault();
-    }
-
-
     render() {
+        const handleSubmit = (event: any) => {
+            event.preventDefault();
+
+            emailjs.send('1234', 'template_cd5l4jm', {from_name: this.state.name, email: this.state.email, message: this.state.message}, 'user_4GY0SIFrayOWVCLxTbmk0')
+                .then(function(response) {
+                    console.log('SUCCESS!', response.status, response.text);
+                    toast("Thank you for contacting us! We will get back to you asap!")
+                }, function(error) {
+                    console.log('FAILED...', error);
+                    toast("Message failed to send")
+                });
+        }
+
+        //Initialize email
+        // init("user_4GY0SIFrayOWVCLxTbmk0");
 
         return (
             <>
+                <ToastContainer
+                    position="top-center"
+                    autoClose={3000}
+                    hideProgressBar={false}
+                    newestOnTop={false}
+                    closeOnClick
+                    rtl={false}
+                    pauseOnFocusLoss
+                    draggable
+                    pauseOnHover />
+
                     <Container fluid style={{margin: 0, backgroundColor: "#29405B"}}>
                         <Row className="justify-content-center">
                             <Container fluid>
@@ -156,7 +170,7 @@ class AboutUs extends React.Component<any, any> {
                             </Col>
                         </Row>
 
-
+                        <form onSubmit={handleSubmit}>
                         <Row style={{backgroundColor: "#29405B", color: "white", paddingTop: 100, textAlign: "left"}} className="justify-content-center">
                             <Container fluid>
                                 <Row className="justify-content-center">
@@ -166,9 +180,8 @@ class AboutUs extends React.Component<any, any> {
                                 </Row>
 
                                 <Row className="justify-content-center">
-                                    <Col className={"col-4"} style={{ clipPath: "polygon(0 0, 95% 0, 100% 100%, 5% 100%)", backgroundColor: "#F8EDDD", color: "black", padding: 25}}>
+                                    <Col className={"col-4"} style={{ clipPath: "polygon(0 0, 95% 0, 100% 100%, 0% 100%)", backgroundColor: "#F8EDDD", color: "black", padding: 25}}>
                                         <Container fluid style={{margin: 0}}>
-                                            <form onSubmit={this.handleSubmit}>
                                                 <Row className="justify-content-center">
                                                     <Col className={"col-12"}>
                                                         <Row>
@@ -177,6 +190,7 @@ class AboutUs extends React.Component<any, any> {
                                                                     <label style={{fontWeight: "bold"}}>Name:</label>
                                                                     <input className="form-control" type="text" required={true}
                                                                            value={this.state.name} style={{width: "100%"}}
+                                                                           name={"from_name"}
                                                                            onChange={(event => this.setState({name: event.target.value}))} />
                                                                 </div>
                                                             </Col>
@@ -190,8 +204,9 @@ class AboutUs extends React.Component<any, any> {
                                                             <Col>
                                                                 <div className={"form-group"}>
                                                                     <label style={{fontWeight: "bold"}}>Email:</label>
-                                                                    <input className="form-control" type="text" required={true}
+                                                                    <input className="form-control" type="email" required={true}
                                                                            value={this.state.email} style={{width: "100%"}}
+                                                                           name={"email"}
                                                                            onChange={(event => this.setState({email: event.target.value}))} />
                                                                 </div>
                                                             </Col>
@@ -215,11 +230,11 @@ class AboutUs extends React.Component<any, any> {
 
                                                             <textarea className="form-control" required={true}
                                                                       value={this.state.message} style={{width: "100%"}}
+                                                                      name={"message"}
                                                                       onChange={(event => this.setState({message: event.target.value}))} />
                                                         </div>
                                                     </Col>
                                                 </Row>
-                                            </form>
                                         </Container>
                                     </Col>
                                 </Row>
@@ -232,6 +247,7 @@ class AboutUs extends React.Component<any, any> {
                                 </Row>
                             </Container>
                         </Row>
+                        </form>
                     </Container>
                 {/*<div className="about-banner">*/}
                 {/*    <img  className="about-banner" src={banner} width={"100%"} height={"100%"} />*/}

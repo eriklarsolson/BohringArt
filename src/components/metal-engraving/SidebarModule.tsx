@@ -65,11 +65,11 @@ export const SidebarModule: React.FC<Props> = ({tool, toolToShow, setTool, title
 
             <Col className={"col-8"} style={{backgroundColor: "transparent"}}
                  onMouseOver={showTooltip} onMouseOut={hideTooltip}>
-                <div style={{backgroundColor: "white", clipPath: "polygon(0 0, 95% 0, 100% 100%, 0 100%)"}}>
+                <div className={"clickable-image"} style={{backgroundColor: "white", clipPath: "polygon(0 0, 95% 0, 100% 100%, 0 100%)"}}
+                     onClick={() => setTool(toolToShow)} >
                     <img src={getToolImage()}
                          style={{width: "100px", height: "100px"}}
-                         className={tool === toolToShow  ? 'item-active' : 'item'}
-                         onClick={() => setTool(toolToShow)} />
+                         className={tool === toolToShow  ? 'item-active' : 'item'} />
                 </div>
 
                 <div style={tooltipStyle}>

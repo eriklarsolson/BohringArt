@@ -50,18 +50,18 @@ export const StencilsAnimation: React.FC<AnimationProps>  = ({setParentState, ad
 
                 <Container>
                     <Row>
-                        <Col className={"col-7 vh-100 ml-auto"}>
+                        <Col className={"col-10 vh-100 ml-auto"}>
                             <div style={{position: "absolute", width: "100%", height: "100%", backgroundColor: "#29405B",
                                 clipPath: "polygon(0 0, 100% 0, 100% 100%, 10% 100%)"}} />
 
                             <Container>
                                 <Row className={"justify-content-center"} style={{marginBottom: 100}}>
 
-                                    <Col className={"col-5"}>
-                                        <h2 style={{color: "white", textAlign: "left"}}>Stencils</h2>
+                                    <Col className={"col-3"}>
+                                        <h1 style={{color: "white", textAlign: "left"}}>Stencils</h1>
                                     </Col>
 
-                                    <Col className={"col-3"}>
+                                    <Col className={"col-5"}>
                                         <Button className={"green-button"} style={{float: "right", width: 100,
                                             clipPath: "polygon(0 0, 95% 0, 100% 100%, 5% 100%)"}}
                                                 onClick={() => setClosed()}><i className="fa fa-arrow-right" /></Button>
@@ -70,7 +70,7 @@ export const StencilsAnimation: React.FC<AnimationProps>  = ({setParentState, ad
 
                                 <Row className={"justify-content-center"} style={{margin: 10}}>
                                     <Col className="col-5" style={{backgroundColor: "#DBEAEF", clipPath: "polygon(0 0, 100% 0, 100% 100%, 5% 100%)"}}>
-                                        <img
+                                        <img className={"clickable-image"}
                                             src={planet}
                                             onClick={() => addStencilAndClose(planet)} />
                                     </Col>
@@ -78,7 +78,7 @@ export const StencilsAnimation: React.FC<AnimationProps>  = ({setParentState, ad
 
                                 <Row className={"justify-content-center"} style={{margin: 10}}>
                                     <Col className="col-5" style={{backgroundColor: "#DBEAEF", clipPath: "polygon(0 0, 100% 0, 100% 100%, 5% 100%)"}}>
-                                        <img
+                                        <img className={"clickable-image"}
                                             src={logo}
                                             onClick={() => addStencilAndClose(logo)} />
                                     </Col>
@@ -86,7 +86,7 @@ export const StencilsAnimation: React.FC<AnimationProps>  = ({setParentState, ad
 
                                 <Row className={"justify-content-center"} style={{margin: 10}}>
                                     <Col className="col-5" style={{backgroundColor: "#DBEAEF", clipPath: "polygon(0 0, 100% 0, 100% 100%, 5% 100%)"}}>
-                                        <img
+                                        <img className={"clickable-image"}
                                             src={plant}
                                             onClick={() => addStencilAndClose(plant)} />
                                     </Col>
@@ -94,7 +94,7 @@ export const StencilsAnimation: React.FC<AnimationProps>  = ({setParentState, ad
 
                                 <Row className={"justify-content-center"} style={{margin: 10}}>
                                     <Col className="col-5" style={{backgroundColor: "#DBEAEF", clipPath: "polygon(0 0, 100% 0, 100% 100%, 5% 100%)"}}>
-                                        <img
+                                        <img className={"clickable-image"}
                                             src={snowman}
                                             onClick={() => addStencilAndClose(snowman)} />
                                     </Col>

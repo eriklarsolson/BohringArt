@@ -11,13 +11,14 @@ import laser_YELLOW from "./images/laser_YELLOW.png"
 import laser_GREEN from "./images/laser_GREEN.png"
 import laser_BLUE from "./images/laser_BLUE.png"
 import laser_PINK from "./images/laser_PINK.png"
-import optics from "./images/optics_small.png";
-import prism from "./images/prism_small.png";
+import laser_LENS from "./images/laser_LENS.png"
+import laser_PRISM from "./images/laser_PRISM.png"
 import {Typography} from "@material-ui/core";
 import SizeSlider from "./SizeSlider";
 import {MoreInfoAnimation} from "./MoreInfoAnimation";
 import {ViewpointInfoAnimation} from "./ViewpointInfoAnimation";
 import {StencilsAnimation} from "./StencilsAnimation";
+import ColorSlider from "./ColorSlider";
 
 export const TOOL_LASER = 'laser';
 export const TOOL_OPTICS = 'optics';
@@ -38,12 +39,13 @@ class MetalEngraving extends React.Component<any, any> {
             viewpointPopupOpened: false,
             tool: TOOL_LASER,
             size: 15,
-            color: '#FFFFFF',
+            colorVal: 20,
+            color: '#EB3324',
             fill: false,
             fillColor: '#444444',
             items: [],
             canvasRef: React.createRef(),
-            cursor: laser_WHITE,
+            cursor: laser_RED,
             toolActive: true,
         };
     }
@@ -70,14 +72,14 @@ class MetalEngraving extends React.Component<any, any> {
         }
 
         const setTool = (tool: string) => {
-            this.setState({tool: tool})
+            this.setState({tool: tool, toolActive: true})
 
             if(tool === TOOL_LASER) {
                 this.setState({cursor: laser_WHITE})
             } else if(tool === TOOL_OPTICS) {
-                this.setState({cursor: laser_WHITE})
+                this.setState({cursor: laser_LENS})
             } else if(tool === TOOL_PRISM) {
-                this.setState({cursor: prism})
+                this.setState({cursor: laser_PRISM})
             } else {
                 this.setState({cursor: null})
             }
@@ -108,14 +110,20 @@ class MetalEngraving extends React.Component<any, any> {
         }
 
         const rightClick = (event: { preventDefault: () => void; }) => {
-            if(this.state.tool === TOOL_LASER) {
+            if(this.state.tool === TOOL_LASER || this.state.tool === TOOL_OPTICS || this.state.tool === TOOL_PRISM) {
                 event.preventDefault()
 
                 if(this.state.toolActive) {
                     this.setState({cursor: laser_OFF })
                     this.setState({toolActive: false})
                 } else {
-                    this.setState({cursor: getActiveLaserIcon()})
+                    if(this.state.tool === TOOL_OPTICS) {
+                        this.setState({cursor: laser_LENS})
+                    } else if(this.state.tool === TOOL_PRISM) {
+                        this.setState({cursor: laser_PRISM})
+                    } else {
+                        this.setState({cursor: getActiveLaserIcon()})
+                    }
                     this.setState({toolActive: true})
                 }
             }
@@ -142,29 +150,109 @@ class MetalEngraving extends React.Component<any, any> {
             }
         }
 
+        const setColorFromSize = (event: any, size: any) => {
+            console.log(size)
+
+            if(this.state.tool === TOOL_LASER) {
+                switch (size) {
+                    // case "#FFFFFF":
+                    //     this.setState({color: color, cursor: laser_WHITE})
+                    //     break;
+                    case 20:
+                        this.setState({color: "#EB3324", cursor: laser_RED, colorSize: size})
+                        break;
+                    case 40:
+                        this.setState({color: "#F2F551", cursor: laser_YELLOW, colorSize: size})
+                        break;
+                    case 60:
+                        this.setState({color: "#76FA68", cursor: laser_GREEN, colorSize: size})
+                        break;
+                    case 80:
+                        this.setState({color: "#3686F7", cursor: laser_BLUE, colorSize: size})
+                        break;
+                    case 100:
+                        this.setState({color: "#EA3690", cursor: laser_PINK, colorSize: size})
+                        break;
+                    default:
+                        this.setState({color: "#FFFFFF", cursor: laser_OFF, colorSize: size})
+                        break;
+                }
+            } else {
+                switch (size) {
+                    // case "#FFFFFF":
+                    //     this.setState({color: color, cursor: laser_WHITE})
+                    //     break;
+                    case 20:
+                        this.setState({color: "#EB3324", colorSize: size})
+                        break;
+                    case 40:
+                        this.setState({color: "#F2F551", colorSize: size})
+                        break;
+                    case 60:
+                        this.setState({color: "#76FA68", colorSize: size})
+                        break;
+                    case 80:
+                        this.setState({color: "#3686F7", colorSize: size})
+                        break;
+                    case 100:
+                        this.setState({color: "#EA3690", colorSize: size})
+                        break;
+                    default:
+                        this.setState({color: "#FFFFFF", colorSize: size})
+                        break;
+                }
+            }
+        }
+
         const setColor = (color: string) => {
-            switch (color) {
-                case "#FFFFFF":
-                    this.setState({color: color, cursor: laser_WHITE})
-                    break;
-                case "#EB3324":
-                    this.setState({color: color, cursor: laser_RED})
-                    break;
-                case "#F2F551":
-                    this.setState({color: color, cursor: laser_YELLOW})
-                    break;
-                case "#76FA68":
-                    this.setState({color: color, cursor: laser_GREEN})
-                    break;
-                case "#3686F7":
-                    this.setState({color: color, cursor: laser_BLUE})
-                    break;
-                case "#EA3690":
-                    this.setState({color: color, cursor: laser_PINK})
-                    break;
-                default:
-                    this.setState({color: color, cursor: laser_OFF})
-                    break;
+            if(this.state.tool === TOOL_LASER) {
+                switch (color) {
+                    // case "#FFFFFF":
+                    //     this.setState({color: color, cursor: laser_WHITE})
+                    //     break;
+                    case "#EB3324":
+                        this.setState({color: color, cursor: laser_RED})
+                        break;
+                    case "#F2F551":
+                        this.setState({color: color, cursor: laser_YELLOW})
+                        break;
+                    case "#76FA68":
+                        this.setState({color: color, cursor: laser_GREEN})
+                        break;
+                    case "#3686F7":
+                        this.setState({color: color, cursor: laser_BLUE})
+                        break;
+                    case "#EA3690":
+                        this.setState({color: color, cursor: laser_PINK})
+                        break;
+                    default:
+                        this.setState({color: color, cursor: laser_OFF})
+                        break;
+                }
+            } else {
+                switch (color) {
+                    // case "#FFFFFF":
+                    //     this.setState({color: color})
+                    //     break;
+                    case "#EB3324":
+                        this.setState({color: color})
+                        break;
+                    case "#F2F551":
+                        this.setState({color: color})
+                        break;
+                    case "#76FA68":
+                        this.setState({color: color})
+                        break;
+                    case "#3686F7":
+                        this.setState({color: color})
+                        break;
+                    case "#EA3690":
+                        this.setState({color: color})
+                        break;
+                    default:
+                        this.setState({color: color})
+                        break;
+                }
             }
         }
 
@@ -236,10 +324,18 @@ class MetalEngraving extends React.Component<any, any> {
 
                                 <Row style={{marginLeft: 25}}>
                                     <Col className={"col-6"}>
-                                        {(this.state.tool !== TOOL_ERASER) ?
+                                        {(this.state.tool !== TOOL_ERASER && this.state.tool !== TOOL_PRISM) ?
                                         <>
                                             <Container fluid>
                                                 <Row>
+                                                    <Col className={"col-5"}>
+                                                        <Typography id="color-slider" gutterBottom style={{fontWeight: "bold", color: "#29405B", fontSize: 18, float: "left"}}>
+                                                            Wavelength
+                                                        </Typography>
+                                                        <ColorSlider value={this.props.colorSize} changeValue={setColorFromSize}
+                                                                          aria-labelledby="color-slider" max={100} />
+                                                    </Col>
+
                                                     {/*{this.state.tool !== TOOL_LASER &&*/}
                                                     {/*    <Col style={{padding: 0, margin: 5}} className={"col-1"}>*/}
                                                     {/*        <Button style={{backgroundColor: "#FFFFFF", borderRadius: 100,*/}
@@ -249,45 +345,40 @@ class MetalEngraving extends React.Component<any, any> {
                                                     {/*    </Col>*/}
                                                     {/*}*/}
 
+                                                    {/*<Col style={{padding: 0, margin: 5}} className={"col-1"}>*/}
+                                                    {/*    <Button style={{backgroundColor: "#EB3324", borderRadius: 100,*/}
+                                                    {/*        width: "40px", height: "40px", border: "2px solid rgba(0, 0, 0, 0.25)" }}*/}
+                                                    {/*            onClick={() => setColor("#EB3324")}*/}
+                                                    {/*    />*/}
+                                                    {/*</Col>*/}
 
-                                                    {this.state.tool !== TOOL_PRISM &&
-                                                        <>
-                                                        <Col style={{padding: 0, margin: 5}} className={"col-1"}>
-                                                            <Button style={{backgroundColor: "#EB3324", borderRadius: 100,
-                                                                width: "40px", height: "40px", border: "2px solid rgba(0, 0, 0, 0.25)" }}
-                                                                    onClick={() => setColor("#EB3324")}
-                                                            />
-                                                        </Col>
+                                                    {/*<Col style={{padding: 0, margin: 5}} className={"col-1"}>*/}
+                                                    {/*    <Button style={{backgroundColor: "#F2F551", borderRadius: 100,*/}
+                                                    {/*    width: "40px", height: "40px", border: "2px solid rgba(0, 0, 0, 0.25)" }}*/}
+                                                    {/*    onClick={() => setColor("#F2F551")}*/}
+                                                    {/*    />*/}
+                                                    {/*</Col>*/}
 
-                                                        <Col style={{padding: 0, margin: 5}} className={"col-1"}>
-                                                            <Button style={{backgroundColor: "#F2F551", borderRadius: 100,
-                                                            width: "40px", height: "40px", border: "2px solid rgba(0, 0, 0, 0.25)" }}
-                                                            onClick={() => setColor("#F2F551")}
-                                                            />
-                                                        </Col>
+                                                    {/*<Col style={{padding: 0, margin: 5}} className={"col-1"}>*/}
+                                                    {/*    <Button style={{backgroundColor: "#76FA68", borderRadius: 100,*/}
+                                                    {/*    width: "40px", height: "40px", border: "2px solid rgba(0, 0, 0, 0.25)" }}*/}
+                                                    {/*    onClick={() => setColor("#76FA68")}*/}
+                                                    {/*    />*/}
+                                                    {/*</Col>*/}
 
-                                                        <Col style={{padding: 0, margin: 5}} className={"col-1"}>
-                                                            <Button style={{backgroundColor: "#76FA68", borderRadius: 100,
-                                                            width: "40px", height: "40px", border: "2px solid rgba(0, 0, 0, 0.25)" }}
-                                                            onClick={() => setColor("#76FA68")}
-                                                            />
-                                                        </Col>
+                                                    {/*<Col style={{padding: 0, margin: 5}} className={"col-1"}>*/}
+                                                    {/*    <Button style={{backgroundColor: "#3686F7", borderRadius: 100,*/}
+                                                    {/*    width: "40px", height: "40px", border: "2px solid rgba(0, 0, 0, 0.25)" }}*/}
+                                                    {/*    onClick={() => setColor("#3686F7")}*/}
+                                                    {/*    />*/}
+                                                    {/*</Col>*/}
 
-                                                        <Col style={{padding: 0, margin: 5}} className={"col-1"}>
-                                                            <Button style={{backgroundColor: "#3686F7", borderRadius: 100,
-                                                            width: "40px", height: "40px", border: "2px solid rgba(0, 0, 0, 0.25)" }}
-                                                            onClick={() => setColor("#3686F7")}
-                                                            />
-                                                        </Col>
-
-                                                        <Col style={{padding: 0, margin: 5}} className={"col-1"}>
-                                                            <Button style={{backgroundColor: "#EA3690", borderRadius: 100,
-                                                            width: "40px", height: "40px", border: "2px solid rgba(0, 0, 0, 0.25)" }}
-                                                            onClick={() => setColor("#EA3690")}
-                                                            />
-                                                        </Col>
-                                                        </>
-                                                    }
+                                                    {/*<Col style={{padding: 0, margin: 5}} className={"col-1"}>*/}
+                                                    {/*    <Button style={{backgroundColor: "#EA3690", borderRadius: 100,*/}
+                                                    {/*    width: "40px", height: "40px", border: "2px solid rgba(0, 0, 0, 0.25)" }}*/}
+                                                    {/*    onClick={() => setColor("#EA3690")}*/}
+                                                    {/*    />*/}
+                                                    {/*</Col>*/}
                                                 </Row>
                                             </Container>
                                         </>
@@ -342,7 +433,7 @@ class MetalEngraving extends React.Component<any, any> {
                                         }} onClick={cycleViewpointPopup}>Viewpoint</Button>
                             </Row>
 
-                            <Row className={"justify-content-end"} style={{margin: 0, position: "absolute", bottom: 25}}>
+                            <Row className={"justify-content-end"} style={{margin: 0, position: "absolute", bottom: 50}}>
                                 <Col style={{padding: 0}}>
                                     <Button className={"green-button"} style={{float: "right", width: 200,
                                         clipPath: "polygon(0 0, 95% 0, 100% 100%, 5% 100%)"}}

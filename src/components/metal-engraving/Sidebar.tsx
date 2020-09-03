@@ -65,7 +65,7 @@ class Sidebar extends React.Component<any, any> {
                                                className={this.props.tool === TOOL_RECTANGLE  ? 'item-active' : 'item'}
                                                onClick={() => this.props.setTool(TOOL_RECTANGLE)}
                                            >
-                                               <img src={square} />
+                                               <img className="clickable-image" src={square} />
                                            </button>
                                        </Col>
                                    </Row>
@@ -86,7 +86,7 @@ class Sidebar extends React.Component<any, any> {
                                                            className={this.props.tool === TOOL_ELLIPSE  ? 'item-active' : 'item'}
                                                            onClick={() => this.props.setTool(TOOL_ELLIPSE)}
                                                        >
-                                                           <img src={circle} />
+                                                           <img className="clickable-image" src={circle} />
                                                        </button>
                                                    </Col>
                                                </Row>
@@ -97,7 +97,7 @@ class Sidebar extends React.Component<any, any> {
                                                            className={this.props.tool === TOOL_TRIANGLE  ? 'item-active' : 'item'}
                                                            onClick={() => this.props.setTool(TOOL_TRIANGLE)}
                                                        >
-                                                           <img src={triangle} />
+                                                           <img className="clickable-image" src={triangle} />
                                                        </button>
                                                    </Col>
                                                </Row>

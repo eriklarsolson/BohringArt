@@ -73,3 +73,7 @@
 .fa-instagram:hover {
   cursor: pointer;
 }
+
+.clickable-image:hover {
+  cursor: pointer;
+}

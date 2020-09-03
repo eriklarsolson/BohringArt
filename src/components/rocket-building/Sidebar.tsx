@@ -38,18 +38,6 @@ class Sidebar extends React.Component<any, any> {
 
                                <Row style={{textAlign: "left", padding: 5}}>
                                    <Col>
-                                      <Row style={{marginBottom: 3}} className={"align-items-center"}>
-                                           <Col className={"col-5"}>
-                                               <p style={{marginBottom: 0, fontSize: 12}}>Fuel Capacity</p>
-                                           </Col>
-                                           <div style={{minWidth: 20, backgroundColor: "#162F4C"}}>
-                                               <p style={{padding: 5, fontSize: 10, marginBottom: 0}}>{this.props.cone.fuelCapacity}</p>
-                                           </div>
-                                           <Col  className={"col-5"}>
-                                               <PartPropertySlider value={this.props.cone.fuelCapacity} />
-                                           </Col>
-                                       </Row>
-
                                        <Row style={{marginBottom: 3}} className={"align-items-center"}>
                                            <Col className={"col-5"}>
                                                <p style={{marginBottom: 0, fontSize: 12}}>Air Resistance</p>
@@ -113,18 +101,6 @@ class Sidebar extends React.Component<any, any> {
                                            </div>
                                            <Col  className={"col-5"}>
                                                <PartPropertySlider value={this.props.body.fuelCapacity} />
-                                           </Col>
-                                       </Row>
-
-                                       <Row style={{marginBottom: 3}} className={"align-items-center"}>
-                                           <Col className={"col-5"}>
-                                               <p style={{marginBottom: 0, fontSize: 12}}>Air Resistance</p>
-                                           </Col>
-                                           <div style={{minWidth: 20, backgroundColor: "#162F4C"}}>
-                                               <p style={{padding: 5, fontSize: 10, marginBottom: 0}}>{this.props.body.airResistance}</p>
-                                           </div>
-                                           <Col className={"col-5"}>
-                                               <PartPropertySlider value={this.props.body.airResistance} />
                                            </Col>
                                        </Row>
 
@@ -205,6 +181,18 @@ class Sidebar extends React.Component<any, any> {
                                                <PartPropertySlider value={this.props.booster.mass} />
                                            </Col>
                                        </Row>
+
+                                       <Row style={{marginBottom: 3}} className={"align-items-center"}>
+                                           <Col className={"col-5"}>
+                                               <p style={{marginBottom: 0, fontSize: 12}}>Thrust</p>
+                                           </Col>
+                                           <div style={{minWidth: 20, backgroundColor: "#162F4C"}}>
+                                               <p style={{padding: 5, fontSize: 10, marginBottom: 0}}>{this.props.booster.thrust}</p>
+                                           </div>
+                                           <Col  className={"col-5"}>
+                                               <PartPropertySlider value={this.props.booster.thrust} />
+                                           </Col>
+                                       </Row>
                                    </Col>
                                </Row>
                            </Container>
@@ -238,30 +226,6 @@ class Sidebar extends React.Component<any, any> {
                                    <Col>
                                        <Row style={{marginBottom: 3}} className={"align-items-center"}>
                                            <Col className={"col-5"}>
-                                               <p style={{marginBottom: 0, fontSize: 12}}>Fuel Capacity</p>
-                                           </Col>
-                                           <div style={{minWidth: 20, backgroundColor: "#162F4C"}}>
-                                               <p style={{padding: 5, fontSize: 10, marginBottom: 0}}>{this.props.engine.fuelCapacity}</p>
-                                           </div>
-                                           <Col  className={"col-5"}>
-                                               <PartPropertySlider value={this.props.engine.fuelCapacity} />
-                                           </Col>
-                                       </Row>
-
-                                       <Row style={{marginBottom: 3}} className={"align-items-center"}>
-                                           <Col className={"col-5"}>
-                                               <p style={{marginBottom: 0, fontSize: 12}}>Air Resistance</p>
-                                           </Col>
-                                           <div style={{minWidth: 20, backgroundColor: "#162F4C"}}>
-                                               <p style={{padding: 5, fontSize: 10, marginBottom: 0}}>{this.props.engine.airResistance}</p>
-                                           </div>
-                                           <Col className={"col-5"}>
-                                               <PartPropertySlider value={this.props.engine.airResistance} />
-                                           </Col>
-                                       </Row>
-
-                                       <Row style={{marginBottom: 3}} className={"align-items-center"}>
-                                           <Col className={"col-5"}>
                                                <p style={{marginBottom: 0, fontSize: 12}}>Total Mass</p>
                                            </Col>
                                            <div style={{minWidth: 20, backgroundColor: "#162F4C"}}>
@@ -269,6 +233,18 @@ class Sidebar extends React.Component<any, any> {
                                            </div>
                                            <Col  className={"col-5"}>
                                                <PartPropertySlider value={this.props.engine.mass} />
+                                           </Col>
+                                       </Row>
+
+                                       <Row style={{marginBottom: 3}} className={"align-items-center"}>
+                                           <Col className={"col-5"}>
+                                               <p style={{marginBottom: 0, fontSize: 12}}>Thrust</p>
+                                           </Col>
+                                           <div style={{minWidth: 20, backgroundColor: "#162F4C"}}>
+                                               <p style={{padding: 5, fontSize: 10, marginBottom: 0}}>{this.props.engine.thrust}</p>
+                                           </div>
+                                           <Col className={"col-5"}>
+                                               <PartPropertySlider value={this.props.engine.thrust} />
                                            </Col>
                                        </Row>
                                    </Col>

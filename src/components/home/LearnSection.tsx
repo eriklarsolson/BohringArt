@@ -31,14 +31,19 @@ class LearnSection extends React.Component<any, any> {
 
                     <Row className={"justify-content-center"}>
                         <Col className={"col-10 col-md-4 learn-section"} onClick={() => this.props.goToActivity(0)}
-                             style={{clipPath: "polygon(0 0, 95% 0, 100% 100%, 5% 100%)", backgroundColor: "#29405B", padding: 25}}>
+                             style={{clipPath: "polygon(0 0, 95% 0, 100% 100%, 5% 100%)", backgroundColor: "#29405B",
+                                 padding: 25, marginBottom: 40}}>
                             <Row>
                                 <Col className={"col-3"} style={{overflow: "hidden"}}>
                                     <img src={one} />
                                 </Col>
                                 <Col>
                                     <h4>CIRCUIT CONSTRUCTION</h4>
-                                    <p>Learn about circuit components to build one that can power your satellite. Demonstrate the flow of electrons in a circuit and how circuit components (capacitors, resistors, inductors, etc.) can affect their energy.</p>
+                                    <p style={{marginRight: 10}}>
+                                        Learn about circuit components to build one that can power your satellite.
+                                        Demonstrate the flow of electrons in a circuit and how circuit components
+                                        (capacitors, resistors, inductors, etc.) can affect their energy.
+                                    </p>
                                     {/*<Button*/}
                                     {/*    href="/activity/circuit-building"*/}
                                     {/*    variant="primary"*/}
@@ -53,15 +58,18 @@ class LearnSection extends React.Component<any, any> {
                         </Col>
 
                         <Col className={"col-10 col-md-4 learn-section"} onClick={() => this.props.goToActivity(1)}
-                             style={{clipPath: "polygon(0 0, 95% 0, 100% 100%, 5% 100%)", backgroundColor: "#29405B", padding: 25}}>
+                             style={{clipPath: "polygon(0 0, 95% 0, 100% 100%, 5% 100%)", backgroundColor: "#29405B",
+                                 padding: 25, marginBottom: 40}}>
                             <Row>
                                 <Col className={"col-3"} style={{overflow: "hidden"}}>
                                     <img src={two} />
                                 </Col>
                                 <Col>
                                     <h4>LASERS AND LENSES</h4>
-                                    <p>
-                                        Learn how lenses manipulate light to understand how your telescope sees distant stars. Experiment with the variables that affect the image formed when shining light through a lens, and begin controlling the type of image you see by manipulating these variables.
+                                    <p style={{marginRight: 10}}>
+                                        Learn how lenses manipulate light to understand how your telescope sees distant
+                                        stars. Experiment with the variables that affect the image formed when shining
+                                        light through a lens, and begin controlling the type of image you see by manipulating these variables.
                                     </p>
                                     {/*<Button*/}
                                     {/*    href="/activity/metal-engraving"*/}
@@ -79,15 +87,19 @@ class LearnSection extends React.Component<any, any> {
 
                    <Row className={"justify-content-center"} style={{marginTop: 50, marginBottom: 50}}>
                        <Col className={"col-10 col-md-4 learn-section"} onClick={() => this.props.goToActivity(2)}
-                            style={{clipPath: "polygon(0 0, 95% 0, 100% 100%, 5% 100%)", backgroundColor: "#29405B", padding: 25, marginLeft: "4%"}}>
+                            style={{clipPath: "polygon(0 0, 95% 0, 100% 100%, 5% 100%)", backgroundColor: "#29405B",
+                                padding: 25, marginLeft: "4%", marginBottom: 40}}>
                            <Row>
                                <Col className={"col-3"} style={{overflow: "hidden"}}>
                                    <img src={three} />
                                </Col>
                                <Col>
                                    <h4>TO THE STARS</h4>
-                                   <p>
-                                       Create a rocket consisting of an engine, boosters, a body, and a cone. Make sure to account for fuel, air resistance, and weight as all affect the rocket’s motion greatly! Send your rocket off into space with the telescope as the payload and along the way, answer TEXT-based questions that determine the fate of your journey!
+                                   <p style={{marginRight: 10}}>
+                                       Create a rocket consisting of an engine, boosters, a body, and a cone. Make sure
+                                       to account for fuel, air resistance, and weight as all affect the rocket’s motion
+                                       greatly! Send your rocket off into space with the telescope as the payload and
+                                       along the way, answer TEXT-based questions that determine the fate of your journey!
                                    </p>
                                    {/*<Button*/}
                                    {/*    href="/activity/rocket-building"*/}
@@ -103,15 +115,18 @@ class LearnSection extends React.Component<any, any> {
                        </Col>
 
                        <Col className={"col-10 col-md-4 learn-section"} onClick={() => this.props.goToActivity(3)}
-                            style={{clipPath: "polygon(0 0, 95% 0, 100% 100%, 5% 100%)", backgroundColor: "#29405B", padding: 25}}>
+                            style={{clipPath: "polygon(0 0, 95% 0, 100% 100%, 5% 100%)", backgroundColor: "#29405B",
+                                padding: 25, marginBottom: 40}}>
                            <Row>
                                <Col className={"col-3"} style={{overflow: "hidden"}}>
                                    <img src={four} />
                                </Col>
                                <Col>
                                    <h4>STELLAR LIFE CYCLE</h4>
-                                   <p>
-                                       Learn more about what your telescope sees, and a star’s life cycle from creation to destruction. See how important certain variables such as mass and radius are in determining the next phase and the stellar event, i.e. a supernova.
+                                   <p style={{marginRight: 10}}>
+                                       Learn more about what your telescope sees, and a star’s life cycle from creation
+                                       to destruction. See how important certain variables such as mass and radius are
+                                       in determining the next phase and the stellar event, i.e. a supernova.
                                    </p>
                                    {/*<Button*/}
                                    {/*    href="/activity/object-page"*/}

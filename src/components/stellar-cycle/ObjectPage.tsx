@@ -359,6 +359,11 @@ class ObjectPage extends React.Component<any, any> {
             if (samePlaceComponents.length > 0) {
                 const index = getIndex(samePlaceComponents[0], this.state.stellarObjects[this.state.massClass]);
                 this.setState({index: index})
+
+                if(this.state.stellarObjects[this.state.massClass][this.state.index].title === "Average Star" ||
+                    this.state.stellarObjects[this.state.massClass][this.state.index].title === "Massive Star") {
+                    this.setState({disableSliders: false})
+                }
             }
 
             if(this.state.stellarObjects[this.state.massClass][this.state.index].title === "Red Giant" ||
