@@ -14,6 +14,7 @@ import {
 import 'font-awesome/css/font-awesome.min.css';
 import {ToastContainer} from "react-toastify";
 import {MoreInfoAnimation} from "./MoreInfoAnimation";
+import {ObjectiveSlideOut} from "../shared/modals/ObjectiveSlideOut";
 
 class CircuitBuilding extends React.Component<any, any> {
     constructor(props: any) {
@@ -93,17 +94,26 @@ class CircuitBuilding extends React.Component<any, any> {
             <>
                 {/*<CircuitPopup open={this.state.circuitPopupOpened} closeCircuitPopup={cycleCircuitPopup} />*/}
 
-                <ObjectivePopup open={this.state.popupOpened} title={this.state.popupTitle}
-                                description={this.state.popupDescriptions[this.state.currentLevel - 1]}
-                                closePopup={cyclePopup} />
+                {/*<ObjectivePopup open={this.state.popupOpened} title={this.state.popupTitle}*/}
+                {/*                description={this.state.popupDescriptions[this.state.currentLevel - 1]}*/}
+                {/*                closePopup={cyclePopup} />*/}
+
+                {this.state.popupOpened &&
+                    <div className={""} style={{position: "absolute", width: "100%", height: "100%", zIndex: 4, overflow: "hidden"}}>
+                        <ObjectiveSlideOut title={this.state.popupTitle}
+                                           description={this.state.popupDescriptions[this.state.currentLevel - 1]}
+                                           setParentState={() => cyclePopup()} />
+                    </div>
+                }
 
                 {this.state.circuitPopupOpened &&
-                    <div style={{position: "absolute", width: "100%", height: "100%", zIndex: 10, overflow: "hidden"}}>
+                    <div style={{position: "absolute", width: "100%", height: "100%", zIndex: 4, overflow: "hidden"}}>
                         <MoreInfoAnimation setParentState={() => cycleCircuitPopup()} />
                     </div>
                 }
 
                     <Container fluid className={"d-flex h-100 flex-column"} style={{margin: "0", padding: "0", backgroundColor: "#F8EDDD"}}>
+
                         <Row className={"flex-grow-1"} style={{margin: "0"}}>
                             <Col className={"col-2"} style={{color: "white", padding: "0"}}>
                                 <Sidebar currentLevel={this.state.currentLevel} />

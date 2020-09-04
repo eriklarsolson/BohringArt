@@ -19,6 +19,7 @@ import {MoreInfoAnimation} from "./MoreInfoAnimation";
 import {ViewpointInfoAnimation} from "./ViewpointInfoAnimation";
 import {StencilsAnimation} from "./StencilsAnimation";
 import ColorSlider from "./ColorSlider";
+import {ObjectiveSlideOut} from "../shared/modals/ObjectiveSlideOut";
 
 export const TOOL_LASER = 'laser';
 export const TOOL_OPTICS = 'optics';
@@ -51,12 +52,8 @@ class MetalEngraving extends React.Component<any, any> {
     }
 
     render() {
-        const openPopup = () => {
-            this.setState({popupOpened: true})
-        }
-
-        const closePopup = () => {
-            this.setState({popupOpened: false})
+        const cyclePopup = () => {
+            this.setState({popupOpened: !this.state.popupOpened})
         }
 
         const cvcleEngravingPopup = () => {
@@ -261,25 +258,37 @@ class MetalEngraving extends React.Component<any, any> {
                 {/*<MetalEngravingQuestionPopup open={this.state.questionPopupOpened} closePopup={cycleQuestionPopup} />*/}
 
                 {this.state.questionPopupOpened &&
-                    <div style={{position: "absolute", width: "100%", height: "100%", zIndex: 10, overflow: "hidden"}}>
+                    <div style={{position: "absolute", width: "100%", height: "100%", zIndex: 4, overflow: "hidden"}}>
                         <MoreInfoAnimation setParentState={() => cycleQuestionPopup()} />
                     </div>
                 }
 
-                <ObjectivePopup title={"02 Laser and Lenses Objective"}
-                                open={this.state.popupOpened}
-                                description={"Using lasers, prisms, and lenses, create an " +
-                          "artistic design on a metal sheet. The laser can be altered to include numerous shapes, colors, and widths " +
-                          "beneficial to the engraving. You can use the ERASER and RESET buttons to change any mistakes on your design. " +
-                          "Once you are satisfied with your creation, press the NEXT button to move on to the telescope building part " +
-                          "of the optics activity. Click OBJECTIVE to see the objective for this activity."}
-                                closePopup={closePopup} />
+                {/*<ObjectivePopup title={"02 Laser and Lenses Objective"}*/}
+                {/*                open={this.state.popupOpened}*/}
+                {/*                description={"Using lasers, prisms, and lenses, create an " +*/}
+                {/*          "artistic design on a metal sheet. The laser can be altered to include numerous shapes, colors, and widths " +*/}
+                {/*          "beneficial to the engraving. You can use the ERASER and RESET buttons to change any mistakes on your design. " +*/}
+                {/*          "Once you are satisfied with your creation, press the NEXT button to move on to the telescope building part " +*/}
+                {/*          "of the optics activity. Click OBJECTIVE to see the objective for this activity."}*/}
+                {/*                closePopup={closePopup} />*/}
+
+                {this.state.popupOpened &&
+                <div style={{position: "absolute", width: "100%", height: "100%", zIndex: 3, overflow: "hidden"}}>
+                    <ObjectiveSlideOut title={"02 Laser and Lenses Objective"}
+                                       description={"Using lasers, prisms, and lenses, create an " +
+                                       "artistic design on a metal sheet. The laser can be altered to include numerous shapes, colors, and widths " +
+                                       "beneficial to the engraving. You can use the ERASER and RESET buttons to change any mistakes on your design. " +
+                                       "Once you are satisfied with your creation, press the NEXT button to move on to the telescope building part " +
+                                       "of the optics activity. Click OBJECTIVE to see the objective for this activity."}
+                                       setParentState={() => cyclePopup()} />
+                </div>
+                }
 
                {/*<EngravingPopup open={this.state.engravingPopupOpened} closePopup={closeEngravingPopup}*/}
                {/*                addStencil={addStencil} />*/}
 
                 {this.state.engravingPopupOpened &&
-                <div style={{position: "absolute", width: "100%", height: "100%", zIndex: 10, overflow: "hidden"}}>
+                <div style={{position: "absolute", width: "100%", height: "100%", zIndex: 4, overflow: "hidden"}}>
                     <StencilsAnimation setParentState={() => cvcleEngravingPopup()}  addStencil={addStencil} />
                 </div>
                 }
@@ -287,7 +296,7 @@ class MetalEngraving extends React.Component<any, any> {
                 {/*<ViewpointPopup open={this.state.viewpointPopupOpened} closePopup={toggleViewpointPopup} />*/}
 
                 {this.state.viewpointPopupOpened &&
-                    <div style={{position: "absolute", width: "100%", height: "100%", zIndex: 10, overflow: "hidden"}}>
+                    <div style={{position: "absolute", width: "100%", height: "100%", zIndex: 4, overflow: "hidden"}}>
                         <ViewpointInfoAnimation setParentState={() => cycleViewpointPopup()} />
                     </div>
                 }
@@ -426,7 +435,7 @@ class MetalEngraving extends React.Component<any, any> {
                             </Row>
                             <Row className={"justify-content-end"} style={{margin: 0}}>
                                     <Button className={"blue-button"} style={{width: 166, textAlign: "left",
-                                        marginBottom: 15}} onClick={openPopup}>Objective</Button>
+                                        marginBottom: 15}} onClick={cyclePopup}>Objective</Button>
                             </Row>
                             <Row className={"justify-content-end"} style={{margin: 0}}>
                                     <Button className={"blue-button"} style={{width: 166, textAlign: "left"}}

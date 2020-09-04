@@ -23,6 +23,7 @@ import {getIndex} from "../circuilt-building/grid/Functionality";
 import ObjectivePopup from "../shared/modals/ObjectivePopup";
 import TimelineSlider from "./TimelineSlider";
 import StellarPropertiesPopup from "../shared/modals/StellarPropertiesPopup";
+import {ObjectiveSlideOut} from "../shared/modals/ObjectiveSlideOut";
 
 class ObjectPage extends React.Component<any, any> {
     constructor(props: any) {
@@ -406,16 +407,31 @@ class ObjectPage extends React.Component<any, any> {
             <>
                 <StellarPropertiesPopup open={this.state.propertiesPopupOpened} closePopup={cyclePropertiesPopup} />
 
-                <ObjectivePopup title={"04 Stellar Life Cycle"}
-                                open={this.state.popupOpened}
-                                description={"In this final activity, use the sliders to see how mass, temperature, and size are " +
-                       "related as you move through the stages of the stellar life cycle. You may choose between using a " +
-                       "star of average mass (like the sun) or a supermassive star, mass is the main variable used to " +
-                       "determine which stages the star will go through and how long its lifespan will be. When viewing " +
-                       "a stage, click the MORE INFO button to see an in depth description. You can also click on the " +
-                       "ALL STAGES button to go back to the stellar life cycle diagram. Once you are finished exploring, " +
-                       "click on the COMPLETE button to close out the activity."}
-                                closePopup={cyclePopup} />
+                {/*<ObjectivePopup title={"04 Stellar Life Cycle"}*/}
+                {/*                open={this.state.popupOpened}*/}
+                {/*                description={"In this final activity, use the sliders to see how mass, temperature, and size are " +*/}
+                {/*       "related as you move through the stages of the stellar life cycle. You may choose between using a " +*/}
+                {/*       "star of average mass (like the sun) or a supermassive star, mass is the main variable used to " +*/}
+                {/*       "determine which stages the star will go through and how long its lifespan will be. When viewing " +*/}
+                {/*       "a stage, click the MORE INFO button to see an in depth description. You can also click on the " +*/}
+                {/*       "ALL STAGES button to go back to the stellar life cycle diagram. Once you are finished exploring, " +*/}
+                {/*       "click on the COMPLETE button to close out the activity."}*/}
+                {/*                closePopup={cyclePopup} />*/}
+
+                {this.state.popupOpened &&
+                    <div style={{position: "absolute", width: "100%", height: "100%", zIndex: 4, overflow: "hidden"}}>
+                        <ObjectiveSlideOut title={"04 Stellar Life Cycle"}
+                                           description={"In this final activity, use the sliders to see how mass, temperature, and size are " +
+                                           "related as you move through the stages of the stellar life cycle. You may choose between using a " +
+                                           "star of average mass (like the sun) or a supermassive star, mass is the main variable used to " +
+                                           "determine which stages the star will go through and how long its lifespan will be. When viewing " +
+                                           "a stage, click the MORE INFO button to see an in depth description. You can also click on the " +
+                                           "ALL STAGES button to go back to the stellar life cycle diagram. Once you are finished exploring, " +
+                                           "click on the COMPLETE button to close out the activity."}
+                                           setParentState={() => cyclePopup()} />
+                    </div>
+                }
+
 
                 <Container fluid className={"d-flex h-100 flex-column"} style={{margin: 0, padding: 0, backgroundImage:`url(${stellarBackground})`}}>
                     <Row className={"flex-grow-1"} style={{margin: 0}}>

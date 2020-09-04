@@ -52,7 +52,7 @@ class TelescopeActivity extends React.Component<any, any> {
                 {/*<TelescopeQuestionPopup open={this.state.questionPopupOpened} closePopup={cycleQuestionPopup} />*/}
 
                 {this.state.questionPopupOpened &&
-                <div style={{position: "absolute", width: "100%", height: "100%", zIndex: 10, overflow: "hidden"}}>
+                <div style={{position: "absolute", width: "100%", height: "100%", zIndex: 4, overflow: "hidden"}}>
                     <MoreInfoAnimation setParentState={() => cycleQuestionPopup()} />
                 </div>
                 }

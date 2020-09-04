@@ -27,6 +27,7 @@ import booster_4_middle from "./images/boosters/booster_4_middle.png"
 import booster_4_right from "./images/boosters/booster_4_right.png"
 import background from "./images/background.png";
 import {MoreInfoAnimation} from "./MoreInfoAnimation";
+import {ObjectiveSlideOut} from "../shared/modals/ObjectiveSlideOut";
 
 class RocketBuilding extends React.Component<any, any> {
     constructor(props: any) {
@@ -300,15 +301,23 @@ class RocketBuilding extends React.Component<any, any> {
 
         return (
             <>
-                <ObjectivePopup title={"03 To The Stars"}
-                                open={this.state.popupOpened}
-                                description={"Using the arrows on the left and right, create a rocket consisting of an engine, boosters, a body, and a cone. Make sure to account for fuel, air resistance, and weight as all affect the rocket’s motion greatly. Click LAUNCH  to send your rocket off into space with the telescope as the payload. Along the way, answer TEXT-based questions that determine the fate of your journey! Remember to answer the questions keeping in mind the cost of the rocket as well as the survival of its crew. \n"}
-                                closePopup={cyclePopup} />
+                {/*<ObjectivePopup title={"03 To The Stars"}*/}
+                {/*                open={this.state.popupOpened}*/}
+                {/*                description={"Using the arrows on the left and right, create a rocket consisting of an engine, boosters, a body, and a cone. Make sure to account for fuel, air resistance, and weight as all affect the rocket’s motion greatly. Click LAUNCH  to send your rocket off into space with the telescope as the payload. Along the way, answer TEXT-based questions that determine the fate of your journey! Remember to answer the questions keeping in mind the cost of the rocket as well as the survival of its crew. \n"}*/}
+                {/*                closePopup={cyclePopup} />*/}
+
+                {this.state.popupOpened &&
+                    <div style={{position: "absolute", width: "100%", height: "100%", zIndex: 4, overflow: "hidden"}}>
+                        <ObjectiveSlideOut title={"03 To The Stars"}
+                                           description={"Using the arrows on the left and right, create a rocket consisting of an engine, boosters, a body, and a cone. Make sure to account for fuel, air resistance, and weight as all affect the rocket’s motion greatly. Click LAUNCH  to send your rocket off into space with the telescope as the payload. Along the way, answer TEXT-based questions that determine the fate of your journey! Remember to answer the questions keeping in mind the cost of the rocket as well as the survival of its crew. \n"}
+                                           setParentState={() => cyclePopup()} />
+                    </div>
+                }
 
                 {/*<RocketBuildingQuestionPopup open={this.state.questionPopupOpened} closePopup={cycleQuestionPopup} />*/}
 
                 {this.state.questionPopupOpened &&
-                <div style={{position: "absolute", width: "100%", height: "100%", zIndex: 10, overflow: "hidden"}}>
+                <div style={{position: "absolute", width: "100%", height: "100%", zIndex: 4, overflow: "hidden"}}>
                     <MoreInfoAnimation setParentState={() => cycleQuestionPopup()} />
                 </div>
                 }

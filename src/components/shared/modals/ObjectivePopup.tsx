@@ -18,16 +18,16 @@ class ObjectivePopup extends React.Component<any, any> {
                             </Col>
                         </Row>
 
-                        <Container fluid style={{padding: 100}}>
+                        <Container fluid style={{padding: 100, textAlign: "left"}}>
                             <Row>
                                 <Col className={"col-12"}>
-                                    <p style={{fontSize: 30, fontWeight: "bold"}}>{this.props.title}</p>
+                                    <p style={{fontSize: 30, fontWeight: "bold", color: "#29405B"}}>{this.props.title}</p>
                                 </Col>
                             </Row>
 
                             <Row className={"justify-content-center"}>
                                 <Col className={"col-12"}>
-                                    <p style={{fontSize: "18px"}}>{this.props.description}</p>
+                                    <p style={{fontSize: "18px", color: "#29405B", textAlign: "left"}}>{this.props.description}</p>
                                 </Col>
                             </Row>
 

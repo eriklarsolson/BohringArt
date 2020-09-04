@@ -29,7 +29,7 @@ const Header = (props: {location: any }) => {
     return (
         <>
             {location.pathname === '/' ?
-                <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark" className="main-menu" style={{zIndex: 1}}>
+                <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark" className="main-menu" style={{zIndex: 10}}>
                     <Navbar.Brand href="/" style={{textAlign: "right"}}>
                         <img src={logo} alt={"Logo"} />
                     </Navbar.Brand>
@@ -40,7 +40,7 @@ const Header = (props: {location: any }) => {
                     </Navbar.Collapse>
                 </Navbar>
             :
-                <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark" className="main-menu" style={{zIndex: 1}}>
+                <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark" className="main-menu" style={{zIndex: 10}}>
                     <Navbar.Brand href="/" style={{textAlign: "right", paddingLeft: "1%"}}>
                         <img src={logo} alt={"Logo"} style={{width: "80%"}} />
 
@@ -56,13 +56,15 @@ const Header = (props: {location: any }) => {
 
                         <Nav className="ml-auto" activeKey={location.pathname}>
 
+                            {/*TODO - Delete below once we switch actual home page back to / and not /home so we can click logo to go home */}
                             <Nav.Link as={Link} to={{pathname: '/home', state: { popupOpened: false }}}
                                       active={location.pathname.startsWith('/home') || location.pathname === '/'}
                                       style={{marginLeft: 25}}>
                                 Home
                             </Nav.Link>
 
-                            <NavDropdown title="Activities" id="collasible-nav-dropdown" style={{color: "white", marginLeft: 10}}>
+                            <NavDropdown title="Activities" id="collasible-nav-dropdown" style={{color: "white",
+                                marginLeft: 10, zIndex: 5}}>
                                 <NavDropdown.Item as={Link} to={{pathname: '/activity/circuit-building'}}
                                                   active={location.pathname.startsWith('/activity/circuit-building')}>
                                     Circuit Construction
