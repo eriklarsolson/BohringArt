@@ -29,8 +29,8 @@ export const RocketAnimation: React.FC<AnimationProps>  = ({cone, body, engine, 
                 loop: Infinity,
                 repeatDelay: 1
             }}>
-            <Container fluid style={{transform: "rotate(90deg)", height: 500}}>
-                <Row className={"justify-content-center"}>
+            <Container fluid style={{transform: "rotate(90deg)", height: 400}}>
+                <Row className={"justify-content-center"} style={{height: 400}}>
                     {booster.middleImage !== null &&
                     <div style={{position: "absolute", width: "7%", left: "47%", top: "105%", zIndex: 10}}>
                         <img alt={"Booster Middle"} src={booster_4_middle} style={{width: "80%"}} />

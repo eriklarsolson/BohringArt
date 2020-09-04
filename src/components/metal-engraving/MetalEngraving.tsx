@@ -270,7 +270,7 @@ class MetalEngraving extends React.Component<any, any> {
                                 open={this.state.popupOpened}
                                 description={"Using lasers, prisms, and lenses, create an " +
                           "artistic design on a metal sheet. The laser can be altered to include numerous shapes, colors, and widths " +
-                          "beneficial to the engraving. You can use the UNDO and RESET buttons to change any mistakes on your design. " +
+                          "beneficial to the engraving. You can use the ERASER and RESET buttons to change any mistakes on your design. " +
                           "Once you are satisfied with your creation, press the NEXT button to move on to the telescope building part " +
                           "of the optics activity. Click OBJECTIVE to see the objective for this activity."}
                                 closePopup={closePopup} />
@@ -294,7 +294,7 @@ class MetalEngraving extends React.Component<any, any> {
 
                 <Container fluid className={"d-flex h-100 flex-column"} style={{margin: "0", padding: "0", backgroundColor: "#F8EDDD"}}>
                     <Row className={"flex-grow-1"} style={{margin: 0}}>
-                        <Col className={"col-2"} style={{color: "white", padding: 0}}>
+                        <Col className={"col-2"} style={{color: "white", padding: 0, minWidth: 225}}>
                             <Sidebar tool={this.state.tool} color={this.state.color} size={this.state.size}
                                      setTool={setTool} clearCanvas={clearCanvas} />
                         </Col>

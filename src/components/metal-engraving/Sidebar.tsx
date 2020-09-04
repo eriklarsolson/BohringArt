@@ -31,88 +31,94 @@ class Sidebar extends React.Component<any, any> {
 
         return (
             <>
-               <Container style={{margin: "0", padding: "0", height: "100%"}}>
+               <Container style={{margin: "0", padding: "0", height: "100%", paddingRight: 20}}>
                    <div style={{position: "absolute", width: "100%", height: "100%", backgroundColor: "#29405B",
-                       clipPath: "polygon(0 0,90% 0, 100% 100%, 0 100%)"}} />
+                       clipPath: "polygon(0 0, 85% 0, 100% 100%, 0 100%)"}} />
 
-                   <h3 style={{paddingTop: "15px"}}>Modules</h3>
-
-                   <Row className={"justify-content-center"} style={{margin: "5px"}}>
-                       <SidebarModule tool={this.props.tool} toolToShow={TOOL_LASER} setTool={this.props.setTool} title={"laser"} description={"A laser, or Light Amplification by Stimulated Emission of Radiation, is a concentrated beam of photons"} />
+                   <Row>
+                       <Col className={"col-10"}>
+                           <h3 style={{paddingTop: "15px"}}>Modules</h3>
+                       </Col>
                    </Row>
 
-                   <Row className={"justify-content-center"} style={{margin: "5px"}}>
-                       <SidebarModule tool={this.props.tool} toolToShow={TOOL_OPTICS} setTool={this.props.setTool} title={"optics"} description={"Curved plastic, glass, or other material useful in directing light in some manner, either for convergence or divergence of light"} />
+                   <Row style={{margin: 5, paddingLeft: 25}}>
+                       <SidebarModule tool={this.props.tool} toolToShow={TOOL_LASER} flex={"0 0 69%"} maxWidth={"69%"}
+                                      setTool={this.props.setTool} title={"laser"} description={"A laser, or Light Amplification by Stimulated Emission of Radiation, is a concentrated beam of photons"} />
                    </Row>
 
-                   <Row className={"justify-content-center"} style={{margin: "5px"}}>
-                       <SidebarModule tool={this.props.tool} toolToShow={TOOL_PRISM} setTool={this.props.setTool} title={"prism"} description={"Commonly of a triangular shape, prisms can separate white light into a rainbow of colors"} />
+                   <Row style={{margin: 5, paddingLeft: 25}}>
+                       <SidebarModule tool={this.props.tool} toolToShow={TOOL_OPTICS} flex={"0 0 72%"} maxWidth={"72%"}
+                                      setTool={this.props.setTool} title={"optics"} description={"Curved plastic, glass, or other material useful in directing light in some manner, either for convergence or divergence of light"} />
+                   </Row>
+
+                   <Row style={{margin: 5, paddingLeft: 25}}>
+                       <SidebarModule tool={this.props.tool} toolToShow={TOOL_PRISM} flex={"0 0 75%"} maxWidth={"75%"}
+                                      setTool={this.props.setTool} title={"prism"} description={"Commonly of a triangular shape, prisms can separate white light into a rainbow of colors"} />
                    </Row>
 
                    <Accordion defaultActiveKey="1">
-                       <Container>
-                           <Row className={"justify-content-center"}>
-                               <Col className="col-7" style={{marginLeft: 10, clipPath: "polygon(0 0, 95% 0, 100% 100%, 0 100%)"}}>
-                                   <Row className={"justify-content-center"}>
-                                       <Col className="col-12" style={{backgroundColor: "#F8EDDD", paddingTop: 10, paddingBottom: 10}}>
-                                           <button
-                                               style={{width: 75, height: 75, backgroundColor: "transparent", border: 0}}
-                                               className={this.props.tool === TOOL_RECTANGLE  ? 'item-active' : 'item'}
-                                               onClick={() => this.props.setTool(TOOL_RECTANGLE)}
-                                           >
-                                               <img alt={"Square"} className="clickable-image" src={square} />
-                                           </button>
-                                       </Col>
-                                   </Row>
+                       <Row style={{margin: 5, paddingLeft: 25}}>
+                           <Col className="col-6" style={{marginLeft: 15, flex: "0 0 68%", maxWidth: "68%",
+                               clipPath: "polygon(0 0, 95% 0, 100% 100%, 0 100%)"}}>
+                               <Row className={"justify-content-center"}>
+                                   <Col className="col-12" style={{backgroundColor: "#F8EDDD", paddingTop: 10, paddingBottom: 10}}>
+                                       <button
+                                           style={{width: "100%", height: "100%", backgroundColor: "transparent", border: 0}}
+                                           className={this.props.tool === TOOL_RECTANGLE  ? 'item-active' : 'item'}
+                                           onClick={() => this.props.setTool(TOOL_RECTANGLE)}
+                                       >
+                                           <img alt={"Square"} className="clickable-image" src={square} />
+                                       </button>
+                                   </Col>
+                               </Row>
 
-                                   <Row className={"justify-content-center"} style={{backgroundColor: "#C4C4C4"}}>
-                                       <Accordion.Toggle as={Button} variant="link" eventKey="0">
-                                           <i className="fa fa-arrow-down" style={{color: "#42949F"}} onClick={changeShapeArrow} />
-                                       </Accordion.Toggle>
-                                   </Row>
+                               <Row className={"justify-content-center"} style={{backgroundColor: "#C4C4C4"}}>
+                                   <Accordion.Toggle as={Button} variant="link" eventKey="0">
+                                       <i className="fa fa-arrow-down" style={{color: "#42949F"}} onClick={changeShapeArrow} />
+                                   </Accordion.Toggle>
+                               </Row>
 
-                                   <Row className={"justify-content-center"} style={{backgroundColor: "#F8EDDD"}}>
-                                       <Accordion.Collapse eventKey="0">
-                                           <Container fluid style={{backgroundColor: "#F8EDDD"}}>
-                                               <Row>
-                                                   <Col style={{margin: 5}}>
-                                                       <button
-                                                           style={{width: 75, height: 75, backgroundColor: "transparent", border: 0}}
-                                                           className={this.props.tool === TOOL_ELLIPSE  ? 'item-active' : 'item'}
-                                                           onClick={() => this.props.setTool(TOOL_ELLIPSE)}
-                                                       >
-                                                           <img alt={"Circle"} className="clickable-image" src={circle} />
-                                                       </button>
-                                                   </Col>
-                                               </Row>
-                                               <Row>
-                                                   <Col style={{margin: 5}}>
-                                                       <button
-                                                           style={{width: 75, height: 75, backgroundColor: "transparent", border: 0}}
-                                                           className={this.props.tool === TOOL_TRIANGLE  ? 'item-active' : 'item'}
-                                                           onClick={() => this.props.setTool(TOOL_TRIANGLE)}
-                                                       >
-                                                           <img alt={"Triangle"} className="clickable-image" src={triangle} />
-                                                       </button>
-                                                   </Col>
-                                               </Row>
-                                               {/*<Row>*/}
-                                               {/*    <Col style={{margin: 5}}>*/}
-                                               {/*        <button*/}
-                                               {/*            style={{width: 75, height: 75, backgroundColor: "transparent", border: 0}}*/}
-                                               {/*            className={this.props.tool === TOOL_STAR  ? 'item-active' : 'item'}*/}
-                                               {/*            onClick={() => this.props.setTool(TOOL_STAR)}*/}
-                                               {/*        >*/}
-                                               {/*            <img src={star} />*/}
-                                               {/*        </button>*/}
-                                               {/*    </Col>*/}
-                                               {/*</Row>*/}
-                                           </Container>
-                                       </Accordion.Collapse>
-                                   </Row>
-                               </Col>
-                           </Row>
-                       </Container>
+                               <Row className={"justify-content-center"} style={{backgroundColor: "#F8EDDD"}}>
+                                   <Accordion.Collapse eventKey="0">
+                                       <Container fluid style={{backgroundColor: "#F8EDDD"}}>
+                                           <Row>
+                                               <Col style={{margin: 5}}>
+                                                   <button
+                                                       style={{width: "100%", height: "100%", backgroundColor: "transparent", border: 0}}
+                                                       className={this.props.tool === TOOL_ELLIPSE  ? 'item-active' : 'item'}
+                                                       onClick={() => this.props.setTool(TOOL_ELLIPSE)}
+                                                   >
+                                                       <img alt={"Circle"} className="clickable-image" src={circle} />
+                                                   </button>
+                                               </Col>
+                                           </Row>
+                                           <Row>
+                                               <Col style={{margin: 5}}>
+                                                   <button
+                                                       style={{width: "100%", height: "100%", backgroundColor: "transparent", border: 0}}
+                                                       className={this.props.tool === TOOL_TRIANGLE  ? 'item-active' : 'item'}
+                                                       onClick={() => this.props.setTool(TOOL_TRIANGLE)}
+                                                   >
+                                                       <img alt={"Triangle"} className="clickable-image" src={triangle} />
+                                                   </button>
+                                               </Col>
+                                           </Row>
+                                           {/*<Row>*/}
+                                           {/*    <Col style={{margin: 5}}>*/}
+                                           {/*        <button*/}
+                                           {/*            style={{width: 75, height: 75, backgroundColor: "transparent", border: 0}}*/}
+                                           {/*            className={this.props.tool === TOOL_STAR  ? 'item-active' : 'item'}*/}
+                                           {/*            onClick={() => this.props.setTool(TOOL_STAR)}*/}
+                                           {/*        >*/}
+                                           {/*            <img src={star} />*/}
+                                           {/*        </button>*/}
+                                           {/*    </Col>*/}
+                                           {/*</Row>*/}
+                                       </Container>
+                                   </Accordion.Collapse>
+                               </Row>
+                           </Col>
+                       </Row>
                    </Accordion>
 
                    <Row className={"justify-content-center"} style={{marginTop: 50}}>

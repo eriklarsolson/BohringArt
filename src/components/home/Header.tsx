@@ -7,7 +7,29 @@ import {TelescopeAnimation} from "./TelescopeAnimation";
 import {EarthAnimation} from "./EarthAnimation";
 import 'react-toastify/dist/ReactToastify.css';
 
-class Header extends React.Component {
+class Header extends React.Component<any, any> {
+    constructor(props: any) {
+        super(props);
+        this.state = {
+            width: 0,
+            height: 0
+        };
+        this.updateWindowDimensions = this.updateWindowDimensions.bind(this);
+    }
+
+    componentDidMount() {
+        this.updateWindowDimensions();
+        window.addEventListener('resize', this.updateWindowDimensions);
+    }
+
+    componentWillUnmount() {
+        window.removeEventListener('resize', this.updateWindowDimensions);
+    }
+
+    updateWindowDimensions() {
+        this.setState({ width: window.innerWidth, height: window.innerHeight });
+    }
+
     render() {
         return (
             <>
@@ -44,7 +66,7 @@ class Header extends React.Component {
                             <Container fluid>
                                 <Row className={"justify-content-center"} style={{textAlign: "left"}}>
                                     <Col className={"col-8"}>
-                                        <p style={{fontWeight: "bold", fontSize: 35}}>Help us Launch a Telescope</p>
+                                        <p style={{fontWeight: "bold", fontSize: 33}}>Help us Launch a Telescope</p>
                                     </Col>
                                 </Row>
                                 <Row className={"justify-content-center"} style={{textAlign: "left"}}>
@@ -56,15 +78,21 @@ class Header extends React.Component {
                                     </Col>
                                 </Row>
                                 <Row className={"justify-content-center"}>
-                                    <Button
-                                        href="/activity/circuit-building"
-                                        variant="primary"
-                                        type="submit"
-                                        className={"btn green-button"}
-                                        style={{width: "30%",
-                                            clipPath: "polygon(0 0, 95% 0, 100% 100%, 5% 100%)"}}>
-                                        Start
-                                    </Button>
+                                    {(this.state.width > 1000) ?
+                                        <Button
+                                            href="/activity/circuit-building"
+                                            variant="primary"
+                                            type="submit"
+                                            className={"btn green-button"}
+                                            style={{width: "30%",
+                                                clipPath: "polygon(0 0, 95% 0, 100% 100%, 5% 100%)"}}>
+                                            Start
+                                        </Button>
+                                        :
+                                        <Col className={"col-8 green-button"} style={{clipPath: "polygon(0 0, 95% 0, 100% 100%, 5% 100%)"}}>
+                                            This site is not mobile optimized, please use a computer to use this exhibit!
+                                        </Col>
+                                    }
                                 </Row>
                             </Container>
                         </Col>

@@ -8,10 +8,10 @@ import logo from "./logo.png"
 const Header = (props: {location: any }) => {
     const { location } = props;
 
-    //TODO - Display what page you are on as a title next to the logo
+    //Display what page you are on as a title next to the logo
     const getPageTitle = () => {
         if(location.pathname.startsWith('/home') || location.pathname === '/') {
-            return "Home"
+            return ""
         } else if(location.pathname === '/activity/circuit-building') {
             return "Circuit Construction"
         } if(location.pathname === '/activity/metal-engraving' || location.pathname === '/activity/telescope-activity') {
@@ -56,13 +56,11 @@ const Header = (props: {location: any }) => {
 
                         <Nav className="ml-auto" activeKey={location.pathname}>
 
-                            {(!location.pathname.startsWith('/home') && location.pathname !== '/') &&
-                                <Nav.Link as={Link} to={{pathname: '/home', state: { popupOpened: false }}}
-                                          active={location.pathname.startsWith('/home') || location.pathname === '/'}
-                                          style={{marginLeft: 25}}>
-                                    Home
-                                </Nav.Link>
-                            }
+                            <Nav.Link as={Link} to={{pathname: '/home', state: { popupOpened: false }}}
+                                      active={location.pathname.startsWith('/home') || location.pathname === '/'}
+                                      style={{marginLeft: 25}}>
+                                Home
+                            </Nav.Link>
 
                             <NavDropdown title="Activities" id="collasible-nav-dropdown" style={{color: "white", marginLeft: 10}}>
                                 <NavDropdown.Item as={Link} to={{pathname: '/activity/circuit-building'}}

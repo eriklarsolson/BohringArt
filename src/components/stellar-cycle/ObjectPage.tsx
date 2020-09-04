@@ -39,6 +39,7 @@ class ObjectPage extends React.Component<any, any> {
                 {
                     title: "Average star 1",
                     image: massive_star_1,
+                    imageSize: 370,
                     temperatureValue: 20,
                     sizeValue: 60,
                     massValue: 20,
@@ -46,6 +47,7 @@ class ObjectPage extends React.Component<any, any> {
                 {
                     title: "Average star 2",
                     image: massive_star_2,
+                    imageSize: 390,
                     temperatureValue: 40,
                     sizeValue: 40,
                     massValue: 40,
@@ -53,6 +55,7 @@ class ObjectPage extends React.Component<any, any> {
                 {
                     title: "Average star 3",
                     image: massive_star_3,
+                    imageSize: 410,
                     temperatureValue: 60,
                     sizeValue: 20,
                     massValue: 80,
@@ -60,6 +63,7 @@ class ObjectPage extends React.Component<any, any> {
                 {
                     title: "Average star 4",
                     image: massive_star_4,
+                    imageSize: 430,
                     temperatureValue: 80,
                     sizeValue: 100,
                     massValue: 60,
@@ -67,6 +71,7 @@ class ObjectPage extends React.Component<any, any> {
                 {
                     title: "Average star 5",
                     image: massive_star_5,
+                    imageSize: 450,
                     temperatureValue: 100,
                     sizeValue: 80,
                     massValue: 100,
@@ -77,6 +82,7 @@ class ObjectPage extends React.Component<any, any> {
                 {
                     title: "Massive star 1",
                     image: massive_star_1,
+                    imageSize: 370,
                     temperatureValue: 20,
                     sizeValue: 60,
                     massValue: 20,
@@ -84,6 +90,7 @@ class ObjectPage extends React.Component<any, any> {
                 {
                     title: "Massive star 2",
                     image: massive_star_2,
+                    imageSize: 390,
                     temperatureValue: 40,
                     sizeValue: 40,
                     massValue: 40,
@@ -91,6 +98,7 @@ class ObjectPage extends React.Component<any, any> {
                 {
                     title: "Massive star 3",
                     image: massive_star_3,
+                    imageSize: 410,
                     temperatureValue: 60,
                     sizeValue: 20,
                     massValue: 80,
@@ -98,6 +106,7 @@ class ObjectPage extends React.Component<any, any> {
                 {
                     title: "Massive star 4",
                     image: massive_star_4,
+                    imageSize: 430,
                     temperatureValue: 80,
                     sizeValue: 100,
                     massValue: 60,
@@ -105,6 +114,7 @@ class ObjectPage extends React.Component<any, any> {
                 {
                     title: "Massive star 5",
                     image: massive_star_5,
+                    imageSize: 450,
                     temperatureValue: 100,
                     sizeValue: 80,
                     massValue: 100,
@@ -288,7 +298,7 @@ class ObjectPage extends React.Component<any, any> {
                 const samePlaceComponents = this.state.massiveStars.filter((object: { temperatureValue: any; }) => object.temperatureValue === newValue);
                 if (samePlaceComponents.length > 0) {
                     const index = getIndex(samePlaceComponents[0], this.state.massiveStars);
-                    this.setState({averageIndex: index})
+                    this.setState({massiveIndex: index})
                 }
             }
             // const samePlaceComponents = this.state.stellarObjects[this.state.massClass].filter((object: { temperatureValue: any; }) => object.temperatureValue === newValue);
@@ -311,7 +321,7 @@ class ObjectPage extends React.Component<any, any> {
                 const samePlaceComponents = this.state.massiveStars.filter((object: { sizeValue: any; }) => object.sizeValue === newValue);
                 if (samePlaceComponents.length > 0) {
                     const index = getIndex(samePlaceComponents[0], this.state.massiveStars);
-                    this.setState({averageIndex: index})
+                    this.setState({massiveIndex: index})
                 }
             }
             // const samePlaceComponents = this.state.stellarObjects[this.state.massClass].filter((object: { sizeValue: any; }) => object.sizeValue === newValue);
@@ -334,7 +344,7 @@ class ObjectPage extends React.Component<any, any> {
                 const samePlaceComponents = this.state.massiveStars.filter((object: { massValue: any; }) => object.massValue === newValue);
                 if (samePlaceComponents.length > 0) {
                     const index = getIndex(samePlaceComponents[0], this.state.massiveStars);
-                    this.setState({averageIndex: index})
+                    this.setState({massiveIndex: index})
                 }
             }
             // Don't delete this after changing. Useful code to change property of one object within array (for state)
@@ -356,11 +366,13 @@ class ObjectPage extends React.Component<any, any> {
             if (samePlaceComponents.length > 0) {
                 const index = getIndex(samePlaceComponents[0], this.state.stellarObjects[this.state.massClass]);
                 this.setState({index: index})
+            }
 
-                if(this.state.stellarObjects[this.state.massClass][this.state.index].title === "Average Star" ||
-                    this.state.stellarObjects[this.state.massClass][this.state.index].title === "Massive Star") {
-                    this.setState({disableSliders: false})
-                }
+            console.log(this.state.stellarObjects[this.state.massClass][this.state.index].title)
+
+            if(this.state.stellarObjects[this.state.massClass][this.state.index].title === "Average Star" ||
+                this.state.stellarObjects[this.state.massClass][this.state.index].title === "Massive Star") {
+                this.setState({disableSliders: false})
             }
 
             if(this.state.stellarObjects[this.state.massClass][this.state.index].title === "Red Giant" ||
@@ -502,13 +514,16 @@ class ObjectPage extends React.Component<any, any> {
                                             this.state.stellarObjects[this.state.massClass][this.state.index].title === "Massive Star") ?
                                             <>
                                                 {this.state.stellarObjects[this.state.massClass][this.state.index].title === "Massive Star" ?
-                                                    <img alt={"Massive Star"} src={this.state.massiveStars[this.state.massiveIndex].image} style={{height: "450px"}} />
+                                                    <img alt={"Massive Star"} src={this.state.massiveStars[this.state.massiveIndex].image}
+                                                         style={{height: this.state.massiveStars[this.state.massiveIndex].imageSize}} />
                                                     :
-                                                    <img alt={"Average Star"} src={this.state.averageStars[this.state.averageIndex].image} style={{height: "450px"}} />
+                                                    <img alt={"Average Star"} src={this.state.averageStars[this.state.averageIndex].image}
+                                                         style={{height: this.state.averageStars[this.state.averageIndex].imageSize}} />
                                                 }
                                             </>
                                             :
-                                            <img alt={"Stellar Object"} src={this.state.stellarObjects[this.state.massClass][this.state.index].image} style={{height: "450px"}} />
+                                            <img alt={"Stellar Object"} src={this.state.stellarObjects[this.state.massClass][this.state.index].image}
+                                                 style={{height: 450}} />
                                         }
                                     </Col>
 

@@ -11,9 +11,11 @@ export interface Props {
     setTool: any
     title: string
     description: string
+    flex: string
+    maxWidth: string
 }
 
-export const SidebarModule: React.FC<Props> = ({tool, toolToShow, setTool, title, description}) => {
+export const SidebarModule: React.FC<Props> = ({tool, toolToShow, setTool, title, description, flex, maxWidth}) => {
     const [rightValue, setRightValue] = useState<number>(0)
     const [zIndex, setZIndex] = useState<number>(-1)
     const [tooltipShowing, setTooltipShowing] = useState<boolean>(false)
@@ -63,7 +65,7 @@ export const SidebarModule: React.FC<Props> = ({tool, toolToShow, setTool, title
     return (
         <>
 
-            <Col className={"col-8"} style={{backgroundColor: "transparent"}}
+            <Col className={"col-10"} style={{backgroundColor: "transparent", flex: flex, maxWidth: maxWidth, minWidth: 150}}
                  onMouseOver={showTooltip} onMouseOut={hideTooltip}>
                 <div className={"clickable-image"} style={{backgroundColor: "white", clipPath: "polygon(0 0, 95% 0, 100% 100%, 0 100%)"}}
                      onClick={() => setTool(toolToShow)} >
