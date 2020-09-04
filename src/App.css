@@ -18,7 +18,7 @@
 }
 
 .App-header {
-  background-color: #282c34;
+  background-color: #29405B;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -58,13 +58,27 @@
   border-radius: 0 !important;
 }
 
+.white-button {
+  color: black !important;
+  background-color: #F8EDDD !important;
+  font-size: 15px !important;
+  outline: none !important;
+  border: 0 !important;
+  border-radius: 0 !important;
+}
+
 .blue-button:hover {
-  border: 1px solid white !important;
+  border: 1px solid transparent !important;
 }
 
 .green-button:hover {
   border: 1px solid transparent !important;
 }
+
+.white-button:hover {
+  border: 1px solid transparent !important;
+}
+
 
 .modal-xl {
   max-width: 75%;
@@ -76,4 +90,12 @@
 
 .clickable-image:hover {
   cursor: pointer;
+}
+
+.dropdown-item.active {
+  background-color: #29405B !important;
+}
+
+.dropdown-item:active {
+  background-color: #29405B !important;
 }

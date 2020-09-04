@@ -1,5 +1,5 @@
 import React from "react";
-import {Button, Modal} from "react-bootstrap";
+import {Button, Col, Modal} from "react-bootstrap";
 import { Container, Row } from 'react-bootstrap'
 
 class ErrorPopup extends React.Component<any, any> {
@@ -11,19 +11,25 @@ class ErrorPopup extends React.Component<any, any> {
                    onClick={this.props.closePopup}
                    size="lg"
                     style={{padding: "30px"}}>
-                <Modal.Header closeButton>
-                </Modal.Header>
 
                 <Modal.Body style={{color: "#29405B"}}>
                     <Container fluid>
-                        <Row style={{textAlign: "center", display: "block", paddingTop: "50px"}}>
-                            <p style={{fontSize: "30px", fontWeight: "bold"}}>{this.props.title}</p>
+                        <Row>
+                            <Col className={"col-2 ml-auto"}>
+                                <Button className={"blue-button"} style={{float: "right", width: 50,
+                                    fontWeight: "bold"}}>X</Button>
+                            </Col>
                         </Row>
 
-                        {/*TODO - pass in error list of multiple things to display?*/}
-                        <Row  style={{display: "block", padding: "50px"}}>
-                            <p style={{fontSize: "18px"}}>{this.props.description}</p>
-                        </Row>
+                        <Container fluid style={{padding: 100}}>
+                            <Row style={{textAlign: "center", display: "block", paddingTop: "50px"}}>
+                                <p style={{fontSize: "30px", fontWeight: "bold"}}>{this.props.title}</p>
+                            </Row>
+
+                            <Row  style={{display: "block", padding: "50px"}}>
+                                <p style={{fontSize: "18px"}}>{this.props.description}</p>
+                            </Row>
+                        </Container>
                     </Container>
                 </Modal.Body>
 

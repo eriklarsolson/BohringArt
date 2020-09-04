@@ -5,6 +5,7 @@ import capacitor from './images/capacitor.png'
 import rotate from './images/rotate.png'
 import { Container, Row } from 'react-bootstrap'
 import {getComponentAtPos, setCurrentComponentsRotation} from "../Functionality";
+import battery from "./images/battery.png";
 
 let style: React.CSSProperties = {
     cursor: 'move',
@@ -83,7 +84,13 @@ export const Capacitor: React.FC<ComponentProps> = ({x, y, oneGridStyling, curre
                              opacity: isDragging ? 0.5 : 1,
                          }}>
                         <div style={{transform: "rotate(" + rotateDeg + "deg)"}}>
-                            <img alt={"Capacitor"} src={capacitor} width={"100%"} />
+                            {oneGridStyling &&
+                            <img alt={"capacitor"} src={capacitor} width={"85%"}/>
+                            }
+
+                            {!oneGridStyling  &&
+                            <img alt={"capacitor"} src={capacitor} width={"100%"} />
+                            }
                         </div>
                     </div>
                 </Row>

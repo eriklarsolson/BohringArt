@@ -296,7 +296,7 @@ class RocketBuilding extends React.Component<any, any> {
 
                 <Container fluid className={"d-flex h-100 flex-column"} style={{margin: "0", padding: "0", backgroundImage:`url(${background})`}}>
                     <Row style={{margin: 0}}>
-                        <Col className={"col-2 vh-100"} style={{color: "white", padding: 0}}>
+                        <Col className={"col-2"} style={{color: "white", padding: 0}}>
                             <Sidebar cone={this.state.cones[this.state.coneIndex]}
                                      changeCone={payloadArrow}
                                      body={this.state.bodys[this.state.bodyIndex]}
@@ -324,13 +324,13 @@ class RocketBuilding extends React.Component<any, any> {
 
                                     <Col className={"col-2 ml-auto"} style={{padding: 0, marginTop: "2%"}}>
                                         <Row style={{margin: 0}} className={"justify-content-end"}>
-                                            <Button className={"blue-button"} style={{marginBottom: 15, width: 200,
-                                                }} onClick={cycleQuestionPopup}>More Info</Button>
+                                            <Button className={"blue-button"} style={{width: 166, textAlign: "left",
+                                                marginBottom: 15}} onClick={cycleQuestionPopup}>More Info</Button>
                                         </Row>
 
                                         <Row style={{margin: 0}} className={"justify-content-end"}>
-                                            <Button className={"blue-button"} style={{marginBottom: 15, width: 200,
-                                            }} onClick={cyclePopup}>Objective</Button>
+                                            <Button className={"blue-button"} style={{width: 166, textAlign: "left"}}
+                                                    onClick={cyclePopup}>Objective</Button>
                                         </Row>
                                     </Col>
                                 </Row>
@@ -400,7 +400,8 @@ class RocketBuilding extends React.Component<any, any> {
                                                 </Row>
                                             </Col>
 
-                                            <Col className={"ml-auto col-3"} style={{color: "white", textAlign: "left", marginTop: "20%"}}>
+                                            <Col className={"ml-auto col-5 col-md-4"} style={{color: "white",
+                                                textAlign: "left", marginTop: "20%", padding: 0}}>
                                                 <Container fluid>
                                                     <Row>
                                                         <Col style={{backgroundColor: "#162F4C"}}>
@@ -475,7 +476,8 @@ class RocketBuilding extends React.Component<any, any> {
 
                                 <Row style={{paddingRight: "0", marginRight: 0}}>
                                     <Col>
-                                        <Button className={"green-button"} style={{float: "right", width: 200, marginBottom: 10,
+                                        <Button className={"green-button"} style={{float: "right", width: 200,
+                                            marginBottom: 10, marginTop: 10,
                                             clipPath: "polygon(0 0, 95% 0, 100% 100%, 5% 100%)"}}
                                                 onClick={() => this.props.history.push({
                                                     pathname: '/activity/flight-simulator',

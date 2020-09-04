@@ -105,7 +105,7 @@ class CircuitBuilding extends React.Component<any, any> {
 
                     <Container fluid className={"d-flex h-100 flex-column"} style={{margin: "0", padding: "0", backgroundColor: "#F8EDDD"}}>
                         <Row className={"flex-grow-1"} style={{margin: "0"}}>
-                            <Col className={"col-2 vh-100"} style={{color: "white", padding: "0"}}>
+                            <Col className={"col-2"} style={{color: "white", padding: "0"}}>
                                 <Sidebar currentLevel={this.state.currentLevel} />
                             </Col>
 
@@ -134,16 +134,16 @@ class CircuitBuilding extends React.Component<any, any> {
 
                                         <Col className={"col-2 ml-auto"} style={{padding: 0, marginTop: "3%"}}>
                                             <Row style={{margin: 0}} className={"justify-content-end"}>
-                                                <Button className={"blue-button"} style={{marginBottom: 15, width: 200,
-                                                    }} onClick={cycleCircuitPopup}>More Info</Button>
+                                                <Button className={"blue-button"} style={{width: 166, textAlign: "left",
+                                                    marginBottom: 15}} onClick={cycleCircuitPopup}>More Info</Button>
                                             </Row>
                                             <Row style={{margin: 0}} className={"justify-content-end"}>
-                                                <Button className={"blue-button"} style={{marginBottom: 15, width: 200,
-                                                    }}  onClick={cyclePopup}>Objective</Button>
+                                                <Button className={"blue-button"} style={{width: 166, textAlign: "left",
+                                                    marginBottom: 15}}  onClick={cyclePopup}>Objective</Button>
                                             </Row>
                                             <Row style={{margin: 0}} className={"justify-content-end"}>
-                                                <Button className={"blue-button"} style={{width: 200,
-                                                    }} onClick={cycleGrid}>Toggle Grid</Button>
+                                                <Button className={"blue-button"} style={{width: 166, textAlign: "left"}}
+                                                        onClick={cycleGrid}>Toggle Grid</Button>
                                             </Row>
                                         </Col>
                                     </Row>

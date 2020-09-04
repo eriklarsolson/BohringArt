@@ -88,13 +88,13 @@ class RatePopup extends React.Component<any, any> {
                                     </Col>
                                 </Row>
 
-                                <Row className={"justify-content-center align-content-center"} style={{paddingBottom: "30px", float: "right"}}>
-                                    <Button className={"green-button"} style={{backgroundColor: "#3BD186",
-                                        width: 150, clipPath: "polygon(0 0, 95% 0, 100% 100%, 5% 100%)",
-                                        fontSize: "20px", fontWeight: "bold"}} onClick={closePopup}>
-                                        Close
-                                    </Button>
-                                </Row>
+                                {/*<Row className={"justify-content-center align-content-center"} style={{paddingBottom: "30px", float: "right"}}>*/}
+                                {/*    <Button className={"green-button"} style={{backgroundColor: "#3BD186",*/}
+                                {/*        width: 150, clipPath: "polygon(0 0, 95% 0, 100% 100%, 5% 100%)",*/}
+                                {/*        fontSize: "20px", fontWeight: "bold"}} onClick={closePopup}>*/}
+                                {/*        Close*/}
+                                {/*    </Button>*/}
+                                {/*</Row>*/}
                             </Container>
                         </Container>
                     </Modal.Body>

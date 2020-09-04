@@ -72,7 +72,7 @@ export const Wire: React.FC<ComponentProps> = ({x, y, oneGridStyling, currentCom
 
     })
 
-    const images = useState<any>([wire, cornerwire, triwire, crosswire])
+    const [images, setImages] = useState<any>([wire, cornerwire, triwire, crosswire])
     const [index, setIndex] = useState<number>(getComponentType)
 
     //TODO - set component type when cycling here (maybe could be variable in functionality class that is updated what type of wire object we are viewing?)

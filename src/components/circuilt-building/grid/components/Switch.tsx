@@ -11,6 +11,7 @@ import {
     setComponentType,
     setCurrentComponentsRotation
 } from "../Functionality";
+import resistor from "./images/resistor.png";
 
 let style: React.CSSProperties = {
     cursor: 'move',
@@ -111,7 +112,13 @@ export const Switch: React.FC<ComponentProps> = ({x, y, oneGridStyling, currentC
                          }}
                          onClick={toggleSwitch}>
                         <div style={{transform: "rotate(" + rotateDeg + "deg)"}}>
-                            <img alt={"Switch"} src={switchImage} width={"100%"} />
+                            {oneGridStyling &&
+                            <img alt={"switch"} src={switchImage} width={"85%"}/>
+                            }
+
+                            {!oneGridStyling  &&
+                            <img alt={"switch"} src={switchImage} width={"100%"} />
+                            }
                         </div>
                     </Col>
                 </Row>

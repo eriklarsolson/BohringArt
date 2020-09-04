@@ -83,7 +83,13 @@ export const Battery: React.FC<ComponentProps> = ({x, y, oneGridStyling, current
                              opacity: isDragging ? 0.5 : 1,
                          }}>
                         <div style={{transform: "rotate(" + rotateDeg + "deg)"}}>
-                            <img alt={"Battery"} src={battery} width={"100%"} />
+                            {oneGridStyling &&
+                                <img alt={"battery"} src={battery} width={"85%"}/>
+                            }
+
+                            {!oneGridStyling  &&
+                                <img alt={"battery"} src={battery} width={"100%"} />
+                            }
                         </div>
                     </Col>
                 </Row>

@@ -407,7 +407,7 @@ class ObjectPage extends React.Component<any, any> {
 
                 <Container fluid className={"d-flex h-100 flex-column"} style={{margin: 0, padding: 0, backgroundImage:`url(${stellarBackground})`}}>
                     <Row className={"flex-grow-1"} style={{margin: 0}}>
-                        <Col className={"col-2 vh-100"} style={{color: "white", padding: 0}}>
+                        <Col className={"col-2"} style={{color: "white", padding: 0}}>
 
                             {(this.state.stellarObjects[this.state.massClass][this.state.index].title === "Average Star" ||
                                 this.state.stellarObjects[this.state.massClass][this.state.index].title === "Massive Star") ?
@@ -473,9 +473,8 @@ class ObjectPage extends React.Component<any, any> {
 
                                     <Col className={"col-2 ml-auto"} style={{padding: 0, marginTop: "3%"}}>
                                         <Row style={{margin: 0}} className={"justify-content-end"}>
-                                            <Button className={"blue-button"} style={{marginBottom: 15, width: 200,
-                                                }}
-                                                onClick={() => this.props.history.push({
+                                            <Button className={"blue-button"} style={{width: 166, textAlign: "left",
+                                                marginBottom: 15}} onClick={() => this.props.history.push({
                                                     pathname: '/activity/info-page',
                                                     state: { title: this.state.stellarObjects[this.state.massClass][this.state.index].title }
                                                 })}>
@@ -485,8 +484,8 @@ class ObjectPage extends React.Component<any, any> {
 
                                         <Row style={{margin: 0}} className={"justify-content-end"}>
                                             <Row style={{margin: 0}} className={"justify-content-end"}>
-                                                <Button className={"blue-button"} style={{marginBottom: 15, width: 200,
-                                                    }}  onClick={cyclePopup}>Objective</Button>
+                                                <Button className={"blue-button"} style={{width: 166, textAlign: "left"}}
+                                                        onClick={cyclePopup}>Objective</Button>
                                             </Row>
                                         </Row>
                                     </Col>

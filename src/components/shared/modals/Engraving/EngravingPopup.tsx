@@ -21,8 +21,7 @@ class EngravingPopup extends React.Component<any, any> {
                             </Col>
 
                             <Col className={"col-3 ml-auto"}>
-                                <Button className={"blue-button"} style={{float: "right", width: 50,
-                                    clipPath: "polygon(0 0, 95% 0, 100% 100%, 5% 100%)", fontWeight: "bold"}}>X</Button>
+                                <Button className={"blue-button"} style={{float: "right", width: 50, fontWeight: "bold"}}>X</Button>
                             </Col>
                         </Row>
 

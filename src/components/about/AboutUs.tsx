@@ -11,6 +11,7 @@ import person4 from "./images/person4.png"
 import person5 from "./images/person5.png"
 import lars from "./images/lars.png"
 import niels from "./images/niels.png"
+import logo from "./images/logo.png"
 import emailjs from 'emailjs-com';
 import {toast, ToastContainer} from "react-toastify";
 
@@ -66,52 +67,61 @@ class AboutUs extends React.Component<any, any> {
                                 </Row>
 
                                 <Row className={"justify-content-center"}>
-                                    <Col className={"col-6"}>
+                                    <Col className={"col-10"}>
                                         <Container fluid>
                                             <Row className={"justify-content-center"}>
-                                                <Col style={{margin: 20, clipPath: "polygon(0 0, 95% 0, 100% 100%, 5% 100%)"}}
-                                                     className="col-sm-12 col-md-3">
-                                                    <img alt={"About Us Person"} src={danny} />
+                                                <Col style={{margin: 5}}
+                                                     className="col-sm-12 col-md-5 col-lg-3">
+                                                    <img alt={"About Us Person"} src={danny}
+                                                         style={{clipPath: "polygon(0 0, 90% 0, 100% 100%, 10% 100%)"}} />
                                                 </Col>
 
-                                                <Col style={{margin: 20, clipPath: "polygon(0 0, 95% 0, 100% 100%, 5% 100%)"}}
-                                                     className="col-sm-12 col-md-3">
-                                                    <img alt={"About Us Person"} src={dena} />
+                                                <Col style={{margin: 5}}
+                                                     className="col-sm-12 col-md-5 col-lg-3">
+                                                    <img alt={"About Us Person"} src={dena}
+                                                         style={{clipPath: "polygon(0 0, 90% 0, 100% 100%, 10% 100%)"}} />
                                                 </Col>
 
-                                                <Col style={{margin: 20, clipPath: "polygon(0 0, 95% 0, 100% 100%, 5% 100%)"}}
-                                                     className="col-sm-12 col-md-3">
-                                                    <img alt={"About Us Person"} src={parisa} />
+                                                <Col style={{margin: 5}}
+                                                     className="col-sm-12 col-md-5 col-lg-3">
+                                                    <img alt={"About Us Person"} src={parisa}
+                                                         style={{clipPath: "polygon(0 0, 90% 0, 100% 100%, 10% 100%)"}} />
                                                 </Col>
 
-                                                <Col style={{margin: 20, clipPath: "polygon(0 0, 95% 0, 100% 100%, 5% 100%)"}}
-                                                     className="col-sm-12 col-md-3">
-                                                    <img alt={"About Us Person"} src={person1} />
+                                                <Col style={{margin: 5}}
+                                                     className="col-sm-12 col-md-5 col-lg-3">
+                                                    <img alt={"About Us Person"} src={person1}
+                                                         style={{clipPath: "polygon(0 0, 90% 0, 100% 100%, 10% 100%)"}} />
                                                 </Col>
 
-                                                <Col style={{margin: 20, clipPath: "polygon(0 0, 95% 0, 100% 100%, 5% 100%)"}}
-                                                     className="col-sm-12 col-md-3">
-                                                    <img alt={"About Us Person"} src={person2} />
+                                                <Col style={{margin: 5}}
+                                                     className="col-sm-12 col-md-5 col-lg-3">
+                                                    <img alt={"About Us Person"} src={person2}
+                                                         style={{clipPath: "polygon(0 0, 90% 0, 100% 100%, 10% 100%)"}} />
                                                 </Col>
 
-                                                <Col style={{margin: 20, clipPath: "polygon(0 0, 95% 0, 100% 100%, 5% 100%)"}}
-                                                     className="col-sm-12 col-md-3">
-                                                    <img alt={"About Us Person"} src={person3} />
+                                                <Col style={{margin: 5}}
+                                                     className="col-sm-12 col-md-5 col-lg-3">
+                                                    <img alt={"About Us Person"} src={person3}
+                                                         style={{clipPath: "polygon(0 0, 90% 0, 100% 100%, 10% 100%)"}} />
                                                 </Col>
 
-                                                <Col style={{margin: 20, clipPath: "polygon(0 0, 95% 0, 100% 100%, 5% 100%)"}}
-                                                     className="col-sm-12 col-md-3">
-                                                    <img alt={"About Us Person"} src={person4} />
+                                                <Col style={{margin: 5}}
+                                                     className="col-sm-12 col-md-5 col-lg-3">
+                                                    <img alt={"About Us Person"} src={person4}
+                                                         style={{clipPath: "polygon(0 0, 90% 0, 100% 100%, 10% 100%)"}} />
                                                 </Col>
 
-                                                <Col style={{margin: 20, clipPath: "polygon(0 0, 95% 0, 100% 100%, 5% 100%)"}}
-                                                     className="col-sm-12 col-md-3">
-                                                    <img alt={"About Us Person"} src={person5} />
+                                                <Col style={{margin: 5}}
+                                                     className="col-sm-12 col-md-5 col-lg-3">
+                                                    <img alt={"About Us Person"} src={person5}
+                                                         style={{clipPath: "polygon(0 0, 90% 0, 100% 100%, 10% 100%)"}} />
                                                 </Col>
 
-                                                <Col style={{margin: 20, clipPath: "polygon(0 0, 95% 0, 100% 100%, 5% 100%)"}}
-                                                     className="col-sm-12 col-md-3">
-                                                    <img alt={"About Us Person"} src={lars} style={{maxHeight: 250}} />
+                                                <Col style={{margin: 5}}
+                                                     className="col-sm-12 col-md-5 col-lg-3">
+                                                    <img alt={"About Us Person"} src={lars}
+                                                         style={{clipPath: "polygon(0 0, 90% 0, 100% 100%, 10% 100%)"}} />
                                                 </Col>
                                             </Row>
                                         </Container>
@@ -138,6 +148,12 @@ class AboutUs extends React.Component<any, any> {
                                             physics concepts to the designers. The designers will then use their knowledge to create
                                             infographics that elucidate physics phenomena.
                                         </p>
+                                    </Row>
+
+                                    <Row>
+                                        <Col className={"col-4"} style={{backgroundColor: "#29405B", padding: 25}}>
+                                            <img alt={"Logo"} src={logo} width={"100%"} />
+                                        </Col>
                                     </Row>
                                 </Container>
                             </Col>

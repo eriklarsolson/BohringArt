@@ -294,7 +294,7 @@ class MetalEngraving extends React.Component<any, any> {
 
                 <Container fluid className={"d-flex h-100 flex-column"} style={{margin: "0", padding: "0", backgroundColor: "#F8EDDD"}}>
                     <Row className={"flex-grow-1"} style={{margin: 0}}>
-                        <Col className={"col-2 vh-100"} style={{color: "white", padding: 0}}>
+                        <Col className={"col-2"} style={{color: "white", padding: 0}}>
                             <Sidebar tool={this.state.tool} color={this.state.color} size={this.state.size}
                                      setTool={setTool} clearCanvas={clearCanvas} />
                         </Col>
@@ -417,24 +417,24 @@ class MetalEngraving extends React.Component<any, any> {
 
                         <Col className={"col-2 ml-auto"} style={{padding: 0}}>
                             <Row className={"justify-content-end"} style={{margin: 0, marginTop: "10%"}}>
-                                    <Button className={"blue-button"} style={{width: 200, marginBottom: 15,
-                                        }} onClick={cycleQuestionPopup}>More Info</Button>
+                                    <Button className={"blue-button"} style={{width: 166, textAlign: "left",
+                                        marginBottom: 15}} onClick={cycleQuestionPopup}>More Info</Button>
                             </Row>
                             <Row className={"justify-content-end"} style={{margin: 0}}>
-                                    <Button className={"blue-button"} style={{width: 200, marginBottom: 15,
-                                        }} onClick={cvcleEngravingPopup}>Stencil</Button>
+                                    <Button className={"blue-button"} style={{width: 166, textAlign: "left",
+                                        marginBottom: 15}} onClick={cvcleEngravingPopup}>Stencil</Button>
                             </Row>
                             <Row className={"justify-content-end"} style={{margin: 0}}>
-                                    <Button className={"blue-button"} style={{width: 200, marginBottom: 15,
-                                        }} onClick={openPopup}>Objective</Button>
+                                    <Button className={"blue-button"} style={{width: 166, textAlign: "left",
+                                        marginBottom: 15}} onClick={openPopup}>Objective</Button>
                             </Row>
                             <Row className={"justify-content-end"} style={{margin: 0}}>
-                                    <Button className={"blue-button"} style={{width: 200,
-                                        }} onClick={cycleViewpointPopup}>Viewpoint</Button>
+                                    <Button className={"blue-button"} style={{width: 166, textAlign: "left"}}
+                                            onClick={cycleViewpointPopup}>Viewpoint</Button>
                             </Row>
 
-                            <Row className={"justify-content-end"} style={{margin: 0, position: "absolute", bottom: 50}}>
-                                <Col style={{padding: 0}}>
+                            <Row className={"justify-content-end"} style={{position: "absolute", bottom: 0, marginBottom: 20}}>
+                                <Col className={"col-12"} style={{padding: 0, marginRight: 20}}>
                                     <Button className={"green-button"} style={{float: "right", width: 200,
                                         clipPath: "polygon(0 0, 95% 0, 100% 100%, 5% 100%)"}}
                                             onClick={() => this.props.history.push('/activity/telescope-activity')}>Next</Button>

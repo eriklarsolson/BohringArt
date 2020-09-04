@@ -110,11 +110,11 @@ class StellarCycle extends React.Component<any, any> {
                             <p style={{color: "white", fontSize: "28px", fontWeight: "bold"}}>Stellar Life Cycle</p>
                         </Col>
                     </Row>
-                    <Row style={{margin: "0 0 50px 0"}}>
-                        <Col>
-                            <p style={{color: "white", fontSize: "18px", fontWeight: "bold"}}>{this.state.title}</p>
-                        </Col>
-                    </Row>
+                    {/*<Row style={{margin: "0 0 50px 0"}}>*/}
+                    {/*    <Col>*/}
+                    {/*        <p style={{color: "white", fontSize: "18px", fontWeight: "bold"}}>{this.state.title}</p>*/}
+                    {/*    </Col>*/}
+                    {/*</Row>*/}
 
                     <Row style={{margin: 0}} className={"justify-content-center"}>
                         <Col className={"col-10"}>

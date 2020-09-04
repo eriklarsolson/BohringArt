@@ -84,7 +84,13 @@ export const Inductor: React.FC<ComponentProps> = ({x, y, oneGridStyling, curren
                              opacity: isDragging ? 0.5 : 1,
                          }}>
                         <div style={{transform: "rotate(" + rotateDeg + "deg)"}}>
-                            <img alt={"Inductor"} src={inductor} width={"100%"} />
+                            {oneGridStyling &&
+                            <img alt={"inductor"} src={inductor} width={"85%"}/>
+                            }
+
+                            {!oneGridStyling  &&
+                            <img alt={"inductor"} src={inductor} width={"100%"} />
+                            }
                         </div>
                     </Col>
                 </Row>

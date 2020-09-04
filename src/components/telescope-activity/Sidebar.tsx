@@ -8,7 +8,8 @@ class Sidebar extends React.Component {
     render() {
         return (
             <>
-               <Container style={{backgroundColor: "#29405B", margin: "0", padding: "0", height: "100%"}}>
+                <Container style={{backgroundColor: "#29405B", margin: 0, height: "100%",
+                    clipPath: "polygon(0 0, 90% 0, 100% 100%, 0 100%)"}}>
                    <h3 style={{paddingTop: "15px"}}>Modules</h3>
 
                    <Row>

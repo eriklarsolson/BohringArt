@@ -116,16 +116,15 @@ class Sidebar extends React.Component<any, any> {
                    </Accordion>
 
                    <Row className={"justify-content-center"} style={{marginTop: 50}}>
-                       <Col className={"col-4"}>
-                           <Button style={{backgroundColor: "#F8EDDD", width: "100px", color: "black",
-                               fontSize: "18px", clipPath: "polygon(0 0, 95% 0, 100% 100%, 5% 100%)"}}
+                       <Col className={"col-5"}>
+                           <Button style={{width: "100%", clipPath: "polygon(0 0, 95% 0, 100% 100%, 5% 100%)"}}
+                                   className={"white-button"}
                                    onClick={this.props.clearCanvas}>Reset</Button>
                        </Col>
 
-                       <Col className={"col-4"}>
-                           <Button style={{backgroundColor: "#F8EDDD", width: "100px", color: "black",
-                               fontSize: "18px", clipPath: "polygon(0 0, 95% 0, 100% 100%, 5% 100%)"}}
-                                   className={this.props.tool === TOOL_ERASER  ? 'item-active' : 'item'}
+                       <Col className={"col-5"}>
+                           <Button style={{width: "100%", clipPath: "polygon(0 0, 95% 0, 100% 100%, 5% 100%)"}}
+                                   className={"white-button"}
                                    onClick={() => this.props.setTool(TOOL_ERASER)}>Eraser</Button>
                        </Col>
                    </Row>

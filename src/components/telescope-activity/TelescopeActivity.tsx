@@ -60,7 +60,7 @@ class TelescopeActivity extends React.Component<any, any> {
 
                 <Container fluid className={"d-flex h-100 flex-column"} style={{margin: "0", padding: "0", backgroundColor: "#F8EDDD"}}>
                     <Row className={"flex-grow-1"} style={{margin: 0}}>
-                        <Col className={"col-2 vh-100"} style={{padding: 0, color: "white"}}>
+                        <Col className={"col-2"} style={{padding: 0, color: "white"}}>
                             <Sidebar />
                         </Col>
 
@@ -81,16 +81,15 @@ class TelescopeActivity extends React.Component<any, any> {
 
                                     <Col className={"col-2 ml-auto"} style={{padding: 0, marginTop: "3%"}}>
                                         <Row style={{margin: 0}} className={"justify-content-end"}>
-                                            <Button className={"blue-button"} style={{marginBottom: 15, width: 200,
-                                                }}
+                                            <Button className={"blue-button"} style={{width: 166, textAlign: "left",
+                                                marginBottom: 15}}
                                                 onClick={cycleQuestionPopup}>
                                                 More Info
                                             </Button>
                                         </Row>
 
                                         <Row style={{margin: 0}} className={"justify-content-end"}>
-                                            <Button className={"blue-button"} style={{marginBottom: 15, width: 200,
-                                            }}
+                                            <Button className={"blue-button"} style={{width: 166, textAlign: "left"}}
                                                     onClick={cycleGrid}>
                                                 Toggle Grid
                                             </Button>
