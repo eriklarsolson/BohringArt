@@ -14,13 +14,17 @@ const Header = (props: {location: any }) => {
             return ""
         } else if(location.pathname === '/activity/circuit-building') {
             return "Circuit Construction"
-        } if(location.pathname === '/activity/metal-engraving' || location.pathname === '/activity/telescope-activity') {
+        } else if(location.pathname === '/activity/metal-engraving' || location.pathname === '/activity/telescope-activity') {
             return "Lasers And Lenses"
-        } if(location.pathname === '/activity/rocket-building' || location.pathname === '/activity/flight-simulator') {
+        } else if(location.pathname === '/activity/rocket-building' || location.pathname === '/activity/flight-simulator') {
             return "To The Stars"
-        } if(location.pathname === '/activity/object-page' || location.pathname === '/activity/info-page'
+        } else if(location.pathname === '/activity/object-page' || location.pathname === '/activity/info-page'
             || location.pathname === '/activity/stellar-cycle') {
             return "Stellar Life Cycle"
+        } else if(location.pathname === '/about') {
+            return ""
+        }else if(location.pathname === '/resources') {
+            return "Resources"
         } else {
             return location.pathname
         }

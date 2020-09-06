@@ -61,7 +61,7 @@ export const MoreInfoAnimation: React.FC<AnimationProps>  = ({setParentState}) =
                             <div style={{position: "absolute", width: "100%", height: "100%", backgroundColor: "#29405B",
                                 clipPath: "polygon(0 0, 100% 0, 100% 100%, 10% 100%)"}} />
 
-                            <div style={{position: "absolute", height: "100%", left: -165}}>
+                            <div style={{position: "absolute", marginTop: 100, height: "100%", left: -165}}>
                                 <Container fluid>
                                     <Row style={{margin: 5, marginLeft: 10, width: 175}}>
                                         <Col className="col-12" onMouseOver={() => changeInfo("laser")}
@@ -86,7 +86,7 @@ export const MoreInfoAnimation: React.FC<AnimationProps>  = ({setParentState}) =
                                 </Container>
                             </div>
 
-                            <Container fluid>
+                            <Container fluid style={{marginTop: 100}}>
                                 <Row>
                                     <Col className={"col-7"}>
                                         <Button className={"green-button"} style={{float: "right", width: 100,

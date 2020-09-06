@@ -47,20 +47,20 @@ export const StencilsAnimation: React.FC<AnimationProps>  = ({setParentState, ad
                     times: [0, 1],
                 }}>
 
-                <Container>
+                <Container fluid>
                     <Row>
-                        <Col className={"col-10 vh-100 ml-auto"}>
+                        <Col className={"col-9 ml-auto"}>
                             <div style={{position: "absolute", width: "100%", height: "100%", backgroundColor: "#29405B",
                                 clipPath: "polygon(0 0, 100% 0, 100% 100%, 10% 100%)"}} />
 
-                            <Container>
+                            <Container fluid style={{marginTop: 100}}>
                                 <Row className={"justify-content-center"} style={{marginBottom: 100}}>
 
-                                    <Col className={"col-3"}>
+                                    <Col className={"col-2 ml-auto"}>
                                         <h1 style={{color: "white", textAlign: "left"}}>Stencils</h1>
                                     </Col>
 
-                                    <Col className={"col-5"}>
+                                    <Col className={"col-2 mr-auto"}>
                                         <Button className={"green-button"} style={{float: "right", width: 100,
                                             clipPath: "polygon(0 0, 95% 0, 100% 100%, 5% 100%)"}}
                                                 onClick={() => setClosed()}><i className="fa fa-arrow-right" /></Button>
@@ -68,34 +68,37 @@ export const StencilsAnimation: React.FC<AnimationProps>  = ({setParentState, ad
                                 </Row>
 
                                 <Row className={"justify-content-center"} style={{margin: 10}}>
-                                    <Col className="col-5" style={{backgroundColor: "#DBEAEF", clipPath: "polygon(0 0, 100% 0, 100% 100%, 5% 100%)"}}>
+                                    <Col className="col-4" style={{backgroundColor: "#DBEAEF", clipPath: "polygon(0 0, 100% 0, 100% 100%, 5% 100%)"}}>
                                         <img className={"clickable-image"}
-                                            src={planet} alt={"Planet"}
-                                            onClick={() => addStencilAndClose(planet)} />
+                                             src={planet} alt={"Planet"}
+                                             onClick={() => addStencilAndClose(planet)} />
                                     </Col>
                                 </Row>
 
                                 <Row className={"justify-content-center"} style={{margin: 10}}>
-                                    <Col className="col-5" style={{backgroundColor: "#DBEAEF", clipPath: "polygon(0 0, 100% 0, 100% 100%, 5% 100%)"}}>
+                                    <Col className="col-4" style={{backgroundColor: "#DBEAEF", flex: "0 0 31%", maxWidth: "41%",
+                                        clipPath: "polygon(0 0, 100% 0, 100% 100%, 5% 100%)"}}>
                                         <img className={"clickable-image"}
-                                            src={logo} alt={"Logo"}
-                                            onClick={() => addStencilAndClose(logo)} />
+                                             src={logo} alt={"Logo"}
+                                             onClick={() => addStencilAndClose(logo)} />
                                     </Col>
                                 </Row>
 
                                 <Row className={"justify-content-center"} style={{margin: 10}}>
-                                    <Col className="col-5" style={{backgroundColor: "#DBEAEF", clipPath: "polygon(0 0, 100% 0, 100% 100%, 5% 100%)"}}>
+                                    <Col className="col-4" style={{backgroundColor: "#DBEAEF", flex: "0 0 29%", maxWidth: "29%",
+                                        clipPath: "polygon(0 0, 100% 0, 100% 100%, 5% 100%)"}}>
                                         <img className={"clickable-image"}
-                                            src={plant} alt={"Plant"}
-                                            onClick={() => addStencilAndClose(plant)} />
+                                             src={plant} alt={"Plant"}
+                                             onClick={() => addStencilAndClose(plant)} />
                                     </Col>
                                 </Row>
 
                                 <Row className={"justify-content-center"} style={{margin: 10}}>
-                                    <Col className="col-5" style={{backgroundColor: "#DBEAEF", clipPath: "polygon(0 0, 100% 0, 100% 100%, 5% 100%)"}}>
+                                    <Col className="col-4" style={{backgroundColor: "#DBEAEF", flex: "0 0 27%", maxWidth: "27%",
+                                        clipPath: "polygon(0 0, 100% 0, 100% 100%, 5% 100%)"}}>
                                         <img className={"clickable-image"}
-                                            src={snowman} alt={"Snowman"}
-                                            onClick={() => addStencilAndClose(snowman)} />
+                                             src={snowman} alt={"Snowman"}
+                                             onClick={() => addStencilAndClose(snowman)} />
                                     </Col>
                                 </Row>
                             </Container>

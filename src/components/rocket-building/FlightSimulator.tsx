@@ -62,9 +62,8 @@ class FlightSimulator extends React.Component<any, any> {
         }
 
         const updateScenarioDetails = () => {
-            console.log()
             if(this.state.iteration === 3) {
-                this.setState({loadedScenario: "You reached the Nebula! (TODO - OR HANDLE OTHER OUTCOMES HERE TOO?)"})
+                this.setState({loadedScenario: "TODO - HANDLE OUTCOME HERE"})
             } else {
                 this.setState({loadedScenario: this.state.scenarios[this.state.iteration].question})
             }

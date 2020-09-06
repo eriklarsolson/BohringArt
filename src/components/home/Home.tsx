@@ -1,11 +1,22 @@
 import React from "react";
-import LearnSection from "./LearnSection";
-import Header from "./Header";
-import RatePopup from "../shared/modals/Rate/RatePopup";
 import {ToastContainer} from "react-toastify";
+import {RatingSlideOut} from "../shared/modals/Rate/RatingSlideOut";
+import Header from "./Header";
+import LearnSection from "./LearnSection";
 
 class Home extends React.Component<any, any> {
+    constructor(props: any) {
+        super(props);
+        this.state = {
+            popupOpened: true,
+        };
+    }
+
     render() {
+        const cyclePopup = () => {
+            this.setState({popupOpened: !this.state.popupOpened})
+        }
+
         const goToActivity = (learnSelection: number) => {
             if(learnSelection === 0) {
                 this.props.history.push('/activity/circuit-building')
@@ -19,26 +30,28 @@ class Home extends React.Component<any, any> {
         }
         return (
             <>
-                <ToastContainer
-                    position="top-center"
-                    autoClose={3000}
-                    hideProgressBar={false}
-                    newestOnTop={false}
-                    closeOnClick
-                    rtl={false}
-                    pauseOnFocusLoss
-                    draggable
-                    pauseOnHover />
+                <div style={{position: "relative", height: "100%", width: "100%"}}>
+                    <ToastContainer
+                        position="top-center"
+                        autoClose={3000}
+                        hideProgressBar={false}
+                        newestOnTop={false}
+                        closeOnClick
+                        rtl={false}
+                        pauseOnFocusLoss
+                        draggable
+                        pauseOnHover />
 
-                {this.props.location.state !== undefined && this.props.location.state.popupOpened &&
-                    <RatePopup />
-                }
+                    {this.props.location.state !== undefined && this.props.location.state.popupOpened && this.state.popupOpened &&
+                    <div style={{position: "absolute", top: 0, bottom: 0, left: 0, right: 0, zIndex: 4, overflow: "hidden"}}>
+                        <RatingSlideOut setParentState={() => cyclePopup()} />
+                    </div>
+                    }
 
-                <Header />
+                    <Header />
 
-                <LearnSection goToActivity={goToActivity} />
-
-
+                    <LearnSection goToActivity={goToActivity} />
+                </div>
             </>
         )
     }

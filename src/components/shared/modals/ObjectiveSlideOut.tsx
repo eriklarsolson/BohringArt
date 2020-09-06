@@ -43,7 +43,6 @@ export const ObjectiveSlideOut: React.FC<AnimationProps>  = ({setParentState, ti
 
             <motion.div
                 animate={controls}
-
                 style={{height: "100%"}}>
 
                 <Container fluid style={{height: "100%"}}>

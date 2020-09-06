@@ -368,9 +368,9 @@ class RocketBuilding extends React.Component<any, any> {
                                     </Col>
                                 </Row>
 
-                                <Row style={{margin: 0}}>
-                                    <Container fluid>
-                                        <Row className={"justify-content-center"}>
+                                <Row style={{margin: 0, alignItems: "flex-start"}}>
+                                    <Container fluid style={{alignItems: "flex-start"}}>
+                                        <Row className={"justify-content-center"} style={{alignItems: "flex-start"}}>
                                             {/*<Col className={"col-1"}>*/}
                                             {/*    <Row style={{marginTop: 30, marginBottom: 30}}>*/}
                                             {/*        <img className={"arrow"} src={leftarrow} style={{filter: "contrast(0%)"}}*/}
@@ -401,41 +401,41 @@ class RocketBuilding extends React.Component<any, any> {
                                             {/*    </Row>*/}
                                             {/*</Col>*/}
 
-                                            <Col className={"ml-auto col-4"}>
-                                                <Row className={"justify-content-center"} style={{maxHeight: 1100}}>
+                                            <Col className={"ml-auto col-4"} style={{alignItems: "flex-start"}}>
+                                                <Row className={"justify-content-center"} style={{maxHeight: 1100, alignItems: "flex-start"}}>
                                                     {this.state.boosterIndex === 3 &&
                                                         <div style={{position: "absolute", width: "17%", left: "41.5%", top: "65%", zIndex: 10}}>
                                                             <img alt={"Booster Middle"} src={booster_4_middle} style={{width: "100%"}} />
                                                         </div>
                                                     }
 
-                                                    <Col className={"col-2 align-self-end"}  style={{padding: 0}}>
+                                                    <Col className={"col-2 align-self-end"} style={{padding: 0, alignItems: "flex-start"}}>
                                                         <img alt={"Booster Left"} className={"part-image"}
                                                              src={this.state.boosters[this.state.boosterIndex].leftImage}
                                                              style={{width: "80%"}} />
                                                     </Col>
 
-                                                    <Col className={"col-3"} style={{padding: 0}}>
-                                                        <Row className={"justify-content-center"} style={{margin: 5}}>
+                                                    <Col className={"col-3"} style={{padding: 0, alignItems: "flex-start"}}>
+                                                        <Row className={"justify-content-center"} style={{margin: 5, alignItems: "flex-start"}}>
                                                             <img alt={"Cone"} className={"part-image"}
                                                                  src={this.state.cones[this.state.coneIndex].image}
                                                                  style={{width: "80%"}} />
                                                         </Row>
 
-                                                        <Row className={"justify-content-center"} style={{margin: 5}}>
+                                                        <Row className={"justify-content-center"} style={{margin: 5, alignItems: "flex-start"}}>
                                                             <img alt={"Body"} className={"part-image"}
                                                                  src={this.state.bodys[this.state.bodyIndex].image}
                                                                  style={{width: "80%"}} />
                                                         </Row>
 
-                                                        <Row className={"justify-content-center"} style={{margin: 5}}>
+                                                        <Row className={"justify-content-center"} style={{margin: 5, alignItems: "flex-start"}}>
                                                             <img alt={"Engine"} className={"part-image"}
                                                                  src={this.state.engines[this.state.engineIndex].image}
                                                                  style={{width: "80%"}} />
                                                         </Row>
                                                     </Col>
 
-                                                    <Col className={"col-2 align-self-end"}  style={{padding: 0}}>
+                                                    <Col className={"col-2 align-self-end"}  style={{padding: 0, alignItems: "flex-start"}}>
                                                         <img alt={"Booster Right"} className={"part-image"}
                                                              src={this.state.boosters[this.state.boosterIndex].rightImage}
                                                              style={{width: "80%"}} />
@@ -459,7 +459,7 @@ class RocketBuilding extends React.Component<any, any> {
                                                                 <Row>
                                                                     <Col style={{padding: 5}}>
                                                                         <p style={{fontWeight: "bold", fontSize: 18}}>
-                                                                            Fuel Capacity: {getTotalFuelCapacity()}
+                                                                            Fuel Capacity: {getTotalFuelCapacity()} kg
                                                                         </p>
                                                                     </Col>
                                                                 </Row>
@@ -467,7 +467,7 @@ class RocketBuilding extends React.Component<any, any> {
                                                                 <Row>
                                                                     <Col style={{padding: 5}}>
                                                                         <p style={{fontWeight: "bold", fontSize: 18}}>
-                                                                            Air Resistance: {getTotalAirResistance()}
+                                                                            Air Resistance: {getTotalAirResistance()} N
                                                                         </p>
                                                                     </Col>
                                                                 </Row>
@@ -475,7 +475,7 @@ class RocketBuilding extends React.Component<any, any> {
                                                                 <Row>
                                                                     <Col style={{padding: 5}}>
                                                                         <p style={{fontWeight: "bold", fontSize: 18}}>
-                                                                            Total Mass: {getTotalMass()}
+                                                                            Total Mass: {getTotalMass()} kg
                                                                         </p>
                                                                     </Col>
                                                                 </Row>

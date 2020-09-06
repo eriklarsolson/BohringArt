@@ -42,7 +42,7 @@ class ObjectPage extends React.Component<any, any> {
                     image: massive_star_1,
                     imageSize: 370,
                     temperatureValue: 20,
-                    sizeValue: 60,
+                    sizeValue: 20,
                     massValue: 20,
                 },
                 {
@@ -58,23 +58,23 @@ class ObjectPage extends React.Component<any, any> {
                     image: massive_star_3,
                     imageSize: 410,
                     temperatureValue: 60,
-                    sizeValue: 20,
-                    massValue: 80,
+                    sizeValue: 60,
+                    massValue: 60,
                 },
                 {
                     title: "Average star 4",
                     image: massive_star_4,
                     imageSize: 430,
                     temperatureValue: 80,
-                    sizeValue: 100,
-                    massValue: 60,
+                    sizeValue: 80,
+                    massValue: 80,
                 },
                 {
                     title: "Average star 5",
                     image: massive_star_5,
                     imageSize: 450,
                     temperatureValue: 100,
-                    sizeValue: 80,
+                    sizeValue: 100,
                     massValue: 100,
                 }
             ],
@@ -83,41 +83,17 @@ class ObjectPage extends React.Component<any, any> {
                 {
                     title: "Massive star 1",
                     image: massive_star_1,
-                    imageSize: 370,
+                    imageSize: 400,
                     temperatureValue: 20,
-                    sizeValue: 60,
+                    sizeValue: 20,
                     massValue: 20,
                 },
                 {
                     title: "Massive star 2",
                     image: massive_star_2,
-                    imageSize: 390,
-                    temperatureValue: 40,
-                    sizeValue: 40,
-                    massValue: 40,
-                },
-                {
-                    title: "Massive star 3",
-                    image: massive_star_3,
-                    imageSize: 410,
-                    temperatureValue: 60,
-                    sizeValue: 20,
-                    massValue: 80,
-                },
-                {
-                    title: "Massive star 4",
-                    image: massive_star_4,
-                    imageSize: 430,
-                    temperatureValue: 80,
-                    sizeValue: 100,
-                    massValue: 60,
-                },
-                {
-                    title: "Massive star 5",
-                    image: massive_star_5,
                     imageSize: 450,
                     temperatureValue: 100,
-                    sizeValue: 80,
+                    sizeValue: 100,
                     massValue: 100,
                 }
             ],
@@ -399,9 +375,9 @@ class ObjectPage extends React.Component<any, any> {
         // }
 
         let max = 100
-        if(this.state.massClass === 1) {
-            max = 120;
-        }
+        // if(this.state.massClass === 1) {
+        //     max = 120;
+        // }
 
         return (
             <>
@@ -519,7 +495,7 @@ class ObjectPage extends React.Component<any, any> {
                                     </Col>
                                 </Row>
 
-                                <Row className={"justify-content-center"} style={{margin: 0,}}>
+                                <Row className={"justify-content-center"} style={{margin: 0, minHeight: 450}}>
                                     {/*<Col style={{display: "flex"}} className={"col-2 align-items-center justify-content-end"}>*/}
                                     {/*    <img className={"arrow"} src={leftarrow} height="100px" alt={"left arrow"}*/}
                                     {/*        onClick={leftArrow} />*/}

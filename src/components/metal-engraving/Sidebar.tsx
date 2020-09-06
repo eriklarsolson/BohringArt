@@ -42,17 +42,17 @@ class Sidebar extends React.Component<any, any> {
                    </Row>
 
                    <Row style={{margin: 5, paddingLeft: 25}}>
-                       <SidebarModule tool={this.props.tool} toolToShow={TOOL_LASER} flex={"0 0 69%"} maxWidth={"69%"}
+                       <SidebarModule tool={this.props.tool} toolToShow={TOOL_LASER} flex={"0 0 66%"} maxWidth={"66%"}
                                       setTool={this.props.setTool} title={"laser"} description={"A laser, or Light Amplification by Stimulated Emission of Radiation, is a concentrated beam of photons"} />
                    </Row>
 
                    <Row style={{margin: 5, paddingLeft: 25}}>
-                       <SidebarModule tool={this.props.tool} toolToShow={TOOL_OPTICS} flex={"0 0 72%"} maxWidth={"72%"}
+                       <SidebarModule tool={this.props.tool} toolToShow={TOOL_OPTICS} flex={"0 0 69%"} maxWidth={"69%"}
                                       setTool={this.props.setTool} title={"optics"} description={"Curved plastic, glass, or other material useful in directing light in some manner, either for convergence or divergence of light"} />
                    </Row>
 
                    <Row style={{margin: 5, paddingLeft: 25}}>
-                       <SidebarModule tool={this.props.tool} toolToShow={TOOL_PRISM} flex={"0 0 75%"} maxWidth={"75%"}
+                       <SidebarModule tool={this.props.tool} toolToShow={TOOL_PRISM} flex={"0 0 72%"} maxWidth={"72%"}
                                       setTool={this.props.setTool} title={"prism"} description={"Commonly of a triangular shape, prisms can separate white light into a rainbow of colors"} />
                    </Row>
 
@@ -121,17 +121,19 @@ class Sidebar extends React.Component<any, any> {
                        </Row>
                    </Accordion>
 
-                   <Row className={"justify-content-center"} style={{marginTop: 50}}>
-                       <Col className={"col-5"}>
-                           <Button style={{width: "100%", clipPath: "polygon(0 0, 95% 0, 100% 100%, 5% 100%)"}}
+                   <Row style={{margin: 5, paddingLeft: 25, marginTop: 50}}>
+                       <Col className="col-9">
+                           <Button style={{width: "100%"}}
+                                   className={"white-button"}
+                                   onClick={() => this.props.setTool(TOOL_ERASER)}>Metal Filler</Button>
+                       </Col>
+                   </Row>
+
+                   <Row style={{margin: 5, paddingLeft: 25}}>
+                       <Col className="col-9">
+                           <Button style={{width: "100%"}}
                                    className={"white-button"}
                                    onClick={this.props.clearCanvas}>Reset</Button>
-                       </Col>
-
-                       <Col className={"col-5"}>
-                           <Button style={{width: "100%", clipPath: "polygon(0 0, 95% 0, 100% 100%, 5% 100%)"}}
-                                   className={"white-button"}
-                                   onClick={() => this.props.setTool(TOOL_ERASER)}>Eraser</Button>
                        </Col>
                    </Row>
                </Container>
