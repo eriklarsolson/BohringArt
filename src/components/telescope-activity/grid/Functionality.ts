@@ -99,6 +99,20 @@ export function getIndex(value: any, arr: string | any[]) {
     return -1; //to handle the case where the value doesn't exist
 }
 
+function getComponentsFromRow(row: number) {
+    const samePlaceComponents = components.filter(component => component.y === row);
+
+    if(row === 0) {
+        const lastComponent = samePlaceComponents[samePlaceComponents.length - 1];
+        console.log(lastComponent)
+        // samePlaceComponents.splice(lastComponent, 1)
+    }
+
+    console.log(samePlaceComponents)
+
+    return samePlaceComponents;
+}
+
 export function moveComponent(toX: number, toY: number, type: string): void {
     // const samePlaceComponents = components.filter(component => component.x === toX && component.y === toY);
     //
@@ -179,83 +193,210 @@ export function moveComponent(toX: number, toY: number, type: string): void {
 //TODO - Eventually, this laser will have to encounter the right edge of telescope and start coming backwards to interact with mirrors facing backwards
 // before ending up in piece above first grid space (goal)
 export function generatePaths(): string[] {
-    let stringPath1 = "M0 250"; //NOTE: First val is x, second is y (y from top, so 300 down I believe?)
-    let stringPath2 = "M0 350";
-    let stringPath3 = "M0 450";
+    let stringPath1 = "M0 230"; //NOTE: First val is x, second is y (y from top, so 300 down I believe?)
+    let stringPath2 = "M0 330";
+    let stringPath3 = "M0 430";
 
     //Initial straight line to get to first grid square
-    let xPos = 190
-    let yPos1 = 250
-    let yPos2 = 350
-    let yPos3 = 450
+    let xPos1 = 250
+    let xPos2 = 250
+    let xPos3 = 250
+    let yPos1 = 230
+    let yPos2 = 330
+    let yPos3 = 430
 
-    stringPath1 += " L" + xPos + " " + yPos1
-    stringPath2 += " L" + xPos + " " + yPos2
-    stringPath3 += " L" + xPos + " " + yPos3
+    stringPath1 += " L" + xPos1 + " " + yPos1
+    stringPath2 += " L" + xPos2 + " " + yPos2
+    stringPath3 += " L" + xPos3 + " " + yPos3
 
-    let xChange = 0;
-    let yChange = 0;
+    let xChange1 = 0;
+    let yChange1 = 0;
+    let xChange2 = 0;
+    let yChange2 = 0;
+    let xChange3 = 0;
+    let yChange3 = 0;
 
-    for(let i = 0; i < 5; i++) {
-        const component = components[i];
+    for(let stringIndex = 0; stringIndex < 3; stringIndex++) {
 
-        if(component !== undefined) {
-            console.log(component.type)
-            console.log(component.rotateDeg)
+        let i = 0;
+        while(i <= 3) {
 
-            xChange = 0;
-            yChange = 0;
+            //TOP LASER
+            if(stringIndex === 0) {
+                //TODO - Need to not just get componentsOnRow because the laser will get that component first (regardless of position)
+                // and interact with it at beginning. I need to loop through each component spot on row (and get component at that x y position)
+                // If not piece found, then move forward, but interact only at that spot if piece found
+                const componentsOnRow = getComponentsFromRow(0);
+                const component = componentsOnRow[i];
 
-            //Check if piece is facing away from you, (so pass through going straight)
-            if (component.rotateDeg !== 0 && component.rotateDeg !== 45 && component.rotateDeg !== 315) {
-                xChange = 200
-            } else {
-                //TODO - Check rotation here as well (if doesnt' fail above)
-                // ALSO Some pieces are technically supposed to make the piece reflect backwards, so do we go backwards in array to interact with last piece????????
-                if (component.type === TelescopeTypes.CONCAVE) {
-                    xChange = 150
-                    yChange = 10
-                } else if (component.type === TelescopeTypes.CONVEX) {
-                    xChange = 150
-                    yChange = 80
-                } else if (component.type === TelescopeTypes.FLATMIRROR) { //NOTE: Notice the minuses here for testing
-                    xChange = 150
-                    yChange = -80
-                } else if (component.type === TelescopeTypes.VIEWPOINT) {
-                    xChange = 150
-                    yChange = 25
+                if(component !== undefined) {
+                    console.log(component.type)
+                    console.log(component.rotateDeg)
+
+                    xChange1 = 0;
+                    yChange1 = 0;
+
+                    //Check if piece is facing away from you, (so pass through going straight)
+                    if (component.rotateDeg !== 0 && component.rotateDeg !== 45 && component.rotateDeg !== 315) {
+                        xChange1 = 200
+                        i += 1
+                    } else {
+                        //TODO - Check rotation here as well (if doesnt' fail above)
+                        // ALSO Some pieces are technically supposed to make the piece reflect backwards, so do we go backwards in array to interact with last piece????????
+                        if (component.type === TelescopeTypes.CONCAVE) {
+                            xChange1 = 150
+                            yChange1 = 10
+                            i += 1
+                        } else if (component.type === TelescopeTypes.CONVEX) {
+                            xChange1 = 150
+                            yChange1 = 80
+                            i += 1
+                        } else if (component.type === TelescopeTypes.FLATMIRROR) { //NOTE: Notice the minuses here for testing
+                            xChange1 = -50
+                            yChange1 = 0
+                            //TODO - Needs to go to last grid square and interact with last piece as this will bounce it backwards
+                            i = 5
+                        } else if (component.type === TelescopeTypes.VIEWPOINT) {
+                            xChange1 = 150
+                            yChange1 = 25
+                            i += 1
+                        }
+                    }
+                } else {
+                    //If no component found in grid square, just go straight to next grid square
+                    xChange1 = 200;
+                    yChange1 = 0;
+                    i += 1
                 }
+
+                xPos1 += xChange1 / 2;
+                yPos1 += yChange1;
+
+                stringPath1 += " L" + xPos1 + " " + yPos1
+                console.log(stringPath1)
+
+                xPos1 += xChange1 / 2;
+                yPos1 -= yChange1;
+
+                stringPath1 += " L" + xPos1 + " " + yPos1
+                console.log(stringPath1)
+
+                console.log("---------")
+            } else if(stringIndex === 1) {
+                const componentsOnRow = getComponentsFromRow(1);
+                const component = componentsOnRow[i];
+
+                if(component !== undefined) {
+                    console.log(component.type)
+                    console.log(component.rotateDeg)
+
+                    xChange2 = 0;
+                    yChange2 = 0;
+
+                    //Check if piece is facing away from you, (so pass through going straight)
+                    if (component.rotateDeg !== 0 && component.rotateDeg !== 45 && component.rotateDeg !== 315) {
+                        xChange2 = 200
+                        i += 1
+                    } else {
+                        //TODO - Check rotation here as well (if doesnt' fail above)
+                        // ALSO Some pieces are technically supposed to make the piece reflect backwards, so do we go backwards in array to interact with last piece????????
+                        if (component.type === TelescopeTypes.CONCAVE) {
+                            xChange2 = 150
+                            yChange2 = 25
+                            i += 1
+                        } else if (component.type === TelescopeTypes.CONVEX) {
+                            xChange2 = 150
+                            yChange2 = 80
+                            i += 1
+                        } else if (component.type === TelescopeTypes.FLATMIRROR) { //NOTE: Notice the minuses here for testing
+                            xChange2 = -150
+                            yChange2 = 0
+                            i = 5
+                            //TODO - Needs to go to last grid square and interact with last piece as this will bounce it backwards
+                        } else if (component.type === TelescopeTypes.VIEWPOINT) {
+                            xChange2 = 150
+                            yChange2 = 25
+                            i += 1
+                        }
+                    }
+                } else {
+                    //If no component found in grid square, just go straight to next grid square
+                    xChange2 = 200;
+                    yChange2 = 0;
+                    i += 1
+                }
+
+
+                xPos2 += xChange2 / 2;
+                yPos2 += yChange2;
+
+                stringPath2 += " L" + xPos2 + " " + yPos2
+
+                xPos2 += xChange2 / 2;
+                yPos2 -= yChange2;
+
+                stringPath2 += " L" + xPos2 + " " + yPos2
+            } else if(stringIndex === 2) {
+                const componentsOnRow = getComponentsFromRow(2);
+                const component = componentsOnRow[i];
+
+                if(component !== undefined) {
+                    console.log(component.type)
+                    console.log(component.rotateDeg)
+
+                    xChange3 = 0;
+                    yChange3 = 0;
+
+                    //Check if piece is facing away from you, (so pass through going straight)
+                    if (component.rotateDeg !== 0 && component.rotateDeg !== 45 && component.rotateDeg !== 315) {
+                        xChange3 = 200
+                    } else {
+                        //TODO - Check rotation here as well (if doesnt' fail above)
+                        // ALSO Some pieces are technically supposed to make the piece reflect backwards, so do we go backwards in array to interact with last piece????????
+                        if (component.type === TelescopeTypes.CONCAVE) {
+                            xChange3 = 150
+                            yChange3 = 45
+                            i += 1
+                        } else if (component.type === TelescopeTypes.CONVEX) {
+                            xChange3 = 150
+                            yChange3 = 80
+                            i += 1
+                        } else if (component.type === TelescopeTypes.FLATMIRROR) { //NOTE: Notice the minuses here for testing
+                            xChange3 = -50
+                            yChange3 = 0
+                            i = 5
+                            //TODO - Needs to go to last grid square and interact with last piece as this will bounce it backwards
+                        } else if (component.type === TelescopeTypes.VIEWPOINT) {
+                            xChange3 = 150
+                            yChange3 = 25
+                            i += 1
+                        }
+                    }
+                } else {
+                    //If no component found in grid square, just go straight to next grid square
+                    xChange3 = 200;
+                    yChange3 = 0;
+                    i += 1
+                }
+
+                xPos3 += xChange3 / 2;
+                yPos3 += yChange3;
+
+                stringPath3 += " L" + xPos3 + " " + yPos3
+
+                xPos3 += xChange3 / 2;
+                yPos3 -= yChange3;
+
+                stringPath3 += " L" + xPos3 + " " + yPos3
             }
-        } else {
-            //If no component found in grid square, just go straight to next grid square
-            xChange = 200;
-            yChange = 0;
         }
-
-        xPos += xChange / 2;
-        //TODO
-        yPos1 += yChange;
-        yPos2 += yChange;
-        yPos3 += yChange;
-
-        stringPath1 += " L" + xPos + " " + yPos1
-        stringPath2 += " L" + xPos + " " + yPos2
-        stringPath3 += " L" + xPos + " " + yPos3
-        console.log(stringPath1)
-
-        xPos += xChange / 2;
-        //TODO
-        yPos1 -= yChange;
-        yPos2 -= yChange;
-        yPos3 -= yChange;
-
-        stringPath1 += " L" + xPos + " " + yPos1
-        stringPath2 += " L" + xPos + " " + yPos2
-        stringPath3 += " L" + xPos + " " + yPos3
-        console.log(stringPath1)
-
-        console.log("---------")
     }
+
+    //TODO - Handle the last grid square here (the big one) for all three lasers
+
+
+    //TODO - Start interacting with pieces as we go backwards through grid
+
 
     return [stringPath1, stringPath2, stringPath3]
 }

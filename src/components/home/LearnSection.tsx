@@ -27,7 +27,7 @@ class LearnSection extends React.Component<any, any> {
                    </Row>
 
                     <Row className={"justify-content-center"}>
-                        <Col className={"col-10 col-md-4 learn-section"} onClick={() => this.props.goToActivity(0)}
+                        <Col className={"col-10 col-md-10 col-lg-4 learn-section"} onClick={() => this.props.goToActivity(0)}
                              style={{clipPath: "polygon(0 0, 95% 0, 100% 100%, 5% 100%)", backgroundColor: "#29405B",
                                  padding: 25, marginBottom: 40}}>
                             <Row>
@@ -54,7 +54,7 @@ class LearnSection extends React.Component<any, any> {
                             </Row>
                         </Col>
 
-                        <Col className={"col-10 col-md-4 learn-section"} onClick={() => this.props.goToActivity(1)}
+                        <Col className={"col-10 col-md-10 col-lg-4 learn-section"} onClick={() => this.props.goToActivity(1)}
                              style={{clipPath: "polygon(0 0, 95% 0, 100% 100%, 5% 100%)", backgroundColor: "#29405B",
                                  padding: 25, marginBottom: 40}}>
                             <Row>
@@ -83,7 +83,7 @@ class LearnSection extends React.Component<any, any> {
                     </Row>
 
                    <Row className={"justify-content-center"} style={{marginTop: 50, marginBottom: 50}}>
-                       <Col className={"col-10 col-md-4 learn-section"} onClick={() => this.props.goToActivity(2)}
+                       <Col className={"col-10 col-md-10 col-lg-4 learn-section"} onClick={() => this.props.goToActivity(2)}
                             style={{clipPath: "polygon(0 0, 95% 0, 100% 100%, 5% 100%)", backgroundColor: "#29405B",
                                 padding: 25, marginLeft: "4%", marginBottom: 40}}>
                            <Row>
@@ -111,7 +111,7 @@ class LearnSection extends React.Component<any, any> {
                            </Row>
                        </Col>
 
-                       <Col className={"col-10 col-md-4 learn-section"} onClick={() => this.props.goToActivity(3)}
+                       <Col className={"col-10 col-md-10 col-lg-4 learn-section"} onClick={() => this.props.goToActivity(3)}
                             style={{clipPath: "polygon(0 0, 95% 0, 100% 100%, 5% 100%)", backgroundColor: "#29405B",
                                 padding: 25, marginBottom: 40}}>
                            <Row>

@@ -23,14 +23,14 @@ export const MoreInfoAnimation: React.FC<AnimationProps>  = ({setParentState}) =
     const changeInfo = (module: string) => {
         if (module === "laser") {
             setTitle("LASER")
-            setDescription("Light is a form of energy stored in the form of photons, particles of light, that are emitted from all objects such as stars and human bodies except black holes. \n" +
+            setDescription("Light is a form of energy stored in the form of photons, particles of light, that are emitted from all objects such as stars and human bodies except black holes.\n\n" +
                 "A laser, or Light Amplification by Stimulated Emission of Radiation, is a concentrated ray of photons emitted by an energetic object, typically a gas.")
         } else if (module === "optics") {
             setTitle("LENS")
-            setDescription("LENS Converging/Convex A lens that focuses incoming light to a single point. This is due to the outward curvature of the lens itself; light is refracted towards a point of con vergence, forming an image. Refraction When light enters one medium different from the one it is currently traveling through, it will change its speed, resulting in a change in the direction of movement. An example of a change in medium is going from air to water. Snell’s Law Law comparing angles of entry of the light and indices of refraction of mediums Index of refraction-A measure of a medium’s ability to bend incoming light away from its angle of incidence, index of refraction of air is one.")
+            setDescription("Converging/Convex\nA lens that focuses incoming light to a single point. This is due to the outward curvature of the lens itself; light is refracted towards a point of convergence, forming an image. \n\nRefraction \nWhen light enters one medium different from the one it is currently traveling through, it will change its speed, resulting in a change in the direction of movement. An example of a change in medium is going from air to water. \n\nSnell’s Law \nLaw comparing angles of entry of the light and indices of refraction of mediums.\n Index of refraction-A measure of a medium’s ability to bend incoming light away from its angle of incidence, index of refraction of air is one.")
         } else if (module === "prism") {
             setTitle("PRISM")
-            setDescription("Glass or other material usually made into a triangle shape in order to separate incoming light into separate colors. This occurs as a result of refraction of various colors, all of which have different indices of refraction inside prisms. \n" +
+            setDescription("Glass or other material usually made into a triangle shape in order to separate incoming light into separate colors. This occurs as a result of refraction of various colors, all of which have different indices of refraction inside prisms. \n\n" +
                 "Spectrum or distribution of lights")
         }
     }
@@ -45,9 +45,11 @@ export const MoreInfoAnimation: React.FC<AnimationProps>  = ({setParentState}) =
                     // scale: [1, 2, 2, 1, 1],
                     // rotate: [0, 0, 270, 270, 0],
                     // x: [100, 200, 300, 400, 500],
-                    x: [1200, 350],
+                    x: ["100%", "0%"],
                     opacity: [0, 1]
                 }}
+
+                style={{height: "100%"}}
 
                 transition={{
                     duration: 1,
@@ -55,13 +57,13 @@ export const MoreInfoAnimation: React.FC<AnimationProps>  = ({setParentState}) =
                     times: [0, 1],
                 }}>
 
-                <Container fluid>
-                    <Row>
-                        <Col className={"col-7 vh-100 ml-auto"}>
+                <Container fluid style={{height: "100%"}}>
+                    <Row style={{height: "100%"}}>
+                        <Col className={"col-4 ml-auto"} style={{padding: 0}}>
                             <div style={{position: "absolute", width: "100%", height: "100%", backgroundColor: "#29405B",
                                 clipPath: "polygon(0 0, 100% 0, 100% 100%, 10% 100%)"}} />
 
-                            <div style={{position: "absolute", marginTop: 100, height: "100%", left: -165}}>
+                            <div style={{position: "absolute", marginTop: 10, height: "100%", left: -165}}>
                                 <Container fluid>
                                     <Row style={{margin: 5, marginLeft: 10, width: 175}}>
                                         <Col className="col-12" onMouseOver={() => changeInfo("laser")}
@@ -86,24 +88,23 @@ export const MoreInfoAnimation: React.FC<AnimationProps>  = ({setParentState}) =
                                 </Container>
                             </div>
 
-                            <Container fluid style={{marginTop: 100}}>
+                            <Container fluid style={{marginTop: 10}}>
                                 <Row>
-                                    <Col className={"col-7"}>
-                                        <Button className={"green-button"} style={{float: "right", width: 100,
-                                            clipPath: "polygon(0 0, 95% 0, 100% 100%, 5% 100%)"}}
+                                    <Col className={"col-3 ml-auto"} style={{padding: 0}}>
+                                        <Button className={"green-button"} style={{float: "right", width: "100%"}}
                                                 onClick={() => setClosed()}><i className="fa fa-arrow-right" /></Button>
                                     </Col>
                                 </Row>
 
-                                <Row className={"justify-content-center"} style={{marginTop: 100}}>
+                                <Row className={"justify-content-center"} style={{marginTop: 10}}>
                                     <Col className={"col-8"} style={{textAlign: "left", color: "white"}}>
                                         <h1>{title}</h1>
                                     </Col>
                                 </Row>
 
                                 <Row className={"justify-content-center"}>
-                                    <Col className={"col-8"} style={{textAlign: "left", color: "white", paddingRight: 250}}>
-                                        <p>{description}</p>
+                                    <Col className={"col-8"} style={{textAlign: "left", color: "white"}}>
+                                        <p style={{whiteSpace: "pre-line"}}>{description}</p>
                                     </Col>
                                 </Row>
                             </Container>

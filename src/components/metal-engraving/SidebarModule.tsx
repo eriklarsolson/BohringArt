@@ -16,13 +16,13 @@ export interface Props {
 }
 
 export const SidebarModule: React.FC<Props> = ({tool, toolToShow, setTool, title, description, flex, maxWidth}) => {
-    const [rightValue, setRightValue] = useState<number>(0)
+    const [rightValue, setRightValue] = useState<string>("0%")
     const [zIndex, setZIndex] = useState<number>(-1)
     const [tooltipShowing, setTooltipShowing] = useState<boolean>(false)
 
     let tooltipStyle: React.CSSProperties = {
         position: "absolute",
-        right: rightValue,
+        left: rightValue,
         top: 0,
         width: 400,
         height: "auto",
@@ -31,23 +31,23 @@ export const SidebarModule: React.FC<Props> = ({tool, toolToShow, setTool, title
         transition: ".3s ease-in-out",
         zIndex: zIndex,
         textAlign: "left",
-        clipPath: "polygon(0 0, 100% 0, 100% 100%, 2% 100%)"
+        clipPath: "polygon(0 0, 100% 0, 100% 100%, 4% 100%)"
     }
 
     const showTooltip = () => {
         if(tooltipShowing) {
-            setRightValue(0)
+            setRightValue("0%")
             setZIndex(-1)
             setTooltipShowing(false)
         } else {
-            setRightValue(-380)
+            setRightValue("90%")
             setZIndex(1)
             setTooltipShowing(true)
         }
     }
 
     const hideTooltip = () => {
-        setRightValue(0)
+        setRightValue("0%")
         setZIndex(-1)
         setTooltipShowing(false)
     }

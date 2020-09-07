@@ -9,7 +9,7 @@ const icon = {
 },
     visible: {
         opacity: 1,
-        pathLength: 4,
+        pathLength: 10,
     }
 };
 
@@ -32,11 +32,13 @@ export const StellarPathAnimation: React.FC<AnimationProps> = ({path}) => {
                     initial="hidden"
                     animate="visible"
                     transition={{
-                        default: {duration: 4, ease: "easeInOut"},
+                        duration: 4,
+                        ease: "easeInOut",
+                        times: [0, 1],
                         // fill: {duration: 4, ease: [1, 1, 1, 1]}
                     }}
                 />
             </motion.svg>
         </div>
-    );
+    )
 }

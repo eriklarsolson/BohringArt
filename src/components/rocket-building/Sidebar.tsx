@@ -40,7 +40,7 @@ class Sidebar extends React.Component<any, any> {
 
                                {/*<Row className={"justify-content-center"} style={{backgroundColor: "#42949F", textAlign: "left", padding: 2}}>*/}
                                {/*    <Col className={"col-1"}>*/}
-                               {/*        <img alt={"Arrow"} src={leftarrow} className={"arrow"} style={{height: 15}} onClick={() => this.props.changeCone(false)} />*/}
+                               {/*        <img alt={"Arrow"} src={leftarrow} className={"part-image"} style={{height: 15}} onClick={() => this.props.changeCone(false)} />*/}
                                {/*    </Col>*/}
 
                                {/*    <Col className={"col-5 align-self-center"}>*/}
@@ -48,60 +48,60 @@ class Sidebar extends React.Component<any, any> {
                                {/*    </Col>*/}
 
                                {/*    <Col className={"col-1"} style={{float: "left"}}>*/}
-                               {/*        <img alt={"Arrow"} src={rightarrow} className={"arrow"} style={{height: 15}} onClick={() => this.props.changeCone(true)} />*/}
+                               {/*        <img alt={"Arrow"} src={rightarrow} className={"part-image"} style={{height: 15}} onClick={() => this.props.changeCone(true)} />*/}
                                {/*    </Col>*/}
                                {/*</Row>*/}
 
                                <Row style={{margin: "auto", marginTop: 5}}>
                                    {this.props.coneIndex === 0 ?
                                        <Col className={"col-sm-5 col-md-4 col-lg-2"} style={{margin: 3, flex: "0 0 60px", maxWidth: "60px",
-                                           backgroundColor: "#42949F", height: 60, borderRadius: 3, border: "2px solid #3BD186"}}>
-                                           <img className={"arrow"} alt={"Rocket Piece"} src={cone_1} style={{height: "100%"}} />
+                                           backgroundColor: "#42949F", height: 60, borderRadius: 3, border: "2px solid #3BD186", padding: 5}}>
+                                           <img className={"part-image"} alt={"Rocket Piece"} src={cone_1} style={{height: "100%"}} />
                                        </Col>
                                     :
                                        <Col className={"col-sm-5 col-md-4 col-lg-2"} style={{margin: 3, flex: "0 0 60px", maxWidth: "60px",
-                                           backgroundColor: "#42949F", height: 60, borderRadius: 3}}
+                                           backgroundColor: "#42949F", height: 60, borderRadius: 3, padding: 5}}
                                             onClick={() => this.props.changeCone(0)}>
-                                           <img className={"arrow"} alt={"Rocket Piece"} src={cone_1} style={{height: "100%"}} />
+                                           <img className={"part-image"} alt={"Rocket Piece"} src={cone_1} style={{height: "100%"}} />
                                        </Col>
                                    }
 
                                    {this.props.coneIndex === 1 ?
                                        <Col className={"col-sm-5 col-md-4 col-lg-2"} style={{margin: 3, flex: "0 0 60px", maxWidth: "60px",
-                                           backgroundColor: "#42949F", height: 60, borderRadius: 3, border: "2px solid #3BD186"}}>
-                                           <img className={"arrow"} alt={"Rocket Piece"} src={cone_2} style={{height: "100%"}} />
+                                           backgroundColor: "#42949F", height: 60, borderRadius: 3, border: "2px solid #3BD186", padding: 5}}>
+                                           <img className={"part-image"} alt={"Rocket Piece"} src={cone_2} style={{height: "100%"}} />
                                        </Col>
                                        :
                                        <Col className={"col-sm-5 col-md-4 col-lg-2"} style={{margin: 3, flex: "0 0 60px", maxWidth: "60px",
-                                           backgroundColor: "#42949F", height: 60, borderRadius: 3}}
+                                           backgroundColor: "#42949F", height: 60, borderRadius: 3, padding: 5}}
                                             onClick={() => this.props.changeCone(1)}>
-                                           <img className={"arrow"} alt={"Rocket Piece"} src={cone_2} style={{height: "100%"}} />
+                                           <img className={"part-image"} alt={"Rocket Piece"} src={cone_2} style={{height: "100%"}} />
                                        </Col>
                                    }
 
                                    {this.props.coneIndex === 2 ?
                                        <Col className={"col-sm-5 col-md-4 col-lg-2"} style={{margin: 3, flex: "0 0 60px", maxWidth: "60px",
-                                           backgroundColor: "#42949F", height: 60, borderRadius: 3, border: "2px solid #3BD186"}}>
-                                           <img className={"arrow"} alt={"Rocket Piece"} src={cone_3} style={{height: "100%"}} />
+                                           backgroundColor: "#42949F", height: 60, borderRadius: 3, border: "2px solid #3BD186", padding: 5}}>
+                                           <img className={"part-image"} alt={"Rocket Piece"} src={cone_3} style={{height: "100%"}} />
                                        </Col>
                                        :
                                        <Col className={"col-sm-5 col-md-4 col-lg-2"} style={{margin: 3, flex: "0 0 60px", maxWidth: "60px",
-                                           backgroundColor: "#42949F", height: 60, borderRadius: 3}}
+                                           backgroundColor: "#42949F", height: 60, borderRadius: 3, padding: 5}}
                                             onClick={() => this.props.changeCone(2)}>
-                                           <img className={"arrow"} alt={"Rocket Piece"} src={cone_3} style={{height: "100%"}} />
+                                           <img className={"part-image"} alt={"Rocket Piece"} src={cone_3} style={{height: "100%"}} />
                                        </Col>
                                    }
 
                                    {this.props.coneIndex === 3 ?
                                        <Col className={"col-sm-5 col-md-4 col-lg-2"} style={{margin: 3, flex: "0 0 60px", maxWidth: "60px",
-                                           backgroundColor: "#42949F", height: 60, borderRadius: 3, border: "2px solid #3BD186"}}>
-                                           <img className={"arrow"} alt={"Rocket Piece"} src={cone_4} style={{height: "100%"}} />
+                                           backgroundColor: "#42949F", height: 60, borderRadius: 3, border: "2px solid #3BD186", padding: 5}}>
+                                           <img className={"part-image"} alt={"Rocket Piece"} src={cone_4} style={{height: "100%"}} />
                                        </Col>
                                        :
                                        <Col className={"col-sm-5 col-md-4 col-lg-2"} style={{margin: 3, flex: "0 0 60px", maxWidth: "60px",
-                                           backgroundColor: "#42949F", height: 60, borderRadius: 3}}
+                                           backgroundColor: "#42949F", height: 60, borderRadius: 3, padding: 5}}
                                             onClick={() => this.props.changeCone(3)}>
-                                           <img className={"arrow"} alt={"Rocket Piece"} src={cone_4} style={{height: "100%"}} />
+                                           <img className={"part-image"} alt={"Rocket Piece"} src={cone_4} style={{height: "100%"}} />
                                        </Col>
                                    }
                                </Row>
@@ -148,7 +148,7 @@ class Sidebar extends React.Component<any, any> {
 
                                {/*<Row className={"justify-content-center"} style={{backgroundColor: "#42949F", textAlign: "left", padding: 2}}>*/}
                                {/*    <Col className={"col-1"}>*/}
-                               {/*        <img alt={"Arrow"} src={leftarrow} className={"arrow"} style={{height: 15}} onClick={() => this.props.changeBody(false)} />*/}
+                               {/*        <img alt={"Arrow"} src={leftarrow} className={"part-image"} style={{height: 15}} onClick={() => this.props.changeBody(false)} />*/}
                                {/*    </Col>*/}
 
                                {/*    <Col className={"col-5 align-self-center"}>*/}
@@ -156,60 +156,60 @@ class Sidebar extends React.Component<any, any> {
                                {/*    </Col>*/}
 
                                {/*    <Col className={"col-1"} style={{float: "left"}}>*/}
-                               {/*        <img alt={"Arrow"}src={rightarrow} className={"arrow"} style={{height: 15}} onClick={() => this.props.changeBody(true)} />*/}
+                               {/*        <img alt={"Arrow"}src={rightarrow} className={"part-image"} style={{height: 15}} onClick={() => this.props.changeBody(true)} />*/}
                                {/*    </Col>*/}
                                {/*</Row>*/}
 
                                <Row style={{margin: "auto", marginTop: 5}}>
                                    {this.props.bodyIndex === 0 ?
                                        <Col className={"col-sm-5 col-md-4 col-lg-2"} style={{margin: 3, flex: "0 0 60px", maxWidth: "60px",
-                                           backgroundColor: "#42949F", height: 60, borderRadius: 3, border: "2px solid #3BD186"}}>
-                                           <img className={"arrow"} alt={"Rocket Piece"} src={body_1} style={{height: "100%"}} />
+                                           backgroundColor: "#42949F", height: 60, borderRadius: 3, border: "2px solid #3BD186", padding: 5}}>
+                                           <img className={"part-image"} alt={"Rocket Piece"} src={body_1} style={{height: "100%"}} />
                                        </Col>
                                        :
                                        <Col className={"col-sm-5 col-md-4 col-lg-2"} style={{margin: 3, flex: "0 0 60px", maxWidth: "60px",
-                                           backgroundColor: "#42949F", height: 60, borderRadius: 3}}
+                                           backgroundColor: "#42949F", height: 60, borderRadius: 3, padding: 5}}
                                             onClick={() => this.props.changeBody(0)}>
-                                           <img className={"arrow"} alt={"Rocket Piece"} src={body_1} style={{height: "100%"}} />
+                                           <img className={"part-image"} alt={"Rocket Piece"} src={body_1} style={{height: "100%"}} />
                                        </Col>
                                    }
 
                                    {this.props.bodyIndex === 1 ?
                                        <Col className={"col-sm-5 col-md-4 col-lg-2"} style={{margin: 3, flex: "0 0 60px", maxWidth: "60px",
-                                           backgroundColor: "#42949F", height: 60, borderRadius: 3, border: "2px solid #3BD186"}}>
-                                           <img className={"arrow"} alt={"Rocket Piece"} src={body_2} style={{height: "100%"}} />
+                                           backgroundColor: "#42949F", height: 60, borderRadius: 3, border: "2px solid #3BD186", padding: 5}}>
+                                           <img className={"part-image"} alt={"Rocket Piece"} src={body_2} style={{height: "100%"}} />
                                        </Col>
                                        :
                                        <Col className={"col-sm-5 col-md-4 col-lg-2"} style={{margin: 3, flex: "0 0 60px", maxWidth: "60px",
-                                           backgroundColor: "#42949F", height: 60, borderRadius: 3}}
+                                           backgroundColor: "#42949F", height: 60, borderRadius: 3, padding: 5}}
                                             onClick={() => this.props.changeBody(1)}>
-                                           <img className={"arrow"} alt={"Rocket Piece"} src={body_2} style={{height: "100%"}} />
+                                           <img className={"part-image"} alt={"Rocket Piece"} src={body_2} style={{height: "100%"}} />
                                        </Col>
                                    }
 
                                    {this.props.bodyIndex === 2 ?
                                        <Col className={"col-sm-5 col-md-4 col-lg-2"} style={{margin: 3, flex: "0 0 60px", maxWidth: "60px",
-                                           backgroundColor: "#42949F", height: 60, borderRadius: 3, border: "2px solid #3BD186"}}>
-                                           <img className={"arrow"} alt={"Rocket Piece"} src={body_3} style={{height: "100%"}} />
+                                           backgroundColor: "#42949F", height: 60, borderRadius: 3, border: "2px solid #3BD186", padding: 5}}>
+                                           <img className={"part-image"} alt={"Rocket Piece"} src={body_3} style={{height: "100%"}} />
                                        </Col>
                                        :
                                        <Col className={"col-sm-5 col-md-4 col-lg-2"} style={{margin: 3, flex: "0 0 60px", maxWidth: "60px",
-                                           backgroundColor: "#42949F", height: 60, borderRadius: 3}}
+                                           backgroundColor: "#42949F", height: 60, borderRadius: 3, padding: 5}}
                                             onClick={() => this.props.changeBody(2)}>
-                                           <img className={"arrow"} alt={"Rocket Piece"} src={body_3} style={{height: "100%"}} />
+                                           <img className={"part-image"} alt={"Rocket Piece"} src={body_3} style={{height: "100%"}} />
                                        </Col>
                                    }
 
                                    {this.props.bodyIndex === 3 ?
                                        <Col className={"col-sm-5 col-md-4 col-lg-2"} style={{margin: 3, flex: "0 0 60px", maxWidth: "60px",
-                                           backgroundColor: "#42949F", height: 60, borderRadius: 3, border: "2px solid #3BD186"}}>
-                                           <img className={"arrow"} alt={"Rocket Piece"} src={body_4} style={{height: "100%"}} />
+                                           backgroundColor: "#42949F", height: 60, borderRadius: 3, border: "2px solid #3BD186", padding: 5}}>
+                                           <img className={"part-image"} alt={"Rocket Piece"} src={body_4} style={{height: "100%"}} />
                                        </Col>
                                        :
                                        <Col className={"col-sm-5 col-md-4 col-lg-2"} style={{margin: 3, flex: "0 0 60px", maxWidth: "60px",
-                                           backgroundColor: "#42949F", height: 60, borderRadius: 3}}
+                                           backgroundColor: "#42949F", height: 60, borderRadius: 3, padding: 5}}
                                             onClick={() => this.props.changeBody(3)}>
-                                           <img className={"arrow"} alt={"Rocket Piece"} src={body_4} style={{height: "100%"}} />
+                                           <img className={"part-image"} alt={"Rocket Piece"} src={body_4} style={{height: "100%"}} />
                                        </Col>
                                    }
                                </Row>
@@ -256,7 +256,7 @@ class Sidebar extends React.Component<any, any> {
 
                                {/*<Row className={"justify-content-center"} style={{backgroundColor: "#42949F", textAlign: "left", padding: 2}}>*/}
                                {/*    <Col className={"col-1"}>*/}
-                               {/*        <img alt={"Arrow"} src={leftarrow} className={"arrow"} style={{height: 15}} onClick={() => this.props.changeBooster(false)} />*/}
+                               {/*        <img alt={"Arrow"} src={leftarrow} className={"part-image"} style={{height: 15}} onClick={() => this.props.changeBooster(false)} />*/}
                                {/*    </Col>*/}
 
                                {/*    <Col className={"col-5  align-self-center"}>*/}
@@ -264,60 +264,60 @@ class Sidebar extends React.Component<any, any> {
                                {/*    </Col>*/}
 
                                {/*    <Col className={"col-1"} style={{float: "left"}}>*/}
-                               {/*        <img alt={"Arrow"} src={rightarrow} className={"arrow"} style={{height: 15}} onClick={() => this.props.changeBooster(true)} />*/}
+                               {/*        <img alt={"Arrow"} src={rightarrow} className={"part-image"} style={{height: 15}} onClick={() => this.props.changeBooster(true)} />*/}
                                {/*    </Col>*/}
                                {/*</Row>*/}
 
                                <Row style={{margin: "auto", marginTop: 5}}>
                                    {this.props.boosterIndex === 0 ?
                                        <Col className={"col-sm-5 col-md-4 col-lg-2"} style={{margin: 3, flex: "0 0 60px", maxWidth: "60px",
-                                           backgroundColor: "#42949F", height: 60, borderRadius: 3, border: "2px solid #3BD186"}}>
-                                           <img className={"arrow"} alt={"Rocket Piece"} src={booster_1_left} style={{height: "100%"}} />
+                                           backgroundColor: "#42949F", height: 60, borderRadius: 3, border: "2px solid #3BD186", padding: 5}}>
+                                           <img className={"part-image"} alt={"Rocket Piece"} src={booster_1_left} style={{height: "100%"}} />
                                        </Col>
                                        :
                                        <Col className={"col-sm-5 col-md-4 col-lg-2"} style={{margin: 3, flex: "0 0 60px", maxWidth: "60px",
-                                           backgroundColor: "#42949F", height: 60, borderRadius: 3}}
+                                           backgroundColor: "#42949F", height: 60, borderRadius: 3, padding: 5}}
                                             onClick={() => this.props.changeBooster(0)}>
-                                           <img className={"arrow"} alt={"Rocket Piece"} src={booster_1_left} style={{height: "100%"}} />
+                                           <img className={"part-image"} alt={"Rocket Piece"} src={booster_1_left} style={{height: "100%"}} />
                                        </Col>
                                    }
 
                                    {this.props.boosterIndex === 1 ?
                                        <Col className={"col-sm-5 col-md-4 col-lg-2"} style={{margin: 3, flex: "0 0 60px", maxWidth: "60px",
-                                           backgroundColor: "#42949F", height: 60, borderRadius: 3, border: "2px solid #3BD186"}}>
-                                           <img className={"arrow"} alt={"Rocket Piece"} src={booster_2_left} style={{height: "100%"}} />
+                                           backgroundColor: "#42949F", height: 60, borderRadius: 3, border: "2px solid #3BD186", padding: 5}}>
+                                           <img className={"part-image"} alt={"Rocket Piece"} src={booster_2_left} style={{height: "100%"}} />
                                        </Col>
                                        :
                                        <Col className={"col-sm-5 col-md-4 col-lg-2"} style={{margin: 3, flex: "0 0 60px", maxWidth: "60px",
-                                           backgroundColor: "#42949F", height: 60, borderRadius: 3}}
+                                           backgroundColor: "#42949F", height: 60, borderRadius: 3, padding: 5}}
                                             onClick={() => this.props.changeBooster(1)}>
-                                           <img className={"arrow"} alt={"Rocket Piece"} src={booster_2_left} style={{height: "100%"}} />
+                                           <img className={"part-image"} alt={"Rocket Piece"} src={booster_2_left} style={{height: "100%"}} />
                                        </Col>
                                    }
 
                                    {this.props.boosterIndex === 2 ?
                                        <Col className={"col-sm-5 col-md-4 col-lg-2"} style={{margin: 3, flex: "0 0 60px", maxWidth: "60px",
-                                           backgroundColor: "#42949F", height: 60, borderRadius: 3, border: "2px solid #3BD186"}}>
-                                           <img className={"arrow"} alt={"Rocket Piece"} src={booster_3_left} style={{height: "100%"}} />
+                                           backgroundColor: "#42949F", height: 60, borderRadius: 3, border: "2px solid #3BD186", padding: 5}}>
+                                           <img className={"part-image"} alt={"Rocket Piece"} src={booster_3_left} style={{height: "100%"}} />
                                        </Col>
                                        :
                                        <Col className={"col-sm-5 col-md-4 col-lg-2"} style={{margin: 3, flex: "0 0 60px", maxWidth: "60px",
-                                           backgroundColor: "#42949F", height: 60, borderRadius: 3}}
+                                           backgroundColor: "#42949F", height: 60, borderRadius: 3, padding: 5}}
                                             onClick={() => this.props.changeBooster(2)}>
-                                           <img className={"arrow"} alt={"Rocket Piece"} src={booster_3_left} style={{height: "100%"}} />
+                                           <img className={"part-image"} alt={"Rocket Piece"} src={booster_3_left} style={{height: "100%"}} />
                                        </Col>
                                    }
 
                                    {this.props.boosterIndex === 3 ?
                                        <Col className={"col-sm-5 col-md-4 col-lg-2"} style={{margin: 3, flex: "0 0 60px", maxWidth: "60px",
-                                           backgroundColor: "#42949F", height: 60, borderRadius: 3, border: "2px solid #3BD186"}}>
-                                           <img className={"arrow"} alt={"Rocket Piece"} src={booster_4_left} style={{height: "100%"}} />
+                                           backgroundColor: "#42949F", height: 60, borderRadius: 3, border: "2px solid #3BD186", padding: 5}}>
+                                           <img className={"part-image"} alt={"Rocket Piece"} src={booster_4_left} style={{height: "100%"}} />
                                        </Col>
                                        :
                                        <Col className={"col-sm-5 col-md-4 col-lg-2"} style={{margin: 3, flex: "0 0 60px", maxWidth: "60px",
-                                           backgroundColor: "#42949F", height: 60, borderRadius: 3}}
+                                           backgroundColor: "#42949F", height: 60, borderRadius: 3, padding: 5}}
                                             onClick={() => this.props.changeBooster(3)}>
-                                           <img className={"arrow"} alt={"Rocket Piece"} src={booster_4_left} style={{height: "100%"}} />
+                                           <img className={"part-image"} alt={"Rocket Piece"} src={booster_4_left} style={{height: "100%"}} />
                                        </Col>
                                    }
                                </Row>
@@ -388,7 +388,7 @@ class Sidebar extends React.Component<any, any> {
 
                                {/*<Row className={"justify-content-center"} style={{backgroundColor: "#42949F", textAlign: "left", padding: 2}}>*/}
                                {/*    <Col className={"col-1"}>*/}
-                               {/*        <img alt={"Arrow"} src={leftarrow} className={"arrow"} style={{height: 15}} onClick={() => this.props.changeEngine(false)} />*/}
+                               {/*        <img alt={"Arrow"} src={leftarrow} className={"part-image"} style={{height: 15}} onClick={() => this.props.changeEngine(false)} />*/}
                                {/*    </Col>*/}
 
                                {/*    <Col className={"col-5  align-self-center"}>*/}
@@ -396,60 +396,60 @@ class Sidebar extends React.Component<any, any> {
                                {/*    </Col>*/}
 
                                {/*    <Col className={"col-1"} style={{float: "left"}}>*/}
-                               {/*        <img alt={"Arrow"} src={rightarrow} className={"arrow"} style={{height: 15}} onClick={() => this.props.changeEngine(true)} />*/}
+                               {/*        <img alt={"Arrow"} src={rightarrow} className={"part-image"} style={{height: 15}} onClick={() => this.props.changeEngine(true)} />*/}
                                {/*    </Col>*/}
                                {/*</Row>*/}
 
                                <Row style={{margin: "auto", marginTop: 5}}>
                                    {this.props.engineIndex === 0 ?
                                        <Col className={"col-sm-5 col-md-4 col-lg-2"} style={{margin: 3, flex: "0 0 60px", maxWidth: "60px",
-                                           backgroundColor: "#42949F", height: 60, borderRadius: 3, border: "2px solid #3BD186"}}>
-                                           <img className={"arrow"} alt={"Rocket Piece"} src={engine_1} style={{height: "100%"}} />
+                                           backgroundColor: "#42949F", height: 60, borderRadius: 3, border: "2px solid #3BD186", padding: 5}}>
+                                           <img className={"part-image"} alt={"Rocket Piece"} src={engine_1} style={{height: "100%"}} />
                                        </Col>
                                        :
                                        <Col className={"col-sm-5 col-md-4 col-lg-2"} style={{margin: 3, flex: "0 0 60px", maxWidth: "60px",
-                                           backgroundColor: "#42949F", height: 60, borderRadius: 3}}
+                                           backgroundColor: "#42949F", height: 60, borderRadius: 3, padding: 5}}
                                             onClick={() => this.props.changeEngine(0)}>
-                                           <img className={"arrow"} alt={"Rocket Piece"} src={engine_1} style={{height: "100%"}} />
+                                           <img className={"part-image"} alt={"Rocket Piece"} src={engine_1} style={{height: "100%"}} />
                                        </Col>
                                    }
 
                                    {this.props.engineIndex === 1 ?
                                        <Col className={"col-sm-5 col-md-4 col-lg-2"} style={{margin: 3, flex: "0 0 60px", maxWidth: "60px",
-                                           backgroundColor: "#42949F", height: 60, borderRadius: 3, border: "2px solid #3BD186"}}>
-                                           <img className={"arrow"} alt={"Rocket Piece"} src={engine_2} style={{height: "100%"}} />
+                                           backgroundColor: "#42949F", height: 60, borderRadius: 3, border: "2px solid #3BD186", padding: 5}}>
+                                           <img className={"part-image"} alt={"Rocket Piece"} src={engine_2} style={{height: "100%"}} />
                                        </Col>
                                        :
                                        <Col className={"col-sm-5 col-md-4 col-lg-2"} style={{margin: 3, flex: "0 0 60px", maxWidth: "60px",
-                                           backgroundColor: "#42949F", height: 60, borderRadius: 3}}
+                                           backgroundColor: "#42949F", height: 60, borderRadius: 3, padding: 5}}
                                             onClick={() => this.props.changeEngine(1)}>
-                                           <img className={"arrow"} alt={"Rocket Piece"} src={engine_2} style={{height: "100%"}} />
+                                           <img className={"part-image"} alt={"Rocket Piece"} src={engine_2} style={{height: "100%"}} />
                                        </Col>
                                    }
 
                                    {this.props.engineIndex === 2 ?
                                        <Col className={"col-sm-5 col-md-4 col-lg-2"} style={{margin: 3, flex: "0 0 60px", maxWidth: "60px",
-                                           backgroundColor: "#42949F", height: 60, borderRadius: 3, border: "2px solid #3BD186"}}>
-                                           <img className={"arrow"} alt={"Rocket Piece"} src={engine_3} style={{height: "100%"}} />
+                                           backgroundColor: "#42949F", height: 60, borderRadius: 3, border: "2px solid #3BD186", padding: 5}}>
+                                           <img className={"part-image"} alt={"Rocket Piece"} src={engine_3} style={{height: "100%"}} />
                                        </Col>
                                        :
                                        <Col className={"col-sm-5 col-md-4 col-lg-2"} style={{margin: 3, flex: "0 0 60px", maxWidth: "60px",
-                                           backgroundColor: "#42949F", height: 60, borderRadius: 3}}
+                                           backgroundColor: "#42949F", height: 60, borderRadius: 3, padding: 5}}
                                             onClick={() => this.props.changeEngine(2)}>
-                                           <img className={"arrow"} alt={"Rocket Piece"} src={engine_3} style={{height: "100%"}} />
+                                           <img className={"part-image"} alt={"Rocket Piece"} src={engine_3} style={{height: "100%"}} />
                                        </Col>
                                    }
 
                                    {this.props.engineIndex === 3 ?
                                        <Col className={"col-sm-5 col-md-4 col-lg-2"} style={{margin: 3, flex: "0 0 60px", maxWidth: "60px",
-                                           backgroundColor: "#42949F", height: 60, borderRadius: 3, border: "2px solid #3BD186"}}>
-                                           <img className={"arrow"} alt={"Rocket Piece"} src={engine_4} style={{height: "100%"}} />
+                                           backgroundColor: "#42949F", height: 60, borderRadius: 3, border: "2px solid #3BD186", padding: 5}}>
+                                           <img className={"part-image"} alt={"Rocket Piece"} src={engine_4} style={{height: "100%"}} />
                                        </Col>
                                        :
                                        <Col className={"col-sm-5 col-md-4 col-lg-2"} style={{margin: 3, flex: "0 0 60px", maxWidth: "60px",
-                                           backgroundColor: "#42949F", height: 60, borderRadius: 3}}
+                                           backgroundColor: "#42949F", height: 60, borderRadius: 3, padding: 5}}
                                             onClick={() => this.props.changeEngine(3)}>
-                                           <img className={"arrow"} alt={"Rocket Piece"} src={engine_4} style={{height: "100%"}} />
+                                           <img className={"part-image"} alt={"Rocket Piece"} src={engine_4} style={{height: "100%"}} />
                                        </Col>
                                    }
                                </Row>

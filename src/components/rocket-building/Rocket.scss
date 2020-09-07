@@ -2,11 +2,12 @@
   background: transparent;
 }
 
-.part-image:hover {
-
+.part-image {
+  display: block;
+  margin: auto;
 }
 
-.arrow:hover {
+.part-image:hover {
   cursor: pointer;
 }
 

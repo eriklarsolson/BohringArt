@@ -63,10 +63,12 @@ export const MoreInfoAnimation: React.FC<AnimationProps>  = ({setParentState}) =
                     // scale: [1, 2, 2, 1, 1],
                     // rotate: [0, 0, 270, 270, 0],
                     // x: [100, 200, 300, 400, 500],
-                    x: [1200, 350],
+                    x: ["100%", "0%"],
                     opacity: [0, 1]
                     // borderRadius: ["20%", "20%", "50%", "50%", "20%"]
                 }}
+
+                style={{height: "100%"}}
 
                 transition={{
                     duration: 1,
@@ -74,9 +76,9 @@ export const MoreInfoAnimation: React.FC<AnimationProps>  = ({setParentState}) =
                     times: [0, 1],
                 }}>
 
-                <Container fluid>
-                    <Row>
-                        <Col className={"col-7 vh-100 ml-auto"}>
+                <Container fluid style={{height: "100%"}}>
+                    <Row style={{height: "100%"}}>
+                        <Col className={"col-4 ml-auto"}>
                             <div style={{position: "absolute", width: "100%", height: "100%", backgroundColor: "#29405B",
                                 clipPath: "polygon(0 0, 100% 0, 100% 100%, 10% 100%)"}} />
 
@@ -142,9 +144,8 @@ export const MoreInfoAnimation: React.FC<AnimationProps>  = ({setParentState}) =
 
                             <Container fluid>
                                 <Row>
-                                    <Col className={"col-7"}>
-                                        <Button className={"green-button"} style={{float: "right", width: 100,
-                                            clipPath: "polygon(0 0, 95% 0, 100% 100%, 5% 100%)"}}
+                                    <Col className={"col-3 ml-auto"} style={{padding: 0}}>
+                                        <Button className={"green-button"} style={{float: "right", width: "100%"}}
                                                 onClick={() => setClosed()}><i className="fa fa-arrow-right" /></Button>
                                     </Col>
                                 </Row>
@@ -156,8 +157,8 @@ export const MoreInfoAnimation: React.FC<AnimationProps>  = ({setParentState}) =
                                 </Row>
 
                                 <Row className={"justify-content-center"}>
-                                    <Col className={"col-8"} style={{textAlign: "left", color: "white", paddingRight: 250}}>
-                                        <p>{description}</p>
+                                    <Col className={"col-8"} style={{textAlign: "left", color: "white"}}>
+                                        <p style={{whiteSpace: "pre-line"}}>{description}</p>
                                     </Col>
                                 </Row>
                             </Container>

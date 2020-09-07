@@ -62,7 +62,7 @@ class Header extends React.Component<any, any> {
 
                 <Container fluid style={{color: "white", padding: 0}}>
                     <Row style={{margin: 0, padding: 0, clipPath: "polygon(0 0, 100% 0, 100% 85%, 0 100%)", backgroundColor: "#29405B"}}>
-                        <Col style={{marginTop: "10%", padding: 0}}>
+                        <Col className={"col-12 col-md-12 col-lg-6"} style={{marginTop: "10%", padding: 0}}>
                             <Container fluid>
                                 <Row className={"justify-content-center"} style={{textAlign: "left"}}>
                                     <Col className={"col-8"}>
@@ -91,15 +91,22 @@ class Header extends React.Component<any, any> {
                                             </Button>
                                         </Col>
                                         :
-                                        <Col className={"col-8 green-button"} style={{clipPath: "polygon(0 0, 95% 0, 100% 100%, 5% 100%)"}}>
-                                            This site is not mobile optimized, please use a computer to use this exhibit!
+                                        <Col className={"col-12"}>
+                                            <Button
+                                                variant="primary"
+                                                type="submit"
+                                                className={"btn green-button"}
+                                                style={{width: "75%", marginBottom: 25,
+                                                    clipPath: "polygon(0 0, 95% 0, 100% 100%, 5% 100%)"}}>
+                                                This site is not mobile optimized, please use a computer to use this exhibit!
+                                            </Button>
                                         </Col>
                                     }
                                 </Row>
                             </Container>
                         </Col>
 
-                        <Col style={{padding: 0, overflow: "hidden"}}>
+                        <Col className={"col-12 col-md-12 col-lg-6"} style={{padding: 0, overflow: "hidden"}}>
                             <img alt={"Stellar Background"} src={stellarBackground} />
 
                             <div style={{position: "absolute", top: "25%", right: "10%"}}>

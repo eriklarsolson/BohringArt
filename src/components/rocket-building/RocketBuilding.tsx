@@ -301,250 +301,252 @@ class RocketBuilding extends React.Component<any, any> {
 
         return (
             <>
-                {/*<ObjectivePopup title={"03 To The Stars"}*/}
-                {/*                open={this.state.popupOpened}*/}
-                {/*                description={"Using the arrows on the left and right, create a rocket consisting of an engine, boosters, a body, and a cone. Make sure to account for fuel, air resistance, and weight as all affect the rocket’s motion greatly. Click LAUNCH  to send your rocket off into space with the telescope as the payload. Along the way, answer TEXT-based questions that determine the fate of your journey! Remember to answer the questions keeping in mind the cost of the rocket as well as the survival of its crew. \n"}*/}
-                {/*                closePopup={cyclePopup} />*/}
+                <div style={{position: "relative", height: "100%", width: "100%"}}>
+                    {/*<ObjectivePopup title={"03 To The Stars"}*/}
+                    {/*                open={this.state.popupOpened}*/}
+                    {/*                description={"Using the arrows on the left and right, create a rocket consisting of an engine, boosters, a body, and a cone. Make sure to account for fuel, air resistance, and weight as all affect the rocket’s motion greatly. Click LAUNCH  to send your rocket off into space with the telescope as the payload. Along the way, answer TEXT-based questions that determine the fate of your journey! Remember to answer the questions keeping in mind the cost of the rocket as well as the survival of its crew. \n"}*/}
+                    {/*                closePopup={cyclePopup} />*/}
 
-                {this.state.popupOpened &&
-                    <div style={{position: "absolute", width: "100%", height: "100%", zIndex: 4, overflow: "hidden"}}>
-                        <ObjectiveSlideOut title={"03 To The Stars"}
-                                           description={"Using the arrows on the left and right, create a rocket consisting of an engine, boosters, a body, and a cone. Make sure to account for fuel, air resistance, and weight as all affect the rocket’s motion greatly. Click LAUNCH  to send your rocket off into space with the telescope as the payload. Along the way, answer TEXT-based questions that determine the fate of your journey! Remember to answer the questions keeping in mind the cost of the rocket as well as the survival of its crew. \n"}
-                                           setParentState={() => cyclePopup()} />
+                    {this.state.popupOpened &&
+                    <div style={{position: "absolute", top: 0, bottom: 0, left: 0, right: 0, zIndex: 4, overflow: "hidden"}}>
+                            <ObjectiveSlideOut title={"03 To The Stars"}
+                                               description={"Using the arrows on the left and right, create a rocket consisting of an engine, boosters, a body, and a cone. Make sure to account for fuel, air resistance, and weight as all affect the rocket’s motion greatly. Click LAUNCH  to send your rocket off into space with the telescope as the payload. Along the way, answer TEXT-based questions that determine the fate of your journey! Remember to answer the questions keeping in mind the cost of the rocket as well as the survival of its crew. \n"}
+                                               setParentState={() => cyclePopup()} />
+                        </div>
+                    }
+
+                    {/*<RocketBuildingQuestionPopup open={this.state.questionPopupOpened} closePopup={cycleQuestionPopup} />*/}
+
+                    {this.state.questionPopupOpened &&
+                    <div style={{position: "absolute", top: 0, bottom: 0, left: 0, right: 0, zIndex: 4, overflow: "hidden"}}>
+                        <MoreInfoAnimation setParentState={() => cycleQuestionPopup()} />
                     </div>
-                }
+                    }
 
-                {/*<RocketBuildingQuestionPopup open={this.state.questionPopupOpened} closePopup={cycleQuestionPopup} />*/}
 
-                {this.state.questionPopupOpened &&
-                <div style={{position: "absolute", width: "100%", height: "100%", zIndex: 4, overflow: "hidden"}}>
-                    <MoreInfoAnimation setParentState={() => cycleQuestionPopup()} />
+                    <Container fluid className={"d-flex h-100 flex-column"} style={{margin: "0", padding: "0", backgroundImage:`url(${background})`}}>
+                        <Row style={{margin: 0}}>
+                            <Col className={"col-2"} style={{color: "white", padding: 0}}>
+                                <Sidebar cone={this.state.cones[this.state.coneIndex]}
+                                         changeCone={changeCone}
+                                         coneIndex={this.state.coneIndex}
+                                         body={this.state.bodys[this.state.bodyIndex]}
+                                         changeBody={changeBody}
+                                         bodyIndex={this.state.bodyIndex}
+                                         booster={this.state.boosters[this.state.boosterIndex]}
+                                         changeBooster={changeBooster}
+                                         boosterIndex={this.state.boosterIndex}
+                                         engine={this.state.engines[this.state.engineIndex]}
+                                         engineIndex={this.state.engineIndex}
+                                         changeEngine={changeEngine}/>
+                            </Col>
+
+                            <Col className={"col-10"} style={{margin: "0", padding: "0"}}>
+                                <Container fluid style={{margin: "0", padding: "0"}}>
+                                    <Row style={{margin: 0}}>
+                                        <Col className="col-2" style={{margin: "2%"}}>
+                                            <Button className={"green-button"} style={{float: "left", width: 100,
+                                                clipPath: "polygon(0 0, 95% 0, 100% 100%, 5% 100%)"}}
+                                                    onClick={() => this.props.history.push('/activity/telescope-activity')}>
+                                                <i className="fa fa-arrow-left" />
+                                            </Button>
+                                        </Col>
+
+                                        <Col style={{margin: "2%"}}>
+                                            <p style={{color: "#29405B", fontSize: "28px", fontWeight: "bold"}}>Rocket Assembly</p>
+                                        </Col>
+
+                                        <Col className={"col-2 ml-auto"} style={{padding: 0, marginTop: "2%"}}>
+                                            <Row style={{margin: 0}} className={"justify-content-end"}>
+                                                <Button className={"blue-button"} style={{width: 166, textAlign: "left",
+                                                    marginBottom: 15}} onClick={cycleQuestionPopup}>More Info</Button>
+                                            </Row>
+
+                                            <Row style={{margin: 0}} className={"justify-content-end"}>
+                                                <Button className={"blue-button"} style={{width: 166, textAlign: "left"}}
+                                                        onClick={cyclePopup}>Objective</Button>
+                                            </Row>
+                                        </Col>
+                                    </Row>
+
+                                    <Row style={{margin: 0, alignItems: "flex-start"}}>
+                                        <Container fluid style={{alignItems: "flex-start"}}>
+                                            <Row className={"justify-content-center"} style={{alignItems: "flex-start"}}>
+                                                {/*<Col className={"col-1"}>*/}
+                                                {/*    <Row style={{marginTop: 30, marginBottom: 30}}>*/}
+                                                {/*        <img className={"arrow"} src={leftarrow} style={{filter: "contrast(0%)"}}*/}
+                                                {/*             height="100px" alt={"left arrow"}*/}
+                                                {/*             onMouseOver={() => this.setState({parentIndex: 0})}*/}
+                                                {/*             onClick={() => payloadArrow(true)} />*/}
+                                                {/*    </Row>*/}
+
+                                                {/*    <Row style={{marginTop: 30, marginBottom: 30}}>*/}
+                                                {/*        <img className={"arrow"} src={leftarrow} style={{filter: "contrast(0%)"}}*/}
+                                                {/*             height="100px" alt={"left arrow"}*/}
+                                                {/*             onMouseOver={() => this.setState({parentIndex: 1})}*/}
+                                                {/*             onClick={() => interstageArrow(true)} />*/}
+                                                {/*    </Row>*/}
+
+                                                {/*    <Row style={{marginTop: 30, marginBottom: 30}}>*/}
+                                                {/*        <img className={"arrow"} src={leftarrow} style={{filter: "contrast(0%)"}}*/}
+                                                {/*             height="100px" alt={"left arrow"}*/}
+                                                {/*             onMouseOver={() => this.setState({parentIndex: 2})}*/}
+                                                {/*             onClick={() => boostersArrow(true)} />*/}
+                                                {/*    </Row>*/}
+
+                                                {/*    <Row style={{marginTop: 30, marginBottom: 30}}>*/}
+                                                {/*        <img className={"arrow"} src={leftarrow} style={{filter: "contrast(0%)"}}*/}
+                                                {/*             height="100px" alt={"left arrow"}*/}
+                                                {/*             onMouseOver={() => this.setState({parentIndex: 3})}*/}
+                                                {/*             onClick={() => engineArrow(true)} />*/}
+                                                {/*    </Row>*/}
+                                                {/*</Col>*/}
+
+                                                <Col className={"ml-auto col-4"} style={{alignItems: "flex-start"}}>
+                                                    <Row className={"justify-content-center"} style={{maxHeight: 1100, alignItems: "flex-start"}}>
+                                                        {this.state.boosterIndex === 3 &&
+                                                            <div style={{position: "absolute", width: "17%", left: "41.5%", top: "65%", zIndex: 10}}>
+                                                                <img alt={"Booster Middle"} src={booster_4_middle} style={{width: "100%"}} />
+                                                            </div>
+                                                        }
+
+                                                        <Col className={"col-2 align-self-end"} style={{left: "3%", padding: 0, alignItems: "flex-start"}}>
+                                                            <img alt={"Booster Left"}
+                                                                 src={this.state.boosters[this.state.boosterIndex].leftImage}
+                                                                 style={{width: "100%"}} />
+                                                        </Col>
+
+                                                        <Col className={"col-3"} style={{padding: 0, alignItems: "flex-start"}}>
+                                                            <Row className={"justify-content-center"} style={{alignItems: "flex-start"}}>
+                                                                <img alt={"Cone"}
+                                                                     src={this.state.cones[this.state.coneIndex].image}
+                                                                     style={{width: "80%"}} />
+                                                            </Row>
+
+                                                            <Row className={"justify-content-center"} style={{alignItems: "flex-start"}}>
+                                                                <img alt={"Body"}
+                                                                     src={this.state.bodys[this.state.bodyIndex].image}
+                                                                     style={{width: "80%"}} />
+                                                            </Row>
+
+                                                            <Row className={"justify-content-center"} style={{alignItems: "flex-start"}}>
+                                                                <img alt={"Engine"}
+                                                                     src={this.state.engines[this.state.engineIndex].image}
+                                                                     style={{width: "80%"}} />
+                                                            </Row>
+                                                        </Col>
+
+                                                        <Col className={"col-2 align-self-end"}  style={{right: "3%", padding: 0, alignItems: "flex-start"}}>
+                                                            <img alt={"Booster Right"}
+                                                                 src={this.state.boosters[this.state.boosterIndex].rightImage}
+                                                                 style={{width: "100%"}} />
+                                                        </Col>
+                                                    </Row>
+                                                </Col>
+
+                                                <Col className={"ml-auto col-5 col-md-4"} style={{color: "white",
+                                                    textAlign: "left", marginTop: "20%", padding: 0}}>
+                                                    <Container fluid>
+                                                        <Row>
+                                                            <Col style={{backgroundColor: "#162F4C"}}>
+                                                                <p style={{fontWeight: "bold", fontSize: 22, marginTop: 10}}>Totals</p>
+                                                            </Col>
+                                                        </Row>
+
+                                                        <Row style={{backgroundColor: "#162F4C"}}>
+                                                            <Col style={{backgroundColor: "#29405B", padding: 10,
+                                                                marginLeft: 15, marginBottom: 15}}>
+                                                                <Container fluid>
+                                                                    <Row>
+                                                                        <Col style={{padding: 5}}>
+                                                                            <p style={{fontWeight: "bold", fontSize: 18}}>
+                                                                                Fuel Capacity: {getTotalFuelCapacity()} kg
+                                                                            </p>
+                                                                        </Col>
+                                                                    </Row>
+
+                                                                    <Row>
+                                                                        <Col style={{padding: 5}}>
+                                                                            <p style={{fontWeight: "bold", fontSize: 18}}>
+                                                                                Air Resistance: {getTotalAirResistance()} N
+                                                                            </p>
+                                                                        </Col>
+                                                                    </Row>
+
+                                                                    <Row>
+                                                                        <Col style={{padding: 5}}>
+                                                                            <p style={{fontWeight: "bold", fontSize: 18}}>
+                                                                                Total Mass: {getTotalMass()} kg
+                                                                            </p>
+                                                                        </Col>
+                                                                    </Row>
+
+                                                                    <Row>
+                                                                        <Col style={{padding: 5}}>
+                                                                            <p style={{fontWeight: "bold", fontSize: 18}}>
+                                                                                Thrust: {getTotalThrust()}
+                                                                            </p>
+                                                                        </Col>
+                                                                    </Row>
+                                                                </Container>
+                                                            </Col>
+                                                        </Row>
+                                                    </Container>
+                                                </Col>
+
+                                                {/*<Col className={"col-1"}>*/}
+                                                {/*    <Row style={{marginTop: 30, marginBottom: 30}}>*/}
+                                                {/*        <img className={"arrow"} src={rightarrow} style={{filter: "contrast(0%)"}}*/}
+                                                {/*             height="100px" alt={"left arrow"}*/}
+                                                {/*             onMouseOver={() => this.setState({parentIndex: 0})}*/}
+                                                {/*             onClick={() => payloadArrow(false)} />*/}
+                                                {/*    </Row>*/}
+
+                                                {/*    <Row style={{marginTop: 30, marginBottom: 30}}>*/}
+                                                {/*        <img className={"arrow"} src={rightarrow} style={{filter: "contrast(0%)"}}*/}
+                                                {/*             height="100px" alt={"left arrow"}*/}
+                                                {/*             onMouseOver={() => this.setState({parentIndex: 1})}*/}
+                                                {/*             onClick={() => interstageArrow(false)} />*/}
+                                                {/*    </Row>*/}
+
+                                                {/*    <Row style={{marginTop: 30, marginBottom: 30}}>*/}
+                                                {/*        <img className={"arrow"} src={rightarrow} style={{filter: "contrast(0%)"}}*/}
+                                                {/*             height="100px" alt={"right arrow"}*/}
+                                                {/*             onMouseOver={() => this.setState({parentIndex: 2})}*/}
+                                                {/*             onClick={() => boostersArrow(false)} />*/}
+                                                {/*    </Row>*/}
+
+                                                {/*    <Row style={{marginTop: 30, marginBottom: 30}}>*/}
+                                                {/*        <img className={"arrow"} src={rightarrow} style={{filter: "contrast(0%)"}}*/}
+                                                {/*             height="100px" alt={"right arrow"}*/}
+                                                {/*             onMouseOver={() => this.setState({parentIndex: 3})}*/}
+                                                {/*             onClick={() => engineArrow(false)} />*/}
+                                                {/*    </Row>*/}
+                                                {/*</Col>*/}
+                                            </Row>
+                                        </Container>
+                                    </Row>
+
+                                    <Row style={{paddingRight: "0", marginRight: 0}}>
+                                        <Col>
+                                            <Button className={"green-button"} style={{float: "right", width: 200,
+                                                marginBottom: 25, marginTop: 10,
+                                                clipPath: "polygon(0 0, 95% 0, 100% 100%, 5% 100%)"}}
+                                                    onClick={() => this.props.history.push({
+                                                        pathname: '/activity/flight-simulator',
+                                                        state: {cone: this.state.cones[this.state.coneIndex],
+                                                            body: this.state.bodys[this.state.bodyIndex],
+                                                            booster: this.state.boosters[this.state.boosterIndex],
+                                                            engine: this.state.engines[this.state.engineIndex]}})}>
+                                                Launch
+                                            </Button>
+                                        </Col>
+                                    </Row>
+                                </Container>
+                            </Col>
+                        </Row>
+                    </Container>
                 </div>
-                }
-
-
-                <Container fluid className={"d-flex h-100 flex-column"} style={{margin: "0", padding: "0", backgroundImage:`url(${background})`}}>
-                    <Row style={{margin: 0}}>
-                        <Col className={"col-2"} style={{color: "white", padding: 0}}>
-                            <Sidebar cone={this.state.cones[this.state.coneIndex]}
-                                     changeCone={changeCone}
-                                     coneIndex={this.state.coneIndex}
-                                     body={this.state.bodys[this.state.bodyIndex]}
-                                     changeBody={changeBody}
-                                     bodyIndex={this.state.bodyIndex}
-                                     booster={this.state.boosters[this.state.boosterIndex]}
-                                     changeBooster={changeBooster}
-                                     boosterIndex={this.state.boosterIndex}
-                                     engine={this.state.engines[this.state.engineIndex]}
-                                     engineIndex={this.state.engineIndex}
-                                     changeEngine={changeEngine}/>
-                        </Col>
-
-                        <Col className={"col-10"} style={{margin: "0", padding: "0"}}>
-                            <Container fluid style={{margin: "0", padding: "0"}}>
-                                <Row style={{margin: 0}}>
-                                    <Col className="col-2" style={{margin: "2%"}}>
-                                        <Button className={"green-button"} style={{float: "left", width: 100,
-                                            clipPath: "polygon(0 0, 95% 0, 100% 100%, 5% 100%)"}}
-                                                onClick={() => this.props.history.push('/activity/telescope-activity')}>
-                                            <i className="fa fa-arrow-left" />
-                                        </Button>
-                                    </Col>
-
-                                    <Col style={{margin: "2%"}}>
-                                        <p style={{color: "#29405B", fontSize: "28px", fontWeight: "bold"}}>Rocket Assembly</p>
-                                    </Col>
-
-                                    <Col className={"col-2 ml-auto"} style={{padding: 0, marginTop: "2%"}}>
-                                        <Row style={{margin: 0}} className={"justify-content-end"}>
-                                            <Button className={"blue-button"} style={{width: 166, textAlign: "left",
-                                                marginBottom: 15}} onClick={cycleQuestionPopup}>More Info</Button>
-                                        </Row>
-
-                                        <Row style={{margin: 0}} className={"justify-content-end"}>
-                                            <Button className={"blue-button"} style={{width: 166, textAlign: "left"}}
-                                                    onClick={cyclePopup}>Objective</Button>
-                                        </Row>
-                                    </Col>
-                                </Row>
-
-                                <Row style={{margin: 0, alignItems: "flex-start"}}>
-                                    <Container fluid style={{alignItems: "flex-start"}}>
-                                        <Row className={"justify-content-center"} style={{alignItems: "flex-start"}}>
-                                            {/*<Col className={"col-1"}>*/}
-                                            {/*    <Row style={{marginTop: 30, marginBottom: 30}}>*/}
-                                            {/*        <img className={"arrow"} src={leftarrow} style={{filter: "contrast(0%)"}}*/}
-                                            {/*             height="100px" alt={"left arrow"}*/}
-                                            {/*             onMouseOver={() => this.setState({parentIndex: 0})}*/}
-                                            {/*             onClick={() => payloadArrow(true)} />*/}
-                                            {/*    </Row>*/}
-
-                                            {/*    <Row style={{marginTop: 30, marginBottom: 30}}>*/}
-                                            {/*        <img className={"arrow"} src={leftarrow} style={{filter: "contrast(0%)"}}*/}
-                                            {/*             height="100px" alt={"left arrow"}*/}
-                                            {/*             onMouseOver={() => this.setState({parentIndex: 1})}*/}
-                                            {/*             onClick={() => interstageArrow(true)} />*/}
-                                            {/*    </Row>*/}
-
-                                            {/*    <Row style={{marginTop: 30, marginBottom: 30}}>*/}
-                                            {/*        <img className={"arrow"} src={leftarrow} style={{filter: "contrast(0%)"}}*/}
-                                            {/*             height="100px" alt={"left arrow"}*/}
-                                            {/*             onMouseOver={() => this.setState({parentIndex: 2})}*/}
-                                            {/*             onClick={() => boostersArrow(true)} />*/}
-                                            {/*    </Row>*/}
-
-                                            {/*    <Row style={{marginTop: 30, marginBottom: 30}}>*/}
-                                            {/*        <img className={"arrow"} src={leftarrow} style={{filter: "contrast(0%)"}}*/}
-                                            {/*             height="100px" alt={"left arrow"}*/}
-                                            {/*             onMouseOver={() => this.setState({parentIndex: 3})}*/}
-                                            {/*             onClick={() => engineArrow(true)} />*/}
-                                            {/*    </Row>*/}
-                                            {/*</Col>*/}
-
-                                            <Col className={"ml-auto col-4"} style={{alignItems: "flex-start"}}>
-                                                <Row className={"justify-content-center"} style={{maxHeight: 1100, alignItems: "flex-start"}}>
-                                                    {this.state.boosterIndex === 3 &&
-                                                        <div style={{position: "absolute", width: "17%", left: "41.5%", top: "65%", zIndex: 10}}>
-                                                            <img alt={"Booster Middle"} src={booster_4_middle} style={{width: "100%"}} />
-                                                        </div>
-                                                    }
-
-                                                    <Col className={"col-2 align-self-end"} style={{padding: 0, alignItems: "flex-start"}}>
-                                                        <img alt={"Booster Left"} className={"part-image"}
-                                                             src={this.state.boosters[this.state.boosterIndex].leftImage}
-                                                             style={{width: "80%"}} />
-                                                    </Col>
-
-                                                    <Col className={"col-3"} style={{padding: 0, alignItems: "flex-start"}}>
-                                                        <Row className={"justify-content-center"} style={{margin: 5, alignItems: "flex-start"}}>
-                                                            <img alt={"Cone"} className={"part-image"}
-                                                                 src={this.state.cones[this.state.coneIndex].image}
-                                                                 style={{width: "80%"}} />
-                                                        </Row>
-
-                                                        <Row className={"justify-content-center"} style={{margin: 5, alignItems: "flex-start"}}>
-                                                            <img alt={"Body"} className={"part-image"}
-                                                                 src={this.state.bodys[this.state.bodyIndex].image}
-                                                                 style={{width: "80%"}} />
-                                                        </Row>
-
-                                                        <Row className={"justify-content-center"} style={{margin: 5, alignItems: "flex-start"}}>
-                                                            <img alt={"Engine"} className={"part-image"}
-                                                                 src={this.state.engines[this.state.engineIndex].image}
-                                                                 style={{width: "80%"}} />
-                                                        </Row>
-                                                    </Col>
-
-                                                    <Col className={"col-2 align-self-end"}  style={{padding: 0, alignItems: "flex-start"}}>
-                                                        <img alt={"Booster Right"} className={"part-image"}
-                                                             src={this.state.boosters[this.state.boosterIndex].rightImage}
-                                                             style={{width: "80%"}} />
-                                                    </Col>
-                                                </Row>
-                                            </Col>
-
-                                            <Col className={"ml-auto col-5 col-md-4"} style={{color: "white",
-                                                textAlign: "left", marginTop: "20%", padding: 0}}>
-                                                <Container fluid>
-                                                    <Row>
-                                                        <Col style={{backgroundColor: "#162F4C"}}>
-                                                            <p style={{fontWeight: "bold", fontSize: 22, marginTop: 10}}>Totals</p>
-                                                        </Col>
-                                                    </Row>
-
-                                                    <Row style={{backgroundColor: "#162F4C"}}>
-                                                        <Col style={{backgroundColor: "#29405B", padding: 10,
-                                                            marginLeft: 15, marginBottom: 15}}>
-                                                            <Container fluid>
-                                                                <Row>
-                                                                    <Col style={{padding: 5}}>
-                                                                        <p style={{fontWeight: "bold", fontSize: 18}}>
-                                                                            Fuel Capacity: {getTotalFuelCapacity()} kg
-                                                                        </p>
-                                                                    </Col>
-                                                                </Row>
-
-                                                                <Row>
-                                                                    <Col style={{padding: 5}}>
-                                                                        <p style={{fontWeight: "bold", fontSize: 18}}>
-                                                                            Air Resistance: {getTotalAirResistance()} N
-                                                                        </p>
-                                                                    </Col>
-                                                                </Row>
-
-                                                                <Row>
-                                                                    <Col style={{padding: 5}}>
-                                                                        <p style={{fontWeight: "bold", fontSize: 18}}>
-                                                                            Total Mass: {getTotalMass()} kg
-                                                                        </p>
-                                                                    </Col>
-                                                                </Row>
-
-                                                                <Row>
-                                                                    <Col style={{padding: 5}}>
-                                                                        <p style={{fontWeight: "bold", fontSize: 18}}>
-                                                                            Thrust: {getTotalThrust()}
-                                                                        </p>
-                                                                    </Col>
-                                                                </Row>
-                                                            </Container>
-                                                        </Col>
-                                                    </Row>
-                                                </Container>
-                                            </Col>
-
-                                            {/*<Col className={"col-1"}>*/}
-                                            {/*    <Row style={{marginTop: 30, marginBottom: 30}}>*/}
-                                            {/*        <img className={"arrow"} src={rightarrow} style={{filter: "contrast(0%)"}}*/}
-                                            {/*             height="100px" alt={"left arrow"}*/}
-                                            {/*             onMouseOver={() => this.setState({parentIndex: 0})}*/}
-                                            {/*             onClick={() => payloadArrow(false)} />*/}
-                                            {/*    </Row>*/}
-
-                                            {/*    <Row style={{marginTop: 30, marginBottom: 30}}>*/}
-                                            {/*        <img className={"arrow"} src={rightarrow} style={{filter: "contrast(0%)"}}*/}
-                                            {/*             height="100px" alt={"left arrow"}*/}
-                                            {/*             onMouseOver={() => this.setState({parentIndex: 1})}*/}
-                                            {/*             onClick={() => interstageArrow(false)} />*/}
-                                            {/*    </Row>*/}
-
-                                            {/*    <Row style={{marginTop: 30, marginBottom: 30}}>*/}
-                                            {/*        <img className={"arrow"} src={rightarrow} style={{filter: "contrast(0%)"}}*/}
-                                            {/*             height="100px" alt={"right arrow"}*/}
-                                            {/*             onMouseOver={() => this.setState({parentIndex: 2})}*/}
-                                            {/*             onClick={() => boostersArrow(false)} />*/}
-                                            {/*    </Row>*/}
-
-                                            {/*    <Row style={{marginTop: 30, marginBottom: 30}}>*/}
-                                            {/*        <img className={"arrow"} src={rightarrow} style={{filter: "contrast(0%)"}}*/}
-                                            {/*             height="100px" alt={"right arrow"}*/}
-                                            {/*             onMouseOver={() => this.setState({parentIndex: 3})}*/}
-                                            {/*             onClick={() => engineArrow(false)} />*/}
-                                            {/*    </Row>*/}
-                                            {/*</Col>*/}
-                                        </Row>
-                                    </Container>
-                                </Row>
-
-                                <Row style={{paddingRight: "0", marginRight: 0}}>
-                                    <Col>
-                                        <Button className={"green-button"} style={{float: "right", width: 200,
-                                            marginBottom: 10, marginTop: 10,
-                                            clipPath: "polygon(0 0, 95% 0, 100% 100%, 5% 100%)"}}
-                                                onClick={() => this.props.history.push({
-                                                    pathname: '/activity/flight-simulator',
-                                                    state: {cone: this.state.cones[this.state.coneIndex],
-                                                        body: this.state.bodys[this.state.bodyIndex],
-                                                        booster: this.state.boosters[this.state.boosterIndex],
-                                                        engine: this.state.engines[this.state.engineIndex]}})}>
-                                            Launch
-                                        </Button>
-                                    </Col>
-                                </Row>
-                            </Container>
-                        </Col>
-                    </Row>
-                </Container>
             </>
         )
     }

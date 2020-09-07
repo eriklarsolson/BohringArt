@@ -68,7 +68,7 @@ const Header = (props: {location: any }) => {
                             </Nav.Link>
 
                             <NavDropdown title="Activities" id="collasible-nav-dropdown" style={{color: "white",
-                                marginLeft: 10, zIndex: 5}}>
+                                marginLeft: 10, zIndex: 5}} active={location.pathname.startsWith('/activity/')}>
                                 <NavDropdown.Item as={Link} to={{pathname: '/activity/circuit-building'}}
                                                   active={location.pathname.startsWith('/activity/circuit-building')}>
                                     Circuit Construction

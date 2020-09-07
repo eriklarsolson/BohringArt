@@ -266,207 +266,209 @@ class MetalEngraving extends React.Component<any, any> {
 
         return (
             <>
-                <Container fluid className={"d-flex h-100 flex-column"} style={{margin: "0", padding: "0", backgroundColor: "#F8EDDD"}}>
-                    {/*<MetalEngravingQuestionPopup open={this.state.questionPopupOpened} closePopup={cycleQuestionPopup} />*/}
+                <div style={{position: "relative", height: "100%", width: "100%"}}>
+                    <Container fluid className={"d-flex h-100 flex-column"} style={{margin: "0", padding: "0", backgroundColor: "#F8EDDD"}}>
+                        {/*<MetalEngravingQuestionPopup open={this.state.questionPopupOpened} closePopup={cycleQuestionPopup} />*/}
 
-                    {this.state.questionPopupOpened &&
-                    <div style={{position: "absolute", top: 0, bottom: 0, left: 0, right: 0, zIndex: 4, overflow: "hidden"}}>
-                        <MoreInfoAnimation setParentState={() => cycleQuestionPopup()} />
-                    </div>
-                    }
+                        {this.state.questionPopupOpened &&
+                        <div style={{position: "absolute", top: 0, bottom: 0, left: 0, right: 0, zIndex: 4, overflow: "hidden"}}>
+                            <MoreInfoAnimation setParentState={() => cycleQuestionPopup()} />
+                        </div>
+                        }
 
-                    {/*<ObjectivePopup title={"02 Laser and Lenses Objective"}*/}
-                    {/*                open={this.state.popupOpened}*/}
-                    {/*                description={"Using lasers, prisms, and lenses, create an " +*/}
-                    {/*          "artistic design on a metal sheet. The laser can be altered to include numerous shapes, colors, and widths " +*/}
-                    {/*          "beneficial to the engraving. You can use the ERASER and RESET buttons to change any mistakes on your design. " +*/}
-                    {/*          "Once you are satisfied with your creation, press the NEXT button to move on to the telescope building part " +*/}
-                    {/*          "of the optics activity. Click OBJECTIVE to see the objective for this activity."}*/}
-                    {/*                closePopup={closePopup} />*/}
+                        {/*<ObjectivePopup title={"02 Laser and Lenses Objective"}*/}
+                        {/*                open={this.state.popupOpened}*/}
+                        {/*                description={"Using lasers, prisms, and lenses, create an " +*/}
+                        {/*          "artistic design on a metal sheet. The laser can be altered to include numerous shapes, colors, and widths " +*/}
+                        {/*          "beneficial to the engraving. You can use the ERASER and RESET buttons to change any mistakes on your design. " +*/}
+                        {/*          "Once you are satisfied with your creation, press the NEXT button to move on to the telescope building part " +*/}
+                        {/*          "of the optics activity. Click OBJECTIVE to see the objective for this activity."}*/}
+                        {/*                closePopup={closePopup} />*/}
 
-                    {this.state.popupOpened &&
-                    <div style={{position: "absolute", width: "100%", height: "100%", zIndex: 3, overflow: "hidden"}}>
-                        <ObjectiveSlideOut title={"02 Laser and Lenses Objective"}
-                                           description={"Using lasers, prisms, and lenses, create an " +
-                                           "artistic design on a metal sheet. The laser can be altered to include numerous shapes, colors, and widths " +
-                                           "beneficial to the engraving. You can use the ERASER and RESET buttons to change any mistakes on your design. " +
-                                           "Once you are satisfied with your creation, press the NEXT button to move on to the telescope building part " +
-                                           "of the optics activity. Click OBJECTIVE to see the objective for this activity."}
-                                           setParentState={() => cyclePopup()} />
-                    </div>
-                    }
+                        {this.state.popupOpened &&
+                        <div style={{position: "absolute", top: 0, bottom: 0, left: 0, right: 0, zIndex: 4, overflow: "hidden"}}>
+                            <ObjectiveSlideOut title={"02 Laser and Lenses Objective"}
+                                               description={"Using lasers, prisms, and lenses, create an " +
+                                               "artistic design on a metal sheet. The laser can be altered to include numerous shapes, colors, and widths " +
+                                               "beneficial to the engraving. You can use the ERASER and RESET buttons to change any mistakes on your design. " +
+                                               "Once you are satisfied with your creation, press the NEXT button to move on to the telescope building part " +
+                                               "of the optics activity. Click OBJECTIVE to see the objective for this activity."}
+                                               setParentState={() => cyclePopup()} />
+                        </div>
+                        }
 
-                    {/*<EngravingPopup open={this.state.engravingPopupOpened} closePopup={closeEngravingPopup}*/}
-                    {/*                addStencil={addStencil} />*/}
+                        {/*<EngravingPopup open={this.state.engravingPopupOpened} closePopup={closeEngravingPopup}*/}
+                        {/*                addStencil={addStencil} />*/}
 
-                    {this.state.engravingPopupOpened &&
-                    <div style={{position: "absolute", width: "100%", height: "100%", zIndex: 4, overflow: "hidden"}}>
-                        <StencilsAnimation setParentState={() => cvcleEngravingPopup()}  addStencil={addStencil} />
-                    </div>
-                    }
+                        {this.state.engravingPopupOpened &&
+                        <div style={{position: "absolute", top: 0, bottom: 0, left: 0, right: 0, zIndex: 4, overflow: "hidden"}}>
+                            <StencilsAnimation setParentState={() => cvcleEngravingPopup()}  addStencil={addStencil} />
+                        </div>
+                        }
 
-                    {/*<ViewpointPopup open={this.state.viewpointPopupOpened} closePopup={toggleViewpointPopup} />*/}
+                        {/*<ViewpointPopup open={this.state.viewpointPopupOpened} closePopup={toggleViewpointPopup} />*/}
 
-                    {this.state.viewpointPopupOpened &&
-                    <div style={{position: "absolute", width: "100%", height: "100%", zIndex: 4, overflow: "hidden"}}>
-                        <ViewpointInfoAnimation setParentState={() => cycleViewpointPopup()} />
-                    </div>
-                    }
+                        {this.state.viewpointPopupOpened &&
+                        <div style={{position: "absolute", top: 0, bottom: 0, left: 0, right: 0, zIndex: 4, overflow: "hidden"}}>
+                            <ViewpointInfoAnimation setParentState={() => cycleViewpointPopup()} />
+                        </div>
+                        }
 
 
-                    <Row className={"flex-grow-1"} style={{margin: 0}}>
-                        <Col className={"col-12 col-sm-3"} style={{color: "white", padding: 0, minWidth: 225}}>
-                            <Sidebar tool={this.state.tool} color={this.state.color} size={this.state.size}
-                                     setTool={setTool} clearCanvas={clearCanvas} />
-                        </Col>
+                        <Row className={"flex-grow-1"} style={{margin: 0}}>
+                            <Col className={"col-12 col-sm-3"} style={{color: "white", padding: 0, minWidth: 225}}>
+                                <Sidebar tool={this.state.tool} color={this.state.color} size={this.state.size}
+                                         setTool={setTool} clearCanvas={clearCanvas} />
+                            </Col>
 
-                        <Col className={"col-12 col-sm-7"} style={{margin: "0", padding: "0"}}>
-                            <Container fluid style={{margin: "0", padding: "0", cursor: `url(${this.state.cursor}), auto`}}>
-                                <Row style={{margin: "3%"}}>
-                                    <Col className={"col-3"}>
-                                        <Button className={"green-button"} style={{float: "left", width: 100,
+                            <Col className={"col-12 col-sm-7"} style={{margin: "0", padding: "0"}}>
+                                <Container fluid style={{margin: "0", padding: "0", cursor: `url(${this.state.cursor}), auto`}}>
+                                    <Row style={{margin: "3%"}}>
+                                        <Col className={"col-3"}>
+                                            <Button className={"green-button"} style={{float: "left", width: 100,
+                                                clipPath: "polygon(0 0, 95% 0, 100% 100%, 5% 100%)"}}
+                                                    onClick={() => this.props.history.push('/activity/circuit-building')}>
+                                                <i className="fa fa-arrow-left" />
+                                            </Button>
+                                        </Col>
+
+                                        <Col>
+                                            <p style={{color: "#29405B", fontSize: "28px", fontWeight: "bold"}}>Laser And Lenses</p>
+                                        </Col>
+                                    </Row>
+
+                                    <Row className={"justify-content-center align-content-center"}>
+                                        <Col className={"col-10"} onContextMenu={rightClick} style={{marginLeft: 25, marginBottom: 15}}>
+                                            <Canvas canvasRef={this.state.canvasRef} tool={this.state.tool}
+                                                    color={this.state.color} size={this.state.size} toolActive={this.state.toolActive} />
+                                        </Col>
+                                    </Row>
+
+                                    <Row style={{marginLeft: 25}}>
+                                        <Col className={"col-6"} style={{minHeight: 55}}>
+                                            <Container fluid>
+                                                <Row>
+                                                    <Col className={"col-5"}>
+                                                        {(this.state.tool !== TOOL_ERASER && this.state.tool !== TOOL_PRISM) ?
+                                                        <>
+                                                            <Typography id="color-slider" gutterBottom style={{fontWeight: "bold", color: "#29405B", fontSize: 18, float: "left"}}>
+                                                                Wavelength
+                                                            </Typography>
+                                                            <ColorSlider value={this.props.colorSize} changeValue={setColorFromSize}
+                                                                              aria-labelledby="color-slider" max={100} />
+                                                        </>
+                                                        : '' }
+                                                    </Col>
+
+                                                    {/*{this.state.tool !== TOOL_LASER &&*/}
+                                                    {/*    <Col style={{padding: 0, margin: 5}} className={"col-1"}>*/}
+                                                    {/*        <Button style={{backgroundColor: "#FFFFFF", borderRadius: 100,*/}
+                                                    {/*            width: "40px", height: "40px", border: "2px solid rgba(0, 0, 0, 0.25)" }}*/}
+                                                    {/*                onClick={() => setColor("#FFFFFF")}*/}
+                                                    {/*        />*/}
+                                                    {/*    </Col>*/}
+                                                    {/*}*/}
+
+                                                    {/*<Col style={{padding: 0, margin: 5}} className={"col-1"}>*/}
+                                                    {/*    <Button style={{backgroundColor: "#EB3324", borderRadius: 100,*/}
+                                                    {/*        width: "40px", height: "40px", border: "2px solid rgba(0, 0, 0, 0.25)" }}*/}
+                                                    {/*            onClick={() => setColor("#EB3324")}*/}
+                                                    {/*    />*/}
+                                                    {/*</Col>*/}
+
+                                                    {/*<Col style={{padding: 0, margin: 5}} className={"col-1"}>*/}
+                                                    {/*    <Button style={{backgroundColor: "#F2F551", borderRadius: 100,*/}
+                                                    {/*    width: "40px", height: "40px", border: "2px solid rgba(0, 0, 0, 0.25)" }}*/}
+                                                    {/*    onClick={() => setColor("#F2F551")}*/}
+                                                    {/*    />*/}
+                                                    {/*</Col>*/}
+
+                                                    {/*<Col style={{padding: 0, margin: 5}} className={"col-1"}>*/}
+                                                    {/*    <Button style={{backgroundColor: "#76FA68", borderRadius: 100,*/}
+                                                    {/*    width: "40px", height: "40px", border: "2px solid rgba(0, 0, 0, 0.25)" }}*/}
+                                                    {/*    onClick={() => setColor("#76FA68")}*/}
+                                                    {/*    />*/}
+                                                    {/*</Col>*/}
+
+                                                    {/*<Col style={{padding: 0, margin: 5}} className={"col-1"}>*/}
+                                                    {/*    <Button style={{backgroundColor: "#3686F7", borderRadius: 100,*/}
+                                                    {/*    width: "40px", height: "40px", border: "2px solid rgba(0, 0, 0, 0.25)" }}*/}
+                                                    {/*    onClick={() => setColor("#3686F7")}*/}
+                                                    {/*    />*/}
+                                                    {/*</Col>*/}
+
+                                                    {/*<Col style={{padding: 0, margin: 5}} className={"col-1"}>*/}
+                                                    {/*    <Button style={{backgroundColor: "#EA3690", borderRadius: 100,*/}
+                                                    {/*    width: "40px", height: "40px", border: "2px solid rgba(0, 0, 0, 0.25)" }}*/}
+                                                    {/*    onClick={() => setColor("#EA3690")}*/}
+                                                    {/*    />*/}
+                                                    {/*</Col>*/}
+                                                </Row>
+                                            </Container>
+
+                                            {/*OLD COLOR SELECTOR*/}
+                                            {/*{(this.state.tool === TOOL_ELLIPSE || this.state.tool === TOOL_RECTANGLE) ?*/}
+                                            {/*    <div>*/}
+                                            {/*        <label htmlFor="">Fill In:</label>*/}
+                                            {/*        <input type="checkbox" value={this.state.fill} style={{margin:'0 8'}}*/}
+                                            {/*               onChange={(e) => this.setState({fill: e.target.checked})} />*/}
+                                            {/*        {this.state.fill ? <span>*/}
+                                            {/*          <label htmlFor="">with color:</label>*/}
+                                            {/*          <input type="color" value={this.state.fillColor} onChange={(e) => this.setState({fillColor: e.target.value})} />*/}
+                                            {/*        </span> : ''}*/}
+                                            {/*    </div> : ''}*/}
+                                            {/*{(this.state.tool !== TOOL_ERASER) ?*/}
+                                            {/*    <div className="options" style={{marginBottom:20}}>*/}
+                                            {/*        <label htmlFor="">Color: </label>*/}
+                                            {/*        <input type="color" value={this.props.color} onChange={(e) => this.setState({color: e.target.value})} />*/}
+                                            {/*    </div> : ''}*/}
+                                        </Col>
+
+                                        <Col className={"col-2"} style={{minHeight: 55}}>
+                                            {this.state.tool !== TOOL_PRISM  &&
+                                                <>
+                                                    <Typography id="width-slider" gutterBottom style={{fontWeight: "bold", color: "#29405B", fontSize: 18, float: "left"}}>
+                                                        {(this.state.tool === TOOL_OPTICS || this.state.tool === TOOL_LASER || this.state.tool === TOOL_ERASER) ? "Width" : "Size"}
+                                                    </Typography>
+
+                                                    <SizeSlider aria-labelledby="width-slider" value={this.state.size}
+                                                                setSize={changeSize} />
+                                                </>
+                                            }
+                                        </Col>
+                                    </Row>
+                                </Container>
+                            </Col>
+
+                            <Col className={"col-2 ml-auto"} style={{padding: 0}}>
+                                <Row className={"justify-content-end"} style={{margin: 0, marginTop: "10%"}}>
+                                        <Button className={"blue-button"} style={{width: 166, textAlign: "left",
+                                            marginBottom: 15}} onClick={cycleQuestionPopup}>More Info</Button>
+                                </Row>
+                                <Row className={"justify-content-end"} style={{margin: 0}}>
+                                        <Button className={"blue-button"} style={{width: 166, textAlign: "left",
+                                            marginBottom: 15}} onClick={cvcleEngravingPopup}>Stencil</Button>
+                                </Row>
+                                <Row className={"justify-content-end"} style={{margin: 0}}>
+                                        <Button className={"blue-button"} style={{width: 166, textAlign: "left",
+                                            marginBottom: 15}} onClick={cyclePopup}>Objective</Button>
+                                </Row>
+                                <Row className={"justify-content-end"} style={{margin: 0}}>
+                                        <Button className={"blue-button"} style={{width: 166, textAlign: "left"}}
+                                                onClick={cycleViewpointPopup}>Viewpoint</Button>
+                                </Row>
+
+                                <Row className={"justify-content-end"} style={{position: "absolute", bottom: 0, marginBottom: 20}}>
+                                    <Col className={"col-12"} style={{padding: 0, marginRight: 20}}>
+                                        <Button className={"green-button"} style={{float: "right", width: 200,
                                             clipPath: "polygon(0 0, 95% 0, 100% 100%, 5% 100%)"}}
-                                                onClick={() => this.props.history.push('/activity/circuit-building')}>
-                                            <i className="fa fa-arrow-left" />
-                                        </Button>
-                                    </Col>
-
-                                    <Col>
-                                        <p style={{color: "#29405B", fontSize: "28px", fontWeight: "bold"}}>Laser And Lenses</p>
+                                                onClick={() => this.props.history.push('/activity/telescope-activity')}>Next</Button>
                                     </Col>
                                 </Row>
-
-                                <Row className={"justify-content-center align-content-center"}>
-                                    <Col className={"col-10"} onContextMenu={rightClick} style={{marginLeft: 25, marginBottom: 15}}>
-                                        <Canvas canvasRef={this.state.canvasRef} tool={this.state.tool}
-                                                color={this.state.color} size={this.state.size} toolActive={this.state.toolActive} />
-                                    </Col>
-                                </Row>
-
-                                <Row style={{marginLeft: 25}}>
-                                    <Col className={"col-6"} style={{minHeight: 55}}>
-                                        <Container fluid>
-                                            <Row>
-                                                <Col className={"col-5"}>
-                                                    {(this.state.tool !== TOOL_ERASER && this.state.tool !== TOOL_PRISM) ?
-                                                    <>
-                                                        <Typography id="color-slider" gutterBottom style={{fontWeight: "bold", color: "#29405B", fontSize: 18, float: "left"}}>
-                                                            Wavelength
-                                                        </Typography>
-                                                        <ColorSlider value={this.props.colorSize} changeValue={setColorFromSize}
-                                                                          aria-labelledby="color-slider" max={100} />
-                                                    </>
-                                                    : '' }
-                                                </Col>
-
-                                                {/*{this.state.tool !== TOOL_LASER &&*/}
-                                                {/*    <Col style={{padding: 0, margin: 5}} className={"col-1"}>*/}
-                                                {/*        <Button style={{backgroundColor: "#FFFFFF", borderRadius: 100,*/}
-                                                {/*            width: "40px", height: "40px", border: "2px solid rgba(0, 0, 0, 0.25)" }}*/}
-                                                {/*                onClick={() => setColor("#FFFFFF")}*/}
-                                                {/*        />*/}
-                                                {/*    </Col>*/}
-                                                {/*}*/}
-
-                                                {/*<Col style={{padding: 0, margin: 5}} className={"col-1"}>*/}
-                                                {/*    <Button style={{backgroundColor: "#EB3324", borderRadius: 100,*/}
-                                                {/*        width: "40px", height: "40px", border: "2px solid rgba(0, 0, 0, 0.25)" }}*/}
-                                                {/*            onClick={() => setColor("#EB3324")}*/}
-                                                {/*    />*/}
-                                                {/*</Col>*/}
-
-                                                {/*<Col style={{padding: 0, margin: 5}} className={"col-1"}>*/}
-                                                {/*    <Button style={{backgroundColor: "#F2F551", borderRadius: 100,*/}
-                                                {/*    width: "40px", height: "40px", border: "2px solid rgba(0, 0, 0, 0.25)" }}*/}
-                                                {/*    onClick={() => setColor("#F2F551")}*/}
-                                                {/*    />*/}
-                                                {/*</Col>*/}
-
-                                                {/*<Col style={{padding: 0, margin: 5}} className={"col-1"}>*/}
-                                                {/*    <Button style={{backgroundColor: "#76FA68", borderRadius: 100,*/}
-                                                {/*    width: "40px", height: "40px", border: "2px solid rgba(0, 0, 0, 0.25)" }}*/}
-                                                {/*    onClick={() => setColor("#76FA68")}*/}
-                                                {/*    />*/}
-                                                {/*</Col>*/}
-
-                                                {/*<Col style={{padding: 0, margin: 5}} className={"col-1"}>*/}
-                                                {/*    <Button style={{backgroundColor: "#3686F7", borderRadius: 100,*/}
-                                                {/*    width: "40px", height: "40px", border: "2px solid rgba(0, 0, 0, 0.25)" }}*/}
-                                                {/*    onClick={() => setColor("#3686F7")}*/}
-                                                {/*    />*/}
-                                                {/*</Col>*/}
-
-                                                {/*<Col style={{padding: 0, margin: 5}} className={"col-1"}>*/}
-                                                {/*    <Button style={{backgroundColor: "#EA3690", borderRadius: 100,*/}
-                                                {/*    width: "40px", height: "40px", border: "2px solid rgba(0, 0, 0, 0.25)" }}*/}
-                                                {/*    onClick={() => setColor("#EA3690")}*/}
-                                                {/*    />*/}
-                                                {/*</Col>*/}
-                                            </Row>
-                                        </Container>
-
-                                        {/*OLD COLOR SELECTOR*/}
-                                        {/*{(this.state.tool === TOOL_ELLIPSE || this.state.tool === TOOL_RECTANGLE) ?*/}
-                                        {/*    <div>*/}
-                                        {/*        <label htmlFor="">Fill In:</label>*/}
-                                        {/*        <input type="checkbox" value={this.state.fill} style={{margin:'0 8'}}*/}
-                                        {/*               onChange={(e) => this.setState({fill: e.target.checked})} />*/}
-                                        {/*        {this.state.fill ? <span>*/}
-                                        {/*          <label htmlFor="">with color:</label>*/}
-                                        {/*          <input type="color" value={this.state.fillColor} onChange={(e) => this.setState({fillColor: e.target.value})} />*/}
-                                        {/*        </span> : ''}*/}
-                                        {/*    </div> : ''}*/}
-                                        {/*{(this.state.tool !== TOOL_ERASER) ?*/}
-                                        {/*    <div className="options" style={{marginBottom:20}}>*/}
-                                        {/*        <label htmlFor="">Color: </label>*/}
-                                        {/*        <input type="color" value={this.props.color} onChange={(e) => this.setState({color: e.target.value})} />*/}
-                                        {/*    </div> : ''}*/}
-                                    </Col>
-
-                                    <Col className={"col-2"} style={{minHeight: 55}}>
-                                        {this.state.tool !== TOOL_PRISM  &&
-                                            <>
-                                                <Typography id="width-slider" gutterBottom style={{fontWeight: "bold", color: "#29405B", fontSize: 18, float: "left"}}>
-                                                    {(this.state.tool === TOOL_OPTICS || this.state.tool === TOOL_LASER || this.state.tool === TOOL_ERASER) ? "Width" : "Size"}
-                                                </Typography>
-
-                                                <SizeSlider aria-labelledby="width-slider" value={this.state.size}
-                                                            setSize={changeSize} />
-                                            </>
-                                        }
-                                    </Col>
-                                </Row>
-                            </Container>
-                        </Col>
-
-                        <Col className={"col-2 ml-auto"} style={{padding: 0}}>
-                            <Row className={"justify-content-end"} style={{margin: 0, marginTop: "10%"}}>
-                                    <Button className={"blue-button"} style={{width: 166, textAlign: "left",
-                                        marginBottom: 15}} onClick={cycleQuestionPopup}>More Info</Button>
-                            </Row>
-                            <Row className={"justify-content-end"} style={{margin: 0}}>
-                                    <Button className={"blue-button"} style={{width: 166, textAlign: "left",
-                                        marginBottom: 15}} onClick={cvcleEngravingPopup}>Stencil</Button>
-                            </Row>
-                            <Row className={"justify-content-end"} style={{margin: 0}}>
-                                    <Button className={"blue-button"} style={{width: 166, textAlign: "left",
-                                        marginBottom: 15}} onClick={cyclePopup}>Objective</Button>
-                            </Row>
-                            <Row className={"justify-content-end"} style={{margin: 0}}>
-                                    <Button className={"blue-button"} style={{width: 166, textAlign: "left"}}
-                                            onClick={cycleViewpointPopup}>Viewpoint</Button>
-                            </Row>
-
-                            <Row className={"justify-content-end"} style={{position: "absolute", bottom: 0, marginBottom: 20}}>
-                                <Col className={"col-12"} style={{padding: 0, marginRight: 20}}>
-                                    <Button className={"green-button"} style={{float: "right", width: 200,
-                                        clipPath: "polygon(0 0, 95% 0, 100% 100%, 5% 100%)"}}
-                                            onClick={() => this.props.history.push('/activity/telescope-activity')}>Next</Button>
-                                </Col>
-                            </Row>
-                        </Col>
-                    </Row>
-                </Container>
+                            </Col>
+                        </Row>
+                    </Container>
+                </div>
             </>
         )
     }

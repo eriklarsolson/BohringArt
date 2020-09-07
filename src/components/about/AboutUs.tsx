@@ -61,13 +61,13 @@ class AboutUs extends React.Component<any, any> {
                         <Row className="justify-content-center">
                             <Container fluid>
                                 <Row  className={"justify-content-center"}>
-                                    <Col className={"col-10"}>
+                                    <Col className={"col-6"}>
                                         <p style={{color: "white", fontSize: 55, fontWeight: "bold", textAlign: "left"}}>Our Team</p>
                                     </Col>
                                 </Row>
 
                                 <Row className={"justify-content-center"}>
-                                    <Col className={"col-10"}>
+                                    <Col className={"col-6"}>
                                         <Container fluid>
                                             <Row className={"justify-content-center"}>
                                                 <Col style={{margin: 5}}
@@ -140,9 +140,9 @@ class AboutUs extends React.Component<any, any> {
                         </Row>
 
                         <Row className={"justify-content-center"} style={{clipPath: "polygon(0 100px, 100% 0, 100% 95%, 0 100%)"}}>
-                            <Col className={"col-6"} style={{padding: 100, backgroundColor: "#F8EDDD"}}>
+                            <Col className={"col-md-6 col-sm-12"} style={{padding: 100, backgroundColor: "#F8EDDD"}}>
                                 <Container fluid>
-                                    <Row  style={{textAlign: "left", padding: "5%"}}>
+                                    <Row style={{textAlign: "left", padding: "5%"}}>
                                         <h1 style={{fontWeight: "bolder", color: "#29405B"}}>PROJECT PURPOSE</h1>
                                     </Row>
 
@@ -159,7 +159,7 @@ class AboutUs extends React.Component<any, any> {
                                         </p>
                                     </Row>
 
-                                    <Row>
+                                    <Row style={{paddingLeft: "5%"}}>
                                         <Col className={"col-4"} style={{backgroundColor: "#29405B", padding: 25}}>
                                             <img alt={"Logo"} src={logo} width={"100%"} />
                                         </Col>
@@ -167,7 +167,7 @@ class AboutUs extends React.Component<any, any> {
                                 </Container>
                             </Col>
 
-                            <Col className={"col-6"} style={{backgroundColor: "rgba(82, 82, 82, 0.8)", paddingBottom: 100}}>
+                            <Col className={"col-md-6 col-sm-12"} style={{backgroundColor: "rgba(82, 82, 82, 0.8)", paddingBottom: 100}}>
                                 <Container fluid style={{padding: 100}}>
                                     <Row  style={{textAlign: "left", padding: "5%"}}>
                                         <h1 style={{fontWeight: "bolder", color: "white"}}>WHY BOHRING?</h1>
@@ -188,7 +188,7 @@ class AboutUs extends React.Component<any, any> {
                                         </p>
                                     </Row>
 
-                                    <Row>
+                                    <Row style={{paddingLeft: "5%"}}>
                                         <img src={niels} alt={"Niels Bohr person"} />
                                     </Row>
                                 </Container>

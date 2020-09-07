@@ -92,93 +92,95 @@ class CircuitBuilding extends React.Component<any, any> {
 
         return (
             <>
-                {/*<CircuitPopup open={this.state.circuitPopupOpened} closeCircuitPopup={cycleCircuitPopup} />*/}
+                <div style={{position: "relative", height: "100%", width: "100%"}}>
+                    {/*<CircuitPopup open={this.state.circuitPopupOpened} closeCircuitPopup={cycleCircuitPopup} />*/}
 
-                {/*<ObjectivePopup open={this.state.popupOpened} title={this.state.popupTitle}*/}
-                {/*                description={this.state.popupDescriptions[this.state.currentLevel - 1]}*/}
-                {/*                closePopup={cyclePopup} />*/}
+                    {/*<ObjectivePopup open={this.state.popupOpened} title={this.state.popupTitle}*/}
+                    {/*                description={this.state.popupDescriptions[this.state.currentLevel - 1]}*/}
+                    {/*                closePopup={cyclePopup} />*/}
 
-                {this.state.popupOpened &&
-                    <div className={""} style={{position: "absolute", width: "100%", height: "100%", zIndex: 4, overflow: "hidden"}}>
-                        <ObjectiveSlideOut title={this.state.popupTitle}
-                                           description={this.state.popupDescriptions[this.state.currentLevel - 1]}
-                                           setParentState={() => cyclePopup()} />
-                    </div>
-                }
+                    {this.state.popupOpened &&
+                        <div className={""} style={{position: "absolute", width: "100%", height: "100%", zIndex: 4, overflow: "hidden"}}>
+                            <ObjectiveSlideOut title={this.state.popupTitle}
+                                               description={this.state.popupDescriptions[this.state.currentLevel - 1]}
+                                               setParentState={() => cyclePopup()} />
+                        </div>
+                    }
 
-                {this.state.circuitPopupOpened &&
-                    <div style={{position: "absolute", width: "100%", height: "100%", zIndex: 4, overflow: "hidden"}}>
-                        <MoreInfoAnimation setParentState={() => cycleCircuitPopup()} />
-                    </div>
-                }
+                    {this.state.circuitPopupOpened &&
+                        <div style={{position: "absolute", width: "100%", height: "100%", zIndex: 4, overflow: "hidden"}}>
+                            <MoreInfoAnimation setParentState={() => cycleCircuitPopup()} />
+                        </div>
+                    }
 
-                    <Container fluid className={"d-flex h-100 flex-column"} style={{margin: "0", padding: "0", backgroundColor: "#F8EDDD"}}>
+                        <Container fluid className={"d-flex h-100 flex-column"} style={{margin: "0", padding: "0", backgroundColor: "#F8EDDD"}}>
 
-                        <Row className={"flex-grow-1"} style={{margin: "0"}}>
-                            <Col className={"col-2"} style={{color: "white", padding: "0"}}>
-                                <Sidebar currentLevel={this.state.currentLevel} />
-                            </Col>
+                            <Row className={"flex-grow-1"} style={{margin: "0"}}>
+                                <Col className={"col-2"} style={{color: "white", padding: "0"}}>
+                                    <Sidebar currentLevel={this.state.currentLevel} />
+                                </Col>
 
-                            <Col className={"col-10"} style={{margin: "0", padding: "0"}}>
-                                <Container fluid style={{margin: "0", padding: "0"}}>
-                                    <Row style={{margin: 0}}>
-                                        <Col className="col-2" style={{margin: "3%"}}>
-                                            <Button className={"green-button"} style={{float: "left", width: 100,
-                                                clipPath: "polygon(0 0, 95% 0, 100% 100%, 5% 100%)"}}
-                                                    onClick={goToLastLevel}><i className="fa fa-arrow-left" /></Button>
-                                        </Col>
+                                <Col className={"col-10"} style={{margin: "0", padding: "0"}}>
+                                    <Container fluid style={{margin: "0", padding: "0"}}>
+                                        <Row style={{margin: 0}}>
+                                            <Col className="col-2" style={{margin: "3%"}}>
+                                                <Button className={"green-button"} style={{float: "left", width: 100,
+                                                    clipPath: "polygon(0 0, 95% 0, 100% 100%, 5% 100%)"}}
+                                                        onClick={goToLastLevel}><i className="fa fa-arrow-left" /></Button>
+                                            </Col>
 
-                                        <Col style={{margin: "3%"}}>
-                                            <Row className={"justify-content-center"}>
-                                                <p style={{color: "#29405B", fontSize: 28, fontWeight: "bold", marginBottom: 0}}>Circuit Board level {this.state.currentLevel}</p>
-                                            </Row>
+                                            <Col style={{margin: "3%"}}>
+                                                <Row className={"justify-content-center"}>
+                                                    <p style={{color: "#29405B", fontSize: 28, fontWeight: "bold", marginBottom: 0}}>Circuit Board level {this.state.currentLevel}</p>
+                                                </Row>
 
-                                            <Row className={"justify-content-center"}>
-                                                <p style={{color: "#29405B", fontSize: 14, fontWeight: "bold", marginBottom: 0}}>Needed voltage: {this.state.neededVoltages[this.state.currentLevel - 1]}</p>
-                                            </Row>
+                                                <Row className={"justify-content-center"}>
+                                                    <p style={{color: "#29405B", fontSize: 14, fontWeight: "bold", marginBottom: 0}}>Needed voltage: {this.state.neededVoltages[this.state.currentLevel - 1]}</p>
+                                                </Row>
 
-                                            <Row className={"justify-content-center"}>
-                                                <p style={{color: "#29405B", fontSize: 14, marginBottom: 0}}>Note: This is a drag-and-drop activity using the components on the left sidebar</p>
-                                            </Row>
-                                        </Col>
+                                                <Row className={"justify-content-center"}>
+                                                    <p style={{color: "#29405B", fontSize: 14, marginBottom: 0}}>Note: This is a drag-and-drop activity using the components on the left sidebar</p>
+                                                </Row>
+                                            </Col>
 
-                                        <Col className={"col-2 ml-auto"} style={{padding: 0, marginTop: "3%"}}>
-                                            <Row style={{margin: 0}} className={"justify-content-end"}>
-                                                <Button className={"blue-button"} style={{width: 166, textAlign: "left",
-                                                    marginBottom: 15}} onClick={cycleCircuitPopup}>More Info</Button>
-                                            </Row>
-                                            <Row style={{margin: 0}} className={"justify-content-end"}>
-                                                <Button className={"blue-button"} style={{width: 166, textAlign: "left",
-                                                    marginBottom: 15}}  onClick={cyclePopup}>Objective</Button>
-                                            </Row>
-                                            <Row style={{margin: 0}} className={"justify-content-end"}>
-                                                <Button className={"blue-button"} style={{width: 166, textAlign: "left"}}
-                                                        onClick={cycleGrid}>Toggle Grid</Button>
-                                            </Row>
-                                        </Col>
-                                    </Row>
+                                            <Col className={"col-2 ml-auto"} style={{padding: 0, marginTop: "3%"}}>
+                                                <Row style={{margin: 0}} className={"justify-content-end"}>
+                                                    <Button className={"blue-button"} style={{width: 166, textAlign: "left",
+                                                        marginBottom: 15}} onClick={cycleCircuitPopup}>More Info</Button>
+                                                </Row>
+                                                <Row style={{margin: 0}} className={"justify-content-end"}>
+                                                    <Button className={"blue-button"} style={{width: 166, textAlign: "left",
+                                                        marginBottom: 15}}  onClick={cyclePopup}>Objective</Button>
+                                                </Row>
+                                                <Row style={{margin: 0}} className={"justify-content-end"}>
+                                                    <Button className={"blue-button"} style={{width: 166, textAlign: "left"}}
+                                                            onClick={cycleGrid}>Toggle Grid</Button>
+                                                </Row>
+                                            </Col>
+                                        </Row>
 
-                                    <Row style={{margin: "0"}}>
-                                        <Col>
-                                            <SixGridContainer objectiveImage={this.state.gridImages[this.state.currentLevel - 1]}
-                                                              showGrid={this.state.showGrid} goToNextLevel={goToNextLevel} />
-                                        </Col>
-                                    </Row>
-                                </Container>
-                            </Col>
-                        </Row>
-                    </Container>
+                                        <Row style={{margin: "0"}}>
+                                            <Col>
+                                                <SixGridContainer objectiveImage={this.state.gridImages[this.state.currentLevel - 1]}
+                                                                  showGrid={this.state.showGrid} goToNextLevel={goToNextLevel} />
+                                            </Col>
+                                        </Row>
+                                    </Container>
+                                </Col>
+                            </Row>
+                        </Container>
 
-                <ToastContainer
-                    position="top-center"
-                    autoClose={3000}
-                    hideProgressBar={false}
-                    newestOnTop={false}
-                    closeOnClick
-                    rtl={false}
-                    pauseOnFocusLoss
-                    draggable
-                    pauseOnHover />
+                    <ToastContainer
+                        position="top-center"
+                        autoClose={3000}
+                        hideProgressBar={false}
+                        newestOnTop={false}
+                        closeOnClick
+                        rtl={false}
+                        pauseOnFocusLoss
+                        draggable
+                        pauseOnHover />
+                </div>
             </>
         )
     }
