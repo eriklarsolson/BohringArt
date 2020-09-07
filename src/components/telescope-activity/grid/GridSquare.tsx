@@ -17,12 +17,6 @@ export interface GridSquareProps {
 }
 
 export const GridSquare: React.FC<GridSquareProps> = ({x, y, children, showGrid, currentComponent}) => {
-    let startingRotateDeg = 0
-    if(currentComponent !== undefined) {
-        startingRotateDeg = currentComponent.rotateDeg;
-    }
-    const [rotateDeg, setRotateDeg] = useState<number>(startingRotateDeg)
-
     const [{ isOver, canDrop }, drop] = useDrop({
         accept: [TelescopeTypes.CONCAVE, TelescopeTypes.CONVEX, TelescopeTypes.VIEWPOINT, TelescopeTypes.FLATMIRROR],
         canDrop: () => canMoveComponent(x, y),
@@ -44,35 +38,14 @@ export const GridSquare: React.FC<GridSquareProps> = ({x, y, children, showGrid,
         clicked = true;
     }
 
-    const clickRotate = () => {
-        if (rotateDeg + 45 === 360) {
-            setRotateDeg(0)
-            setCurrentComponentsRotation(0)
-        } else {
-            setRotateDeg(rotateDeg + 45)
-            setCurrentComponentsRotation(rotateDeg + 45)
-        }
-    }
-
     return (
         <div
             ref={drop}
             style={{...gridStyling}}
             onMouseDown={() => setCurrentComponent(x, y)}>
-            {children.length > 0 && clicked &&
-            <div style={{position: "absolute", top: -35, right: -10, marginTop: 1, marginRight: 1}}>
-                <img alt={"Rotate"} src={rotate} onClick={clickRotate} />
-            </div>
-            }
 
             <Square clicked={clicked} showGrid={showGrid}>
-                {currentComponent !== undefined && currentComponent.x === x && currentComponent.y === y ?
-                    <div style={{transform: "rotate(" + currentComponent.rotateDeg + "deg)", height: "100%"}}>
-                        {children}
-                    </div>
-                    :
-                    <div style={{height: "100%"}}>{children}</div>
-                }
+                <div style={{height: "100%"}}>{children}</div>
             </Square>
             {isOver && !canDrop && <ColorOverlay color="red" />}
             {!isOver && canDrop && <ColorOverlay color="yellow" />}

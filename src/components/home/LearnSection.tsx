@@ -31,8 +31,8 @@ class LearnSection extends React.Component<any, any> {
                              style={{clipPath: "polygon(0 0, 95% 0, 100% 100%, 5% 100%)", backgroundColor: "#29405B",
                                  padding: 25, marginBottom: 40}}>
                             <Row>
-                                <Col className={"col-3"} style={{overflow: "hidden"}}>
-                                    <img alt={"#1"} src={one} />
+                                <Col className={"col-3"} style={{overflow: "hidden", minWidth: 150}}>
+                                    <img alt={"#1"} src={one} style={{float: "right"}} />
                                 </Col>
                                 <Col>
                                     <h4>CIRCUIT CONSTRUCTION</h4>
@@ -58,7 +58,7 @@ class LearnSection extends React.Component<any, any> {
                              style={{clipPath: "polygon(0 0, 95% 0, 100% 100%, 5% 100%)", backgroundColor: "#29405B",
                                  padding: 25, marginBottom: 40}}>
                             <Row>
-                                <Col className={"col-3"} style={{overflow: "hidden"}}>
+                                <Col className={"col-3"} style={{overflow: "hidden", minWidth: 150}}>
                                     <img alt={"#2"} src={two} />
                                 </Col>
                                 <Col>
@@ -87,7 +87,7 @@ class LearnSection extends React.Component<any, any> {
                             style={{clipPath: "polygon(0 0, 95% 0, 100% 100%, 5% 100%)", backgroundColor: "#29405B",
                                 padding: 25, marginLeft: "4%", marginBottom: 40}}>
                            <Row>
-                               <Col className={"col-3"} style={{overflow: "hidden"}}>
+                               <Col className={"col-3"} style={{overflow: "hidden", minWidth: 150}}>
                                    <img alt={"#3"} src={three} />
                                </Col>
                                <Col>
@@ -115,7 +115,7 @@ class LearnSection extends React.Component<any, any> {
                             style={{clipPath: "polygon(0 0, 95% 0, 100% 100%, 5% 100%)", backgroundColor: "#29405B",
                                 padding: 25, marginBottom: 40}}>
                            <Row>
-                               <Col className={"col-3"} style={{overflow: "hidden"}}>
+                               <Col className={"col-3"} style={{overflow: "hidden", minWidth: 150}}>
                                    <img alt={"#4"} src={four} />
                                </Col>
                                <Col>

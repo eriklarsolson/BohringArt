@@ -77,17 +77,19 @@ class Header extends React.Component<any, any> {
                                         </p>
                                     </Col>
                                 </Row>
-                                <Row className={"justify-content-center"}>
+                                <Row className={"justify-content-start"} style={{marginTop: 50}}>
                                     {(this.state.width > 1000) ?
-                                        <Button
-                                            href="/activity/circuit-building"
-                                            variant="primary"
-                                            type="submit"
-                                            className={"btn green-button"}
-                                            style={{width: "30%",
-                                                clipPath: "polygon(0 0, 95% 0, 100% 100%, 5% 100%)"}}>
-                                            Start
-                                        </Button>
+                                        <Col className={"col-8"}>
+                                            <Button
+                                                href="/activity/circuit-building"
+                                                variant="primary"
+                                                type="submit"
+                                                className={"btn green-button"}
+                                                style={{width: "50%",
+                                                    clipPath: "polygon(0 0, 95% 0, 100% 100%, 5% 100%)"}}>
+                                                Start
+                                            </Button>
+                                        </Col>
                                         :
                                         <Col className={"col-8 green-button"} style={{clipPath: "polygon(0 0, 95% 0, 100% 100%, 5% 100%)"}}>
                                             This site is not mobile optimized, please use a computer to use this exhibit!

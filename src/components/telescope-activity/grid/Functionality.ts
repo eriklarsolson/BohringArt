@@ -1,4 +1,5 @@
 import {TelescopeTypes} from "../../shared/models/TelescopeTypes";
+import {hasCircuit} from "../../circuilt-building/grid/Functionality";
 
 let observers: PositionObserver[] = []
 export type PositionObserver = ((component: {x: number, y: number, type: string, rotateDeg: number}) => void) | null
@@ -85,6 +86,10 @@ export function canMoveComponent(toX: number, toY: number): boolean {
     }
 }
 
+export function getComponentAtPos(x: number, y: number) {
+    return components.filter(component => component.x === x && component.y === y)[0];
+}
+
 export function getIndex(value: any, arr: string | any[]) {
     for(var i = 0; i < arr.length; i++) {
         if(arr[i] === value) {
@@ -95,39 +100,80 @@ export function getIndex(value: any, arr: string | any[]) {
 }
 
 export function moveComponent(toX: number, toY: number, type: string): void {
+    // const samePlaceComponents = components.filter(component => component.x === toX && component.y === toY);
+    //
+    // if(samePlaceComponents.length > 0) {
+    //     const index = getIndex(samePlaceComponents[0], components);
+    //     components[index] = {x: toX, y: toY, type: type, rotateDeg: components[currentComponent].rotateDeg}
+    //
+    //     //TODO - If you select an object on grid, and then drag from side bar to delete another grid space, it deletes the object you also had selected previously
+    //     components.splice(currentComponent, 1);
+    // } else {
+    //     if(components[currentComponent] !== undefined) {
+    //         components.push({
+    //             x: toX,
+    //             y: toY,
+    //             type: type,
+    //             rotateDeg: components[currentComponent].rotateDeg
+    //         });
+    //     } else {
+    //         components.push({
+    //             x: toX,
+    //             y: toY,
+    //             type: type,
+    //             rotateDeg: 0
+    //         });
+    //     }
+    //
+    //     if(currentX !== -1 && currentY !== -1) {
+    //         components.splice(currentComponent, 1);
+    //     }
+    // }
+    //
+    // currentComponent = components.length - 1;
+    //
+    // emitChange();
+
     const samePlaceComponents = components.filter(component => component.x === toX && component.y === toY);
 
-    if(samePlaceComponents.length > 0) {
-        const index = getIndex(samePlaceComponents[0], components);
-        components[index] = {x: toX, y: toY, type: type, rotateDeg: components[currentComponent].rotateDeg}
-
-        //TODO - If you select an object on grid, and then drag from side bar to delete another grid space, it deletes the object you also had selected previously
-        components.splice(currentComponent, 1);
+    //TODO - Need to test to make sure this is working fully!
+    // Note: It is not right now though, crashes after turning switch off and moving it
+    if(components.length === 0) {
+        components.push({
+            x: toX,
+            y: toY,
+            type: type,
+            rotateDeg: 0,
+        });
     } else {
-        if(components[currentComponent] !== undefined) {
-            components.push({
+        if (samePlaceComponents.length > 0) {
+            const index = getIndex(samePlaceComponents[0], components);
+            components[index] = {
                 x: toX,
                 y: toY,
                 type: type,
-                rotateDeg: components[currentComponent].rotateDeg
-            });
+                rotateDeg: components[currentComponent].rotateDeg,
+            }
+
+            components.splice(currentComponent, 1);
         } else {
             components.push({
                 x: toX,
                 y: toY,
                 type: type,
-                rotateDeg: 0
+                rotateDeg: components[currentComponent].rotateDeg,
             });
-        }
 
-        if(currentX !== -1 && currentY !== -1) {
-            components.splice(currentComponent, 1);
+            if (currentX !== -1 && currentY !== -1) {
+                components.splice(currentComponent, 1);
+            }
         }
     }
 
     currentComponent = components.length - 1;
 
     emitChange();
+
 }
 
 //TODO - Eventually, this laser will have to encounter the right edge of telescope and start coming backwards to interact with mirrors facing backwards

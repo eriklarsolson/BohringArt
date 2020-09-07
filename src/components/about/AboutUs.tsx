@@ -3,7 +3,7 @@ import './About.scss';
 import { Container, Row, Col } from 'react-bootstrap'
 import danny from "./images/danny.png"
 import dena from "./images/dena.png"
-import parisa from "./images/parisa.png"
+import parisa from "./images/parisa1.jpg"
 import person1 from "./images/person1.png"
 import person2 from "./images/person2.png"
 import person3 from "./images/person3.png"
@@ -73,55 +73,64 @@ class AboutUs extends React.Component<any, any> {
                                                 <Col style={{margin: 5}}
                                                      className="col-sm-12 col-md-5 col-lg-3">
                                                     <img alt={"About Us Person"} src={danny}
-                                                         style={{clipPath: "polygon(0 0, 90% 0, 100% 100%, 10% 100%)"}} />
+                                                         style={{maxWidth: 200, maxHeight: 200,
+                                                             clipPath: "polygon(0 0, 90% 0, 100% 100%, 10% 100%)"}} />
                                                 </Col>
 
                                                 <Col style={{margin: 5}}
                                                      className="col-sm-12 col-md-5 col-lg-3">
                                                     <img alt={"About Us Person"} src={dena}
-                                                         style={{clipPath: "polygon(0 0, 90% 0, 100% 100%, 10% 100%)"}} />
+                                                       style={{maxWidth: 200, maxHeight: 200,
+                                                             clipPath: "polygon(0 0, 90% 0, 100% 100%, 10% 100%)"}} />
                                                 </Col>
 
                                                 <Col style={{margin: 5}}
                                                      className="col-sm-12 col-md-5 col-lg-3">
                                                     <img alt={"About Us Person"} src={parisa}
-                                                         style={{clipPath: "polygon(0 0, 90% 0, 100% 100%, 10% 100%)"}} />
+                                                       style={{maxWidth: 200, maxHeight: 200,
+                                                             clipPath: "polygon(0 0, 90% 0, 100% 100%, 10% 100%)"}} />
                                                 </Col>
 
                                                 <Col style={{margin: 5}}
                                                      className="col-sm-12 col-md-5 col-lg-3">
                                                     <img alt={"About Us Person"} src={person1}
-                                                         style={{clipPath: "polygon(0 0, 90% 0, 100% 100%, 10% 100%)"}} />
+                                                       style={{maxWidth: 200, maxHeight: 200,
+                                                             clipPath: "polygon(0 0, 90% 0, 100% 100%, 10% 100%)"}} />
                                                 </Col>
 
                                                 <Col style={{margin: 5}}
                                                      className="col-sm-12 col-md-5 col-lg-3">
                                                     <img alt={"About Us Person"} src={person2}
-                                                         style={{clipPath: "polygon(0 0, 90% 0, 100% 100%, 10% 100%)"}} />
+                                                       style={{maxWidth: 200, maxHeight: 200,
+                                                             clipPath: "polygon(0 0, 90% 0, 100% 100%, 10% 100%)"}} />
                                                 </Col>
 
                                                 <Col style={{margin: 5}}
                                                      className="col-sm-12 col-md-5 col-lg-3">
                                                     <img alt={"About Us Person"} src={person3}
-                                                         style={{clipPath: "polygon(0 0, 90% 0, 100% 100%, 10% 100%)"}} />
+                                                       style={{maxWidth: 200, maxHeight: 200,
+                                                             clipPath: "polygon(0 0, 90% 0, 100% 100%, 10% 100%)"}} />
                                                 </Col>
 
                                                 <Col style={{margin: 5}}
                                                      className="col-sm-12 col-md-5 col-lg-3">
                                                     <img alt={"About Us Person"} src={person4}
-                                                         style={{clipPath: "polygon(0 0, 90% 0, 100% 100%, 10% 100%)"}} />
+                                                       style={{maxWidth: 200, maxHeight: 200,
+                                                             clipPath: "polygon(0 0, 90% 0, 100% 100%, 10% 100%)"}} />
                                                 </Col>
 
                                                 <Col style={{margin: 5}}
                                                      className="col-sm-12 col-md-5 col-lg-3">
                                                     <img alt={"About Us Person"} src={person5}
-                                                         style={{clipPath: "polygon(0 0, 90% 0, 100% 100%, 10% 100%)"}} />
+                                                       style={{maxWidth: 200, maxHeight: 200,
+                                                             clipPath: "polygon(0 0, 90% 0, 100% 100%, 10% 100%)"}} />
                                                 </Col>
 
                                                 <Col style={{margin: 5}}
                                                      className="col-sm-12 col-md-5 col-lg-3">
                                                     <img alt={"About Us Person"} src={lars}
-                                                         style={{clipPath: "polygon(0 0, 90% 0, 100% 100%, 10% 100%)"}} />
+                                                       style={{maxWidth: 200, maxHeight: 200,
+                                                             clipPath: "polygon(0 0, 90% 0, 100% 100%, 10% 100%)"}} />
                                                 </Col>
                                             </Row>
                                         </Container>

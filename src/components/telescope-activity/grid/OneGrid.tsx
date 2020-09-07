@@ -30,15 +30,15 @@ export class OneGrid extends React.Component<GridProps> {
         function renderSwitch(type: string) {
             switch (type) {
                 case "concave":
-                    return <Concave oneGridStyling={true} />
+                    return <Concave x={0} y={0} currentComponent={undefined} oneGridStyling={true} />
                 case "viewpoint":
-                    return <Viewpoint oneGridStyling={true} />
+                    return <Viewpoint x={0} y={0} currentComponent={undefined} oneGridStyling={true} />
                 case "convex":
-                    return <Convex oneGridStyling={true} />
+                    return <Convex x={0} y={0} currentComponent={undefined} oneGridStyling={true} />
                 case "flatmirror":
-                    return <FlatMirror oneGridStyling={true} />
+                    return <FlatMirror x={0} y={0} currentComponent={undefined} oneGridStyling={true} />
                 default:
-                    return <Concave oneGridStyling={false} />
+                    return <Concave x={0} y={0} currentComponent={undefined} oneGridStyling={false} />
             }
         }
 

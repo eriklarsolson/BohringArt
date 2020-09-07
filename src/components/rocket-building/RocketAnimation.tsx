@@ -18,12 +18,12 @@ export const RocketAnimation: React.FC<AnimationProps>  = ({cone, body, engine, 
                 // scale: [1, 2, 2, 1, 1],
                 // rotate: [0, 0, 270, 270, 0],
                 // x: [100, 200, 300, 400, 500],
-                x: [0, 400]
+                x: [0, 2300]
                 // borderRadius: ["20%", "20%", "50%", "50%", "20%"]
             }}
 
             transition={{
-                duration: 80,
+                duration: 60,
                 ease: "linear",
                 times: [0, 1],
                 loop: Infinity,

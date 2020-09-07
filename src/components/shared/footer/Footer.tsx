@@ -9,7 +9,7 @@ const Footer = () => {
 
     return (
         <>
-            <Container fluid style={{backgroundColor: "#29405B", color: "white", zIndex: 10}}>
+            <Container fluid style={{backgroundColor: "#29405B", color: "white", zIndex: 12}}>
                 <Row className={"justify-content-end align-content-center"} style={{padding: 15}}>
                     <Col className={"col-2 col-md-1 align-self-center"}>
                         <img src={logo} alt={"Logo"} style={{height: 30}} />

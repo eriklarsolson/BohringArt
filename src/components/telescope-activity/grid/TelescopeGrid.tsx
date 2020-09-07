@@ -20,18 +20,25 @@ const boardStyle: React.CSSProperties = {
     flexWrap: 'wrap',
 }
 /** Styling properties applied to each square element */
-const squareStyle: React.CSSProperties = { width: '20%', height: '33%' }
+const squareStyle: React.CSSProperties = { width: '25%', height: '33%' }
 
-/**
- * The chessboard component
- * @param props The react props
- */
 export const TelescopeGrid: React.FC<GridProps> = ({components, currentComponent, showGrid}) => {
 
     function renderSquare(i: number) {
-        const x = i % 5
+        const x = i % 4
         const y = Math.floor(i)
+        // let y = 0;
+        // if(i < 3 && i > 8) {
+        //     y = 1
+        // } else if(i <= 8) {
+        //     y = 2
+        // }
 
+        console.log("----")
+        console.log(x)
+        console.log(y)
+        console.log(i)
+        console.log("----")
         return (
             <div key={i} style={squareStyle}>
                 <GridSquare x={x} y={y} components={components} currentComponent={currentComponent} showGrid={showGrid}>
@@ -47,22 +54,28 @@ export const TelescopeGrid: React.FC<GridProps> = ({components, currentComponent
 
         switch (type) {
             case TelescopeTypes.CONCAVE:
-                return isCompHere ? <Concave oneGridStyling={false} /> : null
+                return isCompHere ? <Concave x={x} y={y} currentComponent={currentComponent} oneGridStyling={false} /> : null
             case TelescopeTypes.VIEWPOINT:
-                return isCompHere ? <Viewpoint oneGridStyling={false} /> : null
+                return isCompHere ? <Viewpoint x={x} y={y} currentComponent={currentComponent}  oneGridStyling={false} /> : null
             case TelescopeTypes.CONVEX:
-                return isCompHere ? <Convex oneGridStyling={false} /> : null
+                return isCompHere ? <Convex x={x} y={y} currentComponent={currentComponent}  oneGridStyling={false} /> : null
             case TelescopeTypes.FLATMIRROR:
-                return isCompHere ? <FlatMirror oneGridStyling={false} /> : null
+                return isCompHere ? <FlatMirror x={x} y={y} currentComponent={currentComponent}  oneGridStyling={false} /> : null
             default:
-                return isCompHere ? <Concave oneGridStyling={false} /> : null
+                return isCompHere ? <Concave x={x} y={y} currentComponent={currentComponent}  oneGridStyling={false} /> : null
         }
     }
 
     const squares = []
-    for (let i = 0; i < 15; i += 1) {
+    for (let i = 0; i < 12; i += 1) {
         squares.push(renderSquare(i))
     }
 
-    return <div style={boardStyle}>{squares}</div>
+    return (
+        <>
+            <div style={boardStyle}>
+                {squares}
+            </div>
+        </>
+    )
 }

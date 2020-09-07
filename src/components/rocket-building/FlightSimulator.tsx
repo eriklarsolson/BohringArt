@@ -2,11 +2,12 @@ import React from "react";
 import { Container, Row, Col } from 'react-bootstrap'
 import Button from "react-bootstrap/Button";
 import 'font-awesome/css/font-awesome.min.css';
-import stellarBackground from "../stellar-cycle/stellarBackground.png";
 import "./Rocket.scss"
 import {RocketAnimation} from "./RocketAnimation";
 import {RocketBarAnimation} from "./RocketBarAnimation";
 import ScenarioRadioButton from "./ScenarioRadioButton";
+import long_bg from "./images/long_bg.png";
+import stellarBackground from "../stellar-cycle/stellarBackground.png"
 
 class FlightSimulator extends React.Component<any, any> {
     constructor(props: any) {
@@ -57,7 +58,7 @@ class FlightSimulator extends React.Component<any, any> {
             scenarios[this.state.iteration]= scenario;
             this.setState({scenarios: scenarios});
 
-            this.setState({iteration: this.state.iteration + 1, xStart: this.state.xStart + 200})
+            this.setState({iteration: this.state.iteration + 1, xStart: this.state.xStart + 150})
             runTimer()
         }
 
@@ -82,8 +83,15 @@ class FlightSimulator extends React.Component<any, any> {
         return (
             <>
                 <Container fluid className={"d-flex h-100 flex-column"} style={{margin: "0", padding: "0",
-                    textAlign: "left", overflow: "hidden", backgroundImage:`url(${stellarBackground})`}}>
+                    textAlign: "left", overflow: "hidden"}}>
+                    {/*backgroundImage:`url(${stellarBackground})`*/}
                     {/*<BackgroundAnimation />*/}
+                    <div className="stellar-wrapper">
+                        <div className="sliding-background">
+                            <img alt={"Long Stellar Background"} src={long_bg} />
+                        </div>
+                    </div>
+
 
                     <Row style={{margin: "3%"}}>
                         <Col>
@@ -126,11 +134,11 @@ class FlightSimulator extends React.Component<any, any> {
                     {/*</Row>*/}
 
                     <Row className={"justify-content-center"}>
-                        <Col className={"col-5"} style={{margin: 50}}>
+                        <Col className={"col-md-5 col-sm-6 ml-auto"} style={{margin: 50}}>
                             <RocketBarAnimation xStart={this.state.xStart} />
                         </Col>
 
-                        <Col className={"col-4 ml-auto"} style={{padding: 15, color: "white", minHeight: 280}}>
+                        <Col className={"col-5 ml-auto"} style={{padding: 15, color: "white", minHeight: 280}}>
                             <div style={{position: "absolute", width: "100%", height: "100%",
                                 backgroundColor: "rgba(17, 28, 74, 0.9)"}} />
 

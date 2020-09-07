@@ -23,47 +23,46 @@ class StellarCycle extends React.Component<any, any> {
 
         this.state = {
             title: undefined,
-            selectedPath: undefined,
             paths: [
                 {
                     title: "Nebula",
-                    path: "M25 125 L200 250 L1000 250 L1250 450" //TODO - Big confusion here - if I delete any number, it breaks animation for rest of objects
+                    path: "M25 125 L200 10 L350 10"
                 },
                 {
                     title: "Average Star",
-                    path: "M25 125 L200 250 L1000 250 L1250 450"
+                    path: "M25 125 L200 10 L350 10"
                 },
                 {
                     title: "Red Giant",
-                    path: "M25 125 L200 250 L1000 250 L1250 450"
+                    path: "M25 125 L200 10 L600 10"
                 },
                 {
                     title: "Planetary Nebula",
-                    path: "M25 125 L200 250 L1000 250 L1250 450"
+                    path: "M25 125 L200 10 L950 10"
                 },
                 {
                     title: "White Dwarf",
-                    path: "M25 125 L200 250 L1000 250 L1250 450"
+                    path: "M25 125 L200 10 L1200 10"
                 },
                 {
                     title: "Massive Star",
-                    path: "M25 125 L200 250 L1000 250 L1250 450"
+                    path: "M25 125 L200 250 L350 250"
                 },
                 {
                     title: "Red Supergiant",
-                    path: "MM25 125 L200 250 L1000 250 L1250 450"
+                    path: "M25 125 L200 250 L600 250"
                 },
                 {
                     title: "Supernova",
-                    path: "M25 125 L200 250 L1000 250 L1250 450"
+                    path: "M25 125 L200 250 L950 250"
                 },
                 {
                     title: "Neutron Star",
-                    path: "M25 125 L200 250 L1000 250 L1250 450"
+                    path: "M25 125 L200 250 L950 250 L1250 250"
                 },
                 {
                     title: "Black Hole",
-                    path: "M25 125 L200 250 L1000 250 L1250 450"
+                    path: "M25 125 L200 250 L950 250 L1250 450"
                 }
             ],
             pathIndex: 0
@@ -73,18 +72,14 @@ class StellarCycle extends React.Component<any, any> {
     componentDidMount() {
         //TODO - This is not working fully, check below print statement to understand
         if(this.props.location.state !== undefined) {
-            const loadedTitle = this.props.location.state.title;
+            let samePaths = this.state.paths.filter((object: { title: any }) => object.title === this.props.location.state.title);
 
-            let samePaths = this.state.paths.filter((object: { title: any }) => object.title === loadedTitle);
-
+            console.log(samePaths)
             if (samePaths.length > 0) {
                 const index = getIndex(samePaths[0], this.state.paths);
-                this.setState({pathIndex: index, title: loadedTitle})
-                this.setState({selectedPath: <StellarPathAnimation path={this.state.paths[this.state.pathIndex].path} />})
-                console.log(this.state.selectedPath)
+                this.setState({pathIndex: index, title: this.props.location.state.title})
             }
 
-            console.log(this.state.paths[this.state.pathIndex])
         } else {
             this.setState({pathIndex: 0, title: "Nebula"})
         }
@@ -134,8 +129,8 @@ class StellarCycle extends React.Component<any, any> {
                     <Row style={{margin: 0}} className={"justify-content-center"}>
                         <Col className={"col-10"}>
                             <Row>
-                                <div style={{position: "absolute", top: "10%", left: "5%", margin: 0, width: "100%", height: "100%"}}>
-                                    {this.state.selectedPath}
+                                <div style={{position: "absolute", top: 85, left: "5%", margin: 0, width: "100%", height: "100%"}}>
+                                    <StellarPathAnimation path={this.state.paths[this.state.pathIndex].path} />
                                 </div>
 
                                 {/*<div style={{position: "absolute", top: "5%", left: "7%", margin: 0, width: "65%"}}>*/}

@@ -1,16 +1,15 @@
 import * as React from "react";
 import { motion } from "framer-motion";
 import {Container, Row, Col} from 'react-bootstrap'
-import stellarBackground from "../stellar-cycle/stellarBackground.png";
+import long_bg from "./images/long_bg.png";
 
 export const BackgroundAnimation: React.FC  = () => {
     return (
         <motion.div
             layout
             animate={{
-                scale: [1, 2],
                 // rotate: [0, 0, 270, 270, 0],
-                // y: [0, -500]
+                x: [0, 5000]
                 // borderRadius: ["20%", "20%", "50%", "50%", "20%"]
             }}
 
@@ -29,7 +28,7 @@ export const BackgroundAnimation: React.FC  = () => {
                 times: [0, 1],
                 loop: Infinity,
             }}>
-            <img alt={"Stellar Background"} src={stellarBackground} />
+            <img alt={"Stellar Background"} src={long_bg} />
         </motion.div>
     );
 };

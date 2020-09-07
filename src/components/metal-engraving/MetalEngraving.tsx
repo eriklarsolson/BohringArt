@@ -20,6 +20,9 @@ import {ViewpointInfoAnimation} from "./ViewpointInfoAnimation";
 import {StencilsAnimation} from "./StencilsAnimation";
 import ColorSlider from "./ColorSlider";
 import {ObjectiveSlideOut} from "../shared/modals/ObjectiveSlideOut";
+import square from "./images/square.png";
+import circle from "./circle.png";
+import triangle from "./images/triangle.png";
 
 export const TOOL_LASER = 'laser';
 export const TOOL_OPTICS = 'optics';
@@ -72,14 +75,20 @@ class MetalEngraving extends React.Component<any, any> {
             this.setState({tool: tool, toolActive: true})
 
             if(tool === TOOL_LASER) {
-                this.setState({cursor: laser_WHITE})
+                this.setState({cursor: getActiveLaserIcon()})
             } else if(tool === TOOL_OPTICS) {
                 this.setState({cursor: laser_LENS})
             } else if(tool === TOOL_PRISM) {
                 this.setState({cursor: laser_PRISM})
             } else if(tool === TOOL_ERASER) {
                 this.setState({cursor: metal_filler})
-            }  else {
+            } else if(tool === TOOL_RECTANGLE) {
+                this.setState({cursor: square})
+            } else if(tool === TOOL_ELLIPSE) {
+                this.setState({cursor: circle})
+            } else if(tool === TOOL_TRIANGLE) {
+                this.setState({cursor: triangle})
+            } else {
                 this.setState({cursor: null})
             }
         }

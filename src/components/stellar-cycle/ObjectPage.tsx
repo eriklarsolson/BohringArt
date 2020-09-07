@@ -38,7 +38,7 @@ class ObjectPage extends React.Component<any, any> {
             averageIndex: 0,
             averageStars: [
                 {
-                    title: "Average star 1",
+                    title: "Average star 1??",
                     image: massive_star_1,
                     imageSize: 370,
                     temperatureValue: 20,
@@ -46,7 +46,7 @@ class ObjectPage extends React.Component<any, any> {
                     massValue: 20,
                 },
                 {
-                    title: "Average star 2",
+                    title: "Average Star / Red Dwarf??",
                     image: massive_star_2,
                     imageSize: 390,
                     temperatureValue: 40,
@@ -54,7 +54,7 @@ class ObjectPage extends React.Component<any, any> {
                     massValue: 40,
                 },
                 {
-                    title: "Average star 3",
+                    title: "Average star (K-Type)",
                     image: massive_star_3,
                     imageSize: 410,
                     temperatureValue: 60,
@@ -62,7 +62,7 @@ class ObjectPage extends React.Component<any, any> {
                     massValue: 60,
                 },
                 {
-                    title: "Average star 4",
+                    title: "Average star (G-Type)",
                     image: massive_star_4,
                     imageSize: 430,
                     temperatureValue: 80,
@@ -70,7 +70,7 @@ class ObjectPage extends React.Component<any, any> {
                     massValue: 80,
                 },
                 {
-                    title: "Average star 5",
+                    title: "Average star (F-Type)",
                     image: massive_star_5,
                     imageSize: 450,
                     temperatureValue: 100,
@@ -81,7 +81,7 @@ class ObjectPage extends React.Component<any, any> {
             massiveIndex: 0,
             massiveStars: [
                 {
-                    title: "Massive star 1",
+                    title: "Massive star (A-Type)",
                     image: massive_star_1,
                     imageSize: 400,
                     temperatureValue: 20,
@@ -89,7 +89,7 @@ class ObjectPage extends React.Component<any, any> {
                     massValue: 20,
                 },
                 {
-                    title: "Massive star 2",
+                    title: "Massive star (O-Type)",
                     image: massive_star_2,
                     imageSize: 450,
                     temperatureValue: 100,

@@ -9,3 +9,29 @@
 .arrow:hover {
   cursor: pointer;
 }
+
+.stellar-wrapper {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  background-repeat: repeat-x;
+  right: 0;
+  overflow: hidden;
+  height: 1000px;
+  z-index: -1;
+}
+
+.sliding-background {
+  height: 100%;
+  animation: slide 60s linear infinite;
+}
+
+@keyframes slide{
+  0%{
+    transform: translate3d(0, 0, 0);
+  }
+  100%{
+    transform: translate3d(-100%, 0, 0);
+  }
+}

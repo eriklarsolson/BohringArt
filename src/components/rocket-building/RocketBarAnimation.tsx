@@ -7,6 +7,9 @@ export interface AnimationProps {
 }
 
 export const RocketBarAnimation: React.FC<AnimationProps>  = ({xStart}) => {
+    // const xStartPercentage = (xStart / 10) + '%'
+    // const xEndPercentage = (xStart / 10 + 200) + '%'
+
     return (
         <>
             <div style={{position: "absolute", height: 5, width: "100%", top: "80%", backgroundColor: "white"}}>
@@ -18,7 +21,7 @@ export const RocketBarAnimation: React.FC<AnimationProps>  = ({xStart}) => {
                     // scale: [1, 2, 2, 1, 1],
                     // rotate: [0, 0, 270, 270, 0],
                     // x: [100, 200, 300, 400, 500],
-                    x: [xStart, xStart + 200]
+                    x: [xStart, xStart + 150]
                     // borderRadius: ["20%", "20%", "50%", "50%", "20%"]
                 }}
 

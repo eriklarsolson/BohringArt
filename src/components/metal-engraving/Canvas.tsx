@@ -264,7 +264,7 @@ const Canvas = ({ width, height, canvasRef, tool, color, size, toolActive }: Can
                         context.lineWidth = size;
                         context.strokeStyle = lighten("#000000", (i / 10));
                         context.fillStyle = lighten("#000000", (i / 10));
-                        context.rect(startX, (startY / 5) * i, widthX, (widthY / 5));
+                        context.rect(startX, (startY / 5) * i, widthX, widthY);
                         context.stroke();
                         context.fill();
                         context.closePath();
