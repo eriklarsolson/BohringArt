@@ -21,7 +21,7 @@ export const RocketBarAnimation: React.FC<AnimationProps>  = ({xStart}) => {
                     // scale: [1, 2, 2, 1, 1],
                     // rotate: [0, 0, 270, 270, 0],
                     // x: [100, 200, 300, 400, 500],
-                    x: [xStart, xStart + 150]
+                    x: [xStart, xStart + 100]
                     // borderRadius: ["20%", "20%", "50%", "50%", "20%"]
                 }}
 
@@ -34,7 +34,7 @@ export const RocketBarAnimation: React.FC<AnimationProps>  = ({xStart}) => {
                     // loop: Infinity,
                     // repeatDelay: 1
                 }}>
-                <img alt={"Rocket Icon"} src={rocketIcon} style={{transform: "rotate(90deg)", marginTop: 120}} />
+                <img alt={"Rocket Icon"} src={rocketIcon} style={{transform: "rotate(90deg)", marginTop: 160}} />
             </motion.div>
         </>
     );

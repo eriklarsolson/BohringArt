@@ -10,31 +10,33 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7ea8f8f2-9ee1-4223-8be2-70ed23ed7286" name="Default Changelist" comment="Telescope activity update, and styling fixes">
+    <list default="true" id="7ea8f8f2-9ee1-4223-8be2-70ed23ed7286" name="Default Changelist" comment="working on fixing styling bugs everywhere (especially slide out menus), and also making some pages mobile friendly">
+      <change afterPath="$PROJECT_DIR$/src/components/about/AboutUsAnimation.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/about/images/parisa2.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/rocket-building/images/rocket_assembly_bg.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/shared/animations/TextScrollBarAnimation.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.firebase/hosting.YnVpbGQ.cache" beforeDir="false" afterPath="$PROJECT_DIR$/.firebase/hosting.YnVpbGQ.cache" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/about/About.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/about/About.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/about/AboutUs.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/about/AboutUs.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/circuilt-building/CircuitBuilding.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/circuilt-building/CircuitBuilding.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/circuilt-building/MoreInfoAnimation.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/circuilt-building/MoreInfoAnimation.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/home/Header.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/home/Header.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/home/Home.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/home/Home.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/home/LearnSection.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/home/LearnSection.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/metal-engraving/MetalEngraving.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/metal-engraving/MetalEngraving.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/metal-engraving/MoreInfoAnimation.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/metal-engraving/MoreInfoAnimation.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/metal-engraving/Sidebar.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/metal-engraving/Sidebar.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/metal-engraving/SidebarModule.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/metal-engraving/SidebarModule.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/metal-engraving/StencilsAnimation.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/metal-engraving/StencilsAnimation.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/metal-engraving/ViewpointInfoAnimation.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/metal-engraving/ViewpointInfoAnimation.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/rocket-building/MoreInfoAnimation.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/rocket-building/MoreInfoAnimation.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/rocket-building/Rocket.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/rocket-building/Rocket.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/rocket-building/FlightSimulator.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/rocket-building/FlightSimulator.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/rocket-building/RocketAnimation.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/rocket-building/RocketAnimation.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/rocket-building/RocketBarAnimation.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/rocket-building/RocketBarAnimation.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/rocket-building/RocketBuilding.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/rocket-building/RocketBuilding.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/rocket-building/Sidebar.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/rocket-building/Sidebar.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/shared/header/Header.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/shared/header/Header.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/shared/modals/ObjectiveSlideOut.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/shared/modals/ObjectiveSlideOut.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/shared/modals/ErrorPopup.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/shared/modals/ErrorPopup.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/shared/modals/ObjectiveSlideOut.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/shared/animations/ObjectiveSlideOut.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/shared/modals/Rate/RatingSlideOut.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/shared/animations/RatingSlideOut.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/stellar-cycle/ObjectPage.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/stellar-cycle/ObjectPage.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/stellar-cycle/StellarPathAnimation.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/stellar-cycle/StellarPathAnimation.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/stellar-cycle/images/planetarynebula.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/stellar-cycle/images/planetarynebula.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/telescope-activity/grid/Functionality.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/telescope-activity/grid/Functionality.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/telescope-activity/MoreInfoAnimation.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/telescope-activity/MoreInfoAnimation.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -60,7 +62,7 @@
     <property name="TERMINAL_CUSTOM_COMMANDS_GOT_IT" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="ignore.virus.scanning.warn.message" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/components/stellar-cycle/images" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/components/rocket-building" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
@@ -70,18 +72,18 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\energ\Documents\ContractWork\DetroitMuseum\bohringart\src\components\rocket-building" />
+      <recent name="C:\Users\energ\Documents\ContractWork\DetroitMuseum\bohringart\src\components\about" />
+      <recent name="C:\Users\energ\Documents\ContractWork\DetroitMuseum\bohringart\src\components\rocket-building\images" />
       <recent name="C:\Users\energ\Documents\ContractWork\DetroitMuseum\bohringart\src\components\stellar-cycle\images" />
       <recent name="C:\Users\energ\Documents\ContractWork\DetroitMuseum\bohringart\src\components\shared\modals\Rate" />
-      <recent name="C:\Users\energ\Documents\ContractWork\DetroitMuseum\bohringart\src\components\metal-engraving\images" />
-      <recent name="C:\Users\energ\Documents\ContractWork\DetroitMuseum\bohringart\src\components\shared\modals" />
-      <recent name="C:\Users\energ\Documents\ContractWork\DetroitMuseum\bohringart\src\components\rocket-building" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\energ\Documents\ContractWork\DetroitMuseum\bohringart\src\components\about\images" />
+      <recent name="C:\Users\energ\Documents\ContractWork\DetroitMuseum\bohringart\src\components\about\parisa2" />
+      <recent name="C:\Users\energ\Documents\ContractWork\DetroitMuseum\bohringart\src\components\shared\animations" />
+      <recent name="C:\Users\energ\Documents\ContractWork\DetroitMuseum\bohringart\src\components\shared" />
       <recent name="C:\Users\energ\Documents\ContractWork\DetroitMuseum\bohringart\src\components\rocket-building\images" />
-      <recent name="C:\Users\energ\Documents\ContractWork\DetroitMuseum\bohringart\src\components\rocket-building\images\engines" />
-      <recent name="C:\Users\energ\Documents\ContractWork\DetroitMuseum\bohringart\src\components\rocket-building\images\payloads" />
-      <recent name="C:\Users\energ\Documents\ContractWork\DetroitMuseum\bohringart\src\components\rocket-building\images\sideBoosters" />
     </key>
   </component>
   <component name="SvnConfiguration">
@@ -138,14 +140,7 @@
       <workItem from="1599136083025" duration="24777000" />
       <workItem from="1599222921069" duration="13552000" />
       <workItem from="1599404623575" duration="22403000" />
-      <workItem from="1599489272268" duration="12734000" />
-    </task>
-    <task id="LOCAL-00002" summary="adding functionality to sketchpad and building out metal engraving page">
-      <created>1595869052560</created>
-      <option name="number" value="00002" />
-      <option name="presentableId" value="LOCAL-00002" />
-      <option name="project" value="LOCAL" />
-      <updated>1595869052560</updated>
+      <workItem from="1599489272268" duration="34842000" />
     </task>
     <task id="LOCAL-00003" summary="Styling fixes on various pages and beginning to build out object page for stellar cycle">
       <created>1595959457670</created>
@@ -483,7 +478,14 @@
       <option name="project" value="LOCAL" />
       <updated>1599445011030</updated>
     </task>
-    <option name="localTasksCounter" value="51" />
+    <task id="LOCAL-00051" summary="working on fixing styling bugs everywhere (especially slide out menus), and also making some pages mobile friendly">
+      <created>1599504493574</created>
+      <option name="number" value="00051" />
+      <option name="presentableId" value="LOCAL-00051" />
+      <option name="project" value="LOCAL" />
+      <updated>1599504493575</updated>
+    </task>
+    <option name="localTasksCounter" value="52" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -503,7 +505,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="styling on various pages and adding rotate feature to telescope activity" />
     <MESSAGE value="styling updates and animated home page" />
     <MESSAGE value="file updates" />
     <MESSAGE value="setting up firebase for hosting, created under construction page, and LOTS of styling updates all over" />
@@ -528,7 +529,8 @@
     <MESSAGE value="Put in new objective slide outs that replaced popups/modals" />
     <MESSAGE value="bug fixing, styling fixes, and continued implementation of functionality" />
     <MESSAGE value="Telescope activity update, and styling fixes" />
-    <option name="LAST_COMMIT_MESSAGE" value="Telescope activity update, and styling fixes" />
+    <MESSAGE value="working on fixing styling bugs everywhere (especially slide out menus), and also making some pages mobile friendly" />
+    <option name="LAST_COMMIT_MESSAGE" value="working on fixing styling bugs everywhere (especially slide out menus), and also making some pages mobile friendly" />
   </component>
   <component name="WindowStateProjectService">
     <state x="828" y="178" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1595441686616">
@@ -586,10 +588,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="461" y="165" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1595965465549" />
-    <state x="736" y="253" key="Vcs.Push.Dialog.v2" timestamp="1599445014174">
+    <state x="736" y="253" key="Vcs.Push.Dialog.v2" timestamp="1599504496504">
       <screen x="0" y="0" width="2560" height="1040" />
     </state>
-    <state x="736" y="253" key="Vcs.Push.Dialog.v2/-1920.0.1920.1040/0.0.2560.1040@0.0.2560.1040" timestamp="1599445014174" />
+    <state x="736" y="253" key="Vcs.Push.Dialog.v2/-1920.0.1920.1040/0.0.2560.1040@0.0.2560.1040" timestamp="1599504496504" />
     <state x="552" y="253" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1597885372762" />
     <state x="565" y="130" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser" timestamp="1595958216715">
       <screen x="0" y="0" width="1920" height="1040" />
@@ -600,10 +602,10 @@
     </state>
     <state x="1025" y="434" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/-1920.0.1920.1040/0.0.2560.1040@0.0.2560.1040" timestamp="1598902144179" />
     <state x="769" y="434" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1920.1040@0.0.1920.1040" timestamp="1597192452326" />
-    <state x="565" y="28" width="1878" height="928" key="find.popup" timestamp="1599503357605">
+    <state x="565" y="28" width="1878" height="928" key="find.popup" timestamp="1599530424249">
       <screen x="0" y="0" width="2560" height="1040" />
     </state>
-    <state x="565" y="28" width="1878" height="928" key="find.popup/-1920.0.1920.1040/0.0.2560.1040@0.0.2560.1040" timestamp="1599503357605" />
+    <state x="565" y="28" width="1878" height="928" key="find.popup/-1920.0.1920.1040/0.0.2560.1040@0.0.2560.1040" timestamp="1599530424249" />
     <state x="222" y="236" width="549" height="534" key="find.popup/0.0.1500.960@0.0.1500.960" timestamp="1595724537154" />
     <state x="1111" y="160" width="585" height="624" key="find.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1597886543166" />
     <state x="601" y="246" width="700" height="530" key="recent.locations.popup" timestamp="1595211874198">
@@ -614,16 +616,16 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="736" y="292" key="refactoring.ChangeSignatureDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1595374531681" />
-    <state x="821" y="240" key="run.anything.popup" timestamp="1599450381102">
+    <state x="821" y="240" key="run.anything.popup" timestamp="1599511185053">
       <screen x="0" y="0" width="2560" height="1040" />
     </state>
-    <state x="821" y="240" key="run.anything.popup/-1920.0.1920.1040/0.0.2560.1040@0.0.2560.1040" timestamp="1599450381102" />
+    <state x="821" y="240" key="run.anything.popup/-1920.0.1920.1040/0.0.2560.1040@0.0.2560.1040" timestamp="1599511185053" />
     <state x="482" y="223" key="run.anything.popup/0.0.1500.960@0.0.1500.960" timestamp="1595717092125" />
     <state x="616" y="240" key="run.anything.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1597861525568" />
-    <state x="831" y="225" width="896" height="678" key="search.everywhere.popup" timestamp="1599153574393">
+    <state x="831" y="225" width="896" height="678" key="search.everywhere.popup" timestamp="1599519449654">
       <screen x="0" y="0" width="2560" height="1040" />
     </state>
-    <state x="831" y="225" width="896" height="678" key="search.everywhere.popup/-1920.0.1920.1040/0.0.2560.1040@0.0.2560.1040" timestamp="1599153574393" />
+    <state x="831" y="225" width="896" height="678" key="search.everywhere.popup/-1920.0.1920.1040/0.0.2560.1040@0.0.2560.1040" timestamp="1599519449654" />
     <state x="623" y="225" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1597762536030" />
   </component>
 </project>

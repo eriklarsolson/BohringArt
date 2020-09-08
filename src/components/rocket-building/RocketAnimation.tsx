@@ -42,8 +42,8 @@ export const RocketAnimation: React.FC<AnimationProps>  = ({cone, body, engine, 
                     </div>
                     }
 
-                    <Col className={"col-1 align-self-end"} style={{marginBottom: 100, padding: 0, flex: "0 0 70px",
-                        maxWidth: "70px", alignItems: "flex-start"}}>
+                    <Col className={"col-1 align-self-end"} style={{marginBottom: 100, padding: 0, flex: "0 0 4%",
+                        maxWidth: "4%", alignItems: "flex-start"}}>
                         <Row style={{alignItems: "flex-start"}}>
                             <img alt={"Booster Left"} src={booster.leftImage} style={{width: "100%"}} />
                         </Row>
@@ -70,8 +70,8 @@ export const RocketAnimation: React.FC<AnimationProps>  = ({cone, body, engine, 
                         </Row>
                     </Col>
 
-                    <Col className={"col-1 align-self-end"} style={{marginBottom: 100, padding: 0, flex: "0 0 70px",
-                        maxWidth: "70px", alignItems: "flex-start"}}>
+                    <Col className={"col-1 align-self-end"} style={{marginBottom: 100, padding: 0, flex: "0 0 4%",
+                        maxWidth: "4%", alignItems: "flex-start"}}>
                         <Row style={{alignItems: "flex-start"}}>
                             <img alt={"Booster Right"} src={booster.rightImage} style={{width: "100%"}} />
                         </Row>

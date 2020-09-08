@@ -56,14 +56,14 @@ class Sidebar extends React.Component<any, any> {
                                       setTool={this.props.setTool} title={"prism"} description={"Commonly of a triangular shape, prisms can separate white light into a rainbow of colors"} />
                    </Row>
 
-                   <Accordion defaultActiveKey="1">
+                   <Accordion defaultActiveKey="1" style={{marginRight: 5}}>
                        <Row style={{margin: 5, paddingLeft: 25}}>
-                           <Col className="col-6" style={{marginLeft: 15, flex: "0 0 68%", maxWidth: "68%",
-                               clipPath: "polygon(0 0, 95% 0, 100% 100%, 0 100%)"}}>
+                           <Col className="col-7" style={{marginLeft: 15, flex: "0 0 70%", maxWidth: "70%", minWidth: 150,
+                               clipPath: "polygon(0 0, 94% 0, 100% 100%, 0 100%)"}}>
                                <Row className={"justify-content-center"}>
                                    <Col className="col-12" style={{backgroundColor: "#F8EDDD", paddingTop: 10, paddingBottom: 10}}>
                                        <button
-                                           style={{width: "100%", height: "100%", backgroundColor: "transparent", border: 0}}
+                                           style={{width: "100px", height: "100px", backgroundColor: "transparent", border: 0}}
                                            className={this.props.tool === TOOL_RECTANGLE  ? 'item-active' : 'item'}
                                            onClick={() => this.props.setTool(TOOL_RECTANGLE)}
                                        >
@@ -84,7 +84,7 @@ class Sidebar extends React.Component<any, any> {
                                            <Row>
                                                <Col style={{margin: 5}}>
                                                    <button
-                                                       style={{width: "100%", height: "100%", backgroundColor: "transparent", border: 0}}
+                                                       style={{width: "100px", height: "100px", backgroundColor: "transparent", border: 0}}
                                                        className={this.props.tool === TOOL_ELLIPSE  ? 'item-active' : 'item'}
                                                        onClick={() => this.props.setTool(TOOL_ELLIPSE)}
                                                    >
@@ -95,7 +95,7 @@ class Sidebar extends React.Component<any, any> {
                                            <Row>
                                                <Col style={{margin: 5}}>
                                                    <button
-                                                       style={{width: "100%", height: "100%", backgroundColor: "transparent", border: 0}}
+                                                       style={{width: "100px", height: "100px", backgroundColor: "transparent", border: 0}}
                                                        className={this.props.tool === TOOL_TRIANGLE  ? 'item-active' : 'item'}
                                                        onClick={() => this.props.setTool(TOOL_TRIANGLE)}
                                                    >

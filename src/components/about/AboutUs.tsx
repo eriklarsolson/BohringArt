@@ -3,17 +3,18 @@ import './About.scss';
 import { Container, Row, Col } from 'react-bootstrap'
 import danny from "./images/danny.png"
 import dena from "./images/dena.png"
-import parisa from "./images/parisa1.jpg"
-import person1 from "./images/person1.png"
-import person2 from "./images/person2.png"
-import person3 from "./images/person3.png"
-import person4 from "./images/person4.png"
-import person5 from "./images/person5.png"
+import parisa from "./images/parisa2.jpg"
+import wyatt from "./images/person1.png"
+import pranav from "./images/person2.png"
+import brean from "./images/person3.png"
+import hueywen from "./images/person4.png"
+import ray from "./images/person5.png"
 import lars from "./images/lars.png"
 import niels from "./images/niels.png"
 import logo from "./images/logo.png"
 import emailjs from 'emailjs-com';
 import {toast, ToastContainer} from "react-toastify";
+import {AboutUsAnimation} from "./AboutUsAnimation";
 
 class AboutUs extends React.Component<any, any> {
     constructor(props: any) {
@@ -57,96 +58,17 @@ class AboutUs extends React.Component<any, any> {
                     draggable
                     pauseOnHover />
 
-                    <Container fluid style={{margin: 0, backgroundColor: "#29405B"}}>
-                        <Row className="justify-content-center">
-                            <Container fluid>
-                                <Row  className={"justify-content-center"}>
-                                    <Col className={"col-6"}>
-                                        <p style={{color: "white", fontSize: 55, fontWeight: "bold", textAlign: "left"}}>Our Team</p>
-                                    </Col>
-                                </Row>
-
-                                <Row className={"justify-content-center"}>
-                                    <Col className={"col-6"}>
-                                        <Container fluid>
-                                            <Row className={"justify-content-center"}>
-                                                <Col style={{margin: 5}}
-                                                     className="col-sm-12 col-md-5 col-lg-3">
-                                                    <img alt={"About Us Person"} src={danny}
-                                                         style={{maxWidth: 200, maxHeight: 200,
-                                                             clipPath: "polygon(0 0, 90% 0, 100% 100%, 10% 100%)"}} />
-                                                </Col>
-
-                                                <Col style={{margin: 5}}
-                                                     className="col-sm-12 col-md-5 col-lg-3">
-                                                    <img alt={"About Us Person"} src={dena}
-                                                       style={{maxWidth: 200, maxHeight: 200,
-                                                             clipPath: "polygon(0 0, 90% 0, 100% 100%, 10% 100%)"}} />
-                                                </Col>
-
-                                                <Col style={{margin: 5}}
-                                                     className="col-sm-12 col-md-5 col-lg-3">
-                                                    <img alt={"About Us Person"} src={parisa}
-                                                       style={{maxWidth: 200, maxHeight: 200,
-                                                             clipPath: "polygon(0 0, 90% 0, 100% 100%, 10% 100%)"}} />
-                                                </Col>
-
-                                                <Col style={{margin: 5}}
-                                                     className="col-sm-12 col-md-5 col-lg-3">
-                                                    <img alt={"About Us Person"} src={person1}
-                                                       style={{maxWidth: 200, maxHeight: 200,
-                                                             clipPath: "polygon(0 0, 90% 0, 100% 100%, 10% 100%)"}} />
-                                                </Col>
-
-                                                <Col style={{margin: 5}}
-                                                     className="col-sm-12 col-md-5 col-lg-3">
-                                                    <img alt={"About Us Person"} src={person2}
-                                                       style={{maxWidth: 200, maxHeight: 200,
-                                                             clipPath: "polygon(0 0, 90% 0, 100% 100%, 10% 100%)"}} />
-                                                </Col>
-
-                                                <Col style={{margin: 5}}
-                                                     className="col-sm-12 col-md-5 col-lg-3">
-                                                    <img alt={"About Us Person"} src={person3}
-                                                       style={{maxWidth: 200, maxHeight: 200,
-                                                             clipPath: "polygon(0 0, 90% 0, 100% 100%, 10% 100%)"}} />
-                                                </Col>
-
-                                                <Col style={{margin: 5}}
-                                                     className="col-sm-12 col-md-5 col-lg-3">
-                                                    <img alt={"About Us Person"} src={person4}
-                                                       style={{maxWidth: 200, maxHeight: 200,
-                                                             clipPath: "polygon(0 0, 90% 0, 100% 100%, 10% 100%)"}} />
-                                                </Col>
-
-                                                <Col style={{margin: 5}}
-                                                     className="col-sm-12 col-md-5 col-lg-3">
-                                                    <img alt={"About Us Person"} src={person5}
-                                                       style={{maxWidth: 200, maxHeight: 200,
-                                                             clipPath: "polygon(0 0, 90% 0, 100% 100%, 10% 100%)"}} />
-                                                </Col>
-
-                                                <Col style={{margin: 5}}
-                                                     className="col-sm-12 col-md-5 col-lg-3">
-                                                    <img alt={"About Us Person"} src={lars}
-                                                       style={{maxWidth: 200, maxHeight: 200,
-                                                             clipPath: "polygon(0 0, 90% 0, 100% 100%, 10% 100%)"}} />
-                                                </Col>
-                                            </Row>
-                                        </Container>
-                                    </Col>
-                                </Row>
-                            </Container>
-                        </Row>
+                    <Container fluid style={{margin: 0, backgroundColor: "#29405B", overflow: "hidden"}}>
+                        <AboutUsAnimation />
 
                         <Row className={"justify-content-center"} style={{clipPath: "polygon(0 100px, 100% 0, 100% 95%, 0 100%)"}}>
                             <Col className={"col-md-6 col-sm-12"} style={{padding: 100, backgroundColor: "#F8EDDD"}}>
                                 <Container fluid>
-                                    <Row style={{textAlign: "left", padding: "5%"}}>
+                                    <Row style={{textAlign: "left", paddingLeft: "5%", paddingRight: "5%", paddingTop: "5%"}}>
                                         <h1 style={{fontWeight: "bolder", color: "#29405B"}}>PROJECT PURPOSE</h1>
                                     </Row>
 
-                                    <Row style={{textAlign: "left", display: "block", padding: "5%"}}>
+                                    <Row style={{textAlign: "left", paddingLeft: "5%", paddingRight: "5%", paddingTop: 10, paddingBottom: "5%"}}>
                                         <p style={{color: "#29405B", fontWeight: "bold"}}>
                                             In this collaborative project, we propose to design an educational kiosk, using the principles of interactive design,
                                             that will convey physics concepts effectively to college students. The concepts are chosen
@@ -169,11 +91,11 @@ class AboutUs extends React.Component<any, any> {
 
                             <Col className={"col-md-6 col-sm-12"} style={{backgroundColor: "rgba(82, 82, 82, 0.8)", paddingBottom: 100}}>
                                 <Container fluid style={{padding: 100}}>
-                                    <Row  style={{textAlign: "left", padding: "5%"}}>
+                                    <Row  style={{textAlign: "left", paddingLeft: "5%", paddingRight: "5%", paddingTop: "5%"}}>
                                         <h1 style={{fontWeight: "bolder", color: "white"}}>WHY BOHRING?</h1>
                                     </Row>
 
-                                    <Row style={{textAlign: "left", display: "block", padding: "5%"}}>
+                                    <Row style={{textAlign: "left", display: "block", paddingLeft: "5%", paddingRight: "5%", paddingTop: 10, paddingBottom: "5%"}}>
                                         <p style={{color: "white"}}>
                                             Niels Bohr was one of the foremost scientists of modern physics, best known
                                             for his substantial contributions to quantum theory and his Nobel Prize-winning
@@ -196,11 +118,11 @@ class AboutUs extends React.Component<any, any> {
                         </Row>
 
                         <form onSubmit={handleSubmit}>
-                        <Row style={{backgroundColor: "#29405B", color: "white", paddingTop: 100, textAlign: "left"}} className="justify-content-center">
+                        <Row style={{backgroundColor: "#29405B", color: "white", paddingTop: 75, textAlign: "left"}} className="justify-content-center">
                             <Container fluid>
                                 <Row className="justify-content-center">
                                     <Col className={"col-4"}>
-                                        <p style={{fontSize: 48, fontWeight: "bold"}}>CONTACT US</p>
+                                        <p style={{marginLeft: "4%", fontSize: 48, fontWeight: "bold"}}>CONTACT US</p>
                                     </Col>
                                 </Row>
 
@@ -212,7 +134,7 @@ class AboutUs extends React.Component<any, any> {
                                                         <Row>
                                                             <Col>
                                                                 <div className={"form-group"}>
-                                                                    <label style={{fontWeight: "bold"}}>Name:</label>
+                                                                    <label style={{fontWeight: "bold", color: "#29405B"}}>Name:</label>
                                                                     <input className="form-control" type="text" required={true}
                                                                            value={this.state.name} style={{width: "100%"}}
                                                                            name={"from_name"}
@@ -228,7 +150,7 @@ class AboutUs extends React.Component<any, any> {
                                                         <Row>
                                                             <Col>
                                                                 <div className={"form-group"}>
-                                                                    <label style={{fontWeight: "bold"}}>Email:</label>
+                                                                    <label style={{fontWeight: "bold", color: "#29405B"}}>Email:</label>
                                                                     <input className="form-control" type="email" required={true}
                                                                            value={this.state.email} style={{width: "100%"}}
                                                                            name={"email"}
@@ -251,7 +173,7 @@ class AboutUs extends React.Component<any, any> {
                                                 <Row className="justify-content-center">
                                                     <Col className={"col-12"}>
                                                         <div className={"form-group"}>
-                                                            <label style={{fontWeight: "bold"}}>Message:</label>
+                                                            <label style={{fontWeight: "bold", color: "#29405B"}}>Message:</label>
 
                                                             <textarea className="form-control" required={true}
                                                                       value={this.state.message} style={{width: "100%"}}
@@ -264,10 +186,10 @@ class AboutUs extends React.Component<any, any> {
                                     </Col>
                                 </Row>
 
-                                <Row className="justify-content-center" style={{marginTop: 10}}>
-                                    <Col className={"col-4"}>
+                                <Row className="justify-content-center" style={{marginTop: 25}}>
+                                    <Col className={"col-4"} style={{padding: 0, marginLeft: 10}}>
                                         <input type={"submit"}  className={"green-button"} style={{float: "right", width: 200,
-                                            clipPath: "polygon(0 0, 95% 0, 100% 100%, 5% 100%)", color: "white"}} value={"Submit"} />
+                                            clipPath: "polygon(0 0, 98% 0, 100% 100%, 2% 100%)", color: "white"}} value={"Submit"} />
                                     </Col>
                                 </Row>
                             </Container>

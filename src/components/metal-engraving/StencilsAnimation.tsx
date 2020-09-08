@@ -1,5 +1,5 @@
 import * as React from "react";
-import { motion } from "framer-motion";
+import {motion, useAnimation} from "framer-motion";
 import { Container, Row, Col, Button } from 'react-bootstrap'
 import {useState} from "react";
 import logo from "./images/logo.png"
@@ -14,16 +14,44 @@ export interface AnimationProps {
 
 export const StencilsAnimation: React.FC<AnimationProps>  = ({setParentState, addStencil}) => {
     const [open, setOpen] = useState<boolean>(true);
+    const [animationStarted, setAnimatedStarted] = useState<boolean>(false);
 
     const setClosed = () => {
         setOpen(false)
         setParentState()
     }
 
+    const controls = useAnimation()
+    const hideBox = () => {
+
+        controls.start({
+            x: ["0%", "100%"],
+            opacity: [1, 0],
+            transition: {
+                duration: 1.5,
+                ease: "easeOut",
+            },
+        })
+
+        setTimeout(() => {  setClosed() }, 1000);
+    }
+
+    if(!animationStarted) {
+        controls.start({
+            x: ["100%", "0%"],
+            opacity: [0, 1],
+            transition: {
+                duration: 1.5,
+                ease: "easeInOut",
+                times: [0, 1]
+            },
+        })
+        setAnimatedStarted(true)
+    }
+
     const addStencilAndClose = (stencil: any) => {
         addStencil(stencil)
-        setOpen(false)
-        setParentState()
+        hideBox()
     }
 
     return (
@@ -32,28 +60,14 @@ export const StencilsAnimation: React.FC<AnimationProps>  = ({setParentState, ad
                 backgroundColor: "black", opacity: 0.5}} />
 
             <motion.div
-                animate={{
-                    // scale: [1, 2, 2, 1, 1],
-                    // rotate: [0, 0, 270, 270, 0],
-                    // x: [100, 200, 300, 400, 500],
-                    x: ["100%", "0%"],
-                    opacity: [0, 1]
-                    // borderRadius: ["20%", "20%", "50%", "50%", "20%"]
-                }}
+                animate={controls}
 
-                style={{height: "100%"}}
-
-                transition={{
-                    duration: 1,
-                    ease: "easeOut",
-                    times: [0, 1],
-                }}>
+                style={{height: "100%"}}>
 
                 <Container fluid style={{height: "100%"}}>
                     <Row style={{height: "100%"}}>
                         <Col className={"col-4 ml-auto"} style={{padding: 0}}>
-                            <div style={{position: "absolute", width: "100%", height: "100%", backgroundColor: "#29405B",
-                                clipPath: "polygon(0 0, 100% 0, 100% 100%, 10% 100%)"}} />
+                            <div style={{position: "absolute", width: "100%", height: "100%", backgroundColor: "#29405B"}} />
 
                             <Container fluid style={{marginTop: 10}}>
                                 <Row className={"justify-content-center"} style={{marginBottom: 100}}>
@@ -64,7 +78,7 @@ export const StencilsAnimation: React.FC<AnimationProps>  = ({setParentState, ad
 
                                     <Col className={"col-3 ml-auto"} style={{padding: 0}}>
                                         <Button className={"green-button"} style={{float: "right", width: "100%"}}
-                                                onClick={() => setClosed()}><i className="fa fa-arrow-right" /></Button>
+                                                onClick={() => hideBox()}><i className="fa fa-arrow-right" /></Button>
                                     </Col>
                                 </Row>
 
@@ -95,7 +109,7 @@ export const StencilsAnimation: React.FC<AnimationProps>  = ({setParentState, ad
                                 </Row>
 
                                 <Row className={"justify-content-end"} style={{margin: 10}}>
-                                    <Col className="col-7" style={{backgroundColor: "#DBEAEF", flex: "0 0 50%", maxWidth: "50%",
+                                    <Col className="col-7" style={{backgroundColor: "#DBEAEF", flex: "0 0 49%", maxWidth: "49%",
                                         clipPath: "polygon(0 0, 100% 0, 100% 100%, 5% 100%)"}}>
                                         <img className={"clickable-image"}
                                              src={snowman} alt={"Snowman"}

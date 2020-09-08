@@ -1,5 +1,5 @@
 import * as React from "react";
-import { motion } from "framer-motion";
+import {motion, useAnimation} from "framer-motion";
 import { Container, Row, Col, Button } from 'react-bootstrap'
 import {useState} from "react";
 import wire from "./grid/components/images/wire.png"
@@ -10,6 +10,10 @@ import capacitor from "./grid/components/images/capacitor.png"
 import inductor from "./grid/components/images/inductor.png"
 import series from "./grid/components/images/series.png"
 import parallel from "./grid/components/images/parallel.png"
+import cone_1 from "../rocket-building/images/cones/cone_1.png";
+import body_1 from "../rocket-building/images/bodys/body_1.png";
+import booster_4_middle from "../rocket-building/images/boosters/booster_4_middle.png";
+import engine_1 from "../rocket-building/images/engines/engine_1.png";
 
 export interface AnimationProps {
     setParentState: any
@@ -19,10 +23,40 @@ export const MoreInfoAnimation: React.FC<AnimationProps>  = ({setParentState}) =
     const [open, setOpen] = useState<boolean>(true);
     const [title, setTitle] = useState<string>("WIRE");
     const [description, setDescription] = useState<string>("A conducting, metal rod designed to transfer charges. Electrons can flow through these with little to no resistance, typically. However, making a wire longer increases resistance but thickening it decreases resistance.");
+    const [animationStarted, setAnimatedStarted] = useState<boolean>(false);
+
 
     const setClosed = () => {
         setOpen(false)
         setParentState()
+    }
+
+    const controls = useAnimation()
+    const hideBox = () => {
+
+        controls.start({
+            x: ["0%", "100%"],
+            opacity: [1, 0],
+            transition: {
+                duration: 1.5,
+                ease: "easeOut",
+            },
+        })
+
+        setTimeout(() => {  setClosed() }, 1000);
+    }
+
+    if(!animationStarted) {
+        controls.start({
+            x: ["100%", "0%"],
+            opacity: [0, 1],
+            transition: {
+                duration: 1.5,
+                ease: "easeInOut",
+                times: [0, 1]
+            },
+        })
+        setAnimatedStarted(true)
     }
 
     const changeInfo = (module: string) => {
@@ -59,94 +93,89 @@ export const MoreInfoAnimation: React.FC<AnimationProps>  = ({setParentState}) =
                 backgroundColor: "black", opacity: 0.5}} />
 
             <motion.div
-                animate={{
-                    // scale: [1, 2, 2, 1, 1],
-                    // rotate: [0, 0, 270, 270, 0],
-                    // x: [100, 200, 300, 400, 500],
-                    x: ["100%", "0%"],
-                    opacity: [0, 1]
-                    // borderRadius: ["20%", "20%", "50%", "50%", "20%"]
-                }}
+                animate={controls}
 
-                style={{height: "100%"}}
-
-                transition={{
-                    duration: 1,
-                    ease: "easeOut",
-                    times: [0, 1],
-                }}>
+                style={{height: "100%"}}>
 
                 <Container fluid style={{height: "100%"}}>
                     <Row style={{height: "100%"}}>
-                        <Col className={"col-4 ml-auto"}>
-                            <div style={{position: "absolute", width: "100%", height: "100%", backgroundColor: "#29405B",
-                                clipPath: "polygon(0 0, 100% 0, 100% 100%, 10% 100%)"}} />
+                        <Col className={"col-2 ml-auto"} style={{padding: 0}}>
+                            <Container fluid style={{padding: 0}}>
+                                <Row className={"justify-content-end"} style={{marginTop: 10}}>
+                                    <Col className="col-10" onMouseOver={() => changeInfo("Wire")}
+                                         style={{height: 80, backgroundColor: "#F8EDDD",
+                                             clipPath: "polygon(0 0, 100% 0, 100% 100%, 5% 100%)"}}>
+                                        <img alt={"Wire"} src={wire} style={{height: "100%", display: "block", margin: "auto", padding: 5}}  />
+                                    </Col>
+                                </Row>
 
-                            <div style={{position: "absolute", height: "100%", left: -165}}>
-                                <Container fluid>
-                                    <Row style={{margin: 5, marginLeft: 10, width: 175}}>
-                                        <Col className="col-12" onMouseOver={() => changeInfo("Wire")}
-                                             style={{height: 100, backgroundColor: "#F8EDDD", clipPath: "polygon(0 0, 93% 0, 100% 100%, 5% 100%)"}}>
-                                            <img alt={"Wire"} src={wire} />
-                                        </Col>
-                                    </Row>
+                                <Row className={"justify-content-end"} style={{marginTop: 10, marginLeft: 5}}>
+                                    <Col className="col-10" onMouseOver={() => changeInfo("Battery")}
+                                         style={{height: 80, backgroundColor: "#F8EDDD",
+                                             clipPath: "polygon(0 0, 100% 0, 100% 100%, 5% 100%)"}}>
+                                        <img alt={"Battery"} src={battery} style={{height: "100%", display: "block", margin: "auto", padding: 5}}  />
+                                    </Col>
+                                </Row>
 
-                                    <Row style={{margin: 5, marginLeft: 20, width: 175}}>
-                                        <Col className="col-12" onMouseOver={() => changeInfo("Battery")}
-                                             style={{height: 100, backgroundColor: "#F8EDDD", clipPath: "polygon(0 0, 93% 0, 100% 100%, 5% 100%)"}}>
-                                            <img alt={"Battery"} src={battery} />
-                                        </Col>
-                                    </Row>
+                                <Row className={"justify-content-end"} style={{marginTop: 10, marginLeft: 20}}>
+                                    <Col className="col-10" onMouseOver={() => changeInfo("Resistor")}
+                                         style={{height: 80, backgroundColor: "#F8EDDD",
+                                             clipPath: "polygon(0 0, 100% 0, 100% 100%, 5% 100%)"}}>
+                                        <img alt={"Resistor"} src={resistor} style={{height: "100%", display: "block", margin: "auto", padding: 5}}  />
+                                    </Col>
+                                </Row>
 
-                                    <Row style={{margin: 5, marginLeft: 30, width: 175}}>
-                                        <Col className="col-12" onMouseOver={() => changeInfo("Resistor")}
-                                             style={{height: 100, backgroundColor: "#F8EDDD", clipPath: "polygon(0 0, 93% 0, 100% 100%, 5% 100%)"}}>
-                                            <img alt={"Resistor"} src={resistor} />
-                                        </Col>
-                                    </Row>
+                                <Row className={"justify-content-end"} style={{marginTop: 10, marginLeft: 35}}>
+                                    <Col className="col-10" onMouseOver={() => changeInfo("Switch")}
+                                         style={{height: 80, backgroundColor: "#F8EDDD",
+                                             clipPath: "polygon(0 0, 100% 0, 100% 100%, 5% 100%)"}}>
+                                        <img alt={"Switch"} src={switchPic} style={{height: "100%", display: "block", margin: "auto", padding: 5}} />
+                                    </Col>
+                                </Row>
 
-                                    <Row style={{margin: 5, marginLeft: 40, width: 175}}>
-                                        <Col className="col-12" onMouseOver={() => changeInfo("Switch")}
-                                             style={{height: 100, backgroundColor: "#F8EDDD", clipPath: "polygon(0 0, 93% 0, 100% 100%, 5% 100%)"}}>
-                                            <img alt={"Switch"} src={switchPic} />
-                                        </Col>
-                                    </Row>
+                                <Row className={"justify-content-end"} style={{marginTop: 10, marginLeft: 50}}>
+                                    <Col className="col-10" onMouseOver={() => changeInfo("Capacitor")}
+                                         style={{height: 80, backgroundColor: "#F8EDDD",
+                                             clipPath: "polygon(0 0, 100% 0, 100% 100%, 5% 100%)"}}>
+                                        <img alt={"Capacitor"} src={capacitor} style={{height: "100%", display: "block", margin: "auto", padding: 5}} />
+                                    </Col>
+                                </Row>
 
-                                    <Row style={{margin: 5, marginLeft: 50, width: 175}}>
-                                        <Col className="col-12" onMouseOver={() => changeInfo("Capacitor")}
-                                             style={{height: 100, backgroundColor: "#F8EDDD", clipPath: "polygon(0 0, 93% 0, 100% 100%, 5% 100%)"}}>
-                                            <img alt={"Resistor"} src={capacitor} />
-                                        </Col>
-                                    </Row>
+                                <Row className={"justify-content-end"} style={{marginTop: 10, marginLeft: 65}}>
+                                    <Col className="col-10" onMouseOver={() => changeInfo("Inductor")}
+                                         style={{height: 80, backgroundColor: "#F8EDDD",
+                                             clipPath: "polygon(0 0, 100% 0, 100% 100%, 5% 100%)"}}>
+                                        <img alt={"Inductor"} src={inductor} style={{height: "100%", display: "block", margin: "auto", padding: 5}} />
+                                    </Col>
+                                </Row>
 
-                                    <Row style={{margin: 5, marginLeft: 65, width: 175}}>
-                                        <Col className="col-12" onMouseOver={() => changeInfo("Inductor")}
-                                             style={{height: 100, backgroundColor: "#F8EDDD", clipPath: "polygon(0 0, 93% 0, 100% 100%, 5% 100%)"}}>
-                                            <img alt={"Inductor"} src={inductor} />
-                                        </Col>
-                                    </Row>
+                                <Row className={"justify-content-end"} style={{marginTop: 10, marginLeft: 80}}>
+                                    <Col className="col-10" onMouseOver={() => changeInfo("Series")}
+                                         style={{height: 80, backgroundColor: "#F8EDDD",
+                                             clipPath: "polygon(0 0, 100% 0, 100% 100%, 5% 100%)"}}>
+                                        <img alt={"Series Circuit"} src={series} style={{height: "100%", display: "block", margin: "auto", padding: 5}} />
+                                    </Col>
+                                </Row>
 
-                                    <Row style={{margin: 5, marginLeft: 80, width: 175}}>
-                                        <Col className="col-12" onMouseOver={() => changeInfo("Series")}
-                                             style={{height: 100, backgroundColor: "#F8EDDD", clipPath: "polygon(0 0, 93% 0, 100% 100%, 5% 100%)"}}>
-                                            <img alt={"Series Circuit"} src={series} style={{height: "100%", padding: 20}} />
-                                        </Col>
-                                    </Row>
+                                <Row className={"justify-content-end"} style={{marginTop: 10, marginLeft: 95}}>
+                                    <Col className="col-10" onMouseOver={() => changeInfo("Parallel")}
+                                         style={{height: 80, backgroundColor: "#F8EDDD",
+                                             clipPath: "polygon(0 0, 100% 0, 100% 100%, 5% 100%)"}}>
+                                        <img alt={"Parallel Circuit"} src={parallel} style={{height: "100%", display: "block", margin: "auto", padding: 5}} />
+                                    </Col>
+                                </Row>
+                            </Container>
+                        </Col>
 
-                                    <Row style={{margin: 5, marginLeft: 90, width: 175}}>
-                                        <Col className="col-12" onMouseOver={() => changeInfo("Parallel")}
-                                             style={{height: 100, backgroundColor: "#F8EDDD", clipPath: "polygon(0 0, 93% 0, 100% 100%, 5% 100%)"}}>
-                                            <img alt={"Parallel Circuit"} src={parallel} style={{height: "100%", padding: 20}} />
-                                        </Col>
-                                    </Row>
-                                </Container>
-                            </div>
+                        {/*clipPath: "polygon(0 0, 100% 0, 100% 100%, 10% 100%)"*/}
+                        <Col className={"col-4"} style={{padding: 0}}>
+                            <div style={{position: "absolute", width: "100%", height: "100%", backgroundColor: "#29405B",}} />
 
                             <Container fluid>
                                 <Row>
                                     <Col className={"col-3 ml-auto"} style={{padding: 0}}>
                                         <Button className={"green-button"} style={{float: "right", width: "100%"}}
-                                                onClick={() => setClosed()}><i className="fa fa-arrow-right" /></Button>
+                                                onClick={() => hideBox()}><i className="fa fa-arrow-right" /></Button>
                                     </Col>
                                 </Row>
 
@@ -165,7 +194,6 @@ export const MoreInfoAnimation: React.FC<AnimationProps>  = ({setParentState}) =
                         </Col>
                     </Row>
                 </Container>
-
             </motion.div>
         </>
     );

@@ -25,9 +25,9 @@ import booster_3_right from "./images/boosters/booster_3_right.png"
 import booster_4_left from "./images/boosters/booster_4_left.png"
 import booster_4_middle from "./images/boosters/booster_4_middle.png"
 import booster_4_right from "./images/boosters/booster_4_right.png"
-import background from "./images/background.png";
+import background from "./images/rocket_assembly_bg.jpg";
 import {MoreInfoAnimation} from "./MoreInfoAnimation";
-import {ObjectiveSlideOut} from "../shared/modals/ObjectiveSlideOut";
+import {ObjectiveSlideOut} from "../shared/animations/ObjectiveSlideOut";
 
 class RocketBuilding extends React.Component<any, any> {
     constructor(props: any) {
@@ -324,7 +324,10 @@ class RocketBuilding extends React.Component<any, any> {
                     }
 
 
-                    <Container fluid className={"d-flex h-100 flex-column"} style={{margin: "0", padding: "0", backgroundImage:`url(${background})`}}>
+                    <Container fluid className={"d-flex h-100 flex-column"} style={{margin: 0, padding: 0}}>
+                        <div style={{position: "absolute", backgroundImage:`url(${background})`, backgroundSize: "cover",
+                            top: 0, bottom: 0, left: 0, right: 0, height: "100%"}} />
+
                         <Row style={{margin: 0}}>
                             <Col className={"col-2"} style={{color: "white", padding: 0}}>
                                 <Sidebar cone={this.state.cones[this.state.coneIndex]}

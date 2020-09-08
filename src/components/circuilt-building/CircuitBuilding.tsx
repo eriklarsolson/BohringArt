@@ -14,7 +14,7 @@ import {
 import 'font-awesome/css/font-awesome.min.css';
 import {ToastContainer} from "react-toastify";
 import {MoreInfoAnimation} from "./MoreInfoAnimation";
-import {ObjectiveSlideOut} from "../shared/modals/ObjectiveSlideOut";
+import {ObjectiveSlideOut} from "../shared/animations/ObjectiveSlideOut";
 
 class CircuitBuilding extends React.Component<any, any> {
     constructor(props: any) {

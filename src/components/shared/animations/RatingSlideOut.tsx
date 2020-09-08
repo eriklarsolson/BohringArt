@@ -2,14 +2,14 @@ import * as React from "react";
 import {motion, useAnimation} from "framer-motion";
 import { Container, Row, Col, Button } from 'react-bootstrap'
 import {useState} from "react";
-import bored from "./bored.png";
-import sad from "./sad.png";
-import neutral from "./neutral.png";
-import happy from "./happy.png";
-import smart from "./smart.png";
+import bored from "../modals/Rate/bored.png";
+import sad from "../modals/Rate/sad.png";
+import neutral from "../modals/Rate/neutral.png";
+import happy from "../modals/Rate/happy.png";
+import smart from "../modals/Rate/smart.png";
 import emailjs from "emailjs-com";
 import {toast} from "react-toastify";
-import './Rate.scss';
+import '../modals/Rate/Rate.scss';
 
 export interface AnimationProps {
     setParentState: any

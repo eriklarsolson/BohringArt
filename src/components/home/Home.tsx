@@ -1,6 +1,6 @@
 import React from "react";
 import {ToastContainer} from "react-toastify";
-import {RatingSlideOut} from "../shared/modals/Rate/RatingSlideOut";
+import {RatingSlideOut} from "../shared/animations/RatingSlideOut";
 import Header from "./Header";
 import LearnSection from "./LearnSection";
 

@@ -22,7 +22,7 @@ import './StellarCycle.scss'
 import {getIndex} from "../circuilt-building/grid/Functionality";
 import TimelineSlider from "./TimelineSlider";
 import StellarPropertiesPopup from "../shared/modals/StellarPropertiesPopup";
-import {ObjectiveSlideOut} from "../shared/modals/ObjectiveSlideOut";
+import {ObjectiveSlideOut} from "../shared/animations/ObjectiveSlideOut";
 
 class ObjectPage extends React.Component<any, any> {
     constructor(props: any) {

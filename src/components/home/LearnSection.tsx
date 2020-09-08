@@ -20,8 +20,8 @@ class LearnSection extends React.Component<any, any> {
             <>
                <Container fluid style={{color: "white", textAlign: "left"}}>
                    <Row className={"justify-content-center"}>
-                       <Col className={"col-10"}>
-                           <p style={{color: "#002245", margin: "3%", fontWeight: "bold", fontSize: 50}}>What You'll Learn</p>
+                       <Col className={"col-9"}>
+                           <p style={{color: "#002245", margin: "4%", fontWeight: "bold", fontSize: 50}}>What You'll Learn</p>
 
                        </Col>
                    </Row>
@@ -29,9 +29,9 @@ class LearnSection extends React.Component<any, any> {
                     <Row className={"justify-content-center"}>
                         <Col className={"col-10 col-md-10 col-lg-4 learn-section"} onClick={() => this.props.goToActivity(0)}
                              style={{clipPath: "polygon(0 0, 95% 0, 100% 100%, 5% 100%)", backgroundColor: "#29405B",
-                                 padding: 25, marginBottom: 40}}>
+                                 padding: 25, marginBottom: 20}}>
                             <Row>
-                                <Col className={"col-3"} style={{overflow: "hidden", minWidth: 150}}>
+                                <Col className={"col-4"} style={{overflow: "hidden", minWidth: 150}}>
                                     <img alt={"#1"} src={one} style={{float: "right"}} />
                                 </Col>
                                 <Col>
@@ -56,10 +56,10 @@ class LearnSection extends React.Component<any, any> {
 
                         <Col className={"col-10 col-md-10 col-lg-4 learn-section"} onClick={() => this.props.goToActivity(1)}
                              style={{clipPath: "polygon(0 0, 95% 0, 100% 100%, 5% 100%)", backgroundColor: "#29405B",
-                                 padding: 25, marginBottom: 40}}>
+                                 padding: 25, marginBottom: 20}}>
                             <Row>
-                                <Col className={"col-3"} style={{overflow: "hidden", minWidth: 150}}>
-                                    <img alt={"#2"} src={two} />
+                                <Col className={"col-4"} style={{overflow: "hidden", minWidth: 150}}>
+                                    <img alt={"#2"} src={two} style={{float: "right"}} />
                                 </Col>
                                 <Col>
                                     <h4>LASERS AND LENSES</h4>
@@ -80,64 +80,62 @@ class LearnSection extends React.Component<any, any> {
                                 </Col>
                             </Row>
                         </Col>
+
+                        <Col className={"col-10 col-md-10 col-lg-4 learn-section"} onClick={() => this.props.goToActivity(2)}
+                             style={{clipPath: "polygon(0 0, 95% 0, 100% 100%, 5% 100%)", backgroundColor: "#29405B",
+                                 padding: 25, marginLeft: "4%", marginBottom: 20}}>
+                            <Row>
+                                <Col className={"col-4"} style={{overflow: "hidden", minWidth: 150}}>
+                                    <img alt={"#3"} src={three} style={{float: "right"}} />
+                                </Col>
+                                <Col>
+                                    <h4>TO THE STARS</h4>
+                                    <p style={{marginRight: 10}}>
+                                        Create a rocket consisting of an engine, boosters, a body, and a cone. Make sure
+                                        to account for fuel, air resistance, and weight as all affect the rocket’s motion
+                                        greatly! Send your rocket off into space with the telescope as the payload and
+                                        along the way, answer TEXT-based questions that determine the fate of your journey!
+                                    </p>
+                                    {/*<Button*/}
+                                    {/*    href="/activity/rocket-building"*/}
+                                    {/*    variant="primary"*/}
+                                    {/*    type="submit"*/}
+                                    {/*    className={"btn green-button"}*/}
+                                    {/*    style={{width: "45%",*/}
+                                    {/*        clipPath: "polygon(0 0, 95% 0, 100% 100%, 5% 100%)"}}>*/}
+                                    {/*    Start*/}
+                                    {/*</Button>*/}
+                                </Col>
+                            </Row>
+                        </Col>
+
+                        <Col className={"col-10 col-md-10 col-lg-4 learn-section"} onClick={() => this.props.goToActivity(3)}
+                             style={{clipPath: "polygon(0 0, 95% 0, 100% 100%, 5% 100%)", backgroundColor: "#29405B",
+                                 padding: 25, marginBottom: 20}}>
+                            <Row>
+                                <Col className={"col-4"} style={{overflow: "hidden", minWidth: 150}}>
+                                    <img alt={"#4"} src={four} style={{float: "right"}} />
+                                </Col>
+                                <Col>
+                                    <h4>STELLAR LIFE CYCLE</h4>
+                                    <p style={{marginRight: 10}}>
+                                        Learn more about what your telescope sees, and a star’s life cycle from creation
+                                        to destruction. See how important certain variables such as mass and radius are
+                                        in determining the next phase and the stellar event, i.e. a supernova.
+                                    </p>
+                                    {/*<Button*/}
+                                    {/*    href="/activity/object-page"*/}
+                                    {/*    variant="primary"*/}
+                                    {/*    type="submit"*/}
+                                    {/*    className={"btn green-button"}*/}
+                                    {/*    style={{width: "45%",*/}
+                                    {/*        clipPath: "polygon(0 0, 95% 0, 100% 100%, 5% 100%)"}}>*/}
+                                    {/*    Start*/}
+                                    {/*</Button>*/}
+                                </Col>
+                            </Row>
+                        </Col>
                     </Row>
-
-                   <Row className={"justify-content-center"} style={{marginTop: 50, marginBottom: 50}}>
-                       <Col className={"col-10 col-md-10 col-lg-4 learn-section"} onClick={() => this.props.goToActivity(2)}
-                            style={{clipPath: "polygon(0 0, 95% 0, 100% 100%, 5% 100%)", backgroundColor: "#29405B",
-                                padding: 25, marginLeft: "4%", marginBottom: 40}}>
-                           <Row>
-                               <Col className={"col-3"} style={{overflow: "hidden", minWidth: 150}}>
-                                   <img alt={"#3"} src={three} />
-                               </Col>
-                               <Col>
-                                   <h4>TO THE STARS</h4>
-                                   <p style={{marginRight: 10}}>
-                                       Create a rocket consisting of an engine, boosters, a body, and a cone. Make sure
-                                       to account for fuel, air resistance, and weight as all affect the rocket’s motion
-                                       greatly! Send your rocket off into space with the telescope as the payload and
-                                       along the way, answer TEXT-based questions that determine the fate of your journey!
-                                   </p>
-                                   {/*<Button*/}
-                                   {/*    href="/activity/rocket-building"*/}
-                                   {/*    variant="primary"*/}
-                                   {/*    type="submit"*/}
-                                   {/*    className={"btn green-button"}*/}
-                                   {/*    style={{width: "45%",*/}
-                                   {/*        clipPath: "polygon(0 0, 95% 0, 100% 100%, 5% 100%)"}}>*/}
-                                   {/*    Start*/}
-                                   {/*</Button>*/}
-                               </Col>
-                           </Row>
-                       </Col>
-
-                       <Col className={"col-10 col-md-10 col-lg-4 learn-section"} onClick={() => this.props.goToActivity(3)}
-                            style={{clipPath: "polygon(0 0, 95% 0, 100% 100%, 5% 100%)", backgroundColor: "#29405B",
-                                padding: 25, marginBottom: 40}}>
-                           <Row>
-                               <Col className={"col-3"} style={{overflow: "hidden", minWidth: 150}}>
-                                   <img alt={"#4"} src={four} />
-                               </Col>
-                               <Col>
-                                   <h4>STELLAR LIFE CYCLE</h4>
-                                   <p style={{marginRight: 10}}>
-                                       Learn more about what your telescope sees, and a star’s life cycle from creation
-                                       to destruction. See how important certain variables such as mass and radius are
-                                       in determining the next phase and the stellar event, i.e. a supernova.
-                                   </p>
-                                   {/*<Button*/}
-                                   {/*    href="/activity/object-page"*/}
-                                   {/*    variant="primary"*/}
-                                   {/*    type="submit"*/}
-                                   {/*    className={"btn green-button"}*/}
-                                   {/*    style={{width: "45%",*/}
-                                   {/*        clipPath: "polygon(0 0, 95% 0, 100% 100%, 5% 100%)"}}>*/}
-                                   {/*    Start*/}
-                                   {/*</Button>*/}
-                               </Col>
-                           </Row>
-                       </Col>
-                   </Row>
 
                    {/*<Row className={"justify-content-center"}>*/}
                    {/*    <Col className="col-2" style={{color: "white"}}>*/}

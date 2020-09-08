@@ -19,7 +19,7 @@ import {MoreInfoAnimation} from "./MoreInfoAnimation";
 import {ViewpointInfoAnimation} from "./ViewpointInfoAnimation";
 import {StencilsAnimation} from "./StencilsAnimation";
 import ColorSlider from "./ColorSlider";
-import {ObjectiveSlideOut} from "../shared/modals/ObjectiveSlideOut";
+import {ObjectiveSlideOut} from "../shared/animations/ObjectiveSlideOut";
 import square from "./images/square.png";
 import circle from "./circle.png";
 import triangle from "./images/triangle.png";
@@ -286,32 +286,32 @@ class MetalEngraving extends React.Component<any, any> {
                         {/*                closePopup={closePopup} />*/}
 
                         {this.state.popupOpened &&
-                        <div style={{position: "absolute", top: 0, bottom: 0, left: 0, right: 0, zIndex: 4, overflow: "hidden"}}>
-                            <ObjectiveSlideOut title={"02 Laser and Lenses Objective"}
-                                               description={"Using lasers, prisms, and lenses, create an " +
-                                               "artistic design on a metal sheet. The laser can be altered to include numerous shapes, colors, and widths " +
-                                               "beneficial to the engraving. You can use the ERASER and RESET buttons to change any mistakes on your design. " +
-                                               "Once you are satisfied with your creation, press the NEXT button to move on to the telescope building part " +
-                                               "of the optics activity. Click OBJECTIVE to see the objective for this activity."}
-                                               setParentState={() => cyclePopup()} />
-                        </div>
+                            <div style={{position: "absolute", top: 0, bottom: 0, left: 0, right: 0, zIndex: 4, overflow: "hidden"}}>
+                                <ObjectiveSlideOut title={"02 Laser and Lenses Objective"}
+                                                   description={"Using lasers, prisms, and lenses, create an " +
+                                                   "artistic design on a metal sheet. The laser can be altered to include numerous shapes, colors, and widths " +
+                                                   "beneficial to the engraving. You can use the ERASER and RESET buttons to change any mistakes on your design. " +
+                                                   "Once you are satisfied with your creation, press the NEXT button to move on to the telescope building part " +
+                                                   "of the optics activity. Click OBJECTIVE to see the objective for this activity."}
+                                                   setParentState={() => cyclePopup()} />
+                            </div>
                         }
 
                         {/*<EngravingPopup open={this.state.engravingPopupOpened} closePopup={closeEngravingPopup}*/}
                         {/*                addStencil={addStencil} />*/}
 
                         {this.state.engravingPopupOpened &&
-                        <div style={{position: "absolute", top: 0, bottom: 0, left: 0, right: 0, zIndex: 4, overflow: "hidden"}}>
-                            <StencilsAnimation setParentState={() => cvcleEngravingPopup()}  addStencil={addStencil} />
-                        </div>
+                            <div style={{position: "absolute", top: 0, bottom: 0, left: 0, right: 0, zIndex: 4, overflow: "hidden"}}>
+                                <StencilsAnimation setParentState={() => cvcleEngravingPopup()}  addStencil={addStencil} />
+                            </div>
                         }
 
                         {/*<ViewpointPopup open={this.state.viewpointPopupOpened} closePopup={toggleViewpointPopup} />*/}
 
                         {this.state.viewpointPopupOpened &&
-                        <div style={{position: "absolute", top: 0, bottom: 0, left: 0, right: 0, zIndex: 4, overflow: "hidden"}}>
-                            <ViewpointInfoAnimation setParentState={() => cycleViewpointPopup()} />
-                        </div>
+                            <div style={{position: "absolute", top: 0, bottom: 0, left: 0, right: 0, zIndex: 4, overflow: "hidden"}}>
+                                <ViewpointInfoAnimation setParentState={() => cycleViewpointPopup()} />
+                            </div>
                         }
 
 
@@ -338,13 +338,13 @@ class MetalEngraving extends React.Component<any, any> {
                                     </Row>
 
                                     <Row className={"justify-content-center align-content-center"}>
-                                        <Col className={"col-10"} onContextMenu={rightClick} style={{marginLeft: 25, marginBottom: 15}}>
+                                        <Col className={"col-10"} onContextMenu={rightClick} style={{marginLeft: 15, marginBottom: 15}}>
                                             <Canvas canvasRef={this.state.canvasRef} tool={this.state.tool}
                                                     color={this.state.color} size={this.state.size} toolActive={this.state.toolActive} />
                                         </Col>
                                     </Row>
 
-                                    <Row style={{marginLeft: 25}}>
+                                    <Row style={{marginLeft: "9%"}}>
                                         <Col className={"col-6"} style={{minHeight: 55}}>
                                             <Container fluid>
                                                 <Row>
