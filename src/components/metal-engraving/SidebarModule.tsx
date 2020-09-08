@@ -77,9 +77,9 @@ export const SidebarModule: React.FC<Props> = ({tool, toolToShow, setTool, title
                 <div style={tooltipStyle}>
                     <Container fluid style={{margin: 10}}>
                         <Row style={{padding: 0}}>
-                            <p style={{fontWeight: "bold", margin: 0}}>{title}</p>
+                            <p style={{fontWeight: "bold", marginLeft: 10}}>{title}</p>
                         </Row>
-                        <Row style={{padding: 5}}>
+                        <Row style={{marginLeft: 10, marginRight: 10}}>
                             {description}
                         </Row>
                     </Container>

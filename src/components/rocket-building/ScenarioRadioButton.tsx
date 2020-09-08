@@ -74,11 +74,11 @@ export default function ScenarioRadioButton(props: any) {
             <RadioGroup aria-label="gender" name="gender1" onChange={props.changeValue} value={props.value}>
                 <Container fluid>
                     <Row>
-                        <Col style={{marginRight: 25}}>
-                            <FormControlLabel value="Yes" control={<StyledRadio />} label="Yes" />
+                        <Col style={{marginRight: 50}}>
+                            <FormControlLabel value="Yes"control={<StyledRadio />} label={props.yesValue}  />
                         </Col>
-                        <Col style={{marginLeft: 25}}>
-                            <FormControlLabel value="No" control={<StyledRadio />} label="No" />
+                        <Col style={{marginLeft: 50}}>
+                            <FormControlLabel value="No"  control={<StyledRadio />} label={props.noValue} />
                         </Col>
                     </Row>
                 </Container>

@@ -77,7 +77,7 @@ class Header extends React.Component<any, any> {
                                         </p>
                                     </Col>
                                 </Row>
-                                <Row className={"justify-content-start"} style={{marginTop: 50}}>
+                                <Row className={"justify-content-end"} style={{marginTop: 50}}>
                                     {(this.state.width > 1000) ?
                                         <Col className={"col-8"}>
                                             <Button
@@ -85,7 +85,7 @@ class Header extends React.Component<any, any> {
                                                 variant="primary"
                                                 type="submit"
                                                 className={"btn green-button"}
-                                                style={{width: "50%",
+                                                style={{width: "50%", marginRight: "5%",
                                                     clipPath: "polygon(0 0, 95% 0, 100% 100%, 5% 100%)"}}>
                                                 Start
                                             </Button>

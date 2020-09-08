@@ -21,6 +21,7 @@ import ErrorPopup from "../../shared/modals/ErrorPopup";
 import Button from "react-bootstrap/Button";
 import {toast} from "react-toastify";
 import 'react-toastify/dist/ReactToastify.css';
+import trashcan from "../../shared/images/trashcan.png";
 
 const containerStyle: React.CSSProperties = {
     width: 500,
@@ -147,8 +148,12 @@ export const SixGridContainer: React.FC<GridContainerProps> = ({objectiveImage, 
 
                 <Row style={{margin: "3%"}}>
                     <Col className={"col-2"}>
-                        <Button style={{float: "left", backgroundColor: "transparent", fontSize: "20px", fontWeight: "bold"}}
-                                onClick={deleteCurrentComponent}><i className="fa fa-trash-o" style={{color: "black"}} /></Button>
+                        <Button style={{float: "left", backgroundColor: "transparent", fontSize: "20px",
+                            fontWeight: "bold", border: 0}}
+                                onClick={deleteCurrentComponent}>
+                            <img src={trashcan} alt={"Trash Can"} style={{width: "90%"}} />
+                            {/*<i className="fa fa-trash-o" style={{color: "black"}} />*/}
+                        </Button>
                     </Col>
 
                     <Col className={"ml-auto col-2 justify-content-center align-content center"}>

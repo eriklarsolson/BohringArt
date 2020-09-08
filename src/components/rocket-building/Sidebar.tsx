@@ -22,10 +22,28 @@ import booster_4_left from "./images/boosters/booster_4_left.png"
 
 class Sidebar extends React.Component<any, any> {
     render() {
+        //Cone
+        const maxConeAirResistance = 660000;
+        const maxConeTotalMass = 3003;
+
+        //Body
+        const maxBodyFuelCapacity = 286677;
+        const maxBodyTotalMass = 21630;
+
+        //Booster
+        const maxBoosterFuelCapacity = 48163;
+        const maxBoosterAirResistance = 330000;
+        const maxBoosterTotalMass = 4620;
+        const maxBoosterThrust = 3690;
+
+        //Engine
+        const maxEngineTotalMass = 6120;
+        const maxEngineThrust = 4300.1;
+
         return (
             <>
                <Container style={{backgroundColor: "#29405B", margin: 0, height: "100%", textAlign: "left",
-                   clipPath: "polygon(0 0, 90% 0, 100% 100%, 0 100%)"}}>
+                   clipPath: "polygon(0 0, 95% 0, 100% 100%, 0 100%)"}}>
 
                    <h4 style={{paddingLeft: 10}}>PARTS</h4>
 
@@ -109,26 +127,26 @@ class Sidebar extends React.Component<any, any> {
                                <Row style={{textAlign: "left", padding: 5}}>
                                    <Col>
                                        <Row style={{marginBottom: 3}} className={"align-items-center"}>
-                                           <Col className={"col-5"}>
+                                           <Col className={"col-5"} style={{paddingRight: 0, paddingLeft: 5}}>
                                                <p style={{marginBottom: 0, fontSize: 12}}>Air Resistance</p>
                                            </Col>
-                                           <div style={{minWidth: 20, backgroundColor: "#162F4C"}}>
+                                           <div style={{minWidth: 45, backgroundColor: "#162F4C"}}>
                                                <p style={{padding: 5, fontSize: 10, marginBottom: 0}}>{this.props.cone.airResistance}</p>
                                            </div>
-                                           <Col className={"col-5"}>
-                                               <PartPropertySlider value={this.props.cone.airResistance} />
+                                           <Col className={"col-5"} style={{paddingLeft: 5}}>
+                                               <PartPropertySlider max={maxConeAirResistance} value={(this.props.cone.airResistance / maxConeAirResistance) * 100} />
                                            </Col>
                                        </Row>
 
                                        <Row style={{marginBottom: 3}} className={"align-items-center"}>
-                                           <Col className={"col-5"}>
+                                           <Col className={"col-5"} style={{paddingRight: 0, paddingLeft: 5}}>
                                                <p style={{marginBottom: 0, fontSize: 12}}>Total Mass</p>
                                            </Col>
-                                           <div style={{minWidth: 20, backgroundColor: "#162F4C"}}>
+                                           <div style={{minWidth: 45, backgroundColor: "#162F4C"}}>
                                                <p style={{padding: 5, fontSize: 10, marginBottom: 0}}>{this.props.cone.mass}</p>
                                            </div>
-                                           <Col  className={"col-5"}>
-                                               <PartPropertySlider value={this.props.cone.mass} />
+                                           <Col className={"col-5"} style={{paddingLeft: 5}}>
+                                               <PartPropertySlider value={(this.props.cone.mass / maxConeTotalMass) * 100} />
                                            </Col>
                                        </Row>
                                    </Col>
@@ -217,26 +235,26 @@ class Sidebar extends React.Component<any, any> {
                                <Row style={{textAlign: "left", padding: 5}}>
                                    <Col>
                                        <Row style={{marginBottom: 3}} className={"align-items-center"}>
-                                           <Col className={"col-5"}>
+                                           <Col className={"col-5"} style={{paddingRight: 0, paddingLeft: 5}}>
                                                <p style={{marginBottom: 0, fontSize: 12}}>Fuel Capacity</p>
                                            </Col>
-                                           <div style={{minWidth: 20, backgroundColor: "#162F4C"}}>
+                                           <div style={{minWidth: 45, backgroundColor: "#162F4C"}}>
                                                <p style={{padding: 5, fontSize: 10, marginBottom: 0}}>{this.props.body.fuelCapacity}</p>
                                            </div>
-                                           <Col  className={"col-5"}>
-                                               <PartPropertySlider value={this.props.body.fuelCapacity} />
+                                           <Col className={"col-5"} style={{paddingLeft: 5}}>
+                                               <PartPropertySlider value={(this.props.body.fuelCapacity / maxBodyFuelCapacity) * 100} />
                                            </Col>
                                        </Row>
 
                                        <Row style={{marginBottom: 3}} className={"align-items-center"}>
-                                           <Col className={"col-5"}>
+                                           <Col className={"col-5"} style={{paddingRight: 0, paddingLeft: 5}}>
                                                <p style={{marginBottom: 0, fontSize: 12}}>Total Mass</p>
                                            </Col>
-                                           <div style={{minWidth: 20, backgroundColor: "#162F4C"}}>
+                                           <div style={{minWidth: 45, backgroundColor: "#162F4C"}}>
                                                <p style={{padding: 5, fontSize: 10, marginBottom: 0}}>{this.props.body.mass}</p>
                                            </div>
-                                           <Col  className={"col-5"}>
-                                               <PartPropertySlider value={this.props.body.mass} />
+                                           <Col className={"col-5"} style={{paddingLeft: 5}}>
+                                               <PartPropertySlider value={(this.props.body.mass / maxBodyTotalMass) * 100} />
                                            </Col>
                                        </Row>
                                    </Col>
@@ -325,50 +343,50 @@ class Sidebar extends React.Component<any, any> {
                                <Row style={{textAlign: "left", padding: 5}}>
                                    <Col>
                                        <Row style={{marginBottom: 3}} className={"align-items-center"}>
-                                           <Col className={"col-5"}>
+                                           <Col className={"col-5"} style={{paddingRight: 0, paddingLeft: 5}}>
                                                <p style={{marginBottom: 0, fontSize: 12}}>Fuel Capacity</p>
                                            </Col>
-                                           <div style={{minWidth: 20, backgroundColor: "#162F4C"}}>
+                                           <div style={{minWidth: 45, backgroundColor: "#162F4C"}}>
                                                <p style={{padding: 5, fontSize: 10, marginBottom: 0}}>{this.props.booster.fuelCapacity}</p>
                                            </div>
-                                           <Col  className={"col-5"}>
-                                               <PartPropertySlider value={this.props.booster.fuelCapacity} />
+                                           <Col className={"col-5"} style={{paddingLeft: 5}}>
+                                               <PartPropertySlider value={(this.props.booster.fuelCapacity / maxBoosterFuelCapacity) * 100} />
                                            </Col>
                                        </Row>
 
                                        <Row style={{marginBottom: 3}} className={"align-items-center"}>
-                                           <Col className={"col-5"}>
+                                           <Col className={"col-5"} style={{paddingRight: 0, paddingLeft: 5}}>
                                                <p style={{marginBottom: 0, fontSize: 12}}>Air Resistance</p>
                                            </Col>
-                                           <div style={{minWidth: 20, backgroundColor: "#162F4C"}}>
+                                           <div style={{minWidth: 45, backgroundColor: "#162F4C"}}>
                                                <p style={{padding: 5, fontSize: 10, marginBottom: 0}}>{this.props.booster.airResistance}</p>
                                            </div>
-                                           <Col className={"col-5"}>
-                                               <PartPropertySlider value={this.props.booster.airResistance} />
+                                           <Col className={"col-5"} style={{paddingLeft: 5}}>
+                                               <PartPropertySlider value={(this.props.booster.airResistance / maxBoosterAirResistance) * 100} />
                                            </Col>
                                        </Row>
 
                                        <Row style={{marginBottom: 3}} className={"align-items-center"}>
-                                           <Col className={"col-5"}>
+                                           <Col className={"col-5"} style={{paddingRight: 0, paddingLeft: 5}}>
                                                <p style={{marginBottom: 0, fontSize: 12}}>Total Mass</p>
                                            </Col>
-                                           <div style={{minWidth: 20, backgroundColor: "#162F4C"}}>
+                                           <div style={{minWidth: 45, backgroundColor: "#162F4C"}}>
                                                <p style={{padding: 5, fontSize: 10, marginBottom: 0}}>{this.props.booster.mass}</p>
                                            </div>
-                                           <Col  className={"col-5"}>
-                                               <PartPropertySlider value={this.props.booster.mass} />
+                                           <Col className={"col-5"} style={{paddingLeft: 5}}>
+                                               <PartPropertySlider value={(this.props.booster.mass / maxBoosterTotalMass) * 100} />
                                            </Col>
                                        </Row>
 
                                        <Row style={{marginBottom: 3}} className={"align-items-center"}>
-                                           <Col className={"col-5"}>
+                                           <Col className={"col-5"} style={{paddingRight: 0, paddingLeft: 5}}>
                                                <p style={{marginBottom: 0, fontSize: 12}}>Thrust</p>
                                            </Col>
-                                           <div style={{minWidth: 20, backgroundColor: "#162F4C"}}>
+                                           <div style={{minWidth: 45, backgroundColor: "#162F4C"}}>
                                                <p style={{padding: 5, fontSize: 10, marginBottom: 0}}>{this.props.booster.thrust}</p>
                                            </div>
-                                           <Col  className={"col-5"}>
-                                               <PartPropertySlider value={this.props.booster.thrust} />
+                                           <Col className={"col-5"} style={{paddingLeft: 5}}>
+                                               <PartPropertySlider value={(this.props.booster.thrust / maxBoosterThrust) * 100} />
                                            </Col>
                                        </Row>
                                    </Col>
@@ -457,26 +475,26 @@ class Sidebar extends React.Component<any, any> {
                                <Row style={{textAlign: "left", padding: 5}}>
                                    <Col>
                                        <Row style={{marginBottom: 3}} className={"align-items-center"}>
-                                           <Col className={"col-5"}>
+                                           <Col className={"col-5"} style={{paddingRight: 0, paddingLeft: 5}}>
                                                <p style={{marginBottom: 0, fontSize: 12}}>Total Mass</p>
                                            </Col>
-                                           <div style={{minWidth: 20, backgroundColor: "#162F4C"}}>
+                                           <div style={{minWidth: 45, backgroundColor: "#162F4C"}}>
                                                <p style={{padding: 5, fontSize: 10, marginBottom: 0}}>{this.props.engine.mass}</p>
                                            </div>
-                                           <Col  className={"col-5"}>
-                                               <PartPropertySlider value={this.props.engine.mass} />
+                                           <Col className={"col-5"} style={{paddingLeft: 5}}>
+                                               <PartPropertySlider value={(this.props.engine.mass / maxEngineTotalMass) * 100} />
                                            </Col>
                                        </Row>
 
                                        <Row style={{marginBottom: 3}} className={"align-items-center"}>
-                                           <Col className={"col-5"}>
+                                           <Col className={"col-5"} style={{paddingRight: 0, paddingLeft: 5}}>
                                                <p style={{marginBottom: 0, fontSize: 12}}>Thrust</p>
                                            </Col>
-                                           <div style={{minWidth: 20, backgroundColor: "#162F4C"}}>
+                                           <div style={{minWidth: 45, backgroundColor: "#162F4C"}}>
                                                <p style={{padding: 5, fontSize: 10, marginBottom: 0}}>{this.props.engine.thrust}</p>
                                            </div>
-                                           <Col className={"col-5"}>
-                                               <PartPropertySlider value={this.props.engine.thrust} />
+                                           <Col className={"col-5"} style={{paddingLeft: 5}}>
+                                               <PartPropertySlider value={(this.props.engine.thrust / maxEngineThrust) * 100} />
                                            </Col>
                                        </Row>
                                    </Col>

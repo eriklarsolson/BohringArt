@@ -3,7 +3,7 @@ import {Button, Col, Modal} from "react-bootstrap";
 import { Container, Row } from 'react-bootstrap'
 import {setComponentsList} from "../../telescope-activity/grid/Functionality";
 
-class ErrorPopup extends React.Component<any, any> {
+class MessagePopup extends React.Component<any, any> {
     render() {
         console.log(this.props.description)
 
@@ -35,7 +35,7 @@ class ErrorPopup extends React.Component<any, any> {
                                 <Col className={"col-3"}>
                                     <Button style={{width: "100%", float: "right",
                                         clipPath: "polygon(0 0, 95% 0, 100% 100%, 5% 100%)"}}
-                                            className={"blue-button"} onClick={this.props.closePopup}>Reset</Button>
+                                            className={"blue-button"} onClick={this.props.closePopup}>Carry on with the mission</Button>
                                 </Col>
                             </Row>
                         </Container>
@@ -45,4 +45,4 @@ class ErrorPopup extends React.Component<any, any> {
         )
     }
 }
-export default ErrorPopup;
+export default MessagePopup;

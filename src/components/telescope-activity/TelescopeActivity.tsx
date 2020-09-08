@@ -9,6 +9,7 @@ import {Animation} from "./Animation";
 import "./Telescope.scss"
 import {deleteCurrentComponent, generatePaths} from "./grid/Functionality";
 import {MoreInfoAnimation} from "./MoreInfoAnimation";
+import trashcan from "../shared/images/trashcan.png"
 
 class TelescopeActivity extends React.Component<any, any> {
     constructor(props: any) {
@@ -128,9 +129,10 @@ class TelescopeActivity extends React.Component<any, any> {
 
                                 <Row className="justify-content-center" style={{margin: "3%"}}>
                                     <Col className={"col-3"} style={{padding: 0}}>
-                                        <Button style={{float: "left", backgroundColor: "transparent", fontSize: "20px",
+                                        <Button style={{float: "left", backgroundColor: "transparent", border: 0,
                                             fontWeight: "bold"}} onClick={deleteCurrentComponent}>
-                                            <i className="fa fa-trash-o" style={{color: "black"}} />
+                                            <img src={trashcan} alt={"Trash Can"} style={{width: "90%"}} />
+                                            {/*<i className="fa fa-trash-o" style={{color: "black"}} />*/}
                                         </Button>
                                     </Col>
 

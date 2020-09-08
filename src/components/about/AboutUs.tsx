@@ -62,7 +62,7 @@ class AboutUs extends React.Component<any, any> {
                         <AboutUsAnimation />
 
                         <Row className={"justify-content-center"} style={{clipPath: "polygon(0 100px, 100% 0, 100% 95%, 0 100%)"}}>
-                            <Col className={"col-md-6 col-sm-12"} style={{padding: 100, backgroundColor: "#F8EDDD"}}>
+                            <Col className={"col-12 col-md-6 col-sm-12"} style={{padding: 100, backgroundColor: "#F8EDDD"}}>
                                 <Container fluid>
                                     <Row style={{textAlign: "left", paddingLeft: "5%", paddingRight: "5%", paddingTop: "5%"}}>
                                         <h1 style={{fontWeight: "bolder", color: "#29405B"}}>PROJECT PURPOSE</h1>
@@ -89,7 +89,7 @@ class AboutUs extends React.Component<any, any> {
                                 </Container>
                             </Col>
 
-                            <Col className={"col-md-6 col-sm-12"} style={{backgroundColor: "rgba(82, 82, 82, 0.8)", paddingBottom: 100}}>
+                            <Col className={"col-12 col-md-6 col-sm-12"} style={{backgroundColor: "rgba(82, 82, 82, 0.8)", paddingBottom: 100}}>
                                 <Container fluid style={{padding: 100}}>
                                     <Row  style={{textAlign: "left", paddingLeft: "5%", paddingRight: "5%", paddingTop: "5%"}}>
                                         <h1 style={{fontWeight: "bolder", color: "white"}}>WHY BOHRING?</h1>
@@ -121,8 +121,8 @@ class AboutUs extends React.Component<any, any> {
                         <Row style={{backgroundColor: "#29405B", color: "white", paddingTop: 75, textAlign: "left"}} className="justify-content-center">
                             <Container fluid>
                                 <Row className="justify-content-center">
-                                    <Col className={"col-4"}>
-                                        <p style={{marginLeft: "4%", fontSize: 48, fontWeight: "bold"}}>CONTACT US</p>
+                                    <Col className={"col-5"}>
+                                        <p style={{marginLeft: "7%", fontSize: 48, fontWeight: "bold"}}>CONTACT US</p>
                                     </Col>
                                 </Row>
 

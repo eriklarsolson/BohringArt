@@ -31,10 +31,10 @@ class LearnSection extends React.Component<any, any> {
                              style={{clipPath: "polygon(0 0, 95% 0, 100% 100%, 5% 100%)", backgroundColor: "#29405B",
                                  padding: 25, marginBottom: 20}}>
                             <Row>
-                                <Col className={"col-4"} style={{overflow: "hidden", minWidth: 150}}>
+                                <Col className={"col-3"} style={{padding: 0, overflow: "hidden", minWidth: 150}}>
                                     <img alt={"#1"} src={one} style={{float: "right"}} />
                                 </Col>
-                                <Col>
+                                <Col style={{paddingLeft: 10}}>
                                     <h4>CIRCUIT CONSTRUCTION</h4>
                                     <p style={{marginRight: 10}}>
                                         Learn about circuit components to build one that can power your satellite.
@@ -58,10 +58,10 @@ class LearnSection extends React.Component<any, any> {
                              style={{clipPath: "polygon(0 0, 95% 0, 100% 100%, 5% 100%)", backgroundColor: "#29405B",
                                  padding: 25, marginBottom: 20}}>
                             <Row>
-                                <Col className={"col-4"} style={{overflow: "hidden", minWidth: 150}}>
+                                <Col className={"col-3"} style={{padding: 0, overflow: "hidden", minWidth: 150}}>
                                     <img alt={"#2"} src={two} style={{float: "right"}} />
                                 </Col>
-                                <Col>
+                                <Col style={{paddingLeft: 10}}>
                                     <h4>LASERS AND LENSES</h4>
                                     <p style={{marginRight: 10}}>
                                         Learn how lenses manipulate light to understand how your telescope sees distant
@@ -85,10 +85,10 @@ class LearnSection extends React.Component<any, any> {
                              style={{clipPath: "polygon(0 0, 95% 0, 100% 100%, 5% 100%)", backgroundColor: "#29405B",
                                  padding: 25, marginLeft: "4%", marginBottom: 20}}>
                             <Row>
-                                <Col className={"col-4"} style={{overflow: "hidden", minWidth: 150}}>
+                                <Col className={"col-3"} style={{padding: 0, overflow: "hidden", minWidth: 150}}>
                                     <img alt={"#3"} src={three} style={{float: "right"}} />
                                 </Col>
-                                <Col>
+                                <Col style={{paddingLeft: 10}}>
                                     <h4>TO THE STARS</h4>
                                     <p style={{marginRight: 10}}>
                                         Create a rocket consisting of an engine, boosters, a body, and a cone. Make sure
@@ -113,10 +113,10 @@ class LearnSection extends React.Component<any, any> {
                              style={{clipPath: "polygon(0 0, 95% 0, 100% 100%, 5% 100%)", backgroundColor: "#29405B",
                                  padding: 25, marginBottom: 20}}>
                             <Row>
-                                <Col className={"col-4"} style={{overflow: "hidden", minWidth: 150}}>
+                                <Col className={"col-3"} style={{padding: 0, overflow: "hidden", minWidth: 150}}>
                                     <img alt={"#4"} src={four} style={{float: "right"}} />
                                 </Col>
-                                <Col>
+                                <Col style={{paddingLeft: 10}}>
                                     <h4>STELLAR LIFE CYCLE</h4>
                                     <p style={{marginRight: 10}}>
                                         Learn more about what your telescope sees, and a star’s life cycle from creation

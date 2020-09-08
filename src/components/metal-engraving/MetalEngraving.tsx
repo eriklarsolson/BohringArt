@@ -447,7 +447,7 @@ class MetalEngraving extends React.Component<any, any> {
                                 </Row>
                                 <Row className={"justify-content-end"} style={{margin: 0}}>
                                         <Button className={"blue-button"} style={{width: 166, textAlign: "left",
-                                            marginBottom: 15}} onClick={cvcleEngravingPopup}>Stencil</Button>
+                                            marginBottom: 15}} onClick={cvcleEngravingPopup}>Stencils</Button>
                                 </Row>
                                 <Row className={"justify-content-end"} style={{margin: 0}}>
                                         <Button className={"blue-button"} style={{width: 166, textAlign: "left",

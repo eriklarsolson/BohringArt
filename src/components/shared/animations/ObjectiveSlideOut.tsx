@@ -36,6 +36,11 @@ export const ObjectiveSlideOut: React.FC<AnimationProps>  = ({setParentState, ti
         setTimeout(() => {  setClosed() }, 1200);
     }
 
+    let rowHeight = "100%";
+    if(title === "03 To The Stars") {
+        rowHeight = "80%"
+    }
+
     return (
         <>
             <div style={{position: "absolute", width: "100%", height: "100%",
@@ -46,7 +51,7 @@ export const ObjectiveSlideOut: React.FC<AnimationProps>  = ({setParentState, ti
                 style={{height: "100%"}}>
 
                 <Container fluid style={{height: "100%"}}>
-                    <Row style={{height: "100%"}}>
+                    <Row style={{height: rowHeight}}>
                         <Col className={"align-self-center col-10 mr-auto"} style={{padding: 0}}>
                             <div style={{position: "absolute", width: "100%", height: "100%", backgroundColor: "#F8EDDD",
                                 clipPath: "polygon(0 0, 95% 0, 100% 100%, 0 100%)"}} />

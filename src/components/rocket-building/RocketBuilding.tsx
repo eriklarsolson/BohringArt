@@ -3,7 +3,6 @@ import { Container, Row, Col } from 'react-bootstrap'
 import Sidebar from "./Sidebar";
 import Button from "react-bootstrap/Button";
 import 'font-awesome/css/font-awesome.min.css';
-import ObjectivePopup from "../shared/modals/ObjectivePopup";
 import cone_1 from "./images/cones/cone_1.png"
 import cone_2 from "./images/cones/cone_2.png"
 import cone_3 from "./images/cones/cone_3.png"
@@ -28,6 +27,7 @@ import booster_4_right from "./images/boosters/booster_4_right.png"
 import background from "./images/rocket_assembly_bg.jpg";
 import {MoreInfoAnimation} from "./MoreInfoAnimation";
 import {ObjectiveSlideOut} from "../shared/animations/ObjectiveSlideOut";
+import PartPropertySlider from "./PartPropertySlider";
 
 class RocketBuilding extends React.Component<any, any> {
     constructor(props: any) {
@@ -40,26 +40,26 @@ class RocketBuilding extends React.Component<any, any> {
                 {
                     image: cone_1,
                     title: "Cone 1",
-                    mass: 50,
-                    airResistance: 5,
+                    mass: 2007,
+                    airResistance: 660000,
                 },
                 {
                     image: cone_2,
                     title: "Cone 2",
-                    mass: 30,
-                    airResistance: 12,
+                    mass: 2316,
+                    airResistance: 495000,
                 },
                 {
                     image: cone_3,
                     title: "Cone 3",
-                    mass: 99,
-                    airResistance: 23,
+                    mass: 2659,
+                    airResistance: 495000,
                 },
                 {
                     image: cone_4,
                     title: "Cone 4",
-                    mass: 23,
-                    airResistance: 23,
+                    mass: 3003,
+                    airResistance: 330000,
                 }
             ],
             coneIndex: 0,
@@ -67,26 +67,26 @@ class RocketBuilding extends React.Component<any, any> {
                 {
                     image: body_1,
                     title: "Body 1",
-                    mass: 53,
-                    fuelCapacity: 54
+                    mass: 20210,
+                    fuelCapacity: 277898
                 },
                 {
                     image: body_2,
                     title: "Body 2",
-                    mass: 27,
-                    fuelCapacity: 10
+                    mass: 20544,
+                    fuelCapacity: 282285
                 },
                 {
                     image: body_3,
                     title: "Body 3",
-                    mass: 53,
-                    fuelCapacity: 54
+                    mass: 21054,
+                    fuelCapacity: 284089
                 },
                 {
                     image: body_4,
                     title: "Body 4",
-                    mass: 22,
-                    fuelCapacity: 1
+                    mass: 21630,
+                    fuelCapacity: 286677
                 }
             ],
             bodyIndex: 0,
@@ -96,40 +96,40 @@ class RocketBuilding extends React.Component<any, any> {
                     rightImage: booster_1_right,
                     middleImage: null,
                     title: "Booster 1",
-                    mass: 24,
-                    airResistance: 3,
-                    fuelCapacity: 45,
-                    thrust: 10
+                    mass: 3824,
+                    airResistance: 330000,
+                    fuelCapacity: 39774,
+                    thrust: 3281.6
                 },
                 {
                     leftImage: booster_2_left,
                     rightImage: booster_2_right,
                     middleImage: null,
-                    title: "Booster 3",
-                    mass: 59,
-                    airResistance: 9,
-                    fuelCapacity: 23,
-                    thrust: 25
+                    title: "Booster 2",
+                    mass: 4067,
+                    airResistance: 247500,
+                    fuelCapacity: 42630,
+                    thrust: 3376.8
                 },
                 {
                     leftImage: booster_3_left,
                     rightImage: booster_3_right,
                     middleImage: null,
                     title: "Booster 3",
-                    mass: 67,
-                    airResistance: 99,
-                    fuelCapacity: 3,
-                    thrust: 35
+                    mass: 4339,
+                    airResistance: 247500,
+                    fuelCapacity: 45129,
+                    thrust: 3610.2
                 },
                 {
                     leftImage: booster_4_left,
                     rightImage: booster_4_right,
                     middleImage: booster_4_middle,
                     title: "Booster 4",
-                    mass: 59,
-                    airResistance: 9,
-                    fuelCapacity: 23,
-                    thrust: 45
+                    mass: 4620,
+                    airResistance: 165000,
+                    fuelCapacity: 48163,
+                    thrust: 3690
                 },
             ],
             boosterIndex: 0,
@@ -137,26 +137,26 @@ class RocketBuilding extends React.Component<any, any> {
                 {
                     image: engine_1,
                     title: "Engine 1",
-                    mass: 85,
-                    thrust: 15
+                    mass: 5104,
+                    thrust: 3950
                 },
                 {
                     image: engine_2,
                     title: "Engine 2",
-                    mass: 33,
-                    thrust: 25
+                    mass: 5480,
+                    thrust: 4151.2
                 },
                 {
                     image: engine_3,
                     title: "Engine 3",
-                    mass: 85,
-                    thrust: 35
+                    mass: 5873,
+                    thrust: 4255.4
                 },
                 {
                     image: engine_4,
                     title: "Engine 4",
-                    mass: 33,
-                    thrust: 45
+                    mass: 6120,
+                    thrust: 4300.1
                 }
             ],
             engineIndex: 0
@@ -164,6 +164,16 @@ class RocketBuilding extends React.Component<any, any> {
     }
 
     render() {
+        const maxFuelCapacity = 383003;
+        const maxAirResistance = 1320000;
+        const maxTotalMass = 51103;
+        const maxThrust = 11680.1;
+
+        // const minFuelCapacity = 357446;
+        // const minAirResistance = 660000;
+        // const minTotalMass = 34969;
+        // const minThrust = 10513.2;
+
         const cycleQuestionPopup = () => {
             this.setState({questionPopupOpened: !this.state.questionPopupOpened})
         }
@@ -295,6 +305,7 @@ class RocketBuilding extends React.Component<any, any> {
             total += this.state.bodys[this.state.bodyIndex].mass;
             total += (this.state.boosters[this.state.boosterIndex].mass * 2); //Note: 2 side boosters
             total += this.state.engines[this.state.engineIndex].mass;
+            total += 11110 //Telescope weight
 
             return total;
         }
@@ -462,33 +473,93 @@ class RocketBuilding extends React.Component<any, any> {
                                                                 <Container fluid>
                                                                     <Row>
                                                                         <Col style={{padding: 5}}>
-                                                                            <p style={{fontWeight: "bold", fontSize: 18}}>
-                                                                                Fuel Capacity: {getTotalFuelCapacity()} kg
-                                                                            </p>
+                                                                            <Container fluid>
+                                                                                <Row>
+                                                                                    <Col className="col-4">
+                                                                                        <p style={{fontWeight: "bold", fontSize: 18, marginTop: 5, marginBottom: 0}}>Total Fuel Capacity:</p>
+
+                                                                                    </Col>
+                                                                                    <Col style={{padding: 0}}>
+                                                                                        <PartPropertySlider
+                                                                                            value={(getTotalFuelCapacity() / maxFuelCapacity) * 100} />
+                                                                                    </Col>
+                                                                                </Row>
+
+                                                                                <Row>
+                                                                                    <Col>
+                                                                                        <p style={{fontWeight: "bold", fontSize: 14}}>{getTotalFuelCapacity()} kg</p>
+                                                                                    </Col>
+                                                                                </Row>
+                                                                            </Container>
                                                                         </Col>
                                                                     </Row>
 
                                                                     <Row>
                                                                         <Col style={{padding: 5}}>
-                                                                            <p style={{fontWeight: "bold", fontSize: 18}}>
-                                                                                Air Resistance: {getTotalAirResistance()} N
-                                                                            </p>
+                                                                            <Container fluid>
+                                                                                <Row>
+                                                                                    <Col className="col-4">
+                                                                                        <p style={{fontWeight: "bold", fontSize: 18, marginTop: 5, marginBottom: 0}}>Total Air Resistance:</p>
+
+                                                                                    </Col>
+                                                                                    <Col style={{padding: 0}}>
+                                                                                        <PartPropertySlider
+                                                                                            value={(getTotalAirResistance() / maxAirResistance) * 100} />
+                                                                                    </Col>
+                                                                                </Row>
+
+                                                                                <Row>
+                                                                                    <Col>
+                                                                                        <p style={{fontWeight: "bold", fontSize: 14}}>{getTotalAirResistance()} N</p>
+                                                                                    </Col>
+                                                                                </Row>
+                                                                            </Container>
                                                                         </Col>
                                                                     </Row>
 
                                                                     <Row>
                                                                         <Col style={{padding: 5}}>
-                                                                            <p style={{fontWeight: "bold", fontSize: 18}}>
-                                                                                Total Mass: {getTotalMass()} kg
-                                                                            </p>
+                                                                            <Container fluid>
+                                                                                <Row>
+                                                                                    <Col className="col-4">
+                                                                                        <p style={{fontWeight: "bold", fontSize: 18, marginTop: 5, marginBottom: 0}}>Total Mass:</p>
+
+                                                                                    </Col>
+                                                                                    <Col style={{padding: 0}}>
+                                                                                        <PartPropertySlider
+                                                                                            value={(getTotalMass() / maxTotalMass) * 100} />
+                                                                                    </Col>
+                                                                                </Row>
+
+                                                                                <Row>
+                                                                                    <Col>
+                                                                                        <p style={{fontWeight: "bold", fontSize: 14}}>{getTotalMass()} kg</p>
+                                                                                    </Col>
+                                                                                </Row>
+                                                                            </Container>
                                                                         </Col>
                                                                     </Row>
 
                                                                     <Row>
                                                                         <Col style={{padding: 5}}>
-                                                                            <p style={{fontWeight: "bold", fontSize: 18}}>
-                                                                                Thrust: {getTotalThrust()}
-                                                                            </p>
+                                                                            <Container fluid>
+                                                                                <Row>
+                                                                                    <Col className="col-4">
+                                                                                        <p style={{fontWeight: "bold", fontSize: 18, marginTop: 5, marginBottom: 0}}>Total Thrust:</p>
+
+                                                                                    </Col>
+                                                                                    <Col style={{padding: 0}}>
+                                                                                        <PartPropertySlider
+                                                                                            value={(getTotalThrust() / maxThrust) * 100} />
+                                                                                    </Col>
+                                                                                </Row>
+
+                                                                                <Row>
+                                                                                    <Col>
+                                                                                        <p style={{fontWeight: "bold", fontSize: 14}}>{getTotalThrust()} kN</p>
+                                                                                    </Col>
+                                                                                </Row>
+                                                                            </Container>
                                                                         </Col>
                                                                     </Row>
                                                                 </Container>

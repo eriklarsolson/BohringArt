@@ -42,8 +42,6 @@ interface Props {
     children: React.ReactElement;
     value: number
     max: number
-    marks: any
-    changeTime: any
 }
 
 export default function PartPropertySlider(props: any) {
@@ -54,8 +52,7 @@ export default function PartPropertySlider(props: any) {
             <PropertySlider
                 value={props.value}
                 aria-labelledby="part-property-slider"
-                step={20}
-                max={99}
+                max={100}
                 valueLabelDisplay="off"
             />
         </div>
