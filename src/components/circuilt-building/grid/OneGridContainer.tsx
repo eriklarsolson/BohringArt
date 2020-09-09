@@ -84,9 +84,10 @@ export const OneGridContainer: React.FC<GridContainerProps> = ({componentType, f
                 <div style={tooltipStyle}>
                     <Container fluid style={{margin: 10}}>
                         <Row style={{padding: 0}}>
-                            <p style={{fontWeight: "bold", margin: 0}}>{components[0].type}</p>
+                            <p style={{fontWeight: "bold", marginLeft: 10}}>
+                                {components[0].type}</p>
                         </Row>
-                        <Row style={{padding: 5}}>
+                        <Row style={{marginLeft: 10, marginRight: 10}}>
                             <p>{getTooltipDescription()}</p>
                         </Row>
                     </Container>

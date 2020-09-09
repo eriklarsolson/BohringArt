@@ -12,7 +12,7 @@ class Sidebar extends React.Component<any, any> {
         let massClassString = "Average"
         let max = 100
         if(this.props.massClass === 1) {
-            max = 120
+            // max = 120
             massClassString = "Massive"
         }
 

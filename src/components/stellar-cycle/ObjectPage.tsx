@@ -193,10 +193,10 @@ class ObjectPage extends React.Component<any, any> {
                     {
                         title: "Black Hole",
                         image: blackhole,
-                        temperatureValue: 120,
-                        sizeValue: 120,
-                        massValue: 120,
-                        timeValue: 120,
+                        temperatureValue: 100,
+                        sizeValue: 100,
+                        massValue: 100,
+                        timeValue: 100,
                         timeString: "6 Year"
                     }
                 ]
@@ -338,10 +338,30 @@ class ObjectPage extends React.Component<any, any> {
         }
 
         const changeTime = (event: any, newValue: any) => {
-            const samePlaceComponents = this.state.stellarObjects[this.state.massClass].filter((object: { timeValue: any; }) => object.timeValue === newValue);
-            if (samePlaceComponents.length > 0) {
-                const index = getIndex(samePlaceComponents[0], this.state.stellarObjects[this.state.massClass]);
-                this.setState({index: index})
+            if(newValue !== 100) {
+                const samePlaceComponents = this.state.stellarObjects[this.state.massClass].filter((object: { timeValue: any; }) => object.timeValue === newValue);
+                if (samePlaceComponents.length > 0) {
+                    const index = getIndex(samePlaceComponents[0], this.state.stellarObjects[this.state.massClass]);
+                    this.setState({index: index})
+                }
+            } else {
+                if(this.state.massClass === 1) {
+                    if (this.state.massiveIndex === 0) {
+                        const samePlaceComponents = this.state.stellarObjects[this.state.massClass].filter((object: { title: any; }) => object.title === "Neutron Star");
+                        const index = getIndex(samePlaceComponents[0], this.state.stellarObjects[this.state.massClass]);
+                        this.setState({index: index})
+                    } else {
+                        const samePlaceComponents = this.state.stellarObjects[this.state.massClass].filter((object: { title: any; }) => object.title === "Black Hole");
+                        const index = getIndex(samePlaceComponents[0], this.state.stellarObjects[this.state.massClass]);
+                        this.setState({index: index})
+                    }
+                } else {
+                    const samePlaceComponents = this.state.stellarObjects[this.state.massClass].filter((object: { timeValue: any; }) => object.timeValue === newValue);
+                    if (samePlaceComponents.length > 0) {
+                        const index = getIndex(samePlaceComponents[0], this.state.stellarObjects[this.state.massClass]);
+                        this.setState({index: index})
+                    }
+                }
             }
 
             console.log(this.state.stellarObjects[this.state.massClass][this.state.index].title)
@@ -471,7 +491,7 @@ class ObjectPage extends React.Component<any, any> {
                                             </Button>
                                         </Col>
 
-                                        <Col style={{margin: "3%"}}>
+                                        <Col className={"align-self-center"} style={{marginTop: 25, backgroundColor: "#212A51"}}>
                                             <p style={{color: "white", fontSize: "28px", fontWeight: "bold"}}>Stellar Life Cycle</p>
                                         </Col>
 

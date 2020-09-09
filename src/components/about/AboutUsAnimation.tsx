@@ -24,6 +24,7 @@ export const AboutUsAnimation: React.FC<AnimationProps>  = ({}) => {
 
     const [image, setImage] = useState<string>(lars);
     const [name, setName] = useState<string>("Lars Olson");
+    const [position, setPosition] = useState<string>("");
     const [title, setTitle] = useState<string>("Programmer");
     const [description, setDescription] = useState<string>("This is a description about a person");
 
@@ -86,52 +87,62 @@ export const AboutUsAnimation: React.FC<AnimationProps>  = ({}) => {
     const startAnimation = (person: string) => {
         if (person === "dena") {
             setImage(dena)
-            setName("Dena Izadi (Supervisor and Creator)")
+            setPosition("Supervisor & Creator")
+            setName("Dena Izadi")
             setTitle("Postdoctoral Research Associate | Department of Physics and Astronomy | MSU")
             setDescription("Hi! I am Dena Izadi, a postdoctoral fellow in physics education research lab at MSU. Before that, I did my PhD in (bio)physics. As the Bohring Art supervisor and creator, my role is to facilitate the physics communication among the team members. Outside of physics, I am a hobby artist, a proud plant mom, love cooking (Persian and international!), and enjoy traveling. I grew up in Shiraz, Iran, moved to the United States in 2010 for graduate school and have lived mostly in Michigan ever since. If you have any questions for me, feel free to send me an email at: izadiden@msu.edu")
         } else if (person === "parisa") {
             setImage(parisa)
-            setName("Parisa Ghaderi (Supervisor and Creator)")
+            setPosition("Supervisor & Creator")
+            setName("Parisa Ghaderi")
             setTitle("Assistant Professor | Graphic Design | MSU")
             setDescription("Being a visual artist, curator, designer and educator, I am interested in interdisciplinary approaches and finding ways to connect with people through art.")
         } else if (person === "brean") {
             setImage(brean)
+            setPosition("")
             setName("Brean Prefontaine")
-            setTitle("Graduate Student | MSU")
+            setTitle("Graduate Researcher | MSU")
             setDescription("Hi! I am Brean Prefontaine and I am a physics graduate student working with the Bohring Art team! My role on the project was primarily being a researcher to understand how this project turned out. However, I loved being involved in a creative project that allowed me to see how art and physics could be blended together! Outside of physics, I explore my creative side through figure skating/ice dancing and cooking! I grew up in Southern California, went to college at Drexel University in Philadelphia, and then headed to Michigan State for graduate school.")
         } else if (person === "danny") {
             setImage(danny)
+            setPosition("")
             setName("Danny Brandwein")
             setTitle("Graphic Design Student | MSU")
-            setDescription("This is a description about a person")
+            setDescription("Hi everyone! My name is Danny Brandwein and I am a senior at MSU with a major in Graphic Design and a minor in Entrepreneurship and Innovation. My passion in life is working on all things graphic design, whether it's creating personal pieces or graphics for other jobs. As a designer for BohringArt, my role was to design all aspects of the interactive activities, as well as the layout of the website. Other than creating graphics, in my free time, I enjoy playing basketball and watching MSU athletics!")
         } else if (person === "wyatt") {
             setImage(wyatt)
+            setPosition("")
             setName("Wyatt Stonhouse")
             setTitle("Graphic Design Student | MSU")
             setDescription("Hi! I am Wyatt Stonhouse and I am a graphic design student at MSU. My role with Bohring Art working along the other students and creating the visuals throughout our site and activities. Besides this project, my graphic design interests are towards sustainable and environmental design. Outside of design, I enjoy cycling and reading comics. I grew up in northern Michigan and will be graduating MSU December 2020. \n")
         } else if (person === "pranav") {
             setImage(pranav)
+            setPosition("")
             setName("Pranav Nalamwar")
             setTitle("Physics Student | MSU")
             setDescription("Hi everyone! I'm Pranav Nalamwar, a senior at MSU studying Physics and Astrophysics. I work at the Facility for Rare Isotope Beams studying Nuclear Astrophysics and the origin of the elements on the periodic table as well as work at Abrams Planetarium as a show presenter. For Bohring Art, I am one of the Physics students involved in teaching others about numerous Physics topics. In my free time, I love reading books, fencing, biking, and hiking.")
         } else if (person === "ray") {
             setImage(ray)
+            setPosition("")
             setName("Ray Smith")
             setTitle("Physics Student | MSU")
             setDescription("I'm Raymond Smith, a sophomore student at MSU. As a physics major working on the project, my role is to help teach and make sure the concepts are shown in interesting ways. I'm a movie buff, so in my free time I like to catch up on movies and shows. I also skateboard and read comic books.")
         } else if (person === "lars") {
             setImage(lars)
+            setPosition("")
             setName("Lars Olson")
             setTitle("Developer")
             setDescription("Hey there! My name is Lars Olson, I am from Indianapolis, IN and am the website developer for BohringArt! I am a 2020 graduate from Indiana University with a BS in Computer Science specializing in Artificial Intelligence. Outside of software development, I also played rugby for 8 years & also manage a record label focused primarily on releasing electronic music.")
         } else if (person === "hueywen") {
             setImage(hueywen)
-            setName("Huey-Wen Lin (Participating Faculty)")
+            setPosition("Participating Faculty")
+            setName("Huey-Wen Lin")
             setTitle("Assistant Professor | Department of Physics and Astronomy | MSU")
             setDescription("This is a description about a person")
         } else if (person === "mohammad") {
             setImage(mohammad)
-            setName("Mohammad Maghrebi (Faculty Sponsor)")
+            setPosition("Faculty Sponsor")
+            setName("Mohammad Maghrebi")
             setTitle("Sponsor MSU Physics Faculty | MSU")
             setDescription("Hi! I am Mohammad Maghrebi, a physics faculty at MSU. I received my PhD from MIT, and am the Bohring Art faculty sponsor. I have been actively involved in finding ways to communicate physics with the public audience. Outside of physics, I like reading history, philosophy and poetry (Persian/English). For more information, see my webpage: https://web.pa.msu.edu/people/maghrebi/")
         }
@@ -366,9 +377,18 @@ export const AboutUsAnimation: React.FC<AnimationProps>  = ({}) => {
                                     <p style={{marginBottom: 0, fontSize: 30, fontWeight: "bold"}}>{name}</p>
                                 </Col>
                             </Row>
+
+                            {position !== "" &&
+                                <Row className={"justify-content-center"}>
+                                    <Col className={"col-9"}>
+                                        <p style={{marginBottom: 0, fontSize: 22, fontWeight: "bold"}}>{position}</p>
+                                    </Col>
+                                </Row>
+                            }
+
                             <Row className={"justify-content-center"}>
                                 <Col className={"col-9"}>
-                                    <p style={{fontSize: 20, fontWeight: "bold"}}>{title}</p>
+                                    <p style={{fontSize: 18, fontWeight: "bold"}}>{title}</p>
                                 </Col>
                             </Row>
                             <Row className={"justify-content-center"}>

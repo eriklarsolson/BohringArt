@@ -76,8 +76,19 @@ class TelescopeActivity extends React.Component<any, any> {
                                         </Button>
                                     </Col>
 
-                                    <Col style={{margin: "3%"}}>
-                                        <p style={{color: "#29405B", fontSize: "28px", fontWeight: "bold"}}>Telescope Activity</p>
+                                    <Col className="col-5" style={{margin: "3%"}}>
+                                        <Row className={"justify-content-center"}>
+                                            <p style={{color: "#29405B", fontSize: 28, fontWeight: "bold", marginBottom: 0}}>Telescope Activity</p>
+                                        </Row>
+
+                                        <Row className={"justify-content-center"}>
+                                            <Col className={"col-8"}>
+                                                <p style={{color: "#29405B", fontSize: 14, marginBottom: 0}}>
+                                                    Note: This activity is not completely scientifically accurate,
+                                                    but hopes to convey these concepts as best as possible
+                                                </p>
+                                            </Col>
+                                        </Row>
                                     </Col>
 
                                     <Col className={"col-2 ml-auto"} style={{padding: 0, marginTop: "3%"}}>
@@ -148,7 +159,7 @@ class TelescopeActivity extends React.Component<any, any> {
                                         <Button className={"green-button"} style={{float: "right", width: 200,
                                             clipPath: "polygon(0 0, 95% 0, 100% 100%, 5% 100%)"}}
                                                 onClick={() => this.props.history.push('/activity/circuit-building')}>
-                                            Next
+                                            Next Activity
                                         </Button>
                                     </Col>
                                 </Row>

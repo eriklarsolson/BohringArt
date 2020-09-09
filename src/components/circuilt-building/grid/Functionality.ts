@@ -39,8 +39,21 @@ export function getAllSwitchesOn() {
     return allSwitchesOn;
 }
 
-export function setAllSwitchesOn(status: boolean) {
-    allSwitchesOn = status;
+export function setAllSwitchesOn(status: boolean, x: number, y: number) {
+
+    if(status) {
+        const samePlaceComponents = components.filter(component => component.x !== x && component.y !== y &&
+            component.type === ComponentTypes.SWITCH && component.componentType === 1)
+        console.log(samePlaceComponents)
+        if(samePlaceComponents.length > 0) {
+            console.log(samePlaceComponents)
+            allSwitchesOn = false;
+        } else {
+            allSwitchesOn = status;
+        }
+    } else {
+        allSwitchesOn = status;
+    }
 }
 
 //This is for wire, where you use arrows to toggle. Sets what the next component type will be
@@ -210,8 +223,6 @@ export function getIndex(value: any, arr: string | any[]) {
 export function moveComponent(toX: number, toY: number, type: string): void {
     const samePlaceComponents = components.filter(component => component.x === toX && component.y === toY);
 
-    //TODO - Need to test to make sure this is working fully!
-    // Note: It is not right now though, crashes after turning switch off and moving it
     if(components.length === 0) {
         components.push({
             x: toX,
@@ -221,6 +232,7 @@ export function moveComponent(toX: number, toY: number, type: string): void {
             rotateDeg: 0,
             componentType: componentType
         });
+
     } else {
         if(samePlaceComponents.length > 0) {
             const index = getIndex(samePlaceComponents[0], components);
@@ -248,6 +260,7 @@ export function moveComponent(toX: number, toY: number, type: string): void {
                 components.splice(currentComponent, 1);
             }
         }
+
     }
 
     currentComponent = components.length - 1;
@@ -257,32 +270,6 @@ export function moveComponent(toX: number, toY: number, type: string): void {
     emitChange();
 }
 
-//TODO - Properties of objects
-// NOTE: Can resistance just be negative voltage?
-// Battery
-//  1. Can change voltage here
-//  2. If batteries place directly next to each other in same direction, voltages add up
-//  3. If batteries placed in parallel, voltage stays same but currents add up
-// Resistor -> NEED EXPLANATION ON THIS!
-//  1. Slows down electrons (decrease voltage) Set voltage to -1 on these
-//  2. When put in series, resistances are just added normally
-//  3. When put in parallel, resistances are added inversely. Take the inverse of each resistance, add it up,
-//      and then take the inverse of the sum. The total resistance will be less than each individual one.
-//  4. CAN CHANGE RESISTANCE HERE SO NEED NEW SLIDER (Note: can I just change name of voltage slider and use that?)
-// Capacitor
-//  1. Stores electricity (for a certain time, so time component needed - great)
-//  2. In series, capacitance is added using inverse rule
-//  3. Put in parallel, capacitances are added normally, but the voltage would add together to produce the total voltage from the battery
-//  4. Can change voltage here I believe
-// Inductor
-//  1. Useful in resisting additional flow of current initially (Requires another time component, yay)
-//  2. CAN CHANGE RESISTANCE HERE SO NEED NEW SLIDER
-// Switch
-//  1. Can toggle on and off to disable/enable circuit
-
-//TODO - Check if you short circuited the board
-//  If two batteries in parallel not same voltage, short circuit
-// NOTE: can this be combined with functions below?
 function checkForErrors() {
     //This (inefficient) method loops through each component in the list and finds all components around it
     //TODO - Need to get rid of square from +1 x, +1 y. Only check blocks from right next to components
@@ -304,7 +291,10 @@ function checkForErrors() {
                 if(components[i].type === ComponentTypes.BATTERY && componentsAroundCurrent[k].type === ComponentTypes.BATTERY) {
                     if((components[i].rotateDeg % 180) !== (componentsAroundCurrent[k].rotateDeg % 180)) {
                         boardHasIssues = true;
-                        boardCurrentIssues.push("Battery directions not correct")
+                        if(!boardCurrentIssues.includes("Battery directions not correct")) {
+                            boardCurrentIssues.push("Battery directions not correct")
+
+                        }
                         passed = false;
                     }
                 }
@@ -320,7 +310,6 @@ function checkIfPassed(matrix: Array<Array<number>>, visited: Array<Array<boolea
 
     const currentTotalVoltage = getTotalVoltage();
     let neededVoltage = 0;
-    let circuitPasses = false;
 
     if(currentTotalVoltage !== 0) {
         //Check here if the circuit only contains wires and batteries
@@ -337,18 +326,6 @@ function checkIfPassed(matrix: Array<Array<number>>, visited: Array<Array<boolea
             passed = false;
         }
 
-        // //Check if any of the switches are turned off
-        // const switchComponents = getComponentsByType(ComponentTypes.SWITCH)
-        // let hasSwitch = false;
-        // for(let i = 0; i < switchComponents.length; i++) {
-        //     const switchComp = switchComponents[i];
-        //
-        //     //1 is off for switches
-        //     if(switchComp.componentType === 1) {
-        //        hasSwitch = true;
-        //     }
-        // }
-
         if(!allSwitchesOn) {
             boardHasIssues = true;
             boardCurrentIssues.push("You have a switch that is turned off")
@@ -358,10 +335,8 @@ function checkIfPassed(matrix: Array<Array<number>>, visited: Array<Array<boolea
         //TODO - Check if all the pieces (especially wires) are in correct type and rotation deg <- THIS IS GOING TO BE THE HARDEST
 
 
-        //TODO - Now that there is a path and you passed all the issues above, then check if you reached successful voltage
+        //Now that there is a path and you passed all the issues above, then check if you reached successful voltage
         // and other requirements needed for the level (used all needed pieces, etc...)
-
-
         //Setting needed voltage depending on level
         if(currentLevel === 0) {
             neededVoltage = 16;
@@ -394,8 +369,6 @@ function checkIfPassed(matrix: Array<Array<number>>, visited: Array<Array<boolea
 
 // Function for finding whether a circuit exists or not
 export function hasCircuit() {
-    //TODO - Eventually going to need a function to check if there is a parallel circuit as well
-
     //Build matrix variable here
     let matrix: Array<Array<number>> = [
         [0, 0, 0, 0, 0, 0, 0],

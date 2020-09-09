@@ -72,7 +72,8 @@ export const Wire: React.FC<ComponentProps> = ({x, y, oneGridStyling, currentCom
 
     })
 
-    const [images, setImages] = useState<any>([wire, cornerwire, triwire, crosswire])
+    // triwire, crosswire
+    const [images, setImages] = useState<any>([wire, cornerwire])
     const [index, setIndex] = useState<number>(getComponentType)
 
     //TODO - set component type when cycling here (maybe could be variable in functionality class that is updated what type of wire object we are viewing?)
@@ -104,8 +105,6 @@ export const Wire: React.FC<ComponentProps> = ({x, y, oneGridStyling, currentCom
         }
     }
 
-    //TODO - Add rotate functionality (look at battery and grid square as examples)
-
     return (
         <>
             <DragPreviewImage connect={preview} src={wire} />
@@ -116,35 +115,44 @@ export const Wire: React.FC<ComponentProps> = ({x, y, oneGridStyling, currentCom
                 </div>
                 }
 
-                <div style={{transform: "rotate(" + rotateDeg + "deg)", height: "100%"}}>
-                <Row className={"justify-content-center align-items-center"} style={{height: "100%"}}>
-                    {oneGridStyling &&
-                        <Col className={"col-1 align-self-center"} style={{padding: 0}}>
-                            <img alt={"Arrow"} src={leftarrow} style={{width: 25, filter: "contrast(0%)"}} onClick={cycleImages}/>
-                        </Col>
-                    }
+                <div style={{transform: "rotate(" + rotateDeg + "deg)", height: "100%", zIndex: 10}}>
+                    <Row className={"justify-content-center align-items-center"} style={{height: "100%"}}>
+                           <Col ref={drag} className={oneGridStyling ? "col-12 align-self-center" : "col-12"}
+                             style={{
+                                 ...style,
+                                 opacity: isDragging ? 0.5 : 1,
+                                 height: "100%"
+                             }}>
+                                {oneGridStyling &&
+                                    <img alt={"Wire"} src={images[index]} onClick={() => setComponentType(0)}
+                                         style={{height: "100%", margin: "auto", padding: 5}} />
+                                }
 
-                    <Col ref={drag} className={oneGridStyling ? "col-8 align-self-center" : "col-12"}
-                         style={{
-                             ...style,
-                             opacity: isDragging ? 0.5 : 1,
-                             height: "100%"
-                         }}>
-                            {oneGridStyling &&
-                                <img alt={"Wire"} src={images[index]} width={100}/>
-                            }
-
-                            {!oneGridStyling  &&
-                                <img alt={"Wire"} src={images[index]} style={wireStyling} />
-                            }
-                    </Col>
+                                {!oneGridStyling  &&
+                                    <img alt={"Wire"} src={images[index]} style={wireStyling} />
+                                }
+                           </Col>
+                    </Row>
 
                     {oneGridStyling &&
-                        <Col className={"col-1 align-self-center"} style={{padding: 0}}>
-                            <img alt={"Arrow"} src={rightarrow} style={{width: 25, filter: "contrast(0%)"}} onClick={cycleImages}/>
-                        </Col>
+                        <div style={{position: "absolute", bottom: 7, width: "100%"}}>
+                            <Container fluid style={{padding: 0}}>
+                                <Row className={"justify-content-center"} style={{margin: 0}}>
+                                    <Col className={"col-6 align-self-center ml-auto"} style={{padding: 0}}>
+                                        <img alt={"Arrow"} src={leftarrow} style={{float: "left", width: 22,
+                                            filter: "contrast(0%)"}}
+                                             onClick={cycleImages}/>
+                                    </Col>
+
+                                    <Col className={"col-6 align-self-center mr-auto"} style={{padding: 0}}>
+                                        <img alt={"Arrow"} src={rightarrow} style={{float: "right", width: 22,
+                                            filter: "contrast(0%)"}}
+                                             onClick={cycleImages}/>
+                                    </Col>
+                                </Row>
+                            </Container>
+                        </div>
                     }
-                </Row>
                 </div>
             </Container>
         </>

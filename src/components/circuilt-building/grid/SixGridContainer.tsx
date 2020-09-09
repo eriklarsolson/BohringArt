@@ -203,7 +203,7 @@ export const SixGridContainer: React.FC<GridContainerProps> = ({objectiveImage, 
                         {/*    :*/}
                             <Button className={"green-button"} style={{float: "right", width: 200,
                                 clipPath: "polygon(0 0, 95% 0, 100% 100%, 5% 100%)"}}
-                                    onClick={skipActivity}>Skip Activity</Button>
+                                    onClick={skipActivity}>Next Activity</Button>
                         {/*}*/}
                     </Col>
                 </Row>

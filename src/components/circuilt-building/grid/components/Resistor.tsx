@@ -87,7 +87,7 @@ export const Resistor: React.FC<ComponentProps> = ({x, y, oneGridStyling, curren
                          }}>
                         <div style={{transform: "rotate(" + rotateDeg + "deg)"}}>
                             {oneGridStyling &&
-                            <img alt={"resistor"} src={resistor} width={"85%"}/>
+                            <img alt={"resistor"} src={resistor} style={{height: "100%", margin: "auto", padding: 5}} />
                             }
 
                             {!oneGridStyling  &&

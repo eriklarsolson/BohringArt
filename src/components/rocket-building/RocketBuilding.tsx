@@ -416,7 +416,7 @@ class RocketBuilding extends React.Component<any, any> {
                                                 {/*    </Row>*/}
                                                 {/*</Col>*/}
 
-                                                <Col className={"ml-auto col-4"} style={{alignItems: "flex-start"}}>
+                                                <Col className={"ml-auto col-5"} style={{alignItems: "flex-start", marginBottom: 10}}>
                                                     <Row className={"justify-content-center"} style={{maxHeight: 1100, alignItems: "flex-start"}}>
                                                         {this.state.boosterIndex === 3 &&
                                                             <div style={{position: "absolute", width: "17%", left: "41.5%", top: "65%", zIndex: 10}}>
@@ -601,7 +601,7 @@ class RocketBuilding extends React.Component<any, any> {
                                         </Container>
                                     </Row>
 
-                                    <Row style={{paddingRight: "0", marginRight: 0}}>
+                                    <div style={{position: "absolute", bottom: 0, right: 0, marginRight: 25, marginBottom: 25}}>
                                         <Col>
                                             <Button className={"green-button"} style={{float: "right", width: 200,
                                                 marginBottom: 25, marginTop: 10,
@@ -615,7 +615,7 @@ class RocketBuilding extends React.Component<any, any> {
                                                 Launch
                                             </Button>
                                         </Col>
-                                    </Row>
+                                    </div>
                                 </Container>
                             </Col>
                         </Row>

@@ -58,17 +58,17 @@ export const MoreInfoAnimation: React.FC<AnimationProps>  = ({setParentState}) =
     const changeInfo = (module: string) => {
         if (module === "Terminology") {
             setTitle("TERMINOLOGY")
-            setDescription("Focal Point-Each mirror or lens will have a different focal point depending on its curvature. This is the point at which all of the reflected or refracted rays meet. The focal point can be calculated for any mirror or lens but for convex mirrors, the light rays do not physically meet at the focal point to form a real image, which means the real light rays never converge.\n\n" +
-                "Real image-An image formed by physically converging light rays, this image can be projected onto something like paper or a projector screen.\n\n" +
-                "Virtual Image-A virtual image is an image that your eyes can see, but that cannot be projected onto a screen.\n")
+            setDescription("Focal Point-\nEach mirror or lens will have a different focal point depending on its curvature. This is the point at which all of the reflected or refracted rays meet. The focal point can be calculated for any mirror or lens but for convex mirrors, the light rays do not physically meet at the focal point to form a real image, which means the real light rays never converge.\n\n" +
+                "Real image-\nAn image formed by physically converging light rays, this image can be projected onto something like paper or a projector screen.\n\n" +
+                "Virtual Image-\nA virtual image is an image that your eyes can see, but that cannot be projected onto a screen.\n")
         } else if (module === "Mirrors") {
             setTitle("MIRRORS")
-            setDescription("Convex-These mirrors curve outward and will also reflect most incoming light rays outward at different angles. Because the rays are always reflected outward, convex mirrors can only create virtual images, and not real images.\n\n" +
-                "Concave-These mirrors curve inward and will also reflect most incoming light rays inward at different angles. A concave mirror can create both real and virtual images, the image will be virtual when the object is very close to the mirror (between the mirror and its focal point).\n\n" +
-                "Flat- A mirror lacking curves that is able to reflect all incoming light at the same angle (angle of incidence), resulting in a perfect image identical to the incoming light. The heights, distances, and orientations of all objects remain intact. \n")
+            setDescription("Convex-\nThese mirrors curve outward and will also reflect most incoming light rays outward at different angles. Because the rays are always reflected outward, convex mirrors can only create virtual images, and not real images.\n\n" +
+                "Concave-\nThese mirrors curve inward and will also reflect most incoming light rays inward at different angles. A concave mirror can create both real and virtual images, the image will be virtual when the object is very close to the mirror (between the mirror and its focal point).\n\n" +
+                "Flat-\nA mirror lacking curves that is able to reflect all incoming light at the same angle (angle of incidence), resulting in a perfect image identical to the incoming light. The heights, distances, and orientations of all objects remain intact. \n")
         } else if (module === "Lens") {
             setTitle("LENS")
-            setDescription("Convex/Converging-When light rays travel through a convex lens, they refract and converge at a single point where the light is more concentrated. This is what a magnifying glass does when you use it to burn a piece of wood or grass. This type of lens creates both real and virtual images, a virtual image is formed when the object is very close to the lens (between the lens and its focal point).")
+            setDescription("Convex/Converging-\nWhen light rays travel through a convex lens, they refract and converge at a single point where the light is more concentrated. This is what a magnifying glass does when you use it to burn a piece of wood or grass. This type of lens creates both real and virtual images, a virtual image is formed when the object is very close to the lens (between the lens and its focal point).")
         } else if (module === "Telescope") {
             setTitle("TELESCOPE")
             setDescription("Tool consisting usually of a metal tube with numerous mirrors or lenses in various configurations designed to help collect light from distant objects. The telescope is able to collect light better than what a human eye can and focuses the light onto an eyepiece for a user to see through. Popular configurations include Newtonian and Galilean telescopes. ")

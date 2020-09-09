@@ -592,19 +592,6 @@ class FlightSimulator extends React.Component<any, any> {
                                 <i className="fa fa-arrow-left" />
                             </Button>
                         </Col>
-
-                        <Col>
-                            {this.state.iteration === 6 &&
-                            <Button className={"green-button"} style={{float: "right", width: 200,
-                                clipPath: "polygon(0 0, 95% 0, 100% 100%, 5% 100%)"}}
-                                    onClick={() => this.props.history.push({
-                                        pathname: '/activity/object-page',
-                                        state: { title: "Nebula" }
-                                    })}>
-                                {this.state.completeText}
-                            </Button>
-                            }
-                        </Col>
                     </Row>
 
 
@@ -675,6 +662,20 @@ class FlightSimulator extends React.Component<any, any> {
                                             {/*        Yes*/}
                                             {/*    </Button>*/}
                                             {/*</Col>*/}
+                                        </Row>
+                                    }
+
+
+                                    {this.state.iteration === 6 &&
+                                        <Row className={"justify-content-center"} style={{marginTop: 10}}>
+                                            <Button className={"green-button"} style={{float: "right", width: 200,
+                                                clipPath: "polygon(0 0, 95% 0, 100% 100%, 5% 100%)", zIndex: 10,}}
+                                                    onClick={() => this.props.history.push({
+                                                        pathname: '/activity/object-page',
+                                                        state: { title: "Nebula" }
+                                                    })}>
+                                                {this.state.completeText}
+                                            </Button>
                                         </Row>
                                     }
                                 </Container>

@@ -19,7 +19,7 @@ export interface ComponentProps {
 
 export const Convex: React.FC<ComponentProps> = ({oneGridStyling, x, y, currentComponent}) => {
     //Set rotation degree of the image below if there is a component here (could be any component or currently selected one)
-    let startingRotateDeg = 0
+    let startingRotateDeg = 180
     const componentAtThisPosition = getComponentAtPos(x, y)
 
     if(componentAtThisPosition !== currentComponent) {
@@ -76,11 +76,11 @@ export const Convex: React.FC<ComponentProps> = ({oneGridStyling, x, y, currentC
         <>
             <DragPreviewImage connect={preview} src={convex} />
             <Container fluid style={{...gridStyling}}>
-                {clicked &&
-                <div style={{position: "absolute", top: -35, right: -10, marginTop: 1, marginRight: 1}}>
-                    <img alt={"Rotate"} src={rotate} onClick={clickRotate} />
-                </div>
-                }
+                {/*{clicked &&*/}
+                {/*<div style={{position: "absolute", top: -35, right: -10, marginTop: 1, marginRight: 1}}>*/}
+                {/*    <img alt={"Rotate"} src={rotate} onClick={clickRotate} />*/}
+                {/*</div>*/}
+                {/*}*/}
 
                 <Row className={"justify-content-center align-content-center"} style={{height: "100%"}}>
                     <Col ref={drag}

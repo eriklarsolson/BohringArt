@@ -84,7 +84,7 @@ export const Battery: React.FC<ComponentProps> = ({x, y, oneGridStyling, current
                          }}>
                         <div style={{transform: "rotate(" + rotateDeg + "deg)"}}>
                             {oneGridStyling &&
-                                <img alt={"battery"} src={battery} width={"85%"}/>
+                                <img alt={"battery"} src={battery} style={{height: "100%", margin: "auto", padding: 5}} />
                             }
 
                             {!oneGridStyling  &&

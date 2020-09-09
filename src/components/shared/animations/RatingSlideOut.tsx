@@ -112,7 +112,7 @@ export const RatingSlideOut: React.FC<AnimationProps>  = ({setParentState}) => {
                                     <Col className={"col-10"}>
                                         <Button variant="primary" className={"green-button"} style={{float: "right", width: "25%",
                                             clipPath: "polygon(0 0, 95% 0, 100% 100%, 5% 100%)"}} onClick={() => hideBox()}>
-                                            Got it!
+                                            Close
                                         </Button>
                                     </Col>
                                 </Row>

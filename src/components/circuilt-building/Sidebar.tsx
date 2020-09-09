@@ -63,7 +63,7 @@ class Sidebar extends React.Component<any, any> {
                    {/*    </Row>*/}
                    {/*}*/}
 
-                   <Row className={"justify-content-start"} style={{margin: 10}}>
+                   <Row className={"justify-content-start"} style={{margin: 10, marginTop: "15%"}}>
                        <Col className="col-10">
                            <Button style={{width: "100%"}}
                                    className={"white-button"}

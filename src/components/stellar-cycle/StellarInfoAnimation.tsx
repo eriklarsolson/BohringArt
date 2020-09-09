@@ -21,7 +21,7 @@ export const StellarInfoAnimation: React.FC<AnimationProps>  = ({image}) => {
                 ease: "easeOut",
                 times: [0, 1],
             }}>
-            <img alt={"Stellar Object"} src={image} style={{minWidth: 400}} />
+            <img alt={"Stellar Object"} src={image} style={{minWidth: 400, width: "100%"}} />
         </motion.div>
     );
 };

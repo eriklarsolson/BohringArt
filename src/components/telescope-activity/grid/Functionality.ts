@@ -157,7 +157,7 @@ export function moveComponent(toX: number, toY: number, type: string): void {
             x: toX,
             y: toY,
             type: type,
-            rotateDeg: 0,
+            rotateDeg: 180,
         });
     } else {
         if (samePlaceComponents.length > 0) {
@@ -230,19 +230,14 @@ export function generatePaths(): string[] {
                 const component = componentsOnRow[i];
 
                 if(component !== undefined) {
-                    console.log(component.type)
-                    console.log(component.rotateDeg)
-
                     xChange1 = 0;
                     yChange1 = 0;
 
-                    //Check if piece is facing away from you, (so pass through going straight)
-                    if (component.rotateDeg !== 0 && component.rotateDeg !== 45 && component.rotateDeg !== 315) {
-                        xChange1 = 200
-                        i += 1
-                    } else {
-                        //TODO - Check rotation here as well (if doesnt' fail above)
-                        // ALSO Some pieces are technically supposed to make the piece reflect backwards, so do we go backwards in array to interact with last piece????????
+                    // //Check if piece is facing away from you, (so pass through going straight)
+                    // if (component.rotateDeg !== 180 && component.rotateDeg !== 45 && component.rotateDeg !== 315) {
+                    //     xChange1 = 200
+                    //     i += 1
+                    // } else {
                         if (component.type === TelescopeTypes.CONCAVE) {
                             xChange1 = 150
                             yChange1 = 10
@@ -261,7 +256,7 @@ export function generatePaths(): string[] {
                             yChange1 = 25
                             i += 1
                         }
-                    }
+                    // }
                 } else {
                     //If no component found in grid square, just go straight to next grid square
                     xChange1 = 200;
@@ -287,19 +282,14 @@ export function generatePaths(): string[] {
                 const component = componentsOnRow[i];
 
                 if(component !== undefined) {
-                    console.log(component.type)
-                    console.log(component.rotateDeg)
-
                     xChange2 = 0;
                     yChange2 = 0;
 
                     //Check if piece is facing away from you, (so pass through going straight)
-                    if (component.rotateDeg !== 0 && component.rotateDeg !== 45 && component.rotateDeg !== 315) {
-                        xChange2 = 200
-                        i += 1
-                    } else {
-                        //TODO - Check rotation here as well (if doesnt' fail above)
-                        // ALSO Some pieces are technically supposed to make the piece reflect backwards, so do we go backwards in array to interact with last piece????????
+                    // if (component.rotateDeg !== 0 && component.rotateDeg !== 45 && component.rotateDeg !== 315) {
+                    //     xChange2 = 200
+                    //     i += 1
+                    // } else {
                         if (component.type === TelescopeTypes.CONCAVE) {
                             xChange2 = 150
                             yChange2 = 25
@@ -318,7 +308,7 @@ export function generatePaths(): string[] {
                             yChange2 = 25
                             i += 1
                         }
-                    }
+                    // }
                 } else {
                     //If no component found in grid square, just go straight to next grid square
                     xChange2 = 200;
@@ -341,18 +331,13 @@ export function generatePaths(): string[] {
                 const component = componentsOnRow[i];
 
                 if(component !== undefined) {
-                    console.log(component.type)
-                    console.log(component.rotateDeg)
-
                     xChange3 = 0;
                     yChange3 = 0;
 
                     //Check if piece is facing away from you, (so pass through going straight)
-                    if (component.rotateDeg !== 0 && component.rotateDeg !== 45 && component.rotateDeg !== 315) {
-                        xChange3 = 200
-                    } else {
-                        //TODO - Check rotation here as well (if doesnt' fail above)
-                        // ALSO Some pieces are technically supposed to make the piece reflect backwards, so do we go backwards in array to interact with last piece????????
+                    // if (component.rotateDeg !== 0 && component.rotateDeg !== 45 && component.rotateDeg !== 315) {
+                    //     xChange3 = 200
+                    // } else {
                         if (component.type === TelescopeTypes.CONCAVE) {
                             xChange3 = 150
                             yChange3 = 45
@@ -371,7 +356,7 @@ export function generatePaths(): string[] {
                             yChange3 = 25
                             i += 1
                         }
-                    }
+                    // }
                 } else {
                     //If no component found in grid square, just go straight to next grid square
                     xChange3 = 200;

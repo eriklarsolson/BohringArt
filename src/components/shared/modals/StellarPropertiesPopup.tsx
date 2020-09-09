@@ -27,7 +27,7 @@ class StellarPropertiesPopup extends React.Component<any, any> {
 
                             <Row className={"justify-content-center"}>
                                 <Col className={"col-12"}>
-                                    <p style={{fontSize: "18px"}}>Description will go here</p>
+                                    <p style={{fontSize: "18px"}}>Now that you have slightly adjusted the mass of your star, you have been given more attributes to alter. Make sure to notice the relationship between all the variables present. Whatever settings you keep for your star will ultimately determine its fate!</p>
                                 </Col>
                             </Row>
 

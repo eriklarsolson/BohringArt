@@ -24,24 +24,36 @@ export interface ComponentProps {
 }
 
 export const Switch: React.FC<ComponentProps> = ({x, y, oneGridStyling, currentComponent}) => {
-    const [turnedOn, setTurnedOn] = useState<boolean>(true)
-    const [switchImage, setSwitchImage] = useState<any>(switchOn)
-
     //Set rotation degree of the image below if there is a component here (could be any component or currently selected one)
     let startingRotateDeg = 0
+    let isComponentTurnedOn = true;
+    let defaultSwitchImage = switchOn;
     const componentAtThisPosition = getComponentAtPos(x, y)
 
     if(componentAtThisPosition !== currentComponent) {
         if(componentAtThisPosition !== undefined) {
             startingRotateDeg = componentAtThisPosition.rotateDeg;
+
+            if(componentAtThisPosition.componentType === 1) {
+                isComponentTurnedOn = false;
+                defaultSwitchImage = switchOff
+            }
         }
     } else {
         if(currentComponent !== undefined) {
             startingRotateDeg = currentComponent.rotateDeg;
+
+            if(currentComponent.componentType === 1) {
+                isComponentTurnedOn = false;
+                defaultSwitchImage = switchOff
+            }
         }
     }
 
     const [rotateDeg, setRotateDeg] = useState<number>(startingRotateDeg)
+    const [turnedOn, setTurnedOn] = useState<boolean>(isComponentTurnedOn)
+    const [switchImage, setSwitchImage] = useState<any>(defaultSwitchImage)
+
     const clickRotate = () => {
         console.log(rotateDeg)
         if (rotateDeg + 90 === 360) {
@@ -85,12 +97,12 @@ export const Switch: React.FC<ComponentProps> = ({x, y, oneGridStyling, currentC
             setSwitchImage(switchOff)
             setTurnedOn(false)
             setComponentType(1)
-            setAllSwitchesOn(false)
+            setAllSwitchesOn(false, x, y)
         } else {
             setSwitchImage(switchOn)
             setTurnedOn(true)
             setComponentType(0)
-            setAllSwitchesOn(true)
+            setAllSwitchesOn(true, x, y)
         }
     }
 
@@ -109,15 +121,15 @@ export const Switch: React.FC<ComponentProps> = ({x, y, oneGridStyling, currentC
                          style={{
                              ...style,
                              opacity: isDragging ? 0.5 : 1,
-                         }}
-                         onClick={toggleSwitch}>
+                         }}>
                         <div style={{transform: "rotate(" + rotateDeg + "deg)"}}>
                             {oneGridStyling &&
-                            <img alt={"switch"} src={switchImage} width={"85%"}/>
+                            <img alt={"switch"} src={switchImage} onMouseOver={() => setComponentType(0)}
+                                 style={{height: "100%", margin: "auto", padding: 5}} />
                             }
 
                             {!oneGridStyling  &&
-                            <img alt={"switch"} src={switchImage} width={"100%"} />
+                            <img alt={"switch"} src={switchImage} width={"100%"} onClick={toggleSwitch} />
                             }
                         </div>
                     </Col>

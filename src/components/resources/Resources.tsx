@@ -10,16 +10,16 @@ class Resources extends React.Component {
                 <Container fluid style={{backgroundColor: "#F8EDDD"}}>
                     <Row className={"justify-content-center"} style={{paddingTop: 25}}>
                         <Container fluid>
-                            <Row className={"justify-content-center"}>
-                                <p style={{color: "#29405B", fontSize: 55, fontWeight: "bold"}}>
-                                    Resources
-                                </p>
-                            </Row>
+                            {/*<Row className={"justify-content-center"}>*/}
+                            {/*    <p style={{color: "#29405B", fontSize: 55, fontWeight: "bold"}}>*/}
+                            {/*        Resources*/}
+                            {/*    </p>*/}
+                            {/*</Row>*/}
 
                             <Row className={"justify-content-center"}>
                                 <Container fluid>
                                     <Row className={"justify-content-center"}>
-                                        <Col className={"col-5"}>
+                                        <Col className={"col-10 col-md-10 col-lg-5"}>
                                             <Row className={"justify-content-center"}>
                                                 <p style={{color: "#29405B", fontWeight: "bold", fontSize: 30, marginBottom: 0}}>
                                                     'Lasers & Lenses' Resources
@@ -28,7 +28,7 @@ class Resources extends React.Component {
 
                                             <Row className={"justify-content-center align-content-center"} style={{margin: 25}}>
                                                 <Col className={"col-10 learn-section"} style={{backgroundColor: "#29405B", color: "#F8EDDD", minHeight: 100,
-                                                    clipPath: "polygon(0 0, 97% 0, 100% 100%, 3% 100%)"}}>
+                                                    clipPath: "polygon(0 0, 98% 0, 100% 100%, 2% 100%)"}}>
                                                     <Container fluid>
                                                         <Row className={"justify-content-center align-content-center"}>
                                                             <Col className={"col-4 align-self-center"}>
@@ -49,7 +49,7 @@ class Resources extends React.Component {
 
                                             <Row className={"justify-content-center align-content-center"} style={{margin: 25}}>
                                                 <Col className={"col-10 learn-section"} style={{backgroundColor: "#29405B", color: "#F8EDDD", minHeight: 100,
-                                                    clipPath: "polygon(0 0, 97% 0, 100% 100%, 3% 100%)"}}>
+                                                    clipPath: "polygon(0 0, 98% 0, 100% 100%, 2% 100%)"}}>
                                                     <Container fluid>
                                                         <Row className={"justify-content-center align-content-center"}>
                                                             <Col className={"col-4 align-self-center"}>
@@ -70,7 +70,7 @@ class Resources extends React.Component {
 
                                             <Row className={"justify-content-center align-content-center"} style={{margin: 25}}>
                                                 <Col className={"col-10 learn-section"} style={{backgroundColor: "#29405B", color: "#F8EDDD", minHeight: 100,
-                                                    clipPath: "polygon(0 0, 97% 0, 100% 100%, 3% 100%)"}}>
+                                                    clipPath: "polygon(0 0, 98% 0, 100% 100%, 2% 100%)"}}>
                                                     <Container fluid>
                                                         <Row className={"justify-content-center align-content-center"}>
                                                             <Col className={"col-4 align-self-center"}>
@@ -90,7 +90,7 @@ class Resources extends React.Component {
                                             </Row>
                                         </Col>
 
-                                        <Col className={"col-5"}>
+                                        <Col className={"col-10 col-md-10 col-lg-5"}>
                                             <Row className={"justify-content-center"}>
                                                 <p style={{color: "#29405B", fontWeight: "bold", fontSize: 30, marginBottom: 0}}>
                                                     'Circuit Construction' Resources
@@ -99,7 +99,7 @@ class Resources extends React.Component {
 
                                             <Row className={"justify-content-center align-content-center"} style={{margin: 25}}>
                                                 <Col className={"col-10 learn-section"} style={{backgroundColor: "#29405B", color: "#F8EDDD", minHeight: 100,
-                                                    clipPath: "polygon(0 0, 97% 0, 100% 100%, 3% 100%)"}}>
+                                                    clipPath: "polygon(0 0, 98% 0, 100% 100%, 2% 100%)"}}>
                                                     <Container fluid>
                                                         <Row className={"justify-content-center align-content-center"}>
                                                             <Col className={"col-4 align-self-center"}>
@@ -120,7 +120,7 @@ class Resources extends React.Component {
 
                                             <Row className={"justify-content-center align-content-center"} style={{margin: 25}}>
                                                 <Col className={"col-10 learn-section"} style={{backgroundColor: "#29405B", color: "#F8EDDD", minHeight: 100,
-                                                    clipPath: "polygon(0 0, 97% 0, 100% 100%, 3% 100%)"}}>
+                                                    clipPath: "polygon(0 0, 98% 0, 100% 100%, 2% 100%)"}}>
                                                     <Container fluid>
                                                         <Row className={"justify-content-center align-content-center"}>
                                                             <Col className={"col-4 align-self-center"}>
@@ -141,7 +141,7 @@ class Resources extends React.Component {
 
                                             <Row className={"justify-content-center align-content-center"} style={{margin: 25}}>
                                                 <Col className={"col-10 learn-section"} style={{backgroundColor: "#29405B", color: "#F8EDDD", minHeight: 100,
-                                                    clipPath: "polygon(0 0, 97% 0, 100% 100%, 3% 100%)"}}>
+                                                    clipPath: "polygon(0 0, 98% 0, 100% 100%, 2% 100%)"}}>
                                                     <Container fluid>
                                                         <Row className={"justify-content-center align-content-center"}>
                                                             <Col className={"col-4 align-self-center"}>
@@ -170,7 +170,7 @@ class Resources extends React.Component {
                                     </Row>
 
                                     <Row className={"justify-content-center"} style={{textAlign: "center"}}>
-                                        <Col className={"col-5"}>
+                                        <Col className={"col-10 col-md-10 col-lg-5"}>
                                             <Row className={"justify-content-center"}>
                                                 <p style={{color: "#29405B", fontWeight: "bold", fontSize: 30, marginBottom: 0}}>
                                                     'To The Stars' Resources
@@ -179,7 +179,7 @@ class Resources extends React.Component {
 
                                             <Row className={"justify-content-center align-content-center"} style={{margin: 25}}>
                                                 <Col className={"col-10 learn-section"} style={{backgroundColor: "#29405B", color: "#F8EDDD", minHeight: 100,
-                                                    clipPath: "polygon(0 0, 97% 0, 100% 100%, 3% 100%)"}}>
+                                                    clipPath: "polygon(0 0, 98% 0, 100% 100%, 2% 100%)"}}>
                                                     <Container fluid>
                                                         <Row className={"justify-content-center align-content-center"}>
                                                             <Col className={"col-4 align-self-center"}>
@@ -200,7 +200,7 @@ class Resources extends React.Component {
 
                                             <Row className={"justify-content-center align-content-center"} style={{margin: 25}}>
                                                 <Col className={"col-10 learn-section"} style={{backgroundColor: "#29405B", color: "#F8EDDD", minHeight: 100,
-                                                    clipPath: "polygon(0 0, 97% 0, 100% 100%, 3% 100%)"}}>
+                                                    clipPath: "polygon(0 0, 98% 0, 100% 100%, 2% 100%)"}}>
                                                     <Container fluid>
                                                         <Row className={"justify-content-center align-content-center"}>
                                                             <Col className={"col-4 align-self-center"}>
@@ -221,7 +221,7 @@ class Resources extends React.Component {
 
                                             <Row className={"justify-content-center align-content-center"} style={{margin: 25}}>
                                                 <Col className={"col-10 learn-section"} style={{backgroundColor: "#29405B", color: "#F8EDDD", minHeight: 100,
-                                                    clipPath: "polygon(0 0, 97% 0, 100% 100%, 3% 100%)"}}>
+                                                    clipPath: "polygon(0 0, 98% 0, 100% 100%, 2% 100%)"}}>
                                                     <Container fluid>
                                                         <Row className={"justify-content-center align-content-center"}>
                                                             <Col className={"col-4 align-self-center"}>
@@ -241,7 +241,7 @@ class Resources extends React.Component {
                                             </Row>
                                         </Col>
 
-                                        <Col className={"col-5"}>
+                                        <Col className={"col-10 col-md-10 col-lg-5"}>
                                             <Row className={"justify-content-center"}>
                                                 <p style={{color: "#29405B", fontWeight: "bold", fontSize: 30, marginBottom: 0}}>
                                                     'Stellar Life Cycle' Resources
@@ -250,7 +250,7 @@ class Resources extends React.Component {
 
                                             <Row className={"justify-content-center align-content-center"} style={{margin: 25}}>
                                                 <Col className={"col-10 learn-section"} style={{backgroundColor: "#29405B", color: "#F8EDDD", minHeight: 100,
-                                                    clipPath: "polygon(0 0, 97% 0, 100% 100%, 3% 100%)"}}>
+                                                    clipPath: "polygon(0 0, 98% 0, 100% 100%, 2% 100%)"}}>
                                                     <Container fluid>
                                                         <Row className={"justify-content-center align-content-center"}>
                                                             <Col className={"col-4 align-self-center"}>
@@ -271,7 +271,7 @@ class Resources extends React.Component {
 
                                             <Row className={"justify-content-center align-content-center"} style={{margin: 25}}>
                                                 <Col className={"col-10 learn-section"} style={{backgroundColor: "#29405B", color: "#F8EDDD", minHeight: 100,
-                                                    clipPath: "polygon(0 0, 97% 0, 100% 100%, 3% 100%)"}}>
+                                                    clipPath: "polygon(0 0, 98% 0, 100% 100%, 2% 100%)"}}>
                                                     <Container fluid>
                                                         <Row className={"justify-content-center align-content-center"}>
                                                             <Col className={"col-4 align-self-center"}>
@@ -292,7 +292,7 @@ class Resources extends React.Component {
 
                                             <Row className={"justify-content-center align-content-center"} style={{margin: 25}}>
                                                 <Col className={"col-10 learn-section"} style={{backgroundColor: "#29405B", color: "#F8EDDD", minHeight: 100,
-                                                    clipPath: "polygon(0 0, 97% 0, 100% 100%, 3% 100%)"}}>
+                                                    clipPath: "polygon(0 0, 98% 0, 100% 100%, 2% 100%)"}}>
                                                     <Container fluid>
                                                         <Row className={"justify-content-center align-content-center"}>
                                                             <Col className={"col-4 align-self-center"}>
