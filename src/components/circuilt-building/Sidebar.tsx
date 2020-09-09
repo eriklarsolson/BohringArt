@@ -40,43 +40,43 @@ class Sidebar extends React.Component<any, any> {
                    </Row>
 
 
-                   {this.props.currentLevel > 1 ?
-                       <Row>
-                            <Col>
-                                <OneGridContainer componentType={"inductor"} paddingRight={"3%"} extraRightVal={13} />
-                            </Col>
-                       </Row>
-                   :
-                       <Row className={"justify-content-center"} style={{margin: 5}}>
-                           <div style={{width: 200, backgroundColor: "white", filter: "brightness(50%)",
-                               clipPath: "polygon(0 0, 95% 0, 100% 100%, 0 100%)"}}>
-                                <img alt={"Inductor"} src={inductor} style={{pointerEvents: "none", filter: "blur(5px)"}} />
-                           </div>
-                       </Row>
-                   }
+                   {/*{this.props.currentLevel > 1 ?*/}
+                   {/*    <Row>*/}
+                   {/*         <Col>*/}
+                   {/*             <OneGridContainer componentType={"inductor"} paddingRight={"3%"} extraRightVal={13} />*/}
+                   {/*         </Col>*/}
+                   {/*    </Row>*/}
+                   {/*:*/}
+                   {/*    <Row className={"justify-content-center"} style={{margin: 5}}>*/}
+                   {/*        <div style={{width: 200, backgroundColor: "white", filter: "brightness(50%)",*/}
+                   {/*            clipPath: "polygon(0 0, 95% 0, 100% 100%, 0 100%)"}}>*/}
+                   {/*             <img alt={"Inductor"} src={inductor} style={{pointerEvents: "none", filter: "blur(5px)"}} />*/}
+                   {/*        </div>*/}
+                   {/*    </Row>*/}
+                   {/*}*/}
 
-                   {this.props.currentLevel > 2 ?
-                       <Row>
-                           <Col>
-                               <OneGridContainer componentType={"capacitor"} paddingRight={"0%"} extraRightVal={15} />
-                           </Col>
-                        </Row>
-                   :
-                       <Row className={"justify-content-center"} style={{margin: 5, marginTop: 10}}>
-                           <div style={{width: 200, backgroundColor: "white", filter: "brightness(50%)",
-                               clipPath: "polygon(0 0, 95% 0, 100% 100%, 0 100%)"}}>
-                               <img alt={"Capacitor"} src={capacitor} style={{pointerEvents: "none", filter: "blur(5px)"}} />
-                           </div>
-                       </Row>
-                   }
+                   {/*{this.props.currentLevel > 2 ?*/}
+                   {/*    <Row>*/}
+                   {/*        <Col>*/}
+                   {/*            <OneGridContainer componentType={"capacitor"} paddingRight={"0%"} extraRightVal={15} />*/}
+                   {/*        </Col>*/}
+                   {/*     </Row>*/}
+                   {/*:*/}
+                   {/*    <Row className={"justify-content-center"} style={{margin: 5, marginTop: 10}}>*/}
+                   {/*        <div style={{width: 200, backgroundColor: "white", filter: "brightness(50%)",*/}
+                   {/*            clipPath: "polygon(0 0, 95% 0, 100% 100%, 0 100%)"}}>*/}
+                   {/*            <img alt={"Capacitor"} src={capacitor} style={{pointerEvents: "none", filter: "blur(5px)"}} />*/}
+                   {/*        </div>*/}
+                   {/*    </Row>*/}
+                   {/*}*/}
 
-                    <Row className={"justify-content-center"} style={{margin: 0}}>
-                        <Col className={"col-7"}>
-                            <Button style={{backgroundColor: "#F8EDDD", width: "150px", color: "black",
-                                fontSize: "18px", clipPath: "polygon(0 0, 90% 0, 100% 100%, 0 100%)", float: "left"}}
-                                    onClick={() => setComponentsList([])}>Reset</Button>
-                        </Col>
-                    </Row>
+                   <Row style={{margin: 5, paddingLeft: 40}}>
+                       <Col className="col-10">
+                           <Button style={{width: "100%"}}
+                                   className={"white-button"}
+                                   onClick={() => setComponentsList([])}>Reset</Button>
+                       </Col>
+                   </Row>
                </Container>
 
             </>

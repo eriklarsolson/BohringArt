@@ -38,7 +38,7 @@ export const ObjectiveSlideOut: React.FC<AnimationProps>  = ({setParentState, ti
 
     let rowHeight = "100%";
     if(title === "03 To The Stars") {
-        rowHeight = "80%"
+        rowHeight = "70%"
     }
 
     return (

@@ -156,144 +156,165 @@ export const AboutUsAnimation: React.FC<AnimationProps>  = ({}) => {
                                 </Row>
 
                                 <Container fluid>
-                                    <Row className={"justify-content-center"}>
-                                        <Col className="col-12 col-md-12 col-lg-2 person" style={{margin: 5}} onClick={() => startAnimation("dena")}>
+                                    <Row className={"justify-content-center"} style={{marginBottom: 40}}>
+                                        <Col className="col-8 col-md-8 col-lg-2 person" style={{margin: 5}} onClick={() => startAnimation("dena")}>
                                             <Container fluid style={{clipPath: "polygon(0 0, 85% 0, 100% 100%, 15% 100%)"}}>
                                                 <Row>
-                                                    <img alt={"About Us Person"} src={dena} style={{width: "100%"}} />
+                                                    <div style={{overflow: "hidden", padding: 0, width: "100%", minWidth: 250}}>
+                                                        <img alt={"About Us Person"} src={dena} style={{width: "100%"}} />
+                                                    </div>
                                                 </Row>
 
-                                                <Row style={{backgroundColor: "#F8EDDD", color: "#29405B"}}>
+                                                <Row style={{backgroundColor: "#F8EDDD", color: "#29405B", minHeight: 65}}>
                                                     <Col>
-                                                        <p style={{marginLeft: "8%", marginTop: 10, fontSize: "2vh", fontWeight: "bold"}}>Dena Izadi</p>
+                                                        <p style={{marginLeft: "8%", marginTop: 10, fontSize: "1.5vh", fontWeight: "bold"}}>Dena Izadi</p>
                                                     </Col>
                                                 </Row>
                                             </Container>
                                         </Col>
 
-                                        <Col className="col-12 col-md-12 col-lg-2 person" style={{margin: 5}} onClick={() => startAnimation("parisa")}>
+                                        <Col className="col-8 col-md-8 col-lg-2 person" style={{margin: 5}} onClick={() => startAnimation("parisa")}>
                                             <Container fluid style={{clipPath: "polygon(0 0, 85% 0, 100% 100%, 15% 100%)"}}>
                                                 <Row>
-                                                    <img alt={"About Us Person"} src={parisa} style={{width: "100%"}} />
+                                                    <div style={{overflow: "hidden", padding: 0, width: "100%", minWidth: 250}}>
+                                                        <img alt={"About Us Person"} src={parisa} style={{width: "100%"}} />
+                                                    </div>
                                                 </Row>
 
-                                                <Row style={{backgroundColor: "#F8EDDD", color: "#29405B"}}>
+                                                <Row style={{backgroundColor: "#F8EDDD", color: "#29405B", minHeight: 65}}>
                                                     <Col>
-                                                        <p style={{marginLeft: "8%", marginTop: 10, fontSize: "2vh", fontWeight: "bold"}}>Parisa Ghaderi</p>
+                                                        <p style={{marginLeft: "8%", marginTop: 10, fontSize: "1.5vh", fontWeight: "bold"}}>Parisa Ghaderi</p>
                                                     </Col>
                                                 </Row>
                                             </Container>
                                         </Col>
 
-                                        <Col className="col-12 col-md-12 col-lg-2 person" style={{margin: 5}} onClick={() => startAnimation("brean")}>
+                                        <Col className="col-8 col-md-8 col-lg-2 person" style={{margin: 5}} onClick={() => startAnimation("brean")}>
                                             <Container fluid style={{clipPath: "polygon(0 0, 85% 0, 100% 100%, 15% 100%)"}}>
                                                 <Row>
-                                                    <img alt={"About Us Person"} src={brean} style={{width: "100%"}} />
+                                                    <div style={{overflow: "hidden", padding: 0, width: "100%", minWidth: 250}}>
+                                                        <img alt={"About Us Person"} src={brean} style={{width: "100%"}} />
+                                                    </div>
                                                 </Row>
 
-                                                <Row style={{backgroundColor: "#F8EDDD", color: "#29405B"}}>
+                                                <Row style={{backgroundColor: "#F8EDDD", color: "#29405B", minHeight: 65}}>
                                                     <Col>
-                                                        <p style={{marginLeft: "8%", marginTop: 10, fontSize: "2vh", fontWeight: "bold"}}>Brean Prefontaine</p>
+                                                        <p style={{marginLeft: "8%", marginTop: 10, fontSize: "1.5vh", fontWeight: "bold"}}>Brean Prefontaine</p>
                                                     </Col>
                                                 </Row>
                                             </Container>
                                         </Col>
 
-                                        <Col className="col-12 col-md-12 col-lg-2 person" style={{margin: 5}} onClick={() => startAnimation("danny")}>
+                                        <Col className="col-8 col-md-8 col-lg-2 person" style={{margin: 5}} onClick={() => startAnimation("danny")}>
                                             <Container fluid style={{clipPath: "polygon(0 0, 85% 0, 100% 100%, 15% 100%)"}}>
                                                 <Row>
-                                                    <img alt={"About Us Person"} src={danny} style={{width: "100%"}} />
+                                                    <div style={{overflow: "hidden", padding: 0, width: "100%", minWidth: 250}}>
+                                                        <img alt={"About Us Person"} src={danny} style={{width: "100%"}} />
+                                                    </div>
                                                 </Row>
 
-                                                <Row style={{backgroundColor: "#F8EDDD", color: "#29405B"}}>
+                                                <Row style={{backgroundColor: "#F8EDDD", color: "#29405B", minHeight: 65}}>
                                                     <Col>
-                                                        <p style={{marginLeft: "8%", marginTop: 10, fontSize: "2vh", fontWeight: "bold"}}>Danny Brandwein</p>
-                                                    </Col>
-                                                </Row>
-                                            </Container>
-                                        </Col>
-                                    </Row>
-                                    <Row className={"justify-content-center"} style={{marginLeft: "2%"}}>
-                                        <Col className="col-12 col-md-12 col-lg-2 person" style={{margin: 5, marginLeft: "2%"}} onClick={() => startAnimation("wyatt")}>
-                                            <Container fluid style={{clipPath: "polygon(0 0, 85% 0, 100% 100%, 15% 100%)"}}>
-                                                <Row>
-                                                    <img alt={"About Us Person"} src={wyatt} style={{width: "100%"}} />
-                                                </Row>
-
-                                                <Row style={{backgroundColor: "#F8EDDD", color: "#29405B"}}>
-                                                    <Col>
-                                                        <p style={{marginLeft: "8%", marginTop: 10, fontSize: "2vh", fontWeight: "bold"}}>Wyatt Stonhouse</p>
-                                                    </Col>
-                                                </Row>
-                                            </Container>
-                                        </Col>
-
-                                        <Col className="col-12 col-md-12 col-lg-2 person" style={{margin: 5, marginLeft: "1%"}} onClick={() => startAnimation("pranav")}>
-                                            <Container fluid style={{clipPath: "polygon(0 0, 85% 0, 100% 100%, 15% 100%)"}}>
-                                                <Row>
-                                                    <img alt={"About Us Person"} src={pranav} style={{width: "100%"}} />
-                                                </Row>
-
-                                                <Row style={{backgroundColor: "#F8EDDD", color: "#29405B"}}>
-                                                    <Col>
-                                                        <p style={{marginLeft: "8%", marginTop: 10, fontSize: "2vh", fontWeight: "bold"}}>Pranav Nalamwar</p>
-                                                    </Col>
-                                                </Row>
-                                            </Container>
-                                        </Col>
-
-                                        <Col className="col-12 col-md-12 col-lg-2 person" style={{margin: 5}} onClick={() => startAnimation("ray")}>
-                                            <Container fluid style={{clipPath: "polygon(0 0, 85% 0, 100% 100%, 15% 100%)"}}>
-                                                <Row>
-                                                    <img alt={"About Us Person"} src={ray} style={{width: "100%"}} />
-                                                </Row>
-
-                                                <Row style={{backgroundColor: "#F8EDDD", color: "#29405B"}}>
-                                                    <Col>
-                                                        <p style={{marginLeft: "8%", marginTop: 10, fontSize: "2vh", fontWeight: "bold"}}>Ray Smith</p>
-                                                    </Col>
-                                                </Row>
-                                            </Container>
-                                        </Col>
-
-                                        <Col className="col-12 col-md-12 col-lg-2 person" style={{margin: 5, marginLeft: "1%"}} onClick={() => startAnimation("lars")}>
-                                            <Container fluid style={{clipPath: "polygon(0 0, 85% 0, 100% 100%, 15% 100%)"}}>
-                                                <Row>
-                                                    <img alt={"About Us Person"} src={lars} style={{width: "100%"}} />
-                                                </Row>
-
-                                                <Row style={{backgroundColor: "#F8EDDD", color: "#29405B"}}>
-                                                    <Col>
-                                                        <p style={{marginLeft: "8%", marginTop: 10, fontSize: "2vh", fontWeight: "bold"}}>Lars Olson</p>
+                                                        <p style={{marginLeft: "8%", marginTop: 10, fontSize: "1.5vh", fontWeight: "bold"}}>Danny Brandwein</p>
                                                     </Col>
                                                 </Row>
                                             </Container>
                                         </Col>
                                     </Row>
-                                    <Row className={"justify-content-center"} style={{marginLeft: "7%"}}>
-                                        <Col className="col-12 col-md-12 col-lg-2 person" style={{margin: 5, marginLeft: "2%"}} onClick={() => startAnimation("hueywen")}>
+
+                                    <Row className={"justify-content-center"} style={{marginLeft: "3.5%", marginBottom: 40}}>
+                                        <Col className="col-8 col-md-8 col-lg-2 person" style={{margin: 5, marginRight: "1%"}} onClick={() => startAnimation("wyatt")}>
                                             <Container fluid style={{clipPath: "polygon(0 0, 85% 0, 100% 100%, 15% 100%)"}}>
                                                 <Row>
-                                                    <img alt={"About Us Person"} src={hueywen} style={{width: "100%"}} />
+                                                    <div style={{overflow: "hidden", padding: 0, width: "100%", minWidth: 250}}>
+                                                        <img alt={"About Us Person"} src={wyatt} style={{width: "100%"}} />
+                                                    </div>
                                                 </Row>
 
-                                                <Row style={{backgroundColor: "#F8EDDD", color: "#29405B"}}>
+                                                <Row style={{backgroundColor: "#F8EDDD", color: "#29405B", minHeight: 65}}>
                                                     <Col>
-                                                        <p style={{marginLeft: "8%", marginTop: 10, fontSize: "2vh", fontWeight: "bold"}}>Huey-Wen Lin</p>
+                                                        <p style={{marginLeft: "8%", marginTop: 10, fontSize: "1.5vh", fontWeight: "bold"}}>Wyatt Stonhouse</p>
                                                     </Col>
                                                 </Row>
                                             </Container>
                                         </Col>
 
-                                        <Col className="col-12 col-md-12 col-lg-2 person" style={{margin: 5, marginLeft: "1%"}} onClick={() => startAnimation("mohammad")}>
+                                        <Col className="col-8 col-md-8 col-lg-2 person" style={{margin: 5, marginRight: "1%"}} onClick={() => startAnimation("pranav")}>
                                             <Container fluid style={{clipPath: "polygon(0 0, 85% 0, 100% 100%, 15% 100%)"}}>
                                                 <Row>
-                                                    <img alt={"About Us Person"} src={mohammad} style={{width: "100%"}} />
+                                                    <div style={{overflow: "hidden", padding: 0, width: "100%", minWidth: 250}}>
+                                                        <img alt={"About Us Person"} src={pranav} style={{width: "100%"}} />
+                                                    </div>
                                                 </Row>
 
-                                                <Row style={{backgroundColor: "#F8EDDD", color: "#29405B"}}>
+                                                <Row style={{backgroundColor: "#F8EDDD", color: "#29405B", minHeight: 65}}>
                                                     <Col>
-                                                        <p style={{marginLeft: "8%", marginTop: 10, fontSize: "2vh", fontWeight: "bold"}}>Mohammad Maghrebi</p>
+                                                        <p style={{marginLeft: "8%", marginTop: 10, fontSize: "1.5vh", fontWeight: "bold"}}>Pranav Nalamwar</p>
+                                                    </Col>
+                                                </Row>
+                                            </Container>
+                                        </Col>
+
+                                        <Col className="col-8 col-md-8 col-lg-2 person" style={{margin: 5, marginRight: "1%"}} onClick={() => startAnimation("ray")}>
+                                            <Container fluid style={{clipPath: "polygon(0 0, 85% 0, 100% 100%, 15% 100%)"}}>
+                                                <Row>
+                                                    <div style={{overflow: "hidden", padding: 0, width: "100%", minWidth: 250}}>
+                                                        <img alt={"About Us Person"} src={ray} style={{width: "100%"}} />
+                                                    </div>
+                                                </Row>
+
+                                                <Row style={{backgroundColor: "#F8EDDD", color: "#29405B", minHeight: 65}}>
+                                                    <Col>
+                                                        <p style={{marginLeft: "8%", marginTop: 10, fontSize: "1.5vh", fontWeight: "bold"}}>Ray Smith</p>
+                                                    </Col>
+                                                </Row>
+                                            </Container>
+                                        </Col>
+
+                                        <Col className="col-8 col-md-8 col-lg-2 person" style={{margin: 5}} onClick={() => startAnimation("lars")}>
+                                            <Container fluid style={{clipPath: "polygon(0 0, 85% 0, 100% 100%, 15% 100%)"}}>
+                                                <Row>
+                                                    <div style={{overflow: "hidden", padding: 0, width: "100%", minWidth: 250}}>
+                                                        <img alt={"About Us Person"} src={lars} style={{width: "100%"}} />
+                                                    </div>
+                                                </Row>
+
+                                                <Row style={{backgroundColor: "#F8EDDD", color: "#29405B", minHeight: 65}}>
+                                                    <Col>
+                                                        <p style={{marginLeft: "8%", marginTop: 10, fontSize: "1.5vh", fontWeight: "bold"}}>Lars Olson</p>
+                                                    </Col>
+                                                </Row>
+                                            </Container>
+                                        </Col>
+                                    </Row>
+                                    <Row className={"justify-content-center"} style={{marginLeft: "8%"}}>
+                                        <Col className="col-8 col-md-8 col-lg-2 person" style={{margin: 5, marginRight: "2%"}} onClick={() => startAnimation("hueywen")}>
+                                            <Container fluid style={{clipPath: "polygon(0 0, 85% 0, 100% 100%, 15% 100%)"}}>
+                                                <Row>
+                                                    <div style={{overflow: "hidden", padding: 0, width: "100%", minWidth: 250}}>
+                                                        <img alt={"About Us Person"} src={hueywen} style={{width: "100%"}} />
+                                                    </div>
+                                                </Row>
+
+                                                <Row style={{backgroundColor: "#F8EDDD", color: "#29405B", minHeight: 65}}>
+                                                    <Col>
+                                                        <p style={{marginLeft: "8%", marginTop: 10, fontSize: "1.5vh", fontWeight: "bold"}}>Huey-Wen Lin</p>
+                                                    </Col>
+                                                </Row>
+                                            </Container>
+                                        </Col>
+
+                                        <Col className="col-8 col-md-8 col-lg-2 person"  style={{margin: 5}} onClick={() => startAnimation("mohammad")}>
+                                            <Container fluid style={{clipPath: "polygon(0 0, 85% 0, 100% 100%, 15% 100%)"}}>
+                                                <Row>
+                                                    <div style={{overflow: "hidden", padding: 0, width: "100%", minWidth: 250}}>
+                                                        <img alt={"About Us Person"} src={mohammad} style={{width: "100%"}} />
+                                                    </div>
+                                                </Row>
+
+                                                <Row style={{backgroundColor: "#F8EDDD", color: "#29405B", minHeight: 65}}>
+                                                    <Col>
+                                                        <p style={{marginLeft: "8%", marginTop: 10, fontSize: "1.5vh", fontWeight: "bold"}}>Mohammad Maghrebi</p>
                                                     </Col>
                                                 </Row>
                                             </Container>
@@ -312,21 +333,22 @@ export const AboutUsAnimation: React.FC<AnimationProps>  = ({}) => {
                 style={{position: "absolute", top: 250, bottom: 0, right: 0, left: 0, opacity: 0, ...infoStyles}}>
 
                 <Row  className={"justify-content-center"}>
-                    <Col className={"col-9"}>
-                        <p style={{marginLeft: "5%", color: "white", fontSize: 45, fontWeight: "bold", textAlign: "left"}}>Meet The Team</p>
+                    <Col className={"col-10"}>
+                        <p style={{marginLeft: "4%", color: "white", fontSize: 45, fontWeight: "bold", textAlign: "left"}}>Meet The Team</p>
                     </Col>
                 </Row>
 
                 <Row className={"justify-content-center"} style={{padding: 5}}>
-                    <Col className={"col-2"} style={{padding: 0}}>
-                        <Container fluid style={{clipPath: "polygon(0 0, 100% 0, 100% 100%, 15% 100%)"}}>
-                            <Row>
-                                <img alt={"About Us Person"} src={image} style={{width: "100%"}} />
+                    <Col className={"col-3"} style={{padding: 0, minHeight: 250}}>
+                        <Container fluid style={{height: "100%", clipPath: "polygon(0 0, 100% 0, 100% 100%, 15% 100%)"}}>
+                            <Row style={{height: "100%"}}>
+                                <img alt={"About Us Person"} src={image} style={{width: "100%", objectFit: "cover"}} />
                             </Row>
                         </Container>
                     </Col>
 
-                    <Col className={"col-6"} style={{padding: 0, backgroundColor: "#F8EDDD", clipPath: "polygon(0 0, 93% 0, 100% 100%, 0% 100%)"}}>
+                    <Col className={"col-6"} style={{padding: 0, backgroundColor: "#F8EDDD", minHeight: 250,
+                        clipPath: "polygon(0 0, 93% 0, 100% 100%, 0% 100%)"}}>
                         <Container fluid style={{textAlign: "left", margin: "3%", color: "#29405B"}}>
                             <Row className={"justify-content-center"}>
                                 <Col className={"col-9"}>
@@ -340,17 +362,17 @@ export const AboutUsAnimation: React.FC<AnimationProps>  = ({}) => {
 
                             <Row className={"justify-content-center"}>
                                 <Col className={"col-9"}>
-                                    <p style={{marginBottom: 0, fontSize: 40, fontWeight: "bold"}}>{name}</p>
+                                    <p style={{marginBottom: 0, fontSize: 46, fontWeight: "bold"}}>{name}</p>
                                 </Col>
                             </Row>
                             <Row className={"justify-content-center"}>
                                 <Col className={"col-9"}>
-                                    <p style={{fontSize: 16, fontWeight: "bold"}}>{title}</p>
+                                    <p style={{fontSize: 20, fontWeight: "bold"}}>{title}</p>
                                 </Col>
                             </Row>
                             <Row className={"justify-content-center"}>
                                 <Col className={"col-9"}>
-                                    <p style={{marginBottom: 0, fontSize: 14, fontWeight: "bold"}}>{description}</p>
+                                    <p style={{marginBottom: 0, fontSize: 16, fontWeight: "bold"}}>{description}</p>
                                 </Col>
                             </Row>
                         </Container>

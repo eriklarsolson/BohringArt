@@ -21,7 +21,7 @@ class LearnSection extends React.Component<any, any> {
                <Container fluid style={{color: "white", textAlign: "left"}}>
                    <Row className={"justify-content-center"}>
                        <Col className={"col-9"}>
-                           <p style={{color: "#002245", margin: "4%", fontWeight: "bold", fontSize: 50}}>What You'll Learn</p>
+                           <p style={{color: "#29405B", margin: "4%", fontWeight: "bold", fontSize: 50}}>What You'll Learn</p>
 
                        </Col>
                    </Row>
@@ -31,12 +31,12 @@ class LearnSection extends React.Component<any, any> {
                              style={{clipPath: "polygon(0 0, 95% 0, 100% 100%, 5% 100%)", backgroundColor: "#29405B",
                                  padding: 25, marginBottom: 20}}>
                             <Row>
-                                <Col className={"col-3"} style={{padding: 0, overflow: "hidden", minWidth: 150}}>
-                                    <img alt={"#1"} src={one} style={{float: "right"}} />
+                                <Col className={"col-2"} style={{padding: 0, overflow: "hidden", minWidth: 140}}>
+                                    <img alt={"#1"} src={one} style={{height: "80%", marginTop: "25%", float: "right", maxHeight: 175}} />
                                 </Col>
-                                <Col style={{paddingLeft: 10}}>
+                                <Col style={{paddingLeft: 25}}>
                                     <h4>CIRCUIT CONSTRUCTION</h4>
-                                    <p style={{marginRight: 10}}>
+                                    <p style={{paddingRight: 90, fontSize: "1.6vh"}}>
                                         Learn about circuit components to build one that can power your satellite.
                                         Demonstrate the flow of electrons in a circuit and how circuit components
                                         (capacitors, resistors, inductors, etc.) can affect their energy.
@@ -58,12 +58,12 @@ class LearnSection extends React.Component<any, any> {
                              style={{clipPath: "polygon(0 0, 95% 0, 100% 100%, 5% 100%)", backgroundColor: "#29405B",
                                  padding: 25, marginBottom: 20}}>
                             <Row>
-                                <Col className={"col-3"} style={{padding: 0, overflow: "hidden", minWidth: 150}}>
-                                    <img alt={"#2"} src={two} style={{float: "right"}} />
+                                <Col className={"col-2"} style={{padding: 0, overflow: "hidden", minWidth: 140}}>
+                                    <img alt={"#2"} src={two} style={{height: "75%", marginTop: "20%", float: "right", maxHeight: 175}} />
                                 </Col>
-                                <Col style={{paddingLeft: 10}}>
-                                    <h4>LASERS AND LENSES</h4>
-                                    <p style={{marginRight: 10}}>
+                                <Col style={{paddingLeft: 25}}>
+                                    <h4>LASERS & LENSES</h4>
+                                    <p style={{paddingRight: 20, fontSize: "1.6vh"}}>
                                         Learn how lenses manipulate light to understand how your telescope sees distant
                                         stars. Experiment with the variables that affect the image formed when shining
                                         light through a lens, and begin controlling the type of image you see by manipulating these variables.
@@ -85,16 +85,16 @@ class LearnSection extends React.Component<any, any> {
                              style={{clipPath: "polygon(0 0, 95% 0, 100% 100%, 5% 100%)", backgroundColor: "#29405B",
                                  padding: 25, marginLeft: "4%", marginBottom: 20}}>
                             <Row>
-                                <Col className={"col-3"} style={{padding: 0, overflow: "hidden", minWidth: 150}}>
-                                    <img alt={"#3"} src={three} style={{float: "right"}} />
+                                <Col className={"col-2"} style={{padding: 0, overflow: "hidden", minWidth: 140}}>
+                                    <img alt={"#3"} src={three} style={{height: "75%", marginTop: "20%", float: "right", maxHeight: 200}} />
                                 </Col>
-                                <Col style={{paddingLeft: 10}}>
+                                <Col style={{paddingLeft: 25}}>
                                     <h4>TO THE STARS</h4>
-                                    <p style={{marginRight: 10}}>
-                                        Create a rocket consisting of an engine, boosters, a body, and a cone. Make sure
+                                    <p style={{paddingRight: 70, fontSize: "1.6vh"}}>
+                                        Create a rocket with four different parts, and make sure
                                         to account for fuel, air resistance, and weight as all affect the rocket’s motion
-                                        greatly! Send your rocket off into space with the telescope as the payload and
-                                        along the way, answer TEXT-based questions that determine the fate of your journey!
+                                        greatly! Send your rocket off into space with the
+                                        telescope and answer questions that determine the fate of your journey!
                                     </p>
                                     {/*<Button*/}
                                     {/*    href="/activity/rocket-building"*/}
@@ -113,12 +113,12 @@ class LearnSection extends React.Component<any, any> {
                              style={{clipPath: "polygon(0 0, 95% 0, 100% 100%, 5% 100%)", backgroundColor: "#29405B",
                                  padding: 25, marginBottom: 20}}>
                             <Row>
-                                <Col className={"col-3"} style={{padding: 0, overflow: "hidden", minWidth: 150}}>
-                                    <img alt={"#4"} src={four} style={{float: "right"}} />
+                                <Col className={"col-2"} style={{padding: 0, overflow: "hidden", minWidth: 140}}>
+                                    <img alt={"#4"} src={four} style={{height: "80%", marginTop: "20%", float: "right", maxHeight: 175}} />
                                 </Col>
-                                <Col style={{paddingLeft: 10}}>
+                                <Col style={{paddingLeft: 25}}>
                                     <h4>STELLAR LIFE CYCLE</h4>
-                                    <p style={{marginRight: 10}}>
+                                    <p style={{paddingRight: 70, fontSize: "1.6vh"}}>
                                         Learn more about what your telescope sees, and a star’s life cycle from creation
                                         to destruction. See how important certain variables such as mass and radius are
                                         in determining the next phase and the stellar event, i.e. a supernova.

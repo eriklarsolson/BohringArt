@@ -32,9 +32,10 @@ export interface GridContainerProps {
     objectiveImage: any,
     showGrid: boolean,
     goToNextLevel: any
+    skipActivity: any
 }
 
-export const SixGridContainer: React.FC<GridContainerProps> = ({objectiveImage, showGrid, goToNextLevel}) => {
+export const SixGridContainer: React.FC<GridContainerProps> = ({objectiveImage, showGrid, goToNextLevel, skipActivity}) => {
     const [currentComp, setCurrentComp] = useState<{x: number, y: number, type: string, voltage: number, rotateDeg: number}>(
         {x: 0, y: 0, type: ComponentTypes.BATTERY, voltage: 0, rotateDeg: 0})
 
@@ -196,15 +197,15 @@ export const SixGridContainer: React.FC<GridContainerProps> = ({objectiveImage, 
 
                     {/*TODO - this is somehow not picking up when getPassed gets updated?*/}
                     <Col className={"ml-auto col-2"}>
-                        {getPassed() &&
+                        {/*{getPassed() ?*/}
+                        {/*    <Button className={"green-button"} style={{float: "right", width: 200,*/}
+                        {/*        clipPath: "polygon(0 0, 95% 0, 100% 100%, 5% 100%)"}}*/}
+                        {/*            onClick={goToNextLevel}>Next</Button>*/}
+                        {/*    :*/}
                             <Button className={"green-button"} style={{float: "right", width: 200,
                                 clipPath: "polygon(0 0, 95% 0, 100% 100%, 5% 100%)"}}
-                                    onClick={goToNextLevel}>Next</Button>
-                            // :
-                            // <Button className={"green-button"} style={{float: "right", width: 200,
-                            //     clipPath: "polygon(0 0, 95% 0, 100% 100%, 5% 100%)"}}
-                            //         onClick={() => hasCircuit()}>Check If Passed</Button>
-                        }
+                                    onClick={skipActivity}>Skip Activity</Button>
+                        {/*}*/}
                     </Col>
                 </Row>
             </Container>

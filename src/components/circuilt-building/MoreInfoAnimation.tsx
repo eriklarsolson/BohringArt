@@ -133,23 +133,23 @@ export const MoreInfoAnimation: React.FC<AnimationProps>  = ({setParentState}) =
                                     </Col>
                                 </Row>
 
+                                {/*<Row className={"justify-content-end"} style={{marginTop: 10, marginLeft: 50}}>*/}
+                                {/*    <Col className="col-10" onMouseOver={() => changeInfo("Capacitor")}*/}
+                                {/*         style={{height: 80, backgroundColor: "#F8EDDD",*/}
+                                {/*             clipPath: "polygon(0 0, 100% 0, 100% 100%, 5% 100%)"}}>*/}
+                                {/*        <img alt={"Capacitor"} src={capacitor} style={{height: "100%", display: "block", margin: "auto", padding: 5}} />*/}
+                                {/*    </Col>*/}
+                                {/*</Row>*/}
+
+                                {/*<Row className={"justify-content-end"} style={{marginTop: 10, marginLeft: 65}}>*/}
+                                {/*    <Col className="col-10" onMouseOver={() => changeInfo("Inductor")}*/}
+                                {/*         style={{height: 80, backgroundColor: "#F8EDDD",*/}
+                                {/*             clipPath: "polygon(0 0, 100% 0, 100% 100%, 5% 100%)"}}>*/}
+                                {/*        <img alt={"Inductor"} src={inductor} style={{height: "100%", display: "block", margin: "auto", padding: 5}} />*/}
+                                {/*    </Col>*/}
+                                {/*</Row>*/}
+
                                 <Row className={"justify-content-end"} style={{marginTop: 10, marginLeft: 50}}>
-                                    <Col className="col-10" onMouseOver={() => changeInfo("Capacitor")}
-                                         style={{height: 80, backgroundColor: "#F8EDDD",
-                                             clipPath: "polygon(0 0, 100% 0, 100% 100%, 5% 100%)"}}>
-                                        <img alt={"Capacitor"} src={capacitor} style={{height: "100%", display: "block", margin: "auto", padding: 5}} />
-                                    </Col>
-                                </Row>
-
-                                <Row className={"justify-content-end"} style={{marginTop: 10, marginLeft: 65}}>
-                                    <Col className="col-10" onMouseOver={() => changeInfo("Inductor")}
-                                         style={{height: 80, backgroundColor: "#F8EDDD",
-                                             clipPath: "polygon(0 0, 100% 0, 100% 100%, 5% 100%)"}}>
-                                        <img alt={"Inductor"} src={inductor} style={{height: "100%", display: "block", margin: "auto", padding: 5}} />
-                                    </Col>
-                                </Row>
-
-                                <Row className={"justify-content-end"} style={{marginTop: 10, marginLeft: 80}}>
                                     <Col className="col-10" onMouseOver={() => changeInfo("Series")}
                                          style={{height: 80, backgroundColor: "#F8EDDD",
                                              clipPath: "polygon(0 0, 100% 0, 100% 100%, 5% 100%)"}}>
@@ -157,13 +157,13 @@ export const MoreInfoAnimation: React.FC<AnimationProps>  = ({setParentState}) =
                                     </Col>
                                 </Row>
 
-                                <Row className={"justify-content-end"} style={{marginTop: 10, marginLeft: 95}}>
-                                    <Col className="col-10" onMouseOver={() => changeInfo("Parallel")}
-                                         style={{height: 80, backgroundColor: "#F8EDDD",
-                                             clipPath: "polygon(0 0, 100% 0, 100% 100%, 5% 100%)"}}>
-                                        <img alt={"Parallel Circuit"} src={parallel} style={{height: "100%", display: "block", margin: "auto", padding: 5}} />
-                                    </Col>
-                                </Row>
+                                {/*<Row className={"justify-content-end"} style={{marginTop: 10, marginLeft: 95}}>*/}
+                                {/*    <Col className="col-10" onMouseOver={() => changeInfo("Parallel")}*/}
+                                {/*         style={{height: 80, backgroundColor: "#F8EDDD",*/}
+                                {/*             clipPath: "polygon(0 0, 100% 0, 100% 100%, 5% 100%)"}}>*/}
+                                {/*        <img alt={"Parallel Circuit"} src={parallel} style={{height: "100%", display: "block", margin: "auto", padding: 5}} />*/}
+                                {/*    </Col>*/}
+                                {/*</Row>*/}
                             </Container>
                         </Col>
 

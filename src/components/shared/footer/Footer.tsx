@@ -12,13 +12,13 @@ const Footer = () => {
         <>
             <Container fluid style={{backgroundColor: "#29405B", color: "white", zIndex: 12}}>
                 <Row className={"justify-content-end align-content-center"} style={{padding: 15}}>
-                    <Col className={"col-3 col-md-3 col-lg-1 align-self-center"}>
+                    <Col className={"align-self-center"} style={{maxWidth: 150, flex: "0 0 150px"}}>
                         <img className={"clickable-image"} src={logo} alt={"Logo"} style={{height: 30}} />
                     </Col>
 
                     <img src={line} alt={"Menu seperator"} />
 
-                    <Col className={"col-3 col-md-3 col-lg-1 align-self-center"}>
+                    <Col className={"align-self-center"} style={{maxWidth: 150, flex: "0 0 150px"}}>
                         <img className={"clickable-image"} src={sgd} alt={"Science Gallery Of Detroit Logo"} style={{height: 40}} onClick={() => {
                             window.location.href = 'https://detroit.sciencegallery.com/';
                             return null;
@@ -27,8 +27,8 @@ const Footer = () => {
 
                     <img src={line} alt={"Menu seperator"} />
 
-                    <Col className={"col-3 col-md-3 col-lg-1 mr-auto align-self-center"}>
-                        <img className={"clickable-image"} src={msu} alt={"MSU Logo"} style={{height: 40}} onClick={() => {
+                    <Col className={"align-self-center mr-auto"} style={{maxWidth: 150, flex: "0 0 150px", paddingLeft: 20}}>
+                        <img className={"clickable-image"} src={msu} alt={"MSU Logo"} style={{float: "left", height: 40}} onClick={() => {
                             window.location.href = 'https://msu.edu/';
                             return null;
                         }} />

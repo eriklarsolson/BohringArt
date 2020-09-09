@@ -90,6 +90,10 @@ class CircuitBuilding extends React.Component<any, any> {
             this.setState({showGrid: !this.state.showGrid})
         }
 
+        const skipActivity = () => {
+            this.props.history.push('/activity/metal-engraving');
+        }
+
         return (
             <>
                 <div style={{position: "relative", height: "100%", width: "100%"}}>
@@ -131,7 +135,7 @@ class CircuitBuilding extends React.Component<any, any> {
 
                                             <Col style={{margin: "3%"}}>
                                                 <Row className={"justify-content-center"}>
-                                                    <p style={{color: "#29405B", fontSize: 28, fontWeight: "bold", marginBottom: 0}}>Circuit Board level {this.state.currentLevel}</p>
+                                                    <p style={{color: "#29405B", fontSize: 28, fontWeight: "bold", marginBottom: 0}}>Circuit Board</p> {/*level {this.state.currentLevel}*/}
                                                 </Row>
 
                                                 <Row className={"justify-content-center"}>
@@ -139,7 +143,12 @@ class CircuitBuilding extends React.Component<any, any> {
                                                 </Row>
 
                                                 <Row className={"justify-content-center"}>
-                                                    <p style={{color: "#29405B", fontSize: 14, marginBottom: 0}}>Note: This is a drag-and-drop activity using the components on the left sidebar</p>
+                                                    <Col className={"col-8"}>
+                                                        <p style={{color: "#29405B", fontSize: 14, marginBottom: 0}}>
+                                                            Note: This drag-and-drop activity is not completely scientifically accurate,
+                                                            but hopes to convey these concepts as best as possible
+                                                        </p>
+                                                    </Col>
                                                 </Row>
                                             </Col>
 
@@ -162,7 +171,9 @@ class CircuitBuilding extends React.Component<any, any> {
                                         <Row style={{margin: "0"}}>
                                             <Col>
                                                 <SixGridContainer objectiveImage={this.state.gridImages[this.state.currentLevel - 1]}
-                                                                  showGrid={this.state.showGrid} goToNextLevel={goToNextLevel} />
+                                                                  showGrid={this.state.showGrid}
+                                                                  skipActivity={skipActivity}
+                                                                  goToNextLevel={goToNextLevel} />
                                             </Col>
                                         </Row>
                                     </Container>

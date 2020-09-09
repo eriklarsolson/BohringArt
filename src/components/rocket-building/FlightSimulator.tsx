@@ -517,7 +517,7 @@ class FlightSimulator extends React.Component<any, any> {
 
                                     {this.state.loadedScenario !== "Flying to your destination" && this.state.iteration !== 6 &&
                                         <Row className={"justify-content-center"} style={{marginTop: 10}}>
-                                            <Col className={"col-8 col-md-6"}>
+                                            <Col className={"col-11"}>
                                                 <ScenarioRadioButton yesValue={this.state.yesValue} noValue={this.state.noValue}
                                                     value={this.state.scenarioRadioVal}
                                                                      changeValue={updateIteration}  />

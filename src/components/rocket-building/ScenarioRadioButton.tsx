@@ -6,6 +6,7 @@ import RadioGroup from '@material-ui/core/RadioGroup';
 import FormControlLabel from '@material-ui/core/FormControlLabel';
 import FormControl from '@material-ui/core/FormControl';
 import {Container, Row, Col} from 'react-bootstrap'
+import line from "../shared/header/line.png";
 
 const useStyles = makeStyles({
     root: {
@@ -70,15 +71,24 @@ interface Props {
 
 export default function ScenarioRadioButton(props: any) {
     return (
-        <FormControl component="fieldset" style={{float: "left", margin: "10%"}}>
-            <RadioGroup aria-label="gender" name="gender1" onChange={props.changeValue} value={props.value}>
+        <FormControl component="fieldset" style={{float: "left", margin: "6%"}}>
+            <RadioGroup aria-label="scenario" name="scenario" onChange={props.changeValue} value={props.value}>
                 <Container fluid>
-                    <Row>
-                        <Col style={{marginRight: 50}}>
-                            <FormControlLabel value="Yes"control={<StyledRadio />} label={props.yesValue}  />
+                    <Row className={"justify-content-center align-content-center align-items-center"}>
+                        <Col className={"col-2"}>
+                            <FormControlLabel value="Yes" control={<StyledRadio />} label={""}  />
                         </Col>
-                        <Col style={{marginLeft: 50}}>
-                            <FormControlLabel value="No"  control={<StyledRadio />} label={props.noValue} />
+                        <Col className={"col-4"} style={{paddingLeft: 0}}>
+                            <p style={{marginLeft: 5}}>{props.yesValue}</p>
+                        </Col>
+
+                        <img src={line} alt={"Menu seperator"}  />
+
+                        <Col className={"col-2"}>
+                            <FormControlLabel value="No" control={<StyledRadio />} label={""}  />
+                        </Col>
+                        <Col style={{paddingLeft: 0}}>
+                            <p style={{marginLeft: 5}}>{props.noValue}</p>
                         </Col>
                     </Row>
                 </Container>
