@@ -23,7 +23,7 @@ class FlightSimulator extends React.Component<any, any> {
             body: this.props.location.state.body,
             booster: this.props.location.state.booster,
             engine: this.props.location.state.engine,
-            continuingMission: true, //Turn to false if we turn rocket home to go home (use to skip scenarios)
+            missionContinuing: true, //Turn to false if we turn rocket home to go home (use to skip scenarios)
             telescopeDetached: false, //Turn to true if we detach telescope (use to skip scenarios)
             fuelTotal: 0,
             airResistanceTotal: 0,
@@ -37,6 +37,8 @@ class FlightSimulator extends React.Component<any, any> {
             noValue: "No",
             iteration: 0,
             xStart: 0,
+            outcomeTitleText: "Outcome 1",
+            completeText: "Success",
             scenarios: [ //Question types: 0 - fuel dependent, 1 - weight dependent, 2 - Random
                 {
                     question: "Your launch was partially successful; while you made it to space, you are significantly off course. Would you like to expend 10% of your remaining fuel supply to correct your bearings?",
@@ -49,7 +51,7 @@ class FlightSimulator extends React.Component<any, any> {
                     //(No/Yes-Delayed Consequence)
                 },
                 {
-                    question: "On your way to ____ you discover that your rocket cannot hold enough fuel to return home. Do you turn back, or risk having to eject your telescope or living supplies to get your crew back home?",
+                    question: "On your way to the Nebula, you discover that your rocket cannot hold enough fuel to return home. Do you turn back, or risk having to eject your telescope or living supplies to get your crew back home?",
                     answer: undefined, //Undefined is default, and will update on their selection
                     questionType: 0, //Weight-dependent
                     yesAnswer: "You decide that reaching your destination is not worth putting your expensive telescope and crew at risk, so you immediately plot a course back to earth.",
@@ -59,11 +61,11 @@ class FlightSimulator extends React.Component<any, any> {
                     //(No-Delayed Consequence)
                 },
                 {
-                    question: "There was an unexpected gravitational factor that has thrown the rocket off course, do you use 50% of your designated return fuel in order to stay on course?",
+                    question: "There was an unexpected gravitational factor that has thrown the rocket off course, do you use 25% of your remaining fuel in order to stay on course?",
                     answer: undefined,
                     questionType: 2, //Random
-                    yesAnswer: "You use 50% of your return fuel TODO",
-                    noAnswer: "You do not use the fuel TODO",
+                    yesAnswer: "You use 25% of your return fuel to avert a crisis",
+                    noAnswer: "You do not use the fuel and now realize you will not make it to your destination. You must turn around",
                     yesCheck: "Use the fuel",
                     noCheck: "Carry on"
                 },
@@ -80,8 +82,8 @@ class FlightSimulator extends React.Component<any, any> {
                     question: "The lifetime of the isotope heating up the telescope is only going to last ten years. Do you want to use more fuel (20%) to speed things up?",
                     answer: undefined,
                     questionType: 2, //Random
-                    yesAnswer: "Yes, we divert more fuel TODO",
-                    noAnswer: "No, we do not use any more fuel TODO",
+                    yesAnswer: "Yes, we divert more fuel and avoid a crisis!",
+                    noAnswer: "No, we do not use any more fuel and potentially risk the mission!",
                     yesCheck: "Yes",
                     noCheck: "No"
                 },
@@ -89,7 +91,7 @@ class FlightSimulator extends React.Component<any, any> {
                     question: "There was a computer glitch resulting in your refrigeration cooling system to fail. You now only have 75% of your food left. Would you like to continue the mission and risk the lives of the Astronauts or dump the telescope and return home?",
                     answer: undefined,
                     questionType: 2, //Random
-                    yesAnswer: "You do not detach the telescope, and carry on the mission TODO",
+                    yesAnswer: "You do not detach the telescope, and carry on the mission, risking fate!",
                     noAnswer: "You detach the telescope and return home!",
                     yesCheck: "Carry on",
                     noCheck: "Detach the telescope"
@@ -171,11 +173,12 @@ class FlightSimulator extends React.Component<any, any> {
 
                         break;
                     case 1:
-                        //TODO
+                        //Go home
+                        this.setState({missionContinuing: false})
                         break
                     case 2:
-                        //Remove 50% of fuel
-                        this.setState({fuelTotal: (this.state.fuelTotal * .5)})
+                        //Remove 25% of fuel
+                        this.setState({fuelTotal: (this.state.fuelTotal * .75)})
 
                         break;
                     case 3:
@@ -194,14 +197,14 @@ class FlightSimulator extends React.Component<any, any> {
                         break;
                 }
 
-                if(this.state.iteration === 1) {
-                    //If answered yes on this question, end mission immediately
-                    this.setState({missionEndingText: this.state.scenarios[this.state.iteration].yesAnswer,
-                        missionEndingPopup: true})
-                } else {
+                // if(this.state.iteration === 1) {
+                //     //If answered yes on this question, end mission immediately
+                //     this.setState({missionEndingText: this.state.scenarios[this.state.iteration].yesAnswer,
+                //         missionEndingPopup: true})
+                // } else {
                     this.setState({missionMessageText: this.state.scenarios[this.state.iteration].yesAnswer,
                         missionMessagePopup: true})
-                }
+                // }
             } else {
                 // this.setState({scenarioRadioVal: "No",
                 //     scrollingScenarioXStart: "100%", runScrollingText: true})
@@ -227,9 +230,8 @@ class FlightSimulator extends React.Component<any, any> {
                     case 2:
                         this.setState({missionMessageText: this.state.scenarios[this.state.iteration].noAnswer,
                             missionMessagePopup: true})
-
-                        //TODO
-                        //No fuel used, so what cost? You are way off course here
+                        //Go home
+                        this.setState({missionContinuing: false})
 
                         break;
                     case 3:
@@ -254,7 +256,7 @@ class FlightSimulator extends React.Component<any, any> {
 
                         //TODO
                         //Detach the telescope
-                        this.setState({massTotal: (this.state.massTotal - 11110), telescopeDetached: true, continuingMission: true})
+                        this.setState({massTotal: (this.state.massTotal - 11110), telescopeDetached: true, missionContinuing: false})
 
                         break;
                 }
@@ -304,91 +306,219 @@ class FlightSimulator extends React.Component<any, any> {
             return fuelRange
         }
 
+        //TODO
         const updateScenarioDetails = () => {
             const fuelRange = getFuelRange();
             const massRange = getMassRange();
 
+            let outcome = "";
+            let outcomeTitleText = "Outcome 0";
+            let completeText = "Complete";
+
             if(this.state.iteration === 6) {
                 //TODO - Need to check all properties here (like fuel/weight ranges) and also variables
                 // like returning home or telescope detached, or scenario answers, etc...
+                console.log(this.state.missionContinuing)
+
                 if(this.state.missionContinuing) {
                     if(this.state.telescopeDetached) {
-
+                        if(fuelRange === 0) {
+                            if(massRange === 0) {
+                                outcomeTitleText = "Outcome 1"
+                                outcome = "You were not able to reach your destination after ejecting your telescope, and you do not have the means to turn back so you have lost your crew and your telescope. You can repeat the activity or press 'Move On'"
+                                completeText = "Move On"
+                            } else  if(massRange === 1) {
+                                outcomeTitleText = "Outcome 1"
+                                outcome = "You were not able to reach your destination after ejecting your telescope, and you do not have the means to turn back so you have lost your crew and your telescope. You can repeat the activity or press 'Move On'"
+                                completeText = "Move On"
+                            } else {
+                                outcomeTitleText = "Outcome 1"
+                                outcome = "You were not able to reach your destination after ejecting your telescope, and you do not have the means to turn back so you have lost your crew and your telescope. You can repeat the activity or press 'Move On'"
+                                completeText = "Move On"
+                            }
+                        } else if(fuelRange === 1) {
+                            if(massRange === 0) {
+                                outcomeTitleText = "Outcome 1"
+                                outcome = "You were not able to reach your destination after ejecting your telescope, and you do not have the means to turn back so you have lost your crew and your telescope. You can repeat the activity or press 'Move On'"
+                                completeText = "Move On"
+                            } else  if(massRange === 1) {
+                                outcomeTitleText = "Outcome 2"
+                                outcome = "You were able to reach your destination with your crew intact, without losing any living supplies or using extra fuel, but at the loss of your telescope. Better luck next time!"
+                                completeText = "Complete"
+                            } else {
+                                outcomeTitleText = "Outcome 2"
+                                outcome = "You were able to reach your destination with your crew intact, without losing any living supplies or using extra fuel, but at the loss of your telescope. Better luck next time!"
+                                completeText = "Complete"
+                            }
+                        } else {
+                            if(massRange === 0) {
+                                //todo - maybe redo this one
+                                outcomeTitleText = "Outcome 2"
+                                outcome = "You were able to reach your destination with your crew intact, without losing any living supplies or using extra fuel, but at the loss of your telescope. Better luck next time!"
+                                completeText = "Complete"
+                            } else  if(massRange === 1) {
+                                outcomeTitleText = "Outcome 2"
+                                outcome = "You were able to reach your destination with your crew intact, without losing any living supplies or using extra fuel, but at the loss of your telescope. Better luck next time!"
+                                completeText = "Complete"
+                            } else {
+                                outcomeTitleText = "Outcome 2"
+                                outcome = "You were able to reach your destination with your crew intact, without losing any living supplies or using extra fuel, but at the loss of your telescope. Better luck next time!"
+                                completeText = "Complete"
+                            }
+                        }
                     } else {
-
+                        if(fuelRange === 0) {
+                            if(massRange === 0) {
+                                outcomeTitleText = "Outcome 3"
+                                outcome = "You were able to reach your destination, buy you do not have the means to turn back so you have lost your crew and your telescope. You can repeat the activity or press 'Move On'"
+                                completeText = "Move On"
+                            } else  if(massRange === 1) {
+                                outcomeTitleText = "Outcome 3"
+                                outcome = "You’ve reached your destination with both your crew and telescope intact, but you cannot stay long since you had to eject 50% of designated return fuel to correct a course deviation, and now must eject some of your living supplies to make it back home"
+                                completeText = "Complete"
+                            } else {
+                                outcomeTitleText = "Outcome 3"
+                                outcome = "You’ve reached your destination with both your crew and telescope intact, but you cannot stay long since you had to eject 50% of designated return fuel to correct a course deviation, and now must eject some of your living supplies to make it back home"
+                                completeText = "Complete"
+                            }
+                        } else if(fuelRange === 1) {
+                            if(massRange === 0) {
+                                outcomeTitleText = "Outcome 3"
+                                outcome = "You’ve reached your destination with both your crew and telescope intact, but you cannot  stay long since you had to eject too much of your designated return fuel to correct a course deviation."
+                                completeText = "Complete"
+                            } else  if(massRange === 1) {
+                                outcomeTitleText = "Outcome 4"
+                                outcome = "Mission Success! You were able to reach your destination with both your crew and telescope intact, without losing any living supplies or using extra fuel. Good Job!"
+                                completeText = "Complete"
+                            } else {
+                                outcomeTitleText = "Outcome 4"
+                                outcome = "Mission Success! You were able to reach your destination with both your crew and telescope intact, without losing any living supplies or using extra fuel. Good Job!"
+                                completeText = "Complete"
+                            }
+                        } else {
+                            if(massRange === 0) {
+                                //TODO - maybe change this outcome
+                                outcomeTitleText = "Outcome 4"
+                                outcome = "Mission Success! You were able to reach your destination with both your crew and telescope intact, without losing any living supplies or using extra fuel. Good Job!"
+                                completeText = "Complete"
+                            } else  if(massRange === 1) {
+                                outcomeTitleText = "Outcome 4"
+                                outcome = "Mission Success! You were able to reach your destination with both your crew and telescope intact, without losing any living supplies or using extra fuel. Good Job!"
+                                completeText = "Complete"
+                            } else {
+                                outcomeTitleText = "Outcome 4"
+                                outcome = "Mission Success! You were able to reach your destination with both your crew and telescope intact, without losing any living supplies or using extra fuel. Good Job!"
+                                completeText = "Complete"
+                            }
+                        }
                     }
                 } else {
                     if(this.state.telescopeDetached) {
                         if(fuelRange === 0) {
                             if(massRange === 0) {
-
+                                outcomeTitleText = "Outcome 5"
+                                outcome = "You ejected your telescope and turned around, but do not have the fuel to make it back and have lost your crew. You can repeat the activity or press 'Move On'"
+                                completeText = "Move On"
                             } else  if(massRange === 1) {
-
+                                outcomeTitleText = "Outcome 5"
+                                outcome = "You ejected your telescope and turned around, but do not have the fuel to make it back and have lost your crew. You can repeat the activity or press 'Move On'"
+                                completeText = "Move On"
                             } else {
-
+                                outcomeTitleText = "Outcome 5"
+                                outcome = "You ejected your telescope and turned around, but do not have the fuel to make it back and have lost your crew. You can repeat the activity or press 'Move On'"
+                                completeText = "Move On"
                             }
                         } else if(fuelRange === 1) {
                             if(massRange === 0) {
-
+                                outcomeTitleText = "Outcome 5"
+                                outcome = "You ejected your telescope and turned around, but do not have the fuel to make it back and have lost your crew. You can repeat the activity or press 'Move On'"
+                                completeText = "Move On"
                             } else  if(massRange === 1) {
-
+                                outcomeTitleText = "Outcome 6"
+                                outcome = "You were able to make it home after turning around with all of your crew members but at the loss of your telescope! You can repeat the activity or press 'Move On'"
+                                completeText = "Move On"
                             } else {
-
+                                outcomeTitleText = "Outcome 6"
+                                outcome = "You were able to make it home after turning around with all of your crew members but at the loss of your telescope! You can repeat the activity or press 'Move On'"
+                                completeText = "Move On"
                             }
                         } else {
                             if(massRange === 0) {
-
+                                outcomeTitleText = "Outcome 6"
+                                outcome = "You were able to make it home after turning around with all of your crew members but at the loss of your telescope! You can repeat the activity or press 'Move On'"
+                                completeText = "Move On"
                             } else  if(massRange === 1) {
-
+                                outcomeTitleText = "Outcome 6"
+                                outcome = "You were able to make it home after turning around with all of your crew members but at the loss of your telescope! You can repeat the activity or press 'Move On'"
+                                completeText = "Move On"
                             } else {
-
+                                outcomeTitleText = "Outcome 6"
+                                outcome = "You were able to make it home after turning around with all of your crew members but at the loss of your telescope! You can repeat the activity or press 'Move On'"
+                                completeText = "Move On"
                             }
                         }
                     } else {
                         if(fuelRange === 0) {
                             if(massRange === 0) {
-
+                                outcomeTitleText = "Outcome 7"
+                                outcome = "You turned around, but do not have the fuel to make it back and have lost your crew and telescope. You can repeat the activity or press 'Move On'"
+                                completeText = "Move On"
                             } else  if(massRange === 1) {
-
+                                outcomeTitleText = "Outcome 7"
+                                outcome = "You turned around, but do not have the fuel to make it back and have lost your crew and telescope. You can repeat the activity or press 'Move On'"
+                                completeText = "Move On"
                             } else {
-
+                                outcomeTitleText = "Outcome 7"
+                                outcome = "You turned around, but do not have the fuel to make it back and have lost your crew and telescope. You can repeat the activity or press 'Move On'"
+                                completeText = "Move On"
                             }
                         } else if(fuelRange === 1) {
                             if(massRange === 0) {
-
+                                outcomeTitleText = "Outcome 7"
+                                outcome = "You turned around, but do not have the fuel to make it back and have lost your crew and telescope. You can repeat the activity or press 'Move On'"
+                                completeText = "Move On"
                             } else  if(massRange === 1) {
-
+                                outcomeTitleText = "Outcome 8"
+                                outcome = "You were able to make it home after turning around with all of your crew members and with your telescope intact, better luck next time! You can repeat the activity or press 'Move On'"
+                                completeText = "Move On"
                             } else {
-
+                                outcomeTitleText = "Outcome 8"
+                                outcome = "You were able to make it home after turning around with all of your crew members and with your telescope intact, better luck next time! You can repeat the activity or press 'Move On'"
+                                completeText = "Move On"
                             }
                         } else {
                             if(massRange === 0) {
-
+                                outcomeTitleText = "Outcome 8"
+                                outcome = "You were able to make it home after turning around with all of your crew members and with your telescope intact, better luck next time! You can repeat the activity or press 'Move On'"
+                                completeText = "Move On"
                             } else  if(massRange === 1) {
-
+                                outcomeTitleText = "Outcome 8"
+                                outcome = "You were able to make it home after turning around with all of your crew members and with your telescope intact, better luck next time! You can repeat the activity or press 'Move On'"
+                                completeText = "Move On"
                             } else {
-
+                                outcomeTitleText = "Outcome 8"
+                                outcome = "You were able to make it home after turning around with all of your crew members and with your telescope intact, better luck next time! You can repeat the activity or press 'Move On'"
+                                completeText = "Move On"
                             }
                         }
                     }
                 }
 
-                this.setState({loadedScenario: "TODO - HANDLE OUTCOME HERE"})
+                this.setState({loadedScenario: outcome, completeText: completeText, outcomeTitleText: outcomeTitleText})
             } else {
 
                 //TODO - Check here if flying home and/or telescope detached to skip scenarios
                 if(this.state.iteration === 5 && this.state.telescopeDetached) {
                     this.setState({iteration: this.state.iteration + 1})
-                } else if(this.state.iteration === 0) {
-                    if(getFuelRange() === 0) {
-                        //If on lower side of fuel range, show this question
-                        this.setState({loadedScenario: this.state.scenarios[this.state.iteration].question,
-                            yesValue:  this.state.scenarios[this.state.iteration].yesCheck,
-                            noValue: this.state.scenarios[this.state.iteration].noCheck})
-                    } else {
-                        this.setState({iteration: this.state.iteration + 1})
-                    }
-                    this.setState({iteration: this.state.iteration + 1})
+                // } else if(this.state.iteration === 0) {
+                //     if(getFuelRange() === 0) {
+                //         //If on lower side of fuel range, show this question
+                //         this.setState({loadedScenario: this.state.scenarios[this.state.iteration].question,
+                //             yesValue:  this.state.scenarios[this.state.iteration].yesCheck,
+                //             noValue: this.state.scenarios[this.state.iteration].noCheck})
+                //     } else {
+                //         this.setState({iteration: this.state.iteration + 1})
+                //     }
                 } else if(this.state.iteration === 1) {
                     if(getMassRange() === 2) {
                         //If heavy mass, show this question
@@ -423,6 +553,7 @@ class FlightSimulator extends React.Component<any, any> {
         const runTimer = () => {
             setTimeout(() => {  resetScenario() }, 3000);
         }
+        //TODO - This is getting called thousands of times on the page
         runTimer();
 
         return (
@@ -470,7 +601,7 @@ class FlightSimulator extends React.Component<any, any> {
                                         pathname: '/activity/object-page',
                                         state: { title: "Nebula" }
                                     })}>
-                                Complete
+                                {this.state.completeText}
                             </Button>
                             }
                         </Col>
@@ -509,9 +640,17 @@ class FlightSimulator extends React.Component<any, any> {
                                     {/*    </Col>*/}
                                     {/*</Row>*/}
 
+                                    {this.state.iteration === 6 &&
                                     <Row style={{paddingLeft: 10}}>
                                         <Col className={"col-12"}>
-                                            <p style={{marginTop: 20, fontWeight: "bold", fontSize: 20}}>{this.state.loadedScenario}</p>
+                                            <p style={{marginTop: 20, fontWeight: "bold", fontSize: 26, marginBottom: 0}}>{this.state.outcomeTitleText}</p>
+                                        </Col>
+                                    </Row>
+                                    }
+
+                                    <Row style={{paddingLeft: 10}}>
+                                        <Col className={"col-12"}>
+                                            <p style={{marginTop: 20, fontWeight: "bold", fontSize: 19}}>{this.state.loadedScenario}</p>
                                         </Col>
                                     </Row>
 

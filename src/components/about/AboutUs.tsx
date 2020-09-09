@@ -1,15 +1,6 @@
 import React from 'react';
 import './About.scss';
 import { Container, Row, Col } from 'react-bootstrap'
-import danny from "./images/danny.png"
-import dena from "./images/dena.png"
-import parisa from "./images/parisa2.jpg"
-import wyatt from "./images/person1.png"
-import pranav from "./images/person2.png"
-import brean from "./images/person3.png"
-import hueywen from "./images/person4.png"
-import ray from "./images/person5.png"
-import lars from "./images/lars.png"
 import niels from "./images/niels.png"
 import logo from "./images/logo.png"
 import emailjs from 'emailjs-com';

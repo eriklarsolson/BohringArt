@@ -34,15 +34,15 @@ const Footer = () => {
                         }} />
                     </Col>
 
-                    {/*<Col className={"col-2 col-md-1 col-md-1 ml-auto align-self-center"}>*/}
-                    {/*    <Link to="/resources" style={{color: "white", fontSize: 14, fontWeight: "bold"}}>*/}
-                    {/*        Resources*/}
-                    {/*    </Link>*/}
-                    {/*</Col>*/}
+                    <Col className={"align-self-center"} style={{maxWidth: 100, flex: "0 0 100px"}}>
+                        <Link to="/resources" style={{color: "white", fontSize: 14, fontWeight: "bold"}}>
+                            Resources
+                        </Link>
+                    </Col>
 
-                    {/*<img src={line} alt={"Menu seperator"} />*/}
+                    <img src={line} alt={"Menu seperator"} />
 
-                    <Col className={"col-2 col-md-1 align-self-center"} style={{maxWidth: 20, marginRight: 20}}>
+                    <Col className={"align-self-center"} style={{maxWidth: 50, flex: "0 0 50px"}}>
                         <i className="fa fa-instagram" style={{color: "white", fontSize: 22, marginTop: 5}}
                            onClick={() => {
                             window.location.href = 'https://www.instagram.com/bohringart';

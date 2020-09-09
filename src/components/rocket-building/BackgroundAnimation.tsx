@@ -1,6 +1,5 @@
 import * as React from "react";
 import { motion } from "framer-motion";
-import {Container, Row, Col} from 'react-bootstrap'
 import long_bg from "./images/long_bg.png";
 
 export const BackgroundAnimation: React.FC  = () => {

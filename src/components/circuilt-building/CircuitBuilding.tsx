@@ -133,7 +133,7 @@ class CircuitBuilding extends React.Component<any, any> {
                                                         onClick={goToLastLevel}><i className="fa fa-arrow-left" /></Button>
                                             </Col>
 
-                                            <Col style={{margin: "3%"}}>
+                                            <Col className="col-5" style={{margin: "3%"}}>
                                                 <Row className={"justify-content-center"}>
                                                     <p style={{color: "#29405B", fontSize: 28, fontWeight: "bold", marginBottom: 0}}>Circuit Board</p> {/*level {this.state.currentLevel}*/}
                                                 </Row>
