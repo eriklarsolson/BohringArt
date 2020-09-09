@@ -364,7 +364,7 @@ function checkIfPassed(matrix: Array<Array<number>>, visited: Array<Array<boolea
 
         //Setting needed voltage depending on level
         if(currentLevel === 0) {
-            neededVoltage = 10;
+            neededVoltage = 16;
         } else if(currentLevel === 1) {
             neededVoltage = 20;
         } else if(currentLevel === 2) {

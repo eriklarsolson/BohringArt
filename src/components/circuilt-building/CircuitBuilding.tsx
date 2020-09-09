@@ -39,7 +39,7 @@ class CircuitBuilding extends React.Component<any, any> {
             currentLevel: 1,
             showGrid: true,
             gridImages: [objective1wire, objective2wire, objective3wire],
-            neededVoltages: [10, 20, 60]
+            neededVoltages: [16, 20, 60]
         };
     }
 

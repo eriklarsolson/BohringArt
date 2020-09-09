@@ -11,8 +11,24 @@ class LearnSection extends React.Component<any, any> {
         super(props);
         this.state = {
             learnSelection: 0,
-            imageSelection: 0
+            imageSelection: 0,
+            width: 0,
+            height: 0
         }
+        this.updateWindowDimensions = this.updateWindowDimensions.bind(this);
+    }
+
+    componentDidMount() {
+        this.updateWindowDimensions();
+        window.addEventListener('resize', this.updateWindowDimensions);
+    }
+
+    componentWillUnmount() {
+        window.removeEventListener('resize', this.updateWindowDimensions);
+    }
+
+    updateWindowDimensions() {
+        this.setState({ width: window.innerWidth, height: window.innerHeight });
     }
 
     render() {
@@ -27,7 +43,7 @@ class LearnSection extends React.Component<any, any> {
                    </Row>
 
                     <Row className={"justify-content-center"}>
-                        <Col className={"col-10 col-md-10 col-lg-4 learn-section"} onClick={() => this.props.goToActivity(0)}
+                        <Col className={"col-10 col-md-10 col-lg-4 learn-section"} onClick={() => (this.state.width > 1000) ? this.props.goToActivity(0) : null}
                              style={{clipPath: "polygon(0 0, 95% 0, 100% 100%, 5% 100%)", backgroundColor: "#29405B",
                                  padding: 25, marginBottom: 20}}>
                             <Row>
@@ -54,7 +70,7 @@ class LearnSection extends React.Component<any, any> {
                             </Row>
                         </Col>
 
-                        <Col className={"col-10 col-md-10 col-lg-4 learn-section"} onClick={() => this.props.goToActivity(1)}
+                        <Col className={"col-10 col-md-10 col-lg-4 learn-section"} onClick={() => (this.state.width > 1000) ? this.props.goToActivity(1) : null}
                              style={{clipPath: "polygon(0 0, 95% 0, 100% 100%, 5% 100%)", backgroundColor: "#29405B",
                                  padding: 25, marginBottom: 20}}>
                             <Row>
@@ -81,7 +97,7 @@ class LearnSection extends React.Component<any, any> {
                             </Row>
                         </Col>
 
-                        <Col className={"col-10 col-md-10 col-lg-4 learn-section"} onClick={() => this.props.goToActivity(2)}
+                        <Col className={"col-10 col-md-10 col-lg-4 learn-section"} onClick={() => (this.state.width > 1000) ? this.props.goToActivity(2) : null}
                              style={{clipPath: "polygon(0 0, 95% 0, 100% 100%, 5% 100%)", backgroundColor: "#29405B",
                                  padding: 25, marginLeft: "4%", marginBottom: 20}}>
                             <Row>
@@ -109,7 +125,7 @@ class LearnSection extends React.Component<any, any> {
                             </Row>
                         </Col>
 
-                        <Col className={"col-10 col-md-10 col-lg-4 learn-section"} onClick={() => this.props.goToActivity(3)}
+                        <Col className={"col-10 col-md-10 col-lg-4 learn-section"} onClick={() => (this.state.width > 1000) ? this.props.goToActivity(3) : null}
                              style={{clipPath: "polygon(0 0, 95% 0, 100% 100%, 5% 100%)", backgroundColor: "#29405B",
                                  padding: 25, marginBottom: 20}}>
                             <Row>

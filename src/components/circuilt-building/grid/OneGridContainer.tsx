@@ -1,31 +1,30 @@
 import React, {useState} from 'react'
 import {OneGrid} from './OneGrid'
-import {Container, Row} from 'react-bootstrap'
+import {Col, Container, Row} from 'react-bootstrap'
 
 export interface GridContainerProps {
     componentType: string
-    paddingRight: string
-    extraRightVal: number
+    flex: string
+    maxWidth: string
 }
 
-export const OneGridContainer: React.FC<GridContainerProps> = ({componentType, paddingRight, extraRightVal}) => {
+export const OneGridContainer: React.FC<GridContainerProps> = ({componentType, flex, maxWidth}) => {
     const [components, setComponents] = useState<[{ x: number, y: number, type: string }]>([{ x: 0, y: 0, type: componentType }])
 
-    const [rightValue, setRightValue] = useState<number>(0)
+    const [rightValue, setRightValue] = useState<string>("0%")
     const [zIndex, setZIndex] = useState<number>(-1)
     const [tooltipShowing, setTooltipShowing] = useState<boolean>(false)
 
     const containerStyle: React.CSSProperties = {
-        width: 200,
         height: 100,
-        paddingRight: paddingRight
+        clipPath: "polygon(0 0, 95% 0, 100% 100%, 0 100%)",
+        backgroundColor: 'white',
     }
 
-    // useEffect(() => observe((components: any) => setComponentsList(components)))
     let tooltipStyle: React.CSSProperties = {
         position: "absolute",
-        right: rightValue,
-        top: 10,
+        left: rightValue,
+        top: 0,
         width: 400,
         height: "auto",
         minHeight: 100,
@@ -33,30 +32,23 @@ export const OneGridContainer: React.FC<GridContainerProps> = ({componentType, p
         transition: ".3s ease-in-out",
         zIndex: zIndex,
         textAlign: "left",
-        clipPath: "polygon(0 0, 100% 0, 100% 100%, 3% 100%)"
+        clipPath: "polygon(0 0, 100% 0, 100% 100%, 4% 100%)"
     }
 
     const showTooltip = () => {
         if(tooltipShowing) {
-            setRightValue(0)
+            setRightValue("0%")
             setZIndex(-1)
             setTooltipShowing(false)
         } else {
-            setRightValue(newRightValue)
+            setRightValue("90%")
             setZIndex(1)
             setTooltipShowing(true)
         }
     }
 
-    //Each component has a unique padding right, so gotta combine -75% above for tooltip with the custom padding so they line up when hovering
-    const getRightValWithPadding = () => {
-        const rightVal = -275
-        return rightVal - extraRightVal
-    }
-    const newRightValue = getRightValWithPadding()
-
     const hideTooltip = () => {
-        setRightValue(0)
+        setRightValue("0%")
         setZIndex(-1)
         setTooltipShowing(false)
     }
@@ -83,9 +75,9 @@ export const OneGridContainer: React.FC<GridContainerProps> = ({componentType, p
     // the observe function will return an unsubscribe callback
     return (
         <>
-            <div className={"d-flex justify-content-center align-content-center"} style={{padding: "10px"}}
+            <Col className={"col-10"} style={{backgroundColor: "transparent", flex: flex, maxWidth: maxWidth, minWidth: 150}}
                  onMouseOver={showTooltip} onMouseOut={hideTooltip}>
-                <div style={containerStyle}>
+                <div className={"clickable-image"} style={containerStyle}>
                     <OneGrid components={components} />
                 </div>
 
@@ -99,7 +91,7 @@ export const OneGridContainer: React.FC<GridContainerProps> = ({componentType, p
                         </Row>
                     </Container>
                 </div>
-            </div>
+            </Col>
         </>
     )
 }

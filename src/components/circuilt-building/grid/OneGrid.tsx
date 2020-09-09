@@ -16,8 +16,6 @@ const boardStyle: React.CSSProperties = {
     width: '100%',
     height: '100%',
     display: 'flex',
-    backgroundColor: 'white',
-    clipPath: "polygon(0 0, 95% 0, 100% 100%, 0 100%)",
     outline: 0
 }
 /** Styling properties applied to each square element */

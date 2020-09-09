@@ -116,10 +116,10 @@ export const Wire: React.FC<ComponentProps> = ({x, y, oneGridStyling, currentCom
                 </div>
                 }
 
-                <div style={{transform: "rotate(" + rotateDeg + "deg)"}}>
+                <div style={{transform: "rotate(" + rotateDeg + "deg)", height: "100%"}}>
                 <Row className={"justify-content-center align-items-center"} style={{height: "100%"}}>
                     {oneGridStyling &&
-                        <Col className={"col-1"} style={{padding: 0}}>
+                        <Col className={"col-1 align-self-center"} style={{padding: 0}}>
                             <img alt={"Arrow"} src={leftarrow} style={{width: 25, filter: "contrast(0%)"}} onClick={cycleImages}/>
                         </Col>
                     }
@@ -140,7 +140,7 @@ export const Wire: React.FC<ComponentProps> = ({x, y, oneGridStyling, currentCom
                     </Col>
 
                     {oneGridStyling &&
-                        <Col className={"col-1"} style={{padding: 0}}>
+                        <Col className={"col-1 align-self-center"} style={{padding: 0}}>
                             <img alt={"Arrow"} src={rightarrow} style={{width: 25, filter: "contrast(0%)"}} onClick={cycleImages}/>
                         </Col>
                     }

@@ -73,7 +73,7 @@ class AboutUs extends React.Component<any, any> {
                                     </Row>
 
                                     <Row style={{paddingLeft: "5%"}}>
-                                        <Col className={"col-4"} style={{backgroundColor: "#29405B", padding: 25}}>
+                                        <Col className={"col-6 col-md-6 col-lg-4"} style={{backgroundColor: "#29405B", padding: 25}}>
                                             <img alt={"Logo"} src={logo} width={"100%"} />
                                         </Col>
                                     </Row>

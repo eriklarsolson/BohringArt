@@ -96,7 +96,7 @@ class Header extends React.Component<any, any> {
                                                 variant="primary"
                                                 type="submit"
                                                 className={"btn green-button"}
-                                                style={{width: "75%", marginBottom: 25,
+                                                style={{width: "60%", marginBottom: 25,
                                                     clipPath: "polygon(0 0, 95% 0, 100% 100%, 5% 100%)"}}>
                                                 This site is not mobile optimized, please use a computer to use this exhibit!
                                             </Button>

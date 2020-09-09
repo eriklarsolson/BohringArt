@@ -64,7 +64,6 @@ export const SidebarModule: React.FC<Props> = ({tool, toolToShow, setTool, title
 
     return (
         <>
-
             <Col className={"col-10"} style={{backgroundColor: "transparent", flex: flex, maxWidth: maxWidth, minWidth: 150}}
                  onMouseOver={showTooltip} onMouseOut={hideTooltip}>
                 <div className={"clickable-image"} style={{backgroundColor: "white", clipPath: "polygon(0 0, 95% 0, 100% 100%, 0 100%)"}}

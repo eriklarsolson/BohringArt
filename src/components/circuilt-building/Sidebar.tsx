@@ -5,6 +5,7 @@ import Button from "react-bootstrap/Button";
 import {setComponentsList} from "./grid/Functionality";
 import inductor from './grid/components/images/inductor.png'
 import capacitor from './grid/components/images/capacitor.png'
+import {SidebarModule} from "../metal-engraving/SidebarModule";
 
 class Sidebar extends React.Component<any, any> {
     render() {
@@ -12,31 +13,23 @@ class Sidebar extends React.Component<any, any> {
             <>
                <Container style={{margin: "0", padding: "0", height: "100%"}}>
                    <div style={{position: "absolute", width: "100%", height: "100%", backgroundColor: "#29405B",
-                       clipPath: "polygon(0 0,80% 0, 100% 100%, 0 100%)"}} />
+                       clipPath: "polygon(0 0,75% 0, 100% 100%, 0 100%)"}} />
 
                    <h3 style={{paddingTop: "15px"}}>Modules</h3>
-                   <Row>
-                       <Col>
-                           <OneGridContainer componentType={"wire"} paddingRight={"15%"} extraRightVal={5} />
-                       </Col>
+                   <Row className={"justify-content-start"} style={{margin: 10}}>
+                       <OneGridContainer flex={"0 0 75%"} maxWidth={"75%"} componentType={"wire"}/>
                    </Row>
 
-                   <Row>
-                       <Col>
-                           <OneGridContainer componentType={"battery"} paddingRight={"12%"} extraRightVal={7} />
-                       </Col>
+                   <Row className={"justify-content-start"} style={{margin: 10}}>
+                       <OneGridContainer flex={"0 0 78%"} maxWidth={"78%"} componentType={"battery"}/>
                    </Row>
 
-                   <Row>
-                       <Col>
-                           <OneGridContainer componentType={"resistor"} paddingRight={"9%"} extraRightVal={9} />
-                       </Col>
+                   <Row className={"justify-content-start"} style={{margin: 10}}>
+                       <OneGridContainer flex={"0 0 81%"} maxWidth={"81%"} componentType={"resistor"}/>
                    </Row>
 
-                   <Row>
-                       <Col>
-                           <OneGridContainer componentType={"switch"} paddingRight={"6%"} extraRightVal={11} />
-                       </Col>
+                   <Row className={"justify-content-start"} style={{margin: 10}}>
+                       <OneGridContainer flex={"0 0 84%"} maxWidth={"84%"} componentType={"switch"} />
                    </Row>
 
 
@@ -70,7 +63,7 @@ class Sidebar extends React.Component<any, any> {
                    {/*    </Row>*/}
                    {/*}*/}
 
-                   <Row style={{margin: 5, paddingLeft: 40}}>
+                   <Row className={"justify-content-start"} style={{margin: 10}}>
                        <Col className="col-10">
                            <Button style={{width: "100%"}}
                                    className={"white-button"}

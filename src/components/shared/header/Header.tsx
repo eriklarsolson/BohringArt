@@ -4,8 +4,33 @@ import {Link, withRouter} from "react-router-dom";
 import './Header.scss';
 import line from "./line.png"
 import logo from "./logo.png"
+import { useState, useEffect } from 'react';
+
+function getWindowDimensions() {
+    const { innerWidth: width, innerHeight: height } = window;
+    return {
+        width,
+        height
+    };
+}
+
+function useWindowDimensions() {
+    const [windowDimensions, setWindowDimensions] = useState(getWindowDimensions());
+
+    useEffect(() => {
+        function handleResize() {
+            setWindowDimensions(getWindowDimensions());
+        }
+
+        window.addEventListener('resize', handleResize);
+        return () => window.removeEventListener('resize', handleResize);
+    }, []);
+
+    return windowDimensions;
+}
 
 const Header = (props: {location: any }) => {
+    const { height, width } = useWindowDimensions();
     const { location } = props;
 
     //Display what page you are on as a title next to the logo
@@ -67,29 +92,33 @@ const Header = (props: {location: any }) => {
                                 Home
                             </Nav.Link>
 
-                            <NavDropdown title="Activities" id="collasible-nav-dropdown" style={{color: "white",
-                                marginLeft: 10, zIndex: 5}} active={location.pathname.startsWith('/activity/')}>
-                                <NavDropdown.Item as={Link} to={{pathname: '/activity/metal-engraving'}}
-                                                  active={location.pathname.startsWith('/activity/metal-engraving') ||
-                                                  location.pathname.startsWith('/activity/telescope-activity')}>
-                                    Lasers And Lenses
-                                </NavDropdown.Item>
-                                <NavDropdown.Item as={Link} to={{pathname: '/activity/circuit-building'}}
-                                                  active={location.pathname.startsWith('/activity/circuit-building')}>
-                                    Circuit Construction
-                                </NavDropdown.Item>
-                                <NavDropdown.Item as={Link} to={{pathname: '/activity/rocket-building'}}
-                                                  active={location.pathname.startsWith('/activity/rocket-building') ||
-                                                  location.pathname.startsWith('/activity/flight-simulator')}>
-                                    To The Stars
-                                </NavDropdown.Item>
-                                <NavDropdown.Item as={Link} to={{pathname: '/activity/object-page'}}
-                                                  active={location.pathname.startsWith('/activity/object-page') ||
-                                                  location.pathname.startsWith('/activity/info-page') ||
-                                                  location.pathname.startsWith('/activity/stellar-cycle')}>
-                                    Stellar Life Cycle
-                                </NavDropdown.Item>
-                            </NavDropdown>
+                            {(width > 1000) &&
+                                <NavDropdown title="Activities" id="collasible-nav-dropdown" style={{
+                                    color: "white",
+                                    marginLeft: 10, zIndex: 5
+                                }} active={location.pathname.startsWith('/activity/')}>
+                                    <NavDropdown.Item as={Link} to={{pathname: '/activity/metal-engraving'}}
+                                                      active={location.pathname.startsWith('/activity/metal-engraving') ||
+                                                      location.pathname.startsWith('/activity/telescope-activity')}>
+                                        Lasers And Lenses
+                                    </NavDropdown.Item>
+                                    <NavDropdown.Item as={Link} to={{pathname: '/activity/circuit-building'}}
+                                                      active={location.pathname.startsWith('/activity/circuit-building')}>
+                                        Circuit Construction
+                                    </NavDropdown.Item>
+                                    <NavDropdown.Item as={Link} to={{pathname: '/activity/rocket-building'}}
+                                                      active={location.pathname.startsWith('/activity/rocket-building') ||
+                                                      location.pathname.startsWith('/activity/flight-simulator')}>
+                                        To The Stars
+                                    </NavDropdown.Item>
+                                    <NavDropdown.Item as={Link} to={{pathname: '/activity/object-page'}}
+                                                      active={location.pathname.startsWith('/activity/object-page') ||
+                                                      location.pathname.startsWith('/activity/info-page') ||
+                                                      location.pathname.startsWith('/activity/stellar-cycle')}>
+                                        Stellar Life Cycle
+                                    </NavDropdown.Item>
+                                </NavDropdown>
+                            }
 
                             <Nav.Link as={Link} to='/about' style={{marginLeft: 10}}
                                       active={location.pathname.startsWith('/about')}>
