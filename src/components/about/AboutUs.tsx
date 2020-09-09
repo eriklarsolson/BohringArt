@@ -67,7 +67,6 @@ class AboutUs extends React.Component<any, any> {
                                             <br /><br />
                                             Our educational website uses the principles of interactive design to convey physics concepts effectively to audiences of 15-25 years old, and can be used by anyone willing to learn and experience physics. Our goal is to create an interactive media for our audience to learn basic physics concepts in a more accessible and engaging way.
                                             In addition to the immediate goals for this project, our team is also interested in how this project allows for interdisciplinary collaboration between students of diverse fields of studies and how blending art and physics allows for multiple identities to be supported.
-
                                         </p>
                                     </Row>
 

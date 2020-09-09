@@ -105,7 +105,7 @@ class ObjectPage extends React.Component<any, any> {
                         sizeValue: 20,
                         massValue: 20,
                         timeValue: 20,
-                        timeString: "1 Year"
+                        timeString: ""
                     },
                     {
                         title: "Average Star",
@@ -114,7 +114,7 @@ class ObjectPage extends React.Component<any, any> {
                         sizeValue: 40,
                         massValue: 40,
                         timeValue: 40,
-                        timeString: "2 Year"
+                        timeString: "600 million years"
                     },
                     {
                         title: "Red Giant",
@@ -123,7 +123,7 @@ class ObjectPage extends React.Component<any, any> {
                         sizeValue: 60,
                         massValue: 60,
                         timeValue: 60,
-                        timeString: "3 Year"
+                        timeString: "1 billion years"
                     },
                     {
                         title: "Planetary Nebula",
@@ -132,7 +132,7 @@ class ObjectPage extends React.Component<any, any> {
                         sizeValue: 80,
                         massValue: 80,
                         timeValue: 80,
-                        timeString: "4 Year"
+                        timeString: "10,000 years"
                     },
                     {
                         title: "White Dwarf",
@@ -141,7 +141,7 @@ class ObjectPage extends React.Component<any, any> {
                         sizeValue: 100,
                         massValue: 100,
                         timeValue: 100,
-                        timeString: "5 Year"
+                        timeString: "50 million years"
                     }
                 ],
                 [
@@ -152,7 +152,7 @@ class ObjectPage extends React.Component<any, any> {
                         sizeValue: 20,
                         massValue: 20,
                         timeValue: 20,
-                        timeString: "1 Year"
+                        timeString: ""
                     },
                     {
                         title: "Massive Star",
@@ -161,7 +161,7 @@ class ObjectPage extends React.Component<any, any> {
                         sizeValue: 40,
                         massValue: 40,
                         timeValue: 40,
-                        timeString: "2 Year"
+                        timeString: "tens of millions of years"
                     },
                     {
                         title: "Red Supergiant",
@@ -170,7 +170,7 @@ class ObjectPage extends React.Component<any, any> {
                         sizeValue: 60,
                         massValue: 60,
                         timeValue: 60,
-                        timeString: "3 Year"
+                        timeString: "Hundreds of thousands of years"
                     },
                     {
                         title: "Supernova",
@@ -179,7 +179,7 @@ class ObjectPage extends React.Component<any, any> {
                         sizeValue: 80,
                         massValue: 80,
                         timeValue: 80,
-                        timeString: "4 Year"
+                        timeString: "Hundreds of thousands of years"
                     },
                     {
                         title: "Neutron Star",
@@ -188,7 +188,7 @@ class ObjectPage extends React.Component<any, any> {
                         sizeValue: 100,
                         massValue: 100,
                         timeValue: 100,
-                        timeString: "5 Year"
+                        timeString: ""
                     },
                     {
                         title: "Black Hole",
@@ -197,7 +197,7 @@ class ObjectPage extends React.Component<any, any> {
                         sizeValue: 100,
                         massValue: 100,
                         timeValue: 100,
-                        timeString: "6 Year"
+                        timeString: "10^67 years"
                     }
                 ]
             ]
@@ -545,7 +545,7 @@ class ObjectPage extends React.Component<any, any> {
                                         {/*</Col>*/}
                                     </Row>
 
-                                    <Row>
+                                    <Row style={{margin: 0}}>
                                         <Col>
                                             {(this.state.stellarObjects[this.state.massClass][this.state.index].title === "Average Star" ||
                                             this.state.stellarObjects[this.state.massClass][this.state.index].title === "Massive Star") ?
@@ -573,6 +573,10 @@ class ObjectPage extends React.Component<any, any> {
                                             <TimelineSlider value={this.state.stellarObjects[this.state.massClass]
                                                 [this.state.index].timeValue} changeTime={changeTime}
                                                             children={null} max={max} />
+                                            {(this.state.stellarObjects[this.state.massClass][this.state.index].title !== "Nebula" &&
+                                                this.state.stellarObjects[this.state.massClass][this.state.index].title !== "Neutron Star") &&
+                                                <h6 style={{color: "white"}}>Life Span:</h6>
+                                            }
                                             <h5 style={{color: "white"}}>{this.state.stellarObjects[this.state.massClass][this.state.index].timeString}</h5>
                                         </Col>
 

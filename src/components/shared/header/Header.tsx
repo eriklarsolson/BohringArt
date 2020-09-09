@@ -100,7 +100,7 @@ const Header = (props: {location: any }) => {
                                     <NavDropdown.Item as={Link} to={{pathname: '/activity/metal-engraving'}}
                                                       active={location.pathname.startsWith('/activity/metal-engraving') ||
                                                       location.pathname.startsWith('/activity/telescope-activity')}>
-                                        Lasers And Lenses
+                                        Lasers & Lenses
                                     </NavDropdown.Item>
                                     <NavDropdown.Item as={Link} to={{pathname: '/activity/circuit-building'}}
                                                       active={location.pathname.startsWith('/activity/circuit-building')}>

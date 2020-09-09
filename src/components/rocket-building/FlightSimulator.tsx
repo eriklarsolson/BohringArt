@@ -74,7 +74,7 @@ class FlightSimulator extends React.Component<any, any> {
                     answer: undefined,
                     questionType: 0, //Fuel-dependent
                     yesAnswer: "You detach the telescope, giving a boost to the rest of your rocket and ensuring your crew’s safety.",
-                    noAnswer: "No, you do not detach the telescope, and carry on with your mission. TODO",
+                    noAnswer: "No, you do not detach the telescope, and carry on with your mission.",
                     yesCheck: "Detach the telescope",
                     noCheck: "Carry on"
                 },

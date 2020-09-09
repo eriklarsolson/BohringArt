@@ -43,7 +43,7 @@ class Sidebar extends React.Component<any, any> {
                                    </Col>
                                </Row>
 
-                               <Row style={{margin: 15}}>
+                               <Row style={{margin: 15, marginBottom: 5}}>
                                    <Col>
                                        <Typography id="size-slider" gutterBottom style={{float: "left", fontWeight: "bold", fontSize: "20px"}}>
                                            Size
@@ -52,6 +52,14 @@ class Sidebar extends React.Component<any, any> {
                                                          aria-labelledby="size-slider" max={max} />
                                    </Col>
                                </Row>
+
+                                {/*<Row className={"justify-content-center"}>*/}
+                                {/*    <Col className={"col-10"}>*/}
+                                {/*        <p style={{textAlign: "left", fontWeight: "bold", fontSize: 10}}>*/}
+                                {/*            */}
+                                {/*        </p>*/}
+                                {/*    </Col>*/}
+                                {/*</Row>*/}
                              </>
                            }
 

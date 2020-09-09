@@ -303,7 +303,25 @@ function checkForErrors() {
     }
 }
 
-function checkIfPassed(matrix: Array<Array<number>>, visited: Array<Array<boolean>>): void {
+function getDirectionOfNextComponent(firstComponent: any, nextComponent: any): number {
+    if(firstComponent.x === nextComponent.x) {
+        if(firstComponent.y + 1 === nextComponent.y) {
+            return 0 //down
+        } else if(firstComponent.y - 1 === nextComponent.y) {
+            return 1 //up
+        }
+    } else {
+        if(firstComponent.x + 1 === nextComponent.x) {
+            return 2 //right
+        } else if(firstComponent.x - 1 === nextComponent.x) {
+            return 3 //left
+        }
+    }
+
+    return -1 //Didn't find
+}
+
+function checkIfPassed(circuitPositions: Array<{ x: number, y: number }>): void {
     //TODO - So take the matrix and visited variables and loop through to check each component at a time sorted by
     // where they appear in circuit. Might have to create array in hasCircuit() that adds the component if it is the next
     // one found in visited
@@ -332,8 +350,68 @@ function checkIfPassed(matrix: Array<Array<number>>, visited: Array<Array<boolea
             passed = false;
         }
 
-        //TODO - Check if all the pieces (especially wires) are in correct type and rotation deg <- THIS IS GOING TO BE THE HARDEST
+        //TODO - Use the circuitPositions val here to check for correct rotation and component type (like wire type)
+        for(let i = 0; i < circuitPositions.length; i++) {
+            const circuitPosition = circuitPositions[i];
+            const component = getComponentAtPos(circuitPosition.x, circuitPosition.y);
 
+            if(i !== circuitPositions.length - 1) {
+                const directionNum = getDirectionOfNextComponent(component, getComponentAtPos(circuitPositions[i+1].x, circuitPositions[i+1].y))
+
+                //After knowing what direction, can then check rotation and component type
+                switch (directionNum) {
+                    //TODO
+                    case 0: //DOWN
+                        //Wires handled differently because of corner pieces
+                        if(component.type === ComponentTypes.WIRE) {
+                            if(component.componentType === 0) { //straight
+                                //piece has to be facing down, so either rotation deg 90 or 270
+                            } else  if(component.componentType === 1) { //corner
+                                //one piece has to be facing down, so either rotation deg 0 or 90
+                            }
+                        } else {
+                            //piece has to be facing down, so either rotation deg 90 or 270
+                        }
+                        break;
+                    case 1: //UP
+                        if(component.type === ComponentTypes.WIRE) {
+                            if(component.componentType === 0) { //straight
+                                //piece has to be facing up, so either rotation deg 90 or 270
+                            } else  if(component.componentType === 1) { //corner
+                                //one piece has to be facing up, so either rotation deg 180 or 270
+                            }
+                        } else {
+                            //piece has to be facing up, so either rotation deg 90 or 270
+                        }
+                        break;
+                    case 2: //RIGHT
+                        if(component.type === ComponentTypes.WIRE) {
+                            if(component.componentType === 0) { //straight
+                                //piece has to be laying flat, so either rotation deg 0 or 180
+                            } else  if(component.componentType === 1) { //corner
+                                //one piece has to be facing right, so either rotation deg 0 or 270
+                            }
+                        } else {
+                            //piece has to be laying flat, so either rotation deg 0 or 180
+                        }
+                        break;
+                    case 3: //LEFT
+                        if(component.type === ComponentTypes.WIRE) {
+                            if(component.componentType === 0) { //straight
+                                //piece has to be laying flat, so either rotation deg 0 or 180
+                            } else  if(component.componentType === 1) { //corner
+                                //one piece has to be facing left, so either rotation deg 180 or 270
+                            }
+                        } else {
+                            //piece has to be laying flat, so either rotation deg 0 or 180
+                        }
+                        break;
+                }
+
+            } else {
+                //last component found here (6, 4) off screen
+            }
+        }
 
         //Now that there is a path and you passed all the issues above, then check if you reached successful voltage
         // and other requirements needed for the level (used all needed pieces, etc...)
@@ -347,9 +425,6 @@ function checkIfPassed(matrix: Array<Array<number>>, visited: Array<Array<boolea
         }
 
         if(neededVoltage === currentTotalVoltage) {
-            //TODO
-
-
             if(!boardHasIssues) {
                 // TODO - I'll need to switch the image of the object we are powering with the circuit to the "powered" version (gif?)
                 passed = true;
@@ -396,6 +471,9 @@ export function hasCircuit() {
         [false, false, false, false, false, false, false],
     ]
 
+    //Keep track of which matrix positions in which order had the circuit
+    let circuitPositions: Array<{ x: number, y: number }> = []
+
     // Flag to indicate whether the
     // path exists or not
     let flag = false;
@@ -409,9 +487,10 @@ export function hasCircuit() {
 
             // Starting from i, j and
             // then finding the path
-            if (isPath(i, j, visited, matrix)) {
+            if (isPath(i, j, visited, matrix, circuitPositions)) {
                 // if path exists
                 flag = true;
+
                 break;
             }
     }
@@ -419,7 +498,7 @@ export function hasCircuit() {
     if (flag) {
         console.log("yes there is a path")
 
-        checkIfPassed(matrix, visited)
+        checkIfPassed(circuitPositions)
     } else {
         console.log("no path found brother")
         passed = false;
@@ -432,26 +511,41 @@ function isSafe(i: number, j: number, matrix: Array<Array<number>>) {
 }
 
 // Returns true if there is a path from a source (a cell with value 1) to a destination (a cell with value 2)
-function isPath(i: number, j: number, visited: Array<Array<boolean>>, matrix: Array<Array<number>>) {
+function isPath(i: number, j: number, visited: Array<Array<boolean>>, matrix: Array<Array<number>>, circuitPositions: Array<{ x: number, y: number }>) {
     // Checking the boundaries, walls and, whether the cell is unvisited
     if (isSafe(i, j, matrix) && matrix[i][j] !== 0 && !visited[i][j]) {
         // Make the cell visited
         visited[i][j] = true;
+        circuitPositions.push({x: j, y: i})
+
 
         // If the cell is the required destination, then return true
         if (matrix[i][j] === 2) return true;
 
-        const up = isPath(i - 1, j, visited, matrix);
-        if (up) return true;
+        //TODO - Check if all the pieces (especially wires) are in correct type and rotation deg <- THIS IS GOING TO BE THE HARDEST
+        // so after each const in the if statement, check the type of piece and it's rotation
+        // Note: If it's a wire, do we need to pass a variable in isPath saying if it came from up/left/down/right to check for angle piece??????? AHHHHHHHHHHHHH
 
-        const left = isPath(i, j - 1, visited, matrix);
-        if (left) return true;
+        //TODO The circuit positions defaults to first position in list and just repeats that, very confused
+        const up = isPath(i - 1, j, visited, matrix, circuitPositions);
+        if (up) {
+            return true;
+        }
 
-        const down = isPath(i + 1, j, visited, matrix);
-        if (down) return true;
+        const left = isPath(i, j - 1, visited, matrix, circuitPositions);
+        if (left) {
+            return true;
+        }
 
-        const right = isPath(i, j + 1, visited, matrix);
-        if (right) return true;
+        const down = isPath(i + 1, j, visited, matrix, circuitPositions);
+        if (down) {
+            return true;
+        }
+
+        const right = isPath(i, j + 1, visited, matrix, circuitPositions);
+        if (right) {
+            return true;
+        }
     }
 
     // No path has been found
@@ -461,22 +555,3 @@ function isPath(i: number, j: number, visited: Array<Array<boolean>>, matrix: Ar
 function getComponentsByType(type: string) {
     return components.filter(component => component.type === type);
 }
-
-// function getCurrentLevelPass(): any {
-//     if(currentLevel === 0) {
-//         let components: { x: number; y: number; type: string, voltage: number, rotateDeg: number}[] =  []
-//         components.push({x: 0, y: 0, type: ComponentTypes.BATTERY, voltage: 0, rotateDeg: 0})
-//         return components
-//     } else if(currentLevel === 1) {
-//         let components: { x: number; y: number; type: string, voltage: number, rotateDeg: number}[] =  []
-//         components.push({x: 0, y: 0, type: ComponentTypes.BATTERY, voltage: 0, rotateDeg: 0})
-//         return components
-//     } else if(currentLevel === 2) {
-//         let components: { x: number; y: number; type: string, voltage: number, rotateDeg: number}[] =  []
-//         components.push({x: 0, y: 0, type: ComponentTypes.BATTERY, voltage: 0, rotateDeg: 0})
-//         return components
-//     }
-//
-//     return []
-// }
-

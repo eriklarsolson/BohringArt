@@ -154,7 +154,6 @@ export const AboutUsAnimation: React.FC<AnimationProps>  = ({}) => {
         <>
             <motion.div
                 animate={controls1}
-
                 style={{height: "100%"}}>
                 <Row className="justify-content-center">
                     <Container fluid>
@@ -393,7 +392,7 @@ export const AboutUsAnimation: React.FC<AnimationProps>  = ({}) => {
                             </Row>
                             <Row className={"justify-content-center"}>
                                 <Col className={"col-9"}>
-                                    <p style={{marginBottom: 0, fontSize: 16, fontWeight: "bold"}}>{description}</p>
+                                    <p style={{marginBottom: 0, fontSize: 16}}>{description}</p>
                                 </Col>
                             </Row>
                         </Container>

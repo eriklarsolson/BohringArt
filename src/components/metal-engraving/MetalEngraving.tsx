@@ -11,6 +11,11 @@ import laser_GREEN from "./images/laser_GREEN.png"
 import laser_BLUE from "./images/laser_BLUE.png"
 import laser_PINK from "./images/laser_PINK.png"
 import laser_LENS from "./images/laser_LENS.png"
+import laser_LENS_blue from "./images/laser_LENS_blue.png"
+import laser_LENS_green from "./images/laser_LENS_green.png"
+import laser_LENS_pink from "./images/laser_LENS_pink.png"
+import laser_LENS_red from "./images/laser_LENS_red.png"
+import laser_LENS_yellow from "./images/laser_LENS_yellow.png"
 import laser_PRISM from "./images/laser_PRISM.png"
 import metal_filler from "./images/metal_filler.png"
 import {Typography} from "@material-ui/core";
@@ -77,7 +82,7 @@ class MetalEngraving extends React.Component<any, any> {
             if(tool === TOOL_LASER) {
                 this.setState({cursor: getActiveLaserIcon()})
             } else if(tool === TOOL_OPTICS) {
-                this.setState({cursor: laser_LENS})
+                this.setState({cursor: laser_LENS_red})
             } else if(tool === TOOL_PRISM) {
                 this.setState({cursor: laser_PRISM})
             } else if(tool === TOOL_ERASER) {
@@ -126,7 +131,7 @@ class MetalEngraving extends React.Component<any, any> {
                     this.setState({toolActive: false})
                 } else {
                     if(this.state.tool === TOOL_OPTICS) {
-                        this.setState({cursor: laser_LENS})
+                        this.setState({cursor: getActiveLaserIcon()})
                     } else if(this.state.tool === TOOL_PRISM) {
                         this.setState({cursor: laser_PRISM})
                     } else {
@@ -140,21 +145,40 @@ class MetalEngraving extends React.Component<any, any> {
         const getActiveLaserIcon = () => {
             const color = this.state.color;
 
-            switch (color) {
-                case "#FFFFFF":
-                    return laser_WHITE
-                case "#EB3324":
-                    return laser_RED
-                case "#F2F551":
-                    return laser_YELLOW
-                case "#76FA68":
-                    return laser_GREEN
-                case "#3686F7":
-                    return laser_BLUE
-                case "#EA3690":
-                    return laser_PINK
-                default:
-                    return laser_OFF
+            if(this.state.tool === TOOL_LASER) {
+                switch (color) {
+                    case "#FFFFFF":
+                        return laser_WHITE
+                    case "#EB3324":
+                        return laser_RED
+                    case "#F2F551":
+                        return laser_YELLOW
+                    case "#76FA68":
+                        return laser_GREEN
+                    case "#3686F7":
+                        return laser_BLUE
+                    case "#EA3690":
+                        return laser_PINK
+                    default:
+                        return laser_OFF
+                }
+            } else {
+                switch (color) {
+                    case "#FFFFFF":
+                        return laser_LENS
+                    case "#EB3324":
+                        return laser_LENS_red
+                    case "#F2F551":
+                        return laser_LENS_yellow
+                    case "#76FA68":
+                        return laser_LENS_green
+                    case "#3686F7":
+                        return laser_LENS_blue
+                    case "#EA3690":
+                        return laser_LENS_pink
+                    default:
+                        return laser_OFF
+                }
             }
         }
 
@@ -180,6 +204,30 @@ class MetalEngraving extends React.Component<any, any> {
                         break;
                     case 100:
                         this.setState({color: "#EA3690", cursor: laser_PINK, colorSize: size})
+                        break;
+                    default:
+                        this.setState({color: "#FFFFFF", cursor: laser_OFF, colorSize: size})
+                        break;
+                }
+            } else if(this.state.tool === TOOL_OPTICS) {
+                switch (size) {
+                    // case "#FFFFFF":
+                    //     this.setState({color: color, cursor: laser_WHITE})
+                    //     break;
+                    case 20:
+                        this.setState({color: "#EB3324", cursor: laser_LENS_red, colorSize: size})
+                        break;
+                    case 40:
+                        this.setState({color: "#F2F551", cursor: laser_LENS_yellow, colorSize: size})
+                        break;
+                    case 60:
+                        this.setState({color: "#76FA68", cursor: laser_LENS_green, colorSize: size})
+                        break;
+                    case 80:
+                        this.setState({color: "#3686F7", cursor: laser_LENS_blue, colorSize: size})
+                        break;
+                    case 100:
+                        this.setState({color: "#EA3690", cursor: laser_LENS_pink, colorSize: size})
                         break;
                     default:
                         this.setState({color: "#FFFFFF", cursor: laser_OFF, colorSize: size})
@@ -287,7 +335,7 @@ class MetalEngraving extends React.Component<any, any> {
 
                         {this.state.popupOpened &&
                             <div style={{position: "absolute", top: 0, bottom: 0, left: 0, right: 0, zIndex: 4, overflow: "hidden"}}>
-                                <ObjectiveSlideOut title={"01 Laser and Lenses Objective"}
+                                <ObjectiveSlideOut title={"01 Lasers and Lenses Objective"}
                                                    description={"Using lasers, prisms, and lenses, create an " +
                                                    "artistic design on a metal sheet. The laser can be altered to include numerous shapes, colors, and widths " +
                                                    "beneficial to the engraving. You can use the ERASER and RESET buttons to change any mistakes on your design. " +
@@ -333,7 +381,7 @@ class MetalEngraving extends React.Component<any, any> {
                                         </Col>
 
                                         <Col>
-                                            <p style={{color: "#29405B", fontSize: "28px", fontWeight: "bold"}}>Laser And Lenses</p>
+                                            <p style={{color: "#29405B", fontSize: "28px", fontWeight: "bold"}}>Lasers & Lenses</p>
                                         </Col>
                                     </Row>
 

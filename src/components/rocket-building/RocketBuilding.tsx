@@ -601,7 +601,7 @@ class RocketBuilding extends React.Component<any, any> {
                                         </Container>
                                     </Row>
 
-                                    <div style={{position: "absolute", bottom: 0, right: 0, marginRight: 25, marginBottom: 25}}>
+                                    <Row style={{margin: 10}}>
                                         <Col>
                                             <Button className={"green-button"} style={{float: "right", width: 200,
                                                 marginBottom: 25, marginTop: 10,
@@ -615,7 +615,7 @@ class RocketBuilding extends React.Component<any, any> {
                                                 Launch
                                             </Button>
                                         </Col>
-                                    </div>
+                                    </Row>
                                 </Container>
                             </Col>
                         </Row>

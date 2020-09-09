@@ -225,26 +225,26 @@ const Canvas = ({ width, height, canvasRef, tool, color, size, toolActive }: Can
                     context.beginPath();
 
                     // //TODO - Make it so that its only for darker colors than what your current choice is (also doesn't really fully work right now)
-                    //Don't allow laser to draw over other lasers of dark engraving
-                    const oldPixelColor = GetPixel(originalMousePosition.x+2, originalMousePosition.y+2);
-                    let otherColorFound = false;
-                    if(oldPixelColor !== "#000000" && oldPixelColor !== getBurnColor(color)) {
-                        otherColorFound = true;
-                    }
+                    // //Don't allow laser to draw over other lasers of dark engraving
+                    // const oldPixelColor = GetPixel(originalMousePosition.x+2, originalMousePosition.y+2);
+                    // let otherColorFound = false;
+                    // if(oldPixelColor !== "#000000" && oldPixelColor !== getBurnColor(color)) {
+                    //     otherColorFound = true;
+                    // }
 
                     context.moveTo(originalMousePosition.x, originalMousePosition.y);
 
-                    //Don't allow laser to draw over other lasers of dark engraving
-                    const newPixelColor = GetPixel(newMousePosition.x, newMousePosition.y);
-                    if(!otherColorFound) {
-                        if (newPixelColor !== "#000000" && newPixelColor !== getBurnColor(color)) {
-                            otherColorFound = true;
-                        }
-                    }
-
-                    if(tool !== TOOL_ERASER && otherColorFound) {
-                        context.strokeStyle = "transparent";
-                    }
+                    // //Don't allow laser to draw over other lasers of dark engraving
+                    // const newPixelColor = GetPixel(newMousePosition.x, newMousePosition.y);
+                    // if(!otherColorFound) {
+                    //     if (newPixelColor !== "#000000" && newPixelColor !== getBurnColor(color)) {
+                    //         otherColorFound = true;
+                    //     }
+                    // }
+                    //
+                    // if(tool !== TOOL_ERASER && otherColorFound) {
+                    //     context.strokeStyle = "transparent";
+                    // }
 
                     context.lineTo(newMousePosition.x, newMousePosition.y);
                     context.closePath();
