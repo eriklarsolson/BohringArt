@@ -147,7 +147,7 @@ class TelescopeActivity extends React.Component<any, any> {
                                     <Col className={"ml-auto col-3"} style={{padding: 0}}>
                                         <Button className={"green-button"} style={{float: "right", width: 200,
                                             clipPath: "polygon(0 0, 95% 0, 100% 100%, 5% 100%)"}}
-                                                onClick={() => this.props.history.push('/activity/rocket-building')}>
+                                                onClick={() => this.props.history.push('/activity/circuit-building')}>
                                             Next
                                         </Button>
                                     </Col>

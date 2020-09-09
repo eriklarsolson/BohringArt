@@ -65,7 +65,7 @@ class CircuitBuilding extends React.Component<any, any> {
             const pastLevel = this.state.currentLevel - 1;
 
             if(pastLevel === 0) {
-                this.props.history.push('/');
+                this.props.history.push('/activity/telescope-activity');
             } else {
                 this.setState({currentLevel: pastLevel})
             }
@@ -91,7 +91,7 @@ class CircuitBuilding extends React.Component<any, any> {
         }
 
         const skipActivity = () => {
-            this.props.history.push('/activity/metal-engraving');
+            this.props.history.push('/activity/rocket-building');
         }
 
         return (
@@ -105,7 +105,7 @@ class CircuitBuilding extends React.Component<any, any> {
 
                     {this.state.popupOpened &&
                         <div className={""} style={{position: "absolute", width: "100%", height: "100%", zIndex: 4, overflow: "hidden"}}>
-                            <ObjectiveSlideOut title={this.state.popupTitle}
+                            <ObjectiveSlideOut title={"02 Circuit Construction Objective"}
                                                description={this.state.popupDescriptions[this.state.currentLevel - 1]}
                                                setParentState={() => cyclePopup()} />
                         </div>

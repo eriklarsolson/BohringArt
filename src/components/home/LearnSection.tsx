@@ -35,11 +35,11 @@ class LearnSection extends React.Component<any, any> {
                                     <img alt={"#1"} src={one} style={{height: "80%", marginTop: "25%", float: "right", maxHeight: 175}} />
                                 </Col>
                                 <Col style={{paddingLeft: 25}}>
-                                    <h4>CIRCUIT CONSTRUCTION</h4>
+                                    <h4>LASERS & LENSES</h4>
                                     <p style={{paddingRight: 90, fontSize: "1.6vh"}}>
-                                        Learn about circuit components to build one that can power your satellite.
-                                        Demonstrate the flow of electrons in a circuit and how circuit components
-                                        (capacitors, resistors, inductors, etc.) can affect their energy.
+                                        Learn how lenses manipulate light to understand how your telescope sees distant
+                                        stars. Experiment with the variables that affect the image formed when shining
+                                        light through a lens, and begin controlling the type of image you see by manipulating these variables.
                                     </p>
                                     {/*<Button*/}
                                     {/*    href="/activity/circuit-building"*/}
@@ -62,7 +62,7 @@ class LearnSection extends React.Component<any, any> {
                                     <img alt={"#2"} src={two} style={{height: "75%", marginTop: "20%", float: "right", maxHeight: 175}} />
                                 </Col>
                                 <Col style={{paddingLeft: 25}}>
-                                    <h4>LASERS & LENSES</h4>
+                                    <h4>CIRCUIT CONSTRUCTION</h4>
                                     <p style={{paddingRight: 20, fontSize: "1.6vh"}}>
                                         Learn how lenses manipulate light to understand how your telescope sees distant
                                         stars. Experiment with the variables that affect the image formed when shining

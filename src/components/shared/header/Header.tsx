@@ -69,14 +69,14 @@ const Header = (props: {location: any }) => {
 
                             <NavDropdown title="Activities" id="collasible-nav-dropdown" style={{color: "white",
                                 marginLeft: 10, zIndex: 5}} active={location.pathname.startsWith('/activity/')}>
-                                <NavDropdown.Item as={Link} to={{pathname: '/activity/circuit-building'}}
-                                                  active={location.pathname.startsWith('/activity/circuit-building')}>
-                                    Circuit Construction
-                                </NavDropdown.Item>
                                 <NavDropdown.Item as={Link} to={{pathname: '/activity/metal-engraving'}}
                                                   active={location.pathname.startsWith('/activity/metal-engraving') ||
                                                   location.pathname.startsWith('/activity/telescope-activity')}>
                                     Lasers And Lenses
+                                </NavDropdown.Item>
+                                <NavDropdown.Item as={Link} to={{pathname: '/activity/circuit-building'}}
+                                                  active={location.pathname.startsWith('/activity/circuit-building')}>
+                                    Circuit Construction
                                 </NavDropdown.Item>
                                 <NavDropdown.Item as={Link} to={{pathname: '/activity/rocket-building'}}
                                                   active={location.pathname.startsWith('/activity/rocket-building') ||

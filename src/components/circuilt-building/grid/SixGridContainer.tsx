@@ -41,8 +41,7 @@ export const SixGridContainer: React.FC<GridContainerProps> = ({objectiveImage, 
 
     const [totalVoltage, setTotalVoltage] = useState<number>(0)
     const [errorPopup, setErrorPopup] = useState<boolean>(false)
-
-    let popupCalled = false;
+    const [popupCalled, setPopupCalled] = useState<boolean>(false)
 
     const didItPass = (component: {x: number, y: number, type: string, voltage: number, rotateDeg: number}) => {
         setCurrentComp(component)
@@ -50,9 +49,9 @@ export const SixGridContainer: React.FC<GridContainerProps> = ({objectiveImage, 
 
         if(getPassed()) {
             if(!popupCalled) {
-                toast("You have completed this level! Click the 'Next' button to move on!");
+                setPopupCalled(true)
+                toast("You have successfully completed the circuit!");
                 //TODO - This shows up multiple times on being called
-                popupCalled = true;
             }
         }
 

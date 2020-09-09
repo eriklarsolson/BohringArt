@@ -19,9 +19,9 @@ class Home extends React.Component<any, any> {
 
         const goToActivity = (learnSelection: number) => {
             if(learnSelection === 0) {
-                this.props.history.push('/activity/circuit-building')
-            } else if(learnSelection === 1) {
                 this.props.history.push('/activity/metal-engraving')
+            } else if(learnSelection === 1) {
+                this.props.history.push('/activity/circuit-building')
             } else if(learnSelection === 2) {
                 this.props.history.push('/activity/rocket-building')
             } else if(learnSelection === 3) {

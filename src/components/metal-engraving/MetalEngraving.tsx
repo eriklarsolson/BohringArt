@@ -287,7 +287,7 @@ class MetalEngraving extends React.Component<any, any> {
 
                         {this.state.popupOpened &&
                             <div style={{position: "absolute", top: 0, bottom: 0, left: 0, right: 0, zIndex: 4, overflow: "hidden"}}>
-                                <ObjectiveSlideOut title={"02 Laser and Lenses Objective"}
+                                <ObjectiveSlideOut title={"01 Laser and Lenses Objective"}
                                                    description={"Using lasers, prisms, and lenses, create an " +
                                                    "artistic design on a metal sheet. The laser can be altered to include numerous shapes, colors, and widths " +
                                                    "beneficial to the engraving. You can use the ERASER and RESET buttons to change any mistakes on your design. " +
@@ -327,7 +327,7 @@ class MetalEngraving extends React.Component<any, any> {
                                         <Col className={"col-3"}>
                                             <Button className={"green-button"} style={{float: "left", width: 100,
                                                 clipPath: "polygon(0 0, 95% 0, 100% 100%, 5% 100%)"}}
-                                                    onClick={() => this.props.history.push('/activity/circuit-building')}>
+                                                    onClick={() => this.props.history.push('/home')}>
                                                 <i className="fa fa-arrow-left" />
                                             </Button>
                                         </Col>

@@ -361,7 +361,7 @@ class RocketBuilding extends React.Component<any, any> {
                                         <Col className="col-2" style={{margin: "2%"}}>
                                             <Button className={"green-button"} style={{float: "left", width: 100,
                                                 clipPath: "polygon(0 0, 95% 0, 100% 100%, 5% 100%)"}}
-                                                    onClick={() => this.props.history.push('/activity/telescope-activity')}>
+                                                    onClick={() => this.props.history.push('/activity/circuit-building')}>
                                                 <i className="fa fa-arrow-left" />
                                             </Button>
                                         </Col>
