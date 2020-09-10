@@ -12,7 +12,7 @@ export interface AnimationProps {
 
 export const MoreInfoAnimation: React.FC<AnimationProps>  = ({setParentState}) => {
     const [open, setOpen] = useState<boolean>(true);
-    const [title, setTitle] = useState<string>("WIRE");
+    const [title, setTitle] = useState<string>("LASER");
     const [description, setDescription] = useState<string>(
         "Light is a form of energy stored in the form of photons, particles of light, that are emitted from all objects such as stars and human bodies except black holes. A laser, or Light Amplification by Stimulated Emission of Radiation, is a concentrated ray of photons emitted by an energetic object, typically a gas."
     );

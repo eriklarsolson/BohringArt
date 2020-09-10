@@ -460,13 +460,29 @@ class RocketBuilding extends React.Component<any, any> {
                                                 <Col className={"ml-auto col-5 col-md-4"} style={{color: "white",
                                                     textAlign: "left", marginTop: "20%", padding: 0}}>
                                                     <Container fluid>
-                                                        <Row>
+                                                        <Row style={{margin: 0, marginLeft: 1}}>
+                                                            <Col style={{padding: 0}}>
+                                                                <Button className={"green-button"} style={{float: "left", width: 200,
+                                                                    marginBottom: 10, marginTop: 10, height: 60,
+                                                                    clipPath: "polygon(0 0, 95% 0, 100% 100%, 5% 100%)"}}
+                                                                        onClick={() => this.props.history.push({
+                                                                            pathname: '/activity/flight-simulator',
+                                                                            state: {cone: this.state.cones[this.state.coneIndex],
+                                                                                body: this.state.bodys[this.state.bodyIndex],
+                                                                                booster: this.state.boosters[this.state.boosterIndex],
+                                                                                engine: this.state.engines[this.state.engineIndex]}})}>
+                                                                    <p style={{fontWeight: "bold", fontSize: 26, marginTop: 5}}>Launch</p>
+                                                                </Button>
+                                                            </Col>
+                                                        </Row>
+
+                                                        <Row style={{marginLeft: 2}}>
                                                             <Col style={{backgroundColor: "#162F4C"}}>
                                                                 <p style={{fontWeight: "bold", fontSize: 22, marginTop: 10}}>Totals</p>
                                                             </Col>
                                                         </Row>
 
-                                                        <Row style={{backgroundColor: "#162F4C"}}>
+                                                        <Row style={{backgroundColor: "#162F4C", marginLeft: 2}}>
                                                             <Col style={{backgroundColor: "#29405B", padding: 10,
                                                                 marginLeft: 15, marginBottom: 15}}>
                                                                 <Container fluid>
@@ -598,22 +614,6 @@ class RocketBuilding extends React.Component<any, any> {
                                                 {/*</Col>*/}
                                             </Row>
                                         </Container>
-                                    </Row>
-
-                                    <Row style={{margin: 10}}>
-                                        <Col>
-                                            <Button className={"green-button"} style={{float: "right", width: 200,
-                                                marginBottom: 25, marginTop: 10,
-                                                clipPath: "polygon(0 0, 95% 0, 100% 100%, 5% 100%)"}}
-                                                    onClick={() => this.props.history.push({
-                                                        pathname: '/activity/flight-simulator',
-                                                        state: {cone: this.state.cones[this.state.coneIndex],
-                                                            body: this.state.bodys[this.state.bodyIndex],
-                                                            booster: this.state.boosters[this.state.boosterIndex],
-                                                            engine: this.state.engines[this.state.engineIndex]}})}>
-                                                Launch
-                                            </Button>
-                                        </Col>
                                     </Row>
                                 </Container>
                             </Col>

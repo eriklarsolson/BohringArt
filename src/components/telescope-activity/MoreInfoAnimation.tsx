@@ -18,8 +18,8 @@ export interface AnimationProps {
 
 export const MoreInfoAnimation: React.FC<AnimationProps>  = ({setParentState}) => {
     const [open, setOpen] = useState<boolean>(true);
-    const [title, setTitle] = useState<string>("WIRE");
-    const [description, setDescription] = useState<string>("A conducting, metal rod designed to transfer charges. Electrons can flow through these with little to no resistance, typically. However, making a wire longer increases resistance but thickening it decreases resistance.");
+    const [title, setTitle] = useState<string>("MIRRORS");
+    const [description, setDescription] = useState<string>("");
     const [animationStarted, setAnimatedStarted] = useState<boolean>(false);
 
     const setClosed = () => {

@@ -142,14 +142,13 @@ class CircuitBuilding extends React.Component<any, any> {
                                                     <p style={{color: "#29405B", fontSize: 14, fontWeight: "bold", marginBottom: 0}}>Needed voltage: {this.state.neededVoltages[this.state.currentLevel - 1]}</p>
                                                 </Row>
 
-                                                {/*<Row className={"justify-content-center"}>*/}
-                                                {/*    <Col className={"col-9"}>*/}
-                                                {/*        <p style={{color: "#29405B", fontSize: 14, marginBottom: 0}}>*/}
-                                                {/*            Note: This drag-and-drop activity is not completely scientifically accurate,*/}
-                                                {/*            but hopes to convey these concepts as best as possible*/}
-                                                {/*        </p>*/}
-                                                {/*    </Col>*/}
-                                                {/*</Row>*/}
+                                                <Row className={"justify-content-center"}>
+                                                    <Col className={"col-7"}>
+                                                        <p style={{color: "#29405B", fontSize: 14, marginBottom: 0}}>
+                                                            Warning: This activity contains some bugs and may not function properly.
+                                                        </p>
+                                                    </Col>
+                                                </Row>
                                             </Col>
 
                                             <Col className={"col-2 ml-auto"} style={{padding: 0, marginTop: "3%"}}>

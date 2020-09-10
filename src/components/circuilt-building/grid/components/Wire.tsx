@@ -108,6 +108,11 @@ export const Wire: React.FC<ComponentProps> = ({x, y, oneGridStyling, currentCom
         }
     }
 
+    const resetComponentType = () => {
+        setComponentType(0)
+        setIndex(0)
+    }
+
     return (
         <>
             <DragPreviewImage connect={preview} src={images[index]} />
@@ -127,7 +132,7 @@ export const Wire: React.FC<ComponentProps> = ({x, y, oneGridStyling, currentCom
                                  height: "100%"
                              }}>
                                 {oneGridStyling &&
-                                    <img alt={"Wire"} src={images[index]} onClick={() => setComponentType(0)}
+                                    <img alt={"Wire"} src={images[index]} onClick={() => resetComponentType()}
                                          style={{height: "100%", margin: "auto", padding: 5}} />
                                 }
 

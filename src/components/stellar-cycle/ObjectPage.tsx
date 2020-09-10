@@ -11,6 +11,8 @@ import massive_star_2 from "./images/massive_star_2.png"
 import massive_star_3 from "./images/massive_star_3.png"
 import massive_star_4 from "./images/massive_star_4.png"
 import massive_star_5 from "./images/massive_star_5.png"
+import massive_star_btype from "./images/massive_star_btype.png"
+import massive_star_otype from "./images/massive_star_otype.png"
 import nebula from "./images/nebula.png"
 import neutronstar from "./images/neutronstar.png"
 import planetarynebula from "./images/planetarynebula.png"
@@ -80,8 +82,8 @@ class ObjectPage extends React.Component<any, any> {
             massiveIndex: 0,
             massiveStars: [
                 {
-                    title: "Massive star (A-Type)",
-                    image: massive_star_1,
+                    title: "Massive star (B-Type)",
+                    image: massive_star_btype,
                     imageSize: 400,
                     temperatureValue: 20,
                     sizeValue: 20,
@@ -89,7 +91,7 @@ class ObjectPage extends React.Component<any, any> {
                 },
                 {
                     title: "Massive star (O-Type)",
-                    image: massive_star_2,
+                    image: massive_star_otype,
                     imageSize: 450,
                     temperatureValue: 100,
                     sizeValue: 100,

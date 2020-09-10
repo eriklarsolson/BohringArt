@@ -44,9 +44,7 @@ export function setAllSwitchesOn(status: boolean, x: number, y: number) {
     if(status) {
         const samePlaceComponents = components.filter(component => component.x !== x && component.y !== y &&
             component.type === ComponentTypes.SWITCH && component.componentType === 1)
-        console.log(samePlaceComponents)
         if(samePlaceComponents.length > 0) {
-            console.log(samePlaceComponents)
             allSwitchesOn = false;
         } else {
             allSwitchesOn = status;
@@ -87,8 +85,14 @@ export function setBoardHasIssue(issue: boolean) {
 }
 
 export function deleteCurrentComponent() {
+    //TODO - If switch deleted, need to check if I can disable "allSwitchesOn"
     components.splice(currentComponent, 1);
     currentComponent = currentComponent - 1
+
+    const switchComps = getComponentsByType(ComponentTypes.SWITCH);
+    if(switchComps.length === 0) {
+        allSwitchesOn = true;
+    }
 
     emitChange();
     hasCircuit();
@@ -171,6 +175,9 @@ export function resetPositions() {
 
 export function setComponentsList(newComponents: any): void {
     components = newComponents
+    allSwitchesOn = false;
+    boardHasIssues = false
+    boardCurrentIssues = []
     emitChange()
 }
 
