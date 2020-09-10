@@ -5,6 +5,7 @@ import sgd from "./sgd.png"
 import msu from "./msu_cropped.png"
 import { Link } from "react-router-dom";
 import line from "../header/line.png";
+import "../../stellar-cycle/StellarCycle.scss"
 
 const Footer = () => {
 
@@ -13,13 +14,13 @@ const Footer = () => {
             <Container fluid style={{backgroundColor: "#29405B", color: "white", zIndex: 12}}>
                 <Row className={"justify-content-end align-content-center"} style={{padding: 15}}>
                     <Col className={"align-self-center"} style={{maxWidth: 150, flex: "0 0 150px"}}>
-                        <img className={"clickable-image"} src={logo} alt={"Logo"} style={{height: 30}} />
+                        <img className={"clickable-image stellar-circle"} src={logo} alt={"Logo"} style={{height: 30}} />
                     </Col>
 
                     <img src={line} alt={"Menu seperator"} />
 
                     <Col className={"align-self-center"} style={{maxWidth: 150, flex: "0 0 150px"}}>
-                        <img className={"clickable-image"} src={sgd} alt={"Science Gallery Of Detroit Logo"} style={{height: 40}} onClick={() => {
+                        <img className={"clickable-image stellar-circle"} src={sgd} alt={"Science Gallery Of Detroit Logo"} style={{height: 40}} onClick={() => {
                             window.location.href = 'https://detroit.sciencegallery.com/';
                             return null;
                         }} />
@@ -28,7 +29,7 @@ const Footer = () => {
                     <img src={line} alt={"Menu seperator"} />
 
                     <Col className={"align-self-center mr-auto"} style={{maxWidth: 150, flex: "0 0 150px", paddingLeft: 20}}>
-                        <img className={"clickable-image"} src={msu} alt={"MSU Logo"} style={{float: "left", height: 40}} onClick={() => {
+                        <img className={"clickable-image stellar-circle"} src={msu} alt={"MSU Logo"} style={{float: "left", height: 40}} onClick={() => {
                             window.location.href = 'https://msu.edu/';
                             return null;
                         }} />

@@ -26,27 +26,17 @@
     </select>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7ea8f8f2-9ee1-4223-8be2-70ed23ed7286" name="Default Changelist" comment="styling fixes and updates to circuit building activity">
-      <change afterPath="$PROJECT_DIR$/src/components/about/images/hueywin.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/shared/animations/ErrorSlideOut.tsx" afterDir="false" />
+    <list default="true" id="7ea8f8f2-9ee1-4223-8be2-70ed23ed7286" name="Default Changelist" comment="Yeah, this is a pretty big update. Fixed whole bunch of styling issues everywhere, created new error slide up, built out circuit building activity more, etc...">
       <change beforePath="$PROJECT_DIR$/.firebase/hosting.YnVpbGQ.cache" beforeDir="false" afterPath="$PROJECT_DIR$/.firebase/hosting.YnVpbGQ.cache" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/about/AboutUs.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/about/AboutUs.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/about/AboutUsAnimation.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/about/AboutUsAnimation.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/circuilt-building/CircuitBuilding.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/circuilt-building/CircuitBuilding.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/circuilt-building/MoreInfoAnimation.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/circuilt-building/MoreInfoAnimation.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/circuilt-building/grid/Functionality.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/circuilt-building/grid/Functionality.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/circuilt-building/grid/GridSquare.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/circuilt-building/grid/GridSquare.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/circuilt-building/grid/SixGridContainer.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/circuilt-building/grid/SixGridContainer.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/circuilt-building/grid/components/Wire.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/circuilt-building/grid/components/Wire.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/home/Header.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/home/Header.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/home/LearnSection.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/home/LearnSection.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/metal-engraving/MetalEngraving.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/metal-engraving/MetalEngraving.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/metal-engraving/MoreInfoAnimation.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/metal-engraving/MoreInfoAnimation.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/metal-engraving/Sidebar.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/metal-engraving/Sidebar.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/resources/Resources.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/resources/Resources.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/rocket-building/MoreInfoAnimation.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/rocket-building/MoreInfoAnimation.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/shared/modals/ErrorPopup.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/shared/modals/ErrorPopup.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/rocket-building/RocketBuilding.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/rocket-building/RocketBuilding.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/shared/animations/ObjectiveSlideOut.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/shared/animations/ObjectiveSlideOut.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/shared/footer/Footer.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/shared/footer/Footer.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/shared/header/Header.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/shared/header/Header.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/telescope-activity/MoreInfoAnimation.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/telescope-activity/MoreInfoAnimation.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/telescope-activity/TelescopeActivity.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/telescope-activity/TelescopeActivity.tsx" afterDir="false" />
     </list>
@@ -154,14 +144,7 @@
       <workItem from="1599404623575" duration="22403000" />
       <workItem from="1599489272268" duration="34842000" />
       <workItem from="1599568496911" duration="44092000" />
-      <workItem from="1599654221743" duration="36462000" />
-    </task>
-    <task id="LOCAL-00009" summary="styles and updates">
-      <created>1597328456643</created>
-      <option name="number" value="00009" />
-      <option name="presentableId" value="LOCAL-00009" />
-      <option name="project" value="LOCAL" />
-      <updated>1597328456643</updated>
+      <workItem from="1599654221743" duration="39492000" />
     </task>
     <task id="LOCAL-00010" summary="adding pics">
       <created>1597328515298</created>
@@ -499,7 +482,14 @@
       <option name="project" value="LOCAL" />
       <updated>1599688269030</updated>
     </task>
-    <option name="localTasksCounter" value="58" />
+    <task id="LOCAL-00058" summary="Yeah, this is a pretty big update. Fixed whole bunch of styling issues everywhere, created new error slide up, built out circuit building activity more, etc...">
+      <created>1599706192522</created>
+      <option name="number" value="00058" />
+      <option name="presentableId" value="LOCAL-00058" />
+      <option name="project" value="LOCAL" />
+      <updated>1599706192522</updated>
+    </task>
+    <option name="localTasksCounter" value="59" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -531,7 +521,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="This git commit includes:&#10;adding footer&#10;adding contact form&#10;general styling fixes&#10;more functionality on various activities" />
     <MESSAGE value="updates all over the app (home page update, stellar cycle, circuit building, etc..)" />
     <MESSAGE value="rebuild of rocket building page" />
     <MESSAGE value="Many changes to About Us, all popups, flight simulator page/animations, etc..." />
@@ -556,7 +545,8 @@
     <MESSAGE value="implement initial outcomes for various scenarios on flight simulator page for to the stars activity" />
     <MESSAGE value="another big update to pretty much all of the main pages (styling/bug fixing)" />
     <MESSAGE value="styling fixes and updates to circuit building activity" />
-    <option name="LAST_COMMIT_MESSAGE" value="styling fixes and updates to circuit building activity" />
+    <MESSAGE value="Yeah, this is a pretty big update. Fixed whole bunch of styling issues everywhere, created new error slide up, built out circuit building activity more, etc..." />
+    <option name="LAST_COMMIT_MESSAGE" value="Yeah, this is a pretty big update. Fixed whole bunch of styling issues everywhere, created new error slide up, built out circuit building activity more, etc..." />
   </component>
   <component name="WindowStateProjectService">
     <state x="828" y="178" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1595441686616">
@@ -614,10 +604,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="461" y="165" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1595965465549" />
-    <state x="736" y="253" key="Vcs.Push.Dialog.v2" timestamp="1599688271383">
+    <state x="736" y="253" key="Vcs.Push.Dialog.v2" timestamp="1599706195741">
       <screen x="0" y="0" width="2560" height="1040" />
     </state>
-    <state x="736" y="253" key="Vcs.Push.Dialog.v2/-1920.0.1920.1040/0.0.2560.1040@0.0.2560.1040" timestamp="1599688271383" />
+    <state x="736" y="253" key="Vcs.Push.Dialog.v2/-1920.0.1920.1040/0.0.2560.1040@0.0.2560.1040" timestamp="1599706195741" />
     <state x="552" y="253" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1597885372762" />
     <state x="565" y="130" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser" timestamp="1595958216715">
       <screen x="0" y="0" width="1920" height="1040" />
@@ -628,10 +618,10 @@
     </state>
     <state x="1025" y="434" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/-1920.0.1920.1040/0.0.2560.1040@0.0.2560.1040" timestamp="1598902144179" />
     <state x="769" y="434" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1920.1040@0.0.1920.1040" timestamp="1597192452326" />
-    <state x="451" y="112" width="1878" height="928" key="find.popup" timestamp="1599705253603">
+    <state x="451" y="112" width="1878" height="928" key="find.popup" timestamp="1599708430692">
       <screen x="0" y="0" width="2560" height="1040" />
     </state>
-    <state x="451" y="112" width="1878" height="928" key="find.popup/-1920.0.1920.1040/0.0.2560.1040@0.0.2560.1040" timestamp="1599705253603" />
+    <state x="451" y="112" width="1878" height="928" key="find.popup/-1920.0.1920.1040/0.0.2560.1040@0.0.2560.1040" timestamp="1599708430692" />
     <state x="222" y="236" width="549" height="534" key="find.popup/0.0.1500.960@0.0.1500.960" timestamp="1595724537154" />
     <state x="1111" y="160" width="585" height="624" key="find.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1597886543166" />
     <state x="601" y="246" width="700" height="530" key="recent.locations.popup" timestamp="1595211874198">

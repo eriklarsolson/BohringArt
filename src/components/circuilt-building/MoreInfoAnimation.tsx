@@ -10,10 +10,6 @@ import capacitor from "./grid/components/images/capacitor.png"
 import inductor from "./grid/components/images/inductor.png"
 import series from "./grid/components/images/series.png"
 import parallel from "./grid/components/images/parallel.png"
-import cone_1 from "../rocket-building/images/cones/cone_1.png";
-import body_1 from "../rocket-building/images/bodys/body_1.png";
-import booster_4_middle from "../rocket-building/images/boosters/booster_4_middle.png";
-import engine_1 from "../rocket-building/images/engines/engine_1.png";
 
 export interface AnimationProps {
     setParentState: any

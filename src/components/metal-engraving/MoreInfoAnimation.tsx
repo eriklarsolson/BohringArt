@@ -126,7 +126,22 @@ export const MoreInfoAnimation: React.FC<AnimationProps>  = ({setParentState}) =
 
                                 <Row className={"justify-content-center"}>
                                     <Col className={"col-8"} style={{textAlign: "left", color: "white"}}>
-                                        <p style={{whiteSpace: "pre-line"}}>{description}</p>
+                                        {(title === "LENS") ?
+                                            <>
+                                                <br />
+                                                <p style={{fontSize: 18, fontWeight: "bold", marginBottom: 0}}>Converging/Convex</p>
+                                                <p>A lens that focuses incoming light to a single point. This is due to the outward curvature of the lens itself; light is refracted towards a point of convergence, forming an image.</p>
+
+                                                <p style={{fontSize: 18, fontWeight: "bold", marginBottom: 0}}>Refraction</p>
+                                                <p>When light enters one medium different from the one it is currently traveling through, it will change its speed, resulting in a change in the direction of movement. An example of a change in medium is going from air to water.</p>
+
+                                                <p style={{fontSize: 18, fontWeight: "bold", marginBottom: 0}}>Snell's Law</p>
+                                                <p>Law comparing angles of entry of the light and indices of refraction of mediums.
+                                                    Index of refraction-A measure of a medium’s ability to bend incoming light away from its angle of incidence, index of refraction of air is one.</p>
+                                                </>
+                                                :
+                                                <p style={{whiteSpace: "pre-line"}}>{description}</p>
+                                        }
                                     </Col>
                                 </Row>
                             </Container>

@@ -81,14 +81,14 @@ class TelescopeActivity extends React.Component<any, any> {
                                                 <p style={{color: "#29405B", fontSize: 28, fontWeight: "bold", marginBottom: 0}}>Telescope Activity</p>
                                             </Row>
 
-                                            <Row className={"justify-content-center"}>
-                                                <Col className={"col-8"}>
-                                                    <p style={{color: "#29405B", fontSize: 14, marginBottom: 0}}>
-                                                        Note: This activity is not completely scientifically accurate,
-                                                        but hopes to convey these concepts as best as possible
-                                                    </p>
-                                                </Col>
-                                            </Row>
+                                            {/*<Row className={"justify-content-center"}>*/}
+                                            {/*    <Col className={"col-8"}>*/}
+                                            {/*        <p style={{color: "#29405B", fontSize: 14, marginBottom: 0}}>*/}
+                                            {/*            Note: This activity is not completely scientifically accurate,*/}
+                                            {/*            but hopes to convey these concepts as best as possible*/}
+                                            {/*        </p>*/}
+                                            {/*    </Col>*/}
+                                            {/*</Row>*/}
                                         </Col>
 
                                         <Col className={"col-2 ml-auto"} style={{padding: 0, marginTop: "3%"}}>

@@ -143,12 +143,12 @@ class Resources extends React.Component {
 
                                     <Row className={"justify-content-center"}>
                                         <Col className={"col-10"}>
-                                             <hr style={{width: "100%", margin: 10, height: 3,borderRadius: 50,
+                                             <hr style={{width: "100%", margin: 10, height: 4, borderRadius: 50,
                                                  backgroundColor: "#29405B"}} />
                                         </Col>
                                     </Row>
 
-                                    <Row className={"justify-content-center"} style={{marginLeft: 50, textAlign: "center"}}>
+                                    <Row className={"justify-content-center"} style={{marginLeft: 55, textAlign: "center"}}>
                                         <Col className={"col-10 col-md-10 col-lg-3"}>
                                             <Row className={"justify-content-center"}>
                                                 <p style={{color: "#29405B", fontWeight: "bold", fontSize: 30, marginBottom: 0}}>
@@ -217,7 +217,7 @@ class Resources extends React.Component {
                                             </Row>
                                         </Col>
 
-                                        <Col className={"col-10 col-md-10 col-lg-3"}>
+                                        <Col className={"col-10 col-md-10 col-lg-3"} style={{marginLeft: 10}}>
                                             <Row className={"justify-content-center"}>
                                                 <p style={{color: "#29405B", fontWeight: "bold", fontSize: 30, marginBottom: 0}}>
                                                     'Stellar Life Cycle' Resources
@@ -307,7 +307,7 @@ class Resources extends React.Component {
                                         </Col>
                                     </Row>
 
-                                    <Row className={"justify-content-center"} style={{marginLeft: 120, textAlign: "center"}}>
+                                    <Row className={"justify-content-center"} style={{marginLeft: 130, textAlign: "center"}}>
                                         <Col className={"col-10 col-md-10 col-lg-3"}>
                                             <Row className={"justify-content-center"}>
                                                 <p style={{color: "#29405B", fontWeight: "bold", fontSize: 30, marginBottom: 0}}>

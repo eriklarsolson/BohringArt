@@ -69,16 +69,16 @@ t                          <Container fluid style={{padding: 100, margin: 50}}>
                                     </Col>
                                 </Row>
 
-                                {title === "02 Circuit Construction Objective" &&
+                                {/*{title === "02 Circuit Construction Objective" &&*/}
                                     <Row className={"justify-content-center"}>
                                         <Col className={"col-8"}>
-                                            <p style={{fontSize: 16, color: "#29405B", textAlign: "left", fontWeight: "bold"}}>
-                                                Note: This drag-and-drop activity is not completely scientifically accurate,
-                                                but hopes to convey these concepts as best as possible
+                                            <p style={{fontSize: 14, color: "#29405B", textAlign: "left", fontWeight: "bold"}}>
+                                                Note: These activities are not completely scientifically accurate,
+                                                but hope to convey their concepts as best as possible to the user
                                             </p>
                                         </Col>
                                     </Row>
-                                }
+                                {/*}*/}
 
                                 <Row className={"justify-content-center align-content-center"} style={{marginTop: 50}}>
                                     <Col className={"col-8"}>

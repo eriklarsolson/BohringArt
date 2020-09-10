@@ -154,7 +154,46 @@ export const MoreInfoAnimation: React.FC<AnimationProps>  = ({setParentState}) =
 
                                 <Row className={"justify-content-center"}>
                                     <Col className={"col-8"} style={{textAlign: "left", color: "white"}}>
-                                        <p style={{whiteSpace: "pre-line"}}>{description}</p>
+                                        {(title === "MIRRORS") &&
+                                        <>
+                                            <br />
+                                            <p style={{fontSize: 18, fontWeight: "bold", marginBottom: 0}}>Convex</p>
+                                            <p>These mirrors curve outward and will also reflect most incoming light rays outward at different angles. Because the rays are always reflected outward, convex mirrors can only create virtual images, and not real images.</p>
+
+                                            <p style={{fontSize: 18, fontWeight: "bold", marginBottom: 0}}>Concave</p>
+                                            <p>These mirrors curve inward and will also reflect most incoming light rays inward at different angles. A concave mirror can create both real and virtual images, the image will be virtual when the object is very close to the mirror (between the mirror and its focal point).</p>
+
+                                            <p style={{fontSize: 18, fontWeight: "bold", marginBottom: 0}}>Flat</p>
+                                            <p>A mirror lacking curves that is able to reflect all incoming light at the same angle (angle of incidence), resulting in a perfect image identical to the incoming light. The heights, distances, and orientations of all objects remain intact.</p>
+
+                                            </>
+                                        }
+
+                                        {(title === "LENS") &&
+                                        <>
+                                            <br />
+                                            <p style={{fontSize: 18, fontWeight: "bold", marginBottom: 0}}>Convex/Converging</p>
+                                            <p>When light rays travel through a convex lens, they refract and converge at a single point where the light is more concentrated. This is what a magnifying glass does when you use it to burn a piece of wood or grass. This type of lens creates both real and virtual images, a virtual image is formed when the object is very close to the lens (between the lens and its focal point).</p>
+                                        </>
+                                        }
+
+                                        {(title === "TERMINOLOGY") &&
+                                            <>
+                                                <br />
+                                                <p style={{fontSize: 18, fontWeight: "bold", marginBottom: 0}}>Focal Point</p>
+                                                <p>Each mirror or lens will have a different focal point depending on its curvature. This is the point at which all of the reflected or refracted rays meet. The focal point can be calculated for any mirror or lens but for convex mirrors, the light rays do not physically meet at the focal point to form a real image, which means the real light rays never converge.</p>
+
+                                                <p style={{fontSize: 18, fontWeight: "bold", marginBottom: 0}}>Real Image</p>
+                                                <p style={{fontWeight: 12}}>An image formed by physically converging light rays, this image can be projected onto something like paper or a projector screen.</p>
+
+                                                <p style={{fontSize: 18, fontWeight: "bold", marginBottom: 0}}>Virtual Image</p>
+                                                <p>A virtual image is an image that your eyes can see, but that cannot be projected onto a screen.</p>
+                                            </>
+                                        }
+
+                                        {(title !== "TERMINOLOGY") && (title !== "LENS") && (title !== "MIRRORS") &&
+                                            <p style={{whiteSpace: "pre-line"}}>{description}</p>
+                                        }
                                     </Col>
                                 </Row>
                             </Container>

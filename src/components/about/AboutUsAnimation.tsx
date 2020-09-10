@@ -397,9 +397,9 @@ export const AboutUsAnimation: React.FC<AnimationProps>  = ({}) => {
                                     {name === "Huey-Wen Lin" &&
                                         <>
                                             <p style={{marginBottom: 0, fontSize: 14, marginTop: 10}}>Find the app here: </p>
-                                            <a href="https://play.google.com/store/apps/details?id=com.gellab.quantum3"> Google Play</a>
+                                            <a href="https://apps.apple.com/us/app/quantum-3/id1406630529"> Apple App Store</a>
                                             <br />
-                                            <a href="https://apps.apple.com/us/app/quantum-3/id1406630529m3"> Apple App Store</a>
+                                            <a href="https://play.google.com/store/apps/details?id=com.gellab.quantum3"> Google Play</a>
                                         </>
                                     }
 
