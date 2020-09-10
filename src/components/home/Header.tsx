@@ -66,7 +66,7 @@ class Header extends React.Component<any, any> {
                             <Container fluid>
                                 <Row className={"justify-content-center"} style={{textAlign: "left"}}>
                                     <Col className={"col-8"}>
-                                        <p style={{fontWeight: "bold", fontSize: 33}}>Help us Launch a Telescope</p>
+                                        <p style={{fontWeight: "bold", fontSize: 30, whiteSpace: "nowrap"}}>Help us Launch a Telescope</p>
                                     </Col>
                                 </Row>
                                 <Row className={"justify-content-center"} style={{textAlign: "left"}}>

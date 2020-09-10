@@ -80,9 +80,9 @@ class LearnSection extends React.Component<any, any> {
                                 <Col style={{paddingLeft: 25, marginTop: 20}}>
                                     <h4>CIRCUIT CONSTRUCTION</h4>
                                     <p style={{paddingRight: 50, fontSize: "1.6vh"}}>
-                                        Learn how lenses manipulate light to understand how your telescope sees distant
-                                        stars. Experiment with the variables that affect the image formed when shining
-                                        light through a lens, and begin controlling the type of image you see by manipulating these variables.
+                                        Learn about circuit components to build one that can power your satellite.
+                                        Demonstrate the flow of electrons in a circuit and how circuit components
+                                        (batteries, resistors, wires, etc.) can affect their energy.
                                     </p>
                                     {/*<Button*/}
                                     {/*    href="/activity/metal-engraving"*/}

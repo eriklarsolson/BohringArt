@@ -168,7 +168,7 @@ export const MoreInfoAnimation: React.FC<AnimationProps>  = ({setParentState}) =
                         </Col>
 
                         {/*clipPath: "polygon(0 0, 100% 0, 100% 100%, 10% 100%)"*/}
-                        <Col className={"col-4"} style={{padding: 0}}>
+                        <Col className={"col-8 col-md-8 col-lg-4"} style={{padding: 0}}>
                             <div style={{position: "absolute", width: "100%", height: "100%", backgroundColor: "#29405B",}} />
 
                             <Container fluid>

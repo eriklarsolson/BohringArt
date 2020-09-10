@@ -50,123 +50,124 @@ class TelescopeActivity extends React.Component<any, any> {
 
         return (
             <>
+                <div style={{position: "relative", height: "100%", width: "100%"}}>
                 {/*<TelescopeQuestionPopup open={this.state.questionPopupOpened} closePopup={cycleQuestionPopup} />*/}
 
-                {this.state.questionPopupOpened &&
-                <div style={{position: "absolute", width: "100%", height: "100%", zIndex: 4, overflow: "hidden"}}>
-                    <MoreInfoAnimation setParentState={() => cycleQuestionPopup()} />
-                </div>
-                }
+                    <Container fluid className={"d-flex h-100 flex-column"} style={{margin: "0", padding: "0", backgroundColor: "#F8EDDD"}}>
+                        <Row className={"flex-grow-1"} style={{margin: 0}}>
+                            {this.state.questionPopupOpened &&
+                            <div style={{position: "absolute", top: 0, bottom: 0, left: 0, right: 0, zIndex: 4, overflow: "hidden"}}>
+                                <MoreInfoAnimation setParentState={() => cycleQuestionPopup()} />
+                            </div>
+                            }
 
+                            <Col className={"col-2"} style={{padding: 0, color: "white"}}>
+                                <Sidebar />
+                            </Col>
 
-                <Container fluid className={"d-flex h-100 flex-column"} style={{margin: "0", padding: "0", backgroundColor: "#F8EDDD"}}>
-                    <Row className={"flex-grow-1"} style={{margin: 0}}>
-                        <Col className={"col-2"} style={{padding: 0, color: "white"}}>
-                            <Sidebar />
-                        </Col>
-
-                        <Col className={"col-10"} style={{margin: "0", padding: "0"}}>
-                            <Container fluid style={{margin: "0", padding: "0"}}>
-                                <Row style={{margin: 0}}>
-                                    <Col className="col-2" style={{margin: "3%"}}>
-                                        <Button className={"green-button"} style={{float: "left", width: 100,
-                                            clipPath: "polygon(0 0, 95% 0, 100% 100%, 5% 100%)"}}
-                                                onClick={() => this.props.history.push('/activity/metal-engraving')}>
-                                            <i className="fa fa-arrow-left" />
-                                        </Button>
-                                    </Col>
-
-                                    <Col className="col-5" style={{margin: "3%"}}>
-                                        <Row className={"justify-content-center"}>
-                                            <p style={{color: "#29405B", fontSize: 28, fontWeight: "bold", marginBottom: 0}}>Telescope Activity</p>
-                                        </Row>
-
-                                        <Row className={"justify-content-center"}>
-                                            <Col className={"col-8"}>
-                                                <p style={{color: "#29405B", fontSize: 14, marginBottom: 0}}>
-                                                    Note: This activity is not completely scientifically accurate,
-                                                    but hopes to convey these concepts as best as possible
-                                                </p>
-                                            </Col>
-                                        </Row>
-                                    </Col>
-
-                                    <Col className={"col-2 ml-auto"} style={{padding: 0, marginTop: "3%"}}>
-                                        <Row style={{margin: 0}} className={"justify-content-end"}>
-                                            <Button className={"blue-button"} style={{width: 166, textAlign: "left",
-                                                marginBottom: 15}}
-                                                onClick={cycleQuestionPopup}>
-                                                More Info
+                            <Col className={"col-10"} style={{margin: "0", padding: "0"}}>
+                                <Container fluid style={{margin: "0", padding: "0"}}>
+                                    <Row style={{margin: 0}}>
+                                        <Col className="col-2" style={{margin: "3%"}}>
+                                            <Button className={"green-button"} style={{float: "left", width: 100,
+                                                clipPath: "polygon(0 0, 95% 0, 100% 100%, 5% 100%)"}}
+                                                    onClick={() => this.props.history.push('/activity/metal-engraving')}>
+                                                <i className="fa fa-arrow-left" />
                                             </Button>
-                                        </Row>
+                                        </Col>
 
-                                        <Row style={{margin: 0}} className={"justify-content-end"}>
-                                            <Button className={"blue-button"} style={{width: 166, textAlign: "left"}}
-                                                    onClick={cycleGrid}>
-                                                Toggle Grid
-                                            </Button>
-                                        </Row>
-                                    </Col>
-                                </Row>
+                                        <Col className="col-5" style={{margin: "3%"}}>
+                                            <Row className={"justify-content-center"}>
+                                                <p style={{color: "#29405B", fontSize: 28, fontWeight: "bold", marginBottom: 0}}>Telescope Activity</p>
+                                            </Row>
 
-                                <Row style={{margin: 0}}>
-                                    <Col className={"justify-content-center align-content-center"} style={{padding: 0}}>
-                                        <div style={{width: 1200, margin: "auto", height: 500}}>
-                                            <div style={{
-                                                position: "absolute",
-                                                margin: 0,
-                                                width: "100%",
-                                                height: "100%",
-                                                left: 0
-                                            }}>
-                                                <img alt={"Telescope"} src={satellite} height={500} />
-                                                {this.state.animationRunning &&
+                                            <Row className={"justify-content-center"}>
+                                                <Col className={"col-8"}>
+                                                    <p style={{color: "#29405B", fontSize: 14, marginBottom: 0}}>
+                                                        Note: This activity is not completely scientifically accurate,
+                                                        but hopes to convey these concepts as best as possible
+                                                    </p>
+                                                </Col>
+                                            </Row>
+                                        </Col>
+
+                                        <Col className={"col-2 ml-auto"} style={{padding: 0, marginTop: "3%"}}>
+                                            <Row style={{margin: 0}} className={"justify-content-end"}>
+                                                <Button className={"blue-button"} style={{width: 166, textAlign: "left",
+                                                    marginBottom: 15}}
+                                                    onClick={cycleQuestionPopup}>
+                                                    More Info
+                                                </Button>
+                                            </Row>
+
+                                            <Row style={{margin: 0}} className={"justify-content-end"}>
+                                                <Button className={"blue-button"} style={{width: 166, textAlign: "left"}}
+                                                        onClick={cycleGrid}>
+                                                    Toggle Grid
+                                                </Button>
+                                            </Row>
+                                        </Col>
+                                    </Row>
+
+                                    <Row style={{margin: 0}}>
+                                        <Col className={"justify-content-center align-content-center"} style={{padding: 0}}>
+                                            <div style={{width: 1200, margin: "auto", height: 500}}>
                                                 <div style={{
                                                     position: "absolute",
                                                     margin: 0,
-                                                    top: 0,
                                                     width: "100%",
-                                                    height: "100%"
+                                                    height: "100%",
+                                                    left: 0
                                                 }}>
-                                                    <Animation paths={generatePaths()} />
+                                                    <img alt={"Telescope"} src={satellite} height={500} />
+                                                    {this.state.animationRunning &&
+                                                    <div style={{
+                                                        position: "absolute",
+                                                        margin: 0,
+                                                        top: 0,
+                                                        width: "100%",
+                                                        height: "100%"
+                                                    }}>
+                                                        <Animation paths={generatePaths()} />
+                                                    </div>
+                                                    }
                                                 </div>
-                                                }
+
+                                                <TelescopeGridContainer showGrid={this.state.showGrid} />
                                             </div>
+                                        </Col>
+                                    </Row>
 
-                                            <TelescopeGridContainer showGrid={this.state.showGrid} />
-                                        </div>
-                                    </Col>
-                                </Row>
+                                    <Row className="justify-content-center" style={{margin: "3%"}}>
+                                        <Col className={"col-3"} style={{padding: 0}}>
+                                            <Button style={{float: "left", backgroundColor: "transparent", border: 0,
+                                                fontWeight: "bold"}} onClick={deleteCurrentComponent}>
+                                                <img src={trashcan} alt={"Trash Can"} style={{width: "90%"}} />
+                                                {/*<i className="fa fa-trash-o" style={{color: "black"}} />*/}
+                                            </Button>
+                                        </Col>
 
-                                <Row className="justify-content-center" style={{margin: "3%"}}>
-                                    <Col className={"col-3"} style={{padding: 0}}>
-                                        <Button style={{float: "left", backgroundColor: "transparent", border: 0,
-                                            fontWeight: "bold"}} onClick={deleteCurrentComponent}>
-                                            <img src={trashcan} alt={"Trash Can"} style={{width: "90%"}} />
-                                            {/*<i className="fa fa-trash-o" style={{color: "black"}} />*/}
-                                        </Button>
-                                    </Col>
+                                        <Col className={"col-3 ml-auto mr-auto"} style={{padding: 0}}>
+                                            <Button className={"green-button"} style={{float: "right", width: 250,
+                                                clipPath: "polygon(0 0, 95% 0, 100% 100%, 5% 100%)"}}
+                                                onClick={startAnimation}>
+                                                {this.state.animationRunning ? 'Reset' : 'Start'} Simulation
+                                            </Button>
+                                        </Col>
 
-                                    <Col className={"col-3 ml-auto mr-auto"} style={{padding: 0}}>
-                                        <Button className={"green-button"} style={{float: "right", width: 250,
-                                            clipPath: "polygon(0 0, 95% 0, 100% 100%, 5% 100%)"}}
-                                            onClick={startAnimation}>
-                                            {this.state.animationRunning ? 'Reset' : 'Start'} Simulation
-                                        </Button>
-                                    </Col>
-
-                                    <Col className={"ml-auto col-3"} style={{padding: 0}}>
-                                        <Button className={"green-button"} style={{float: "right", width: 200,
-                                            clipPath: "polygon(0 0, 95% 0, 100% 100%, 5% 100%)"}}
-                                                onClick={() => this.props.history.push('/activity/circuit-building')}>
-                                            Next Activity
-                                        </Button>
-                                    </Col>
-                                </Row>
-                            </Container>
-                        </Col>
-                    </Row>
-                </Container>
+                                        <Col className={"ml-auto col-3"} style={{padding: 0}}>
+                                            <Button className={"green-button"} style={{float: "right", width: 200,
+                                                clipPath: "polygon(0 0, 95% 0, 100% 100%, 5% 100%)"}}
+                                                    onClick={() => this.props.history.push('/activity/circuit-building')}>
+                                                Next Activity
+                                            </Button>
+                                        </Col>
+                                    </Row>
+                                </Container>
+                            </Col>
+                        </Row>
+                    </Container>
+                </div>
             </>
         )
     }

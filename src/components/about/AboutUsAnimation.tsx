@@ -10,7 +10,7 @@ import wyatt from "./images/person1.png";
 import pranav from "./images/person2.png";
 import ray from "./images/person5.png";
 import lars from "./images/lars.png";
-import hueywen from "./images/person4.png";
+import hueywen from "./images/hueywin.jpg";
 import mohammad from "./images/mohammad.jpg"
 import "./About.scss"
 
@@ -90,7 +90,7 @@ export const AboutUsAnimation: React.FC<AnimationProps>  = ({}) => {
             setPosition("Supervisor & Creator")
             setName("Dena Izadi")
             setTitle("Postdoctoral Research Associate | Department of Physics and Astronomy | MSU")
-            setDescription("Hi! I am Dena Izadi, a postdoctoral fellow in physics education research lab at MSU. Before that, I did my PhD in (bio)physics. As the Bohring Art supervisor and creator, my role is to facilitate the physics communication among the team members. Outside of physics, I am a hobby artist, a proud plant mom, love cooking (Persian and international!), and enjoy traveling. I grew up in Shiraz, Iran, moved to the United States in 2010 for graduate school and have lived mostly in Michigan ever since. If you have any questions for me, feel free to send me an email at: izadiden@msu.edu")
+            setDescription("Hi! I am Dena Izadi, a postdoctoral fellow in physics education research lab at MSU. Before that, I did my PhD in (bio)physics. As the Bohring Art supervisor and creator, my role is to facilitate the physics communication among the team members. Outside of physics, I am a hobby artist, a proud plant mom, love cooking (Persian and international!), and enjoy traveling. I grew up in Shiraz, Iran, moved to the United States in 2010 for graduate school and have lived mostly in Michigan ever since.")
         } else if (person === "parisa") {
             setImage(parisa)
             setPosition("Supervisor & Creator")
@@ -137,14 +137,15 @@ export const AboutUsAnimation: React.FC<AnimationProps>  = ({}) => {
             setImage(hueywen)
             setPosition("Participating Faculty")
             setName("Huey-Wen Lin")
-            setTitle("Assistant Professor | Department of Physics and Astronomy | MSU")
-            setDescription("This is a description about a person")
+            setTitle("Assistant Professor | Physics and Astronomy & CMSE | MSU")
+            setDescription("I am a theoretical physicist, studying subatomic structure, the fundamental particles that build up the nuclei which form most matter in the universe. " +
+                "I love to share my passion with the general public; I created a phone game, \"Quantum 3\", as a way for people to glance into this very abstract world; Being involved in this project was a great experience, and I'm looking forward to seeing more art expression of science!")
         } else if (person === "mohammad") {
             setImage(mohammad)
             setPosition("Faculty Sponsor")
             setName("Mohammad Maghrebi")
             setTitle("Sponsor MSU Physics Faculty | MSU")
-            setDescription("Hi! I am Mohammad Maghrebi, a physics faculty at MSU. I received my PhD from MIT, and am the Bohring Art faculty sponsor. I have been actively involved in finding ways to communicate physics with the public audience. Outside of physics, I like reading history, philosophy and poetry (Persian/English). For more information, see my webpage: https://web.pa.msu.edu/people/maghrebi/")
+            setDescription("Hi! I am Mohammad Maghrebi, a physics faculty at MSU. I received my PhD from MIT, and am the Bohring Art faculty sponsor. I have been actively involved in finding ways to communicate physics with the public audience. Outside of physics, I like reading history, philosophy and poetry (Persian/English).")
         }
 
         hidePeople()
@@ -392,7 +393,35 @@ export const AboutUsAnimation: React.FC<AnimationProps>  = ({}) => {
                             </Row>
                             <Row className={"justify-content-center"}>
                                 <Col className={"col-9"}>
-                                    <p style={{marginBottom: 0, fontSize: 16}}>{description}</p>
+                                    <p style={{marginBottom: 0, fontSize: 16, whiteSpace: "pre-line"}}>{description}</p>
+                                    {name === "Huey-Wen Lin" &&
+                                        <>
+                                            <p style={{marginBottom: 0, fontSize: 14, marginTop: 10}}>Find the app here: </p>
+                                            <a href="https://play.google.com/store/apps/details?id=com.gellab.quantum3"> Google Play</a>
+                                            <br />
+                                            <a href="https://apps.apple.com/us/app/quantum-3/id1406630529m3"> Apple App Store</a>
+                                        </>
+                                    }
+
+                                    {name === "Lars Olson" &&
+                                    <>
+                                        <p style={{marginBottom: 0, fontSize: 14, marginTop: 10}}>Contact Information: </p>
+                                        <p style={{marginBottom: 0}}>Email: <a href="mailto:eriklarsolson@yahoo.com">eriklarsolson@yahoo.com</a></p>
+                                        <p style={{marginBottom: 0}}>LinkedIn: <a href="https://www.linkedin.com/in/eriklarsolson/">/in/eriklarsolson</a></p>
+                                    </>
+                                    }
+
+                                    {name === "Dena Izadi" &&
+                                    <>
+                                        <p style={{marginBottom: 0, marginTop: 15, fontSize: 15}}>If you have any questions for me, feel free to send me an email at: <a href="mailto:izadiden@msu.edu">izadiden@msu.edu</a></p>
+                                    </>
+                                    }
+
+                                    {name === "Mohammad Maghrebi" &&
+                                    <>
+                                        <p style={{marginBottom: 0, marginTop: 15, fontSize: 15}}>For more information, see my webpage: <a href="https://web.pa.msu.edu/people/maghrebi/">https://web.pa.msu.edu/people/maghrebi/</a></p>
+                                    </>
+                                    }
                                 </Col>
                             </Row>
                         </Container>

@@ -11,7 +11,7 @@ class ErrorPopup extends React.Component<any, any> {
             <Modal show={this.props.open}
                    onClick={this.props.closePopup}
                    size="xl"
-                    style={{padding: "30px"}}>
+                    style={{padding: 20}}>
 
                 <Modal.Body style={{color: "#29405B", backgroundColor : "#F8EDDD"}}>
                     <Container fluid>
@@ -28,7 +28,7 @@ class ErrorPopup extends React.Component<any, any> {
                             </Row>
 
                             <Row  style={{display: "block", padding: "50px"}}>
-                                <p style={{fontSize: "18px"}}>{this.props.description}</p>
+                                <p style={{fontSize: "18px", whiteSpace: "pre-line"}}>{this.props.description}</p>
                             </Row>
 
                             <Row className={"justify-content-center"}>

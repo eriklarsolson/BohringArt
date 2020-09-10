@@ -50,7 +50,14 @@ export const GridSquare: React.FC<GridSquareProps> = ({x, y, children, showGrid,
             onMouseDown={() => setCurrentComponent(x, y)}>
 
             <Square clicked={clicked} showGrid={showGrid}>
-                {children}
+                <>
+                    {children}
+                    {clicked &&
+                        <div style={{position: "absolute", bottom: 0, right: 0, margin: 5, color: "black", fontSize: 10, fontWeight: "bold"}}>
+                            ({x}, {y})
+                        </div>
+                    }
+                </>
             </Square>
             {isOver && !canDrop && <ColorOverlay color="red" />}
             {!isOver && canDrop && <ColorOverlay color="yellow" />}

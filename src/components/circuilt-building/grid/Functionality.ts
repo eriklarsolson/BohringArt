@@ -291,8 +291,8 @@ function checkForErrors() {
                 if(components[i].type === ComponentTypes.BATTERY && componentsAroundCurrent[k].type === ComponentTypes.BATTERY) {
                     if((components[i].rotateDeg % 180) !== (componentsAroundCurrent[k].rotateDeg % 180)) {
                         boardHasIssues = true;
-                        if(!boardCurrentIssues.includes("Battery directions not correct")) {
-                            boardCurrentIssues.push("Battery directions not correct")
+                        if(!boardCurrentIssues.includes("Battery directions not correct\n\n")) {
+                            boardCurrentIssues.push("Battery directions not correct\n\n")
 
                         }
                         passed = false;
@@ -340,13 +340,13 @@ function checkIfPassed(circuitPositions: Array<{ x: number, y: number }>): void 
 
         if(boardOnlyContainsWiresAndBatteries) {
             boardHasIssues = true;
-            boardCurrentIssues.push("Do not build a circuit that contains only wires and/or batteries!")
+            boardCurrentIssues.push("Do not build a circuit that contains only wires and/or batteries!\n\n")
             passed = false;
         }
 
         if(!allSwitchesOn) {
             boardHasIssues = true;
-            boardCurrentIssues.push("You have a switch that is turned off")
+            boardCurrentIssues.push("You have a switch that is turned off\n\n")
             passed = false;
         }
 
@@ -355,8 +355,14 @@ function checkIfPassed(circuitPositions: Array<{ x: number, y: number }>): void 
             const circuitPosition = circuitPositions[i];
             const component = getComponentAtPos(circuitPosition.x, circuitPosition.y);
 
-            if(i !== circuitPositions.length - 1) {
-                const directionNum = getDirectionOfNextComponent(component, getComponentAtPos(circuitPositions[i+1].x, circuitPositions[i+1].y))
+            if(i !== circuitPositions.length - 1 && i !== 0) {
+                //TODO - Crashed here
+
+                //2 by default for checking last piece, so it goes right
+                let directionNum = 2;
+                if(getComponentAtPos(circuitPositions[i+1].x, circuitPositions[i+1].y) !== undefined) {
+                    directionNum = getDirectionOfNextComponent(component, getComponentAtPos(circuitPositions[i+1].x, circuitPositions[i+1].y))
+                }
 
                 //After knowing what direction, can then check rotation and component type
                 switch (directionNum) {
@@ -366,50 +372,136 @@ function checkIfPassed(circuitPositions: Array<{ x: number, y: number }>): void 
                         if(component.type === ComponentTypes.WIRE) {
                             if(component.componentType === 0) { //straight
                                 //piece has to be facing down, so either rotation deg 90 or 270
+                                if(component.rotateDeg !== 90 && component.rotateDeg !== 270) {
+                                    boardHasIssues = true;
+                                    boardCurrentIssues.push("Your straight wire at (" + component.x + ", " + component.y + ") is at the wrong rotation\n\n")
+                                    passed = false;
+                                }
                             } else  if(component.componentType === 1) { //corner
                                 //one piece has to be facing down, so either rotation deg 0 or 90
+                                if(component.rotateDeg !== 0 && component.rotateDeg !== 90) {
+                                    boardHasIssues = true;
+                                    boardCurrentIssues.push("Your corner wire at (" + component.x + ", " + component.y + ") is at the wrong rotation\n\n")
+                                    passed = false;
+                                }
                             }
                         } else {
                             //piece has to be facing down, so either rotation deg 90 or 270
+                            if(component.rotateDeg !== 90 && component.rotateDeg !== 270) {
+                                boardHasIssues = true;
+                                boardCurrentIssues.push("Your " + component.type + " at (" + component.x + ", " + component.y + ") is at the wrong rotation\n\n")
+                                passed = false;
+                            }
                         }
                         break;
                     case 1: //UP
                         if(component.type === ComponentTypes.WIRE) {
                             if(component.componentType === 0) { //straight
                                 //piece has to be facing up, so either rotation deg 90 or 270
+                                if(component.rotateDeg !== 90 && component.rotateDeg !== 270) {
+                                    boardHasIssues = true;
+                                    boardCurrentIssues.push("Your straight wire at (" + component.x + ", " + component.y + ") is at the wrong rotation\n\n")
+                                    passed = false;
+                                }
                             } else  if(component.componentType === 1) { //corner
                                 //one piece has to be facing up, so either rotation deg 180 or 270
+                                if(component.rotateDeg !== 180 && component.rotateDeg !== 270) {
+                                    boardHasIssues = true;
+                                    boardCurrentIssues.push("Your corner wire at (" + component.x + ", " + component.y + ") is at the wrong rotation\n\n")
+                                    passed = false;
+                                }
                             }
                         } else {
                             //piece has to be facing up, so either rotation deg 90 or 270
+                            if(component.rotateDeg !== 90 && component.rotateDeg !== 270) {
+                                boardHasIssues = true;
+                                boardCurrentIssues.push("Your " + component.type + " at (" + component.x + ", " + component.y + ") is at the wrong rotation\n\n")
+                                passed = false;
+                            }
                         }
                         break;
                     case 2: //RIGHT
                         if(component.type === ComponentTypes.WIRE) {
                             if(component.componentType === 0) { //straight
                                 //piece has to be laying flat, so either rotation deg 0 or 180
+                                if(component.rotateDeg !== 0 && component.rotateDeg !== 180) {
+                                    boardHasIssues = true;
+                                    boardCurrentIssues.push("Your straight wire at (" + component.x + ", " + component.y + ") is at the wrong rotation\n\n")
+                                    passed = false;
+                                }
                             } else  if(component.componentType === 1) { //corner
                                 //one piece has to be facing right, so either rotation deg 0 or 270
+                                if(component.rotateDeg !== 0 && component.rotateDeg !== 270) {
+                                    boardHasIssues = true;
+                                    boardCurrentIssues.push("Your corner wire at (" + component.x + ", " + component.y + ") is at the wrong rotation\n\n")
+                                    passed = false;
+                                }
                             }
                         } else {
                             //piece has to be laying flat, so either rotation deg 0 or 180
+                            if(component.rotateDeg !== 0 && component.rotateDeg !== 180) {
+                                boardHasIssues = true;
+                                boardCurrentIssues.push("Your " + component.type + " at (" + component.x + ", " + component.y + ") is at the wrong rotation\n\n")
+                                passed = false;
+                            }
                         }
                         break;
                     case 3: //LEFT
                         if(component.type === ComponentTypes.WIRE) {
                             if(component.componentType === 0) { //straight
                                 //piece has to be laying flat, so either rotation deg 0 or 180
+                                if(component.rotateDeg !== 0 && component.rotateDeg !== 180) {
+                                    boardHasIssues = true;
+                                    boardCurrentIssues.push("Your straight wire at (" + component.x + ", " + component.y + ") is at the wrong rotation\n\n")
+                                    passed = false;
+                                }
                             } else  if(component.componentType === 1) { //corner
                                 //one piece has to be facing left, so either rotation deg 180 or 270
+                                if(component.rotateDeg !== 180 && component.rotateDeg !== 270) {
+                                    boardHasIssues = true;
+                                    boardCurrentIssues.push("Your corner wire at (" + component.x + ", " + component.y + ") is at the wrong rotation\n\n")
+                                    passed = false;
+                                }
                             }
                         } else {
                             //piece has to be laying flat, so either rotation deg 0 or 180
+                            if(component.rotateDeg !== 0 && component.rotateDeg !== 180) {
+                                boardHasIssues = true;
+                                boardCurrentIssues.push("Your " + component.type + " at (" + component.x + ", " + component.y + ") is at the wrong rotation\n\n")
+                                passed = false;
+                            }
                         }
                         break;
                 }
+            } else if(i === 0) { //First component  found here (6, 1) off screen
+                const nextComponent = getComponentAtPos(circuitPositions[i+1].x, circuitPositions[i+1].y)
 
-            } else {
-                //last component found here (6, 4) off screen
+                //After knowing what direction, can then check rotation and component type
+                if(nextComponent.type === ComponentTypes.WIRE) {
+                    if(nextComponent.componentType === 0) { //straight
+                        //piece has to be laying flat, so either rotation deg 0 or 180
+                        if(nextComponent.rotateDeg !== 0 && nextComponent.rotateDeg !== 180) {
+                            boardHasIssues = true;
+                            boardCurrentIssues.push("Your straight wire at (" + nextComponent.x + ", " + nextComponent.y + ") is at the wrong rotation\n\n")
+                            passed = false;
+                        }
+                    } else  if(nextComponent.componentType === 1) { //corner
+                        //one piece has to be facing left, so either rotation deg 180 or 270
+                        if(nextComponent.rotateDeg !== 180 && nextComponent.rotateDeg !== 270) {
+                            boardHasIssues = true;
+                            boardCurrentIssues.push("Your corner wire at (" + nextComponent.x + ", " + nextComponent.y + ") is at the wrong rotation\n\n")
+                            passed = false;
+                        }
+                    }
+                } else {
+                    //piece has to be laying flat, so either rotation deg 0 or 180
+                    if(nextComponent.rotateDeg !== 0 && nextComponent.rotateDeg !== 180) {
+                        boardHasIssues = true;
+                        boardCurrentIssues.push("Your " + nextComponent.type + " at (" + nextComponent.x + ", " + nextComponent.y + ") is at the wrong rotation\n\n")
+                        passed = false;
+                    }
+                }
+            } else { //last component found here (6, 4) off screen
             }
         }
 
@@ -430,12 +522,16 @@ function checkIfPassed(circuitPositions: Array<{ x: number, y: number }>): void 
                 passed = true;
                 emitChange();
             }
+        } else  if(neededVoltage < currentTotalVoltage) {
+            boardHasIssues = true;
+            boardCurrentIssues.push("You gave too much power to the circuit!\n\n")
+            passed = false;
         } else {
             passed = false;
         }
     } else {
         boardHasIssues = true;
-        boardCurrentIssues.push("You built a circuit, but it has no voltage")
+        boardCurrentIssues.push("You built a circuit, but it has no voltage\n\n")
         passed = false;
     }
 

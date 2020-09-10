@@ -125,7 +125,7 @@ class Sidebar extends React.Component<any, any> {
                        <Col className="col-9">
                            <Button style={{width: "100%"}}
                                    className={"white-button"}
-                                   onClick={() => this.props.setTool(TOOL_ERASER)}>Metal Filler</Button>
+                                   onClick={() => this.props.setTool(TOOL_ERASER)}>Metal Filler (Eraser)</Button>
                        </Col>
                    </Row>
 

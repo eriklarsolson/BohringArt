@@ -22,6 +22,7 @@ import Button from "react-bootstrap/Button";
 import {toast} from "react-toastify";
 import 'react-toastify/dist/ReactToastify.css';
 import trashcan from "../../shared/images/trashcan.png";
+import {ErrorSlideOut} from "../../shared/animations/ErrorSlideOut";
 
 const containerStyle: React.CSSProperties = {
     width: 500,
@@ -129,6 +130,7 @@ export const SixGridContainer: React.FC<GridContainerProps> = ({objectiveImage, 
 
     return (
         <>
+            <div style={{position: "relative", height: "100%", width: "100%"}}>
             <Container fluid>
                 <Row className={"justify-content-center align-content-center align-items-center"}>
                     <Col className={"col-4"} style={{maxWidth: 500, flex: "0 0 500px", padding: "0", margin: "0"}}>
@@ -209,7 +211,14 @@ export const SixGridContainer: React.FC<GridContainerProps> = ({objectiveImage, 
                 </Row>
             </Container>
 
-            <ErrorPopup title={"Error!"} description={getCurrentBoardIssues()} open={errorPopup} closePopup={() => setErrorsOff()} />
+            {errorPopup &&
+            <div style={{position: "absolute", top: 0, bottom: 0, left: 0, right: 0, zIndex: 4, overflow: "hidden"}}>
+                <ErrorSlideOut closePopup={() => setErrorsOff()} title={"Circuit Error!"} description={getCurrentBoardIssues()} />
+            </div>
+            }
+
+            {/*<ErrorPopup title={"Error!"} description={getCurrentBoardIssues()} open={errorPopup} closePopup={() => setErrorsOff()} />*/}
+            </div>
         </>
     )
 }

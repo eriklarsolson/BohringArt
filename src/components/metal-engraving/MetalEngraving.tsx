@@ -338,7 +338,7 @@ class MetalEngraving extends React.Component<any, any> {
                                 <ObjectiveSlideOut title={"01 Lasers and Lenses Objective"}
                                                    description={"Using lasers, prisms, and lenses, create an " +
                                                    "artistic design on a metal sheet. The laser can be altered to include numerous shapes, colors, and widths " +
-                                                   "beneficial to the engraving. You can use the ERASER and RESET buttons to change any mistakes on your design. " +
+                                                   "beneficial to the engraving. You can use the METAL FILLER and RESET buttons to change any mistakes on your design. " +
                                                    "Once you are satisfied with your creation, press the NEXT button to move on to the telescope building part " +
                                                    "of the optics activity. Click OBJECTIVE to see the objective for this activity."}
                                                    setParentState={() => cyclePopup()} />

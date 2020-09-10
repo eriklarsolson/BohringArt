@@ -5,10 +5,6 @@ import {useState} from "react";
 import lasercomponenticon from "./images/laser_COMPONENT.png";
 import optics from "./images/optics.png";
 import prism from "./images/prism.png";
-import cone_1 from "../rocket-building/images/cones/cone_1.png";
-import body_1 from "../rocket-building/images/bodys/body_1.png";
-import booster_4_middle from "../rocket-building/images/boosters/booster_4_middle.png";
-import engine_1 from "../rocket-building/images/engines/engine_1.png";
 
 export interface AnimationProps {
     setParentState: any
@@ -17,7 +13,9 @@ export interface AnimationProps {
 export const MoreInfoAnimation: React.FC<AnimationProps>  = ({setParentState}) => {
     const [open, setOpen] = useState<boolean>(true);
     const [title, setTitle] = useState<string>("WIRE");
-    const [description, setDescription] = useState<string>("A conducting, metal rod designed to transfer charges. Electrons can flow through these with little to no resistance, typically. However, making a wire longer increases resistance but thickening it decreases resistance.");
+    const [description, setDescription] = useState<string>(
+        "Light is a form of energy stored in the form of photons, particles of light, that are emitted from all objects such as stars and human bodies except black holes. A laser, or Light Amplification by Stimulated Emission of Radiation, is a concentrated ray of photons emitted by an energetic object, typically a gas."
+    );
     const [animationStarted, setAnimatedStarted] = useState<boolean>(false);
 
 
@@ -109,7 +107,7 @@ export const MoreInfoAnimation: React.FC<AnimationProps>  = ({setParentState}) =
                         </Col>
 
                         {/*clipPath: "polygon(0 0, 100% 0, 100% 100%, 10% 100%)"*/}
-                        <Col className={"col-4"} style={{padding: 0}}>
+                        <Col className={"col-8 col-md-8 col-lg-4"} style={{padding: 0}}>
                             <div style={{position: "absolute", width: "100%", height: "100%", backgroundColor: "#29405B"}} />
 
                             <Container fluid style={{marginTop: 10}}>

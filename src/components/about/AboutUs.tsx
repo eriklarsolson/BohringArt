@@ -60,7 +60,7 @@ class AboutUs extends React.Component<any, any> {
                                     </Row>
 
                                     <Row style={{textAlign: "left", paddingLeft: "5%", paddingRight: "5%", paddingTop: 10, paddingBottom: "5%"}}>
-                                        <p style={{color: "#29405B", fontWeight: "bold"}}>
+                                        <p style={{color: "#29405B"}}>
                                             Physical sciences explain the universe on a fundamental level. And constructing effective visualization of scientific concepts is just as important as their content. Blending physics and art via graphic design is an effective tool to engage the audience and provide new, modern ways of learning.
                                             <br /><br />
                                             This project is a collaboration between the physicist Dr. Dena Izadi, and Parisa Ghaderi, assistant professor of Graphic Design and includes a diverse team of physicists and artists, from different ethnicities and cultural backgrounds, working in partnership with Science Gallery Detroit as part of the ‘Future Present: design in time of urgency’ exhibition.
@@ -111,7 +111,7 @@ class AboutUs extends React.Component<any, any> {
                                 </Row>
 
                                 <Row className="justify-content-center">
-                                    <Col className={"col-4"} style={{ clipPath: "polygon(0 0, 95% 0, 100% 100%, 0% 100%)", backgroundColor: "#F8EDDD", color: "black", padding: 25}}>
+                                    <Col className={"col-8 col-md-8 col-lg-4"} style={{ clipPath: "polygon(0 0, 95% 0, 100% 100%, 0% 100%)", backgroundColor: "#F8EDDD", color: "black", padding: 25}}>
                                         <Container fluid style={{margin: 0}}>
                                                 <Row className="justify-content-center">
                                                     <Col className={"col-12"}>
@@ -171,7 +171,7 @@ class AboutUs extends React.Component<any, any> {
                                 </Row>
 
                                 <Row className="justify-content-center" style={{marginTop: 25}}>
-                                    <Col className={"col-4"} style={{padding: 0, marginLeft: 10}}>
+                                    <Col className={"col-8 col-md-8 col-lg-4"} style={{padding: 0, marginLeft: 10}}>
                                         <input type={"submit"}  className={"green-button"} style={{float: "right", width: 200,
                                             clipPath: "polygon(0 0, 98% 0, 100% 100%, 2% 100%)", color: "white"}} value={"Submit"} />
                                     </Col>

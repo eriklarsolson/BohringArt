@@ -24,15 +24,18 @@ export interface ComponentProps {
 export const Wire: React.FC<ComponentProps> = ({x, y, oneGridStyling, currentComponent}) => {
     //Set rotation degree of the image below if there is a component here (could be any component or currently selected one)
     let startingRotateDeg = 0
+    let imageType = 0
     const componentAtThisPosition = getComponentAtPos(x, y)
 
     if(componentAtThisPosition !== currentComponent) {
         if(componentAtThisPosition !== undefined) {
             startingRotateDeg = componentAtThisPosition.rotateDeg;
+            imageType = componentAtThisPosition.componentType;
         }
     } else {
         if(currentComponent !== undefined) {
             startingRotateDeg = currentComponent.rotateDeg;
+            imageType = currentComponent.componentType;
         }
     }
 
@@ -74,7 +77,7 @@ export const Wire: React.FC<ComponentProps> = ({x, y, oneGridStyling, currentCom
 
     // triwire, crosswire
     const [images, setImages] = useState<any>([wire, cornerwire])
-    const [index, setIndex] = useState<number>(getComponentType)
+    const [index, setIndex] = useState<number>(imageType)
 
     //TODO - set component type when cycling here (maybe could be variable in functionality class that is updated what type of wire object we are viewing?)
     const cycleImages = () => {
@@ -107,7 +110,7 @@ export const Wire: React.FC<ComponentProps> = ({x, y, oneGridStyling, currentCom
 
     return (
         <>
-            <DragPreviewImage connect={preview} src={wire} />
+            <DragPreviewImage connect={preview} src={images[index]} />
             <Container fluid style={{...gridStyling}}>
                 {clicked && index !== 3 &&
                 <div style={{position: "absolute", top: -35, right: -10, marginTop: 1, marginRight: 1}}>

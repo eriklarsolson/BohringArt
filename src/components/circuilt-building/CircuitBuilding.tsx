@@ -104,7 +104,7 @@ class CircuitBuilding extends React.Component<any, any> {
                     {/*                closePopup={cyclePopup} />*/}
 
                     {this.state.popupOpened &&
-                        <div className={""} style={{position: "absolute", width: "100%", height: "100%", zIndex: 4, overflow: "hidden"}}>
+                        <div style={{position: "absolute", top: 0, bottom: 0, left: 0, right: 0, zIndex: 4, overflow: "hidden"}}>
                             <ObjectiveSlideOut title={"02 Circuit Construction Objective"}
                                                description={this.state.popupDescriptions[this.state.currentLevel - 1]}
                                                setParentState={() => cyclePopup()} />
@@ -112,7 +112,7 @@ class CircuitBuilding extends React.Component<any, any> {
                     }
 
                     {this.state.circuitPopupOpened &&
-                        <div style={{position: "absolute", width: "100%", height: "100%", zIndex: 4, overflow: "hidden"}}>
+                        <div style={{position: "absolute", top: 0, bottom: 0, left: 0, right: 0, zIndex: 4, overflow: "hidden"}}>
                             <MoreInfoAnimation setParentState={() => cycleCircuitPopup()} />
                         </div>
                     }
