@@ -72,8 +72,8 @@ class Header extends React.Component<any, any> {
                                 <Row className={"justify-content-center"} style={{textAlign: "left"}}>
                                     <Col className={"col-8"}>
                                         <p style={{fontSize: 18}}>
-                                            In this practice, you will learn the building of a circuit to build an electric telescope.
-                                            After preparing the telescope it the engine will be observed before being launched to observe star life cycles
+                                           This platform offers interactive activities where you can learn physics, create
+                                            experiments, and have fun!
                                         </p>
                                     </Col>
                                 </Row>

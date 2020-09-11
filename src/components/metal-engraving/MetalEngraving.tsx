@@ -510,7 +510,7 @@ class MetalEngraving extends React.Component<any, any> {
                                     <Col className={"col-12"} style={{padding: 0, marginRight: 20}}>
                                         <Button className={"green-button"} style={{float: "right", width: 200,
                                             clipPath: "polygon(0 0, 95% 0, 100% 100%, 5% 100%)"}}
-                                                onClick={() => this.props.history.push('/activity/telescope-activity')}>Next Activity</Button>
+                                                onClick={() => this.props.history.push('/activity/circuit-building')}>Next Activity</Button>
                                     </Col>
                                 </Row>
                             </Col>

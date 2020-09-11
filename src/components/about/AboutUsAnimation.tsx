@@ -351,7 +351,7 @@ export const AboutUsAnimation: React.FC<AnimationProps>  = ({}) => {
                 </Row>
 
                 <Row className={"justify-content-center"} style={{padding: 5}}>
-                    <Col className={"col-3"} style={{padding: 0, minHeight: 250}}>
+                    <Col className={"col-7 col-md-7 col-lg-3"} style={{padding: 0, minHeight: 250}}>
                         <Container fluid style={{height: "100%", clipPath: "polygon(0 0, 100% 0, 100% 100%, 15% 100%)"}}>
                             <Row style={{height: "100%"}}>
                                 <img alt={"About Us Person"} src={image} style={{width: "100%", objectFit: "cover"}} />
@@ -359,7 +359,7 @@ export const AboutUsAnimation: React.FC<AnimationProps>  = ({}) => {
                         </Container>
                     </Col>
 
-                    <Col className={"col-6"} style={{padding: 0, backgroundColor: "#F8EDDD", minHeight: 250,
+                    <Col className={"col-8 col-md-8 col-lg-6"} style={{padding: 0, backgroundColor: "#F8EDDD", minHeight: 250,
                         clipPath: "polygon(0 0, 93% 0, 100% 100%, 0% 100%)"}}>
                         <Container fluid style={{textAlign: "left", margin: "3%", color: "#29405B"}}>
                             <Row className={"justify-content-center"}>

@@ -6,39 +6,24 @@
         <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
         <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
       </path>
-      <path>
-        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
-        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
-      </path>
-      <path>
-        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
-        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
-        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
-      </path>
     </expand>
-    <select>
-      <path>
-        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
-        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
-        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
-        <item name="BRANCH:origin/master" type="e8cecc67:BranchNodeDescriptor" />
-      </path>
-    </select>
+    <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7ea8f8f2-9ee1-4223-8be2-70ed23ed7286" name="Default Changelist" comment="Yeah, this is a pretty big update. Fixed whole bunch of styling issues everywhere, created new error slide up, built out circuit building activity more, etc...">
-      <change afterPath="$PROJECT_DIR$/src/components/stellar-cycle/images/massive_star_btype.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/stellar-cycle/images/massive_star_otype.png" afterDir="false" />
+    <list default="true" id="7ea8f8f2-9ee1-4223-8be2-70ed23ed7286" name="Default Changelist" comment="This git commit includes:&#10;adding footer&#10;adding contact form&#10;general styling fixes&#10;more functionality on various activities">
+      <change afterPath="$PROJECT_DIR$/src/components/stellar-cycle/images/average_star_A.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/stellar-cycle/images/average_star_F.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/stellar-cycle/images/average_star_K.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/stellar-cycle/images/average_star_RedDwarf.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.firebase/hosting.YnVpbGQ.cache" beforeDir="false" afterPath="$PROJECT_DIR$/.firebase/hosting.YnVpbGQ.cache" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Routes.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Routes.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/about/AboutUsAnimation.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/about/AboutUsAnimation.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/circuilt-building/CircuitBuilding.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/circuilt-building/CircuitBuilding.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/circuilt-building/grid/Functionality.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/circuilt-building/grid/Functionality.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/circuilt-building/grid/components/Wire.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/circuilt-building/grid/components/Wire.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/metal-engraving/MoreInfoAnimation.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/metal-engraving/MoreInfoAnimation.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/rocket-building/MoreInfoAnimation.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/rocket-building/MoreInfoAnimation.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/rocket-building/RocketBuilding.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/rocket-building/RocketBuilding.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/home/Header.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/home/Header.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/metal-engraving/MetalEngraving.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/metal-engraving/MetalEngraving.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/shared/header/Header.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/shared/header/Header.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/stellar-cycle/ObjectPage.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/stellar-cycle/ObjectPage.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/telescope-activity/MoreInfoAnimation.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/telescope-activity/MoreInfoAnimation.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -73,19 +58,19 @@
     <property name="ts.external.directory.path" value="C:\Users\energ\Documents\ContractWork\DetroitMuseum\bohringart\node_modules\typescript\lib" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\energ\Documents\ContractWork\DetroitMuseum\bohringart\src\components\about\images" />
-      <recent name="C:\Users\energ\Documents\ContractWork\DetroitMuseum\bohringart\src\components\metal-engraving\images" />
-      <recent name="C:\Users\energ\Documents\ContractWork\DetroitMuseum\bohringart\src\components\about\parisa2" />
-      <recent name="C:\Users\energ\Documents\ContractWork\DetroitMuseum\bohringart\src\components\shared\animations" />
-      <recent name="C:\Users\energ\Documents\ContractWork\DetroitMuseum\bohringart\src\components\shared" />
-    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\energ\Documents\ContractWork\DetroitMuseum\bohringart\src\components\stellar-cycle\images" />
       <recent name="C:\Users\energ\Documents\ContractWork\DetroitMuseum\bohringart\src\components\shared\animations" />
       <recent name="C:\Users\energ\Documents\ContractWork\DetroitMuseum\bohringart\src\components\metal-engraving\images" />
       <recent name="C:\Users\energ\Documents\ContractWork\DetroitMuseum\bohringart\src\components\telescope-activity\grid\components\images" />
       <recent name="C:\Users\energ\Documents\ContractWork\DetroitMuseum\bohringart\src\components\shared\footer" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\energ\Documents\ContractWork\DetroitMuseum\BohringArt\src\components\stellar-cycle\images" />
+      <recent name="C:\Users\energ\Documents\ContractWork\DetroitMuseum\bohringart\src\components\about\images" />
+      <recent name="C:\Users\energ\Documents\ContractWork\DetroitMuseum\bohringart\src\components\metal-engraving\images" />
+      <recent name="C:\Users\energ\Documents\ContractWork\DetroitMuseum\bohringart\src\components\about\parisa2" />
+      <recent name="C:\Users\energ\Documents\ContractWork\DetroitMuseum\bohringart\src\components\shared\animations" />
     </key>
   </component>
   <component name="SvnConfiguration">
@@ -633,11 +618,11 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="736" y="292" key="refactoring.ChangeSignatureDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1595374531681" />
-    <state x="821" y="240" key="run.anything.popup" timestamp="1599744865740">
-      <screen x="0" y="0" width="2560" height="1040" />
+    <state x="483" y="224" key="run.anything.popup" timestamp="1599780136922">
+      <screen x="0" y="0" width="1500" height="960" />
     </state>
     <state x="821" y="240" key="run.anything.popup/-1920.0.1920.1040/0.0.2560.1040@0.0.2560.1040" timestamp="1599744865740" />
-    <state x="482" y="223" key="run.anything.popup/0.0.1500.960@0.0.1500.960" timestamp="1595717092125" />
+    <state x="483" y="224" key="run.anything.popup/0.0.1500.960@0.0.1500.960" timestamp="1599780136922" />
     <state x="616" y="240" key="run.anything.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1597861525568" />
     <state x="831" y="225" width="896" height="678" key="search.everywhere.popup" timestamp="1599744888187">
       <screen x="0" y="0" width="2560" height="1040" />

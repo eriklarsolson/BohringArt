@@ -30,7 +30,7 @@ class Routes extends Component {
                     <Route path="/activity/info-page" component={InfoPage} />
                     <Route path="/about" component={AboutUs} />
                     <Route path="/resources" component={Resources} />
-                    <Route exact path="/" component={UnderConstruction} />
+                    <Route exact path="/" component={Home} />
                     <Route path="/home" component={Home} />
                     <Route path="*" component={PageNotFound} />
                 </Switch>

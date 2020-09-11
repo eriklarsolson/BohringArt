@@ -6,11 +6,11 @@ import Sidebar from "./Sidebar";
 import avgstar from "./images/avgstar.png"
 import blackhole from "./images/blackhole.png"
 import massivestar from "./images/massivestar.png"
-import massive_star_1 from "./images/massive_star_1.png"
-import massive_star_2 from "./images/massive_star_2.png"
-import massive_star_3 from "./images/massive_star_3.png"
-import massive_star_4 from "./images/massive_star_4.png"
-import massive_star_5 from "./images/massive_star_5.png"
+import average_star_A from "./images/average_star_A.png"
+import average_star_F from "./images/average_star_F.png"
+import average_star_K from "./images/average_star_K.png"
+import average_star_RedDwarf from "./images/average_star_RedDwarf.png"
+// import massive_star_5 from "./images/massive_star_5.png"
 import massive_star_btype from "./images/massive_star_btype.png"
 import massive_star_otype from "./images/massive_star_otype.png"
 import nebula from "./images/nebula.png"
@@ -39,40 +39,40 @@ class ObjectPage extends React.Component<any, any> {
             averageIndex: 0,
             averageStars: [
                 {
-                    title: "Average star 1??",
-                    image: massive_star_1,
+                    title: "Average Star",
+                    image: avgstar,
                     imageSize: 370,
                     temperatureValue: 20,
                     sizeValue: 20,
                     massValue: 20,
                 },
                 {
-                    title: "Average Star / Red Dwarf??",
-                    image: massive_star_2,
+                    title: "Average Star (Red Dwarf)",
+                    image: average_star_RedDwarf,
                     imageSize: 390,
                     temperatureValue: 40,
                     sizeValue: 40,
                     massValue: 40,
                 },
                 {
-                    title: "Average star (K-Type)",
-                    image: massive_star_3,
+                    title: "Average Star (K-Type)",
+                    image: average_star_K,
                     imageSize: 410,
                     temperatureValue: 60,
                     sizeValue: 60,
                     massValue: 60,
                 },
                 {
-                    title: "Average star (G-Type)",
-                    image: massive_star_4,
+                    title: "Average Star (F-Type)",
+                    image: average_star_F,
                     imageSize: 430,
                     temperatureValue: 80,
                     sizeValue: 80,
                     massValue: 80,
                 },
                 {
-                    title: "Average star (F-Type)",
-                    image: massive_star_5,
+                    title: "Average Star (A-Type)",
+                    image: average_star_A,
                     imageSize: 450,
                     temperatureValue: 100,
                     sizeValue: 100,

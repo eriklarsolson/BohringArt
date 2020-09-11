@@ -48,7 +48,7 @@ class CircuitBuilding extends React.Component<any, any> {
             const nextLevel = this.state.currentLevel + 1;
 
             if(nextLevel === 4) {
-                this.props.history.push('/activity/metal-engraving');
+                this.props.history.push('/activity/rocket-building');
             } else {
                 this.setState({currentLevel: nextLevel})
             }
@@ -65,7 +65,7 @@ class CircuitBuilding extends React.Component<any, any> {
             const pastLevel = this.state.currentLevel - 1;
 
             if(pastLevel === 0) {
-                this.props.history.push('/activity/telescope-activity');
+                this.props.history.push('/activity/metal-engraving');
             } else {
                 this.setState({currentLevel: pastLevel})
             }

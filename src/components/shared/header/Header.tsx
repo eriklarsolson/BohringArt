@@ -57,18 +57,18 @@ const Header = (props: {location: any }) => {
 
     return (
         <>
-            {location.pathname === '/' ?
-                <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark" className="main-menu" style={{zIndex: 10}}>
-                    <Navbar.Brand href="/" style={{textAlign: "right"}}>
-                        <img src={logo} alt={"Logo"} />
-                    </Navbar.Brand>
+            {/*{location.pathname === '/' ?*/}
+            {/*    <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark" className="main-menu" style={{zIndex: 10}}>*/}
+            {/*        <Navbar.Brand href="/" style={{textAlign: "right"}}>*/}
+            {/*            <img src={logo} alt={"Logo"} />*/}
+            {/*        </Navbar.Brand>*/}
 
-                    <Navbar.Toggle aria-controls="responsive-navbar-nav" />
-                    <Navbar.Collapse id="responsive-navbar-nav">
-                        <img src={line} alt={"Menu seperator"} />
-                    </Navbar.Collapse>
-                </Navbar>
-            :
+            {/*        <Navbar.Toggle aria-controls="responsive-navbar-nav" />*/}
+            {/*        <Navbar.Collapse id="responsive-navbar-nav">*/}
+            {/*            <img src={line} alt={"Menu seperator"} />*/}
+            {/*        </Navbar.Collapse>*/}
+            {/*    </Navbar>*/}
+            {/*:*/}
                 <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark" className="main-menu" style={{zIndex: 10}}>
                     <Navbar.Brand href="/" style={{textAlign: "right", paddingLeft: "1%"}}>
                         <img src={logo} alt={"Logo"} style={{width: "80%"}} />
@@ -136,7 +136,7 @@ const Header = (props: {location: any }) => {
                         {/*</Nav>*/}
                     </Navbar.Collapse>
                 </Navbar>
-            }
+            {/*}*/}
         </>
     );
 }
