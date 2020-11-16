@@ -10,18 +10,12 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7ea8f8f2-9ee1-4223-8be2-70ed23ed7286" name="Default Changelist" comment="This git commit includes:&#10;adding footer&#10;adding contact form&#10;general styling fixes&#10;more functionality on various activities">
-      <change afterPath="$PROJECT_DIR$/src/components/stellar-cycle/images/average_star_A.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/stellar-cycle/images/average_star_F.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/stellar-cycle/images/average_star_K.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/stellar-cycle/images/average_star_RedDwarf.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.firebase/hosting.YnVpbGQ.cache" beforeDir="false" afterPath="$PROJECT_DIR$/.firebase/hosting.YnVpbGQ.cache" afterDir="false" />
+    <list default="true" id="7ea8f8f2-9ee1-4223-8be2-70ed23ed7286" name="Default Changelist" comment="last minute fixes to get the site running (remove telescope activity,  put home page back on /, and put last stars in for stellar cycle)">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Routes.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Routes.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/about/AboutUsAnimation.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/about/AboutUsAnimation.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/circuilt-building/CircuitBuilding.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/circuilt-building/CircuitBuilding.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/home/Header.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/home/Header.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/metal-engraving/MetalEngraving.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/metal-engraving/MetalEngraving.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/circuilt-building/Sidebar.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/circuilt-building/Sidebar.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/metal-engraving/Sidebar.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/metal-engraving/Sidebar.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/rocket-building/RocketBuilding.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/rocket-building/RocketBuilding.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/shared/header/Header.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/shared/header/Header.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/stellar-cycle/ObjectPage.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/stellar-cycle/ObjectPage.tsx" afterDir="false" />
     </list>
@@ -49,13 +43,13 @@
     <property name="TERMINAL_CUSTOM_COMMANDS_GOT_IT" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="ignore.virus.scanning.warn.message" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/components/stellar-cycle/images" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../Crainehouse/Crainehouse" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="settings.editor.selected.configurable" value="reference.settings.project.statistic.project.settings" />
-    <property name="ts.external.directory.path" value="C:\Users\energ\Documents\ContractWork\DetroitMuseum\bohringart\node_modules\typescript\lib" />
+    <property name="ts.external.directory.path" value="C:\Users\energ\Documents\ContractWork\DetroitMuseum\BohringArt\node_modules\typescript\lib" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -131,13 +125,8 @@
       <workItem from="1599568496911" duration="44092000" />
       <workItem from="1599654221743" duration="39492000" />
       <workItem from="1599740453572" duration="6820000" />
-    </task>
-    <task id="LOCAL-00010" summary="adding pics">
-      <created>1597328515298</created>
-      <option name="number" value="00010" />
-      <option name="presentableId" value="LOCAL-00010" />
-      <option name="project" value="LOCAL" />
-      <updated>1597328515298</updated>
+      <workItem from="1603502121771" duration="405000" />
+      <workItem from="1605316072973" duration="2742000" />
     </task>
     <task id="LOCAL-00011" summary="lots of styling across lots of activities">
       <created>1597717784009</created>
@@ -475,7 +464,14 @@
       <option name="project" value="LOCAL" />
       <updated>1599706192522</updated>
     </task>
-    <option name="localTasksCounter" value="59" />
+    <task id="LOCAL-00059" summary="last minute fixes to get the site running (remove telescope activity,  put home page back on /, and put last stars in for stellar cycle)">
+      <created>1599828390298</created>
+      <option name="number" value="00059" />
+      <option name="presentableId" value="LOCAL-00059" />
+      <option name="project" value="LOCAL" />
+      <updated>1599828390300</updated>
+    </task>
+    <option name="localTasksCounter" value="60" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -507,7 +503,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="updates all over the app (home page update, stellar cycle, circuit building, etc..)" />
     <MESSAGE value="rebuild of rocket building page" />
     <MESSAGE value="Many changes to About Us, all popups, flight simulator page/animations, etc..." />
     <MESSAGE value="This site has a lot of styling to it" />
@@ -532,7 +527,8 @@
     <MESSAGE value="another big update to pretty much all of the main pages (styling/bug fixing)" />
     <MESSAGE value="styling fixes and updates to circuit building activity" />
     <MESSAGE value="Yeah, this is a pretty big update. Fixed whole bunch of styling issues everywhere, created new error slide up, built out circuit building activity more, etc..." />
-    <option name="LAST_COMMIT_MESSAGE" value="Yeah, this is a pretty big update. Fixed whole bunch of styling issues everywhere, created new error slide up, built out circuit building activity more, etc..." />
+    <MESSAGE value="last minute fixes to get the site running (remove telescope activity,  put home page back on /, and put last stars in for stellar cycle)" />
+    <option name="LAST_COMMIT_MESSAGE" value="last minute fixes to get the site running (remove telescope activity,  put home page back on /, and put last stars in for stellar cycle)" />
   </component>
   <component name="WindowStateProjectService">
     <state x="828" y="178" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1595441686616">
@@ -561,10 +557,11 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="629" y="298" key="EditFileWatcherDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1594947783720" />
-    <state x="987" y="275" key="FileChooserDialogImpl" timestamp="1598628248555">
-      <screen x="0" y="0" width="2560" height="1040" />
+    <state x="578" y="254" key="FileChooserDialogImpl" timestamp="1603502531859">
+      <screen x="0" y="0" width="1500" height="960" />
     </state>
     <state x="987" y="275" key="FileChooserDialogImpl/-1920.0.1920.1040/0.0.2560.1040@0.0.2560.1040" timestamp="1598628248555" />
+    <state x="578" y="254" key="FileChooserDialogImpl/0.0.1500.960@0.0.1500.960" timestamp="1603502531859" />
     <state x="740" y="275" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1597792615702" />
     <state width="1480" height="168" key="GridCell.Tab.0.bottom" timestamp="1595717092156">
       <screen x="0" y="0" width="1500" height="960" />
@@ -590,10 +587,11 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="461" y="165" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1595965465549" />
-    <state x="736" y="253" key="Vcs.Push.Dialog.v2" timestamp="1599706195741">
-      <screen x="0" y="0" width="2560" height="1040" />
+    <state x="431" y="234" key="Vcs.Push.Dialog.v2" timestamp="1599828393700">
+      <screen x="0" y="0" width="1500" height="960" />
     </state>
     <state x="736" y="253" key="Vcs.Push.Dialog.v2/-1920.0.1920.1040/0.0.2560.1040@0.0.2560.1040" timestamp="1599706195741" />
+    <state x="431" y="234" key="Vcs.Push.Dialog.v2/0.0.1500.960@0.0.1500.960" timestamp="1599828393700" />
     <state x="552" y="253" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1597885372762" />
     <state x="565" y="130" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser" timestamp="1595958216715">
       <screen x="0" y="0" width="1920" height="1040" />

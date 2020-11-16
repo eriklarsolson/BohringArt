@@ -120,11 +120,11 @@ class CircuitBuilding extends React.Component<any, any> {
                         <Container fluid className={"d-flex h-100 flex-column"} style={{margin: "0", padding: "0", backgroundColor: "#F8EDDD"}}>
 
                             <Row className={"flex-grow-1"} style={{margin: "0"}}>
-                                <Col className={"col-2"} style={{color: "white", padding: "0"}}>
+                                <Col className={"col-12 col-sm-3"} style={{color: "white", padding: "0"}}>
                                     <Sidebar currentLevel={this.state.currentLevel} />
                                 </Col>
 
-                                <Col className={"col-10"} style={{margin: "0", padding: "0"}}>
+                                <Col className={"col-12 col-sm-9"} style={{margin: "0", padding: "0"}}>
                                     <Container fluid style={{margin: "0", padding: "0"}}>
                                         <Row style={{margin: 0}}>
                                             <Col className="col-2" style={{margin: "3%"}}>

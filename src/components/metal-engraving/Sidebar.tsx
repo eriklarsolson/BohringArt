@@ -24,11 +24,6 @@ class Sidebar extends React.Component<any, any> {
     }
 
     render() {
-        const changeShapeArrow = () => {
-
-        }
-
-
         return (
             <>
                <Container style={{margin: "0", padding: "0", height: "100%", paddingRight: 20}}>
@@ -74,7 +69,7 @@ class Sidebar extends React.Component<any, any> {
 
                                <Row className={"justify-content-center"} style={{backgroundColor: "#C4C4C4"}}>
                                    <Accordion.Toggle as={Button} variant="link" eventKey="0">
-                                       <i className="fa fa-arrow-down" style={{color: "#42949F"}} onClick={changeShapeArrow} />
+                                       <i className="fa fa-arrow-down" style={{color: "#42949F"}} />
                                    </Accordion.Toggle>
                                </Row>
 
