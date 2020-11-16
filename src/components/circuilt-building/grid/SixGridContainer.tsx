@@ -23,6 +23,7 @@ import {toast} from "react-toastify";
 import 'react-toastify/dist/ReactToastify.css';
 import trashcan from "../../shared/images/trashcan.png";
 import {ErrorSlideOut} from "../../shared/animations/ErrorSlideOut";
+import CircuitSlider from "./CircuitSlider";
 
 const containerStyle: React.CSSProperties = {
     width: 500,
@@ -67,34 +68,6 @@ export const SixGridContainer: React.FC<GridContainerProps> = ({objectiveImage, 
         setCurrentBoardIssues([])
         setBoardHasIssue(false)
     }
-
-    //TODO - This current styling breaks the slider (doesn't slide smoothly)
-    const VoltageSlider = withStyles({
-        root: {
-            color: '#29405B',
-            height: 6,
-        },
-        thumb: {
-            height: 24,
-            width: 24,
-            backgroundColor: '#29405B',
-            border: '2px solid currentColor',
-            marginTop: -10,
-            marginLeft: -12,
-            '&:focus, &:hover, &$active': {
-                boxShadow: 'inherit',
-            },
-        },
-        track: {
-            height: 6,
-            borderRadius: 2,
-            backgroundColor: '#29405B',
-        },
-        rail: {
-            height: 6,
-            borderRadius: 2,
-        },
-    })(Slider);
 
     const handleVoltageChange = (event: any, newValue: number | number[]) => {
         setCurrentComponentsVoltage(newValue as number);
@@ -158,7 +131,7 @@ export const SixGridContainer: React.FC<GridContainerProps> = ({objectiveImage, 
                         </Button>
                     </Col>
 
-                    <Col className={"ml-auto col-2 justify-content-center align-content center"}>
+                    <Col className={"ml-auto col-4 justify-content-center align-content center"}>
                         {currentComp !== undefined && (currentComp.type === ComponentTypes.BATTERY ||
                             currentComp.type === ComponentTypes.RESISTOR) &&
                             <>
@@ -176,10 +149,8 @@ export const SixGridContainer: React.FC<GridContainerProps> = ({objectiveImage, 
                                             onClick={() => changeVoltage(false)} />
                                         </Col>
                                         <Col>
-                                            <VoltageSlider aria-labelledby="volt-slider" step={1}
-                                            marks min={0} max={10}
-                                            value={currentComp.voltage}
-                                            onChange={handleVoltageChange} />
+                                            <CircuitSlider voltage={currentComp.voltage}
+                                                           handleVoltageChange={handleVoltageChange} />
                                         </Col>
                                         <Col className={"col-1"}>
                                             <i className="fa fa-plus" style={{cursor: "pointer", color: "#29405B"}}

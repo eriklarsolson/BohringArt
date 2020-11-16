@@ -23,15 +23,19 @@ class CircuitBuilding extends React.Component<any, any> {
             circuitPopupOpened: false,
             popupOpened: true,
             popupTitle: "Level 1 Objective",
-            popupDescriptions: ["Energize the motor of the satellite so the solar panels can face the " +
-                "sun and start collecting more energy. Make sure your circuit can deliver enough power to start the motor " +
-                "and rotate the panels. We recommend using a series circuit, so consult the help page if needed. " +
-                "If you need to make changes to parts of your circuit, click the component you would like to remove " +
-                "and then press the TRASH icon.", "Power up the lights on the satellite so that " +
+            popupDescriptions: ["1. Energize the motor of the satellite so the solar panels can face the " +
+                "sun and start collecting more energy. \n\n 2. Make sure your circuit can deliver enough power to start the motor " +
+                "and rotate the panels. \n\n 3. We recommend using a series circuit, so consult the help page if needed. " +
+                "\n\n 4. If you need to make changes to parts of your circuit, click the component you would like to remove " +
+                "and then press the TRASH icon.",
+
+                "Power up the lights on the satellite so that " +
             "everyone can see its location as it orbits Earth at high velocities. To best reveal the craft’s position use " +
             "a flickering light, which typically utilizes a capacitor. We recommend using a parallel circuit, so consult " +
             "the help page if needed. If you need to make changes to parts of your circuit, click the component you would " +
-            "like to remove and then press the TRASH icon", "Power up the satellite’s radio dish so you can send the " +
+            "like to remove and then press the TRASH icon",
+
+                "Power up the satellite’s radio dish so you can send the " +
             "collected images and information to mission control back on Earth. Use both series and parallel circuits " +
             "along with your knowledge from the previous levels to ensure the transmission. Consult the help page if " +
             "needed. If you need to make changes to parts of your circuit, click the component you would like to remove " +

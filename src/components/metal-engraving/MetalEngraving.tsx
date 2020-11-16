@@ -336,11 +336,11 @@ class MetalEngraving extends React.Component<any, any> {
                         {this.state.popupOpened &&
                             <div style={{position: "absolute", top: 0, bottom: 0, left: 0, right: 0, zIndex: 4, overflow: "hidden"}}>
                                 <ObjectiveSlideOut title={"01 Lasers and Lenses Objective"}
-                                                   description={"Using lasers, prisms, and lenses, create an " +
-                                                   "artistic design on a metal sheet. The laser can be altered to include numerous shapes, colors, and widths " +
-                                                   "beneficial to the engraving. You can use the METAL FILLER and RESET buttons to change any mistakes on your design. " +
-                                                   "Once you are satisfied with your creation, press the NEXT button to move on to the telescope building part " +
-                                                   "of the optics activity. Click OBJECTIVE to see the objective for this activity."}
+                                                   description={"1. Using lasers, prisms, and lenses, create an " +
+                                                   "artistic design on a metal sheet. \n\n 2. The laser can be altered to include numerous shapes, colors, and widths " +
+                                                   "beneficial to the engraving. \n\n 3. You can use the METAL FILLER and RESET buttons to change any mistakes on your design. " +
+                                                   "\n\n 4. Once you are satisfied with your creation, press the NEXT button to move on to the telescope building part " +
+                                                   "of the optics activity. Click OBJECTIVE to see this objective again."}
                                                    setParentState={() => cyclePopup()} />
                             </div>
                         }

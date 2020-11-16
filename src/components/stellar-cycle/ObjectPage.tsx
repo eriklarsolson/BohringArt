@@ -3,7 +3,7 @@ import { Container, Row, Col } from 'react-bootstrap'
 import Button from "react-bootstrap/Button";
 import stellarBackground from './stellarBackground.png';
 import Sidebar from "./Sidebar";
-import avgstar from "./images/avgstar.png"
+import avgstar from "./images/average_star_G.png"
 import blackhole from "./images/blackhole.png"
 import massivestar from "./images/massivestar.png"
 import average_star_A from "./images/average_star_A.png"
@@ -22,9 +22,10 @@ import supernova from "./images/supernova.png"
 import whitedwarf from "./images/whitedwarf.png"
 import './StellarCycle.scss'
 import {getIndex} from "../circuilt-building/grid/Functionality";
-import TimelineSlider from "./TimelineSlider";
 import StellarPropertiesPopup from "../shared/modals/StellarPropertiesPopup";
 import {ObjectiveSlideOut} from "../shared/animations/ObjectiveSlideOut";
+import PropertiesSlider from "./PropertiesSlider";
+import {motion, useAnimation} from "framer-motion";
 
 class ObjectPage extends React.Component<any, any> {
     constructor(props: any) {
@@ -399,32 +400,36 @@ class ObjectPage extends React.Component<any, any> {
         // if(this.state.massClass === 1) {
         //     max = 120;
         // }
+        //
+        // const controls = useAnimation()
+        // const hideBox = () => {
+        //
+        //     controls.start({
+        //         x: [0, -2000],
+        //         opacity: [1, 0],
+        //         transition: {
+        //             duration: 1.5,
+        //             ease: "easeOut",
+        //         },
+        //     })
+        //
+        //     setTimeout(() => {  setClosed() }, 1200);
+        // }
 
         return (
             <>
                 <div style={{position: "relative", height: "100%", width: "100%"}}>
                     <StellarPropertiesPopup open={this.state.propertiesPopupOpened} closePopup={cyclePropertiesPopup} />
 
-                    {/*<ObjectivePopup title={"04 Stellar Life Cycle"}*/}
-                    {/*                open={this.state.popupOpened}*/}
-                    {/*                description={"In this final activity, use the sliders to see how mass, temperature, and size are " +*/}
-                    {/*       "related as you move through the stages of the stellar life cycle. You may choose between using a " +*/}
-                    {/*       "star of average mass (like the sun) or a supermassive star, mass is the main variable used to " +*/}
-                    {/*       "determine which stages the star will go through and how long its lifespan will be. When viewing " +*/}
-                    {/*       "a stage, click the MORE INFO button to see an in depth description. You can also click on the " +*/}
-                    {/*       "ALL STAGES button to go back to the stellar life cycle diagram. Once you are finished exploring, " +*/}
-                    {/*       "click on the COMPLETE button to close out the activity."}*/}
-                    {/*                closePopup={cyclePopup} />*/}
-
                     {this.state.popupOpened &&
                         <div style={{position: "absolute", top: 0, bottom: 0, left: 0, right: 0, zIndex: 4, overflow: "hidden"}}>
                             <ObjectiveSlideOut title={"04 Stellar Life Cycle"}
-                                               description={"In this final activity, use the sliders to see how mass, temperature, and size are " +
-                                               "related as you move through the stages of the stellar life cycle. You may choose between using a " +
+                                               description={"1. In this final activity, use the sliders to see how mass, temperature, and size are " +
+                                               "related as you move through the stages of the stellar life cycle. \n\n 2. You may choose between using a " +
                                                "star of average mass (like the sun) or a supermassive star, mass is the main variable used to " +
-                                               "determine which stages the star will go through and how long its lifespan will be. When viewing " +
+                                               "determine which stages the star will go through and how long its lifespan will be. \n\n 3. When viewing " +
                                                "a stage, click the MORE INFO button to see an in depth description. You can also click on the " +
-                                               "ALL STAGES button to go back to the stellar life cycle diagram. Once you are finished exploring, " +
+                                               "ALL STAGES button to go back to the stellar life cycle diagram. \n\n 4. Once you are finished exploring, " +
                                                "click on the COMPLETE button to close out the activity."}
                                                setParentState={() => cyclePopup()} />
                         </div>
@@ -439,31 +444,34 @@ class ObjectPage extends React.Component<any, any> {
                                     this.state.stellarObjects[this.state.massClass][this.state.index].title === "Massive Star") ?
                                     <>
                                         {this.state.stellarObjects[this.state.massClass][this.state.index].title === "Massive Star" ?
-                                            <Sidebar currentObject={this.state.massiveStars[this.state.massiveIndex]}
-                                                     temperature={this.state.massiveStars[this.state.massiveIndex].temperatureValue}
-                                                     changeTemperature={changeTemperature}
-                                                     size={this.state.massiveStars[this.state.massiveIndex].sizeValue}
-                                                     changeSize={changeSize}
-                                                     mass={this.state.massiveStars[this.state.massiveIndex].massValue}
-                                                     changeMass={changeMass}
-                                                     description={this.state.massiveStars[this.state.massiveIndex].description}
-                                                     massClass={this.state.massClass}
-                                                     showPropertySliders={showPropertySliders}
-                                                     showSliders={this.state.showSliders}
-                                                     handleMassChange={handleMassChange} />
+                                            // <motion.div
+                                            //     animate={controls}
+                                            //     style={{height: "100%"}}>
+                                                <Sidebar currentObject={this.state.massiveStars[this.state.massiveIndex]}
+                                                         temperature={this.state.massiveStars[this.state.massiveIndex].temperatureValue}
+                                                         changeTemperature={changeTemperature}
+                                                         size={this.state.massiveStars[this.state.massiveIndex].sizeValue}
+                                                         changeSize={changeSize}
+                                                         mass={this.state.massiveStars[this.state.massiveIndex].massValue}
+                                                         changeMass={changeMass}
+                                                         description={this.state.massiveStars[this.state.massiveIndex].description}
+                                                         massClass={this.state.massClass}
+                                                         showPropertySliders={showPropertySliders}
+                                                         showSliders={this.state.showSliders}
+                                                         handleMassChange={handleMassChange} />
                                             :
-                                            <Sidebar currentObject={this.state.averageStars[this.state.averageIndex]}
-                                                     temperature={this.state.averageStars[this.state.averageIndex].temperatureValue}
-                                                     changeTemperature={changeTemperature}
-                                                     size={this.state.averageStars[this.state.averageIndex].sizeValue}
-                                                     changeSize={changeSize}
-                                                     mass={this.state.averageStars[this.state.averageIndex].massValue}
-                                                     changeMass={changeMass}
-                                                     description={this.state.averageStars[this.state.averageIndex].description}
-                                                     massClass={this.state.massClass}
-                                                     showPropertySliders={showPropertySliders}
-                                                     showSliders={this.state.showSliders}
-                                                     handleMassChange={handleMassChange} />
+                                                <Sidebar currentObject={this.state.averageStars[this.state.averageIndex]}
+                                                         temperature={this.state.averageStars[this.state.averageIndex].temperatureValue}
+                                                         changeTemperature={changeTemperature}
+                                                         size={this.state.averageStars[this.state.averageIndex].sizeValue}
+                                                         changeSize={changeSize}
+                                                         mass={this.state.averageStars[this.state.averageIndex].massValue}
+                                                         changeMass={changeMass}
+                                                         description={this.state.averageStars[this.state.averageIndex].description}
+                                                         massClass={this.state.massClass}
+                                                         showPropertySliders={showPropertySliders}
+                                                         showSliders={this.state.showSliders}
+                                                         handleMassChange={handleMassChange} />
                                         }
                                     </>
                                     :
@@ -572,9 +580,12 @@ class ObjectPage extends React.Component<any, any> {
 
                                     <Row style={{margin: "3%"}}>
                                         <Col className={"ml-auto col-4 justify-content-center align-content-center"}>
-                                            <TimelineSlider value={this.state.stellarObjects[this.state.massClass]
-                                                [this.state.index].timeValue} changeTime={changeTime}
-                                                            children={null} max={max} />
+                                            {/*<TimelineSlider value={this.state.stellarObjects[this.state.massClass]*/}
+                                            {/*    [this.state.index].timeValue} changeTime={changeTime}*/}
+                                            {/*                children={null} max={max} />*/}
+                                            <PropertiesSlider value={this.state.stellarObjects[this.state.massClass]
+                                                [this.state.index].timeValue}
+                                                              changeValue={changeTime} max={max} />
                                             {(this.state.stellarObjects[this.state.massClass][this.state.index].title !== "Nebula" &&
                                                 this.state.stellarObjects[this.state.massClass][this.state.index].title !== "Neutron Star") &&
                                                 <h6 style={{color: "white"}}>Life Span:</h6>

@@ -18,7 +18,7 @@ export const TelescopeAnimation: React.FC  = () => {
                 ease: "easeOut",
                 times: [0, 1],
             }}>
-            <img alt={"Telescope"} src={telescope} style={{width: 500}} />
+            <img alt={"Telescope"} src={telescope} style={{width: 600}} />
         </motion.div>
     );
 };

@@ -18,7 +18,7 @@ export const OneGridContainer: React.FC<GridContainerProps> = ({componentType, f
     const containerStyle: React.CSSProperties = {
         height: 100,
         clipPath: "polygon(0 0, 95% 0, 100% 100%, 0 100%)",
-        backgroundColor: 'white',
+        backgroundColor: '#F8EDDD',
     }
 
     let tooltipStyle: React.CSSProperties = {

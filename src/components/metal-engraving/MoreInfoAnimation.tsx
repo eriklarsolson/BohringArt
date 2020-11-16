@@ -114,7 +114,9 @@ export const MoreInfoAnimation: React.FC<AnimationProps>  = ({setParentState}) =
                                 <Row>
                                     <Col className={"col-3 ml-auto"} style={{padding: 0}}>
                                         <Button className={"green-button"} style={{float: "right", width: "100%"}}
-                                                onClick={() => hideBox()}><i className="fa fa-arrow-right" /></Button>
+                                                onClick={() => hideBox()}>
+                                            <i className="fa fa-arrow-right" />
+                                        </Button>
                                     </Col>
                                 </Row>
 

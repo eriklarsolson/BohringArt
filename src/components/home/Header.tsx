@@ -60,12 +60,15 @@ class Header extends React.Component<any, any> {
                 {/*    </div>*/}
                 {/*</div>*/}
 
+                {/*TODO - Need to figure out how to remove clip path on mobile version of site*/}
                 <Container fluid style={{color: "white", padding: 0}}>
-                    <Row style={{margin: 0, padding: 0, clipPath: "polygon(0 0, 100% 0, 100% 85%, 0 100%)", backgroundColor: "#29405B"}}>
-                        <Col className={"col-12 col-md-12 col-lg-6"} style={{marginTop: "10%", padding: 0}}>
+                    <Row style={{margin: 0, padding: 0, clipPath: "polygon(0 0, 100% 0, 100% 85%, 0 100%)", backgroundImage:`url(${stellarBackground})`, minHeight: this.state.width > 1000 ? 1000 : 1500}}>
+                        <Col className={"col-12 col-md-12 col-lg-6"} style={{paddingTop: "10%", zIndex: 2,
+                            clipPath: this.state.width > 1000 ? "polygon(0 0, 95% 0, 100% 100%, 0 100%)" : "polygon(0 0, 100% 0, 100% 100%, 0 100%)",
+                            backgroundColor: "#29405B", maxHeight: this.state.width > 1000 ? "100%" : 600}}>
                             <Container fluid>
                                 <Row className={"justify-content-center"} style={{textAlign: "left"}}>
-                                    <Col className={"col-8"}>
+                                    <Col className={"col-12 col-md-12 col-lg-8"}>
                                         <p style={{fontWeight: "bold", fontSize: 30, whiteSpace: "nowrap"}}>Help us Launch a Telescope</p>
                                     </Col>
                                 </Row>
@@ -106,15 +109,15 @@ class Header extends React.Component<any, any> {
                             </Container>
                         </Col>
 
-                        <Col className={"col-12 col-md-12 col-lg-6"} style={{padding: 0, overflow: "hidden"}}>
-                            <img alt={"Stellar Background"} src={stellarBackground} />
+                        <div style={{position: "absolute", top: "25%", right: "35%", zIndex: 1}}>
+                            <EarthAnimation />
+                        </div>
 
-                            <div style={{position: "absolute", top: "25%", right: "10%"}}>
+                        <Col className={"col-12 col-md-12 col-lg-6"} style={{zIndex: 2, padding: 0, overflow: "hidden"}}>
+                            {/*<img alt={"Stellar Background"} src={stellarBackground} />*/}
+
+                            <div style={{position: "absolute", top: this.state.width > 1000 ? "25%" : "0%", right: this.state.width > 1000 ? "10%" : "0%"}}>
                                 <TelescopeAnimation />
-                            </div>
-
-                            <div style={{position: "absolute", top: "55%", right: "60%"}}>
-                                <EarthAnimation />
                             </div>
                         </Col>
                     </Row>

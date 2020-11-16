@@ -132,8 +132,15 @@ export const Wire: React.FC<ComponentProps> = ({x, y, oneGridStyling, currentCom
                                  height: "100%"
                              }}>
                                 {oneGridStyling &&
-                                    <img alt={"Wire"} src={images[index]} onClick={() => resetComponentType()}
-                                         style={{height: "100%", margin: "auto", padding: 5}} />
+                                    <>
+                                        {index === 0 ?
+                                            <img alt={"Wire"} src={images[index]} onClick={() => resetComponentType()}
+                                                 style={{height: "100%", margin: "auto", padding: 5}} />
+                                            :
+                                            <img alt={"Wire"} src={images[index]} onClick={() => resetComponentType()}
+                                                 style={{height: "100%", margin: "auto", paddingTop: 20, paddingBottom: 20}} />
+                                        }
+                                    </>
                                 }
 
                                 {!oneGridStyling  &&

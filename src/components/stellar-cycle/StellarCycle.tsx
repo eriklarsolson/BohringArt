@@ -3,7 +3,7 @@ import { Container, Row, Col } from 'react-bootstrap'
 import Button from "react-bootstrap/Button";
 import './StellarCycle.scss'
 import stellarBackground from './stellarBackground.png';
-import avgstar from './images/avgstar.png';
+import avgstar from './images/average_star_G.png';
 import blackhole from './images/blackhole.png';
 import massivestar from './images/massivestar.png';
 import nebula from './images/nebula.png';

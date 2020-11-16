@@ -30,7 +30,7 @@ class Home extends React.Component<any, any> {
         }
         return (
             <>
-                <div style={{position: "relative", height: "100%", width: "100%"}}>
+                <div style={{position: "relative", height: "100%", width: "100%", backgroundColor: "#F8EDDD"}}>
                     <ToastContainer
                         position="top-center"
                         autoClose={3000}

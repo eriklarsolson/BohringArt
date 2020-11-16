@@ -75,7 +75,7 @@ class Sidebar extends React.Component<any, any> {
                            </Row>
                        </>
                        :
-                       <div></div>
+                       <div />
                        }
 
                    {/*<hr style={{backgroundColor: "white", height: "4px", margin: "30px 10px 30px 10px", borderRadius: "30px"}}/>*/}

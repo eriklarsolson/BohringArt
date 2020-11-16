@@ -56,7 +56,7 @@ export const ObjectiveSlideOut: React.FC<AnimationProps>  = ({setParentState, ti
                             <div style={{position: "absolute", width: "100%", height: "100%", backgroundColor: "#F8EDDD",
                                 clipPath: "polygon(0 0, 95% 0, 100% 100%, 0 100%)"}} />
 
-t                          <Container fluid style={{padding: 100, margin: 50}}>
+t                          <Container fluid style={{padding: 45}}>
                                 <Row className={"justify-content-center"}>
                                     <Col className={"col-8"}>
                                         <p style={{fontSize: 40, fontWeight: "bold", color: "#29405B", textAlign: "left"}}>{title}</p>
@@ -65,7 +65,7 @@ t                          <Container fluid style={{padding: 100, margin: 50}}>
 
                                 <Row className={"justify-content-center"}>
                                     <Col className={"col-8"}>
-                                        <p style={{fontSize: 18, color: "#29405B", textAlign: "left"}}>{description}</p>
+                                        <p style={{fontSize: 18, color: "#29405B", textAlign: "left", whiteSpace: "pre-line"}}>{description}</p>
                                     </Col>
                                 </Row>
 
@@ -80,7 +80,7 @@ t                          <Container fluid style={{padding: 100, margin: 50}}>
                                     </Row>
                                 {/*}*/}
 
-                                <Row className={"justify-content-center align-content-center"} style={{marginTop: 50}}>
+                                <Row className={"justify-content-center align-content-center"} style={{marginTop: 35}}>
                                     <Col className={"col-8"}>
                                         <Button variant="primary" className={"green-button"} style={{float: "right", width: "25%",
                                             clipPath: "polygon(0 0, 95% 0, 100% 100%, 5% 100%)"}} onClick={() => hideBox()}>

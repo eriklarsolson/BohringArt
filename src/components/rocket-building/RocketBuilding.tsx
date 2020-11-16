@@ -321,7 +321,13 @@ class RocketBuilding extends React.Component<any, any> {
                     {this.state.popupOpened &&
                     <div style={{position: "absolute", top: 0, bottom: 0, left: 0, right: 0, zIndex: 4, overflow: "hidden"}}>
                             <ObjectiveSlideOut title={"03 To The Stars"}
-                                               description={"Using the rocket pieces in the sidebar, create a rocket consisting of an engine, boosters, a body, and a cone. Make sure to account for fuel, air resistance, and weight as all affect the rocket’s motion greatly. Click LAUNCH  to send your rocket off into space with the telescope as the payload. Along the way, answer TEXT-based questions that determine the fate of your journey! Remember to answer the questions keeping in mind the cost of the rocket as well as the survival of its crew."}
+                                               description={"1. Using the rocket pieces in the sidebar, create a rocket " +
+                                               "consisting of an engine, boosters, a body, and a cone. \n\n 2. Make sure to " +
+                                               "account for fuel, air resistance, and weight as all affect the rocket’s " +
+                                               "motion greatly. \n\n 3. Click LAUNCH  to send your rocket off into space with the " +
+                                               "telescope as the payload. \n\n 4. Along the way, answer TEXT-based questions that " +
+                                               "determine the fate of your journey! \n\n 5. Remember to answer the questions keeping " +
+                                               "in mind the cost of the rocket as well as the survival of its crew."}
                                                setParentState={() => cyclePopup()} />
                         </div>
                     }

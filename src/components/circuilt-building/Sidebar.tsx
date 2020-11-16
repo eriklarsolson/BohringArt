@@ -15,7 +15,12 @@ class Sidebar extends React.Component<any, any> {
                    <div style={{position: "absolute", width: "100%", height: "100%", backgroundColor: "#29405B",
                        clipPath: "polygon(0 0,75% 0, 100% 100%, 0 100%)"}} />
 
-                   <h3 style={{paddingTop: "15px"}}>Modules</h3>
+                   <Row>
+                       <Col className={"col-10"}>
+                           <h3 style={{paddingTop: "15px"}}>Modules</h3>
+                       </Col>
+                   </Row>
+
                    <Row className={"justify-content-start"} style={{margin: 10}}>
                        <OneGridContainer flex={"0 0 75%"} maxWidth={"75%"} componentType={"wire"}/>
                    </Row>
@@ -64,8 +69,8 @@ class Sidebar extends React.Component<any, any> {
                    {/*}*/}
 
                    <Row className={"justify-content-start"} style={{margin: 10, marginTop: "15%"}}>
-                       <Col className="col-10">
-                           <Button style={{width: "100%"}}
+                       <Col className="col-11" style={{flex: "0 0 87%", maxWidth: "87%"}}>
+                           <Button style={{width: "100%", clipPath: "polygon(0 0, 98% 0, 100% 100%, 0 100%)"}}
                                    className={"white-button"}
                                    onClick={() => setComponentsList([])}>Reset</Button>
                        </Col>

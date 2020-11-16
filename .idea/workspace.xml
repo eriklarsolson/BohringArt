@@ -6,24 +6,67 @@
         <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
         <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
       </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
     </expand>
-    <select />
+    <select>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="BRANCH:origin/master" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </select>
   </component>
   <component name="ChangeListManager">
     <list default="true" id="7ea8f8f2-9ee1-4223-8be2-70ed23ed7286" name="Default Changelist" comment="This git commit includes:&#10;adding footer&#10;adding contact form&#10;general styling fixes&#10;more functionality on various activities">
-      <change afterPath="$PROJECT_DIR$/src/components/stellar-cycle/images/average_star_A.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/stellar-cycle/images/average_star_F.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/stellar-cycle/images/average_star_K.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/stellar-cycle/images/average_star_RedDwarf.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/circuilt-building/grid/CircuitSlider.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/stellar-cycle/images/average_star_G.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.firebase/hosting.YnVpbGQ.cache" beforeDir="false" afterPath="$PROJECT_DIR$/.firebase/hosting.YnVpbGQ.cache" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Routes.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Routes.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/about/AboutUsAnimation.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/about/AboutUsAnimation.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/circuilt-building/CircuitBuilding.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/circuilt-building/CircuitBuilding.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/circuilt-building/Sidebar.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/circuilt-building/Sidebar.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/circuilt-building/grid/OneGridContainer.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/circuilt-building/grid/OneGridContainer.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/circuilt-building/grid/SixGridContainer.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/circuilt-building/grid/SixGridContainer.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/circuilt-building/grid/components/Wire.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/circuilt-building/grid/components/Wire.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/home/Header.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/home/Header.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/home/Home.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/home/Home.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/home/TelescopeAnimation.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/home/TelescopeAnimation.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/metal-engraving/MetalEngraving.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/metal-engraving/MetalEngraving.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/shared/header/Header.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/shared/header/Header.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/metal-engraving/MoreInfoAnimation.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/metal-engraving/MoreInfoAnimation.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/metal-engraving/Sidebar.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/metal-engraving/Sidebar.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/metal-engraving/SidebarModule.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/metal-engraving/SidebarModule.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/rocket-building/RocketBuilding.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/rocket-building/RocketBuilding.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/shared/animations/ObjectiveSlideOut.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/shared/animations/ObjectiveSlideOut.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/stellar-cycle/InfoPage.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/stellar-cycle/InfoPage.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/stellar-cycle/ObjectPage.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/stellar-cycle/ObjectPage.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/stellar-cycle/Sidebar.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/stellar-cycle/Sidebar.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/stellar-cycle/StellarCycle.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/stellar-cycle/StellarCycle.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/stellar-cycle/images/average_star_A.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/stellar-cycle/images/average_star_A.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/stellar-cycle/images/average_star_F.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/stellar-cycle/images/average_star_F.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/stellar-cycle/images/average_star_K.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/stellar-cycle/images/average_star_K.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/stellar-cycle/images/average_star_RedDwarf.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/stellar-cycle/images/average_star_RedDwarf.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/stellar-cycle/images/massive_star_1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/stellar-cycle/images/massive_star_2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/stellar-cycle/images/massive_star_3.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/stellar-cycle/images/massive_star_4.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/stellar-cycle/images/massive_star_5.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/stellar-cycle/images/massive_star_btype.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/stellar-cycle/images/massive_star_btype.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/stellar-cycle/images/massive_star_otype.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/stellar-cycle/images/massive_star_otype.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/stellar-cycle/images/nebula.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/stellar-cycle/images/nebula.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/stellar-cycle/images/neutronstar.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/stellar-cycle/images/neutronstar.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/stellar-cycle/images/planetarynebula.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/stellar-cycle/images/planetarynebula.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/stellar-cycle/images/redgiant.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/stellar-cycle/images/redgiant.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/stellar-cycle/images/redsupergiant.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/stellar-cycle/images/redsupergiant.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/stellar-cycle/images/supernova.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/stellar-cycle/images/supernova.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/stellar-cycle/images/whitedwarf.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/stellar-cycle/images/whitedwarf.png" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -49,7 +92,7 @@
     <property name="TERMINAL_CUSTOM_COMMANDS_GOT_IT" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="ignore.virus.scanning.warn.message" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/components/stellar-cycle/images" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/components/circuilt-building/grid" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
@@ -59,11 +102,11 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\energ\Documents\ContractWork\DetroitMuseum\bohringart\src\components\circuilt-building\grid" />
       <recent name="C:\Users\energ\Documents\ContractWork\DetroitMuseum\bohringart\src\components\stellar-cycle\images" />
       <recent name="C:\Users\energ\Documents\ContractWork\DetroitMuseum\bohringart\src\components\shared\animations" />
       <recent name="C:\Users\energ\Documents\ContractWork\DetroitMuseum\bohringart\src\components\metal-engraving\images" />
       <recent name="C:\Users\energ\Documents\ContractWork\DetroitMuseum\bohringart\src\components\telescope-activity\grid\components\images" />
-      <recent name="C:\Users\energ\Documents\ContractWork\DetroitMuseum\bohringart\src\components\shared\footer" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\energ\Documents\ContractWork\DetroitMuseum\BohringArt\src\components\stellar-cycle\images" />
@@ -131,6 +174,15 @@
       <workItem from="1599568496911" duration="44092000" />
       <workItem from="1599654221743" duration="39492000" />
       <workItem from="1599740453572" duration="6820000" />
+      <workItem from="1601503746125" duration="5329000" />
+      <workItem from="1602618161611" duration="627000" />
+      <workItem from="1602699514736" duration="46000" />
+      <workItem from="1604696652623" duration="3754000" />
+      <workItem from="1604929302437" duration="599000" />
+      <workItem from="1605039805971" duration="4237000" />
+      <workItem from="1605187353025" duration="599000" />
+      <workItem from="1605487344829" duration="14000" />
+      <workItem from="1605543547789" duration="637000" />
     </task>
     <task id="LOCAL-00010" summary="adding pics">
       <created>1597328515298</created>
@@ -535,18 +587,6 @@
     <option name="LAST_COMMIT_MESSAGE" value="Yeah, this is a pretty big update. Fixed whole bunch of styling issues everywhere, created new error slide up, built out circuit building activity more, etc..." />
   </component>
   <component name="WindowStateProjectService">
-    <state x="828" y="178" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1595441686616">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state x="828" y="178" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1595441686616" />
-    <state x="711" y="322" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1596047050973">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state x="711" y="322" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1920.1040@0.0.1920.1040" timestamp="1596047050973" />
-    <state x="765" y="236" key="#com.intellij.ide.util.MemberChooser" timestamp="1595382862279">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state x="765" y="236" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1040@0.0.1920.1040" timestamp="1595382862279" />
     <state x="920" y="267" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1599140072289">
       <screen x="0" y="0" width="2560" height="1040" />
     </state>
@@ -556,72 +596,31 @@
       <screen x="0" y="0" width="2560" height="1040" />
     </state>
     <state x="123" y="92" key="DiffContextDialog/-1920.0.1920.1040/0.0.2560.1040@0.0.2560.1040" timestamp="1598304764879" />
-    <state x="92" y="92" width="1736" height="856" key="DiffContextDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1595972265667" />
-    <state x="629" y="298" key="EditFileWatcherDialog" timestamp="1594947783720">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state x="629" y="298" key="EditFileWatcherDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1594947783720" />
     <state x="987" y="275" key="FileChooserDialogImpl" timestamp="1598628248555">
       <screen x="0" y="0" width="2560" height="1040" />
     </state>
     <state x="987" y="275" key="FileChooserDialogImpl/-1920.0.1920.1040/0.0.2560.1040@0.0.2560.1040" timestamp="1598628248555" />
     <state x="740" y="275" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1597792615702" />
-    <state width="1480" height="168" key="GridCell.Tab.0.bottom" timestamp="1595717092156">
-      <screen x="0" y="0" width="1500" height="960" />
-    </state>
-    <state width="1480" height="168" key="GridCell.Tab.0.bottom/0.0.1500.960@0.0.1500.960" timestamp="1595717092156" />
-    <state width="1899" height="282" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1594947472940" />
-    <state width="1480" height="168" key="GridCell.Tab.0.center" timestamp="1595717092156">
-      <screen x="0" y="0" width="1500" height="960" />
-    </state>
-    <state width="1480" height="168" key="GridCell.Tab.0.center/0.0.1500.960@0.0.1500.960" timestamp="1595717092156" />
-    <state width="1899" height="282" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1594947472940" />
-    <state width="1480" height="168" key="GridCell.Tab.0.left" timestamp="1595717092156">
-      <screen x="0" y="0" width="1500" height="960" />
-    </state>
-    <state width="1480" height="168" key="GridCell.Tab.0.left/0.0.1500.960@0.0.1500.960" timestamp="1595717092156" />
-    <state width="1899" height="282" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1594947472940" />
-    <state width="1480" height="168" key="GridCell.Tab.0.right" timestamp="1595717092156">
-      <screen x="0" y="0" width="1500" height="960" />
-    </state>
-    <state width="1480" height="168" key="GridCell.Tab.0.right/0.0.1500.960@0.0.1500.960" timestamp="1595717092156" />
-    <state width="1899" height="282" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1594947472940" />
-    <state x="461" y="165" key="SettingsEditor" timestamp="1595965465549">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state x="461" y="165" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1595965465549" />
     <state x="736" y="253" key="Vcs.Push.Dialog.v2" timestamp="1599706195741">
       <screen x="0" y="0" width="2560" height="1040" />
     </state>
     <state x="736" y="253" key="Vcs.Push.Dialog.v2/-1920.0.1920.1040/0.0.2560.1040@0.0.2560.1040" timestamp="1599706195741" />
     <state x="552" y="253" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1597885372762" />
-    <state x="565" y="130" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser" timestamp="1595958216715">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state x="565" y="130" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser/0.0.1920.1040@0.0.1920.1040" timestamp="1595958216715" />
     <state x="1025" y="434" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1598902144179">
       <screen x="0" y="0" width="2560" height="1040" />
     </state>
     <state x="1025" y="434" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/-1920.0.1920.1040/0.0.2560.1040@0.0.2560.1040" timestamp="1598902144179" />
     <state x="769" y="434" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1920.1040@0.0.1920.1040" timestamp="1597192452326" />
-    <state x="451" y="112" width="1878" height="928" key="find.popup" timestamp="1599708430692">
+    <state x="451" y="112" width="1878" height="928" key="find.popup" timestamp="1605060496344">
       <screen x="0" y="0" width="2560" height="1040" />
     </state>
-    <state x="451" y="112" width="1878" height="928" key="find.popup/-1920.0.1920.1040/0.0.2560.1040@0.0.2560.1040" timestamp="1599708430692" />
-    <state x="222" y="236" width="549" height="534" key="find.popup/0.0.1500.960@0.0.1500.960" timestamp="1595724537154" />
+    <state x="-1582" y="112" width="1409" height="928" key="find.popup/-1920.0.1920.1040/0.0.2560.1040@-1920.0.1920.1040" timestamp="1602618176556" />
+    <state x="451" y="112" width="1878" height="928" key="find.popup/-1920.0.1920.1040/0.0.2560.1040@0.0.2560.1040" timestamp="1605060496344" />
     <state x="1111" y="160" width="585" height="624" key="find.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1597886543166" />
-    <state x="601" y="246" width="700" height="530" key="recent.locations.popup" timestamp="1595211874198">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state x="821" y="240" key="run.anything.popup" timestamp="1601511660259">
+      <screen x="0" y="0" width="2560" height="1040" />
     </state>
-    <state x="601" y="246" width="700" height="530" key="recent.locations.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1595211874198" />
-    <state x="736" y="292" key="refactoring.ChangeSignatureDialog" timestamp="1595374531681">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state x="736" y="292" key="refactoring.ChangeSignatureDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1595374531681" />
-    <state x="483" y="224" key="run.anything.popup" timestamp="1599780136922">
-      <screen x="0" y="0" width="1500" height="960" />
-    </state>
-    <state x="821" y="240" key="run.anything.popup/-1920.0.1920.1040/0.0.2560.1040@0.0.2560.1040" timestamp="1599744865740" />
+    <state x="821" y="240" key="run.anything.popup/-1920.0.1920.1040/0.0.2560.1040@0.0.2560.1040" timestamp="1601511660259" />
     <state x="483" y="224" key="run.anything.popup/0.0.1500.960@0.0.1500.960" timestamp="1599780136922" />
     <state x="616" y="240" key="run.anything.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1597861525568" />
     <state x="831" y="225" width="896" height="678" key="search.everywhere.popup" timestamp="1599744888187">

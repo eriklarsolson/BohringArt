@@ -58,7 +58,7 @@ class Sidebar extends React.Component<any, any> {
 
                    <Accordion defaultActiveKey="1" style={{marginRight: 5}}>
                        <Row style={{margin: 5, paddingLeft: 25}}>
-                           <Col className="col-7" style={{marginLeft: 15, flex: "0 0 70%", maxWidth: "70%", minWidth: 150,
+                           <Col className="col-7" style={{marginLeft: 15, flex: "0 0 69%", maxWidth: "69%", minWidth: 150,
                                clipPath: "polygon(0 0, 94% 0, 100% 100%, 0 100%)"}}>
                                <Row className={"justify-content-center"}>
                                    <Col className="col-12" style={{backgroundColor: "#F8EDDD", paddingTop: 10, paddingBottom: 10}}>
@@ -121,17 +121,17 @@ class Sidebar extends React.Component<any, any> {
                        </Row>
                    </Accordion>
 
-                   <Row style={{margin: 5, paddingLeft: 25, marginTop: 50}}>
-                       <Col className="col-9">
-                           <Button style={{width: "100%"}}
+                   <Row style={{margin: 10, paddingLeft: 20, marginTop: 50}}>
+                       <Col className="col-9" style={{flex: "0 0 80%", maxWidth: "80%"}}>
+                           <Button style={{width: "100%", clipPath: "polygon(0 0, 98% 0, 100% 100%, 0 100%)"}}
                                    className={"white-button"}
                                    onClick={() => this.props.setTool(TOOL_ERASER)}>Metal Filler (Eraser)</Button>
                        </Col>
                    </Row>
 
-                   <Row style={{margin: 5, paddingLeft: 25}}>
-                       <Col className="col-9">
-                           <Button style={{width: "100%"}}
+                   <Row style={{margin: 10, paddingLeft: 20}}>
+                       <Col className="col-9" style={{flex: "0 0 82%", maxWidth: "82%"}}>
+                           <Button style={{width: "100%", clipPath: "polygon(0 0, 98% 0, 100% 100%, 0 100%)"}}
                                    className={"white-button"}
                                    onClick={this.props.clearCanvas}>Reset</Button>
                        </Col>
