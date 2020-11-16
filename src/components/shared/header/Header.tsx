@@ -85,8 +85,7 @@ const Header = (props: {location: any }) => {
 
                         <Nav className="ml-auto" activeKey={location.pathname}>
 
-                            {/*TODO - Delete below once we switch actual home page back to / and not /home so we can click logo to go home */}
-                            <Nav.Link as={Link} to={{pathname: '/home', state: { popupOpened: false }}}
+                            <Nav.Link as={Link} to={{pathname: '/', state: { popupOpened: false }}}
                                       active={location.pathname.startsWith('/home') || location.pathname === '/'}
                                       style={{marginLeft: 25}}>
                                 Home

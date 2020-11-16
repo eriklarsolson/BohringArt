@@ -10,7 +10,6 @@ import average_star_A from "./images/average_star_A.png"
 import average_star_F from "./images/average_star_F.png"
 import average_star_K from "./images/average_star_K.png"
 import average_star_RedDwarf from "./images/average_star_RedDwarf.png"
-// import massive_star_5 from "./images/massive_star_5.png"
 import massive_star_btype from "./images/massive_star_btype.png"
 import massive_star_otype from "./images/massive_star_otype.png"
 import nebula from "./images/nebula.png"
@@ -438,7 +437,7 @@ class ObjectPage extends React.Component<any, any> {
 
                     <Container fluid className={"d-flex h-100 flex-column"} style={{margin: 0, padding: 0, backgroundImage:`url(${stellarBackground})`}}>
                         <Row className={"flex-grow-1"} style={{margin: 0}}>
-                            <Col className={"col-2"} style={{color: "white", padding: 0}}>
+                            <Col className={"col-12 col-sm-3"} style={{color: "white", padding: 0}}>
 
                                 {(this.state.stellarObjects[this.state.massClass][this.state.index].title === "Average Star" ||
                                     this.state.stellarObjects[this.state.massClass][this.state.index].title === "Massive Star") ?
@@ -490,7 +489,7 @@ class ObjectPage extends React.Component<any, any> {
                                 }
                             </Col>
 
-                            <Col className={"col-10"} style={{margin: "0", padding: "0"}}>
+                            <Col className={"col-12 col-sm-9"} style={{margin: "0", padding: "0"}}>
                                 <Container fluid style={{margin: "0", padding: "0"}}>
                                     <Row style={{margin: 0}}>
                                         <Col className="col-2" style={{margin: "3%"}}>
