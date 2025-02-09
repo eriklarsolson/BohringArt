@@ -3,9 +3,6 @@ import { Container, Row, Col } from 'react-bootstrap'
 import {OneGridContainer} from "./grid/OneGridContainer";
 import Button from "react-bootstrap/Button";
 import {setComponentsList} from "./grid/Functionality";
-import inductor from './grid/components/images/inductor.png'
-import capacitor from './grid/components/images/capacitor.png'
-import {SidebarModule} from "../metal-engraving/SidebarModule";
 
 class Sidebar extends React.Component<any, any> {
     render() {

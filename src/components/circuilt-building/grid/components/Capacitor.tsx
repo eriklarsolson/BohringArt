@@ -1,11 +1,10 @@
 import React, {useState} from 'react'
 import { DragPreviewImage, useDrag } from 'react-dnd'
 import { ComponentTypes } from '../../../shared/models/ComponentTypes'
-import capacitor from './images/capacitor.png'
-import rotate from './images/rotate.png'
+import capacitor from '@/src/assets/CircuitBuilding/GridComponents/capacitor.png'
+import rotate from '@/src/assets/CircuitBuilding/GridComponents/rotate.png'
 import { Container, Row } from 'react-bootstrap'
 import {getComponentAtPos, setCurrentComponentsRotation} from "../Functionality";
-import battery from "./images/battery.png";
 
 let style: React.CSSProperties = {
     cursor: 'move',

@@ -1,7 +1,7 @@
 import React from 'react';
 import {Container, Row, Col} from 'react-bootstrap'
-import line from "../shared/header/line.png";
-import "../home/Home.scss"
+import line from "../../assets/header/line.png";
+import "../home/Home.css"
 
 class Resources extends React.Component {
     render() {

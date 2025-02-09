@@ -1,12 +1,12 @@
 import React, {useState} from 'react'
 import { DragPreviewImage, useDrag } from 'react-dnd'
-import concave from './images/concave.png'
+import concave from '@/src/assets/TelescopeActivity/GridComponents/concave.png'
 import { Container, Row, Col } from 'react-bootstrap'
 import {TelescopeTypes} from "../../../shared/models/TelescopeTypes";
 import {getComponentAtPos} from "../Functionality";
 import {setCurrentComponentsRotation} from "../Functionality";
 import rotate from "../../../circuilt-building/grid/components/images/rotate.png";
-import convex from "./images/convex.png";
+import convex from "@/src/assets/TelescopeActivity/GridComponents/convex.png";
 
 let style: React.CSSProperties = {
     cursor: 'move',

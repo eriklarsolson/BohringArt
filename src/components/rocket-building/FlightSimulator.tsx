@@ -1,19 +1,15 @@
 import React from "react";
 import { Container, Row, Col } from 'react-bootstrap'
 import Button from "react-bootstrap/Button";
-import 'font-awesome/css/font-awesome.min.css';
-import "./Rocket.scss"
 import {RocketAnimation} from "./RocketAnimation";
 import {RocketBarAnimation} from "./RocketBarAnimation";
 import ScenarioRadioButton from "./ScenarioRadioButton";
-import long_bg from "./images/long_bg.png";
-import stellarBackground from "../stellar-cycle/stellarBackground.png"
-import {TextScrollBarAnimation} from "../shared/animations/TextScrollBarAnimation";
 import ErrorPopup from "../shared/modals/ErrorPopup";
-import {getCurrentBoardIssues} from "../circuilt-building/grid/Functionality";
 import PartPropertySlider from "./PartPropertySlider";
-import line from "../shared/header/line.png";
+import line from "../../assets/header/line.png";
 import MessagePopup from "../shared/modals/MessagePopup";
+import long_bg from "@/src/assets/RocketBuilding/long_bg.png";
+import "./Rocket.css"
 
 class FlightSimulator extends React.Component<any, any> {
     constructor(props: any) {

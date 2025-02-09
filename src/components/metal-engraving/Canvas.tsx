@@ -1,5 +1,5 @@
 import React, {useCallback, useEffect, useState} from 'react';
-import canvasBackground from './metal_background.png'
+import canvasBackground from '../../assets/MetalEngraving/metal_background.png'
 import {
     TOOL_ELLIPSE,
     TOOL_ERASER,

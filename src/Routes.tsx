@@ -1,19 +1,17 @@
 import React, { Component } from 'react';
-import { Home } from "./components/home"
-
 import { Switch, Route } from 'react-router-dom';
-import {PageNotFound} from "./components/page-not-found";
-import {Resources} from "./components/resources";
-import {AboutUs} from "./components/about";
-import {CircuitBuilding} from "./components/circuilt-building";
-import {MetalEngraving} from "./components/metal-engraving";
-import {TelescopeActivity} from "./components/telescope-activity";
 import {StellarCycle} from "./components/stellar-cycle";
 import ObjectPage from "./components/stellar-cycle/ObjectPage";
 import InfoPage from "./components/stellar-cycle/InfoPage";
-import {RocketBuilding} from "./components/rocket-building";
 import FlightSimulator from "./components/rocket-building/FlightSimulator";
-import {UnderConstruction} from "./components/under-construction";
+import AboutUs from "./components/about/AboutUs";
+import Resources from "./components/resources/Resources";
+import Home from "./components/home/Home";
+import PageNotFound from "./components/page-not-found/PageNotFound";
+import RocketBuilding from "./components/rocket-building/RocketBuilding";
+import MetalEngraving from "./components/metal-engraving/MetalEngraving";
+import CircuitBuilding from "./components/circuilt-building/CircuitBuilding";
+import TelescopeActivity from "@/src/components/telescope-activity/TelescopeActivity";
 
 class Routes extends Component {
     render() {

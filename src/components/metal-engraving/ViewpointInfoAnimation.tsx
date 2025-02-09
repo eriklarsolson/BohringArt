@@ -1,8 +1,7 @@
-import * as React from "react";
+import React, {useState} from "react";
 import {motion, useAnimation} from "framer-motion";
 import { Container, Row, Col, Button } from 'react-bootstrap'
-import viewpoint from "./images/Viewpoint.png"
-import {useState} from "react";
+import viewpoint from "@/src/assets/MetalEngraving/Viewpoint.png"
 
 export interface AnimationProps {
     setParentState: any

@@ -1,4 +1,4 @@
-import * as React from "react";
+import React from "react";
 import {motion, useAnimation} from "framer-motion";
 import { Container, Row, Col, Button } from 'react-bootstrap'
 import {useState} from "react";
@@ -14,7 +14,7 @@ import happyGreen from "../modals/Rate/happyGreen.png";
 import smartGreen from "../modals/Rate/smartGreen.png";
 import emailjs from "emailjs-com";
 import {toast} from "react-toastify";
-import '../modals/Rate/Rate.scss';
+import '../modals/Rate/Rate.css';
 
 export interface AnimationProps {
     setParentState: any

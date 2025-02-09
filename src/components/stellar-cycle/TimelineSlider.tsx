@@ -1,65 +1,55 @@
 import React from 'react';
-import { makeStyles, Theme, createStyles } from '@material-ui/core/styles';
-import Slider from '@material-ui/core/Slider';
-import {withStyles} from "@material-ui/core";
+import { styled } from '@mui/material/styles';
+import { Slider } from '@mui/material';
 
-const useStyles = makeStyles((theme: Theme) =>
-    createStyles({
-        root: {
-            width: "100%",
-        },
-        margin: {
-            height: theme.spacing(3),
-        },
-    }),
-);
+// Styled wrapper component
+const SliderWrapper = styled('div')({
+    width: '100%'
+});
 
-//TODO - This current styling breaks the slider (doesn't slide smoothly)
-const TimeSlider = withStyles({
-    root: {
-        color: 'white',
-        height: 30,
-    },
-    thumb: {
+// Custom styled Timeline Slider
+const TimeSlider = styled(Slider)({
+    color: 'white',
+    height: 30,
+    '& .MuiSlider-thumb': {
         height: 30,
         width: 10,
         backgroundColor: '#fff',
         borderRadius: 0,
         marginTop: 0,
-        '&:focus, &:hover, &$active': {
+        '&:focus, &:hover, &.Mui-active': {
             boxShadow: 'inherit',
         },
     },
-    track: {
+    '& .MuiSlider-track': {
         height: 30,
+        border: 'none',
     },
-    rail: {
+    '& .MuiSlider-rail': {
         height: 30,
-        border: "7px solid #29405B"
+        border: '7px solid #29405B',
     },
-})(Slider);
+});
 
-interface Props {
-    children: React.ReactElement;
-    value: number
-    max: number
-    changeTime: any
+interface TimelineSliderProps {
+    value: number;
+    max: number;
+    changeTime: (event: Event, newValue: number | number[]) => void;
 }
 
-export default function TimelineSlider(props: any) {
-    const classes = useStyles();
-
+const TimelineSlider: React.FC<TimelineSliderProps> = ({ value, max, changeTime }) => {
     return (
-        <div className={classes.root}>
-            {/* */}
+        <SliderWrapper>
             <TimeSlider
-                value={props.value}
+                value={value}
                 aria-labelledby="timeline-slider"
                 step={20}
-                max={props.max}
+                max={max}
                 valueLabelDisplay="off"
-                onChange={props.changeTime}
+                onChange={changeTime}
             />
-        </div>
+        </SliderWrapper>
     );
-}
+};
+
+export default TimelineSlider;

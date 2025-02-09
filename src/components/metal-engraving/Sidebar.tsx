@@ -1,11 +1,12 @@
 import React from "react";
 import { Container, Row, Col } from 'react-bootstrap'
-import square from "./images/square.png";
-import circle from "./circle.png";
-import triangle from "./images/triangle.png";
 import Button from "react-bootstrap/Button";
 import Accordion from "react-bootstrap/Accordion"
 import {SidebarModule} from "./SidebarModule";
+import square from "@/src/assets/MetalEngraving/square.png";
+import circle from "@/src/assets/MetalEngraving/circle.png";
+import triangle from "@/src/assets/MetalEngraving/triangle.png";
+
 export const TOOL_LASER = 'laser';
 export const TOOL_OPTICS = 'optics';
 export const TOOL_PRISM = 'prism';

@@ -1,66 +1,60 @@
 import React from 'react';
-import { makeStyles, Theme, createStyles } from '@material-ui/core/styles';
-import Slider from '@material-ui/core/Slider';
-import {withStyles} from "@material-ui/core";
+import { styled } from '@mui/material/styles';
+import { Slider } from '@mui/material';
 
-const useStyles = makeStyles((theme: Theme) =>
-    createStyles({
-        root: {
-            width: "100%",
-        },
-        margin: {
-            height: theme.spacing(3),
-        },
-    }),
-);
+// Styled wrapper component
+const SliderWrapper = styled('div')({
+    width: '100%'
+});
 
-const StellarSlider = withStyles({
-    root: {
-        color: 'white',
-        height: 6,
-    },
-    thumb: {
+// Custom styled Stellar Slider
+const StellarSlider = styled(Slider)({
+    color: 'white',
+    height: 6,
+    '& .MuiSlider-thumb': {
         height: 24,
         width: 24,
         backgroundColor: '#fff',
         border: '2px solid currentColor',
         marginTop: -10,
         marginLeft: -12,
-        '&:focus, &:hover, &$active': {
+        '&:focus, &:hover, &.Mui-active': {
             boxShadow: 'inherit',
         },
     },
-    track: {
+    '& .MuiSlider-track': {
         height: 6,
         borderRadius: 2,
         backgroundColor: '#fff',
     },
-    rail: {
+    '& .MuiSlider-rail': {
         height: 6,
         borderRadius: 2,
     },
-})(Slider);
+});
 
-interface Props {
-    children: React.ReactElement;
-    value: number
-    max: number
-    changeValue: any
+interface PropertiesSliderProps {
+    value: number;
+    max: number;
+    changeValue: (event: Event, newValue: number | number[]) => void;
 }
 
-export default function PropertiesSlider(props: any) {
-    const classes = useStyles();
-
+const PropertiesSlider: React.FC<PropertiesSliderProps> = ({
+                                                               value,
+                                                               max,
+                                                               changeValue
+                                                           }) => {
     return (
-        <div className={classes.root}>
-            {/* */}
+        <SliderWrapper>
             <StellarSlider
-                value={props.value}
+                value={value}
                 step={20}
-                max={props.max}
+                max={max}
                 valueLabelDisplay="off"
-                onChange={props.changeValue}
+                onChange={changeValue}
             />
-        </div>
+        </SliderWrapper>
     );
-}
+};
+
+export default PropertiesSlider;

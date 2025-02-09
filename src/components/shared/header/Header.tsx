@@ -1,9 +1,9 @@
 import React from 'react';
 import {Nav, Navbar,NavDropdown} from "react-bootstrap";
 import {Link, withRouter} from "react-router-dom";
-import './Header.scss';
-import line from "./line.png"
-import logo from "./logo.png"
+import './Header.css';
+import line from "../../../assets/header/line.png"
+import logo from "../../../assets/header/logo.png"
 import { useState, useEffect } from 'react';
 
 function getWindowDimensions() {
@@ -29,7 +29,7 @@ function useWindowDimensions() {
     return windowDimensions;
 }
 
-const Header = (props: {location: any }) => {
+function Header(props: {location: any }) {
     const { height, width } = useWindowDimensions();
     const { location } = props;
 

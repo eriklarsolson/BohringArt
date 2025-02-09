@@ -2,32 +2,31 @@ import React from "react";
 import { Container, Row, Col } from 'react-bootstrap'
 import Sidebar from "./Sidebar";
 import Button from "react-bootstrap/Button";
-import 'font-awesome/css/font-awesome.min.css';
-import cone_1 from "./images/cones/cone_1.png"
-import cone_2 from "./images/cones/cone_2.png"
-import cone_3 from "./images/cones/cone_3.png"
-import cone_4 from "./images/cones/cone_4.png"
-import body_1 from "./images/bodys/body_1.png"
-import body_2 from "./images/bodys/body_2.png"
-import body_3 from "./images/bodys/body_3.png"
-import body_4 from "./images/bodys/body_4.png"
-import engine_1 from "./images/engines/engine_1.png"
-import engine_2 from "./images/engines/engine_2.png"
-import engine_3 from "./images/engines/engine_3.png"
-import engine_4 from "./images/engines/engine_4.png"
-import booster_1_left from "./images/boosters/booster_1_left.png"
-import booster_1_right from "./images/boosters/booster_1_right.png"
-import booster_2_left from "./images/boosters/booster_2_left.png"
-import booster_2_right from "./images/boosters/booster_2_right.png"
-import booster_3_left from "./images/boosters/booster_3_left.png"
-import booster_3_right from "./images/boosters/booster_3_right.png"
-import booster_4_left from "./images/boosters/booster_4_left.png"
-import booster_4_middle from "./images/boosters/booster_4_middle.png"
-import booster_4_right from "./images/boosters/booster_4_right.png"
-import background from "./images/rocket_assembly_bg.jpg";
 import {MoreInfoAnimation} from "./MoreInfoAnimation";
 import {ObjectiveSlideOut} from "../shared/animations/ObjectiveSlideOut";
 import PartPropertySlider from "./PartPropertySlider";
+import cone_1 from "@/src/assets/RocketBuilding/cones/cone_1.png"
+import cone_2 from "@/src/assets/RocketBuilding/cones/cone_2.png"
+import cone_3 from "@/src/assets/RocketBuilding/cones/cone_3.png"
+import cone_4 from "@/src/assets/RocketBuilding/cones/cone_4.png"
+import body_1 from "@/src/assets/RocketBuilding/bodys/body_1.png"
+import body_2 from "@/src/assets/RocketBuilding/bodys/body_2.png"
+import body_3 from "@/src/assets/RocketBuilding/bodys/body_3.png"
+import body_4 from "@/src/assets/RocketBuilding/bodys/body_4.png"
+import engine_1 from "@/src/assets/RocketBuilding/engines/engine_1.png"
+import engine_2 from "@/src/assets/RocketBuilding/engines/engine_2.png"
+import engine_3 from "@/src/assets/RocketBuilding/engines/engine_3.png"
+import engine_4 from "@/src/assets/RocketBuilding/engines/engine_4.png"
+import booster_1_left from "@/src/assets/RocketBuilding/boosters/booster_1_left.png"
+import booster_1_right from "@/src/assets/RocketBuilding/boosters/booster_1_right.png"
+import booster_2_left from "@/src/assets/RocketBuilding/boosters/booster_2_left.png"
+import booster_2_right from "@/src/assets/RocketBuilding/boosters/booster_2_right.png"
+import booster_3_left from "@/src/assets/RocketBuilding/boosters/booster_3_left.png"
+import booster_3_right from "@/src/assets/RocketBuilding/boosters/booster_3_right.png"
+import booster_4_left from "@/src/assets/RocketBuilding/boosters/booster_4_left.png"
+import booster_4_middle from "@/src/assets/RocketBuilding/boosters/booster_4_middle.png"
+import booster_4_right from "@/src/assets/RocketBuilding/boosters/booster_4_right.png"
+import background from "@/src/assets/RocketBuilding/rocket_assembly_bg.jpg";
 
 class RocketBuilding extends React.Component<any, any> {
     constructor(props: any) {
@@ -391,36 +390,6 @@ class RocketBuilding extends React.Component<any, any> {
                                     <Row style={{margin: 0, alignItems: "flex-start"}}>
                                         <Container fluid style={{alignItems: "flex-start"}}>
                                             <Row className={"justify-content-center"} style={{alignItems: "flex-start"}}>
-                                                {/*<Col className={"col-1"}>*/}
-                                                {/*    <Row style={{marginTop: 30, marginBottom: 30}}>*/}
-                                                {/*        <img className={"arrow"} src={leftarrow} style={{filter: "contrast(0%)"}}*/}
-                                                {/*             height="100px" alt={"left arrow"}*/}
-                                                {/*             onMouseOver={() => this.setState({parentIndex: 0})}*/}
-                                                {/*             onClick={() => payloadArrow(true)} />*/}
-                                                {/*    </Row>*/}
-
-                                                {/*    <Row style={{marginTop: 30, marginBottom: 30}}>*/}
-                                                {/*        <img className={"arrow"} src={leftarrow} style={{filter: "contrast(0%)"}}*/}
-                                                {/*             height="100px" alt={"left arrow"}*/}
-                                                {/*             onMouseOver={() => this.setState({parentIndex: 1})}*/}
-                                                {/*             onClick={() => interstageArrow(true)} />*/}
-                                                {/*    </Row>*/}
-
-                                                {/*    <Row style={{marginTop: 30, marginBottom: 30}}>*/}
-                                                {/*        <img className={"arrow"} src={leftarrow} style={{filter: "contrast(0%)"}}*/}
-                                                {/*             height="100px" alt={"left arrow"}*/}
-                                                {/*             onMouseOver={() => this.setState({parentIndex: 2})}*/}
-                                                {/*             onClick={() => boostersArrow(true)} />*/}
-                                                {/*    </Row>*/}
-
-                                                {/*    <Row style={{marginTop: 30, marginBottom: 30}}>*/}
-                                                {/*        <img className={"arrow"} src={leftarrow} style={{filter: "contrast(0%)"}}*/}
-                                                {/*             height="100px" alt={"left arrow"}*/}
-                                                {/*             onMouseOver={() => this.setState({parentIndex: 3})}*/}
-                                                {/*             onClick={() => engineArrow(true)} />*/}
-                                                {/*    </Row>*/}
-                                                {/*</Col>*/}
-
                                                 <Col className={"ml-auto col-5"} style={{alignItems: "flex-start", marginBottom: 10}}>
                                                     <Row className={"justify-content-center"} style={{maxHeight: 1100, alignItems: "flex-start"}}>
                                                         {this.state.boosterIndex === 3 &&

@@ -2,8 +2,8 @@ import React from "react";
 import { Container, Row, Col } from 'react-bootstrap'
 import {
     Typography,
-} from "@material-ui/core";
-import "./StellarCycle.scss";
+} from "@mui/material";
+import "./StellarCycle.css";
 import PropertiesSlider from "./PropertiesSlider";
 import MassClassRadio from "./MassClassRadio";
 

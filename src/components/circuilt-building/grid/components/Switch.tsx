@@ -1,9 +1,9 @@
 import React, {useState} from 'react'
 import { DragPreviewImage, useDrag } from 'react-dnd'
 import { ComponentTypes } from '../../../shared/models/ComponentTypes'
-import switchOn from './images/switch.png'
-import switchOff from './images/switch_off.png'
-import rotate from './images/rotate.png'
+import switchOn from '@/src/assets/CircuitBuilding/GridComponents/switch.png'
+import switchOff from '@/src/assets/CircuitBuilding/GridComponents/switch_off.png'
+import rotate from '@/src/assets/CircuitBuilding/GridComponents/rotate.png'
 import { Container, Row, Col } from 'react-bootstrap'
 import {
     getComponentAtPos,
@@ -11,7 +11,6 @@ import {
     setComponentType,
     setCurrentComponentsRotation
 } from "../Functionality";
-import resistor from "./images/resistor.png";
 
 let style: React.CSSProperties = {
     cursor: 'move',

@@ -1,7 +1,7 @@
 
-import * as React from "react";
+import React from "react";
 import { motion } from "framer-motion";
-import "./Telescope.scss"
+import "./Telescope.css"
 
 const icon = {
     hidden: {
@@ -65,7 +65,7 @@ export const Animation: React.FC<AnimationProps> = ({paths}) => {
     );
 }
 
-// import * as React from "react";
+// import React from "react";
 // import { motion } from "framer-motion";
 //
 // export const RocketAnimation = () => {

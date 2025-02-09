@@ -1,6 +1,6 @@
-import * as React from "react";
+import React from "react";
 import { motion } from "framer-motion";
-import long_bg from "./images/long_bg.png";
+import long_bg from "@/src/assets/RocketBuilding/long_bg.png";
 
 export const BackgroundAnimation: React.FC  = () => {
     return (

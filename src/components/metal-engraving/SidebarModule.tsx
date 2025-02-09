@@ -1,9 +1,9 @@
 import React, {useState} from 'react'
 import {Col, Container, Row} from "react-bootstrap";
-import lasercomponenticon from "./images/laser_COMPONENT.png";
-import optics from "./images/optics.png";
-import prism from "./images/prism.png";
 import {TOOL_LASER, TOOL_OPTICS, TOOL_PRISM} from "./Sidebar";
+import lasercomponenticon from "@/src/assets/MetalEngraving/laser_COMPONENT.png";
+import optics from "@/src/assets/MetalEngraving/optics.png";
+import prism from "@/src/assets/MetalEngraving/prism.png";
 
 export interface Props {
     tool: string

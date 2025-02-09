@@ -1,10 +1,10 @@
-import * as React from "react";
+import React from "react";
 import {motion, useAnimation} from "framer-motion";
 import { Container, Row, Col, Button } from 'react-bootstrap'
 import {useState} from "react";
-import lasercomponenticon from "./images/laser_COMPONENT.png";
-import optics from "./images/optics.png";
-import prism from "./images/prism.png";
+import lasercomponenticon from "@/src/assets/MetalEngraving/laser_COMPONENT.png";
+import optics from "@/src/assets/MetalEngraving/optics.png";
+import prism from "@/src/assets/MetalEngraving/prism.png";
 
 export interface AnimationProps {
     setParentState: any

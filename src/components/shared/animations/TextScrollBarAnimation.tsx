@@ -1,4 +1,4 @@
-import * as React from "react";
+import React from "react";
 import {motion, useAnimation} from "framer-motion";
 import rocketIcon from "../../rocket-building/images/rocketIcon.png"
 import {useState} from "react";

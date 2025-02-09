@@ -1,11 +1,10 @@
 import React from "react";
-import stellarBackground from './../stellar-cycle/stellarBackground.png';
-import './Home.scss';
 import Button from 'react-bootstrap/Button';
 import {Container, Row, Col} from 'react-bootstrap'
 import {TelescopeAnimation} from "./TelescopeAnimation";
 import {EarthAnimation} from "./EarthAnimation";
-import 'react-toastify/dist/ReactToastify.css';
+import stellarBackground from '@/src/assets/StellarCycle/stellarBackground.png';
+import './Home.css';
 
 class Header extends React.Component<any, any> {
     constructor(props: any) {

@@ -1,6 +1,6 @@
 import React from "react";
-import stellarBackground from './../stellar-cycle/stellarBackground.png';
-import './Home.scss';
+import stellarBackground from '../../assets/StellarCycle/stellarBackground.png';
+import './Home.css';
 import Button from 'react-bootstrap/Button';
 import {Container, Row, Col} from 'react-bootstrap'
 import {TelescopeAnimation} from "./TelescopeAnimation";

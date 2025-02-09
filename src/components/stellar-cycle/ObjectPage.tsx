@@ -1,30 +1,29 @@
 import React from "react";
 import { Container, Row, Col } from 'react-bootstrap'
 import Button from "react-bootstrap/Button";
-import stellarBackground from './stellarBackground.png';
 import Sidebar from "./Sidebar";
-import avgstar from "./images/average_star_G.png"
-import blackhole from "./images/blackhole.png"
-import massivestar from "./images/massivestar.png"
-import average_star_A from "./images/average_star_A.png"
-import average_star_F from "./images/average_star_F.png"
-import average_star_K from "./images/average_star_K.png"
-import average_star_RedDwarf from "./images/average_star_RedDwarf.png"
-import massive_star_btype from "./images/massive_star_btype.png"
-import massive_star_otype from "./images/massive_star_otype.png"
-import nebula from "./images/nebula.png"
-import neutronstar from "./images/neutronstar.png"
-import planetarynebula from "./images/planetarynebula.png"
-import redgiant from "./images/redgiant.png"
-import redsupergiant from "./images/redsupergiant.png"
-import supernova from "./images/supernova.png"
-import whitedwarf from "./images/whitedwarf.png"
-import './StellarCycle.scss'
 import {getIndex} from "../circuilt-building/grid/Functionality";
 import StellarPropertiesPopup from "../shared/modals/StellarPropertiesPopup";
 import {ObjectiveSlideOut} from "../shared/animations/ObjectiveSlideOut";
 import PropertiesSlider from "./PropertiesSlider";
-import {motion, useAnimation} from "framer-motion";
+import avgstar from "../../assets/StellarCycle/average_star_G.png"
+import blackhole from "../../assets/StellarCycle/blackhole.png"
+import massivestar from "../../assets/StellarCycle/massivestar.png"
+import average_star_A from "../../assets/StellarCycle/average_star_A.png"
+import average_star_F from "../../assets/StellarCycle/average_star_F.png"
+import average_star_K from "../../assets/StellarCycle/average_star_K.png"
+import average_star_RedDwarf from "../../assets/StellarCycle/average_star_RedDwarf.png"
+import massive_star_btype from "../../assets/StellarCycle/massive_star_btype.png"
+import massive_star_otype from "../../assets/StellarCycle/massive_star_otype.png"
+import nebula from "../../assets/StellarCycle/nebula.png"
+import neutronstar from "../../assets/StellarCycle/neutronstar.png"
+import planetarynebula from "../../assets/StellarCycle/planetarynebula.png"
+import redgiant from "../../assets/StellarCycle/redgiant.png"
+import redsupergiant from "../../assets/StellarCycle/redsupergiant.png"
+import supernova from "../../assets/StellarCycle/supernova.png"
+import whitedwarf from "../../assets/StellarCycle/whitedwarf.png"
+import stellarBackground from '../../assets/StellarCycle/stellarBackground.png';
+import './StellarCycle.css'
 
 class ObjectPage extends React.Component<any, any> {
     constructor(props: any) {
@@ -523,11 +522,6 @@ class ObjectPage extends React.Component<any, any> {
                                     </Row>
 
                                     <Row className={"justify-content-center"} style={{margin: 0, minHeight: 450}}>
-                                        {/*<Col style={{display: "flex"}} className={"col-2 align-items-center justify-content-end"}>*/}
-                                        {/*    <img className={"arrow"} src={leftarrow} height="100px" alt={"left arrow"}*/}
-                                        {/*        onClick={leftArrow} />*/}
-                                        {/*</Col>*/}
-
                                         <Col className={"col-10 col-md-10 col-lg-6"}>
                                             {(this.state.stellarObjects[this.state.massClass][this.state.index].title === "Average Star" ||
                                                 this.state.stellarObjects[this.state.massClass][this.state.index].title === "Massive Star") ?

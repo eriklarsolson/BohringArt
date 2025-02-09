@@ -1,10 +1,10 @@
 import React from "react";
 import {Button, Modal} from "react-bootstrap";
 import { Container, Row, Col } from 'react-bootstrap'
-import concave from "../../telescope-activity/grid/components/images/concave.png";
-import convex from "../../telescope-activity/grid/components/images/convex.png";
-import flatmirror from "../../telescope-activity/grid/components/images/flatmirror.png";
-import viewpoint from "../../telescope-activity/grid/components/images/viewpoint.png";
+import concave from "@/src/assets/TelescopeActivity/GridComponents/concave.png";
+import convex from "@/src/assets/TelescopeActivity/GridComponents/convex.png";
+import flatmirror from "@/src/assets/TelescopeActivity/GridComponents/flatmirror.png";
+import viewpoint from "@/src/assets/TelescopeActivity/GridComponents/viewpoint.png";
 
 
 class TelescopeQuestionPopup extends React.Component<any, any> {

@@ -1,19 +1,18 @@
 import React from "react";
 import {Container, Row, Col} from 'react-bootstrap'
-import stellarBackground from './stellarBackground.png';
-import Button from "react-bootstrap/Button";
-import avgstar from "./images/average_star_G.png"
-import blackhole from "./images/blackhole.png"
-import massivestar from "./images/massivestar.png"
-import nebula from "./images/nebula.png"
-import neutronstar from "./images/neutronstar.png"
-import planetarynebula from "./images/planetarynebula.png"
-import redgiant from "./images/redgiant.png"
-import redsupergiant from "./images/redsupergiant.png"
-import supernova from "./images/supernova.png"
-import whitedwarf from "./images/whitedwarf.png"
 import {StellarInfoAnimation} from "./StellarInfoAnimation";
 import {StellarDescriptionAnimation} from "./StellarDescriptionAnimation";
+import stellarBackground from '../../assets/StellarCycle/stellarBackground.png';
+import avgstar from "../../assets/StellarCycle/average_star_G.png"
+import blackhole from "../../assets/StellarCycle/blackhole.png"
+import massivestar from "../../assets/StellarCycle/massivestar.png"
+import nebula from "../../assets/StellarCycle/nebula.png"
+import neutronstar from "../../assets/StellarCycle/neutronstar.png"
+import planetarynebula from "../../assets/StellarCycle/planetarynebula.png"
+import redgiant from "../../assets/StellarCycle/redgiant.png"
+import redsupergiant from "../../assets/StellarCycle/redsupergiant.png"
+import supernova from "../../assets/StellarCycle/supernova.png"
+import whitedwarf from "../../assets/StellarCycle/whitedwarf.png"
 
 class InfoPage extends React.Component<any, any> {
     constructor(props: any) {

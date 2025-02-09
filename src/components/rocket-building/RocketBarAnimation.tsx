@@ -1,6 +1,6 @@
-import * as React from "react";
+import React from "react";
 import { motion } from "framer-motion";
-import rocketIcon from "./images/rocketIcon.png"
+import rocketIcon from "@/src/assets/RocketBuilding/rocketIcon.png"
 
 export interface AnimationProps {
     xStart: number

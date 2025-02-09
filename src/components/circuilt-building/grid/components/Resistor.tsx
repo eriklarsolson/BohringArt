@@ -1,8 +1,8 @@
 import React, {useState} from 'react'
 import { DragPreviewImage, useDrag } from 'react-dnd'
 import { ComponentTypes } from '../../../shared/models/ComponentTypes'
-import resistor from './images/resistor.png'
-import rotate from './images/rotate.png'
+import resistor from '@/src/assets/CircuitBuilding/GridComponents/resistor.png'
+import rotate from '@/src/assets/CircuitBuilding/GridComponents/rotate.png'
 import { Container, Row, Col } from 'react-bootstrap'
 import {getComponentAtPos, setCurrentComponentsRotation} from "../Functionality";
 

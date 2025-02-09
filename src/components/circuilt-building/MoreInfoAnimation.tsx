@@ -1,15 +1,12 @@
-import * as React from "react";
+import React from "react";
 import {motion, useAnimation} from "framer-motion";
 import { Container, Row, Col, Button } from 'react-bootstrap'
 import {useState} from "react";
-import wire from "./grid/components/images/wire.png"
-import battery from "./grid/components/images/battery.png"
-import resistor from "./grid/components/images/resistor.png"
-import switchPic from "./grid/components/images/switch.png"
-import capacitor from "./grid/components/images/capacitor.png"
-import inductor from "./grid/components/images/inductor.png"
-import series from "./grid/components/images/series.png"
-import parallel from "./grid/components/images/parallel.png"
+import wire from "@/src/assets/CircuitBuilding/GridComponents/wire.png"
+import battery from "@/src/assets/CircuitBuilding/GridComponents/battery.png"
+import resistor from "@/src/assets/CircuitBuilding/GridComponents/resistor.png"
+import switchPic from "@/src/assets/CircuitBuilding/GridComponents/switch.png"
+import series from "@/src/assets/CircuitBuilding/GridComponents/series.png"
 
 export interface AnimationProps {
     setParentState: any
@@ -20,7 +17,6 @@ export const MoreInfoAnimation: React.FC<AnimationProps>  = ({setParentState}) =
     const [title, setTitle] = useState<string>("WIRE");
     const [description, setDescription] = useState<string>("A conducting, metal rod designed to transfer charges. Electrons can flow through these with little to no resistance, typically. However, making a wire longer increases resistance but thickening it decreases resistance.");
     const [animationStarted, setAnimatedStarted] = useState<boolean>(false);
-
 
     const setClosed = () => {
         setOpen(false)

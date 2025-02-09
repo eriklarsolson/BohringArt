@@ -1,15 +1,15 @@
 import React, {useState} from 'react'
 import { DragPreviewImage, useDrag } from 'react-dnd'
 import { ComponentTypes } from '../../../shared/models/ComponentTypes'
-import wire from './images/wire.png'
-import cornerwire from './images/corner-wire.png'
-import triwire from './images/tri-wire.png'
-import crosswire from './images/cross-wire.png'
-import rotate from './images/rotate.png'
+import rotate from '@/src/assets/CircuitBuilding/GridComponents/rotate.png'
 import { Container, Row, Col } from 'react-bootstrap'
-import leftarrow from "../../../stellar-cycle/leftarrow.png"
-import rightarrow from "../../../stellar-cycle/rightarrow.png";
-import {getComponentAtPos, getComponentType, setComponentType, setCurrentComponentsRotation} from "../Functionality";
+import {getComponentAtPos, setComponentType, setCurrentComponentsRotation} from "../Functionality";
+import wire from '@/src/assets/CircuitBuilding/GridComponents/wire.png'
+import cornerwire from '@/src/assets/CircuitBuilding/GridComponents/corner-wire.png'
+import triwire from '@/src/assets/CircuitBuilding/GridComponents/tri-wire.png'
+import crosswire from '@/src/assets/CircuitBuilding/GridComponents/cross-wire.png'
+import leftarrow from "@/src/assets/StellarCycle/leftarrow.png"
+import rightarrow from "@/src/assets/StellarCycle/rightarrow.png";
 
 let style: React.CSSProperties = {
     cursor: 'move',

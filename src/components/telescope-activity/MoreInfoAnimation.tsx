@@ -1,16 +1,12 @@
-import * as React from "react";
+import React from "react";
 import {motion, useAnimation} from "framer-motion";
 import { Container, Row, Col, Button } from 'react-bootstrap'
 import {useState} from "react";
-import interior from "./interior.png";
-import convex from "./grid/components/images/convex.png";
-import viewpoint from "./grid/components/images/viewpoint.png";
-import terms from "./terms.png";
-import ccd from "./ccd.png";
-import cone_1 from "../rocket-building/images/cones/cone_1.png";
-import body_1 from "../rocket-building/images/bodys/body_1.png";
-import booster_4_middle from "../rocket-building/images/boosters/booster_4_middle.png";
-import engine_1 from "../rocket-building/images/engines/engine_1.png";
+import interior from "../../assets/TelescopeActivity/interior.png";
+import convex from "@/src/assets/TelescopeActivity/GridComponents/convex.png";
+import viewpoint from "@/src/assets/TelescopeActivity/GridComponents/viewpoint.png";
+import terms from "../../assets/TelescopeActivity/terms.png";
+import ccd from "../../assets/TelescopeActivity/ccd.png";
 
 export interface AnimationProps {
     setParentState: any

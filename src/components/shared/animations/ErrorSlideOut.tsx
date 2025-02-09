@@ -1,11 +1,7 @@
-import * as React from "react";
+import React from "react";
 import {motion, useAnimation} from "framer-motion";
 import { Container, Row, Col, Button } from 'react-bootstrap'
 import {useState} from "react";
-import cone_1 from "./images/cones/cone_1.png"
-import body_1 from "./images/bodys/body_1.png"
-import booster_4_middle from "./images/boosters/booster_4_middle.png"
-import engine_1 from "./images/engines/engine_1.png"
 
 export interface AnimationProps {
     closePopup: any

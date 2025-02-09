@@ -1,24 +1,20 @@
-import * as React from "react";
+import React from "react";
 import {motion, useAnimation} from "framer-motion";
 import { Container, Row, Col, Button } from 'react-bootstrap'
 import {useState} from "react";
-import dena from "./images/dena.png";
-import parisa from "./images/parisa2.jpg";
-import brean from "./images/person3.png";
-import danny from "./images/danny.png";
-import wyatt from "./images/person1.png";
-import pranav from "./images/person2.png";
-import ray from "./images/person5.png";
-import lars from "./images/lars.png";
-import hueywen from "./images/hueywin.jpg";
-import mohammad from "./images/mohammad.jpg"
-import "./About.scss"
+import dena from "@/src/assets/AboutUs/dena.png";
+import parisa from "@/src/assets/AboutUs/parisa2.jpg";
+import brean from "@/src/assets/AboutUs/person3.png";
+import danny from "@/src/assets/AboutUs/danny.png";
+import wyatt from "@/src/assets/AboutUs/person1.png";
+import pranav from "@/src/assets/AboutUs/person2.png";
+import ray from "@/src/assets/AboutUs/person5.png";
+import lars from "@/src/assets/AboutUs/lars.jpg";
+import hueywen from "@/src/assets/AboutUs/hueywin.jpg";
+import mohammad from "@/src/assets/AboutUs/mohammad.jpg"
+import "./About.css"
 
-export interface AnimationProps {
-
-}
-
-export const AboutUsAnimation: React.FC<AnimationProps>  = ({}) => {
+export const AboutUsAnimation: React.FC  = () => {
     const controls1 = useAnimation()
     const controls2 = useAnimation()
 

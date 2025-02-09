@@ -1,6 +1,6 @@
-import * as React from "react";
+import React from "react";
 import { motion } from "framer-motion";
-import earth from "./earth.png";
+import earth from "../../assets/UnderConstruction/earth.png";
 
 export const EarthAnimation: React.FC  = () => {
     return (

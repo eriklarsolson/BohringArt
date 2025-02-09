@@ -1,24 +1,22 @@
 import React from "react";
 import { Container, Row, Col } from 'react-bootstrap'
-import leftarrow from "../stellar-cycle/leftarrow.png";
-import rightarrow from "../stellar-cycle/rightarrow.png";
 import PartPropertySlider from "./PartPropertySlider";
-import cone_1 from "./images/cones/cone_1.png"
-import cone_2 from "./images/cones/cone_2.png"
-import cone_3 from "./images/cones/cone_3.png"
-import cone_4 from "./images/cones/cone_4.png"
-import body_1 from "./images/bodys/body_1.png"
-import body_2 from "./images/bodys/body_2.png"
-import body_3 from "./images/bodys/body_3.png"
-import body_4 from "./images/bodys/body_4.png"
-import engine_1 from "./images/engines/engine_1.png"
-import engine_2 from "./images/engines/engine_2.png"
-import engine_3 from "./images/engines/engine_3.png"
-import engine_4 from "./images/engines/engine_4.png"
-import booster_1_left from "./images/boosters/booster_1_left.png"
-import booster_2_left from "./images/boosters/booster_2_left.png"
-import booster_3_left from "./images/boosters/booster_3_left.png"
-import booster_4_left from "./images/boosters/booster_4_left.png"
+import cone_1 from "@/src/assets/RocketBuilding/cones/cone_1.png"
+import cone_2 from "@/src/assets/RocketBuilding/cones/cone_2.png"
+import cone_3 from "@/src/assets/RocketBuilding/cones/cone_3.png"
+import cone_4 from "@/src/assets/RocketBuilding/cones/cone_4.png"
+import body_1 from "@/src/assets/RocketBuilding/bodys/body_1.png"
+import body_2 from "@/src/assets/RocketBuilding/bodys/body_2.png"
+import body_3 from "@/src/assets/RocketBuilding/bodys/body_3.png"
+import body_4 from "@/src/assets/RocketBuilding/bodys/body_4.png"
+import engine_1 from "@/src/assets/RocketBuilding/engines/engine_1.png"
+import engine_2 from "@/src/assets/RocketBuilding/engines/engine_2.png"
+import engine_3 from "@/src/assets/RocketBuilding/engines/engine_3.png"
+import engine_4 from "@/src/assets/RocketBuilding/engines/engine_4.png"
+import booster_1_left from "@/src/assets/RocketBuilding/boosters/booster_1_left.png"
+import booster_2_left from "@/src/assets/RocketBuilding/boosters/booster_2_left.png"
+import booster_3_left from "@/src/assets/RocketBuilding/boosters/booster_3_left.png"
+import booster_4_left from "@/src/assets/RocketBuilding/boosters/booster_4_left.png"
 
 class Sidebar extends React.Component<any, any> {
     render() {
@@ -55,20 +53,6 @@ class Sidebar extends React.Component<any, any> {
                                        <p style={{marginBottom: 0, fontSize: 16, fontWeight: "bold"}}>Cone</p>
                                    </Col>
                                </Row>
-
-                               {/*<Row className={"justify-content-center"} style={{backgroundColor: "#42949F", textAlign: "left", padding: 2}}>*/}
-                               {/*    <Col className={"col-1"}>*/}
-                               {/*        <img alt={"Arrow"} src={leftarrow} className={"part-image"} style={{height: 15}} onClick={() => this.props.changeCone(false)} />*/}
-                               {/*    </Col>*/}
-
-                               {/*    <Col className={"col-5 align-self-center"}>*/}
-                               {/*        <p style={{marginBottom: 0, fontSize: 12, textAlign: "center", fontWeight: "bold"}}>{this.props.cone.title}</p>*/}
-                               {/*    </Col>*/}
-
-                               {/*    <Col className={"col-1"} style={{float: "left"}}>*/}
-                               {/*        <img alt={"Arrow"} src={rightarrow} className={"part-image"} style={{height: 15}} onClick={() => this.props.changeCone(true)} />*/}
-                               {/*    </Col>*/}
-                               {/*</Row>*/}
 
                                <Row style={{margin: "auto", marginTop: 5}}>
                                    {this.props.coneIndex === 0 ?
@@ -163,20 +147,6 @@ class Sidebar extends React.Component<any, any> {
                                        <p style={{marginBottom: 0, fontSize: 16, fontWeight: "bold"}}>Body</p>
                                    </Col>
                                </Row>
-
-                               {/*<Row className={"justify-content-center"} style={{backgroundColor: "#42949F", textAlign: "left", padding: 2}}>*/}
-                               {/*    <Col className={"col-1"}>*/}
-                               {/*        <img alt={"Arrow"} src={leftarrow} className={"part-image"} style={{height: 15}} onClick={() => this.props.changeBody(false)} />*/}
-                               {/*    </Col>*/}
-
-                               {/*    <Col className={"col-5 align-self-center"}>*/}
-                               {/*        <p style={{marginBottom: 0, fontSize: 12, textAlign: "center", fontWeight: "bold"}}>{this.props.body.title}</p>*/}
-                               {/*    </Col>*/}
-
-                               {/*    <Col className={"col-1"} style={{float: "left"}}>*/}
-                               {/*        <img alt={"Arrow"}src={rightarrow} className={"part-image"} style={{height: 15}} onClick={() => this.props.changeBody(true)} />*/}
-                               {/*    </Col>*/}
-                               {/*</Row>*/}
 
                                <Row style={{margin: "auto", marginTop: 5}}>
                                    {this.props.bodyIndex === 0 ?
@@ -403,20 +373,6 @@ class Sidebar extends React.Component<any, any> {
                                        <p style={{marginBottom: 0, fontSize: 16, fontWeight: "bold"}}>Engine</p>
                                    </Col>
                                </Row>
-
-                               {/*<Row className={"justify-content-center"} style={{backgroundColor: "#42949F", textAlign: "left", padding: 2}}>*/}
-                               {/*    <Col className={"col-1"}>*/}
-                               {/*        <img alt={"Arrow"} src={leftarrow} className={"part-image"} style={{height: 15}} onClick={() => this.props.changeEngine(false)} />*/}
-                               {/*    </Col>*/}
-
-                               {/*    <Col className={"col-5  align-self-center"}>*/}
-                               {/*        <p style={{marginBottom: 0, fontSize: 12, textAlign: "center", fontWeight: "bold"}}>{this.props.engine.title}</p>*/}
-                               {/*    </Col>*/}
-
-                               {/*    <Col className={"col-1"} style={{float: "left"}}>*/}
-                               {/*        <img alt={"Arrow"} src={rightarrow} className={"part-image"} style={{height: 15}} onClick={() => this.props.changeEngine(true)} />*/}
-                               {/*    </Col>*/}
-                               {/*</Row>*/}
 
                                <Row style={{margin: "auto", marginTop: 5}}>
                                    {this.props.engineIndex === 0 ?

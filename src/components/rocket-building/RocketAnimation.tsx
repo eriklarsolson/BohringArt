@@ -1,8 +1,8 @@
-import * as React from "react";
+import React from "react";
 import { motion } from "framer-motion";
 import {Container, Row, Col} from 'react-bootstrap'
-import booster_4_middle from "./images/boosters/booster_4_middle.png";
-import big_fire from "./images/Big Fire.png"
+import booster_4_middle from "@/src/assets/RocketBuilding/boosters/booster_4_middle.png";
+import big_fire from "@/src/assets/RocketBuilding/Big Fire.png"
 
 export interface AnimationProps {
     cone: any

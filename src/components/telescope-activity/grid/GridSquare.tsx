@@ -5,7 +5,7 @@ import {canMoveComponent, moveComponent, setCurrentComponent, setCurrentComponen
 import { ColorOverlay } from './ColorOverlay'
 import {DragItem} from "../../shared/models/DragItem";
 import {TelescopeTypes} from "../../shared/models/TelescopeTypes";
-import rotate from "./components/images/rotate.png";
+import rotate from "@/src/assets/TelescopeActivity/GridComponents/rotate.png";
 
 export interface GridSquareProps {
     x: number

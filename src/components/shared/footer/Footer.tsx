@@ -1,11 +1,11 @@
 import React from 'react';
 import { Container, Row, Col } from 'react-bootstrap'
-import logo from "../header/logo.png";
-import sgd from "./sgd.png"
-import msu from "./msu_cropped.png"
+import logo from "../../../assets/header/logo.png";
+import sgd from "../../../assets/footer/sgd.png"
+import msu from "../../../assets/footer/msu_cropped.png"
 import { Link } from "react-router-dom";
-import line from "../header/line.png";
-import "../../stellar-cycle/StellarCycle.scss"
+import line from "../../../assets/header/line.png";
+import "../../stellar-cycle/StellarCycle.css"
 
 const Footer = () => {
 

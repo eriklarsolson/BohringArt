@@ -16,12 +16,10 @@ import {
 import {SixGrid} from "./SixGrid";
 import {Container, Row, Col} from "react-bootstrap";
 import {ComponentTypes} from "../../shared/models/ComponentTypes";
-import {Slider, Typography, withStyles} from "@material-ui/core";
-import ErrorPopup from "../../shared/modals/ErrorPopup";
+import {Typography} from "@mui/material";
 import Button from "react-bootstrap/Button";
 import {toast} from "react-toastify";
-import 'react-toastify/dist/ReactToastify.css';
-import trashcan from "../../shared/images/trashcan.png";
+import trashcan from "../../../assets/shared/trashcan.png";
 import {ErrorSlideOut} from "../../shared/animations/ErrorSlideOut";
 import CircuitSlider from "./CircuitSlider";
 

@@ -29,25 +29,250 @@
     </select>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="cae79131-d9ad-4ceb-b5cf-623d4204e19c" name="Default Changelist" comment="old commit (ignore - about to be merged over)">
-      <change afterPath="$PROJECT_DIR$/src/components/shared/modals/Rate/boredGreen.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/shared/modals/Rate/happyGreen.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/shared/modals/Rate/neutralGreen.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/shared/modals/Rate/sadGreen.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/shared/modals/Rate/smartGreen.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/stellar-cycle/StellarDescriptionAnimation.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.firebase/hosting.YnVpbGQ.cache" beforeDir="false" afterPath="$PROJECT_DIR$/.firebase/hosting.YnVpbGQ.cache" afterDir="false" />
+    <list default="true" id="cae79131-d9ad-4ceb-b5cf-623d4204e19c" name="Default Changelist" comment="committing old work that will be rewritten probably">
+      <change afterPath="$PROJECT_DIR$/.idea/prettier.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/assets/AboutUs/lars.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vite.config.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App.test.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Routes.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Routes.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/about/About.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/about/About.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/about/AboutUs.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/about/AboutUs.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/about/AboutUsAnimation.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/about/AboutUsAnimation.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/about/aboutusbanner.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/AboutUs/aboutusbanner.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/about/images/danny.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/AboutUs/danny.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/about/images/dena.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/AboutUs/dena.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/about/images/hueywin.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/AboutUs/hueywin.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/about/images/lars.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/about/images/logo.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/AboutUs/logo.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/about/images/mohammad.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/AboutUs/mohammad.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/about/images/niels.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/AboutUs/niels.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/about/images/parisa.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/AboutUs/parisa.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/about/images/parisa1.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/AboutUs/parisa1.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/about/images/parisa2.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/AboutUs/parisa2.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/about/images/person1.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/AboutUs/person1.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/about/images/person2.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/AboutUs/person2.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/about/images/person3.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/AboutUs/person3.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/about/images/person4.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/AboutUs/person4.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/about/images/person5.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/AboutUs/person5.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/about/index.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/circuilt-building/CircuitBuilding.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/circuilt-building/CircuitBuilding.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/circuilt-building/CircuitBuilding.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/circuilt-building/CircuitBuilding.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/circuilt-building/MoreInfoAnimation.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/circuilt-building/MoreInfoAnimation.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/circuilt-building/Sidebar.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/circuilt-building/Sidebar.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/circuilt-building/grid/CircuitSlider.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/circuilt-building/grid/CircuitSlider.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/circuilt-building/grid/SixGridContainer.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/circuilt-building/grid/SixGridContainer.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/circuilt-building/grid/components/Battery.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/circuilt-building/grid/components/Battery.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/circuilt-building/grid/components/Capacitor.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/circuilt-building/grid/components/Capacitor.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/circuilt-building/grid/components/Inductor.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/circuilt-building/grid/components/Inductor.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/circuilt-building/grid/components/Resistor.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/circuilt-building/grid/components/Resistor.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/circuilt-building/grid/components/Switch.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/circuilt-building/grid/components/Switch.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/circuilt-building/grid/components/Wire.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/circuilt-building/grid/components/Wire.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/circuilt-building/grid/components/images/battery.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/CircuitBuilding/GridComponents/battery.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/circuilt-building/grid/components/images/capacitor.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/CircuitBuilding/GridComponents/capacitor.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/circuilt-building/grid/components/images/corner-wire.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/CircuitBuilding/GridComponents/corner-wire.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/circuilt-building/grid/components/images/cross-wire.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/CircuitBuilding/GridComponents/cross-wire.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/circuilt-building/grid/components/images/inductor.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/CircuitBuilding/GridComponents/inductor.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/circuilt-building/grid/components/images/parallel.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/CircuitBuilding/GridComponents/parallel.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/circuilt-building/grid/components/images/resistor.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/CircuitBuilding/GridComponents/resistor.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/circuilt-building/grid/components/images/rotate.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/CircuitBuilding/GridComponents/rotate.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/circuilt-building/grid/components/images/series.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/CircuitBuilding/GridComponents/series.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/circuilt-building/grid/components/images/switch.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/CircuitBuilding/GridComponents/switch.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/circuilt-building/grid/components/images/switch_off.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/CircuitBuilding/GridComponents/switch_off.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/circuilt-building/grid/components/images/tri-wire.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/CircuitBuilding/GridComponents/tri-wire.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/circuilt-building/grid/components/images/wire.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/CircuitBuilding/GridComponents/wire.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/circuilt-building/index.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/circuilt-building/objective1wire.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/CircuitBuilding/objective1wire.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/circuilt-building/objective2wire.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/CircuitBuilding/objective2wire.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/circuilt-building/objective3wire.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/CircuitBuilding/objective3wire.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/home/1.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/UnderConstruction/1.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/home/2.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/UnderConstruction/2.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/home/3.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/UnderConstruction/3.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/home/4.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/UnderConstruction/4.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/home/EarthAnimation.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/home/EarthAnimation.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/home/Header.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/home/Header.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/home/Home.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/home/Home.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/home/LearnSection.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/home/LearnSection.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/home/TelescopeAnimation.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/home/TelescopeAnimation.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/home/banner.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/home/banner.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/home/circuitbuilding.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/home/circuitbuilding.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/home/earth.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/UnderConstruction/earth.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/home/hubble.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/home/hubble.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/home/hubble1.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/home/hubble1.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/home/index.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/home/telescope.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/UnderConstruction/telescope.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/metal-engraving/Canvas.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/metal-engraving/Canvas.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/metal-engraving/ColorSlider.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/metal-engraving/ColorSlider.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/metal-engraving/MetalEngraving.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/metal-engraving/MetalEngraving.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/metal-engraving/MoreInfoAnimation.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/metal-engraving/MoreInfoAnimation.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/metal-engraving/Sidebar.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/metal-engraving/Sidebar.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/metal-engraving/SidebarModule.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/metal-engraving/SidebarModule.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/metal-engraving/SizeSlider.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/metal-engraving/SizeSlider.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/metal-engraving/StencilsAnimation.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/metal-engraving/StencilsAnimation.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/metal-engraving/ViewpointInfoAnimation.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/metal-engraving/ViewpointInfoAnimation.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/metal-engraving/circle.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/MetalEngraving/circle.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/metal-engraving/images/Viewpoint.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/MetalEngraving/Viewpoint.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/metal-engraving/images/laser_BLUE.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/MetalEngraving/laser_BLUE.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/metal-engraving/images/laser_COMPONENT.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/MetalEngraving/laser_COMPONENT.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/metal-engraving/images/laser_GREEN.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/MetalEngraving/laser_GREEN.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/metal-engraving/images/laser_LENS.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/MetalEngraving/laser_LENS.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/metal-engraving/images/laser_LENS_blue.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/MetalEngraving/laser_LENS_blue.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/metal-engraving/images/laser_LENS_green.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/MetalEngraving/laser_LENS_green.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/metal-engraving/images/laser_LENS_pink.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/MetalEngraving/laser_LENS_pink.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/metal-engraving/images/laser_LENS_red.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/MetalEngraving/laser_LENS_red.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/metal-engraving/images/laser_LENS_yellow.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/MetalEngraving/laser_LENS_yellow.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/metal-engraving/images/laser_OFF.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/MetalEngraving/laser_OFF.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/metal-engraving/images/laser_PINK.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/MetalEngraving/laser_PINK.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/metal-engraving/images/laser_PRISM.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/MetalEngraving/laser_PRISM.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/metal-engraving/images/laser_RED.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/MetalEngraving/laser_RED.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/metal-engraving/images/laser_WHITE.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/MetalEngraving/laser_WHITE.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/metal-engraving/images/laser_YELLOW.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/MetalEngraving/laser_YELLOW.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/metal-engraving/images/logo.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/MetalEngraving/logo.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/metal-engraving/images/metal_filler.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/MetalEngraving/metal_filler.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/metal-engraving/images/optics.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/MetalEngraving/optics.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/metal-engraving/images/optics_small.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/MetalEngraving/optics_small.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/metal-engraving/images/planet.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/MetalEngraving/planet.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/metal-engraving/images/plant.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/MetalEngraving/plant.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/metal-engraving/images/prism.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/MetalEngraving/prism.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/metal-engraving/images/prism_small.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/MetalEngraving/prism_small.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/metal-engraving/images/snowman.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/MetalEngraving/snowman.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/metal-engraving/images/square.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/MetalEngraving/square.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/metal-engraving/images/star.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/MetalEngraving/star.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/metal-engraving/images/triangle.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/MetalEngraving/triangle.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/metal-engraving/index.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/metal-engraving/metal_background.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/MetalEngraving/metal_background.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/page-not-found/index.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/resources/Resources.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/resources/Resources.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/resources/index.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/rocket-building/BackgroundAnimation.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/rocket-building/BackgroundAnimation.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/rocket-building/FlightSimulator.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/rocket-building/FlightSimulator.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/rocket-building/MoreInfoAnimation.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/rocket-building/MoreInfoAnimation.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/rocket-building/PartPropertySlider.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/rocket-building/PartPropertySlider.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/rocket-building/Rocket.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/rocket-building/Rocket.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/rocket-building/RocketAnimation.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/rocket-building/RocketAnimation.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/rocket-building/RocketBarAnimation.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/rocket-building/RocketBarAnimation.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/rocket-building/RocketBuilding.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/rocket-building/RocketBuilding.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/rocket-building/ScenarioRadioButton.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/rocket-building/ScenarioRadioButton.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/rocket-building/Sidebar.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/rocket-building/Sidebar.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/rocket-building/images/Big Fire.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/RocketBuilding/Big Fire.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/rocket-building/images/Little Fire.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/RocketBuilding/Little Fire.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/rocket-building/images/background.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/RocketBuilding/background.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/rocket-building/images/bodys/body_1.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/RocketBuilding/bodys/body_1.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/rocket-building/images/bodys/body_2.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/RocketBuilding/bodys/body_2.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/rocket-building/images/bodys/body_3.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/RocketBuilding/bodys/body_3.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/rocket-building/images/bodys/body_4.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/RocketBuilding/bodys/body_4.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/rocket-building/images/boosters/booster_1_left.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/RocketBuilding/boosters/booster_1_left.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/rocket-building/images/boosters/booster_1_right.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/RocketBuilding/boosters/booster_1_right.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/rocket-building/images/boosters/booster_2_left.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/RocketBuilding/boosters/booster_2_left.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/rocket-building/images/boosters/booster_2_right.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/RocketBuilding/boosters/booster_2_right.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/rocket-building/images/boosters/booster_3_left.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/RocketBuilding/boosters/booster_3_left.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/rocket-building/images/boosters/booster_3_right.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/RocketBuilding/boosters/booster_3_right.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/rocket-building/images/boosters/booster_4_left.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/RocketBuilding/boosters/booster_4_left.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/rocket-building/images/boosters/booster_4_middle.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/RocketBuilding/boosters/booster_4_middle.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/rocket-building/images/boosters/booster_4_right.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/RocketBuilding/boosters/booster_4_right.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/rocket-building/images/cones/cone_1.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/RocketBuilding/cones/cone_1.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/rocket-building/images/cones/cone_2.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/RocketBuilding/cones/cone_2.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/rocket-building/images/cones/cone_3.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/RocketBuilding/cones/cone_3.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/rocket-building/images/cones/cone_4.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/RocketBuilding/cones/cone_4.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/rocket-building/images/engines/engine_1.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/RocketBuilding/engines/engine_1.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/rocket-building/images/engines/engine_2.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/RocketBuilding/engines/engine_2.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/rocket-building/images/engines/engine_3.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/RocketBuilding/engines/engine_3.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/rocket-building/images/engines/engine_4.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/RocketBuilding/engines/engine_4.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/rocket-building/images/long_bg.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/RocketBuilding/long_bg.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/rocket-building/images/rocketIcon.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/RocketBuilding/rocketIcon.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/rocket-building/images/rocket_assembly_bg.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/RocketBuilding/rocket_assembly_bg.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/rocket-building/index.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/shared/animations/ErrorSlideOut.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/shared/animations/ErrorSlideOut.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/shared/animations/ObjectiveSlideOut.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/shared/animations/ObjectiveSlideOut.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/shared/animations/RatingSlideOut.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/shared/animations/RatingSlideOut.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/shared/animations/TextScrollBarAnimation.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/shared/animations/TextScrollBarAnimation.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/shared/footer/Footer.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/shared/footer/Footer.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/shared/footer/msu.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/footer/msu.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/shared/footer/msu_cropped.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/footer/msu_cropped.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/shared/footer/sgd.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/footer/sgd.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/shared/header/Header.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/shared/header/Header.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/shared/header/Header.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/shared/header/Header.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/shared/modals/Rate/Rate.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/shared/modals/Rate/Rate.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/shared/modals/Rate/neutral.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/shared/modals/Rate/neutral.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/shared/header/index.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/shared/header/line.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/header/line.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/shared/header/logo.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/header/logo.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/shared/images/trashcan.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/shared/trashcan.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/shared/images/trashcan.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/shared/trashcan.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/shared/modals/Rate/Rate.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/shared/modals/Rate/Rate.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/shared/modals/Rate/RatePopup.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/shared/modals/Rate/RatePopup.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/shared/modals/TelescopeQuestionPopup.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/shared/modals/TelescopeQuestionPopup.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/stellar-cycle/InfoPage.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/stellar-cycle/InfoPage.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/stellar-cycle/MassClassRadio.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/stellar-cycle/MassClassRadio.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/stellar-cycle/ObjectPage.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/stellar-cycle/ObjectPage.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/stellar-cycle/PropertiesSlider.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/stellar-cycle/PropertiesSlider.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/stellar-cycle/Sidebar.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/stellar-cycle/Sidebar.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/stellar-cycle/StellarCycle.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/stellar-cycle/StellarCycle.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/stellar-cycle/StellarCycle.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/stellar-cycle/StellarCycle.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/stellar-cycle/StellarDescriptionAnimation.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/stellar-cycle/StellarDescriptionAnimation.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/stellar-cycle/StellarInfoAnimation.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/stellar-cycle/StellarInfoAnimation.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/stellar-cycle/StellarPathAnimation.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/stellar-cycle/StellarPathAnimation.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/stellar-cycle/TimelineSlider.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/stellar-cycle/TimelineSlider.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/stellar-cycle/images/average_star_A.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/StellarCycle/average_star_A.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/stellar-cycle/images/average_star_F.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/StellarCycle/average_star_F.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/stellar-cycle/images/average_star_G.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/StellarCycle/average_star_G.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/stellar-cycle/images/average_star_K.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/StellarCycle/average_star_K.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/stellar-cycle/images/average_star_RedDwarf.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/StellarCycle/average_star_RedDwarf.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/stellar-cycle/images/avgstar.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/StellarCycle/avgstar.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/stellar-cycle/images/black_hole_path.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/StellarCycle/black_hole_path.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/stellar-cycle/images/blackhole.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/StellarCycle/blackhole.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/stellar-cycle/images/blackholeline.svg" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/StellarCycle/blackholeline.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/stellar-cycle/images/massive_star_btype.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/StellarCycle/massive_star_btype.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/stellar-cycle/images/massive_star_otype.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/StellarCycle/massive_star_otype.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/stellar-cycle/images/massivestar.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/StellarCycle/massivestar.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/stellar-cycle/images/nebula.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/StellarCycle/nebula.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/stellar-cycle/images/neutron_star_path.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/StellarCycle/neutron_star_path.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/stellar-cycle/images/neutronstar.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/StellarCycle/neutronstar.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/stellar-cycle/images/planetarynebula.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/StellarCycle/planetarynebula.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/stellar-cycle/images/redgiant.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/StellarCycle/redgiant.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/stellar-cycle/images/redsupergiant.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/StellarCycle/redsupergiant.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/stellar-cycle/images/supernova.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/StellarCycle/supernova.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/stellar-cycle/images/white_dwarf_path.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/StellarCycle/white_dwarf_path.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/stellar-cycle/images/whitedwarf.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/StellarCycle/whitedwarf.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/stellar-cycle/leftarrow.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/StellarCycle/leftarrow.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/stellar-cycle/rightarrow.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/StellarCycle/rightarrow.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/stellar-cycle/stellarBackground.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/StellarCycle/stellarBackground.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/telescope-activity/Animation.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/telescope-activity/Animation.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/telescope-activity/MoreInfoAnimation.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/telescope-activity/MoreInfoAnimation.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/telescope-activity/Telescope.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/telescope-activity/Telescope.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/telescope-activity/TelescopeActivity.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/telescope-activity/TelescopeActivity.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/telescope-activity/ccd.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/TelescopeActivity/ccd.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/telescope-activity/grid/GridSquare.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/telescope-activity/grid/GridSquare.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/telescope-activity/grid/components/Concave.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/telescope-activity/grid/components/Concave.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/telescope-activity/grid/components/Convex.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/telescope-activity/grid/components/Convex.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/telescope-activity/grid/components/FlatMirror.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/telescope-activity/grid/components/FlatMirror.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/telescope-activity/grid/components/Viewpoint.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/telescope-activity/grid/components/Viewpoint.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/telescope-activity/grid/components/images/concave.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/TelescopeActivity/GridComponents/concave.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/telescope-activity/grid/components/images/convex.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/TelescopeActivity/GridComponents/convex.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/telescope-activity/grid/components/images/flatmirror.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/TelescopeActivity/GridComponents/flatmirror.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/telescope-activity/grid/components/images/rotate.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/TelescopeActivity/GridComponents/rotate.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/telescope-activity/grid/components/images/viewpoint.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/TelescopeActivity/GridComponents/viewpoint.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/telescope-activity/index.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/telescope-activity/interior.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/TelescopeActivity/interior.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/telescope-activity/satellite.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/TelescopeActivity/satellite.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/telescope-activity/terms.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/TelescopeActivity/terms.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/under-construction/1.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/home/1.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/under-construction/2.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/home/2.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/under-construction/3.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/home/3.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/under-construction/4.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/home/4.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/under-construction/EarthAnimation.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/under-construction/EarthAnimation.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/under-construction/Header.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/under-construction/Header.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/under-construction/Home.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/under-construction/Home.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/under-construction/LearnSection.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/under-construction/LearnSection.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/under-construction/TelescopeAnimation.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/under-construction/TelescopeAnimation.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/under-construction/earth.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/home/earth.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/under-construction/telescope.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/home/telescope.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/react-app-env.d.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/react-app-env.d.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/setupTests.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tsconfig.json" beforeDir="false" afterPath="$PROJECT_DIR$/tsconfig.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -60,9 +285,9 @@
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "associatedIndex": 0
-}]]></component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 0
+}</component>
   <component name="ProjectId" id="1emnXyEhSSc4d3UOPlUry8TchjM" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="2" id="Add" />
@@ -73,31 +298,52 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "WebServerToolWindowFactoryState": "false",
     "git-widget-placeholder": "master",
+    "last_opened_file_path": "C:/Users/energ/Documents/ContractWork/DetroitMuseum/bohringart/src/assets/AboutUs",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "settings.javascript.prettier",
+    "ts.external.directory.path": "C:\\Users\\energ\\Documents\\ContractWork\\DetroitMuseum\\bohringart\\node_modules\\typescript\\lib",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\energ\Documents\ContractWork\DetroitMuseum\BohringArt\src\components\stellar-cycle\images" />
-      <recent name="C:\Users\energ\Documents\ContractWork\DetroitMuseum\bohringart\src\components\about\images" />
-      <recent name="C:\Users\energ\Documents\ContractWork\DetroitMuseum\bohringart\src\components\metal-engraving\images" />
-      <recent name="C:\Users\energ\Documents\ContractWork\DetroitMuseum\bohringart\src\components\about\parisa2" />
-      <recent name="C:\Users\energ\Documents\ContractWork\DetroitMuseum\bohringart\src\components\shared\animations" />
-    </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\energ\Documents\ContractWork\DetroitMuseum\bohringart\src\assets\AboutUs" />
+      <recent name="C:\Users\energ\Documents\ContractWork\DetroitMuseum\bohringart\src\assets" />
       <recent name="C:\Users\energ\Documents\ContractWork\DetroitMuseum\bohringart\src\components\stellar-cycle" />
       <recent name="C:\Users\energ\Documents\ContractWork\DetroitMuseum\bohringart\src\components\shared\modals\Rate" />
       <recent name="C:\Users\energ\Documents\ContractWork\DetroitMuseum\bohringart\src\components\circuilt-building\grid" />
-      <recent name="C:\Users\energ\Documents\ContractWork\DetroitMuseum\bohringart\src\components\stellar-cycle\images" />
-      <recent name="C:\Users\energ\Documents\ContractWork\DetroitMuseum\bohringart\src\components\shared\animations" />
     </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\energ\Documents\ContractWork\DetroitMuseum\bohringart\src\assets\MetalEngraving" />
+      <recent name="C:\Users\energ\Documents\ContractWork\DetroitMuseum\bohringart\src\assets\StellarCycle" />
+      <recent name="C:\Users\energ\Documents\ContractWork\DetroitMuseum\bohringart\src\assets\TelescopeActivity" />
+      <recent name="C:\Users\energ\Documents\ContractWork\DetroitMuseum\bohringart\src\assets\UnderConstruction" />
+      <recent name="C:\Users\energ\Documents\ContractWork\DetroitMuseum\bohringart\src\assets\AboutUs" />
+    </key>
+  </component>
+  <component name="RunManager">
+    <configuration name="dev" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
+      <package-json value="$PROJECT_DIR$/package.json" />
+      <command value="run" />
+      <scripts>
+        <script value="dev" />
+      </scripts>
+      <node-interpreter value="project" />
+      <envs />
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="npm.dev" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="SvnConfiguration">
@@ -526,7 +772,7 @@
       <option name="project" value="LOCAL" />
       <updated>1605564653903</updated>
     </task>
-    <option name="localTasksCounter" value="61" />
+    <option name="localTasksCounter" value="62" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -557,8 +803,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Many changes to About Us, all popups, flight simulator page/animations, etc..." />
-    <MESSAGE value="This site has a lot of styling to it" />
     <MESSAGE value="rebuild of rocket building page and built out new &quot;more info&quot; slide out for circuit building" />
     <MESSAGE value="popup refractor to slide out animation (done for all popups now)" />
     <MESSAGE value="Implemented resistor and began implementation of switch on circuit building activity, and also begin implementing questions/scenarios on flight simulator page" />
@@ -582,12 +826,8 @@
     <MESSAGE value="Yeah, this is a pretty big update. Fixed whole bunch of styling issues everywhere, created new error slide up, built out circuit building activity more, etc..." />
     <MESSAGE value="last minute fixes to get the site running (remove telescope activity,  put home page back on /, and put last stars in for stellar cycle)" />
     <MESSAGE value="merge" />
-    <option name="LAST_COMMIT_MESSAGE" value="merge" />
-  </component>
-  <component name="WindowStateProjectService">
-    <state x="-1253" y="253" width="585" height="534" key="find.popup" timestamp="1628019298230">
-      <screen x="-1920" y="0" width="1920" height="1040" />
-    </state>
-    <state x="-1253" y="253" width="585" height="534" key="find.popup/-1920.0.1920.1040/0.0.2560.1040@-1920.0.1920.1040" timestamp="1628019298230" />
+    <MESSAGE value="This git commit includes:&#10;adding footer&#10;adding contact form&#10;general styling fixes&#10;more functionality on various activities" />
+    <MESSAGE value="committing old work that will be rewritten probably" />
+    <option name="LAST_COMMIT_MESSAGE" value="committing old work that will be rewritten probably" />
   </component>
 </project>

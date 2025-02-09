@@ -1,64 +1,57 @@
 import React from 'react';
-import { makeStyles, Theme, createStyles } from '@material-ui/core/styles';
-import Slider from '@material-ui/core/Slider';
-import {withStyles} from "@material-ui/core";
-import {Col} from "react-bootstrap";
+import { styled } from '@mui/styles';
+import { Slider } from '@mui/material';
 
-const useStyles = makeStyles((theme: Theme) =>
-    createStyles({
-        root: {
-            width: "100%",
-        },
-        margin: {
-            height: theme.spacing(3),
-        },
-    }),
-);
+// Styled wrapper component using MUI's styled API
+const SliderWrapper = styled('div')({
+    width: '100%'
+});
 
-const VoltageSlider = withStyles({
-    root: {
-        color: '#29405B',
-        height: 6,
-    },
-    thumb: {
+// Custom styled Slider using MUI v5's styled API
+const VoltageSlider = styled(Slider)(() => ({
+    color: '#29405B',
+    height: 6,
+    '& .MuiSlider-thumb': {
         height: 24,
         width: 24,
         backgroundColor: '#29405B',
         border: '2px solid currentColor',
         marginTop: -10,
         marginLeft: -12,
-        '&:focus, &:hover, &$active': {
+        '&:focus, &:hover, &.Mui-active': {
             boxShadow: 'inherit',
         },
     },
-    track: {
+    '& .MuiSlider-track': {
         height: 6,
         borderRadius: 2,
         backgroundColor: '#29405B',
     },
-    rail: {
+    '& .MuiSlider-rail': {
         height: 6,
         borderRadius: 2,
     },
-})(Slider);
+}));
 
-interface Props {
-    children: React.ReactElement;
-    value: number
-    max: number
-    changeValue: any
+interface CircuitSliderProps {
+    voltage: number;
+    handleVoltageChange: (event: Event, newValue: number | number[]) => void;
 }
 
-export default function CircuitSlider(props: any) {
-    const classes = useStyles();
-
+const CircuitSlider: React.FC<CircuitSliderProps> = ({ voltage, handleVoltageChange }) => {
     return (
-        <div className={classes.root}>
-            {/* */}
-            <VoltageSlider aria-labelledby="volt-slider" step={1}
-                           marks min={0} max={10}
-                           value={props.voltage}
-                           onChange={props.handleVoltageChange} />
-        </div>
+        <SliderWrapper>
+            <VoltageSlider
+                aria-labelledby="volt-slider"
+                step={1}
+                marks
+                min={0}
+                max={10}
+                value={voltage}
+                onChange={handleVoltageChange}
+            />
+        </SliderWrapper>
     );
-}
+};
+
+export default CircuitSlider;

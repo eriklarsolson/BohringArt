@@ -1,6 +1,6 @@
-import * as React from "react";
+import React from "react";
 import { motion } from "framer-motion";
-import telescope from "./telescope.png";
+import telescope from "../../assets/home/telescope.png";
 
 export const TelescopeAnimation: React.FC  = () => {
     return (

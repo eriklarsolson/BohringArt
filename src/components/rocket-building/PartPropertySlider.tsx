@@ -1,60 +1,54 @@
 import React from 'react';
-import { makeStyles, Theme, createStyles } from '@material-ui/core/styles';
-import Slider from '@material-ui/core/Slider';
-import {withStyles} from "@material-ui/core";
+import { styled } from '@mui/material/styles';
+import { Slider } from '@mui/material';
 
-const useStyles = makeStyles((theme: Theme) =>
-    createStyles({
-        root: {
-            width: "100%",
-        },
-        margin: {
-            height: theme.spacing(3),
-        },
-    }),
-);
+// Styled wrapper component
+const SliderWrapper = styled('div')({
+    width: '100%'
+});
 
-const PropertySlider = withStyles({
-    root: {
-        color: '#3BD186',
-        height: 10,
-    },
-    thumb: {
+// Custom styled Property Slider
+const PropertySlider = styled(Slider)({
+    color: '#3BD186',
+    height: 10,
+    '& .MuiSlider-thumb': {
         height: 14,
         width: 10,
         backgroundColor: '#3BD186',
         borderRadius: 0,
         marginTop: 0,
-        '&:focus, &:hover, &$active': {
+        '&:focus, &:hover, &.Mui-active': {
             boxShadow: 'inherit',
         },
     },
-    track: {
+    '& .MuiSlider-track': {
         height: 14,
     },
-    rail: {
+    '& .MuiSlider-rail': {
         height: 10,
-        border: "7px solid white"
+        border: '7px solid white',
     },
-})(Slider);
+});
 
-interface Props {
-    children: React.ReactElement;
-    value: number
-    max: number
+interface PartPropertySliderProps {
+    value: number;
+    max?: number;
 }
 
-export default function PartPropertySlider(props: any) {
-    const classes = useStyles();
-
+const PartPropertySlider: React.FC<PartPropertySliderProps> = ({
+                                                                   value,
+                                                                   max = 100 // Default max value
+                                                               }) => {
     return (
-        <div className={classes.root}>
+        <SliderWrapper>
             <PropertySlider
-                value={props.value}
+                value={value}
                 aria-labelledby="part-property-slider"
-                max={100}
+                max={max}
                 valueLabelDisplay="off"
             />
-        </div>
+        </SliderWrapper>
     );
-}
+};
+
+export default PartPropertySlider;

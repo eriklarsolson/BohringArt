@@ -1,11 +1,11 @@
-import * as React from "react";
+import React from "react";
 import {motion, useAnimation} from "framer-motion";
 import { Container, Row, Col, Button } from 'react-bootstrap'
 import {useState} from "react";
-import logo from "./images/logo.png"
-import planet from "./images/planet.png"
-import plant from "./images/plant.png"
-import snowman from "./images/snowman.png"
+import logo from "@/src/assets/MetalEngraving/logo.png"
+import planet from "@/src/assets/MetalEngraving/planet.png"
+import plant from "@/src/assets/MetalEngraving/plant.png"
+import snowman from "@/src/assets/MetalEngraving/snowman.png"
 
 export interface AnimationProps {
     setParentState: any

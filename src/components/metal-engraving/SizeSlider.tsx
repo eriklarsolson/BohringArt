@@ -1,64 +1,55 @@
 import React from 'react';
-import { makeStyles, Theme, createStyles } from '@material-ui/core/styles';
-import Slider from '@material-ui/core/Slider';
-import {withStyles} from "@material-ui/core";
+import { styled } from '@mui/material/styles';
+import { Slider } from '@mui/material';
 
-const useStyles = makeStyles((theme: Theme) =>
-    createStyles({
-        root: {
-            width: "100%",
-        },
-        margin: {
-            height: theme.spacing(3),
-        },
-    }),
-);
+// Styled wrapper component
+const SliderWrapper = styled('div')({
+    width: '100%'
+});
 
-const CustomSlider = withStyles({
-    root: {
-        color: '#29405B',
-        height: 6,
-    },
-    thumb: {
+// Custom styled Size Slider
+const CustomSlider = styled(Slider)({
+    color: '#29405B',
+    height: 6,
+    '& .MuiSlider-thumb': {
         height: 24,
         width: 24,
         backgroundColor: '#29405B',
         border: '2px solid currentColor',
         marginTop: -10,
         marginLeft: -12,
-        '&:focus, &:hover, &$active': {
+        '&:focus, &:hover, &.Mui-active': {
             boxShadow: 'inherit',
         },
     },
-    track: {
+    '& .MuiSlider-track': {
         height: 6,
         borderRadius: 2,
         backgroundColor: '#29405B',
     },
-    rail: {
+    '& .MuiSlider-rail': {
         height: 6,
         borderRadius: 2,
     },
-})(Slider);
+});
 
-interface Props {
-    children: React.ReactElement;
-    value: number
-    setSize: any
+interface SizeSliderProps {
+    value: number;
+    setSize: (event: Event, newValue: number | number[]) => void;
 }
 
-export default function SizeSlider(props: any) {
-    const classes = useStyles();
-
+const SizeSlider: React.FC<SizeSliderProps> = ({ value, setSize }) => {
     return (
-        <div className={classes.root}>
+        <SliderWrapper>
             <CustomSlider
-                value={props.value}
-                aria-labelledby="timeline-slider"
+                value={value}
+                aria-labelledby="size-slider"
                 min={1}
                 max={40}
-                onChange={props.setSize}
+                onChange={setSize}
             />
-        </div>
+        </SliderWrapper>
     );
-}
+};
+
+export default SizeSlider;

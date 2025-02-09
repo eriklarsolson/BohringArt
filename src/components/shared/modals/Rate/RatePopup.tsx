@@ -6,7 +6,7 @@ import happy from './happy.png';
 import neutral from './neutral.png';
 import sad from './sad.png';
 import smart from './smart.png';
-import './Rate.scss';
+import './Rate.css';
 import {toast} from "react-toastify";
 import emailjs from "emailjs-com";
 

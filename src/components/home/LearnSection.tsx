@@ -1,10 +1,10 @@
 import React from "react";
 import { Container, Row, Col } from 'react-bootstrap'
-import './Home.scss';
-import one from "./1.png"
-import two from "./2.png"
-import three from "./3.png"
-import four from "./4.png"
+import './Home.css';
+import one from "../../assets/home/1.png"
+import two from "../../assets/home/2.png"
+import three from "../../assets/home/3.png"
+import four from "../../assets/home/4.png"
 
 class LearnSection extends React.Component<any, any> {
     constructor(props: any) {
