@@ -16,12 +16,14 @@ export const StellarInfoAnimation: React.FC<AnimationProps>  = ({image}) => {
                 // borderRadius: ["20%", "20%", "50%", "50%", "20%"]
             }}
 
+            style={{textAlign: "center"}}
+
             transition={{
                 duration: 3,
                 ease: "easeOut",
                 times: [0, 1],
             }}>
-            <img alt={"Stellar Object"} src={image} style={{minWidth: 400, width: "100%"}} />
+            <img alt={"Stellar Object"} src={image} style={{minWidth: 350, width: "75%"}} />
         </motion.div>
     );
 };

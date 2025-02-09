@@ -2,11 +2,16 @@ import * as React from "react";
 import {motion, useAnimation} from "framer-motion";
 import { Container, Row, Col, Button } from 'react-bootstrap'
 import {useState} from "react";
-import bored from "../modals/Rate/bored.png";
-import sad from "../modals/Rate/sad.png";
-import neutral from "../modals/Rate/neutral.png";
-import happy from "../modals/Rate/happy.png";
-import smart from "../modals/Rate/smart.png";
+import boredBlue from "../modals/Rate/bored.png";
+import sadBlue from "../modals/Rate/sad.png";
+import neutralBlue from "../modals/Rate/neutral.png";
+import happyBlue from "../modals/Rate/happy.png";
+import smartBlue from "../modals/Rate/smart.png";
+import boredGreen from "../modals/Rate/boredGreen.png";
+import sadGreen from "../modals/Rate/sadGreen.png";
+import neutralGreen from "../modals/Rate/neutralGreen.png";
+import happyGreen from "../modals/Rate/happyGreen.png";
+import smartGreen from "../modals/Rate/smartGreen.png";
 import emailjs from "emailjs-com";
 import {toast} from "react-toastify";
 import '../modals/Rate/Rate.scss';
@@ -35,6 +40,56 @@ export const RatingSlideOut: React.FC<AnimationProps>  = ({setParentState}) => {
             });
 
         hideBox()
+    }
+
+    const [bored, setBored] = useState<any>(boredBlue);
+    const [sad, setSad] = useState<any>(sadBlue);
+    const [neutral, setNeutral] = useState<any>(neutralBlue);
+    const [happy, setHappy] = useState<any>(happyBlue);
+    const [smart, setSmart] = useState<any>(smartBlue);
+
+    const onHover = (type: string) => {
+        switch (type) {
+            case "Bored":
+                setBored(boredGreen)
+                break;
+            case "Sad":
+                setSad(sadGreen)
+                break;
+            case "Neutral":
+                setNeutral(neutralGreen)
+                break;
+            case "Happy":
+                setHappy(happyGreen)
+                break;
+            case "Smart":
+                setSmart(smartGreen)
+                break;
+            default:
+                break;
+        }
+    }
+
+    const offHover = (type: string) => {
+        switch (type) {
+            case "Bored":
+                setBored(boredBlue)
+                break;
+            case "Sad":
+                setSad(sadBlue)
+                break;
+            case "Neutral":
+                setNeutral(neutralBlue)
+                break;
+            case "Happy":
+                setHappy(happyBlue)
+                break;
+            case "Smart":
+                setSmart(smartBlue)
+                break;
+            default:
+                break;
+        }
     }
 
     const controls = useAnimation()
@@ -83,27 +138,42 @@ export const RatingSlideOut: React.FC<AnimationProps>  = ({setParentState}) => {
 
                                 <Row className={"justify-content-center align-content-center"} style={{padding: "10px"}}>
                                     <Col className={"col-md-2 col-sm-4"} style={{textAlign: "center", margin: "10px"}}>
-                                        <img alt={"Bored"} src={bored} className={"rate-img"} onClick={() => submitRating("bored")} />
+                                        <img alt={"Bored"} src={bored} className={"rate-img"}
+                                             onMouseOut={() => offHover("Bored")}
+                                             onMouseOver={() => onHover("Bored")}
+                                             onClick={() => submitRating("bored")} />
                                         <p style={{color: "#29405B", fontWeight: "bold", fontSize: 18, marginTop: 10}}>Bored</p>
                                     </Col>
 
                                     <Col className={"col-md-2 col-sm-4"} style={{textAlign: "center", margin: "10px"}}>
-                                        <img alt={"Sad"} src={sad} className={"rate-img"} onClick={() => submitRating("sad")} />
+                                        <img alt={"Sad"} src={sad} className={"rate-img"}
+                                             onMouseOut={() => offHover("Sad")}
+                                             onMouseOver={() => onHover("Sad")}
+                                             onClick={() => submitRating("sad")} />
                                         <p style={{color: "#29405B", fontWeight: "bold", fontSize: 18, marginTop: 10}}>Sad</p>
                                     </Col>
 
                                     <Col className={"col-md-2 col-sm-4"} style={{textAlign: "center", margin: "10px"}}>
-                                        <img alt={"Neutral"} src={neutral} className={"rate-img"} onClick={() => submitRating("neutral")} />
+                                        <img alt={"Neutral"} src={neutral} className={"rate-img"}
+                                             onMouseOut={() => offHover("Neutral")}
+                                             onMouseOver={() => onHover("Neutral")}
+                                             onClick={() => submitRating("neutral")} />
                                         <p style={{color: "#29405B", fontWeight: "bold", fontSize: 18, marginTop: 10}}>Neutral</p>
                                     </Col>
 
                                     <Col className={"col-md-2 col-sm-4"} style={{textAlign: "center", margin: "10px"}}>
-                                        <img alt={"Happy"} src={happy} className={"rate-img"} onClick={() => submitRating("happy")} />
+                                        <img alt={"Happy"} src={happy} className={"rate-img"}
+                                             onMouseOut={() => offHover("Happy")}
+                                             onMouseOver={() => onHover("Happy")}
+                                             onClick={() => submitRating("happy")} />
                                         <p style={{color: "#29405B", fontWeight: "bold", fontSize: 18, marginTop: 10}}>Happy</p>
                                     </Col>
 
                                     <Col className={"col-md-2 col-sm-4"} style={{textAlign: "center", margin: "10px"}}>
-                                        <img alt={"Smart"} src={smart} className={"rate-img"} onClick={() => submitRating("smart")} />
+                                        <img alt={"Smart"} src={smart} className={"rate-img"}
+                                             onMouseOut={() => offHover("Smart")}
+                                             onMouseOver={() => onHover("Smart")}
+                                             onClick={() => submitRating("smart")} />
                                         <p style={{color: "#29405B", fontWeight: "bold", fontSize: 18, marginTop: 10}}>Smart</p>
                                     </Col>
                                 </Row>

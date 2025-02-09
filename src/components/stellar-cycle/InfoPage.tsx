@@ -13,19 +13,29 @@ import redsupergiant from "./images/redsupergiant.png"
 import supernova from "./images/supernova.png"
 import whitedwarf from "./images/whitedwarf.png"
 import {StellarInfoAnimation} from "./StellarInfoAnimation";
+import {StellarDescriptionAnimation} from "./StellarDescriptionAnimation";
 
 class InfoPage extends React.Component<any, any> {
     constructor(props: any) {
         super(props);
         this.state = {
-            title: this.props.location.state.title,
+            title: "Nebula",
             description: "",
             image: null,
         };
     }
 
     componentDidMount() {
-        const object = this.state.title;
+        let object;
+
+        if(this.props.location.state !== undefined) {
+            if(this.props.location.state.title !== undefined) {
+                this.setState({ title: this.props.location.state.title })
+                object = this.props.location.state.title;
+            }
+        } else {
+            object = this.state.title;
+        }
 
         if(object === "Nebula") {
             this.setState({description: "A collection of dust and gas, specifically hydrogen, helium, and ionized " +
@@ -103,46 +113,29 @@ class InfoPage extends React.Component<any, any> {
     }
 
     render() {
+        const goBack = () => {
+            this.props.history.push({
+                pathname: '/activity/object-page',
+                state: { title: this.state.title, popupOpened: false }
+            })
+        }
+
         return (
             <>
-                <Container fluid className={"d-flex h-100 flex-column"} style={{margin: "0", padding: "0",
-                    backgroundImage:`url(${stellarBackground})`, textAlign: "left"}}>
-                    <Row style={{margin: 0, padding: 0}}>
-                        <Col className={"col-6 vh-100 align-items-center justify-content-center"} style={{display: "flex", margin: 0, padding: 0}}>
-                                    <StellarInfoAnimation image={this.state.image} />
-                        </Col>
+                {this.state.title !== undefined &&
+                    <Container fluid className={"d-flex h-100 flex-column"} style={{margin: "0", padding: "0",
+                        backgroundImage:`url(${stellarBackground})`, textAlign: "left"}}>
+                        <Row style={{margin: 0, padding: 0}}>
+                            <Col className={"col-6 vh-100 align-items-center justify-content-center"} style={{display: "flex", margin: 0, padding: 0}}>
+                                <StellarInfoAnimation image={this.state.image} />
+                            </Col>
 
-                        <Col className={"col-6 vh-100"} style={{margin: 0, padding: 0, backgroundColor: "#29405B",
-                            color: "white", clipPath: "polygon(0 0, 100% 0, 100% 100%, 10% 100%)"}}>
-                            <Container fluid style={{margin: 0, padding: 0}}>
-
-                                <Row style={{margin: 0, marginBottom: "5%"}}>
-                                    <Col className={"col-8 align-self-center"} style={{textAlign: "center", marginTop: 25}}>
-                                        <p style={{fontWeight: "bold", fontSize: "48px", marginBottom: 0}}>{this.state.title}</p>
-                                    </Col>
-
-                                    <Col className={"col-2 ml-auto align-self-center"} style={{padding: 0, marginTop: 25}}>
-                                        <Row style={{margin: 0}} className={"justify-content-end"}>
-                                            <Button className={"green-button"} style={{width: 200}}
-                                                onClick={() => this.props.history.push({
-                                                    pathname: '/activity/object-page',
-                                                    state: { title: this.state.title, popupOpened: false }
-                                            })}>
-                                                <i className="fa fa-arrow-right" />
-                                            </Button>
-                                        </Row>
-                                    </Col>
-                                </Row>
-
-                                <Row className="justify-content-center" style={{margin: 0, padding: 0}}>
-                                    <Col className={"col-8"}>
-                                        <p style={{fontSize: 20, whiteSpace: "pre-line"}}>{this.state.description}</p>
-                                    </Col>
-                                </Row>
-                            </Container>
-                        </Col>
-                    </Row>
-                </Container>
+                            <Col className={"col-6 vh-100"} style={{margin: 0, padding: 0}}>
+                                <StellarDescriptionAnimation title={this.state.title} description={this.state.description} goBack={goBack} />
+                            </Col>
+                        </Row>
+                    </Container>
+                }
             </>
         )
     }

@@ -72,18 +72,19 @@ const Header = (props: {location: any }) => {
                 <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark" className="main-menu" style={{zIndex: 10}}>
                     <Navbar.Brand href="/" style={{textAlign: "right", paddingLeft: "1%"}}>
                         <img src={logo} alt={"Logo"} style={{width: "80%"}} />
-
                         <img src={line} alt={"Menu seperator"} style={{marginLeft: 25}} />
                     </Navbar.Brand>
 
                     <Navbar.Toggle aria-controls="responsive-navbar-nav" />
                     <Navbar.Collapse id="responsive-navbar-nav">
 
-                        <Nav className="mr-auto" activeKey={location.pathname}>
-                            <p style={{marginBottom: 0, color: "white", marginLeft: 10}}>{getPageTitle()}</p>
-                        </Nav>
+                        {width > 1000 &&
+                            <Nav className="mr-auto" activeKey={location.pathname}>
+                                <p style={{marginBottom: 0, color: "white", marginLeft: 10}}>{getPageTitle()}</p>
+                            </Nav>
+                        }
 
-                        <Nav className="ml-auto" activeKey={location.pathname}>
+                        <Nav className={width > 1000 ? "ml-auto" : ""} activeKey={location.pathname}>
 
                             <Nav.Link as={Link} to={{pathname: '/', state: { popupOpened: false }}}
                                       active={location.pathname.startsWith('/home') || location.pathname === '/'}

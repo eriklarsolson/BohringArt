@@ -1,7 +1,11 @@
 {
   "name": "bohringart",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "private": true,
+  "engines": {
+    "node": "14.x",
+    "npm": "8.x"
+  },
   "dependencies": {
     "@fortawesome/fontawesome-common-types": "^0.2.30",
     "@fortawesome/fontawesome-svg-core": "^1.2.30",

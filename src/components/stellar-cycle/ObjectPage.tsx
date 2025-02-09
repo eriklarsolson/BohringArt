@@ -500,7 +500,7 @@ class ObjectPage extends React.Component<any, any> {
                                             </Button>
                                         </Col>
 
-                                        <Col className={"align-self-center"} style={{marginTop: 25, backgroundColor: "#212A51"}}>
+                                        <Col className={"align-self-center col-3 ml-auto mr-auto"} style={{marginTop: 25, backgroundColor: "#212A51"}}>
                                             <p style={{color: "white", fontSize: "28px", fontWeight: "bold"}}>Stellar Life Cycle</p>
                                         </Col>
 
@@ -516,10 +516,8 @@ class ObjectPage extends React.Component<any, any> {
                                             </Row>
 
                                             <Row style={{margin: 0}} className={"justify-content-end"}>
-                                                <Row style={{margin: 0}} className={"justify-content-end"}>
-                                                    <Button className={"blue-button"} style={{width: 166, textAlign: "left"}}
-                                                            onClick={cyclePopup}>Objective</Button>
-                                                </Row>
+                                                <Button className={"blue-button"} style={{width: 166, textAlign: "left"}}
+                                                        onClick={cyclePopup}>Objective</Button>
                                             </Row>
                                         </Col>
                                     </Row>
@@ -530,7 +528,7 @@ class ObjectPage extends React.Component<any, any> {
                                         {/*        onClick={leftArrow} />*/}
                                         {/*</Col>*/}
 
-                                        <Col className={"col-6"}>
+                                        <Col className={"col-10 col-md-10 col-lg-6"}>
                                             {(this.state.stellarObjects[this.state.massClass][this.state.index].title === "Average Star" ||
                                                 this.state.stellarObjects[this.state.massClass][this.state.index].title === "Massive Star") ?
                                                 <>

@@ -56,7 +56,7 @@ export const ObjectiveSlideOut: React.FC<AnimationProps>  = ({setParentState, ti
                             <div style={{position: "absolute", width: "100%", height: "100%", backgroundColor: "#F8EDDD",
                                 clipPath: "polygon(0 0, 95% 0, 100% 100%, 0 100%)"}} />
 
-t                          <Container fluid style={{padding: 45}}>
+t                          <Container fluid style={{padding: 45, marginTop: "5%"}}>
                                 <Row className={"justify-content-center"}>
                                     <Col className={"col-8"}>
                                         <p style={{fontSize: 40, fontWeight: "bold", color: "#29405B", textAlign: "left"}}>{title}</p>
